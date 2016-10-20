@@ -14,8 +14,8 @@
 \section*{Introduction}
 
 Organisms undergo changes in phenotype due to selection on fitness relevant traits in their current environment. 
-The same principle applies to the genome adapting the intra-cellular environment.
-If two 
+The same principle applies to the genome adapting to the intra-cellular environment.
+If genomes are mixed, due to hypridization or introgression, the part of the genome new to the current intra-cellular environment experiences added selection pressure to adapt to the new environment.
 
 \textit{Lachancea Kluyveri} is the earliest diverging lineage of the known \textit{Lachancea} clade. 
 \textit{L. Kluyveri} experienced an introgression of 1Mb about XXX ago. 
@@ -29,7 +29,7 @@ Differences in mutation bias should persist longer due to the absence of selecti
 We asked if the difference in GC-content is reflected in differences in codon usage bias.
 We analyzed the two genomic regions in the \textit{L. Kluyveri} genome together and separately.
 Our results indicate that the introgressed region shows a different signature of codon usage bias.
-We employed a mechanistical model that allowed us to distinguish between effects of mutation bias, or bias in selection for translation efficiency.
+We employed a mechanistic model that allowed us to distinguish between effects of mutation bias, or bias in selection for translation efficiency.
 Further inspection showed that mutation bias is dominating the observed difference, while differences in selection bias between codons is mostly in agreement between the two genomic regions. 
 
 \begin{itemize}
@@ -41,6 +41,18 @@ Further inspection showed that mutation bias is dominating the observed differen
 	
 	
 \section*{Results}
+The striking difference in GC-content between C-Left and the rest of the \textit{L. kluyveri} genome lead us to the question whether the observed differences in GC-content are an indicator for intra-genomic variation in codon usage bias.
+We hypothesised that the observed GC-content variation in the \textit{L. kluyveri} genome and the codon usage bias are independent, and we will not observe intra-genomic variation in codon usage bias.
+Analysis of the \textit{L. kluyveri} genome with ROC SEMPER revealed low variation in predicted protein synthesis rate $\phi$, indicating strong disagreement in genome wide parameters and hinting at intra-genomic variation.
+ 
+To test whether C-Left shows distinguished codon usage patterns, we separated C-Left from the rest of the genome and analyzed both parts of the genome separately.
+Separation of the genome was strongly favored by model selection ($\Delta AIC: 81,504$) indicating differing patterns of codon usage bias between C-Left and the rest of the genome.
+
+The separation of the genome into two independent part improved our ability to predict protein production rate $\phi$ (H0: $\rho = 0.59$ to H1: $\rho = 0.69$).
+Using the whole genome, $\phi$ almost perfectly separated the genes of C-Left and the rest of the \textit{L. kluyveri} genome. 
+The separation resulted in genes that are not located on C-Left to be estimated to be medium to high expressed while genes located on C-Left were estimated to be low expression genes. 
+This separation of C-Left from the rest of the genome resulted into low and high expression genes resulted in mutation bias ($\Delta M$) being only informed by genes on C-Left while selection for translation effciency ($\Delta eta$) being only informed by genes not located on C-Left. 
+In addition, the standard deviation of the $\phi$ distribution of the whole genome was greatly decreased compared to the separated dataset (H0 : $s_{\phi}$ = 0.2 to H1 : $s_{\phi}$ = 1).
 
 \begin{itemize}
 	\item Question: GC-content variation causes difference in CUB, CUB difference driven by different selection or mutation environment of original host
