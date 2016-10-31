@@ -44,15 +44,37 @@ Further inspection showed that mutation bias is dominating the observed differen
 The striking difference in GC-content between C-Left and the rest of the \textit{L. kluyveri} genome lead us to the question whether the observed differences in GC-content are an indicator for intra-genomic variation in codon usage bias.
 We hypothesised that the observed GC-content variation in the \textit{L. kluyveri} genome and the codon usage bias are independent, and we will not observe intra-genomic variation in codon usage bias.
 Analysis of the \textit{L. kluyveri} genome with ROC SEMPER revealed low variation in predicted protein synthesis rate $\phi$, indicating strong disagreement in genome wide parameters and hinting at intra-genomic variation.
- 
+  
 To test whether C-Left shows distinguished codon usage patterns, we separated C-Left from the rest of the genome and analyzed both parts of the genome separately.
 Separation of the genome was strongly favored by model selection ($\Delta AIC: 81,504$) indicating differing patterns of codon usage bias between C-Left and the rest of the genome.
 
+\subsection*{\textit{L.kluyveri} displays differential codon usage bias}
 The separation of the genome into two independent part improved our ability to predict protein production rate $\phi$ (H0: $\rho = 0.59$ to H1: $\rho = 0.69$).
 Using the whole genome, $\phi$ almost perfectly separated the genes of C-Left and the rest of the \textit{L. kluyveri} genome. 
 The separation resulted in genes that are not located on C-Left to be estimated to be medium to high expressed while genes located on C-Left were estimated to be low expression genes. 
-This separation of C-Left from the rest of the genome resulted into low and high expression genes resulted in mutation bias ($\Delta M$) being only informed by genes on C-Left while selection for translation effciency ($\Delta eta$) being only informed by genes not located on C-Left. 
+This separation of C-Left from the rest of the genome resulted into low and high expression genes resulted in mutation bias ($\Delta M$) being only informed by genes on C-Left while selection for translation efficiency ($\Delta \eta$) being only informed by genes not located on C-Left. 
 In addition, the standard deviation of the $\phi$ distribution of the whole genome was greatly decreased compared to the separated dataset (H0 : $s_{\phi}$ = 0.2 to H1 : $s_{\phi}$ = 1).
+
+\subsection*{Differences in mutation bias are greater than in selection bias}
+The hypothesis best supported by the data allows us to attribute differences in GC-content mostly to mutation bias. 
+A greater difference in mutational bias between the two genomic regions is revealed while selection for translation is mostly consistent between the two genomic regions. 
+The comparison of the estimated mutation bias ($\Delta M$) resulted in strong disagreement in codons being favored by mutation ($\rho = -0.31$). 
+Most codons that show a positive mutation bias in C-left are disfavored by mutation in the remainder of the genome.  
+Furthermore, the strength of mutation bias is increased in C-left, reflected in the larger range of inferred $\Delta M$ values, revealing not only differences in mutation bias, but also showing that mutation bias in C-Left is stronger than in the rest of the genome. 
+Estimates for $\Delta \eta$ showed a higher consistency between the two genomic regions ($\rho = 0.68$), indicating that - generally - the same codons are favored throughout the genome. 
+The difference in time scale of protein synthesis rate $\phi$ between C-Left and Main, does not allow to draw any conclusions from the observed differences in range of the inferred $\Delta \eta$ parameter.
+
+\subsection*{Origin of C-Left is unknown}
+We determined the codon usage patterns of related yeast species to explore if one of the species or genus explored shows a similar codon usage pattern.
+Agreement in codon usage patterns between C-Left and other yeast species would indicate a candidate for the origin of C-Left.
+The chosen X number of yeast species displayed high agreement in codon usage, but differed in codon usage from C-Left.
+
+\subsection*{Rate of evolution of estimated parameters}
+We determined the rate at which the $\Delta eta$ and $\Delta M$ parameters evolved in the set of yeast species chosen.
+We found that the rate of evolution is low.
+
+$\Delta \eta$ is the strength of selection relative to the strength of drift ($sN_e$).
+
 
 \begin{itemize}
 	\item Question: GC-content variation causes difference in CUB, CUB difference driven by different selection or mutation environment of original host
@@ -64,6 +86,22 @@ In addition, the standard deviation of the $\phi$ distribution of the whole geno
 \end{itemize}
 
 \section*{Discussion}
+
+Attempts to elude on the unknown history of C-Left have been plenty full. 
+Our comparison of codon usage patterns across various yeast species revealed no promising candidate as origin of C-Left.
+However, our approach can be used to quickly screen for candidates showing similar codon usage patterns.
+
+The evolution of codon usage is driven by the main forces of evolution: mutation, selection and drift.
+The insertion of a genomic region into a new host environment is expected to lead to adaptation in the inserted region.
+Neutral change is slow as no selection is amplifying the proliferation of introduced changes.
+Therefore we expect that differences in mutation bias, driving codon usage in low expression genes, to decay slower than differences in selection bias.
+C-Left shows an access number of genes with low evolutionary mean expression.
+The slow decay of mutation bias is supported by an excess of polymorphisms of low frequency, like expected under a model of neutral evolution (Friedrich 2014).
+
+The decay of bias in selection for translation efficiency, however, is depended on the effective population size $N_e$.  
+$N_e$ is estimated to be on the order of $10^x$ for yeast species, implying that genetic drift can be assumed to be weak relative to selection.
+Our findings indicate that the origin of C-Left will show similarities in mutation bias, but will likely differ in their selection bias.
+
 
 \begin{itemize}
 	\item Faster decay of selection bias, versus mutation bias
