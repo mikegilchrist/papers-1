@@ -42,12 +42,78 @@
 	\item confidence in parameters by number of genes
 	\item estimation of phi values (gene ordering)
 	\end{itemize}
-\item s_epsilon as a measure of noise due to the lab conditions by eliminating technical 			noise. Use replicates to estimates technical noise
+\item $s_{epsilon}$ as a measure of noise due to the lab conditions by eliminating technical 			noise. Use replicates to estimates technical noise
 
 \item 
 \end{itemize}
 
 
-\section*{Discussion}
+\section*{Introduction}
+Driven by improvements in DNA sequenceing technology and methodology, the past 15 years has seen an exponential growth in the number of publicly available genomes. 
+This influx of genomic data necessitated the development of computational tools which allow researchers to extract information.
 
+Information about selection on the translation process, such as factors shaping translational efficiency and co-translational folding, can be extracted using codon usage bias.
+CUB refers to non-uniform usage of synonymous codons shaped by bias in mutation and selection.
+Although CUB was first studied almost 40 years ago, many questions related to the factors shaping CUB remain open.
+As a result, many metrics were developed in an attempt to quantify CUB, such as Codon Adaptation Index (CAI).
+There are many issues with these metrics.
+For example, CAI relies on a reference set of genes assumed to be highly expressed, such as genes coding for ribosomal proteins.
+Most of these metrics only account for selection in shaping CUB and is not rooted in population genetics. 
+Recent work demonstrated that to accurately quantify CUB, mutation bias and genetic drift are also needed.
+In [Gilchrist et al 2015], a mechanistic model rooted in population genetics that accounted for selection, mutation bias, and genetic drift was presented. 
+Here, we describe an open-source computational tool that allows researchers to analyze CUB data using the model presented in [Gilchrist et al 2015].
+In addition this work expands Gilchrist et al 2015 by allowing for mixture distributions for mutation and selection within a dataset.
+
+
+
+
+Information on mutational and selection processes can be obtained from codon usage bias.
+ 
+The influence of mutation and selection is related to the evolutionary averge protein production rate $\phi$ of a gene.
+Genes with increased protein synthesis rate are belived to be under higher selection for translation efficiency and are therefore composed of a higher percentage of optimal codon.
+Gene regions that deviate from that pattern can indicate to explore differential selection on codon usage for the purpose of co-translational folding or signal peptides
+
+\section{Code structure}
+ribModel follows the classical design principles of object orientation and inheritance
+(Booch 1993). The software package consists of two partially virtual base
+classes (Model, Parameter) which hold basic functionality shared between all
+models and guarantee that required functionality is available in each
+child class (e.g. ROCModel).
+The core of the package is the class MCMC which provides a member function
+run. run requires as input a model and a genomic dataset represented by the
+classes Model and Genome. The inheritance structure makes it unnecessary for
+the run function to require information about the type of model it analyzes.
+The class MCMC implements a conditional Markov Chain Monte Carlo structure
+(Metropolis-Hastings within Gibbs sampling) where model parameter can be
+separated into three categories, codon/amino acid specific; gene specific; or hyper
+parameters. This assumed structure does not require that all models have to
+contains all three types of parameters, but merely allows to split parameters into
+these type for more efficient sampling.
+\subsubsection{Writing extensions}
+The framework was designed to allow for simple extensions, providing new models
+to analyze genomic data. While the usage of the package does not require
+any knowledge of C++, extending the framework with new models requires C++
+expertise. For a new model to be included, a new child class of Model and Parameter
+has to be defined. The child class inherits all necessary functionality and
+function definitions from the base class. This ensures compatibility of the newly
+defined model with the evaluation environment. Thus only the implementation of
+the likelihood function is required. However, child classes are allowed to modify or
+override existing functionality inherited from the base class. It is however required
+that the function definition is consistent with the base class. Base classes can also
+be extended by their child classes, adding additional functionality the base class
+does not provide.
+\subsubsection{Merging R and C++}
+R provides native support for the integration of C and FORTRAN. However, R
+does not provide a native C++ support, which is necessary to implement an object
+oriented software design. To allow for the implementation in C++, I utilized the R
+package Rcpp (Eddelbuettel & Francois 2011). Rcpp provides a module structure
+allowing the exposure of whole C++ classes to R. R represents each instance
+of a class (Object) as a pointer to an environment. Unlike with a regular R
+
+\section*{Discussion}
+\begin{itemize}
+\item Runtime, scalability
+\item Extendability, FONSE, PANSE, RFP
+\item applications, hybridization, phylogenetics, variation in mutation and selection
+\end{itemize}
 \end{document}
