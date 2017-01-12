@@ -42,10 +42,36 @@
 	\item confidence in parameters by number of genes
 	\item estimation of phi values (gene ordering)
 	\end{itemize}
-\item s_epsilon as a measure of noise due to the lab conditions by eliminating technical 			noise. Use replicates to estimates technical noise
+\item $s_{epsilon}$ as a measure of noise due to the lab conditions by eliminating technical 			noise. Use replicates to estimates technical noise
 
 \item 
 \end{itemize}
+
+
+\section*{Introduction}
+Driven by improvements in DNA sequenceing technology and methodology, the past 15 years has seen an exponential growth in the number of publicly available genomes. 
+This influx of genomic data necessitated the development of computational tools which allow researchers to extract information.
+
+Information about selection on the translation process, such as factors shaping translational efficiency and co-translational folding, can be extracted using codon usage bias.
+CUB refers to non-uniform usage of synonymous codons shaped by bias in mutation and selection.
+Although CUB was first studied almost 40 years ago, many questions related to the factors shaping CUB remain open.
+As a result, many metrics were developed in an attempt to quantify CUB, such as Codon Adaptation Index (CAI).
+There are many issues with these metrics.
+For example, CAI relies on a reference set of genes assumed to be highly expressed, such as genes coding for ribosomal proteins.
+Most of these metrics only account for selection in shaping CUB and is not rooted in population genetics. 
+Recent work demonstrated that to accurately quantify CUB, mutation bias and genetic drift are also needed.
+In [Gilchrist et al 2015], a mechanistic model rooted in population genetics that accounted for selection, mutation bias, and genetic drift was presented. 
+Here, we describe an open-source computational tool that allows researchers to analyze CUB data using the model presented in [Gilchrist et al 2015].
+In addition this work expands Gilchrist et al 2015 by allowing for mixture distributions for mutation and selection within a dataset.
+
+
+
+
+Information on mutational and selection processes can be obtained from codon usage bias.
+ 
+The influence of mutation and selection is related to the evolutionary averge protein production rate $\phi$ of a gene.
+Genes with increased protein synthesis rate are belived to be under higher selection for translation efficiency and are therefore composed of a higher percentage of optimal codon.
+Gene regions that deviate from that pattern can indicate to explore differential selection on codon usage for the purpose of co-translational folding or signal peptides
 
 
 \section*{Discussion}
