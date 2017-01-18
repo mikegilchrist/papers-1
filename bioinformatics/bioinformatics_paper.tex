@@ -16,7 +16,7 @@
 %%% End of additional Macro and command.
 
 
-\newcommand{\package}{ribModel}
+\newcommand{\package}{ribModel } % need that whitespace there for text flow
 
 
 %%% Start here.
@@ -61,41 +61,39 @@ on CRAN (\url{http://cran.r-project.org/package=cubfits}).
 \end{abstract}
 
 
-\section*{Introduction}
+%\section*{Introduction}
 
-\begin{itemize}
-\item Huge influx of genome scale data sets across the tree of life
-\item Why study CUB?
-	\begin{itemize}
-	\item CUB is shaped by mutation and selection
-	\item informs about selection on translation efficiency.
-	\item translation efficiency can mean ribosome pausing, error free translation (nonsense or missense errors).
-	\item CUB potentially relates to co-translational folding. Tools allows to get at questions
-	\end{itemize}
-\item compare to CAI and tAI
-	\begin{itemize}
-	\item CAI and such require reference set of house-keeping gens for comparison of adaptation
-	\item tAI uses tRNA copy number implying no other factors are involved
-	\item We have population genetics component getting at $N_e * s$ with our model
-	\end{itemize}
-\item inference of expression as evolutionary mean unaffected by growth conditions and experimental noise
-\item Bayesian MCMC method allows for priors and multilevel and hierarchy 
-\end{itemize}
+%\begin{itemize}
+%\item Huge influx of genome scale data sets across the tree of life
+%\item Why study CUB?
+%	\begin{itemize}
+%	\item CUB is shaped by mutation and selection
+%	\item informs about selection on translation efficiency.
+%	\item translation efficiency can mean ribosome pausing, error free translation (nonsense or missense errors).
+%	\item CUB potentially relates to co-translational folding. Tools allows to get at questions
+%	\end{itemize}
+%\item compare to CAI and tAI
+%	\begin{itemize}
+%	\item CAI and such require reference set of house-keeping gens for comparison of adaptation
+%	\item tAI uses tRNA copy number implying no other factors are involved
+%	\item We have population genetics component getting at $N_e * s$ with our model
+%	\end{itemize}
+%\item inference of expression as evolutionary mean unaffected by growth conditions and experimental noise
+%\item Bayesian MCMC method allows for priors and multilevel and hierarchy 
+%\end{itemize}
 
 
 
-\section*{Results}
-\begin{itemize}
-\item Performance (simulated data)
-	\begin{itemize}
-	\item runtime by number of genes and number of mixtures
-	\item confidence in parameters by number of genes
-	\item estimation of phi values (gene ordering)
-	\end{itemize}
-\item $s_{epsilon}$ as a measure of noise due to the lab conditions by eliminating technical 			noise. Use replicates to estimates technical noise
-
-\item 
-\end{itemize}
+%\section*{Results}
+%\begin{itemize}
+%\item Performance (simulated data)
+%	\begin{itemize}
+%	\item runtime by number of genes and number of mixtures
+%	\item confidence in parameters by number of genes
+%	\item estimation of phi values (gene ordering)
+%	\end{itemize}
+%\item $s_{epsilon}$ as a measure of noise due to the lab conditions by eliminating technical 			noise. Use replicates to estimates technical noise
+%\end{itemize}
 
 
 \section*{Introduction}
@@ -130,35 +128,27 @@ Gene regions that deviate from that pattern can indicate to explore differential
 \label{fig:plotbin}
 \end{figure*}
 
-\section{Features}
-\subsection{Code structure}
-ribModel follows the classical design principles of object orientation and inheritance (Booch 1993). 
-The software package consists of two partially virtual base classes (Model, Parameter) which hold basic functionality shared between all models and guarantee that required functionality is available in each child class (e.g. ROCModel).
-The core of the package is the class MCMC which provides a member function run. 
-run requires as input a model and a genomic dataset represented by the classes Model and Genome. 
-The inheritance structure makes it unnecessary for the run function to require information about the type of model it analyzes.
-The class MCMC implements a conditional Markov Chain Monte Carlo structure (Metropolis-Hastings within Gibbs sampling) where model parameter can be separated into three categories, codon/amino acid specific; gene specific; or hyper parameters. 
-This assumed structure does not require that all models have to contains all three types of parameters, but merely allows to split parameters into these type for more efficient sampling.
-\subsubsection{Writing extensions}
-The framework was designed to allow for simple extensions, providing new models to analyze genomic data. 
-While the usage of the package does not require any knowledge of C++, extending the framework with new models requires C++ expertise. 
-For a new model to be included, a new child class of Model and Parameter has to be defined.
-The child class inherits all necessary functionality and function definitions from the base class. This ensures compatibility of the newly defined model with the evaluation environment.
-Thus only the implementation of the likelihood function is required. 
-However, child classes are allowed to modify or override existing functionality inherited from the base class. 
-It is however required that the function definition is consistent with the base class. 
-Base classes can also be extended by their child classes, adding additional functionality the base class does not provide.
-\subsubsection{Merging R and C++}
-R provides native support for the integration of C and FORTRAN. 
-However, R does not provide a native C++ support, which is necessary to implement an object oriented software design. 
-To allow for the implementation in C++, I utilized the R package Rcpp (Eddelbuettel \& Francois 2011). 
-Rcpp provides a module structure allowing the exposure of whole C++ classes to R. 
-R represents each instance of a class (Object) as a pointer to an environment. 
-Unlike with a regular R environments, interaction with an object is limited to the functionality of the class the object is an instance of.
-While R users are mostly familiar with classes that allow for the modifications of their internal structure (S3 class), a class exposed with Rcpp, like S4 classes, are self-contained and the internal structure of an object always rejects the class definition. 
-This prohibits users from accidentally or purposefully changing objects such that they do no longer match their class definition.
-In R, the change to self-consistent objects comes with a change of syntax, unfamiliar to most R users. 
-To avoid any complications, S3 style R wrapper functions are provided to ease the use of the package and avoid confusion.
+\section*{Features}
+\package provides an easy to use collection of codon models to analyze genome scale data such as gene sequences and ribosome foot printing data and estimate relevant population genetic terms. 
+The provided models analyze sequence data based on their codon usage bias and allow for the estimation of mutation bias and selection for translation efficiency or selection against nonsense errors. 
+Ribosome foot printing data can be analyzed inferring ribosome pausing times.  
+The provided framework was designed to allow researchers to analyze their data swiftly without the need for long pre-processing of data sets. 
+
+\subsubsection*{Mixture distributions}
+\package also extends the implemented codon models by allowing for a mixture distribution in mutation and selection terms.
+This feature makes \package ideal to answer questions about intra-genomic heterogeneity in mutation and selection like they might occur during hybridization events or within gene heterogeneity due to co-translational folding or signal peptides.
+
+\subsubsection*{Writing extensions}
+\package provides a general framework, designed to allow for simple extensions, providing new models to analyze genome scale data. 
+The framework follows the classical design principles of object orientation and inheritance (Booch 1993). 
+An object oriented design was chosen to encapsulate models and allow them to share commonalities to allow the fast implementation of new codon models. 
+Researchers developing new codon models are invited and welcome to incorporate them into the provided framework.
+
+\subsubsection*{C++ to aid with the heavy lifting}
+\package is implemented completely in C++ to improve performance and allow for a generic design.
+However, R does not provide a native C++ support, therfore we utilized the R package Rcpp (Eddelbuettel \& Francois 2011). 
+Rcpp provides a module structure allowing the exposure of whole C++ classes to R thus minimizing data transfer between the R environment and the C++ core and improving performance. 
+The runtime of \package scales like expected linearly with genome size and iterations and XX with the increase of mixture distributions in the data set.
 
 \section*{Discussion}
 \begin{itemize}
