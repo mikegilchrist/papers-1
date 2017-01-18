@@ -16,6 +16,7 @@
 %%% End of additional Macro and command.
 
 
+\newcommand{\package}{ribModel}
 
 
 %%% Start here.
@@ -46,16 +47,14 @@ $^{4}$Oak Ridge National Labratory, Oak Ridge, TN, USA}
 \begin{abstract}
 
 \section{Summary:}
-\pkg{ribModel} estimates mutation and selection coefficients of synonymous
-codon usage bias (CUB) based on a ribosome overhead cost (ROC) model.
-Multinomial logistic regression and Markov Chain Monte Carlo (MCMC) are main
-methods for estimating coefficients and protein synthesis rates.
-It implements in generic design easing model and function
-extensions. It also embeds parallelization and work flows
-speeding up genome analysis and simulations.
+\pkg{\package} is a collection of codon models, estimating terms related to mutation and selection coefficients of synonymous codon usage bias (CUB) and population genetics parameter of interest. 
+The implemented models allow to analyze sequence data as well as ribosome foot printing data to estimate selection on ribosome overhead cost, nonsense error rate and ribosome pausing times. 
+\package also allows for the estimation of the evolutionary average protein synthesis rate, reflecting the environmental conditions an organisms evolves under. 
+\package implements a Metropolis-Hastings withing Gibbs sampling to fit the codon models.
+The framework provides an R interface for ease of use and is implemented with a generic design to allow for future additions of additional codon models.
 
 \section{Availability:}
-\pkg{ribModel} and documents are freely available under the Mozilla Public License 2.0
+\pkg{\package} and documents are freely available under the Mozilla Public License 2.0
 on CRAN (\url{http://cran.r-project.org/package=cubfits}).
 
 \section{Contact:} \href{cedric.landerer@gmail.com}{cedric.landerer@gmail.com}
@@ -100,7 +99,7 @@ on CRAN (\url{http://cran.r-project.org/package=cubfits}).
 
 
 \section*{Introduction}
-Driven by improvements in DNA sequenceing technology and methodology, the past 15 years has seen an exponential growth in the number of publicly available genomes. 
+Driven by improvements in DNA sequencing technology and methodology, the past 15 years has seen an exponential growth in the number of publicly available genomes. 
 This influx of genomic data necessitated the development of computational tools which allow researchers to extract information.
 
 Information about selection on the translation process, such as factors shaping translational efficiency and co-translational folding, can be extracted using codon usage bias.
@@ -167,6 +166,8 @@ To avoid any complications, S3 style R wrapper functions are provided to ease th
 \item Extendability, FONSE, PANSE, RFP
 \item applications, hybridization, phylogenetics, variation in mutation and selection
 \end{itemize}
+
+
 
 %\bibliographystyle{natbib}
 %\bibliography{bioinfo}
