@@ -1,0 +1,47 @@
+\begin{thebibliography}{}
+
+\bibitem[Bulmer(1991)Bulmer]{bulmer1991}
+Bulmer, M. (1991).
+\newblock The selection–mutation–drift theory of synonymous codon usage
+  bias.
+\newblock {\em Biochemical Society Transactions\/}, {\bf 129}, 897–907.
+
+\bibitem[Edelbuettel and Francois(2011)Edelbuettel and Francois]{rcpp_package}
+Edelbuettel, D. and Francois, R. (2011).
+\newblock Rcpp: Seamless r and c++ integration.
+\newblock {\em Journal of Statistical Software\/}, {\bf 40}, 1--18.
+
+\bibitem[Gelman {\em et~al.}(2013)Gelman, Carlin, Stern, Dunson, Vehtari, and
+  Rubin]{gelman2013}
+Gelman, A., Carlin, J., Stern, H., Dunson, D., Vehtari, A., and Rubin, D.
+  (2013).
+\newblock {\em Bayesian Data Analysis. 3rd Edition\/}.
+\newblock CRC Press, Boca Raton.
+
+\bibitem[Gilchrist {\em et~al.}(2015)Gilchrist, Chen, Shah, Landerer, and
+  Zaretzki]{gilchrist2015}
+Gilchrist, M., Chen, W., Shah, P., Landerer, C., and Zaretzki, R. (2015).
+\newblock Estimating gene expression and codon-specific translational
+  efficiencies, mutation biases, and selection coefficients from genomic data
+  alone.
+\newblock {\em Genome Biology and Evolution\/}, {\bf 7}, 1559--1579.
+
+\bibitem[Grantham {\em et~al.}(1980a)Grantham, Gautier, Guoy, Mercier, and
+  Pave]{grantham1980_1}
+Grantham, R., Gautier, C., Guoy, M., Mercier, R., and Pave, A. (1980a).
+\newblock Codon catalog usage and the genome hypothesis.
+\newblock {\em Nucleic Acids Research\/}, {\bf 8}, r49–r62.
+
+\bibitem[Grantham {\em et~al.}(1980b)Grantham, Gautier, and
+  Guoy]{grantham1980_2}
+Grantham, R., Gautier, C., and Guoy, M. (1980b).
+\newblock Codon frequencies in 119 individual genes confirm consistent choices
+  of degenerate bases according to genome types.
+\newblock {\em Nucleic Acids Research\/}, {\bf 8}, 1893–1912.
+
+\bibitem[Sharp {\em et~al.}(1993)Sharp, Stenico, Penden, and Lloyd]{sharp1993}
+Sharp, P., Stenico, M., Penden, J., and Lloyd, A. (1993).
+\newblock Codon usage: mutational bias, translational selection or both?
+\newblock {\em Biochemical Society Transactions\/}, {\bf 21}, 835–841.
+
+\end{thebibliography}
