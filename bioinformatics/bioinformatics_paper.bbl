@@ -1,5 +1,10 @@
 \begin{thebibliography}{}
 
+\bibitem[Booch(1993)Booch]{ood_book}
+Booch, G. (1993).
+\newblock {\em Object-oriented analysis and design with applications.}
+\newblock Benjamin-Cummings Publishing Co, Redwood City.
+
 \bibitem[Bulmer(1991)Bulmer]{bulmer1991}
 Bulmer, M. (1991).
 \newblock The selection–mutation–drift theory of synonymous codon usage

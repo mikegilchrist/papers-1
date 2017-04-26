@@ -73,10 +73,10 @@ CUB refers to the differential usage of synonymous codons shaped by biases in mu
 Although CUB was first studied almost 40 years ago, many questions related to the factors shaping CUB remain open \citep{shah2011, wallace2013, gilchrist2015}.
 Recent work demonstrated quantification of CUB is significantly improved in a population genetics context, which allows for both adaptive and non-adaptive evolutionary processes to be accounted for in shaping CUB.
 Gilchrist et al. (2015) described a mechanistic model rooted in population genetics which accounted for selection, mutation bias, and genetic drift in quantifying CUB. 
-From this model, which we call the Ribosomal Overhead Cost Stochastic Evolutionary Model of Protein Production Rates (ROC SEMPPR), relative values sof selection for translation efficiency and mutation bias within each synonymous codon family can be estimated. 
+From this model, which we call the Ribosomal Overhead Cost Stochastic Evolutionary Model of Protein Production Rates (ROC SEMPPR), relative values of selection for translation efficiency and mutation bias within each synonymous codon family can be estimated. 
 The influence of adaptive and non-adaptive processes on CUB is related to the evolutionary average protein production rate of a gene. Genes with increased protein productions rates are under higher selection for translation efficiency and are therefore composed of a higher percentage of selectively favored codons \citep{shah2011, wallace2013, gilchrist2015}. The relationship between these three biological parameters (mutation, selection, and protein production rates) allows ROC SEMPPR to order genes based on their protein production rate and therefore provide estimates of the protein production rate of each each. 
 
-Here, we describe an open-source software that allows researchers to analyze sequence and ribosome foot-printing data. 
+Here, we describe an open-source software that allows researchers to analyze coding sequence and ribosome foot-printing data. 
 \package implements a Gibbs sampler within a Metropolis-Hastings Monte Carlo Markov Chain approach which allows to incorporate prior knowledge and easy sampling from the posterior distribution to estimate parameter uncertainty. 
 Currently, \package provides three models to analyze codon counts obtained from coding sequences or ribosome foot-printing experiments. 
 The ROC model implements the work presented by Gilchrist et al. (2015), selection on \underline{r}ibosome \underline{o}verhead \underline{c}ost and inferring protein synthesis rates.
@@ -88,7 +88,7 @@ All models share the insight that selection for translation efficiency scales wi
 
 \begin{figure*}[!tpb]
 \centering
- \includegraphics[width=3in]{expl_model.png}
+ \includegraphics[width=4in]{comb_plots.png}
 \vspace{-0.2cm}
 \caption{\textbf{Package overview and plotting functionality.} A) \package workflow and class dependencies. B) Comparison of mutation bias estimated for the different mixture distributions within a data-set. C) CUB varies with gene expression. Indicated in red and blue, regions with mutation and selection dominant, receptively (not part of the plotting). 
 }
@@ -102,7 +102,7 @@ All models share the insight that selection for translation efficiency scales wi
 \subsubsection*{Mixture distributions}
 Mixture distributions are commonly used when a data set is comprised of sub-populations, which can be described by distinguishable distributions of parameters \citep{gelman2013}. \package extends all implemented models with the ability to utilize mixture distributions for all population parameters like mutation and selection. As all implemented model contain gene specific parameters (e.g. protein production rate) in addition to population specific parameters (e.g. mutation) we extended the mixture approach implemented in \package to incorporate the need for a gene specific parameter. Therefore, the protein production rate of each gene is estimated assuming it in each possible mixture distribution. This approach allows genes to be categorized based on differences in codon usage patterns, making \package ideal to ask questions about intra-genomic or even within-gene heterogeneity in mutation and selection patterns. 
 
-\subsubsection*{C++ to improve computational efficiency}
+\subsubsection*{C++ to improve computational performance}
 Although \package is provided as an R package, the software is completely implemented in C++ and can be, if desired, compiled as a standalone software.
 Since R does not provide a native C++ support; we utilized the R package Rcpp \citep{rcpp_package}. 
 Rcpp provides a module structure allowing the exposure of whole C++ classes to R. 
@@ -115,7 +115,12 @@ ROC SEMPPER \cite{gilchrist2015} and NSE SEMPER (unpublished) analyze sequence d
 RFP SEMPPER estimates ribosome pausing time from ribosome foot-printing counts.
 
 %\subsubsection*{Writing extensions}
-Users are welcome and encouraged to incorporate their own codon models into \package. The object-oriented paradigm of C++ allowed for the implementation of a general framework for creating new models to analyze genomic data. All implemented models in \package are encapsulated such that they share certain commonalities. This allows for the creation of new models within the same framework. Generally, these models can be added by creating appropriate subclasses of the Parameter and Model classes provided by the current framework. These subclasses should include the additional functionality required for these models. 
+%Users are welcome and encouraged to incorporate their own codon models into \package. The object-%oriented paradigm of C++ allowed for the implementation of a general framework for creating new models %to analyze genomic data. All implemented models in \package are encapsulated such that they share %certain commonalities. This allows for the creation of new models within the same framework. Generally, %these models can be added by creating appropriate subclasses of the Parameter and Model classes provided %by the current framework. These subclasses should include the additional functionality required for %these models. 
+
+\package defines an interface to connect all models with the implemented MCMC algorithm. 
+By following this general interface, researchers are easily able to add their own models to analyze genomic data.
+Researchers are able to create their own model, implementing the provided interface and inheriting functionality shared with other models
+Functionality unique to a model must be contained within the new model. 
 
 \bibliographystyle{natbib}
 \bibliography{bioinfo}
