@@ -1,6 +1,6 @@
 \documentclass{bioinfo}
-\copyrightyear{2014}
-\pubyear{2014}
+\copyrightyear{2017}
+\pubyear{2017}
 
 
 
@@ -30,7 +30,7 @@
 Landerer \textit{et~al}]{Cedric Landerer\,$^{1,3}$\footnote{
 to whom correspondence should be addressed
 },
-Alex Cope\,$^{4,5}$
+Alexander Cope\,$^{4,5}$
 Russell Zaretzki\,$^{2,3}$, and
 Michael Gilchrist\,$^{1,3}$
 }
@@ -50,11 +50,11 @@ $^{5}$Oak Ridge National Labratory, Oak Ridge, TN, USA}
 \begin{abstract}
 
 \section{Summary:}
-\pkg{\package} is a fast and reliable collection of codon models, estimating terms related to mutation and selection coefficients and population genetics parameters of interest from codon counts. 
+\pkg{\package} is a fast and reliable collection of codon models, which estimate terms related to mutation, selection coefficients, and other population genetics parameters of interest from codon counts. 
 The implemented models allow users to analyze sequence data and ribosome foot printing counts to estimate selection on ribosome overhead costs, nonsense error rates, and ribosome pausing times. 
 In addition, \package allows for the estimation of the evolutionary average protein production rate, reflective of the environmental conditions an organism experiences. 
-\package is implemented in C++ for performance increase and provides an ergonomic R interface for ease of use. 
-\package also follows a generic object oriented design to allow users to extend \package and add their own models.
+\package is implemented in C++ to improve computational performance and provides an ergonomic R interface for ease of use. 
+\package also follows a generic object-oriented design to allow users to extend \package and add their own models.
 
 \section{Availability:}
 \pkg{\package} and documents are freely available under the Mozilla Public License 2.0
@@ -66,7 +66,7 @@ on CRAN (\url{http://cran.r-project.org/package=cubfits}).
 
 \section*{Introduction}
 Improvements in DNA sequencing technology and methodolgy allowed for an exponential growth in the number of publicly available genomes over the past 15 years.
-This influx of data necessitates the development of computational tools which allow researchers to extract biological information.
+This influx of data necessitates the development of computational tools for extracting biological information.
 
 Information regarding selection on the translation process, such as factors shaping translation efficiency and co-translational folding, can be extracted from codon usage bias (CUB) data.
 CUB refers to the differential usage of synonymous codons shaped by biases in mutation and selection and can vary between organisms \citep{bulmer1991, sharp1993}.
@@ -74,10 +74,10 @@ Although CUB was first studied almost 40 years ago, many questions related to th
 Recent work demonstrated quantification of CUB is significantly improved in a population genetics context, which allows for both adaptive and non-adaptive evolutionary processes to be accounted for in shaping CUB.
 Gilchrist et al. (2015) described a mechanistic model rooted in population genetics which accounted for selection, mutation bias, and genetic drift in quantifying CUB. 
 From this model, which we call the Ribosomal Overhead Cost Stochastic Evolutionary Model of Protein Production Rates (ROC SEMPPR), relative values of selection for translation efficiency and mutation bias within each synonymous codon family can be estimated. 
-The influence of adaptive and non-adaptive processes on CUB is related to the evolutionary average protein production rate of a gene. Genes with increased protein productions rates are under higher selection for translation efficiency and are therefore composed of a higher percentage of selectively favored codons \citep{shah2011, wallace2013, gilchrist2015}. The relationship between these three biological parameters (mutation, selection, and protein production rates) allows ROC SEMPPR to order genes based on their protein production rate and therefore provide estimates of the protein production rate of each each. 
+The influence of adaptive and non-adaptive processes on CUB is related to the evolutionary average protein production rate of a gene. Genes with increased protein productions rates are under higher selection for translation efficiency and are therefore composed of a higher percentage of selectively favored codons \citep{shah2011, wallace2013, gilchrist2015}. The relationship between these three biological parameters (mutation, selection, and protein production rates) allows ROC SEMPPR to provide estimates of the protein production rate of each gene.
 
 Here, we describe an open-source software that allows researchers to analyze coding sequence and ribosome foot-printing data. 
-\package implements a Gibbs sampler within a Metropolis-Hastings Monte Carlo Markov Chain approach which allows to incorporate prior knowledge and easy sampling from the posterior distribution to estimate parameter uncertainty. 
+\package implements a Gibbs sampler within a Metropolis-Hastings Monte Carlo Markov Chain (MCMC) approach which allows for the incorporation of prior knowledge and easy sampling from the posterior distribution to estimate parameter uncertainty. \textbf{Alex: Do we need to specify this is a Bayesian framework?}
 Currently, \package provides three models to analyze codon counts obtained from coding sequences or ribosome foot-printing experiments. 
 The ROC model implements the work presented by Gilchrist et al. (2015), selection on \underline{r}ibosome \underline{o}verhead \underline{c}ost and inferring protein synthesis rates.
 The NSE model is focused on the estimation of \underline{n}on-\underline{s}ense \underline{e}rror rates and accounts for the position of a codon in the sequence, where codons found later in the sequence are assumed to be under stronger selection against non-sense errors.
@@ -90,13 +90,13 @@ All models share the insight that selection for translation efficiency scales wi
 \centering
  \includegraphics[width=4in]{comb_plots.png}
 \vspace{-0.2cm}
-\caption{\textbf{Package overview and plotting functionality.} A) \package workflow and class dependencies. B) Comparison of mutation bias estimated for the different mixture distributions within a data-set. C) CUB varies with gene expression. Indicated in red and blue, regions with mutation and selection dominant, receptively (not part of the plotting). 
+\caption{\textbf{Package overview and plotting functionality.} \textbf{Alex: Are we still going to include a workflow figure?} A) \package workflow and class dependencies. B) Comparison of mutation bias estimated for the different mixture distributions within a data-set. C) CUB varies with gene expression. Indicated in red and blue, regions with mutation and selection dominant, receptively (not part of the plotting). 
 }
 \label{fig:plotbin}
 \end{figure*}
 
 \section*{Features}
-\package provides an interface written in R \citep{rcore}, a freely available programming language noted for its ease of use for even inexperienced programmers. As a result, \package is accessible to researchers with minimal computational experience. The framework provides an convenient interface designed to allow researchers to analyze their data swiftly without the need for long preprocessing of data sets. Generally, the only input needed for fitting a model to the data are protein-coding nucleotide sequences in the form of a FASTA file or a flat-file containing codon counts obtained from ribosome foot-printing experiments. If available, users may also provide empirically estimated values of gene expression as additional guide for the model. However, this is not required.
+\package provides an interface written in R \citep{rcore}, a freely available programming language noted for its ease of use for even inexperienced programmers. As a result, \package is accessible to researchers with minimal computational experience. The framework provides a convenient interface designed to allow researchers to analyze their data swiftly without the need for long preprocessing of data sets. Generally, the only input needed for fitting a model to the data are protein-coding nucleotide sequences in the form of a FASTA file or a flat-file containing codon counts obtained from ribosome foot-printing experiments. If available, users may also provide empirically estimated values of gene expression as additional guide for the model. However, this is not required.
 \package also provides visualization functionality, including plot functions to compare parameter estimates for different mixture distributions, functions to display codon usage patterns and diagnostic functions to assess the goodness of fit (Figure 1).
 
 \subsubsection*{Mixture distributions}
@@ -104,22 +104,21 @@ Mixture distributions are commonly used when a data set is comprised of sub-popu
 
 \subsubsection*{C++ to improve computational performance}
 Although \package is provided as an R package, the software is completely implemented in C++ and can be, if desired, compiled as a standalone software.
-Since R does not provide a native C++ support; we utilized the R package Rcpp \citep{rcpp_package}. 
-Rcpp provides a module structure allowing the exposure of whole C++ classes to R. 
-This minimizes data transfer between the R environment and the C++ core, resulting in improved computational performance and allowed for a fully object oriented code design. 
+R does not provide native C++ support, but the R package Rcpp allowed for the exposure of whole C++ classes to R  \citep{rcpp_package}.
+This minimizes data transfer between the R environment and the C++ core, resulting in improved computational performance and allowed for a fully object-oriented code design. 
 The runtime of \package scales as expected linear with genome size and number of iterations, and quadratic with the number of mixture distributions in the data set. The quadratic increase in the number of mixture distributions is explained by the necessity to estimate the protein production rate for each gene in each mixture distribution, as it is a gene specific parameter.  
 
 \subsubsection*{Available models}
 \package currently contains three codon models analyzing codon usage patterns to estimate biologically relevant parameters such as strength and direction of mutation bias and protein production rate. 
-ROC SEMPPER \cite{gilchrist2015} and NSE SEMPER (unpublished) analyze sequence data and extract information about ribosome overhead cost and nonsense error rate of synonymous codons, respectively. 
-RFP SEMPPER estimates ribosome pausing time from ribosome foot-printing counts.
+ROC SEMPPER \citep{gilchrist2015} and NSE SEMPPER (unpublished) analyze sequence data and extract information about ribosome overhead cost and nonsense error rate of synonymous codons, respectively. 
+THe RFP model (unpublished) estimates ribosome pausing time from ribosome foot-printing counts.
 
 %\subsubsection*{Writing extensions}
 %Users are welcome and encouraged to incorporate their own codon models into \package. The object-%oriented paradigm of C++ allowed for the implementation of a general framework for creating new models %to analyze genomic data. All implemented models in \package are encapsulated such that they share %certain commonalities. This allows for the creation of new models within the same framework. Generally, %these models can be added by creating appropriate subclasses of the Parameter and Model classes provided %by the current framework. These subclasses should include the additional functionality required for %these models. 
 
 \package defines an interface to connect all models with the implemented MCMC algorithm. 
 By following this general interface, researchers are easily able to add their own models to analyze genomic data.
-Researchers are able to create their own model, implementing the provided interface and inheriting functionality shared with other models
+Researchers are able to create their own model, implementing the provided interface and inheriting functionality shared with other models.
 Functionality unique to a model must be contained within the new model. 
 
 \bibliographystyle{natbib}
