@@ -16,7 +16,7 @@
 %%% End of additional Macro and command.
 
 
-\newcommand{\package}{agmus } % need that whitespace there for text flow
+\newcommand{\package}{\textbf{agmus }} % need that whitespace there for text flow
 \usepackage{natbib}
 
 %%% Start here.
@@ -76,8 +76,8 @@ Gilchrist et al. (2015) described a mechanistic model rooted in population genet
 From this model, which we call the Ribosomal Overhead Cost Stochastic Evolutionary Model of Protein Production Rates (ROC SEMPPR), relative values of selection for translation efficiency and mutation bias within each synonymous codon family can be estimated. 
 The influence of adaptive and non-adaptive processes on CUB is related to the evolutionary average protein production rate of a gene. Genes with increased protein productions rates are under higher selection for translation efficiency and are therefore composed of a higher percentage of selectively favored codons \citep{shah2011, wallace2013, gilchrist2015}. The relationship between these three biological parameters (mutation, selection, and protein production rates) allows ROC SEMPPR to provide estimates of the protein production rate of each gene.
 
-Here, we describe an open-source software that allows researchers to analyze coding sequence and ribosome foot-printing data. 
-\package implements a Gibbs sampler within a Metropolis-Hastings Monte Carlo Markov Chain (MCMC) approach which allows for the incorporation of prior knowledge and easy sampling from the posterior distribution to estimate parameter uncertainty. \textbf{Alex: Do we need to specify this is a Bayesian framework?}
+Here, we describe an open-source software that allows researchers to analyze coding sequence and ribosome foot-printing data in a Bayesian framework. 
+\package implements a Gibbs sampler within a Metropolis-Hastings Monte Carlo Markov Chain (MCMC) approach which allows for the incorporation of prior knowledge and easy sampling from the posterior distribution to estimate parameter uncertainty.
 Currently, \package provides three models to analyze codon counts obtained from coding sequences or ribosome foot-printing experiments. 
 The ROC model implements the work presented by Gilchrist et al. (2015), selection on \underline{r}ibosome \underline{o}verhead \underline{c}ost and inferring protein synthesis rates.
 The NSE model is focused on the estimation of \underline{n}on-\underline{s}ense \underline{e}rror rates and accounts for the position of a codon in the sequence, where codons found later in the sequence are assumed to be under stronger selection against non-sense errors.
@@ -88,16 +88,23 @@ All models share the insight that selection for translation efficiency scales wi
 
 \begin{figure*}[!tpb]
 \centering
- \includegraphics[width=4in]{comb_plots.png}
+ \includegraphics[width=5in]{workflow_croped.pdf}
 \vspace{-0.2cm}
-\caption{\textbf{Package overview and plotting functionality.} \textbf{Alex: Are we still going to include a workflow figure?} A) \package workflow and class dependencies. B) Comparison of mutation bias estimated for the different mixture distributions within a data-set. C) CUB varies with gene expression. Indicated in red and blue, regions with mutation and selection dominant, receptively (not part of the plotting). 
+\caption{\textbf{Package overview and plotting functionality.} \package \textbf{Illustration of the angus workflow.} 
+\package allows for the easy estimation of population genetics parameters from genome scale data such as CDS or ribosome footprints. 
+Furthermore, \package provides functionality to asses goodness of fit and visualization.). 
 }
 \label{fig:plotbin}
 \end{figure*}
 
 \section*{Features}
-\package provides an interface written in R \citep{rcore}, a freely available programming language noted for its ease of use for even inexperienced programmers. As a result, \package is accessible to researchers with minimal computational experience. The framework provides a convenient interface designed to allow researchers to analyze their data swiftly without the need for long preprocessing of data sets. Generally, the only input needed for fitting a model to the data are protein-coding nucleotide sequences in the form of a FASTA file or a flat-file containing codon counts obtained from ribosome foot-printing experiments. If available, users may also provide empirically estimated values of gene expression as additional guide for the model. However, this is not required.
-\package also provides visualization functionality, including plot functions to compare parameter estimates for different mixture distributions, functions to display codon usage patterns and diagnostic functions to assess the goodness of fit (Figure 1).
+\package provides an interface written in R \citep{rcore}, a freely available programming language noted for its ease of use for even inexperienced programmers. 
+As a result, \package is accessible to researchers with minimal computational experience. 
+
+The framework provides a convenient interface designed to allow researchers to analyze their data swiftly without the need for long preprocessing of data sets. 
+Generally, the only input needed for fitting a model to the data are protein-coding nucleotide sequences in the form of a FASTA file or a flat-file containing codon counts obtained from ribosome foot-printing experiments. 
+If available, users may also provide empirically estimated values of gene expression as additional guide for the model. However, this is not required.
+\package also provides visualization functionality, including plot functions to compare parameter estimates for different mixture distributions, functions to display codon usage patterns and diagnostic functions to assess the goodness of fit in a simple workflow (Figure 1).
 
 \subsubsection*{Mixture distributions}
 Mixture distributions are commonly used when a data set is comprised of sub-populations, which can be described by distinguishable distributions of parameters \citep{gelman2013}. \package extends all implemented models with the ability to utilize mixture distributions for all population parameters like mutation and selection. As all implemented model contain gene specific parameters (e.g. protein production rate) in addition to population specific parameters (e.g. mutation) we extended the mixture approach implemented in \package to incorporate the need for a gene specific parameter. Therefore, the protein production rate of each gene is estimated assuming it in each possible mixture distribution. This approach allows genes to be categorized based on differences in codon usage patterns, making \package ideal to ask questions about intra-genomic or even within-gene heterogeneity in mutation and selection patterns. 
