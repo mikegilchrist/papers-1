@@ -2,45 +2,45 @@ This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: bioinformatics_paper.aux
 The style file: natbib.bst
-Database file #1: ./bioinfo.bib
-You've used 8 entries,
+Database file #1: bioinfo.bib
+You've used 7 entries,
             2378 wiz_defined-function locations,
-            574 strings with 5298 characters,
-and the built_in function-call counts, 3958 in all, are:
-= -- 365
-> -- 232
-< -- 3
-+ -- 71
-- -- 68
-* -- 368
-:= -- 703
-add.period$ -- 37
-call.type$ -- 8
-change.case$ -- 47
+            568 strings with 5161 characters,
+and the built_in function-call counts, 3194 in all, are:
+= -- 304
+> -- 180
+< -- 4
++ -- 52
+- -- 52
+* -- 279
+:= -- 573
+add.period$ -- 31
+call.type$ -- 7
+change.case$ -- 41
 chr.to.int$ -- 7
-cite$ -- 8
-duplicate$ -- 152
-empty$ -- 257
-format.name$ -- 78
-if$ -- 777
-int.to.chr$ -- 2
+cite$ -- 7
+duplicate$ -- 128
+empty$ -- 205
+format.name$ -- 63
+if$ -- 632
+int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 10
-newline$ -- 43
-num.names$ -- 32
-pop$ -- 51
+missing$ -- 8
+newline$ -- 38
+num.names$ -- 28
+pop$ -- 46
 preamble$ -- 1
-purify$ -- 49
+purify$ -- 44
 quote$ -- 0
-skip$ -- 96
+skip$ -- 85
 stack$ -- 0
-substring$ -- 264
-swap$ -- 27
+substring$ -- 181
+swap$ -- 22
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 66
+type$ -- 57
 warning$ -- 0
-while$ -- 30
+while$ -- 25
 width$ -- 0
-write$ -- 106
+write$ -- 93
