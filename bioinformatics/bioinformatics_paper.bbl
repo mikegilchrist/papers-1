@@ -2,14 +2,8 @@
 
 \bibitem[Booch(1993)Booch]{ood_book}
 Booch, G. (1993).
-\newblock {\em Object-oriented analysis and design with applications.}
+\newblock {\em Object-oriented analysis and design with applications\/}.
 \newblock Benjamin-Cummings Publishing Co, Redwood City.
-
-\bibitem[Bulmer(1991)Bulmer]{bulmer1991}
-Bulmer, M. (1991).
-\newblock The selection–mutation–drift theory of synonymous codon usage
-  bias.
-\newblock {\em Biochemical Society Transactions\/}, {\bf 129}, 897–907.
 
 \bibitem[Edelbuettel and Francois(2011)Edelbuettel and Francois]{rcpp_package}
 Edelbuettel, D. and Francois, R. (2011).
@@ -31,22 +25,21 @@ Gilchrist, M., Chen, W., Shah, P., Landerer, C., and Zaretzki, R. (2015).
   alone.
 \newblock {\em Genome Biology and Evolution\/}, {\bf 7}, 1559--1579.
 
-\bibitem[Grantham {\em et~al.}(1980a)Grantham, Gautier, Guoy, Mercier, and
-  Pave]{grantham1980_1}
-Grantham, R., Gautier, C., Guoy, M., Mercier, R., and Pave, A. (1980a).
-\newblock Codon catalog usage and the genome hypothesis.
-\newblock {\em Nucleic Acids Research\/}, {\bf 8}, r49–r62.
+\bibitem[{R Core Team}(2015){R Core Team}]{rcore}
+{R Core Team} (2015).
+\newblock {\em R: A Language and Environment for Statistical Computing\/}.
+\newblock R Foundation for Statistical Computing, Vienna, Austria.
 
-\bibitem[Grantham {\em et~al.}(1980b)Grantham, Gautier, and
-  Guoy]{grantham1980_2}
-Grantham, R., Gautier, C., and Guoy, M. (1980b).
-\newblock Codon frequencies in 119 individual genes confirm consistent choices
-  of degenerate bases according to genome types.
-\newblock {\em Nucleic Acids Research\/}, {\bf 8}, 1893–1912.
+\bibitem[Shah and Gilchrist(2011)Shah and Gilchrist]{shah2011}
+Shah, P. and Gilchrist, M. (2011).
+\newblock Explaining complex codon usage patterns with selection for
+  translational efficiency, mutation bias, and genetic drift.
+\newblock {\em Proc Natl Acad Sci USA\/}, {\bf 108}, 10231--6.
 
-\bibitem[Sharp {\em et~al.}(1993)Sharp, Stenico, Penden, and Lloyd]{sharp1993}
-Sharp, P., Stenico, M., Penden, J., and Lloyd, A. (1993).
-\newblock Codon usage: mutational bias, translational selection or both?
-\newblock {\em Biochemical Society Transactions\/}, {\bf 21}, 835–841.
+\bibitem[Wallace {\em et~al.}(2013)Wallace, Airoldi, and Drummond]{wallace2013}
+Wallace, E., Airoldi, E., and Drummond, D. (2013).
+\newblock Estimating selection on synonymous codon usage from noisy
+  experimental data.
+\newblock {\em Molecular Biology and Evolution\/}, {\bf 30}, 1438--1453.
 
 \end{thebibliography}

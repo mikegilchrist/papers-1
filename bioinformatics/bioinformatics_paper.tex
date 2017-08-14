@@ -50,11 +50,21 @@ $^{5}$Oak Ridge National Laboratory, Oak Ridge, TN, USA}
 \begin{abstract}
 
 \section{Summary:}
-\pkg{\package} is a fast and reliable collection of codon models, which currently estimate terms related to mutation, selection, and other population genetics parameters of interest from codon counts.
-\package is fully implemented in C++ to improve computational performance and provides an ergonomic R interface for ease of use. 
-\package also follows a generic object-oriented design to allow users to extend the framework and add their own models.
-The implemented models allow users to analyze coding sequence data and ribosome foot printing counts to estimate parameters related to ribosome overhead costs, nonsense error rates, and ribosome pausing times. 
-In addition, \package features mixture distributions for parameters allowing users to set or estimate mixture assignment for groups sharing population level parameters, allows for simulation under the provided models and implements check-pointing functionality to restart runs if necessary. 
+%\pkg{\package} is a fast and reliable collection of codon models, which currently estimate terms related to mutation, selection, and other population genetics parameters of interest from codon counts.
+
+% I made this edit because not all models are evolutionary models
+
+\pkg{\package} is a fast and reliable software for estimating biological parameters from codon counts data, such as selection against translation inefficiency, nonsense error rates, and ribosome pausing times.
+\package is fully implemented in C++ to improve computational performance and provides an ergonomic R interface to improve usability. 
+\package also follows a generic object-oriented design to allow users to extend the framework and implement their own models for analyzing biological data.
+%Old------------------------------------------------------
+%Current implemented models can be used to analyze coding sequence data and ribosome foot printing counts to estimate parameters related to ribosome overhead costs, nonsense error rates, and ribosome pausing times. 
+%In addition, \package features mixture distributions for parameters, allowing users to set or estimate mixture assignment for groups sharing population level parameters, allows for simulation under the provided models and implements check-pointing functionality to restart runs if necessary. 
+%Edit-----------------------------------------------------
+Current models within \package can accurately estimate relevant parameters given either coding sequences or ribosome foot-printing data, depending on the model.
+However, these models are capable of using other data, such as empirical measurements of gene expression, to better inform parameter estimates.
+\package implements a mixture distribtuion for population-level parameters, allowing these parameters to be estimated under the assumption of different biological conditions.
+In addtion, \package includes the ability to simulate data, visualize results, and revisit previous runs should further analysis be needed. 
 
 \section{Availability:}
 \pkg{\package} is freely available under the Mozilla Public License 2.0
@@ -65,22 +75,29 @@ on CRAN (\url{http://cran.r-project.org/package=ancoda}).
 
 
 \section*{Introduction}
-The exponential increase in publicly available genomes over the past decade and the addition of novel technologies produced a vast amount of data.  
-This influx of data necessitates the development of computational tools for extracting biological information from the raw data. 
+The exponential increase in publicly available genomes over the past decade and the addition of novel technologies produced a vast amount of data for researchers.  
+This influx of raw data necessitates the development of computational tools for extracting biological information. 
 Models have to be developed and provided to the public in easy to use software to allow researchers to analyze classical sequence data as well as novel data like ribosome foot-printing counts.
 
-Here, we describe an open-source software implemented in R \citep{rcore} that allows researchers to analyze genome scale data like coding sequences and ribosome foot-printing data in a Bayesian framework under various models. 
-\package implements an adaptive Gibbs sampler within a Metropolis-Hastings Monte Carlo Markov Chain (MCMC) approach which allows for the incorporation of prior knowledge and easy sampling from the posterior distribution to estimate parameter values and quantify uncertainty.
+Here, we describe an open-source software implemented in R \citep{rcore} that allows researchers to analyze genome-scale data like coding sequences and ribosome foot-printing data in a Bayesian framework under various models. 
+\package implements an adaptive Gibbs sampler within a Metropolis-Hastings Monte Carlo Markov Chain (MCMC) approach. This allows for the incorporation of prior knowledge and easy sampling from the posterior distribution to estimate parameter values and quantify the degree of uncertainty in these estimates.
 Currently, \package provides three models to analyze codon counts obtained from coding sequences or ribosome foot-printing experiments. However, \package provides a modular infrastructure such that additional genome scale or even phylogenetic models can be integrated. 
-\package provides a generic mixture distribution option to all implemented models which allows for the automatic categorization of data based on differences posterior distributions for parameters of interest.
+\package provides a generic mixture distribution option to all implemented models, allowing for the automatic categorization of data based on differences in the posterior distributions of the relevant parameters.
 
-The \package framework separates data in two dimensions, e.g. genes and codons for sequence data and differentiates three types of parameters.
+The \package framework separates data in two dimensions, e.g. genes and codons for sequence data and differentiates three types of parameters: (1) codon-specific parameters, (2) gene-specific parameters, and (3) hyperparameters. 
 For all models, estimates of each type of parameter are conditioned on the other two types. 
 This Gibbs sampling approach allows for a reduction in dimensionality, increasing sampling efficiency and computational performance.
-1) Shared parameters (e.g. codon specific parameters) are parameters shared across all genes within a cluster. Codon specific parameters are used to automatically or manually assign genes into clusters.
-Estimation of the cluster assignment provides the probability of a gene being assigned to a cluster allowing the user to asses the uncertainty in each assignment, similar to probabilistic clustering.
-2) Gene specific parameters (e.g. protein synthesis rate) is parameter type estimated for each gene independently. If the codon specific parameters are used to classify genes into population, a gene specific parameter is estimated assuming the gene being assigned to each category. This allows to test hypothesis about gene specific parameters under various conditions, represented by different categories.
-3) Hyper parameters, like parametric prior distributions which allows for the implementation of hierarchical models.
+%<<<<<<< HEAD
+Codon-specific parameters are shared across all genes. These parameters can follow a mixture distribution and can be used to automatically or manually assign genes to clusters.
+Estimation of the mixture assignment provides the probability of a gene being assigned to a mixture allowing the user to asses the uncertainty in each mixture assignment, similar to probabilistic clustering.
+Gene-specific parameters are estimated independently for each gene. If the codon-specific parameters follow a mixture distribution, a gene-specific parameter is estimated assuming the gene being assigned to each mixture. This not only solves the limitations of traditional mixture approaches but furthermore allows to test hypotheses about gene-specific parameters under various conditions, represented by different mixtures.
+The inclusion of hyperparameters, like parametric prior distributions, allows for the implementation of hierarchical models.
+%=======
+%1) Shared parameters (e.g. codon specific parameters) are parameters shared across all genes within a cluster. Codon specific parameters are used to automatically or manually assign genes into clusters.
+%Estimation of the cluster assignment provides the probability of a gene being assigned to a cluster allowing the user to asses the uncertainty in each assignment, similar to probabilistic clustering.
+%2) Gene specific parameters (e.g. protein synthesis rate) is parameter type estimated for each gene independently. If the codon specific parameters are used to classify genes into population, a gene specific parameter is estimated assuming the gene being assigned to each category. This allows to test hypothesis about gene specific parameters under various conditions, represented by different categories.
+%3) Hyper parameters, like parametric prior distributions which allows for the implementation of hierarchical models.
+%>>>>>>> e6a11f63140bb3957c06ff19c46be32be7706e94
 
 
 \begin{figure*}[!tpb]
@@ -89,7 +106,7 @@ Estimation of the cluster assignment provides the probability of a gene being as
 \vspace{-0.2cm}
 \caption{\textbf{Package overview and plotting functionality.} \package \textbf{Illustration of the angus workflow.} 
 \package allows for the easy estimation of population genetics parameters from genome scale data such as CDS or ribosome footprints. 
-Furthermore, \package provides functionality to asses goodness of fit and visualization.). 
+Furthermore, \package provides functionality for MCMC diagnostics and visualization. 
 }
 \label{fig:plotbin}
 \end{figure*}
@@ -98,15 +115,20 @@ Furthermore, \package provides functionality to asses goodness of fit and visual
 \package provides an interface written in R, a freely available programming language noted for its ease of use for even inexperienced programmers. 
 As a result, \package is accessible to researchers with minimal computational experience. 
 
-\package also provides a convenient interface designed to allow researchers to analyze their data swiftly. 
+The \package interface is designed for quick and efficient data analysis.
 Generally, the only input needed for fitting a model to the data are protein-coding nucleotide sequences in the form of a FASTA file or a flat-file containing codon counts obtained from ribosome foot-printing experiments. 
-If available, users may also provide empirically estimated values of gene expression as additional guide for either model.
-\package also provides visualization functionality, including plot functions to compare parameter estimates for different mixture distributions, functions to display codon usage patterns and diagnostic functions to assess the goodness of fit in a simple workflow (Figure 1).
-The implemented MCMC approach automatically adapts the proposal width for sampled parameters to improve sampling efficiency and increase computational performance. 
+If available, users may also provide empirically estimated values of gene expression as an additional guide for a model.
+\package also provides visualization functionality, including plotting functions to compare parameter estimates for different mixture distributions and display codon usage patterns (Figure 1). In addition, diagnostic functions such as those for calculating and visualizing the degree of autocorrelation are provided.
 
+To test hypotheses, it is common practice to compare real data to data simulated under known conditions, allowing the simulated data to serve as a null hypothesis. Statistically significant differences between the real and simulated data suggests the real data are not represented by the parameters used to create the simulated data. For this purpose, \package currently allows users to simulate data, such as protien-coding sequences, under a set of known parameters defined by the various models.
+
+\package has built-in features designed to improve the performance of the implemented MCMC approach. For example, the implemented MCMC approach automatically adapts the proposal width for sampled parameters, improving sampling efficiency of the MCMC and computational performance. In addition, \package is capable of thinning the MCMC chain, meaning only every $k^{th}$ sample is kept. Although thinning increases the total number of iterations for the MCMC, it helps reduce autocorrelation between samples and reduces the amount of memory taken up by the underlying data structures. 
+
+To protect users in the case of an abrupt ending to a run or failure of the MCMC to converge, \package outputs restart files throughout the course of the run. This allows the user to begin a MCMC based on the state of another MCMC at a previous time point. \package also is able to create file representations of the Parameter and MCMC objects, which can be loaded into the R environment for further analysis and visualization of previous runs.
+ 
 \subsubsection*{Available models}
 \package currently provides codon models for analyzing genome scale data.
-The ROC model implements the work presented by Gilchrist et al. (2015), which reliably estimates selection on \underline{r}ibosome \underline{o}verhead \underline{c}ost, mutation bias and allows for the inference of protein synthesis rates. The ROC model is an extension of work by Shah \& Gilchrist (2011) and  Wallace et al (2013). 
+The ROC model implements the work presented by Gilchrist et al. (2015) \citep{gilchrist2015}, which reliably estimates selection on \underline{r}ibosome \underline{o}verhead \underline{c}ost, mutation bias and allows for the inference of protein synthesis rates. The ROC model is an extension of work by Shah \& Gilchrist (2011) \citep{shah2011} and  Wallace et al (2013) \citep{wallace2013}. 
 %The NSE model is focused on the estimation of \underline{n}on-\underline{s}ense \underline{e}rror rates and accounts for the position of a codon in the sequence. Codons found later in the sequence are assumed to be under stronger selection against non-sense errors, as total energy investment is increasing along the sequence.
 This model allow for the separation of effects of mutation and selection based on gene ordering by protein synthesis rate, and the added mixture distribution allows for gene clustering based on these effects.
 Furthermore, \package implements a Pausing (PA) model to extract information on ribosome pausing times from ribosome foot-printing data. The PA model assumes that ribosome foot-print counts are inverse proportional to pausing time allowing for the estimation of the distribution of ribosome pausing times for each codon. 
@@ -125,13 +147,13 @@ Mixture distributions are commonly used when a data set is comprised of sub-popu
 The separation of gene specific and shared parameters creates the necessity to estimate a gene specific parameter for each possible cluster a gene can be assigned to. 
 %As all implemented model contain gene specific parameters (e.g. protein production rate) in addition to population specific parameters (e.g. mutation) we extended the mixture approach implemented in \package to incorporate the need for a gene specific parameter. 
 %Therefore, the protein production rate of each gene is estimated assuming it in each possible mixture distribution. 
-This approach allows genes to be categorized based on differences in shared parameters, like codon specific mutation and selection biases, making \package ideal to ask questions about intra-genomic or even within-gene heterogeneity in mutation and selection patterns (see Landerer et al. XXXX for application). 
+This approach allows genes to be categorized based on differences in shared parameters, like codon-specific mutation and selection biases, making \package ideal to ask questions about intra-genomic or even within-gene heterogeneity in mutation and selection patterns (see Landerer et al. XXXX for application). 
 
 \subsubsection*{Computational performance}
 Although \package is provided as an R package, the main computational work is implemented in C++ and can be, if desired, compiled as a standalone software.
 R does not provide native C++ support, but the R package Rcpp allows for the exposure of whole C++ classes as modules to R \citep{rcpp_package}.
-This eliminates time consuming data transfer between the R environment and the C++ core during runs, resulting in improved computational performance and allowed for a fully object-oriented code design. 
-The runtime of \package scales as expected linear with genome size and number of iterations, and polynomial with the number of mixture distributions in the data set. The polynomial increase in the number of mixture distributions is explained by the necessity to estimate the protein production rate for each gene in each mixture distribution, as it is a gene specific parameter and the probability of a gene being assigned to a mixture has to be conditioned on it.  
+This eliminates time consuming data transfer between the R environment and the C++ core during runs, resulting in improved computational performance and allowed for a fully object-oriented code design \cite{ood_book}. 
+As expected, the runtime of \package scales linear with genome size and number of iterations, and polynomial with the number of mixture distributions in the data set. The polynomial increase in the number of mixture distributions is explained by the necessity to estimate the protein production rate for each gene in each mixture distribution, as it is a gene specific parameter and the probability of a gene being assigned to a mixture has to be conditioned on it.
 
 \bibliographystyle{natbib}
 \bibliography{bioinfo}
