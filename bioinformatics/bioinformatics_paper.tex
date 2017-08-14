@@ -54,17 +54,17 @@ $^{5}$Oak Ridge National Laboratory, Oak Ridge, TN, USA}
 
 % I made this edit because not all models are evolutionary models
 
-\pkg{\package} is a fast and reliable software for estimating biological parameters from codon counts data, such as selection against translation inefficiency, nonsense error rates, and ribosome pausing times.
+\pkg{\package} is a fast and reliable software for estimating biological parameters from codon count data, such as selection against translation inefficiency, nonsense error rates, and ribosome pausing times.
 \package is fully implemented in C++ to improve computational performance and provides an ergonomic R interface to improve usability. 
 \package also follows a generic object-oriented design to allow users to extend the framework and implement their own models for analyzing biological data.
 %Old------------------------------------------------------
-%Current implemented models can be used to analyze coding sequence data and ribosome foot printing counts to estimate parameters related to ribosome overhead costs, nonsense error rates, and ribosome pausing times. 
+%Currently implemented models can be used to analyze coding sequence data and ribosome foot printing counts to estimate parameters related to ribosome overhead costs, nonsense error rates, and ribosome pausing times. 
 %In addition, \package features mixture distributions for parameters, allowing users to set or estimate mixture assignment for groups sharing population level parameters, allows for simulation under the provided models and implements check-pointing functionality to restart runs if necessary. 
 %Edit-----------------------------------------------------
 Current models within \package can accurately estimate relevant parameters given either coding sequences or ribosome foot-printing data, depending on the model.
 However, these models are capable of using other data, such as empirical measurements of gene expression, to better inform parameter estimates.
-\package implements a mixture distribtuion for population-level parameters, allowing these parameters to be estimated under the assumption of different biological conditions.
-In addtion, \package includes the ability to simulate data, visualize results, and revisit previous runs should further analysis be needed. 
+\package implements a mixture distribution for population-level parameters, allowing these parameters to be estimated under the assumption of different biological conditions.
+In addition, \package includes the ability to simulate data, visualize results, and revisit previous runs should further analysis be needed. 
 
 \section{Availability:}
 \pkg{\package} is freely available under the Mozilla Public License 2.0
@@ -88,9 +88,9 @@ The \package framework separates data in two dimensions, e.g. genes and codons f
 For all models, estimates of each type of parameter are conditioned on the other two types. 
 This Gibbs sampling approach allows for a reduction in dimensionality, increasing sampling efficiency and computational performance.
 %<<<<<<< HEAD
-Codon-specific parameters are shared across all genes. These parameters can follow a mixture distribution and can be used to automatically or manually assign genes to clusters.
-Estimation of the mixture assignment provides the probability of a gene being assigned to a mixture allowing the user to asses the uncertainty in each mixture assignment, similar to probabilistic clustering.
-Gene-specific parameters are estimated independently for each gene. If the codon-specific parameters follow a mixture distribution, a gene-specific parameter is estimated assuming the gene being assigned to each mixture. This not only solves the limitations of traditional mixture approaches but furthermore allows to test hypotheses about gene-specific parameters under various conditions, represented by different mixtures.
+Population-specific parameters are shared across all genes. These parameters are shared across all genes within a cluster. Codon specific parameters are used to automatically or manually assign genes into clusters.
+Estimation of the cluster assignment provides the probability of a gene being assigned to a cluster allowing the user to asses the uncertainty in each assignment, similar to probabilistic clustering.
+Gene-specific parameters are estimated independently for each gene. If the population specific parameters are used to classify genes into population, a gene specific parameter is estimated assuming the gene being assigned to each cluster. This allows to test hypothesis about gene specific parameters under various conditions, represented by different categories.
 The inclusion of hyperparameters, like parametric prior distributions, allows for the implementation of hierarchical models.
 %=======
 %1) Shared parameters (e.g. codon specific parameters) are parameters shared across all genes within a cluster. Codon specific parameters are used to automatically or manually assign genes into clusters.
@@ -143,11 +143,11 @@ Functionality unique to a model must be contained within the new model.
 
 \subsubsection*{Mixture distributions}
 Mixture distributions are commonly used when a data set is comprised of sub-populations or clusters which can be described by mixing various distribution \citep{gelman2013}. 
-\package allows all implemented models with the ability to utilize mixture distributions for all shared parameters like codon specific mutation and selection bias in the case of the ROC model. 
-The separation of gene specific and shared parameters creates the necessity to estimate a gene specific parameter for each possible cluster a gene can be assigned to. 
+\package allows all implemented models with the ability to utilize mixture distributions for all population specific parameters like codon specific mutation and selection bias in the case of the ROC model. 
+The separation of gene specific and population specific parameters creates the necessity to estimate a gene specific parameter for each possible cluster a gene can be assigned to. 
 %As all implemented model contain gene specific parameters (e.g. protein production rate) in addition to population specific parameters (e.g. mutation) we extended the mixture approach implemented in \package to incorporate the need for a gene specific parameter. 
 %Therefore, the protein production rate of each gene is estimated assuming it in each possible mixture distribution. 
-This approach allows genes to be categorized based on differences in shared parameters, like codon-specific mutation and selection biases, making \package ideal to ask questions about intra-genomic or even within-gene heterogeneity in mutation and selection patterns (see Landerer et al. XXXX for application). 
+This approach allows genes to be categorized based on differences in population specific parameters, like codon-specific mutation and selection biases, making \package ideal to ask questions about intra-genomic or even within-gene heterogeneity in mutation and selection patterns (see Landerer et al. XXXX for application). 
 
 \subsubsection*{Computational performance}
 Although \package is provided as an R package, the main computational work is implemented in C++ and can be, if desired, compiled as a standalone software.
