@@ -16,7 +16,7 @@
 %%% End of additional Macro and command.
 
 
-\newcommand{\package}{\textbf{AnCoDa }} % need that whitespace there for text flow
+\newcommand{\package}{\textbf{AnaCoDa }} % need that whitespace there for text flow
 \usepackage{natbib}
 
 %%% Start here.
@@ -25,7 +25,7 @@
 
 \firstpage{1}
 
-\title[AnCoDa]{AnCoDa: Analyzing Codon Data with Bayesian mixture models}
+\title[AnaCoDa]{AnaCoDa: Analyzing Codon Data with Bayesian mixture models}
 \author[
 Landerer \textit{et~al}]{Cedric Landerer\,$^{1,2}$\footnote{
 to whom correspondence should be addressed
@@ -68,7 +68,7 @@ In addition, \package includes the ability to simulate data, visualize results, 
 
 \section{Availability:}
 \pkg{\package} is freely available under the Mozilla Public License 2.0
-on CRAN (\url{http://cran.r-project.org/package=ancoda}).
+on CRAN (\url{http://cran.r-project.org/package=anacoda}).
 
 \section{Contact:} \href{cedric.landerer@gmail.com}{cedric.landerer@gmail.com}
 \end{abstract}
@@ -113,12 +113,22 @@ Generally, the only input needed for fitting a model to the data are protein-cod
 If available, users may also provide empirically estimated values of gene expression as an additional guide for a model.
 \package also provides visualization functionality, including plotting functions to compare parameter estimates for different mixture distributions and display codon usage patterns (Figure 1). In addition, diagnostic functions such as those for calculating and visualizing the degree of autocorrelation are provided.
 
-To test hypotheses, it is common practice to compare real data to data simulated under known conditions, allowing the simulated data to serve as a null hypothesis. Statistically significant differences between the real and simulated data suggests the real data are not represented by the parameters used to create the simulated data. For this purpose, \package currently allows users to simulate data, such as protien-coding sequences, under a set of known parameters defined by the various models.
+Users are able to simulate data, such as protein-sequences, with \package. 
+During model development, simulated data is useful for verifying the model. 
+%If the model is working as expected, fitting the model to simulated data will result in parameter estimates approximately equal to the parameters used for the simulations. 
+In addition, simulating data under different conditions allows the user to explore model behavior. 
+Different conditions can include the addition or elimination of parameters, or simply allowing a set of parameter values to vary.
+Simulated data obtained from various conditions can be compared to real data as a way to assess model adequacy.
+Significant differences between the simulated and real data suggests the current set of parameters or the model as a whole do not accurately reflect the underlying biological mechanisms.
 
-\package has built-in features designed to improve the performance of the implemented MCMC approach. For example, the implemented MCMC approach automatically adapts the proposal width for sampled parameters, improving sampling efficiency of the MCMC and computational performance. In addition, \package is capable of thinning the MCMC chain, meaning only every $k^{th}$ sample is kept. Thinning increases the effective number of samples by reducing the auto-correlation between samples and reduces the amount of memory required by the underlying data structures. 
+\package has built-in features designed to improve the performance of the implemented MCMC approach. 
+For example, the implemented MCMC approach automatically adapts the proposal width for sampled parameters, improving sampling efficiency of the MCMC and computational performance.
+In addition, \package is capable of thinning the MCMC chain, meaning only every $k^{th}$ sample is kept. 
+Thinning increases the effective number of samples by reducing the auto-correlation between samples and reduces the amount of memory required by the underlying data structures. 
 
-To protect users in the case of an abrupt ending to a run or failure of the MCMC to converge, \package outputs restart files throughout the course of the run. This allows the user to begin a MCMC based on the state of another MCMC at a previous time point. \package also is able to create file representations of the Parameter and MCMC objects, which can be loaded into the R environment for further analysis and visualization of previous runs.
-
+To protect users in the case of an abrupt ending to a run or failure of the MCMC to converge, \package outputs restart files throughout the course of the run. 
+This allows the user to begin a MCMC based on the state of another MCMC at a previous time point. 
+\package is able to create file representations of the Parameter and MCMC objects, which can be loaded into the R environment for further analysis and visualization of previous runs.
 
 \subsubsection*{Mixture distributions}
 Mixture distributions are commonly used when a data set is comprised of sub-populations or clusters which can be described by mixing various distribution \citep{gelman2013}. 
