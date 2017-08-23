@@ -17,14 +17,6 @@ Gelman, A., Carlin, J., Stern, H., Dunson, D., Vehtari, A., and Rubin, D.
 \newblock {\em Bayesian Data Analysis. 3rd Edition\/}.
 \newblock CRC Press, Boca Raton.
 
-\bibitem[Gilchrist {\em et~al.}(2015)Gilchrist, Chen, Shah, Landerer, and
-  Zaretzki]{gilchrist2015}
-Gilchrist, M., Chen, W., Shah, P., Landerer, C., and Zaretzki, R. (2015).
-\newblock Estimating gene expression and codon-specific translational
-  efficiencies, mutation biases, and selection coefficients from genomic data
-  alone.
-\newblock {\em Genome Biology and Evolution\/}, {\bf 7}, 1559--1579.
-
 \bibitem[{R Core Team}(2015){R Core Team}]{rcore}
 {R Core Team} (2015).
 \newblock {\em R: A Language and Environment for Statistical Computing\/}.
