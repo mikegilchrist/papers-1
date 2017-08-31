@@ -165,22 +165,22 @@ Significant differences between the simulated and observational data suggests th
  
 \subsubsection*{Available models}
 \package currently provides codon models for analyzing genome scale data.
-The ROC model implements the work presented by Gilchrist et al. (2015), which reliably estimates selection on \underline{r}ibosome \underline{o}verhead \underline{c}ost, mutation bias and allows for the inference of protein synthesis rates. The ROC model is an extension of work by \citet{shah2011} and \citet{wallace2013}.
+The ROC model extends the codon usage bias model developed by \citet{gilchrist2015,wallace2013,shah2011}, which can reliably estimate the strength of selection on \underline{r}ibosome \underline{o}verhead \underline{c}ost, mutation bias and allows for the inference of protein synthesis rates.
 %\citet{AUTHORYEAR} is 'cite in text' and appears as '... AUTHOR (YEAR)'
 %\citep{AUTHORYEAR} is 'cite in parentheses and appears as '... (AUTHOR, YEAR)'
  
 %The NSE model is focused on the estimation of \underline{n}on-\underline{s}ense \underline{e}rror rates and accounts for the position of a codon in the sequence. Codons found later in the sequence are assumed to be under stronger selection against non-sense errors, as total energy investment is increasing along the sequence.
 This model allow for the separation of effects of mutation and selection based on gene ordering by protein synthesis rate, and the added mixture distribution allows for gene clustering based on these effects.
-Furthermore, \package implements a Pausing (PA) model to extract information on ribosome pausing times from ribosome foot-printing data. The PA model assumes that ribosome foot-print counts are inverse proportional to pausing time allowing for the estimation of the distribution of ribosome pausing times for each codon. 
+Furthermore, \package implements a ribosome PAusing (PA) model to estimate codon specific ribosome pausing times from ribosome foot-printing data.
+%The PA model assumes that ribosome foot-print counts are inverse proportional to pausing time allowing for the estimation of the distribution of ribosome pausing times for each codon. 
 
-%\subsubsection*{Writing extensions}
+\subsubsection*{User Defined Models}
 %Users are welcome and encouraged to incorporate their own codon models into \package. The object-%oriented paradigm of C++ allowed for the implementation of a general framework for creating new models %to analyze genomic data. All implemented models in \package are encapsulated such that they share %certain commonalities. This allows for the creation of new models within the same framework. Generally, %these models can be added by creating appropriate subclasses of the Parameter and Model classes provided %by the current framework. These subclasses should include the additional functionality required for %these models. 
-
-\package defines an interface to connect a model with the implemented MCMC algorithm. 
+\package provides an interface to connect a model with the implemented MCMC algorithm. 
 By following this general interface, researchers are easily able to add their own models to analyze sequence and foot-printing data or other data-types.
-Researchers are able to create their own model, implementing the provided interface and inheriting functionality shared with other models.
+Researchers are able to create their own models, implementing the provided interface and inheriting functionality shared with other models.
 Functionality unique to a model must be contained within the new model. 
-
+[THIS IS PROBABLY THE MOST POORLY WRITTEN SECTION]
 
 
 \bibliographystyle{natbib}
