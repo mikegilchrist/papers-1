@@ -15,6 +15,7 @@
 \let\proglang=\textsf
 %%% End of additional Macro and command.
 
+\usepackage[doublespacing]{setspace}
 
 \newcommand{\package}{\textbf{AnaCoDa }} % need that whitespace there for text flow
 \usepackage{natbib}
@@ -32,15 +33,15 @@ to whom correspondence should be addressed
 },
 Alexander Cope\,$^{3,5}$
 Russell Zaretzki\,$^{2,4}$, and
-Michael Gilchrist\,$^{1,2}$
+Michael A.~Gilchrist\,$^{1,2}$
 }
 \address{$^{1}$
-Department of Ecology and Evolutionary Biology,
-$^{2}$National Institute for Mathematical and Biological Synthesis,
-$^{3}$Genome Science and Technology
+Department of Ecology and Evolutionary Biology, University of Tennessee, Knoxville, TN, USA.
+$^{2}$National Institute for Mathematical and Biological Synthesis.
+$^{3}$Genome Science and Technology, University of Tennessee, Knoxville, TN, USA.
 $^{4}$Department of Statistics, Operations, and Management Science,
-University of Tennessee, Knoxville, TN, USA,
-$^{5}$Oak Ridge National Laboratory, Oak Ridge, TN, USA} 
+University of Tennessee, Knoxville, TN, USA.
+$^{5}$Oak Ridge National Laboratory, Oak Ridge, TN, USA.} 
 \history{Received on XXXXX; revised on XXXXX; accepted on XXXXX}
 
 \editor{Associate Editor: XXXXXXX}
@@ -54,17 +55,22 @@ $^{5}$Oak Ridge National Laboratory, Oak Ridge, TN, USA}
 
 % I made this edit because not all models are evolutionary models
 
-\pkg{\package} is a fast and reliable software for estimating biological parameters from codon count data, such as selection against translation inefficiency, nonsense error rates, and ribosome pausing times.
-\package provides an adaptive Bayesian MCMC algorithm, fully implemented in C++ to improve computational performance with an ergonomic R interface to improve usability. 
+\pkg{\package} is a fast and reliable software for estimating biological parameters, such as selection against translation inefficiency, nonsense error rates, and ribosome pausing times, for sets of genes based on codon or amino acid scale data, such as foot print counts or amino acid frequency.
+\package provides an adaptive Bayesian MCMC algorithm, fully implemented in C++ for high computational performance with an ergonomic R interface to improve usability. 
 \package also follows a generic object-oriented design to allow users to extend the framework and implement their own models for analyzing biological data.
 %Old------------------------------------------------------
 %Currently implemented models can be used to analyze coding sequence data and ribosome foot printing counts to estimate parameters related to ribosome overhead costs, nonsense error rates, and ribosome pausing times. 
 %In addition, \package features mixture distributions for parameters, allowing users to set or estimate mixture assignment for groups sharing population level parameters, allows for simulation under the provided models and implements check-pointing functionality to restart runs if necessary. 
 %Edit-----------------------------------------------------
 Current models within \package can accurately estimate relevant parameters given either coding sequences or ribosome foot-printing data, depending on the model.
-However, these models are capable of using other data, such as empirical measurements of gene expression, to better inform parameter estimates.
-\package implements a mixture distribution for parameters shared across genes, allowing these parameters to be estimated under the assumption of different biological conditions and used to categorize genes into different sets.
-In addition, \package includes the ability to simulate data, visualize results, and revisit previous runs should further analysis be needed. 
+Optionally, \package can utilize additional data sources, such as gene expression measurements, to improve model fitting and parameter estimation.
+By utilizing a hierarchical object structure, some parameters can vary between sets of genes while others can be shared.
+Gene membership in a set can either be pre-assigned by the user or estimated by \package itself.
+This flexibility allows users to estimate the same model parameter under different biological conditions and categorize genes into different sets based on shared model properties embedded within the data.
+\package also allows users to generate simulated data which can be used to aid model development and model analysis as well as evaluate model adequacy.
+Finally, \package also comes with a set of visualization tools and the ability to revisit or reinitiate previous model fittings.
+[SHOULD MENTION OF PARALLELIZATION]
+[CONCLUSION STATEMENT NEEDED]
 
 \section{Availability:}
 \pkg{\package} is freely available under the Mozilla Public License 2.0
@@ -82,15 +88,19 @@ Models have to be developed and provided to the public in easy to use software t
 Here, we describe an open-source software implemented in R \citep{rcore} that allows researchers to analyze genome-scale data like coding sequences and ribosome foot-printing data in a Bayesian framework under various models. 
 \package implements an adaptive Gibbs sampler within a Metropolis-Hastings Monte Carlo Markov Chain (MCMC) approach. This allows for the incorporation of prior knowledge and easy sampling from the posterior distribution to estimate parameter values and quantify the degree of uncertainty in these estimates.
 Currently, \package provides three models to analyze codon counts obtained from coding sequences or ribosome foot-printing experiments. However, \package provides a modular infrastructure such that additional genome scale or even phylogenetic models can be integrated. 
-\package provides a generic mixture distribution option to all implemented models, allowing for the automatic categorization of data based on differences in the posterior distributions of the relevant parameters.
+\package provides a generic, mixture distribution option to all implemented models, allowing for estimation of condition specific parameters or the automatic categorization of data into different sets based on differences in their posterior probabilties of set membership.
 
-The \package framework groups the provided data by gene and by codon, and differentiates three types of parameters: (1) shared parameters like codon parameters, (2) gene parameters like gene ordering, and (3) hyper-parameters. 
-For all models, estimates of each type of parameter are conditioned on the other two types. 
-This Gibbs sampling approach allows for a reduction in dimensionality, increasing sampling efficiency and computational performance.
-Shared parameters are shared across all genes. These parameters are shared across all genes within a set of genes. Shared parameters are also used to automatically or manually assign genes into various sets. The number if sets has to be provided as well as an initial of fixed assignment.
+The \package framework works with gene level data such as codon frequencies or position specific footprint counts.
+Conceptually, \package uses three different types of parameters.
+The first type of parameters are gene level parameters such as gene expression level or functionality.
+Gene-specific parameters are estimated separately for each gene and can vary between potential gene categories or sets.
+The second type of parameters are gene set level parameters, such as mutation bias terms or translation error rates.
+These parameters are shared across genes in a set and can be exclusive to a single set or shared across multiple sets.
+While the number of gene sets must be pre-defined by the user, set assignment of genes can be pre-defined or estimated as part of the model fitting.
 Estimation of the set assignment provides the probability of a gene being assigned to a set allowing the user to asses the uncertainty in each assignment.
-Gene-specific parameters are estimated independently for each gene. If the population specific parameters are used to classify genes into population, a gene specific parameter is estimated assuming the gene being assigned to each cluster. This allows to test hypothesis about gene specific parameters under various conditions, represented by different categories.
-The inclusion of hyperparameters, like parametric prior distributions, allows for the implementation of hierarchical models.
+The third type of parameters are hyperparameters, such as a parameters for a prior distribution for mutation bias or error rates.
+Hyperparameters can be set specific or shared across multiple sets and allow for the construction and analysis of hierarchical models.
+In order to reduce the effect of the 'curse of dimensionality' on the sampling efficiency of the MCMC chain and allow flexibility in parallelization, \package uses a Gibbs sampling approach where the MCMC sampling of one parameter type is conditioned on the other two types.
 
 
 \begin{figure*}[!tpb]
@@ -110,55 +120,68 @@ As a result, \package is accessible to researchers with minimal computational ex
 
 The \package interface is designed for quick and efficient data analysis.
 Generally, the only input needed for fitting a model to the data are protein-coding nucleotide sequences in the form of a FASTA file or a flat-file containing codon counts obtained from ribosome foot-printing experiments. 
-If available, users may also provide empirically estimated values of gene expression as an additional guide for a model.
-\package also provides visualization functionality, including plotting functions to compare parameter estimates for different mixture distributions and display codon usage patterns (Figure 1). In addition, diagnostic functions such as those for calculating and visualizing the degree of autocorrelation are provided.
+If available, users may also provide additional types of data such as estimates of gene expression.
+\package can simultaneously utilize the information embedded in these additional data types and/or estimate the error associated with it.
+\package also provides visualization functionality, including plotting functions to compare parameter estimates for different mixture distributions and display codon usage patterns (Figure 1). In addition, diagnostic functions such as those for calculating and visualizing the degree of autocorrelation in MCMC samples are provided.
 
-Users are able to simulate data, such as protein-sequences, with \package. 
-During model development, simulated data is useful for verifying the model. 
-%If the model is working as expected, fitting the model to simulated data will result in parameter estimates approximately equal to the parameters used for the simulations. 
-In addition, simulating data under different conditions allows the user to explore model behavior. 
-Different conditions can include the addition or elimination of parameters, or simply allowing a set of parameter values to vary.
-Simulated data obtained from various conditions can be compared to real data as a way to assess model adequacy.
-Significant differences between the simulated and real data suggests the current set of parameters or the model as a whole do not accurately reflect the underlying biological mechanisms.
-
-\package has built-in features designed to improve the performance of the implemented MCMC approach. 
+\subsubsection*{Robust and efficient model fitting}
+\package has built-in features designed to improve the robustness and performance of the implemented MCMC approach. 
 For example, the implemented MCMC approach automatically adapts the proposal width for sampled parameters, improving sampling efficiency of the MCMC and computational performance.
+Even though \package is written in C++, analysis of large datasets and/or complex models can be very computationally intensive.
+In order to protect users from computer failures or aid in the collection of additional MCMC samples, \package periodically produces output files which can be used to restart an MCMC chain from a previous time point.
 In addition, \package is capable of thinning the MCMC chain, meaning only every $k^{th}$ sample is kept. 
 Thinning increases the effective number of samples by reducing the auto-correlation between samples and reduces the amount of memory required by the underlying data structures. 
+\package is also able to create file R compatible representations of its parameter and MCMC objects.
+These objects can be loaded into the R environment for model analysis and visualization.
 
-To protect users in the case of an abrupt ending to a run or failure of the MCMC to converge, \package outputs restart files throughout the course of the run. 
-This allows the user to begin a MCMC based on the state of another MCMC at a previous time point. 
-\package is able to create file representations of the Parameter and MCMC objects, which can be loaded into the R environment for further analysis and visualization of previous runs.
+Although \package is provided as an R package, the main computational work is implemented in C++ and can be, if desired, compiled as a standalone software.
+Because R does not provide native C++ support, we used the R package Rcpp which allows for the exposure of whole C++ classes as modules to R \citep{rcpp_package}.
+Using Rcpp eliminates time consuming data transfer between the R environment and the C++ core during runs, resulting in improved computational performance and allowed for a fully object-oriented code design \cite{ood_book}. 
+As expected, the runtime of \package scales linear with genome size and number of iterations, and polynomial with the number of mixture distributions in the data set. The polynomial increase in the number of mixture distributions is explained by the necessity to estimate the protein production rate for each gene in each mixture distribution, as it is a gene specific parameter and the probability of a gene being assigned to a mixture has to be conditioned on it.
+
+
 
 \subsubsection*{Mixture distributions}
-Mixture distributions are commonly used when a data set is comprised of sub-populations or clusters which can be described by mixing various distribution \citep{gelman2013}. 
-\package allows all implemented models with the ability to utilize mixture distributions for all population specific parameters like codon specific mutation and selection bias in the case of the ROC model. 
-The separation of gene specific and population specific parameters creates the necessity to estimate a gene specific parameter for each possible cluster a gene can be assigned to. 
-%As all implemented model contain gene specific parameters (e.g. protein production rate) in addition to population specific parameters (e.g. mutation) we extended the mixture approach implemented in \package to incorporate the need for a gene specific parameter. 
+[IT SEEMS LIKE THIS SECTION SEEMS A BIT REDUNDANT WITH PREVIOUS DISCUSSION OF MIXTURES.
+IS IT NEEDED?  
+CAN THE REDUNDANCY BE REDUCED WHILE THE FEATURE BE BETTER SOLD?
+ALSO, ROC MODEL IS INTRODUCED HERE BUT ONLY REFERENCED AND DEFINED LATER.
+]
+Mixture distributions are commonly used when a data set is comprised of sub-populations or sets which can be described by mixing various distribution \citep{gelman2013}. 
+\package allows all implemented models with the ability to utilize mixture distributions for all set specific parameters like codon specific mutation and selection bias in the case of the ROC model. 
+The separation of gene specific and set specific parameters creates the necessity to estimate a gene specific parameter for each possible set a gene can be assigned to. 
+%As all implemented model contain gene specific parameters (e.g. protein production rate) in addition to set specific parameters (e.g. mutation) we extended the mixture approach implemented in \package to incorporate the need for a gene specific parameter. 
 %Therefore, the protein production rate of each gene is estimated assuming it in each possible mixture distribution. 
-This approach allows genes to be categorized based on differences in population specific parameters, like codon-specific mutation and selection biases, making \package ideal to ask questions about intra-genomic or even within-gene heterogeneity in mutation and selection patterns (see Landerer et al. XXXX for application). 
+This approach allows genes to be categorized based on differences in set specific parameters, like codon-specific mutation and selection biases, making \package ideal to ask questions about intra-genomic or even within-gene heterogeneity in mutation and selection patterns (see Landerer et al. XXXX for application [SHOULD IDEALLY HAVE A REFERENCE TO YOUR PAPER ON bioRXiV). 
 
+
+\subsubsection*{Data Simulation}
+In addition to model fitting to actual datasets, \package can be used to generate simulated data sets as well.
+On their own, simulated datasets are useful for model development and analysis.
+Simulating data under different conditions allows the user to explore model behavior. 
+Different conditions can include the addition or elimination of parameters, or simply allowing a set of parameter values to vary.
+Fitting models to simulated data can provide users insight into potential pitfalls or shortcomings when fitting observational data and can serve as the basis for evaluating model adequacy of a model fit to observational data [CITATIONS].
+Significant differences between the simulated and observational data suggests the current set of parameters or the model as a whole fail to include or adequately represent biological mechanisms underlying the observational data.
  
 \subsubsection*{Available models}
 \package currently provides codon models for analyzing genome scale data.
-The ROC model implements the work presented by Gilchrist et al. (2015), which reliably estimates selection on \underline{r}ibosome \underline{o}verhead \underline{c}ost, mutation bias and allows for the inference of protein synthesis rates. The ROC model is an extension of work by Shah \& Gilchrist (2011) \citep{shah2011} and  Wallace et al (2013) \citep{wallace2013}. 
+The ROC model extends the codon usage bias model developed by \citet{gilchrist2015,wallace2013,shah2011}, which can reliably estimate the strength of selection on \underline{r}ibosome \underline{o}verhead \underline{c}ost, mutation bias and allows for the inference of protein synthesis rates.
+%\citet{AUTHORYEAR} is 'cite in text' and appears as '... AUTHOR (YEAR)'
+%\citep{AUTHORYEAR} is 'cite in parentheses and appears as '... (AUTHOR, YEAR)'
+ 
 %The NSE model is focused on the estimation of \underline{n}on-\underline{s}ense \underline{e}rror rates and accounts for the position of a codon in the sequence. Codons found later in the sequence are assumed to be under stronger selection against non-sense errors, as total energy investment is increasing along the sequence.
 This model allow for the separation of effects of mutation and selection based on gene ordering by protein synthesis rate, and the added mixture distribution allows for gene clustering based on these effects.
-Furthermore, \package implements a Pausing (PA) model to extract information on ribosome pausing times from ribosome foot-printing data. The PA model assumes that ribosome foot-print counts are inverse proportional to pausing time allowing for the estimation of the distribution of ribosome pausing times for each codon. 
+Furthermore, \package implements a ribosome PAusing (PA) model to estimate codon specific ribosome pausing times from ribosome foot-printing data.
+%The PA model assumes that ribosome foot-print counts are inverse proportional to pausing time allowing for the estimation of the distribution of ribosome pausing times for each codon. 
 
-%\subsubsection*{Writing extensions}
+\subsubsection*{User Defined Models}
 %Users are welcome and encouraged to incorporate their own codon models into \package. The object-%oriented paradigm of C++ allowed for the implementation of a general framework for creating new models %to analyze genomic data. All implemented models in \package are encapsulated such that they share %certain commonalities. This allows for the creation of new models within the same framework. Generally, %these models can be added by creating appropriate subclasses of the Parameter and Model classes provided %by the current framework. These subclasses should include the additional functionality required for %these models. 
-
-\package defines an interface to connect a model with the implemented MCMC algorithm. 
+\package provides an interface to connect a model with the implemented MCMC algorithm. 
 By following this general interface, researchers are easily able to add their own models to analyze sequence and foot-printing data or other data-types.
-Researchers are able to create their own model, implementing the provided interface and inheriting functionality shared with other models.
+Researchers are able to create their own models, implementing the provided interface and inheriting functionality shared with other models.
 Functionality unique to a model must be contained within the new model. 
+[THIS IS PROBABLY THE MOST POORLY WRITTEN SECTION]
 
-\subsubsection*{Computational performance}
-Although \package is provided as an R package, the main computational work is implemented in C++ and can be, if desired, compiled as a standalone software.
-R does not provide native C++ support, but the R package Rcpp allows for the exposure of whole C++ classes as modules to R \citep{rcpp_package}.
-This eliminates time consuming data transfer between the R environment and the C++ core during runs, resulting in improved computational performance and allowed for a fully object-oriented code design \cite{ood_book}. 
-As expected, the runtime of \package scales linear with genome size and number of iterations, and polynomial with the number of mixture distributions in the data set. The polynomial increase in the number of mixture distributions is explained by the necessity to estimate the protein production rate for each gene in each mixture distribution, as it is a gene specific parameter and the probability of a gene being assigned to a mixture has to be conditioned on it.
 
 \bibliographystyle{natbib}
 \bibliography{bioinfo}
