@@ -6,12 +6,21 @@
 \address{Cedric Landerer \\ 569 Dabney Hall \\ 37966 Knoxville, TN} 
 \signature{Cedric Landerer} 
 \begin{document} 
-\begin{letter}{name and address of the recipient} 
+\begin{letter}{} 
 \opening{Dear Editor} 
 
 I am submitting you our article "AnaCoDa: Analyzing Codon Data with Bayesian mixture models" to be considered for publication as an application node in Bioinformatics on behalf of all authors.
 The authors (Cedric Landerer, Alexander Cope, Russell Zaretzki, and Michael A. Gilchrist) developed a software package to aid researchers with analyzing coding sequence and ribosome footprinting data. 
-The software integrates multiple models published and unpublished and makes them available via the R scripting language. 
+The software integrates multiple models published and unpublished models and makes them available via the R scripting language. 
+
+AnaCoda allows for the estimation of biologically relevant parameter like mutation bias or ribosome pausing time, depending on the model employed.
+The estimation of parameters is performed using a Bayesian adaptive Metropolis-Hasting within Gibbs sampling approach.
+Models implemented in AnaCoda are currently able to handle gene coding sequences and ribosome footprinting data. 
+However, the flexible framework implemented using Rcpp, combining C++ with a R interface, allows for the implementation of models for other data types.
+
+AnaCoda is a versatile R package that provides a useful set of tools of interest to the fields of molecular evolution and translation dynamics.
+The software will be submitted to CRAN for easy access and long term availability.
+
 
 The authors declare no competing interests.
 
