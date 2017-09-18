@@ -50,16 +50,16 @@ $^{5}$Oak Ridge National Laboratory, Oak Ridge, TN, USA.}
 
 \begin{abstract}
 
-\pkg{\package} is a fast and reliable software for estimating biological parameters, such as selection against translation inefficiency, nonsense error rates, and ribosome pausing times, for sets of genes based on codon or amino acid scale data, such as foot print counts or amino acid frequency.
-\package provides an adaptive Bayesian MCMC algorithm, fully implemented in C++ for high computational performance with an ergonomic R interface to improve usability. 
+\pkg{\package} is a fast and reliable R package for estimating biological parameters, such as selection against translation inefficiency, nonsense error rates, and ribosome pausing times, for sets of genes based on codon or amino acid scale data, such as ribosome foot print or synonymous codon frequency.
+\package provides an adaptive Bayesian MCMC algorithm, fully implemented in C++ for high performance with an ergonomic R interface to improve usability. 
 \package also follows a generic object-oriented design to allow users to extend the framework and implement their own models for analyzing biological data.
 Current models within \package can accurately estimate relevant parameters given either coding sequences or ribosome foot-printing data, depending on the model.
 Optionally, \package can utilize additional data sources, such as gene expression measurements, to improve model fitting and parameter estimation.
 By utilizing a hierarchical object structure, some parameters can vary between sets of genes while others can be shared.
-Gene membership in a set can either be pre-assigned by the user or estimated by \package itself.
+Gene membership in a set can either be pre-assigned or estimated by \package.
 This flexibility allows users to estimate the same model parameter under different biological conditions and categorize genes into different sets based on shared model properties embedded within the data.
 \package also allows users to generate simulated data which can be used to aid model development and model analysis as well as evaluate model adequacy.
-Finally, \package also comes with a set of visualization tools and the ability to revisit or reinitiate previous model fittings, providing researchers with a well rounded easy to use framkework.
+Finally, \package also comes with a set of visualization routines and the ability to revisit or reinitiate previous model fittings, providing researchers with a well rounded easy to use framework.
 
 
 \section{Availability:}
