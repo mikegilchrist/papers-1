@@ -10,12 +10,19 @@ Edelbuettel, D. and Francois, R. (2011).
 \newblock Rcpp: Seamless r and c++ integration.
 \newblock {\em Journal of Statistical Software\/}, {\bf 40}, 1--18.
 
-\bibitem[Gelman {\em et~al.}(2013)Gelman, Carlin, Stern, Dunson, Vehtari, and
-  Rubin]{gelman2013}
-Gelman, A., Carlin, J., Stern, H., Dunson, D., Vehtari, A., and Rubin, D.
-  (2013).
-\newblock {\em Bayesian Data Analysis. 3rd Edition\/}.
-\newblock CRC Press, Boca Raton.
+\bibitem[Gilchrist {\em et~al.}(2015)Gilchrist, Chen, Shah, Landerer, and
+  Zaretzki]{gilchrist2015}
+Gilchrist, M., Chen, W., Shah, P., Landerer, C., and Zaretzki, R. (2015).
+\newblock Estimating gene expression and codon-specific translational
+  efficiencies, mutation biases, and selection coefficients from genomic data
+  alone.
+\newblock {\em Genome Biology and Evolution\/}, {\bf 7}, 1559--1579.
+
+\bibitem[Mi {\em et~al.}(2015)Mi, Di, and Schafer]{gumi2015}
+Mi, G., Di, Y., and Schafer, D. (2015).
+\newblock Goodness-of-fit tests and model diagnostics for negative binomial
+  regression of rna sequenceing data.
+\newblock {\em PLOS ONE\/}, {\bf 10}, e0119254.
 
 \bibitem[{R Core Team}(2015){R Core Team}]{rcore}
 {R Core Team} (2015).
