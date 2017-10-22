@@ -77,21 +77,53 @@ Furthermore, the strength of mutation bias is increased in C-left, reflected in 
 Estimates for $\Delta \eta$ showed a higher consistency between the two genomic regions ($\rho = 0.68$), indicating that - generally - the same codons are favored throughout the genome. 
 The difference in time scale of protein synthesis rate $\phi$ between C-Left and Main, does not allow to draw any conclusions from the observed differences in range of the inferred $\Delta \eta$ parameter.
 
-\subsection*{Origin of C-Left is unknown}
-We determined the codon usage patterns of related yeast species to explore if one of the species or genus explored shows a similar codon usage pattern.
-Agreement in codon usage patterns between C-Left and other yeast species would indicate a candidate for the origin of C-Left.
-The chosen X number of yeast species displayed high agreement in codon usage, but differed in codon usage from C-Left.
+\subsection*{Comparing codon usage of various yeast species}
+We determined the codon usage patterns of XX related yeast species to explore if one of the species shows a similar codon usage pattern.
+Agreement in codon usage patterns between C-Left and other yeast species would hint at a possible origin of C-Left.
+Most of the chosen species displayed high agreement in codon usage with the main part of the \textit{L. kluyveri} genome, but differed in codon usage greatly from the codon usage observed in C-Left.
+The only exception was XXXX which displayed a similar codon usage pattern to C-Left (Table~\ref{corr_table}).
 
-Analyses of codon usage patterns of various yeast species showed that differences of codon usage is small between yeasts.
-The striking difference in codon usage in \textit{L. kluyveri} not found between other yeast species lead us to explore the possibility of an origin outside the XXX clade.
-INSER STUDY ABOUT BRANCH LENGTH HERE!!! 
+We also compared the GC-content of each genome with the C-left and found that XXX and XXX showed similar GC content to C-Left
+
+
+\begin{table}[]
+\centering
+\label{corr_table}
+\begin{tabular}{lccccc}
+ & $\Delta \eta_M$ & $\Delta \eta_{CL}$ & $\Delta M_M$ & $\Delta M_{CL}$ & \% GC \\
+\textit{L. kluyveri} C-Left & - & - & - & - & 53 \\
+\textit{L. kluyveri} Main	&  &  &  & & \\
+\textit{S. cerviciae} 		&  &  &  & & \\
+\textit{S. bayanus} 		&  &  &  & & \\
+\textit{S. kudriavezi} 		&  &  &  & &
+\end{tabular}
+\caption{Pearson correlation of $\Delta eta$ and $\Delta M$ of various yeast species with \textit{L. kluyveri}. The subscripts M and CL indicate the Main genome and C-Left respectively}
+\end{table}
 
 \subsection*{Rate of evolution of estimated parameters}
-We determined the rate at which the $\Delta eta$ and $\Delta M$ parameters evolved in the set of yeast species chosen.
-We found that the rate of evolution is low.
+We used a phylogeny to estimate the rates at which $\Delta \eta$ and $\Delta M$ evolves in our set of taxa. 
+We then treated C-Left as a new species and determined the divergence time between C-Left and the rest of the \textit{L. kluyveri} genome.
+The divergence time was estimated using the 40 $\Delta M$ parameters estimated to estimate 40 rates under brownian motion. 
+The divergence time was then estimated as the maximum likelihood time over all 40 rate estimates.
+We used this divergence time as branch length estimate to determine the minimum age of the C-Left introgression based on the observed codon usage pattern.
+This allowed us to determine the height in the tree for a possible attachment of C-Left to the phylogenetic tree.
+
+The length of the C-Left branch corresponded well with the divergence time between our previously determined candidate XXX. 
+We only employed $\Delta M$ in the rate estimation as we can assume that mutation bias does evolve neutral.
+We can not make this assumption for $\Delta \eta$ as it represents the strength of selection relative to the strength of drift ($sN_e$).
+
+
+We found overall lower rates of evolution in $\Delta XX$ when compared to $\Delta YY$. 
+
+
 
 $\Delta \eta$ is the strength of selection relative to the strength of drift ($sN_e$).
 
+\subsection*{Synteny between C-Left and candidate genomes}
+
+We evaluated genome rearrangements between the candidate genomes and \textit{L. kluyveri} C-Left using SynMap 3.2.
+We were able to confirm our findings of XXX as a potential origin for C-Left using genome synteny as a third line of evidence.
+While synteny between \textit{L. kluyveri} and other Lachancea does occur, it is limited to the main part of the genome and does not extend to C-Left.
 
 \begin{itemize}
 	\item Question: GC-content variation causes difference in CUB, CUB difference driven by different selection or mutation environment of original host
