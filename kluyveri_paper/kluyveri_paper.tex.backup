@@ -91,7 +91,7 @@ We also compared the GC-content of each genome with the C-left and found that XX
 We used a phylogeny to estimate the rates at which $\Delta \eta$ and $\Delta M$ evolves in our set of taxa. 
 We then treated C-Left as a new species and determined the divergence time between C-Left and the rest of the \textit{L. kluyveri} genome.
 The divergence time was estimated using the 40 $\Delta M$ parameters estimated to estimate 40 rates under brownian motion. 
-A divergence time of 0.96 (CI: 0.79-1.22) expected mutations was estimated as the maximum likelihood time over all 40 rate estimates.
+A divergence time of 1.42 expected mutations was then estimated as the maximum likelihood time over all 40 rate estimates.
 We used this divergence time as branch length estimate to determine the minimum age of the C-Left introgression based on the observed codon usage pattern.
 This allowed us to determine the height in the tree for a possible attachment of C-Left to the phylogenetic tree.
 
