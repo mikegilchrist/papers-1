@@ -4,12 +4,57 @@
 \usepackage{lineno}
 \usepackage{setspace}
 \usepackage{graphicx}
-\usepackage{subcaption}
+\usepackage{subfigure}
+\usepackage{float}
 \usepackage{color}
+\usepackage{caption}
+
 
 \begin{document}
 \doublespacing
 \linenumbers
+
+
+
+\noindent RH: LANDERER ET AL.--- STUFF
+% put in your own RH (running head)
+% for POVs the RH is always POINT OF VIEW
+
+\bigskip
+\medskip
+\begin{center}
+
+% Insert your title:
+\noindent{\Large \bf  INSERT TITLE HERE}
+\bigskip
+
+% We don't use a special title page; the author information is entered
+% like any other text.
+
+% FOOTNOTES: We don't allow them in the manuscript, except in
+% tables. Don't include any footnotes in the text.
+
+
+\noindent{C\textsc{edric} ~{L\textsc{anderer}}$^{1,2,*}$,
+R\textsc{USSELL} {Z\textsc{ARETZKI}}$^{3}$,
+\textsc{AND}
+M\textsc{ICHAEL} A.~{G\textsc{ILCHRIST}}$^{1,2}$}
+
+\end{center}
+
+\vfill
+
+{\small
+\noindent$^{1}$Department of Ecology \& Evolutionary Biology, University of Tennessee, Knoxville, TN 37996-1610\\
+\noindent$^{2}$National Institute for Mathematical and Biological Synthesis, Knoxville, TN 37996-3410\\
+\noindent$^{3}$Department of Business Analytics \& Statistics, Knoxville, TN ~ 37996-0532 \\
+\noindent$^{*}$Corresponding author. E-mail:~clandere@utk.edu
+}
+
+\vfill
+\centerline{Version dated: \today}
+\vfill
+
 
 
 \section*{Introduction}
@@ -18,11 +63,10 @@ Organisms undergo changes in phenotype due to selection on fitness relevant trai
 The same principle applies to the genome adapting to the intra-cellular environment.
 If genomes are mixed, due to hypridization or introgression events, the part of the genome new to the current intra-cellular environment experiences added selection pressure to adapt to the new environment.
 
-\textit{Lachancea kluyveri} is the earliest diverging lineage of the known \textit{Lachancea} clade and diverged from the \textit{Saccharomyces cerevisiae} lineage prior to their whole-genome duplication 100 Ma ago (Wolfe and Shields 1997). 
+\textit{Lachancea kluyveri} is the earliest diverging lineage of the known \textit{Lachancea} clade and diverged from the \textit{Saccharomyces} lineage prior to the whole-genome duplication 100 Ma ago (Wolfe and Shields 1997). 
 However, \textit{L. Kluyveri} and \textit{S. cerevisiae} share a similar life cycle.
-Mention that kluyveri lost ability for haploid reproduction due to lack of mating type switching, is it important ???
 \textit{L. Kluyveri} experienced an introgression of 1Mb about XXX ago. 
-The introgression shows a difference in average GC-content of \~ 13 \% compared to the rest if the \textit{L. Kluyveri}.
+The introgression shows a difference in average GC-content of \~ 13 \% compared to the rest of the \textit{L. Kluyveri}.
 
 Patterns of genomic variation help understanding evolution, but are mostly explored between and within species and populations.
 Intra-genomic variation due to differential mutation, selection or hybridization is often ignored.
@@ -42,17 +86,34 @@ In contrast, selection for translation efficiency is strong in highly expressed 
 
 Selection on codon usage is assumed to be associated with the available tRNA pool in a cell. 
 Codons matching more abundant tRNA species are assumed to minimize ribosome pausing due to reduced waiting time for a correct tRNA. 
-Differing codon usage bias in the introgressed region can either be caused by differences in mutation bias, relating to XXXX, or differences in selection for translation efficiency, indicate a shift in the available tRNA pool.
+Differing codon usage bias in the introgressed region can either be caused by differences in mutation bias, or differences in selection for translation efficiency, indicate a shift in the available tRNA pool.
 Differences in mutation bias should persist longer due to the absence of selection.   
 
-
-\begin{itemize}
-	\item more general introduction, but into what? Introgression, Yeast, cub, adaptation, ...
-	\item Introgression in Kluyveri, effects of introgressions, GC-content difference
-	\item Codon Usage bias reflective of cellular environment, e.g. available tRNA pool
-	\item Mechanistic model allows to distinguish between effects of selection and mutation on current observed state.
-\end{itemize}
 	
+\section{Materials \& Methods}
+
+\subsection{Estimating codon usage bias}
+We analyzed the coding genes of several yeast species (see Table \ref{org_overview}) using ROC-SEMPPER \cite{gilchrist2015} implemented in the R package AnaCoDa (Landerer et al. 2017).
+In the case of \textit{L. kluyveri} we analyzed the codon usage pattern for the whole genome and separated C-Left from the rest of the genome for differential analysis of the codon usage patterns.
+We compared the estimated codon parameters for mutation bias $\Delta M$ and selection bias $\Delta \eta$ for all yest species to the estimated $\Delta M$ and $\Delta \eta$ values of C-Left using Pearson correlation.
+For \textit{L. kluyveri} we compared the two model fits for the whole genome and for the genome split using AIC as well as compared the estimated protein synthesis rates $\phi$ to observed gene expression data from XXX.
+
+\subsection{Estimating phylogenetic tree and divergence time}
+To estimate the divergence time between \textit{L. kluyveri} and C-Left, we appropriated a dataset of several yeast species from Salichos and Rokas (2013). 
+We decided to drop \textit{S. bayanus} from the tree as it is the result of a hybridization between \textit{S. eubayanus} and \textit{S. cerevisiae}.
+We re-estimated the species tree by concatenation of all CDS found on the \textit{L kluyveri} main genome using RAxML (Stamatakis 2014) on the CIPRES Gateway (Miller et al. 2010).
+We repeated the same process using only genes found on C-Left of \textit{L kluyveri}.
+The divergence time was estimated by determining the rate of evolution $\sigma^2$ of the $\Delta M$ parameters estimated for each yeast species.
+We only utilized $\Delta M$ and not $\Delta \eta$ as these values are reflecting the strength of selection $s$ relative to the effective population size $N_e$ and therefore can not be assumed to evolve neutral.
+As the variance under a brownian motion diffusion process growth with time at a constant rate $\sigma^2$, we can calculate the variance of the diffusion process at any given time $\sigma^2_t$. 
+We solved $\sigma^2_t = t\sigma^2$ for $t$ to find the combined maximum likelihood estimate for $t$ for all 40 rate estimates.
+The confidence intervals for $t$ was obtained from the profile likelihood by calculating where the likelihood function drops by two units.
+  
+\subsection{Determination of synteny}	
+The complete genomes of several yeast species along the phylogeny were downloaded from the NCBI genome database.
+Whole genome alignments where performed using SyMAP v4.2 (Soderlund et al. 2006, Soderlund et al. 2011).
+We analyzed synteny relationships between C-Left and the genomes of several yeast species to understand where along the phylogenetic tree synteny breaks down.
+  
 	
 \section*{Results}
 The striking difference in GC-content between C-Left and the rest of the \textit{L. kluyveri} genome lead us to the question whether the observed differences in GC-content are an indicator for intra-genomic variation in codon usage bias.
@@ -79,13 +140,27 @@ Estimates for $\Delta \eta$ showed a higher consistency between the two genomic 
 The difference in time scale of protein synthesis rate $\phi$ between C-Left and Main, does not allow to draw any conclusions from the observed differences in range of the inferred $\Delta \eta$ parameter.
 
 \subsection*{Comparing codon usage of various yeast species}
-We determined the codon usage patterns of XX related yeast species to explore if one of the species shows a similar codon usage pattern.
+We determined the codon usage patterns of 38 related yeast species to explore if one of the species shows a similar codon usage pattern.
 Agreement in codon usage patterns between C-Left and other yeast species would hint at a possible origin of C-Left.
-Most of the chosen species displayed high agreement in codon usage with the main part of the \textit{L. kluyveri} genome, but differed in codon usage greatly from the codon usage observed in C-Left.
-The only exception was XXXX which displayed a similar codon usage pattern to C-Left (Figure~\ref{fig:csp_cor_all_yeast}).
+We found that codon usage is conserved across most of the here analyzed yeast. 
+Most yeast displayed high agreement in codon usage with the main part of the \textit{L. kluyveri} genome. Of the 38 analyzed yeast, 26 show a correlation $\rho > 0.5$ for the selection bias term $\Delta \eta$ and 32 for the mutation bias term $\Delta M$.
+However, when we compared the codon usage of C-Left to the other yeast, we found only four showing a correlation $\rho > 0.5$ for $\Delta M$ but 25 yeast for $\Delta \eta$ (Figure~\ref{fig:csp_cor_all_yeast}).
+Of the four yeast species with high agreement in mutation bias only three (\textit{C. albicans}, \textit{C. dubliniensis}, and \textit{E. gossypii}) also showed high agreement in selection bias.
 
-We also compared the GC-content of each genome with the C-left and found that XXX and XXX showed similar GC content to C-Left
+\subsection{GC content}
+C-Left became of interest due to its remarkable difference in GC content compared to the rest of the \textit{L. kluyveri} genome.
+\textit{L. kluyveri} shows a 13 \% increase in GC content strictly confined to C-Left. 
+Previous work speculated that the origin of C-Left must be within the Lachancea clade since synteny can be found between C-Left, and \textit{L. thermotolerans} and \textit{L. waltii} (Payen et al 2009).
+However, the Lachancea clade is not a monophyletic group.
+The increased GC content in C-Left and the would therefore hint at a species closely related to \textit{L. kluyveri} with an elevated GC content. 
+Our search identified only three closely related yeast with GC $> 50\%$ of which none is classified as a Lachancea (\textit{E. gossypii}, \textit{C. yegresii}, and \textit{S. musiva}).
 
+\subsection*{Synteny between C-Left and other yeast genomes}
+
+We evaluated genome synteny and rearrangements between several candidate genomes and \textit{L. kluyveri} C-Left using SynMap 4.2.
+We were able to find further evidence of \textit{E. gossypii} as a potential origin for C-Left using genome synteny.
+While synteny between \textit{L. kluyveri} and other Lachancea does occur, it is mostly limited to the main part of the genome.
+Regions of synteny between C-Left and \textit{L. thermotolerans} and \textit{L. waltii} were previously reported (Payen et al. 2009) but disregarded as possible sources of origin due to their reduced GC content.
 
 \subsection*{Rate of evolution of estimated parameters}
 We used a phylogeny to estimate the rates at which $\Delta \eta$ and $\Delta M$ evolves in our set of taxa. 
@@ -99,54 +174,73 @@ The length of the C-Left branch corresponded well with the divergence time betwe
 We only employed $\Delta M$ in the rate estimation as we can assume that mutation bias does evolve neutral.
 We can not make this assumption for $\Delta \eta$ as it represents the strength of selection relative to the strength of drift ($sN_e$).
 
-
-We found overall lower rates of evolution in $\Delta XX$ when compared to $\Delta YY$. 
-
-
-
-$\Delta \eta$ is the strength of selection relative to the strength of drift ($sN_e$).
-
-\subsection*{Synteny between C-Left and candidate genomes}
-
-We evaluated genome rearrangements between the candidate genomes and \textit{L. kluyveri} C-Left using SynMap 3.2.
-We were able to confirm our findings of XXX as a potential origin for C-Left using genome synteny as a third line of evidence.
-While synteny between \textit{L. kluyveri} and other Lachancea does occur, it is limited to the main part of the genome and does not extend to C-Left.
-
-\begin{itemize}
-	\item Question: GC-content variation causes difference in CUB, CUB difference driven by different selection or mutation environment of original host
-	\item C-left has lower \% of high expression genes
-	\item Observing variation in codon usage bias in kluyveri genome
-	\item differences in mutation greater than in selection
-	\item ignoring variation effects information extracted from the data
-	\item no lachancia with similar cub known, most yeast have similar cub.
-\end{itemize}
-
 \section*{Discussion}
 
-Attempts to elude on the unknown history of C-Left have been plenty full. 
-Our comparison of codon usage patterns across various yeast species revealed no promising candidate as origin of C-Left.
-However, our approach can be used to quickly screen for candidates showing similar codon usage patterns.
+We analyzed the codon usage bias of \textit{L. kluyveri} and found differing codon usage between two previously identified distinct regions of the genome. 
+The two genomic regions were analyzed in conjunction and separate for differences in mutation and selection bias underlying codon usage patterns.
+Our findings indicate that C-Left shows great differences in mutations bias, and small differences in selection bias.
+These findings have implications for the study of codon usage beyond the here studied \textit{L. kluyveri} as such studies assume common codon usage across the genome.
+Even though the authors are not aware of other organisms with such remarkable introgression patterns, other sources such as strand bias can lead to differences in mutation bias.
+Differences in mutation bias or even selection bias can distort or bias the results of codon usage analysis. 
+As the comparison of experimental expression data to predicted protein synthesis rate $\phi$ shows, prediction of $\phi$ is still reasonable when ignoring differences in codon usage bias. 
+However, we can not assume this to be always true and our prediction of $\phi$ is greatly improved when separating C-Left from the rest of the genome.
+We also note that the variation in predicted $\phi$ is greatly reduced and most values are found around zero when the genome is not split.
+This causes the model to reduce the impact of extreme values in the codon usage spectrum, in this case caused by the strong disagreement in mutation bias $\Delta M$.
 
-The evolution of codon usage is driven by the main forces of evolution: mutation, selection and drift.
+The evolution of codon usage is driven by three forces of evolution: mutation, selection and drift.
 The insertion of a genomic region into a new host environment is expected to lead to adaptation in the inserted region.
 Neutral change is slow as no selection is amplifying the proliferation of introduced changes.
-Therefore we expect that differences in mutation bias, driving codon usage in low expression genes, to decay slower than differences in selection bias.
+We therefore, expect that differences in mutation bias, driving codon usage in low expression genes, to decay slower than differences in selection bias.
 C-Left shows an access number of genes with low evolutionary mean expression.
 The slow decay of mutation bias is supported by an excess of polymorphisms of low frequency, like expected under a model of neutral evolution (Friedrich 2014).
 
-The decay of bias in selection for translation efficiency, however, is depended on the effective population size $N_e$.  
-$N_e$ is estimated to be on the order of $10^x$ for yeast species, implying that genetic drift can be assumed to be weak relative to selection.
-Our findings indicate that the origin of C-Left will show similarities in mutation bias, but will likely differ in their selection bias.
+Attempts to elude on the unknown history of C-Left have been plenty full.
+Here, we used the opportunity to see if the analysis of codon usage bias can be used to help elude on this question.
+Our comparison of codon usage patterns across various yeast species revealed three promising candidate as origin of C-Left.
+The first two \textit{C. albicans} and \textit{C. dubliniensis} show very low GC content compared to C-Left with 34 \% and 33 \% respectively. 
+Furthermore, neither shows any synteny relationship with C-Left.
+Therefore, depsite the low estimated divergence time between C-Left and these organisms, we have to disregard them as potential donor organisms. 
+The third organism \textit{E. gossypii} however shows similar codon usage, GC content (52 \%), and high synteny.  
+
+\section{Acknowledgments}
 
 
-\begin{itemize}
-	\item Faster decay of selection bias, versus mutation bias
-	\item expected number of mutations, C-Left not at equilibrium
-	\item low amount of high expression genes lead to longer persistence of GC-difference?
-\end{itemize}
+\bibliographystyle{plain}
+\bibliography{kluyveri_ref}
 
 
 \section{Figures and Tables}
+
+\begin{table}
+\begin{tabular}{ | l | c | c | c | c | c | }
+\hline
+	Species & Timetree(mean) & Timetree(median) & Tree  & CUB(Main) & CUB(C-Left) \\ \hline
+	Klac & 104 & 102 & 1.43 & 0.24 & 1.05 \\ \hline
+	Agos & 104 & 102 & 1.43 & 1.53 & 1.62 \\ \hline
+	Kthe & 85.7 & 85.7 & 1.39 & 0.46 & 1.08 \\ \hline
+	Kwal & 85.7 & 85.7 & 1.39 & 0.43 & 1.04 \\ \hline
+	Zrou & 114 & 112 & 1.48 & 0.25 & 1.11 \\ \hline
+	Kpol & 114 & 112 & 1.48 & 0.4 & 1.28 \\ \hline
+	Cgla & 114 & 112 & 1.48 & 0.4 & 1.18 \\ \hline
+	Scas & 114 & 112 & 1.48 & 0.37 & 1.14 \\ \hline
+	Skud & 114 & 112 & 1.48 & 0.2 & 1.01 \\ \hline
+	Smik & 114 & 112 & 1.48 & 0.26 & 1.1 \\ \hline
+	Spar & 114 & 112 & 1.48 & 0.28 & 1.09 \\ \hline
+	Scer & 114 & 112 & 1.48 & 0.17 & 1.05 \\ \hline
+	Psti & 304 & 239 & 1.63 & 0.35 & 1 \\ \hline
+	Cgui & 304 & 239 & 1.63 & 0.5 & 1.04 \\ \hline
+	Clus & 304 & 239 & 1.63 & 0.64 & 1.45 \\ \hline
+	Dhan & 304 & 239 & 1.63 & 0.32 & 1.11 \\ \hline
+	Ctro & 304 & 239 & 1.63 & 0.72 & 1.45 \\ \hline
+	Calb & 304 & 239 & 1.63 & 0.87 & 0.78 \\ \hline
+	Cdub & 304 & 239 & 1.63 & 1.01 & 0.82 \\ \hline
+	Cpar & 304 & 239 & 1.63 & 0.65 & 1.17 \\ \hline
+	Lelo & 304 & 239 & 1.63 & 0.44 & 1.06 \\ \hline
+\end{tabular}
+\caption{}
+\label{tab:div_time}
+\end{table}
+
 
 \begin{table}
 \begin{tabular}{ | l | l | l | c | l | l | }
@@ -195,45 +289,40 @@ Our findings indicate that the origin of C-Left will show similarities in mutati
 \label{tab:org_overview}
 \end{table}
 
-\begin{figure*}[t!]
+
+\begin{figure}[H]
     \centering
-    \begin{subfigure}[t]{0.5\textwidth}
+    \begin{subfigure}
         \centering
-        \includegraphics[width=.4\textwidth]{img/phi_corr_plot_whole_Genome_estim}
-        \caption{}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[t]{0.5\textwidth}
+        \includegraphics[width=.4\textwidth]{img/phi_corr_plot_whole_Genome_estim.pdf}
+    \end{subfigure}
+    \begin{subfigure}
         \centering
         \includegraphics[width=.4\textwidth]{img/phi_corr_plot_split_Genome_estim.pdf}
-        \caption{}
     \end{subfigure}
     \caption{Person correltation of predicted protein synthesis rate $\phi$ with observed expression rate. )}
     \label{fig:phi_corr_two_cond}
-\end{figure*}
+\end{figure}
 
 
-\begin{figure*}[t!]
+\begin{figure}[H]
     \centering
-    \begin{subfigure}[t]{0.5\textwidth}
+    \begin{subfigure}
         \centering
         \includegraphics[width=.4\textwidth]{img/csp_all_species_vs_kuyveri_main.pdf}
-        \caption{}
-    \end{subfigure}%
-    ~ 
-    \begin{subfigure}[t]{0.5\textwidth}
+    \end{subfigure}
+    \begin{subfigure}
         \centering
         \includegraphics[width=.4\textwidth]{img/csp_all_species_vs_kuyveri_cleft.pdf}
-        \caption{}
     \end{subfigure}
     \caption{Person correltation of $\Delta \eta$ and $\Delta M$ of various yeast species with \textit{L. kluyveri} Main (a) and \textit{L. kluyveri} C-Left (b)}
     \label{fig:csp_cor_all_yeast}
-\end{figure*}
+\end{figure}
 
-
-    \begin{figure}[t]
-        \centering
-        \includegraphics[width=.4\textwidth]{img/phi_corr_plot_whole_Genome_estim}
-        \caption{}
-    \end{figure}%
+\begin{figure}[H]
+    \centering
+	\includegraphics[width=.4\textwidth]{img/rokas_noBay_RAxML_bestTree_rooted.pdf}
+    \caption{}
+    \label{fig:tree_yeast}
+\end{figure}
 \end{document}

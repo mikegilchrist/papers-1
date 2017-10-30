@@ -1,5 +1,14 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: kluyveri_paper.aux
-I found no \citation commands---while reading file kluyveri_paper.aux
-I found no \bibdata command---while reading file kluyveri_paper.aux
-I found no \bibstyle command---while reading file kluyveri_paper.aux
-(There were 3 error messages)
+I couldn't open style file plain.bst
+---line 8 of file kluyveri_paper.aux
+ : \bibstyle{plain
+ :                }
+I'm skipping whatever remains of this command
+I couldn't open database file kluyveri_ref.bib
+---line 9 of file kluyveri_paper.aux
+ : \bibdata{kluyveri_ref
+ :                      }
+I'm skipping whatever remains of this command
+I found no database files---while reading file kluyveri_paper.aux
+I found no style file---while reading file kluyveri_paper.aux
+(There were 4 error messages)
