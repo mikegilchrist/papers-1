@@ -9,6 +9,8 @@
 \usepackage{color}
 \usepackage{caption}
 \usepackage[margin=1in]{geometry}
+\usepackage{epstopdf}
+
 
 \begin{document}
 \doublespacing
@@ -16,7 +18,7 @@
 
 
 
-\noindent RH: LANDERER ET AL.--- STUFF
+\noindent RH: LANDERER ET AL.--- Intragenomic variation in codon usage
 % put in your own RH (running head)
 % for POVs the RH is always POINT OF VIEW
 
@@ -25,7 +27,7 @@
 \begin{center}
 
 % Insert your title:
-\noindent{\Large \bf  INSERT TITLE HERE}
+\noindent{\Large \bf Differences in Codon Usage Bias between genomic regions in the yeast \textit{Lachancea kluyveri}.}
 \bigskip
 
 % We don't use a special title page; the author information is entered
@@ -35,7 +37,7 @@
 % tables. Don't include any footnotes in the text.
 
 
-\noindent{C\textsc{edric} ~{L\textsc{anderer}}$^{1,2,*}$,
+\noindent{C\textsc{EDRIC} ~{L\textsc{ANDERER}}$^{1,2,*}$,
 R\textsc{USSELL} {Z\textsc{ARETZKI}}$^{3}$,
 \textsc{AND}
 M\textsc{ICHAEL} A.~{G\textsc{ILCHRIST}}$^{1,2}$}
@@ -54,7 +56,16 @@ M\textsc{ICHAEL} A.~{G\textsc{ILCHRIST}}$^{1,2}$}
 \vfill
 \centerline{Version dated: \today}
 \vfill
+\newpage
 
+\begin{abstract}
+Synonymous codon usage can differ vastly between organisms due to mutation or selective constrains. 
+We explore the codon usage pattern of \textit{Lachancea kluyveri}, a yeast that has experienced a large introgression covering the whole left arm of chromosome C.
+Codon usage was analyzed for the whole genome, and for the introgressed region and the rest of the genome separately.
+We show that codon usage differs between the two regions and are able to attribute most of the variation in codon usage to differences in mutation bias.
+We also explored if codon usage bias is suitable to identify possible candidates for the origin of the introgressed region.
+We validated our candidates using GC-content and synteny relationships.
+\end{abstract}
 
 
 \section*{Introduction}
@@ -205,7 +216,7 @@ The third organism \textit{E. gossypii} however shows similar codon usage, GC co
 \section{Acknowledgments}
 
 
-\bibliographystyle{plain}
+%\bibliographystyle{plain}
 \bibliography{kluyveri_ref}
 
 
@@ -304,7 +315,7 @@ The third organism \textit{E. gossypii} however shows similar codon usage, GC co
     \label{fig:phi_corr_two_cond}
 \end{figure}
 
-
+	
 \begin{figure}[H]
     \centering
     \begin{subfigure}
