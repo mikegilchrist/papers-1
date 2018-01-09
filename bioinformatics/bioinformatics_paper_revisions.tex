@@ -20,7 +20,6 @@
 \newcommand{\packagee}{\textbf{AnaCoDa}}
 \usepackage{natbib}
 \usepackage{color}
-\usepackage{ulem}
 
 %%% Start here.
 \begin{document}
@@ -73,17 +72,20 @@ on CRAN (\url{https://github.com/clandere/AnaCoDa}).
 
 \section*{Introduction}
 
-%%revision to introduction
+%%removed from introduction
 \textcolor{red}
 {
-
-} %% end revision to introduction
-
 The exponential increase in publicly available genomes over the past decade and the addition of novel technologies produced a vast amount of data for researchers.  
 This influx of raw data necessitates the development of computational tools for extracting biological information. 
 Such tools and models have to be developed and provided in easy to use software to allow researchers to analyze classical sequence data as well as novel data like ribosome foot-printing counts.
-
-Here, we describe an open-source software implemented in R \citep{rcore} that allows researchers to analyze genome-scale data like coding sequences and ribosome foot-printing data using a Bayesian framework. Models described by \citet{gilchrist2015}, \citet{wallace2013}, and \citet{shah2011} can be effectively fitted using \packagee. 
+Here, we describe
+} %% end removed from introduction
+\textcolor{blue}{\package is}  an open-source software implemented in R \citep{rcore} that allows researchers to analyze genome-scale data like coding sequences and ribosome foot-printing data using a Bayesian framework. Models described by \citet{gilchrist2015}, \citet{wallace2013}, and \citet{shah2011} can be effectively fitted using \packagee.
+%% addded to introduction
+\textcolor{blue} 
+{
+STUFF
+} %% end addded to introduction
 \package implements an adaptive Gibbs sampler within a Metropolis-Hastings Monte Carlo Markov Chain (MCMC) approach. This allows for the incorporation of prior knowledge and easy sampling from the posterior distribution to estimate parameter values and quantify the degree of uncertainty in these estimates.
 Currently, \package provides three models to analyze codon counts obtained from coding sequences or ribosome foot-printing experiments. However, \package provides a modular infrastructure such that additional genome scale or even phylogenetic models can be integrated. 
 \package provides a generic, mixture distribution option to all implemented models, allowing for estimation of condition specific parameters or the automatic categorization of data into different sets based on differences in their posterior probabilities of set membership.
