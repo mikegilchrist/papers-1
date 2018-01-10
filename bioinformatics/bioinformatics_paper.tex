@@ -19,8 +19,6 @@
 \newcommand{\package}{\textbf{AnaCoDa }} % need that whitespace there for text flow
 \newcommand{\packagee}{\textbf{AnaCoDa}}
 \usepackage{natbib}
-\usepackage{color}
-\usepackage{ulem}
 
 %%% Start here.
 \begin{document}
@@ -72,13 +70,6 @@ on CRAN (\url{https://github.com/clandere/AnaCoDa}).
 
 
 \section*{Introduction}
-
-%%revision to introduction
-\textcolor{red}
-{
-
-} %% end revision to introduction
-
 The exponential increase in publicly available genomes over the past decade and the addition of novel technologies produced a vast amount of data for researchers.  
 This influx of raw data necessitates the development of computational tools for extracting biological information. 
 Such tools and models have to be developed and provided in easy to use software to allow researchers to analyze classical sequence data as well as novel data like ribosome foot-printing counts.
@@ -135,10 +126,20 @@ Significant differences between simulated and observational data suggests the cu
  
 \subsubsection*{Available models}
 \package currently provides codon models for analyzing genome scale data.
-The ROC model extends the codon usage bias model developed by \citet{gilchrist2015,wallace2013,shah2011}, which can reliably estimate the strength of selection on \underline{r}ibosome \underline{o}verhead \underline{c}ost, mutation bias and allows for the inference of protein synthesis rates.
-
+The ROC model extends the codon usage bias model developed by \citet{gilchrist2015,wallace2013,shah2011}, which can reliably estimate the strength of selection on \underline{r}ibosome \underline{o}verhead \underline{c}ost (ROC), mutation bias, and allows for the inference of protein synthesis rates.
 This model allows for the separation of effects of mutation and selection based on gene ordering by protein synthesis rate, and the added mixture distribution allows for gene clustering based on these effects.
-Furthermore, \package implements a ribosome \underline{Pa}using (PA) model to estimate codon specific ribosome pausing times from ribosome foot-printing data.
+Aside from just identifying the most efficient codons, ROC provides information on the direction of mutation bias, which can be used to approximate mutation rates between codons (see \citep{gilchrist2015,wallace2013}).
+The ability to estimate protein synthesis rates in the absence of empirical data is useful for investigating CUB of non-model organisms where such data is lacking.
+Use of the mixture model allows for the investigation of codon usage bias heterogeneity at the genome or gene level.  
+
+Additional models included in \package provide estimates of nonsense errors rates for each codon (FONSE) and pausing time estimates from ribosome footprinting data (PA). 
+\package also implements a ribosome \underline{Pa}using (PA) model to estimate codon specific ribosome pausing times from ribosome foot-printing data.
+These models can provide an expectation for experimental work.
+Significant deviations from the estimated parameters might suggest an underlying assumption of the model is violated or the selective forces involved are particularly weak for an organism.
+For example, if the estimated protein syntheis rates from ROC do not correlate with empirical data, then selection for translation efficiency migth be relatively weak in an organism.
+These types of observations can serve as the basis for future empirical and computational studies.
+
+The underlying object-oriented framework allows users to extend the current package to include their own models for biological data analysis.
 
 
 \bibliographystyle{natbib}

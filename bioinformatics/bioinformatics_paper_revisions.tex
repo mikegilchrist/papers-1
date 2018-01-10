@@ -80,11 +80,13 @@ This influx of raw data necessitates the development of computational tools for 
 Such tools and models have to be developed and provided in easy to use software to allow researchers to analyze classical sequence data as well as novel data like ribosome foot-printing counts.
 Here, we describe
 } %% end removed from introduction
-\textcolor{blue}{\package is}  an open-source software implemented in R \citep{rcore} that allows researchers to analyze genome-scale data like coding sequences and ribosome foot-printing data using a Bayesian framework. Models described by \citet{gilchrist2015}, \citet{wallace2013}, and \citet{shah2011} can be effectively fitted using \packagee.
+\textcolor{blue}{\package is}  an open-source software implemented in R \citep{rcore} that allows researchers to analyze genome-scale data like coding sequences and ribosome foot-printing data using a Bayesian framework. 
+Models described by \citet{gilchrist2015}, \citet{wallace2013}, and \citet{shah2011} can be effectively fitted using \package.
 %% addded to introduction
 \textcolor{blue} 
 {
-STUFF
+The FONSE model analyzes ORF data for selection against of nonsense error rates.
+The PA and PANSE model use ribosome footprinting data to analyze for ribosome pausing time with and without nonsense error rate.
 } %% end addded to introduction
 \package implements an adaptive Gibbs sampler within a Metropolis-Hastings Monte Carlo Markov Chain (MCMC) approach. This allows for the incorporation of prior knowledge and easy sampling from the posterior distribution to estimate parameter values and quantify the degree of uncertainty in these estimates.
 Currently, \package provides three models to analyze codon counts obtained from coding sequences or ribosome foot-printing experiments. However, \package provides a modular infrastructure such that additional genome scale or even phylogenetic models can be integrated. 
@@ -137,11 +139,27 @@ Significant differences between simulated and observational data suggests the cu
  
 \subsubsection*{Available models}
 \package currently provides codon models for analyzing genome scale data.
-The ROC model extends the codon usage bias model developed by \citet{gilchrist2015,wallace2013,shah2011}, which can reliably estimate the strength of selection on \underline{r}ibosome \underline{o}verhead \underline{c}ost, mutation bias and allows for the inference of protein synthesis rates.
-
+The ROC model extends the codon usage bias (CUB) model developed by \citet{gilchrist2015,wallace2013,shah2011}, which can reliably estimate the strength of selection on \underline{r}ibosome \underline{o}verhead \underline{c}ost, mutation bias and allows for the inference of protein synthesis rates.
 This model allows for the separation of effects of mutation and selection based on gene ordering by protein synthesis rate, and the added mixture distribution allows for gene clustering based on these effects.
-Furthermore, \package implements a ribosome \underline{Pa}using (PA) model to estimate codon specific ribosome pausing times from ribosome foot-printing data.
+\textcolor{blue}{
+In addition to identifying the most efficient codons, ROC provides information on the direction of mutation bias, which can be used to approximate mutation rates between codons (see \citet{gilchrist2015,wallace2013}).
+The ability to estimate protein synthesis rates in the absence of empirical data is useful for investigating CUB of non-model organisms for which such data is lacking.
+These estimates may also be used for other models which require gene expression information. 
+Use of the mixture model allows for the investigation of CUB heterogeneity at the genome or gene level.  
+Additional models included in \package provide estimates of codon-specific nonsense errors rates (FONSE) and ribosome pausing times (PA and PANSE).
+}
 
+\textcolor{red}{
+Furthermore, \package implements a ribosome \underline{Pa}using (PA) model to estimate codon specific ribosome pausing times from ribosome foot-printing data.
+}
+
+\textcolor{blue}{
+Parameters estimated with these models can serve as expected results for empirical work. 
+Assuming no major errors in the experimental procedure, significant deviations from the estimated parameters might suggest an underlying assumption of the model is violated or the selective forces involved are particularly weak.
+For example, if the estimated protein syntheis rates from ROC do not correlate with empirically measured protein synthesis rates for an organism, then selection for translation efficiency might be relatively weak in this organism.
+These types of conflicts indicate the need for further empirical and computational studies.
+\package allows for users to modify the current models to suit their needs, as well as implement new models for genomic data anaylsis.   
+}
 
 \bibliographystyle{natbib}
 \bibliography{bioinfo}
