@@ -5,6 +5,13 @@ Booch, G. (1993).
 \newblock {\em Object-oriented analysis and design with applications\/}.
 \newblock Benjamin-Cummings Publishing Co, Redwood City.
 
+\bibitem[Dunn {\em et~al.}(2018)Dunn, Zapata, Munro, Siebert, and
+  Hejnol]{dunn2018}
+Dunn, C., Zapata, F., Munro, C., Siebert, S., and Hejnol, A. (2018).
+\newblock Pairwise comparisons across species are problematic when analyzing
+  functional genomic data.
+\newblock {\em Proc Natl Acad Sci USA\/}.
+
 \bibitem[Edelbuettel and Francois(2011)Edelbuettel and Francois]{rcpp_package}
 Edelbuettel, D. and Francois, R. (2011).
 \newblock Rcpp: Seamless r and c++ integration.
