@@ -65,14 +65,23 @@ Warning in install.packages :
 
 Please complete the CRAN submission and provide the CRAN url rather than the github url.
 
-2. There doesn't seem to be a user manual. The README provides a few examples, and the package is documented via roxygen2, but that is not sufficient to really understand a package, in my experience. I think you should add a vignette that explains how the package works and why. The vignette should also show some example output and results. This doesn't have to be particularly long, and it can probably be put together in part from pieces already existing in the reference documentation and README.
+Response: We completed the CRAN submition and the package is now available for unix and windows systems. The CRAN URL is provided in the manuscript.
+
+2. There doesn't seem to be a user manual. The README provides a few examples, and the package is documented via roxygen2, 
+but that is not sufficient to really understand a package, in my experience. I think you should add a vignette that explains how the package works and why. 
+The vignette should also show some example output and results. This doesn't have to be particularly long, and it can probably be put together in part from pieces already existing 
+in the reference documentation and README.
+
+Response: We added a vignette that describes the functionallity of the package and provides several examples for users as guidance.
 
 Reviewer: 2
 
 Comments to the Author
-The developments described are sound but I have no idea of what is the purpose of this package. In what kind of studies it can be used? What are the available alternatives? Is it designed for evolutionary studies? Something else? This must be clarified.
+The developments described are sound but I have no idea of what is the purpose of this package. In what kind of studies it can be used? What are the available alternatives? 
+Is it designed for evolutionary studies? Something else? This must be clarified.
 
-I suggest therefore to remove the first paragraph, which contains the Nth statement (N >>1000) about the "eponential growth of sequence data" and replace it by an explanation of the aims of the package and the context of its possible use.
+I suggest therefore to remove the first paragraph, which contains the Nth statement (N >>1000) 
+about the "eponential growth of sequence data" and replace it by an explanation of the aims of the package and the context of its possible use.
 
 I have also a minor comment on the fact that this R package seems to be NOT available on CRAN sites despite a mention of this in the availability section in the abstract.
 ----------------------------------------

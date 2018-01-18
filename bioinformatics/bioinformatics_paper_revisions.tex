@@ -1,6 +1,6 @@
 \documentclass{bioinfo}
-\copyrightyear{2017}
-\pubyear{2017}
+\copyrightyear{2018}
+\pubyear{2018}
 
 \usepackage[doublespacing]{setspace} %allow doublespacing option
 \usepackage{xspace}
@@ -16,10 +16,9 @@
 \let\proglang=\textsf
 %%% End of additional Macro and command.
 
-%\usepackage[doublespacing]{setspace}
+%%%\usepackage[doublespacing]{setspace}
 
 \newcommand{\package}{\textbf{AnaCoDa}\xspace} % Use xspace, not two commands!
-\newcommand{\packagee}{\package}
 \usepackage{natbib}
 \usepackage{color}
 
@@ -51,15 +50,17 @@ $^{5}$Oak Ridge National Laboratory, Oak Ridge, TN, USA.}
 
 \maketitle
 
+%%%%%%%%%%%%%%%%%%
+%%% %%   ABSTRACT   %%%%%%
+%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-
-\pkg{\package} is an R package for estimating \textcolor{blue}{mixtures of} biological parameters, such as selection against translation inefficiency, nonsense error rate, and ribosome pausing time, \textcolor{red}{for sets of genes based on codon or amino acid data} /textcolor{blue}{from genomic and high throughput datasets}.
+\pkg{\package} is an R package for estimating \textcolor{blue}{mixtures of} biological parameters, such as selection against translation inefficiency, nonsense error rate, and ribosome pausing time, \textcolor{red}{for sets of genes based on codon or amino acid data} \textcolor{blue}{from genomic and high throughput datasets}.
 \package provides an adaptive Bayesian MCMC algorithm, fully implemented in C++ for high performance with an ergonomic R interface to improve usability. 
 \package employs a generic object-oriented design to allow users to extend the framework and implement their own models \textcolor{red}{for analyzing biological data}.
 Current models implemented in \package can accurately estimate \textcolor{blue}{biologically} relevant parameters given either \textcolor{blue}{protein} coding sequences or ribosome foot-printing data.
 Optionally, \package can utilize additional data sources, such as gene expression measurements, to \textcolor{red}{improve} \textcolor{blue}{aid} model fitting and parameter estimation.
 By utilizing a hierarchical object structure, some parameters can vary between sets of genes while others can be shared.
-Gene \textcolor{red}{membership in} \textcolor{blue}{assignment to} a set can either be pre-assigned or estimated by \packagee.
+Gene \textcolor{red}{membership in} \textcolor{blue}{assignment to} a set can either be pre-assigned or estimated by \package.
 This flexibility allows users to estimate the same model parameter under different biological conditions and categorize genes into different sets based on shared model properties embedded within the data.
 \package also allows users to generate simulated data which can be used to aid model development and model analysis as well as evaluate model adequacy.
 Finally, \package \textcolor{red}{also comes with} \textcolor{blue}{contains} a set of visualization routines and the ability to revisit or reinitiate previous model fittings, providing researchers with a well rounded easy to use framework to analyze genome scale data.
@@ -71,7 +72,9 @@ on CRAN (\url{https://cran.r-project.org/web/packages/AnaCoDa/}).
 \section{Contact:} \href{cedric.landerer@gmail.com}{cedric.landerer@gmail.com}
 \end{abstract}
 
-
+%%%%%%%%%%%%%%%%%%
+%%%   INTRODUCTION   %%%%%%
+%%%%%%%%%%%%%%%%%%
 \section*{Introduction}
 
 %%removed from introduction
@@ -83,12 +86,12 @@ Such tools and models have to be developed and provided in easy to use software 
 Here, we describe
 } %% end removed from introduction
 \textcolor{blue}{\package is}  an open-source software implemented in R \citep{rcore} that allows researchers to analyze genome-scale data like coding sequences and ribosome footprinting data using a Bayesian framework. 
-Models described by \citet{gilchrist2015}, \citet{wallace2013}, and \citet{shah2011} can be effectively fitted using \packagee.
+\textcolor{blue}{\package was developed to analyze selection on synonymous codon usage in the form of ribosome overhead cost (\citet{gilchrist2015,wallace2013,shah2011}).} \textcolor{red}{Models described by \citet{gilchrist2015}, \citet{wallace2013}, and \citet{shah2011} can be effectively fitted using \package.}
 %% addded to introduction
 \textcolor{blue} 
 {
 In addition three currently unpublished models are included as well. The FONSE (\underline{f}irst order approximation \underline{o}n \underline{n}on\underline{s}ense \underline{e}rror) model allows for the estimation of selection against nonsense error rates.
-The PA (\underline{pa}using time) and PANSE (\underline{pa}using time + \underline{n}on\underline{s}ense \underline{e}rror) model allows for the estimation of ribosome pausing times from ribosome footprinting data, including or ignoring the posibility for nonsense errors.
+The PA (\underline{pa}using time) and PANSE (\underline{pa}using time + \underline{n}on\underline{s}ense \underline{e}rror) model allows for the estimation of ribosome pausing times from ribosome footprinting data, including or ignoring the posibility for nonsense errors respectively.
 } %% end addded to introduction
 \package implements an adaptive Gibbs sampler within a Metropolis-Hastings Monte Carlo Markov Chain (MCMC) \textcolor{red}{approach}. 
 This allows for the incorporation of prior knowledge and easy sampling from the posterior distribution to estimate parameter values and quantify the degree of uncertainty \textcolor{red}{in these estimates}.
@@ -97,7 +100,14 @@ This allows for the incorporation of prior knowledge and easy sampling from the 
 Currently, \package provides four models to analyze codon counts obtained from coding sequences or ribosome foot-printing experiments. 
 However, \package provides a modular infrastructure such that additional genome scale or even phylogenetic models can be integrated.
 } 
-\package provides a \textcolor{red}{generic,} mixture distribution option to all implemented models, allowing for the estimation of \textcolor{red}{condition} \textcolor{blue}{gene-set} specific parameters or the automatic categorization of data into different sets based on \textcolor{red}{differences in their} \textcolor{blue}{estimated} posterior probabilities of set \textcolor{red}{membership} \textcolor{blue}{assignment}.
+
+\textcolor{blue}{
+\package provides a mixture distribution option to all implemented models, combining genes into sets by estimating the posterior probabilities of set membership based on gene-set specific parameters shared by all genes assigned to a given set. 
+}
+\textcolor{red}{
+\package provides a generic, mixture distribution option to all implemented models, allowing for the estimation of condition specific parameters or the automatic categorization of data into different sets based on differences in their posterior probabilities of set membership.
+}
+
 \textcolor{blue}
 {
 In addition to the four models provided, \package provides a modular infrastructure such that additional genome scale or even phylogenetic models can be integrated.
@@ -105,16 +115,19 @@ In addition to the four models provided, \package provides a modular infrastruct
 
 \textcolor{red}{The \package framework works with \package requires gene specific data such as codon frequencies obtained from coding sequences or position specific footprint counts.}
 Conceptually, \package uses three different types of parameters.
-The first type of parameters are gene specific parameters such as \textcolor{red}{gene expression} \textcolor{blue}{protein synthesis} or functionality.
-Gene-specific parameters are estimated separately for each gene and can vary between potential gene categories or sets.
+The first type of parameters are gene specific parameters such as \textcolor{red}{gene expression} \textcolor{blue}{protein synthesis rate} or \textcolor{blue}{relative} functionality.
+\textcolor{red}{Gene-specific parameters are estimated separately for each gene and can vary between potential gene categories or sets.}
 The second type of parameters are gene-set specific parameters, such as mutation bias terms or translation error rates.
 These parameters are shared across genes within a set and can be exclusive to a single set or shared with other sets.
 While the number of gene sets must be pre-defined by the user, set assignment of genes can be pre-defined or estimated as part of the model fitting.
 Estimation of the set assignment provides the probability of a gene being assigned to a set allowing the user to asses the uncertainty in each assignment.
-The third type of parameters are hyperparameters, such as parameters controlling the prior distribution for mutation bias or \textcolor{red}{error rate} \textcolor{blue}{protein synthesis rate}.
-Hyperparameters can be set specific or shared across multiple sets and allow for the construction and analysis of hierarchical models by controlling prior distributions for gene or gene-set specific parameters.
-\textcolor{red}{In order} \textcolor{blue}{To} reduce the effect of the 'curse of dimensionality' on the sampling efficiency of the MCMC chain and allow \textcolor{blue}{for} flexibility in parallelization, \package uses an adaptive Gibbs sampling approach where the MCMC sampling of one parameter type is conditioned on the other two types.
+The third type of parameters are hyperparameters, \textcolor{blue}{allowing for the construction and analysis of hierarchical model. Hyperparameters } \textcolor{red}{, such as parameters} control\textcolor{red}{ling} the prior distribution for \textcolor{blue}{gene and gene-set specific parameters such as} mutation bias or \textcolor{red}{error rate} \textcolor{blue}{protein synthesis rate}.
+ \textcolor{red}{Hyperparameterscan be set specific or shared across multiple sets and allow for the construction and analysis of hierarchical models by controlling prior distributions for gene or gene-set specific parameters.
+In order reduce the effect of the 'curse of dimensionality' on the sampling efficiency of the MCMC chain and allow flexibility in parallelization, \package uses an adaptive Gibbs sampling approach where the MCMC sampling of one parameter type is conditioned on the other two types.}
 
+%%%%%%%%%%%%%%%%%%
+%%%%%% FEATURES   %%%%%%
+%%%%%%%%%%%%%%%%%%
 \section*{Features}
 \package provides an interface written in R, a freely available programming language noted for its ease of use for even inexperienced programmers. 
 As a result, \package is accessible to researchers with minimal computational experience. 
@@ -127,12 +140,13 @@ If available, users may also provide additional types of data such as estimates 
 \package also provides visualization functionality, including plotting functions to compare parameter estimates for different mixture distributions and display codon usage patterns. 
 In addition, diagnostic functions \textcolor{red}{such as those} for calculating and visualizing the degree of autocorrelation in \textcolor{red}{MCMC samples} \textcolor{blue}{the parameter traces} are provided.
 
+%%%%%%%%%%%%%%%%%%%
 \subsubsection*{Robust and efficient model fitting}
 \package has built-in features designed to improve the robustness and performance of the implemented MCMC approach. 
 For example, the implemented MCMC \textcolor{red}{approach} automatically adapts the proposal width for sampled parameters \textcolor{red}{so} \textcolor{blue}{such} that an user defined acceptance \textcolor{red}{rate} \textcolor{blue}{range} is met, improving sampling efficiency of the MCMC and computational performance.
 Even though \package is written in C++, analysis of large datasets and/or complex models can be very computationally intensive.
 \textcolor{red}{In order} \textcolor{blue}{To} protect users from computer failures or aid in the collection of additional MCMC samples, \package \textcolor{blue}{can} periodically produce \textcolor{red}{output} \textcolor{blue}{checkpoint} files which can be used to restart an MCMC chain from a previous time point.
-In addition, \package \textcolor{red}{is capable of thinning the MCMC chain,} \textcolor{blue}{automatically thins all parameter traces - } meaning only every $k^{th}$ sample is kept \textcolor{blue}{ - increasing the effective number of samples and reducing the memory foorprint of \packagee}. 
+In addition, \package \textcolor{red}{is capable of thinning the MCMC chain,} \textcolor{blue}{automatically thins all parameter traces - } meaning only every $k^{th}$ sample is kept \textcolor{blue}{ - increasing the effective number of samples and reducing the memory foorprint of \package}. 
 \textcolor{red}{Thinning increases the effective number of samples by reducing the auto-correlation between samples and reduces the amount of memory required by the underlying data structures.
 \package is also able to create file R compatible representations of its parameter and MCMC objects.
 These objects can be loaded into the R environment for model analysis and visualization.}
@@ -141,22 +155,25 @@ Although \package is provided as an R package, the main computational work is im
 Because R does not provide native C++ support, \textcolor{red}{we used the R package Rcpp which allows for the exposure of} \textcolor{blue}{Rcpp was employed to expose} whole C++ classes as modules to R \citep{rcpp_package}.
 Using Rcpp eliminates time consuming data transfers between the R environment and the C++ core during \textcolor{red}{runs} \textcolor{blue}{model fittings}, resulting in improved computational performance and allowed for a fully object-oriented code design \citep{ood_book}. 
 As expected, the runtime of \package scales linearly with genome size and number of iterations, and polynomial with the number of mixture distributions in the data set. 
-The polynomial increase in the number of mixture distributions is explained by the necessity to estimate the protein \textcolor{red}{production} \textcolor{blue}{synthesis} rate for each gene in each mixture distribution, as it is a gene specific parameter and the probability of a gene being assigned to a mixture has to be conditioned on it.
+ \textcolor{red}{The polynomial increase in the number of mixture distributions is explained by the necessity to estimate the protein production rate for each gene in each mixture distribution, as it is a gene specific parameter and the probability of a gene being assigned to a mixture has to be conditioned on it.}
+\textcolor{blue}{The polynomial increase in runtime with the number of mixture distributions is due to the necessity to condition the gene assignment on the estimation of gene specific parameters, such as, protein synthesis rate.}
 
+%%%%%%%%%%%%%%%%%%%%%
 \subsubsection*{Data Simulation}
-In addition \textcolor{red}{to model fitting to} \textcolor{blue}{to fitting the models to} actual datasets, \package can be used to generate simulated data sets as well.
+In addition \textcolor{red}{to model fitting to actual} \textcolor{blue}{to fitting the models to} datasets, \package can be used to generate simulated data sets as well.
 On their own, simulated datasets are useful for model development and analysis.
 Simulating data under different conditions allows the user to explore model behavior \textcolor{blue}{and explore theoretical situations}. 
 Different conditions can include the addition or elimination of parameters, or simply allowing a set of parameter values to vary.
 Fitting models to simulated data can provide \textcolor{red}{users} insight into potential pitfalls or shortcomings when fitting observational data and can serve as the basis for evaluating model adequacy of a model fit to observational data \citep{gumi2015}.
 Significant differences between simulated and observational data suggests the current set of parameters or the model as a whole fail to include or adequately represent biological mechanisms underlying the \textcolor{red}{observational} \textcolor{blue}{observed} data.
  
+%%%%%%%%%%%%%%%%%%%%%
 \subsubsection*{Available models}
 \package currently provides codon models for analyzing genome scale data.
 The ROC model \textcolor{blue}{implements and} extends the codon usage bias (CUB) models developed by \citet{gilchrist2015,wallace2013,shah2011}, which can reliably estimate the strength of selection on \underline{r}ibosome \underline{o}verhead \underline{c}ost, mutation bias and allows for the inference of protein synthesis rates.
 This model allows for the separation of effects of mutation and selection based on gene ordering by protein synthesis rate, and the \textcolor{red}{added} \textcolor{blue}{addition of a} mixture distribution allows for gene clustering based on \textcolor{red}{these effects} \textcolor{blue}{mutation bias and selection for translation efficiency}.
 \textcolor{blue}{
-In addition to identifying the most efficient codons, ROC provides information on the direction of mutation bias allowing the approximation of mutation rates between codons (see \citet{gilchrist2015,wallace2013}).
+In addition to identifying the most efficient codons, ROC provides \textcolor{red}{information on the direction} \textcolor{blue}{estimates} of mutation bias allowing the approximation of mutation \textcolor{red}{rates} \textcolor{blue}{ratio} between codons (\citet{gilchrist2015,wallace2013}).
 The ability to estimate protein synthesis rates in the absence of empirical data is useful for investigating CUB of non-model organisms for which such data is lacking and enables the usage of protein synthesis rate in comparative frameworks or other analyses requiring protein synthesis rate information \citet{dunn2018}.
 Use of the mixture model allows for the investigation of CUB heterogeneity at the genome or gene level.  
 Following the same framework, additional models included in \package provide estimates of codon-specific nonsense errors rates (FONSE) and ribosome pausing times (PA and PANSE).
@@ -166,7 +183,7 @@ Furthermore, \package implements a ribosome \underline{Pa}using (PA) model to es
 }
 \textcolor{blue}{
 Parameters estimated with the evolutionary models ROC and FONSE represent evolutionary averages and do not depend on experimental conditions. 
-In contrast, the statistical models PA and PANSE describe the distribution of ribosome pausing times along a gene from ribosome footprinting data. 
+In contrast, PA and PANSE estimate the distribution of biologically relevant parameters like ribosome pausing times along a gene from experimental data such as ribosome footprinting data. 
 The distribution can be dependent (PANSE) or independent of evidence for nonsense errors in the data.  
 }
 
