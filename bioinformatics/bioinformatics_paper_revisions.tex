@@ -51,13 +51,13 @@ $^{5}$Oak Ridge National Laboratory, Oak Ridge, TN, USA.}
 
 \begin{abstract}
 
-\pkg{\package} is an R package for estimating biological parameters, such as selection against translation inefficiency, nonsense error rate, and ribosome pausing time, for sets of genes based on codon data.
+\pkg{\package} is an R package for estimating \textcolor{blue}{mixtures of} biological parameters, such as selection against translation inefficiency, nonsense error rate, and ribosome pausing time, \textcolor{red}{for sets of genes based on codon or amino acid data} /textcolor{blue}{from genomic and high throughput datasets}.
 \package provides an adaptive Bayesian MCMC algorithm, fully implemented in C++ for high performance with an ergonomic R interface to improve usability. 
-\package employs a generic object-oriented design to allow users to extend the framework and implement their own models for analyzing biological data.
-Current models implemented in \package can accurately estimate \textcolor{blue}{biologically} relevant parameters given either coding sequences or ribosome foot-printing data.
+\package employs a generic object-oriented design to allow users to extend the framework and implement their own models \textcolor{red}{for analyzing biological data}.
+Current models implemented in \package can accurately estimate \textcolor{blue}{biologically} relevant parameters given either \textcolor{blue}{protein} coding sequences or ribosome foot-printing data.
 Optionally, \package can utilize additional data sources, such as gene expression measurements, to \textcolor{red}{improve} \textcolor{blue}{aid} model fitting and parameter estimation.
 By utilizing a hierarchical object structure, some parameters can vary between sets of genes while others can be shared.
-Gene membership in a set can either be pre-assigned or estimated by \packagee.
+Gene \textcolor{red}{membership in} \textcolor{blue}{assignment to} a set can either be pre-assigned or estimated by \packagee.
 This flexibility allows users to estimate the same model parameter under different biological conditions and categorize genes into different sets based on shared model properties embedded within the data.
 \package also allows users to generate simulated data which can be used to aid model development and model analysis as well as evaluate model adequacy.
 Finally, \package \textcolor{red}{also comes with} \textcolor{blue}{contains} a set of visualization routines and the ability to revisit or reinitiate previous model fittings, providing researchers with a well rounded easy to use framework to analyze genome scale data.
@@ -95,7 +95,7 @@ This allows for the incorporation of prior knowledge and easy sampling from the 
 Currently, \package provides four models to analyze codon counts obtained from coding sequences or ribosome foot-printing experiments. 
 However, \package provides a modular infrastructure such that additional genome scale or even phylogenetic models can be integrated.
 } 
-\package provides a \textcolor{red}{generic,} mixture distribution option to all implemented models, allowing for the estimation of \textcolor{red}{condition} \textcolor{blue}{gene-set} specific parameters or the automatic categorization of data into different sets based on differences in their posterior probabilities of set membership.
+\package provides a \textcolor{red}{generic,} mixture distribution option to all implemented models, allowing for the estimation of \textcolor{red}{condition} \textcolor{blue}{gene-set} specific parameters or the automatic categorization of data into different sets based on \textcolor{red}{differences in their} \textcolor{blue}{estimated} posterior probabilities of set \textcolor{red}{membership} \textcolor{blue}{assignment}.
 \textcolor{blue}
 {
 In addition to the four models provided, \package provides a modular infrastructure such that additional genome scale or even phylogenetic models can be integrated.
@@ -129,7 +129,7 @@ In addition, diagnostic functions \textcolor{red}{such as those} for calculating
 \package has built-in features designed to improve the robustness and performance of the implemented MCMC approach. 
 For example, the implemented MCMC \textcolor{red}{approach} automatically adapts the proposal width for sampled parameters \textcolor{red}{so} \textcolor{blue}{such} that an user defined acceptance \textcolor{red}{rate} \textcolor{blue}{range} is met, improving sampling efficiency of the MCMC and computational performance.
 Even though \package is written in C++, analysis of large datasets and/or complex models can be very computationally intensive.
-\textcolor{red}{In order} \textcolor{blue}{To} protect users from computer failures or aid in the collection of additional MCMC samples, \package \textcolor{blue}{can} periodically produce output files which can be used to restart an MCMC chain from a previous time point.
+\textcolor{red}{In order} \textcolor{blue}{To} protect users from computer failures or aid in the collection of additional MCMC samples, \package \textcolor{blue}{can} periodically produce \textcolor{red}{output} \textcolor{blue}{checkpoint} files which can be used to restart an MCMC chain from a previous time point.
 In addition, \package \textcolor{red}{is capable of thinning the MCMC chain,} \textcolor{blue}{automatically thins all parameter traces - } meaning only every $k^{th}$ sample is kept \textcolor{blue}{ - increasing the effective number of samples and reducing the memory foorprint of \packagee}. 
 \textcolor{red}{Thinning increases the effective number of samples by reducing the auto-correlation between samples and reduces the amount of memory required by the underlying data structures.
 \package is also able to create file R compatible representations of its parameter and MCMC objects.
