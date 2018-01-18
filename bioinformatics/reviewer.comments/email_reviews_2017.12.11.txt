@@ -1,0 +1,78 @@
+From onbehalfof@manuscriptcentral.com Mon Dec 11 09:40:15 2017
+Date: Mon, 11 Dec 2017 09:39:37 -0500 (EST)
+From: Bioinformatics <onbehalfof@manuscriptcentral.com>
+Reply-To: bioinformatics.editorialoffice@oup.com
+To: cedric.landerer@gmail.com
+Cc: cedric.landerer@gmail.com, acope3@vols.utk.edu, rzaretzk@utk.edu, mikeg@utk.edu
+Subject: BIOINF-2017-1821 - Major Revision
+Resent-From: <mikeg@utk.edu>
+
+11-Dec-2017
+Manuscript ID: BIOINF-2017-1821
+Title: AnaCoDa: Analyzing Codon Data with Bayesian mixture models
+
+Dear Mr. Landerer,
+
+The reviews of your manuscript are now in hand for Bioinformatics and can be found at the foot of this e-mail.
+
+Based on the reports of the referees, the paper has been rejected for publication in its present form. However, the Associate Editor, John Hancock, considers that if the paper were substantially rewritten taking into account all the referees' comments it may become acceptable for publication.
+
+We ask that major revisions are submitted within one month ideally, but the system will allow a revised paper to be submitted within 90 days of the original decision date.
+
+Please summarise your changes for the editor indicating which changes you have made and which changes you do not wish to make and why. This can be done either in a Response to Reviewers file uploaded alongside your revised manuscript or through the Author Centre where you can enter your responses directly.
+
+Please submit your revised version through the Author Centre by clicking on the purple button 'Click here to Submit a Revision' in the Bioinformatics ScholarOne Manuscripts web site (https://mc.manuscriptcentral.com/bioinformatics).
+
+At this major revision stage we ask that you upload the following revised manuscript files:
+
+EITHER: (i) A .doc or .rtf file of the revised manuscript, with all tables, figures, schemes and equations inserted in the document.
+
+OR: (ii) All necessary LaTeX files that will be required by the typesetter (including bioinfo.cls, bib, .bst and .ps files).
+
+Please can you mark-up the changes made after revision by using the track changes function or highlighting these in red text.
+
+NOTE: Please upload your final version of supplementary materials without any changes marked. This should be in pdf or Word format, not LaTex.
+
+Please note that if you decide that you would like your figures printed in colour a charge of £350 per colour figure applies. If appropriate, you will be invoiced after your paper has been published in the print journal.
+
+As a reminder, please also note the following excess page charges. You will be notified of any excess page charges when you receive your proofs:
+
+For Original articles - £100/$165 per excess page (over 7 published pages)
+For Discovery notes - £100/$165 per excess page (over 4 published pages)
+For Application notes - £100/$165 per excess page (over 2 published pages)
+
+On behalf of the Bioinformatics Associate Editor, John Hancock, I want to thank you for selecting Bioinformatics to present your work.
+
+Best regards,
+Alison Hutchins
+Bioinformatics
+
+----------------------------------------
+
+Here are the comments of the reviewers:
+
+----------------------------------------
+Reviewer: 1
+
+Comments to the Author
+This looks like a useful package. I have two main comments:
+
+1. As far as I can tell, the package is not currently on CRAN, in contrast to what is stated in the abstract:
+
+> install.packages("AnaCoDa")
+Warning in install.packages :
+  package ‘AnaCoDa’ is not available (for R version 3.4.1)
+
+Please complete the CRAN submission and provide the CRAN url rather than the github url.
+
+2. There doesn't seem to be a user manual. The README provides a few examples, and the package is documented via roxygen2, but that is not sufficient to really understand a package, in my experience. I think you should add a vignette that explains how the package works and why. The vignette should also show some example output and results. This doesn't have to be particularly long, and it can probably be put together in part from pieces already existing in the reference documentation and README.
+
+Reviewer: 2
+
+Comments to the Author
+The developments described are sound but I have no idea of what is the purpose of this package. In what kind of studies it can be used? What are the available alternatives? Is it designed for evolutionary studies? Something else? This must be clarified.
+
+I suggest therefore to remove the first paragraph, which contains the Nth statement (N >>1000) about the "eponential growth of sequence data" and replace it by an explanation of the aims of the package and the context of its possible use.
+
+I have also a minor comment on the fact that this R package seems to be NOT available on CRAN sites despite a mention of this in the availability section in the abstract.
+----------------------------------------
