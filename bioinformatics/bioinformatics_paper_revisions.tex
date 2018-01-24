@@ -85,16 +85,17 @@ This influx of raw data necessitates the development of computational tools for 
 Such tools and models have to be developed and provided in easy to use software to allow researchers to analyze classical sequence data as well as novel data like ribosome foot-printing counts.
 Here, we describe
 } %% end removed from introduction
-\textcolor{blue}{\package is}  an open-source software implemented in R \citep{rcore} that allows researchers to analyze genome-scale data like coding sequences and ribosome footprinting data using a Bayesian framework. 
+\textcolor{blue}{\package is}  an open-source software implemented in R \citep{rcore} that allows researchers to analyze genome-scale data like coding sequences and ribosome footprinting data using \textcolor{blue}{evolutionary or analytical models in} a Bayesian framework. 
 \textcolor{blue}{\package was developed to analyze selection on synonymous codon usage in the form of ribosome overhead cost (\citet{gilchrist2015,wallace2013,shah2011}).} \textcolor{red}{Models described by \citet{gilchrist2015}, \citet{wallace2013}, and \citet{shah2011} can be effectively fitted using \package.}
 %% addded to introduction
 \textcolor{blue} 
 {
-In addition three currently unpublished models are included as well. The FONSE (\underline{f}irst order approximation \underline{o}n \underline{n}on\underline{s}ense \underline{e}rror) model allows for the estimation of selection against nonsense error rates.
-The PA (\underline{pa}using time) and PANSE (\underline{pa}using time + \underline{n}on\underline{s}ense \underline{e}rror) model allows for the estimation of ribosome pausing times from ribosome footprinting data, including or ignoring the posibility for nonsense errors respectively.
+In addition, three currently unpublished models to analyze coding sequences for evidence of selection against nonsense errors, and estimate ribosome pausing times from ribosome footprinting data.
+%In addition, three currently unpublished models are included as well. The FONSE (\underline{f}irst order approximation \underline{o}n \underline{n}on\underline{s}ense \underline{e}rror) model allows for the estimation of selection against nonsense error rates.
+%The PA (\underline{pa}using time) and PANSE (\underline{pa}using time + \underline{n}on\underline{s}ense \underline{e}rror) model allows for the estimation of ribosome pausing times from ribosome footprinting data, including or ignoring the posibility for nonsense errors respectively.
 } %% end addded to introduction
 \package implements an adaptive Gibbs sampler within a Metropolis-Hastings Monte Carlo Markov Chain (MCMC) \textcolor{red}{approach}. 
-This allows for the incorporation of prior knowledge and easy sampling from the posterior distribution to estimate parameter values and quantify the degree of uncertainty \textcolor{red}{in these estimates}.
+This allows for the incorporation of prior knowledge \textcolor{blue}{such as observed gene expression levels,} and easy sampling from the posterior distribution to estimate parameter values \textcolor{blue}{and error in observed values,} and quantify the degree of uncertainty \textcolor{red}{in these estimates}.
 \textcolor{red}
 {
 Currently, \package provides four models to analyze codon counts obtained from coding sequences or ribosome foot-printing experiments. 
@@ -113,8 +114,11 @@ However, \package provides a modular infrastructure such that additional genome 
 In addition to the four models provided, \package provides a modular infrastructure such that additional genome scale or even phylogenetic models can be integrated.
 }
 
-\textcolor{red}{The \package framework works with \package requires gene specific data such as codon frequencies obtained from coding sequences or position specific footprint counts.}
-Conceptually, \package uses three different types of parameters.
+\textcolor{red}
+{
+The \package framework works with \package requires gene specific data such as codon frequencies obtained from coding sequences or position specific footprint counts.
+}
+Conceptually, \package \textcolor{red}{uses} \textcolor{blue}{allows for} three different types of parameters.
 The first type of parameters are gene specific parameters such as \textcolor{red}{gene expression} \textcolor{blue}{protein synthesis rate} or \textcolor{blue}{relative} functionality.
 \textcolor{red}{Gene-specific parameters are estimated separately for each gene and can vary between potential gene categories or sets.}
 The second type of parameters are gene-set specific parameters, such as mutation bias terms or translation error rates.
@@ -135,8 +139,11 @@ As a result, \package is accessible to researchers with minimal computational ex
 \textcolor{red}{The \package interface is designed for quick and efficient data analysis.}
 \textcolor{blue}{The interface of \package is designed for quick and efficient data analysis.}
 Generally, the only input needed for fitting a model to the data are protein-coding \textcolor{red}{nucleotide} \textcolor{blue}{codon} sequences in the form of a FASTA file or a flat-file containing codon counts obtained from ribosome foot-printing experiments. 
+\textcolor{red}
+{
 If available, users may also provide additional types of data such as estimates of gene expression.
 \package can simultaneously utilize the information embedded in these additional data types and/or estimate the error associated with it.
+}
 \package also provides visualization functionality, including plotting functions to compare parameter estimates for different mixture distributions and display codon usage patterns. 
 In addition, diagnostic functions \textcolor{red}{such as those} for calculating and visualizing the degree of autocorrelation in \textcolor{red}{MCMC samples} \textcolor{blue}{the parameter traces} are provided.
 
@@ -184,7 +191,7 @@ Furthermore, \package implements a ribosome \underline{Pa}using (PA) model to es
 \textcolor{blue}{
 Parameters estimated with the evolutionary models ROC and FONSE represent evolutionary averages and do not depend on experimental conditions. 
 In contrast, PA and PANSE estimate the distribution of biologically relevant parameters like ribosome pausing times along a gene from experimental data such as ribosome footprinting data. 
-The distribution can be dependent (PANSE) or independent of evidence for nonsense errors in the data.  
+The distribution can be dependent (PANSE) or independent (PA) of evidence for nonsense errors in the data.  
 }
 
 \bibliographystyle{natbib}
