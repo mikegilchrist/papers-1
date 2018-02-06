@@ -16,15 +16,6 @@
    pages={1281-1295}
 }
 
-@article{Wright1990,
-   author={Wright, F},
-   title={The 'effective number of codons' used in a gene},
-   journal={Gene},
-   volume={87}
-   year={1990},
-   pages={23-29}
-}
-
 @article{dunn2018,
    author={Dunn, CW and Zapata, F and Munro, C and Siebert, S and Hejnol, A},
    title={Pairwise comparisons across species are problematic when analyzing functional genomic data},
