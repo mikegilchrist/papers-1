@@ -22,7 +22,6 @@
 \noindent RH: LANDERER ET AL.--- Intragenomic variation in codon usage
 % put in your own RH (running head)
 % for POVs the RH is always POINT OF VIEW
-i
 \bigskip
 \medskip
 \begin{center}
@@ -147,7 +146,7 @@ First we note that the variation in $\phi$, $s_\phi$ is strongly reduced relativ
 The reduction in $\sigma_\phi$, and the $\bar{\phi}$ value of one imposed by the model causes all $\phi$ values to cluster close to zero on the log scale. 
 Essentially eliminating all variation in selection due to differences in $\phi$.
 We also observe a separation of C-Left from the rest of the \kluyveri genome along $\phi$ with C-Left showing consitently lower $\phi$ estimates.
-This separation between the two genomic regions by $\phi$ leads to mutation bias being almost exclusively informed by genes located on C-Left while selection is purely informed by genes located along the rest of the genome.
+This separation between the two genomic regions by $\phi$ should lead to mutation bias being almost exclusively informed by genes located on C-Left while selection is purely informed by genes located along the rest of the genome.
 
 To decide if we can reject the null hypothesis we compared the likelihoods obtained under both hypothesis.
 H1 has 40 additional codon specific parameter (20 $\Delta M$, 20 $\Delta \eta$) describing mutation bias and selection for translation efficiency, and one additional $s_\phi$ term describing the variation in $\phi$ giving us 41 degrees of freedom.
@@ -156,8 +155,17 @@ We observed a $\Delta AIC$ of 81,504 allowing us to reject the null hypothesis a
 % add p-value and FDR 
 
 \subsection*{\kluyveri displays differential codon usage bias}
-We find that the overall CUB observed under H0 is similar to the CUB observed in C-Left due to similar selection but mutation bias only being informed by genes from C-Left (Figure \ref{fig:cys_csp}). 
+We find that the overall CUB observed under H0 is similar to the CUB observed in C-Left under H1 (Figure \ref{fig:cys_csp}).
+In the case of the two codon amino acid cysteine (Cys), we observe that under H0 and H1 the $T$ ending codon TGT is the prefered codon.
+Figure \ref{fig:cys_csp} shows how the proportion of the TGT codon changes with protein synthesis rate $\phi$.
+Under H0, the proportion of TGT decreases with decreasing $\phi$, similar to the \kluyveri genome without C-Left under H1.
+However, the preference under H0 switches from the $T$ ending codon TGT to the $C$ ending codon TGC for low $\phi$ values ($\log(\phi) < -0.1$).
+The same switch of the prefered codon is observed in C-Left under H1.
+However, no switch is observed in the \kluyveri genome without C-Left under H1, prefering the $T$ ending codon TGT across the whole spectrum of $\phi$.
 
+The switch of the prefered codon under H0 is likely an artifact, caused by the separation of C-Left and the remaining genome by $\phi$. 
+As previously stated, the separation of the genome along $\phi$ causes mutation bias $\Delta M$ to be purely informed by genes located on the introgressed region C-Left while the genes located on the remaining genome provide information on selection, $\Delta \eta$.
+As selection favors the T ending codon TGT for both regions, C-Left and the remaing genome under H1, and mutation bias is mostly determined by genes located on C-Left it has become clear how a relative small region ($\sim$ 10\% of all genes) can drive the CUB observed when the heterogeneity in CUB is ignored.
 
 \subsection*{Differences in mutation bias are greater than in selection bias}
 The hypothesis best supported by the data allows us to attribute differences in GC-content mostly to mutation bias. 
@@ -169,6 +177,7 @@ Estimates for $\Delta \eta$ showed a higher consistency between the two genomic 
 The difference in time scale of protein synthesis rate $\phi$ between C-Left and Main, does not allow to draw any conclusions from the observed differences in range of the inferred $\Delta \eta$ parameter.
 
 \subsection*{Comparing codon usage of various yeast species}
+%Given low number of expected mutations, we expect to see high agreement between donor and C-Left
 We determined the codon usage patterns of 38 related yeast species to explore if one of the species shows a similar codon usage pattern.
 Agreement in codon usage patterns between C-Left and other yeast species would hint at a possible origin of C-Left.
 We found that codon usage is conserved across most of the here analyzed yeast. 
