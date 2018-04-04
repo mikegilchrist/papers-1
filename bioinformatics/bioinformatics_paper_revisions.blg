@@ -3,57 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: bioinformatics_paper_revisions.aux
 The style file: natbib.bst
 Database file #1: bioinfo.bib
-I was expecting a `,' or a `}'---line 15 of file bioinfo.bib
- :    
- :    year={1987},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 24 of file bioinfo.bib
- :    
- :    year={1990},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-Warning--empty year in Sharp1987; set to ????
-Warning--empty year in Wright1990; set to ????
 You've used 10 entries,
             2378 wiz_defined-function locations,
-            585 strings with 5609 characters,
-and the built_in function-call counts, 4361 in all, are:
-= -- 424
+            589 strings with 5631 characters,
+and the built_in function-call counts, 4503 in all, are:
+= -- 440
 > -- 224
 < -- 6
 + -- 68
 - -- 64
-* -- 374
-:= -- 781
+* -- 388
+:= -- 797
 add.period$ -- 44
 call.type$ -- 10
 change.case$ -- 60
 chr.to.int$ -- 10
-cite$ -- 12
-duplicate$ -- 182
-empty$ -- 283
+cite$ -- 10
+duplicate$ -- 184
+empty$ -- 301
 format.name$ -- 78
-if$ -- 857
+if$ -- 893
 int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 10
 newline$ -- 53
 num.names$ -- 40
-pop$ -- 65
+pop$ -- 59
 preamble$ -- 1
-purify$ -- 60
+purify$ -- 62
 quote$ -- 0
-skip$ -- 120
+skip$ -- 122
 stack$ -- 0
-substring$ -- 247
+substring$ -- 291
 swap$ -- 32
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 87
-warning$ -- 2
-while$ -- 35
+warning$ -- 0
+while$ -- 37
 width$ -- 0
 write$ -- 131
-(There were 2 error messages)

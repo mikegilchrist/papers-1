@@ -42,11 +42,11 @@ Shah, P. and Gilchrist, M. (2011).
   translational efficiency, mutation bias, and genetic drift.
 \newblock {\em Proc Natl Acad Sci USA\/}, {\bf 108}, 10231--6.
 
-\bibitem[Sharp(????)Sharp]{Sharp1987}
-Sharp, P. (????).
+\bibitem[Sharp(1987)Sharp]{Sharp1987}
+Sharp, P. (1987).
 \newblock The codon adaptatoin index - a meassure of directional synonymous
   codon usage bias, and its potential applications.
-\newblock {\em Nucleic Acids Research\/}, {\bf 15}.
+\newblock {\em Nucleic Acids Research\/}, {\bf 15}, 1281--1295.
 
 \bibitem[Wallace {\em et~al.}(2013)Wallace, Airoldi, and Drummond]{wallace2013}
 Wallace, E., Airoldi, E., and Drummond, D. (2013).
@@ -54,9 +54,9 @@ Wallace, E., Airoldi, E., and Drummond, D. (2013).
   experimental data.
 \newblock {\em Molecular Biology and Evolution\/}, {\bf 30}, 1438--1453.
 
-\bibitem[Wright(????)Wright]{Wright1990}
-Wright, F. (????).
+\bibitem[Wright(1990)Wright]{Wright1990}
+Wright, F. (1990).
 \newblock The 'effective number of codons' used in a gene.
-\newblock {\em Gene\/}, {\bf 87}.
+\newblock {\em Gene\/}, {\bf 87}, 23--29.
 
 \end{thebibliography}

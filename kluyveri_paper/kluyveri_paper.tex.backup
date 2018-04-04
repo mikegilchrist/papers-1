@@ -357,47 +357,47 @@ We analyzed synteny relationships between C-Left and the genomes of several yeas
 
 \section*{Supplemental Material}
 \begin{table}
-\begin{tabular}{ | l | l | l | c | c | l | l | }
+\begin{tabular}{ | l | l | l | c | l | l | }
 \hline
-	Taxon 				& Abbreviation 	& NCBI taxonomic ID 	& Codon Table	& \% GC & GC Source  		& CDS Source \\ \hline
-	Candida albicans 		& Calb 		& 5476 			&	12	& 34 	& NCBI Genome DB 	& KEGG \\ \hline
-	Saccharomyces bayanus 		& Sbay 		& 4931 			&	1	& 40 	& NCBI Genome DB 	& yeastgenome \\ \hline
-	Trichophyton benhamiae 		& Tben		& 63400 		&	1	& 49 	& NCBI Genome DB 	& KEGG \\ \hline
-	Tetrapisispora blattae 		& Tbla 		& 1071379 		&	1	& 32 	& NCBI Genome DB 	& KEGG \\ \hline
-	Saccharomyces castellii 	& Scas 		& 27288 		&	1	& 37 	& NCBI Genome DB 	& yeastgenome \\ \hline
-	Saccharomyces cerevisiae 	& Scer 		& 4932 			&	1	& 38 	& NCBI Genome DB 	& yeastgenome \\ \hline
-	Eremothecium cymbalariae 	& Ecym 		& 45285 		&	1	& 40 	& NCBI Genome DB 	& KEGG \\ \hline
-	Torulaspora delbrueckii 	& Tdel 		& 4950 			&	1	& 42 	& NCBI Genome DB 	& KEGG \\ \hline
-	Candida dubliniensis 		& Cdub 		& 42374 		&	12	& 33 	& NCBI Genome DB 	& KEGG \\ \hline
-	Lodderomyces elongisporus 	& Lelo 		& 36914 		&	1	& 37 	& NCBI Genome DB 	& KEGG \\ \hline
-	Saccharomyces eubayanus 	& Seub 		& 1080349 		&	1	& 40 	& NCBI Genome DB 	& ENA \\ \hline
-	Debaryomyces fabryi 		& Dfab 		& 58627 		&	1	& 36 	& NCBI Genome DB 	& ENA \\ \hline
-	Candida glabrata 		& Cgla 		& 5478 			&	1	& 39 	& NCBI Genome DB 	& KEGG \\ \hline
-	Meyerozyma guilliermondii 	& Mgui 		& 4929 			&	12	& 44 	& NCBI Genome DB 	& KEGG \\ \hline
-	Debaryomyces hansenii 		& Dhan 		& 4959 			&	12	& 36 	& NCBI Genome DB 	& KEGG \\ \hline
-	Lachancea kluyveri 		& Lku 		& 4934 			&	1	& 40/53 & Payen et al. 2009 	& yeastgenome \\ \hline
-	Saccharomyces kudriavzevii 	& Skud 		& 114524 		&	1	& 41 	& NCBI Genome DB 	& yeastgenome \\ \hline
-	Kluyveromyces lactis 		& Klac 		& 28985 		&	1	& 39 	& NCBI Genome DB 	& KEGG \\ \hline
-	Lachancea lanzarotensis 	& Llan 		& 1245769 		&	1	& 44 	& NCBI Genome DB 	& ENA \\ \hline
-	Yarrowia lipolytica 		& Ylip 		& 4952 			&	1	& 49 	& NCBI Genome DB 	& KEGG \\ \hline
-	Clavispora lusitaniae 		& Clus 		& 36911 		&	12	& 45 	& NCBI Genome DB 	& ENA \\ \hline
-	Kluyveromyces marxianus 	& Kmar 		& 4911 			&	1	& 40 	& NCBI Genome DB 	& ENA \\ \hline
-	Saccharomyces mikatae 		& Smik 		& 114525 		&	1	& 38 	& NCBI Genome DB 	& yeastgenome \\ \hline
-	Sphaerulina musiva 		& Smus 		& 85929 		&	1	& 51 	& NCBI Genome DB 	& ENA \\ \hline
-	Kazachstania naganishii 	& Knag 		& 588726 		&	1	& 46 	& NCBI Genome DB 	& ENA \\ \hline
-	Saccharomyces paradoxus 	& Spar 		& 27291 		&	1	& 38 	& NCBI Genome DB 	& yeastgenome \\ \hline
-	Candida parapsilosis 		& Cpar 		& 5480 			&	12	& 38 	& NCBI Genome DB 	& ENA \\ \hline
-	Spathaspora passalidarum 	& Spas 		& 340170 		&	12	& 38 	& NCBI Genome DB 	& KEGG \\ \hline
-	Tetrapisispora phaffii 		& Tpha 		& 113608 		&	1	& 34 	& NCBI Genome DB 	& KEGG \\ \hline
-	Vanderwaltozyma polyspora 	& Vpol 		& 36033 		&	1	& 33 	& NCBI Genome DB 	& KEGG \\ \hline
-	Lachancea quebecensis 		& Lque 		& 1654605 		&	1	& 47 	& Freel et al. 2016 	& ENA \\ \hline
-	Zygosaccharomyces rouxii 	& Zrou 		& 4956 			&	1	& 40 	& NCBI Genome DB 	& KEGG \\ \hline
-	Scheffersomyces stipitis 	& Ssti 		& 4924 			&	12	& 41 	& NCBI Genome DB 	& KEGG \\ \hline
-	Lachancea thermotolerans 	& Lthe 		& 381046 		&	1	& 47 	& NCBI Genome DB 	& Genbank \\ \hline
-	Candida tropicalis 		& Ctro 		& 5482 			&	12	& 33 	& NCBI Genome DB 	& KEGG \\ \hline
-	Lachancea waltii 		& Lwal 		& 4914 			&	1	& 44 	& NCBI Genome DB 	& \  \\ \hline
-	Cladophialophora yegresii 	& Cyeg 		& 470704 		&	1	& 54 	& NCBI Genome DB 	& ENA \\ \hline
-	Eremothecium gossypii 		& Egos 		& 33169 		&	1	& 52 	& NCBI Genome DB 	& KEGG \\ \hline
+	Taxon 				& Abbreviation 	& NCBI taxonomic ID 	& \% GC & GC Source  		& CDS Source \\ \hline
+	Candida albicans 		& Calb 		& 5476 			& 34 	& NCBI Genome DB 	& KEGG \\ \hline
+	Saccharomyces bayanus 		& Sbay 		& 4931 			& 40 	& NCBI Genome DB 	& yeastgenome \\ \hline
+	Trichophyton benhamiae 		& Tben		& 63400 		& 49 	& NCBI Genome DB 	& KEGG \\ \hline
+	Tetrapisispora blattae 		& Tbla 		& 1071379 		& 32 	& NCBI Genome DB 	& KEGG \\ \hline
+	Saccharomyces castellii 	& Scas 		& 27288 		& 37 	& NCBI Genome DB 	& yeastgenome \\ \hline
+	Saccharomyces cerevisiae 	& Scer 		& 4932 			& 38 	& NCBI Genome DB 	& yeastgenome \\ \hline
+	Eremothecium cymbalariae 	& Ecym 		& 45285 		& 40 	& NCBI Genome DB 	& KEGG \\ \hline
+	Torulaspora delbrueckii 	& Tdel 		& 4950 			& 42 	& NCBI Genome DB 	& KEGG \\ \hline
+	Candida dubliniensis 		& Cdub 		& 42374 		& 33 	& NCBI Genome DB 	& KEGG \\ \hline
+	Lodderomyces elongisporus 	& Lelo 		& 36914 		& 37 	& NCBI Genome DB 	& KEGG \\ \hline
+	Saccharomyces eubayanus 	& Seub 		& 1080349 		& 40 	& NCBI Genome DB 	& ENA \\ \hline
+	Debaryomyces fabryi 		& Dfab 		& 58627 		& 36 	& NCBI Genome DB 	& ENA \\ \hline
+	Candida glabrata 		& Cgla 		& 5478 			& 39 	& NCBI Genome DB 	& KEGG \\ \hline
+	Meyerozyma guilliermondii 	& Mgui 		& 4929 			& 44 	& NCBI Genome DB 	& KEGG \\ \hline
+	Debaryomyces hansenii 		& Dhan 		& 4959 			& 36 	& NCBI Genome DB 	& KEGG \\ \hline
+	Lachancea kluyveri 		& Lku 		& 4934 			& 40/53 & Payen et al. 2009 	& yeastgenome \\ \hline
+	Saccharomyces kudriavzevii 	& Skud 		& 114524 		& 41 	& NCBI Genome DB 	& yeastgenome \\ \hline
+	Kluyveromyces lactis 		& Klac 		& 28985 		& 39 	& NCBI Genome DB 	& KEGG \\ \hline
+	Lachancea lanzarotensis 	& Llan 		& 1245769 		& 44 	& NCBI Genome DB 	& ENA \\ \hline
+	Yarrowia lipolytica 		& Ylip 		& 4952 			& 49 	& NCBI Genome DB 	& KEGG \\ \hline
+	Clavispora lusitaniae 		& Clus 		& 36911 		& 45 	& NCBI Genome DB 	& ENA \\ \hline
+	Kluyveromyces marxianus 	& Kmar 		& 4911 			& 40 	& NCBI Genome DB 	& ENA \\ \hline
+	Saccharomyces mikatae 		& Smik 		& 114525 		& 38 	& NCBI Genome DB 	& yeastgenome \\ \hline
+	Sphaerulina musiva 		& Smus 		& 85929 		& 51 	& NCBI Genome DB 	& ENA \\ \hline
+	Kazachstania naganishii 	& Knag 		& 588726 		& 46 	& NCBI Genome DB 	& ENA \\ \hline
+	Saccharomyces paradoxus 	& Spar 		& 27291 		& 38 	& NCBI Genome DB 	& yeastgenome \\ \hline
+	Candida parapsilosis 		& Cpar 		& 5480 			& 38 	& NCBI Genome DB 	& ENA \\ \hline
+	Spathaspora passalidarum 	& Spas 		& 340170 		& 38 	& NCBI Genome DB 	& KEGG \\ \hline
+	Tetrapisispora phaffii 		& Tpha 		& 113608 		& 34 	& NCBI Genome DB 	& KEGG \\ \hline
+	Vanderwaltozyma polyspora 	& Vpol 		& 36033 		& 33 	& NCBI Genome DB 	& KEGG \\ \hline
+	Lachancea quebecensis 		& Lque 		& 1654605 		& 47 	& Freel et al. 2016 	& ENA \\ \hline
+	Zygosaccharomyces rouxii 	& Zrou 		& 4956 			& 40 	& NCBI Genome DB 	& KEGG \\ \hline
+	Scheffersomyces stipitis 	& Ssti 		& 4924 			& 41 	& NCBI Genome DB 	& KEGG \\ \hline
+	Lachancea thermotolerans 	& Lthe 		& 381046 		& 47 	& NCBI Genome DB 	& Genbank \\ \hline
+	Candida tropicalis 		& Ctro 		& 5482 			& 33 	& NCBI Genome DB 	& KEGG \\ \hline
+	Lachancea waltii 		& Lwal 		& 4914 			& 44 	& NCBI Genome DB 	& \  \\ \hline
+	Cladophialophora yegresii 	& Cyeg 		& 470704 		& 54 	& NCBI Genome DB 	& ENA \\ \hline
+	Eremothecium gossypii 		& Egos 		& 33169 		& 52 	& NCBI Genome DB 	& KEGG \\ \hline
 \end{tabular}
 \caption{}
 \label{tab:org_overview}
