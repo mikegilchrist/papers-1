@@ -126,11 +126,12 @@ We validated the candidates identified using CUB by comparing GC-content and syn
 		\item We found that the separation into two distinct regions was fastly favored by model selection (AIC or LRT)
 		\item We validated each fit with external data (empircal gene expression) to asses if the split fit is not only better, but can also predict gene expression.
 		\item We found that spliting the genome yielded an improvement in the ability to predict gene expression . However, whole genome prediction was not bad either.
-		\item noticably, the variation in the gene expression distribution increased greatly. No longer did the model fit force the gene expression to be very close to zero, essentially removing selection ($\Delta \eta$) from the fit.
+		\item noticably, the variation in the gene expression distribution increased greatly.
+		\item In the whole genome fit, $\phi$ almost perfectly separates endogenous and exogenous genes, causing mutation bias to be purely informed by cleft.
 	\end{itemize}
 	\item Difference in CUB between regions
 	\begin{itemize}
-		\item Given the unusual GC-Content and our ability to improve our model fits, and predictions of gene eexpression based on CUB, we assesd if there is a difference in CUB between the endogenous and the exogenous region.
+		\item Given the unusual GC-Content and our ability to improve our model fits, and predictions of gene expression based on CUB, we assesd if there is a difference in CUB between the endogenous and the exogenous region.
 		\item We found that overall, mutation bias differed greatly while selection bias was mostly in agreement between the two regions.
 		\item We also found that the that the low variation in the combined sets $\phi$ values is due to the fact that in the combined fit, all $\phi$ values very narrowly distributed around the inflection point of the codon proportion curve.
 	\end{itemize}
@@ -140,6 +141,7 @@ We validated the candidates identified using CUB by comparing GC-content and syn
 		\item We had to establish how similar we can expect C-left to be to its origin, or howm many substitutions do we expect to have occured on c-left
 		\item Friedrich et al  (2015) show that C-Left is an introgression, that occured before the diversification of the species (19,000-150,000 years). 
 		\item We estimated the expected number of substitutions based on mutation rate ($~4e-10$) under neutrality (22,000 or 2.2 \% of C-Left).
+		\item Constructing gene trees for cleft and kluyveri with fixed species topology, we did not find any differences in the rate of gene evolution.
 		\item This lead us to expect that the exogenous region should still show high agreement with the CUB of its origin.
 	\end{itemize}
 	\item Knowing now what to look for, we estimated CUB for XXX yeasts to asses if any of these contain similar signatures of CUB.
@@ -165,26 +167,42 @@ We validated the candidates identified using CUB by comparing GC-content and syn
 
 \subsection*{Discussion}
 \begin{itemize}
-	\item The two regions show difference in CUB
+	\item We partitioned Kluyveri based on a previuously identfied introgression, to check if we can identify differences in CUB as expected based on the large difference in GC-content
+	\item We compared estimates of CUB before and after the split and identified that selection bias is mostly in agreement, while mutation bias differes greatly
 	\begin{itemize}
-		\item taking the variation into account improves model fit	s, Phi and AIC
-		\item Implies genes may be identified as less adapted after introgression, CAI could be misslead if enough introgressed genes have high expression (reference set)
-		\item what other source could cause differences in CUB? Strand bias? competing selection pressures?
+		\item taking the variation in CUB into account improves model fit	s and prediction of $\phi$
+		\item The separation by $\phi$ caused mutation and selection to be informed by the two different part of the genome.
+		\item This did not affect selection to much but lead to a big distortion in the mutation bias, causing genes located on c-left to have to increase in $\phi$.
+		\item this in turn caused the variation in $\phi$ to decrease to fullfil the constrained of a mean of one.
 	\end{itemize}
-	\item Expect adaptation of Cleft to host
+	\item Methods based purely on selection on cub (CAI, tAI) would not be affected by the difference in mutation bias, however they would also be unable to identify this difference
 	\begin{itemize}
-		\item Not a lot of time has past, only few mutations are expected to have occured
-		\item Do not observe faster evolution in cleft genes
-		\item CUB in Cleft should reflect CUB in origin
+		\item So most methods would not be able to analyze this interessting introgression.
+		\item what other source could cause differences in CUB within a genome?: Strand bias? competing selection pressures? chromosome packaging?
+		\item where would we be misinterpreting results if we only looked at mutation or selection in the present of intra-genomic variation?
 	\end{itemize}
-	\item CUB as a means to identify cleft origin.
+	\item We expect cleft to adapt to its new host, kluyveri, and we expect to see faster decay of differences in selection than in mutation.
 	\begin{itemize}
-		\item Since we expect cleft to have retained its original CUB so far, we expect origin to look similar
-		\item differences in CUB should be mostly due to limited sample size, causing noise in estimates
-		\item candidates identified can be validated with synteny and gc-content. 
-		\item propose gossypi as possible origin
+		\item we do not observe a lot of differences in selection, So has it already decayed or was selection between donor and kluyveri similar.
+		\item based on the time frame estimated by Friedrich et al (2015) we do not expect a lot of substitutions (neutrality).
+		\item gene trees do not indicate that there is faster evolution in c-left when compared to the endogenous region (using rokas 2013 set).
+		\item This indicates that CUB in Cleft should reflect CUB in origin.
 	\end{itemize}
-
+	\item Since c-left is expected to show a similar CUB, could it be used to point towards a potential origin, allowing deeper insights into the evolution of CUB.
+	\item The estimation and comparisson of cub of various yeasts revelealed that many yeasts show similar selection patterns, some show similar mutation, but only a few show agreement in both (to various degrees), highlighting again the importance to check both selection and mutation.
+	\item CAI, tAI would have yielded a much larger candidate pool.
+	\item The synteny patterns we infered show that synteny decays fairly quickly, and we were able to rule out candidates because of the lack of synteny, confirming what was assumed before, that introgression must come from a closely related species. 
+	\begin{itemize}
+		\item the highest synteny pattern was found with gossypii (about $95 \%$ coverage of cleft). gossypii also has a similar gc content (about $52 \%$ vs $53 \%$ of cleft)
+		\item Agreement in CUB, high synteny coverage and similar GC content make it possible that gossypii was the donor organism. 
+		\item However, many lachancea and other closely related organisms have not been examined. 
+		\item However, this study could be used as a template to analyze where cleft came from.
+	\end{itemize}
+	\item This study shows possiblity to use CUB to learn more about introgressions, and how they evolve once in a novel environment
+	\item This study also shows the importance to address intra-genomic variation, and that it is important to take mutation and selection into account when thinking about CUB.
+	\item This study serves as a template how one can address intra-genomic variation (AnaCoDa).
+	\item Future work should include checking more lachanceaand other closely related species to get a better understanding of cleft's origin
+	\item Future work should also address the rate of evolution in CUB, and what may drive changes in CUB.
 \end{itemize}
 
 \section*{Introduction}
