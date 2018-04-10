@@ -80,40 +80,27 @@ We validated the candidates identified using CUB by comparing GC-content and syn
 \section*{Outline}
 \subsection*{Introduction}
 \begin{itemize}
-	\item General introduction into changes in responds to environmental changes
+	\item Codon usage bias (CUB) changes due to differences in mutation, selection or drift
+	\item approaches also assume a single pattern of codon usage in a genome.
+	\item here we study kluyveri, a yeast with a recent large scale introgression, clearly marked by elevated GC-content.
 	\begin{itemize}
-		\item Phenotypic changes in traits due to changes in environment
-		\item Describe cellular environment, what can cause changes in nucleotide stability, or prefered codon
-		\item Introduce CUB as trait that responds to changes in above described environment.
+		\item Cleft has recently introgressed, has different GC content, and therefore expected to have a different CUB.
+		\item Previous work has identified cleft to have introgressed from an unknown source before the diversification of the species., but after the MRCA with closest relative.
 	\end{itemize}
-	\item Hybridization/Introgression as means of rapid change in cellular environmnet for transfered region, any reverese effects?.
-	\begin{itemize}
-		\item CUB of transfered genes is expected to change due to novel environment.
-		\item rate of change is expected to differ between low and high expression genes due to differences in selection.
-		\item Rate of mutations occuring in a population is $\mu*Ne$, their neutral fixationprobability is $1/Ne$ which means the rate of fixation is just $\mu$. 
-		\item Fixation rate in high expression genes should be higher (e.g. Kimura 1962).
-	\end{itemize}
-	\item Introduce previous work on CUB and horizontal gene transfer
+	\item Variation in codon usage patterns is typically not addressed in studies.
+	\item CUB variation has previously only been studied in bacteria in the context of horizontal gene transfer (HGT). 
 	\begin{itemize}
 		\item Accumulation of foreign genes if HGT is frequent \citep{lawrence1997}.
 		\item Genes with comparable CUB are more often transfered \citep{tuller2011}.
-		\item HGT only transferes small amounts of genes, probably with little to no impact on CUB.
-		\item Hybridization/Introgression has larger impact on CUB due to the amount of material transfered.
-		\item Tie back to environmental changes to explain why introgressions should have an impact on CUB.
+		\item HGT only transferes small amounts of genes, probably with little to no impact on overall CUB.
+		\item Hybridization/Introgression has larger impact on CUB due to the amount of material transfered, possibly affecting the outcome of a study if ignored.
 	\end{itemize}
-	\item Introduce study system for this paper (L. kluyveri)
+	\item We analyzed if cleft has - as expected - a different codon usage pattern than the endogenous region of the kluyveri genome
+	\item And we checked what effect on model fit and parameter interpretation it has if we ignore that variation in CUB.
+	\item Since origin of Cleft is unknown and the introgression was recent, can CUB help identifying the origin?
 	\begin{itemize}
-		\item A bit of natural history
-		\item Why is it a relevant system (Cleft).
-		\item Talk about previous work on Cleft
-		\item Origin of Cleft is unknown - Introduce idea of using CUB to find origin
-	\end{itemize}
-	\item What did this study do
-	\begin{itemize}
-		\item calculate expected number of mutations
-		\item analyze CUB: whole genome vs. partitions
-		\item calculate rate ov evolution all genes vs. neutral
-		\item analyze CUB of other species, any matches Cleft?
+		\item by checking other yeasts for their CUB
+		\item also using introgression to check if CUB is not just identifying nonsense
 	\end{itemize}
 \end{itemize}
 
@@ -144,11 +131,11 @@ We validated the candidates identified using CUB by comparing GC-content and syn
 		\item Constructing gene trees for cleft and kluyveri with fixed species topology, we did not find any differences in the rate of gene evolution.
 		\item This lead us to expect that the exogenous region should still show high agreement with the CUB of its origin.
 	\end{itemize}
-	\item Knowing now what to look for, we estimated CUB for XXX yeasts to asses if any of these contain similar signatures of CUB.
+	\item Knowing now what to look for, we estimated CUB for various yeasts to asses if any of these contain similar signatures of CUB.
 	\begin{itemize}
 		\item We comapared signatures of mutation and selection between the collected yeasts and found that many yeast share either a similar selection or mutation signature with c-left	
 		\item Finding many species with similar selection bias, we could establish that methods for analyzing CUVB that focus purely on selection such as CAI or tAI would be unsuitable for the task at hand.
-		\item However, we found XX species that showed similar signatures of selection AND mutation bias. 
+		\item However, we found a few species that showed similar signatures of selection AND mutation bias. 
 	\end{itemize}
 	\item We then tried to use independent approaches to validate our candidates, first we simply checked if any species shows a similar GC-content.
 	\item Second, we checked for synetny between the exogenous region (c-left) and several yeast species, including our XXX candidates identified by CUB.
@@ -171,6 +158,7 @@ We validated the candidates identified using CUB by comparing GC-content and syn
 	\item We compared estimates of CUB before and after the split and identified that selection bias is mostly in agreement, while mutation bias differes greatly
 	\begin{itemize}
 		\item taking the variation in CUB into account improves model fit	s and prediction of $\phi$
+		\item Due to the introgression haveing occured very recently, we do not expect CUB to have reached stationarity, but we also do not see any indication that there is a problem with that model assumption being violated.
 		\item The separation by $\phi$ caused mutation and selection to be informed by the two different part of the genome.
 		\item This did not affect selection to much but lead to a big distortion in the mutation bias, causing genes located on c-left to have to increase in $\phi$.
 		\item this in turn caused the variation in $\phi$ to decrease to fullfil the constrained of a mean of one.
