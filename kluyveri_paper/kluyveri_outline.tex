@@ -9,8 +9,9 @@
 \usepackage{color}
 \usepackage{caption}
 \usepackage[margin=1in]{geometry}
-\usepackage{epstopdf}
 \usepackage{natbib}
+\usepackage{amsmath}
+
 
 \begin{document}
 \doublespacing
@@ -115,6 +116,7 @@ We used orthogonal information about synteny to validate candidates obtained by 
 		\item Assuming gossypii as origin for the exogenous region, we estimated a time since introgression from our estimates of mutation bias.
 		\begin{itemize}
 			\item Based on the two codon amino acids we estimated a time since introgression on the order of $10e8$
+			\item We only used mutation bias as we would expect that differences in selection parameters would decay faster than in mutation.
 			\item Assuming one to eight generations per day, we are finding an introgression age between 110k and 890k years, which overlaps with a previous estimate \citep{friedrich2015}.
 		\end{itemize}
 	\end{itemize}
@@ -129,11 +131,12 @@ We used orthogonal information about synteny to validate candidates obtained by 
 		\item Comparison of predicted protein synthesis $\phi$ of both fits with empirical estimates showed that varying CUB improved our ability to predict $\phi$ ($0.59$ vs $0.69$) (Figure \ref{fig:phi_corr_two_cond}).
 		\item We also observed a decrease of the variation in estimated $\phi$ when assuming only one CUB environment.
 	\end{itemize}
-	\item Comparison of posterior estimate between regions (ADD FIGURE).
+	\item Comparison of posterior estimate between regions (Figure  \ref{fig:csp_comp}).
 	\begin{itemize}
-		\item The comparison estimates of mutation bias ($\Delta M$) showed that X out of $40$ parameters showed a difference in sign, meaning that different codons are favored by mutation in the two regions.
-		\item We find that only TTT is favored by mutation in both regions (CHECK 4 and 6 codon AA) 
-		\item The comparison estimates of selection for translation inefficiency ($\Delta \eta$) showed that X out of $40$ parameters showed a difference in sign, meaning that more of the same codons are favored by selection in both regions than in the mutation case.
+		\item We find that only 14 out of 40 $\Delta M$ parameters show the same sign, meaning that only $35 \%$ of $\Delta M$ agreed between regions (Figure \ref{fig:csp_comp}). 
+		\item A closer look reveals that only two amino acids (A,F) favor the same codon by mutation in the two CUB environments.
+		\item The comparison estimates of selection for translation inefficiency ($\Delta \eta$) showed that $30$ out of $40$ parameters ($75 \%$) showed the same sign, meaning that more of the same codons are favored by selection in both regions than in the mutation case (Figure \ref{fig:csp_comp}).
+		\item We find that nine amino acids share a preferred codon.
 	\end{itemize}
 	\item The exogenous region is assumed to be a recent introgression of unknown origin \citep{friedrich2015}.
 	\begin{itemize}
@@ -153,20 +156,22 @@ We used orthogonal information about synteny to validate candidates obtained by 
 	\end{itemize}
 	\item We used synteny as an independent approach as a means to validate our candidate list.
 	\begin{itemize}
-	\item The check if a subset of our yeast (including our two candidates) shows synteny with the exogenous region revealed eight species (Figure \ref{fig:synteny_species}).
+	\item We analyzed synteny relation between the introgression and species closely related to our two candidates and \kluyveri.
+	\item The check revealed eight species (Figure \ref{fig:synteny_species}).
 		\begin{itemize}
 			\item dubliensis, a candidate based on CUB, did not show a synteny relationship with the exogenous region.
 			\item gossypii, the other candidate, was found to have a synteny coverage of $95 \%$ (Figure \ref{fig:synteny_species}).
-			\item the other six yeasts with synteny showed agreement with only agreement in $\Delta \eta$ but not in $\Delta M$ (CHECK mutation/selection CORRELATION).
+			\item the other six yeasts with synteny showed agreement with only agreement in $\Delta \eta$ but not in $\Delta M$ (CHECK mutation/selection CORRELATION for each species with synteny).
 		\end{itemize}	 
 	\end{itemize}
 	\item Under the assumption that the exogenous region originated from gossypii, we estimated the time since introgression.
 	\begin{itemize}
 		\item For simplicity, only the two codon amino acids were used. 
 		\item We again assumed a mutation rate of $4e-10$.
-		\item Based on the difference in mutation bias $\Delta M$ between gosypii and the endogenous region we estimated a decay curve.
-		\item knowing the current $\Delta M$ parameters allowed us to place the xogenous region on that curve, providing us with an estimate of the time since introgression of about $4e8$ generations.
-		\item Assuming one to eight generations per day for \kluyveri we estimate a time since introgression of about $110k$-$890k$
+		\item Based on the difference in mutation bias $\Delta M$ between gossypii and the endogenous region we estimated a decay curve.
+		\item knowing the current $\Delta M$ parameters allowed us to place the exogenous region on that curve, providing us with an estimate of the time since introgression of about $2.17e8$ generations.
+		\item Two of the ten amino showed a negative time since introgression (K, N) without them, our estimate of the time since introgression changes to $3.06e8$.
+		\item Assuming one to eight generations per day for \kluyveri we estimate a time since introgression of about $110k$-$890k$ (Table \ref{tab:intro_age})
 		\item combining our estimates with the estimates of \citep{friedrich2015} ($19k$-$150k$) we date the age of the introgression to be between $110k$-$150k$.
 		\item Our time since introgression depends on gossypii being the origin and has not changed it's CUB since the introgression occurred.
 	\end{itemize}
@@ -176,27 +181,75 @@ We used orthogonal information about synteny to validate candidates obtained by 
 \subsection*{Discussion}
 
 \begin{itemize}
-	\item based purely on selection, we would have not been able to identify the difference in CUB between the endogenous and exogenous region.
-	\item With approaches like CAI or tAI, which are purely focused on selection we would not have been able to narrow the species down that much.
+	\item Partitioning \kluyveri based on the the previously identified introgression allowed us to identify two distinct signatures of CUB.
 	\begin{itemize}
-		\item However, in this particular case GC-content alone would have gotten us to the same result. 
-		\item GC-content would be faster, but can be expected to lead to more candidates since it is a more coarse grain approach. 
+		\item We find that while the endogenous region shows mutation bias towards T and A ending codons for many amino acids, the exogenous region is mutational biased towards C and G ending codons for many amino acids (only A,F share the same mutational favored codon, C,D,E,G,H,I,K,L,N,P,Q,R,S,T,V,Y,Z do not) (Figure \ref{fig:cub_all_aa}).
+		\item While we find higher correlation between $\Delta \eta$ in both environments, most amino acids do not share their optimal codon (D,Y,N,H,I,K,P,S,T,V) (Figure \ref{fig:cub_all_aa}).
+		\item We find that this is due to the preferred and the second codon switching places (S,T,V);  switching between C and T ending codons.
+		\item Ignoring the difference in CUB environment between endogenous and exogenous region can lead to miss-classification of the preferred codon (CHECK how many AA disagree between full genome and endogenous).
+		\item Furthermore, the high correlation between selection environments could have lead most approaches purely focused on selection to not only miss identify the preferred amino acid, but missed this interesting biology all together.
+		\begin{itemize}
+			\item While in this particular case GC-content provided an indication that CUB between endogenous and exogenous genes may differ, this indication moight not only be the case.
+			\item We find many different CUB in the yeasts explored in this study and most of them have similar amounts of GC-content.
+		\end{itemize}
+		\item Separating CUB environments also allows us improve our ability to predict protein synthesis rate $\phi$.
+		\begin{itemize}
+			\item We can observe an interesting interplay between codon specific parameters ($\Delta M$ and $\Delta \eta$) and the gene specific parameter $\phi$, potentially serving as an indicator in the future when other indicators such as GC-content are lacking.
+			\item When highlighting endogenous and exogenous genes in the full genome fit (Figure \ref{fig:phi_corr_two_cond} left) we observe that these genes are separating by $\phi$.
+			\item This causes $\Delta M$ to be mostly informed by exogenous genes and $\Delta \eta$ to be mostly informed by endogenous genes (add suppl. fig. of correlation?).
+			\item The higher agreement between selection parameters indicates that mostly effects on mutation have been miss-identified, but not only (see switching of preferred codon).
+			\item We also observe that the variation in predicted $\phi$ is decreased if we ignore the differing CUB environments, likely as a results to accommodate two different CUB environments;
+		\end{itemize}
+	\end{itemize}
+	\item The source of the introgression has not yet been identified.
+	\begin{itemize}
+		\item We expected differences in selection to decay faster, finding greater differences in mutation bias providing more information about the introgression; This is exactly what we find.
+		\item However, it is likely that this is not as initially expected due to faster decay of differences in selection parameter.
+		\begin{itemize}
+			\item We find evidence (few substitutions expected, no elevated rate of evolution in the exogenous genes) that the introgressed region had experienced a similar selection on translation efficiency as \kluyveri.
+			\item However, we are unable to conclusively show that the similarity is due to similarity between \kluyveri and the donor of the exogenous region and and due to decay.
+		\end{itemize}
+		\item The introgression is expected to have occurred recently and we have already established that we do not expect a lot of substitutions to have occurred.
+		\begin{itemize}
+			\item This lead us to hypothesize that the exogenous region should still show CUB similar to it's donor species.
+			\item Providing us with the opportunity to explore if CUB can be used as a more fine grain (relative to GC-content) approach to scan for potential donor species.
+		\end{itemize}
+		\item The estimation of CUB parameters for several closely related yeast species revealed multiple 29 species that have a similar selective CUB component but only two with a similar mutation component.
+		\begin{itemize}
+			\item Mutation bias is more informative but not because it would decay slower as originally expected but because most yeast species explored have a similar selective environment.
+			\item This shows that the information about the mutation component in CUB disregarded by other approaches like CAI provides valuable information about the evolution of CUB and should not be ignored.
+		\end{itemize}
+		\item The check for synteny revealed eight species, all within the Saccharomycetaceae group.
+		\begin{itemize}
+			\item Similarity CUB is therefore more widespread (broader in tree, not more frequent) than synteny as dubliensis which is not a Saccharomycetaceae shows a similar CUB.
+			\item CUB in exogenous region and gossypii, and dubliensis may have evolved independently and could be due to an environmental responds (out of scope?) 
+		\end{itemize} 
+		\item In summary, using selection for translation efficiency allowed us to select 29 species as potential origin, adding mutation bias reduced this number to two, and in an effort to validate our findings using synteny we were able to reduce our candidate pool to one, gossypii. 
+		\begin{itemize}
+			\item In this particular case, with a small set of species and a strong signature of GC-content we would have been able to select gossypii as possible donor right away.
+			\item (The next to points is how I would like to end this section but I am not sure how to do that)
+			\item But it was never the point to actually identify the origin of the introgression and we have only provided a potential donor.
+			\item It is more important that we applied what we learned about CUB evolution.
+		\end{itemize}
+	\end{itemize}
+	\item Assuming gossypii as origin, we explored how fast mutation bias would decay if a region would be transferred between gossypii and \kluyveri and where the exogenous region fit along this timeline.
+	\begin{itemize}
+		\item The mutation rate we assumed is in line with other estimates of mutation in yeast (order of $1e-10$).
+		\item The usage of two codon amino acids was for the sake of simplicity (think of better reason so reviewers won't ask for other AA). 
+		\item While the decay rate for all amino acids was the same, due to the shared mutation rate employed, we find great variation in the estimate of the age of the introgression.
+		\begin{itemize}
+			\item Our approach assumes that gossypii has not evolved since the transfer of the exogenous region to \kluyveri.
+			\item Finding two amino acids with a negative estimated introgression time indicate that this assumption is violated.
+			\item If the exogenous region truly originated from gossypii, we can assume that the time since introgression is actually more recent than our estimate, bringing it closer to the estimate of \citep{friedrich2015}.
+		\end{itemize}
+	\end{itemize}	
+	\item In conclusion, this study shows three things:
+	\begin{itemize}
+		\item More than one CUB environment can be present in a genome, due to introgression, or other, internal factors; and ignoring it can lead to misinterpretation of results.
+		\item It is well established that CUB is driven by Mutation, Selection, and Drift; Here we illustrate again that it is important to utilize all three factors to gain a complete picture.
+		\item While we used CUB to determine a potential origin of the exogenous region, this is just an example using the better understanding of CUB evolution we gained in this study.
 	\end{itemize}
 \end{itemize}
-
-
-\subsection*{Materials and Methods}
-
-\begin{itemize}
-	\item \kluyveri genome preparation
-	\begin{itemize}
-		\item We obtained the CDS for \kluyveri from weird french site
-		\item We split the CDS into two partitions, an exogenous region, describing the introgression and an endogenous partition based on \citep{payen2009}.
-	\end{itemize}
-	\item \kluyveri model fitting
-
-\end{itemize}
-
 
 
 \bibliographystyle{plain}
@@ -214,15 +267,28 @@ We used orthogonal information about synteny to validate candidates obtained by 
         \centering
         \includegraphics[width=.45\textwidth]{img/phi_corr_plot_split_Genome_estim.pdf}
     \end{subfigure}
-    \caption{Person correlation of predicted protein synthesis rate $\phi$ with observed expression rate. )}
+    \caption{Person correlation of predicted protein synthesis rate $\phi$ with observed expression rate}
     \label{fig:phi_corr_two_cond}
 \end{figure}
 
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}
+        \centering
+        \includegraphics[width=.45\textwidth]{img/csp_corr_dm.pdf}
+    \end{subfigure}
+    \begin{subfigure}
+        \centering
+        \includegraphics[width=.45\textwidth]{img/csp_corr_deta.pdf}
+    \end{subfigure}
+    \caption{Person correlation CUB parameters estimated from endogenous and exogenous genes}
+    \label{fig:csp_comp}
+\end{figure}
 
 \begin{figure}[H]
      \centering
 	\includegraphics[width=\textwidth]{img/CUB_cleft_main.pdf}
-	\caption{Codon Usage}
+	\caption{Codon Usage. Modify figure to indicate whether same AA is optimal in endogenous/exogenous region? }
 	\label{fig:cub_all_aa}
 \end{figure}
 
@@ -254,6 +320,30 @@ We used orthogonal information about synteny to validate candidates obtained by 
     \caption{Synteny stuff}
     \label{fig:synteny_species}
 \end{figure}
+
+
+\begin{table}
+\centering
+\begin{tabular}{ | c | c | c | c | c | c | }
+\hline
+	Codon & Amino Acid & $\Delta M_{Egos}$ & $\Delta M_{Endo}$ & $\Delta M_{Exo}$ & Generations \\ \hline
+	TGC & Cys (C) & -3.28 & 0.20 & -1.34 & $4.81e8$ \\ \hline
+	GAC & Asp (D) & -2.57 & 0.58 & -1.26  & $1.99e8$ \\ \hline
+	GAA & Glu (E) & 2.47 & 0.45 & 1.26 & $6.30e8$ \\ \hline
+	TTC & Phe (F) & -1.46 & 0.66 & 0.14  & $1.19e8$ \\ \hline
+	CAC & His (H) & -2.31 & 0.48 & -1.37  & $2.49e8$ \\ \hline
+	AAA & Lys (K) & 0.96 & -0.53 & 0.99 & $-2.78e7$ \\ \hline
+	AAC & Asn (N) & -1.28 & 0.25 & -1.88 & $-2.54e8$ \\ \hline
+	CAA & Gln (Q) & 2.98 & -0.25 & 1.67 & $3.57e8$ \\ \hline
+	TAC & Tyr (Y) & -1.92 & 0.17 & -1.65 & $1.00e8$ \\ \hline
+	AGC & Ser$_2 $ (Z) & -3.11 & 0.18 & -1.68 & $3.13e8$ \\ \hline
+	& & & & &    \\ \hline
+	& & & & Mean: & $2.17e8$ ($3.06e8$) \\ \hline
+	& & & & Std Error: & $7.99e7$ ($6.41e7$) \\ \hline
+\end{tabular}
+\caption{Mutation rate is $3.8e-10$ (Lang 2008)}
+\label{tab:intro_age}
+\end{table}
 
 
 \end{document}
