@@ -59,29 +59,56 @@ M\textsc{ICHAEL} A.~{G\textsc{ILCHRIST}}$^{1,2}$}
 \centerline{Version dated: \today}
 \vfill
 \newpage
-\section*{Outline}
-\subsection*{Introduction}
+\section*{Introduction}
 \begin{itemize}
-	\item The introduction of selection into phylogenetic frameworks has been a long effort, with limited success as these frameworks are very parameter rich.
-	\item Another shortcoming of these models is the uniform stationary distribution of amino acids, making each one equally likely at a position.
-	\item Insert brief review of methods, what distinguishes them and what do they share, that is relevant to DMS/SelAC.
-	\item The most popular tools, however, are still based purely on the mutation process (RaxML, RevBayes). 
-	\item A novel take on the incorporation of selection on a protein is the independent estimation of fitness effects.
-	\item DMS experiements provide site specific fitness values on synonymous and non-synonymous mutations (focus on non-synonymous).
-	\item This limits the number of estimated parameters greatly and allows for computationally feasible models.
-	\item However, the information on selection gained by DMS experiments is limited to single proteins of organisms that can be manipulated in the laboratory with short generation times. 
-	\item SelAC on the other hand, is a mechanistic model with relatively few parameters, explicitly modeling the functionality of a gene by estimating site specific amino acid preferences from the sequence data.
-	\item SelAC has multiple advantages over other models incorporating selection into a phylogenetic framework, as it does not assume a uniform stationary amino acid distribution which allows for the estimation of the preferred amino acid at a site, estimates relatively few parameters and does not depend on experimental data.
+	\item The introduction of selection into phylogenetic frameworks has been a long going effort.
+	\begin{itemize}
+		\item Many models have been developed (Yang and Nielsen, Halpern and Bruno, ...)
+		\item Insert brief review of methods.
+		\begin{itemize}
+			\item Models provided great theoretical inside.
+			\item Still often assume uniform stationary distribution of amino acids across sites.
+		\end{itemize}
+	\end{itemize}
+	\item So far these models find limited application as these frameworks are very parameter rich.
+	\begin{itemize}
+		\item The most popular models/tools, however, are still based purely on the mutation process (RaxML, RevBayes). 
+	\end{itemize}
+	\item A more recent take on the incorporation of selection on a protein is the independent estimation of fitness effects.
+	\begin{itemize}
+		\item Deep Mutation Scanning (DMS) experiments provide site specific fitness values on synonymous and non-synonymous mutations (focus on non-synonymous).
+		\begin{itemize}
+			\item This limits the number of estimated parameters greatly and allows for computationally feasible models.
+		\end{itemize}
+		\item However, the information on selection gained by DMS experiments is limited to single proteins of organisms that can be manipulated in the laboratory with short generation times.
+		\begin{itemize}
+			\item This greatly limits its application in phylogenetics
+		\end{itemize}
+	\end{itemize}
+	\item SelAC is a mechanistic model that utilizes the idea of site specific selection, and estimates it from sequence data.
+	\begin{itemize}
+		\item SelAC has multiple advantages over other methods incorporating selection.
+		\begin{itemize}
+			\item It does not assume a uniform stationary amino acid distribution across sites.
+			\item Does not depend on experimental data, and can therefore be applied to all codon sequences.
+			\item Clearly states model assumption and provides interpretable parameter estimates beyond branch length and nucleotide transition rates.
+		\end{itemize}
+		\item Due to SelACs hierarchical model structure it can also be parameterized with relatively few parameters.
+	\end{itemize}
 	\item In this study, we compare the quality of phylogenetic estimates obtained utilizing DMS experiments to estimates from SelAC.
-	\item We utilize DMS experiments from Firnberg (2014) and Stifler (2016) for the TEM $\beta$-lactamase of \textit{E. coli}.
-	\item We compare model fit and adequacy of the DMS and SelAC amino acid preferences using SelAC and phydms.
-	\item phydms is a tool explicitly designed to utilize selection information from DMS experiments.
-	\item We show that DMS experiments do not accurately reflect natural evolution of protein sequences.
-	\item We find that amino acid preferences estimated with SelAC provides better model fit and higher model adequacy than DMS experiments.
-	\item We show that phylogenetic models can extract information on amino acid preference and do not require it as input.
+	\begin{itemize}
+		\item We utilize DMS experiments from Firnberg (2014) and Stifler (2016) for the TEM $\beta$-lactamase of \textit{E. coli}.
+		\item We use phydms, a tool explicitly designed to utilize selection information from DMS experiments for an independent assessment of the SelAC estimated stationary amino acid distribution. 
+		\item We compare model fit and adequacy of the DMS and SelAC amino acid preferences using SelAC and phydms.
+		\begin{itemize}
+			\item We show that DMS experiments can have trouble accurately reflecting natural evolution of protein sequences.	
+			\item We find that amino acid preferences estimated with SelAC provides better model adequacy than DMS experiments.
+			\item We show that information about amino acid preference can be extracted from sequence data using SelAC.
+		\end{itemize}	
+	\end{itemize}
 \end{itemize}
 
-\subsection*{Results}
+\section*{Results}
 \begin{itemize}
 	\item Compare DMS from Firnberg and Stiffler to SelAC and majority under SelAC and phydms
 	\begin{itemize}
@@ -101,7 +128,7 @@ M\textsc{ICHAEL} A.~{G\textsc{ILCHRIST}}$^{1,2}$}
 	\end{itemize}
 \end{itemize}
 
-\subsection*{Discussion}
+\section*{Discussion}
 \begin{itemize}
 	\item SelAC sequence outperformes DMS experiments, reflecting evolution better than DMS sequences under artificial selection pressure.
 	\item SelAC only uses prefered state as input, no information about 2nd or third prefered amino acid.
@@ -112,12 +139,5 @@ M\textsc{ICHAEL} A.~{G\textsc{ILCHRIST}}$^{1,2}$}
 	\item SelAC, however can not provide any information about antibiotic resistency, making DMS very valuable, but not for phylogenetics. 
 	\item but additional tip information could be combined with SelAC to get at this information (out of scope? future directions?).
 \end{itemize}
-
-\section*{Introduction}
-\section*{Materials \& Methods}	
-\section*{Results}
-\section*{Discussion}
-
-\section*{Supplemental Material}
 
 \end{document}
