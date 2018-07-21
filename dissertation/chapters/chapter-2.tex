@@ -1,0 +1,657 @@
+\newcommand{\package}{\textbf{AnaCoDa}\xspace} % Use xspace, not two commands!
+
+\chapter{AnaCoDa: Analyzing Codon Data with Bayesian mixture models} \label{ch:anacoda}
+
+%%%%%%%%%%%%%%%%%%
+%%% %%   ABSTRACT   %%%%%%
+%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+\textbf{\package} is an R package for estimating biologically relevant parameters of mixture models, such as selection against translation inefficiency, nonsense error rate, and ribosome pausing time, from genomic and high throughput datasets.
+\package provides an adaptive Bayesian MCMC algorithm, fully implemented in C++ for high performance with an ergonomic R interface to improve usability. 
+\package employs a generic object-oriented design to allow users to extend the framework and implement their own models.
+Current models implemented in \package can accurately estimate biologically relevant parameters given either protein coding sequences or ribosome foot-printing data.
+Optionally, \package can utilize additional data sources, such as gene expression measurements, to aid model fitting and parameter estimation.
+By utilizing a hierarchical object structure, some parameters can vary between sets of genes while others can be shared.
+Genes may be assigned to clusters or membership may be estimated by \package.
+This flexibility allows users to estimate the same model parameter under different biological conditions and categorize genes into different sets based on shared model properties embedded within the data.
+\package also allows users to generate simulated data which can be used to aid model development and model analysis as well as evaluate model adequacy.
+Finally, \package contains a set of visualization routines and the ability to revisit or re-initiate previous model fitting, providing researchers with a well rounded easy to use framework to analyze genome scale data.
+
+\section*{Availability:}
+\textbf{\package} is freely available under the Mozilla Public License 2.0
+on CRAN (\url{https://cran.r-project.org/web/packages/AnaCoDa/}).
+
+\end{abstract}
+
+%%%%%%%%%%%%%%%%%%
+%%%   INTRODUCTION   %%%%%%
+%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+
+\package is  an open-source software implemented in R \citep{rcore} that allows researchers to analyze genome-scale data like coding sequences and ribosome footprinting data using evolutionary or analytical models in a Bayesian framework. 
+\package was developed to analyze selection on synonymous codon usage in the form of ribosome overhead cost (\citep{gilchrist2015,wallace2013,shah2011}).
+However, other codon metrics like the codon adaptation index \citep{Sharp1987} or the effective number of codons \citep{Wright1990} are also provided as reference.
+%% addded to introduction
+In addition, three currently unpublished models to analyze coding sequences for evidence of selection against nonsense errors and estimate ribosome pausing times from ribosome footprinting data are included.
+\package implements an adaptive Gibbs sampler within a Metropolis-Hastings Monte Carlo Markov Chain (MCMC). 
+This allows for the incorporation of prior knowledge such as observed gene expression levels and easy sampling from the posterior distribution to estimate parameter values and quantify degree of uncertainty.
+\package provides a mixture distribution option to all implemented models, combining genes into sets by estimating the posterior probabilities of set membership based on gene-set specific parameters shared by all genes assigned to a given set. 
+\package provides a generic, mixture distribution option to all implemented models, allowing for the estimation of condition specific parameters or the automatic categorization of data into different sets based on differences in their posterior probabilities of set membership.
+In addition to the four models provided, \package provides a modular infrastructure such that additional genome scale or even phylogenetic models can be integrated.
+
+The \package framework works with \package requires gene specific data such as codon frequencies obtained from coding sequences or position specific footprint counts.
+Conceptually, \package allows for three different types of parameters.
+The first type are gene specific parameters such as protein synthesis rate or relative functionality.
+The second type are gene-set specific parameters, such as mutation bias terms or translation error rates.
+These parameters are shared across genes within a set and can be exclusive to a single set or shared with other sets.
+While the number of gene sets must be pre-defined by the user, set assignment of genes can be pre-defined or estimated as part of the model fitting.
+Estimation of the set assignment provides the probability of a gene being assigned to a set allowing the user to asses the uncertainty in each assignment.
+The third type are hyperparameters allowing for the construction and analysis of hierarchical model. Hyperparameters control the prior distribution for gene and gene-set specific parameters such as mutation bias or protein synthesis rate.
+
+%%%%%%%%%%%%%%%%%%
+%%%%%% FEATURES   %%%%%%
+%%%%%%%%%%%%%%%%%%
+\section{Features}
+\package provides an interface written in R, a freely available programming language noted for its ease of use for even inexperienced programmers. 
+As a result, \package is accessible to researchers with minimal computational experience. 
+
+The interface of \package is designed for quick and efficient data analysis.
+Generally, the only input needed for fitting a model to the data are protein-coding codon sequences in the form of a FASTA file or a flat-file containing codon counts obtained from ribosome foot-printing experiments. 
+\package also provides visualization functionality, including plotting functions to compare parameter estimates for different mixture distributions and display codon usage patterns. 
+In addition, diagnostic functions such as those for calculating and visualizing the degree of autocorrelation in the parameter tracess are provided.
+
+%%%%%%%%%%%%%%%%%%%
+\subsubsection{Robust and efficient model fitting}
+\package has built-in features designed to improve the robustness and performance of the implemented MCMC approach. 
+For example, the implemented MCMC automatically adapts the proposal width for sampled parameters such that an user defined acceptance range is met, improving sampling efficiency of the MCMC and computational performance.
+Even though \package is written in C++, analysis of large datasets and/or complex models can be very computationally intensive.
+To protect users from computer failures or aid in the collection of additional MCMC samples, \package can periodically produce output checkpoint files, which can be used to restart an MCMC chain from a previous time point.
+In addition, \package automatically thins all parameter traces -  meaning only every $k^{th}$ sample is kept - increasing the effective number of samples and reducing its memory foorprint. 
+
+Although \package is provided as an R package, the main computational work is implemented in C++.
+Because R does not provide native C++ support, Rcpp was employed to expose whole C++ classes as modules to R \citep{rcpp_package}.
+Using Rcpp eliminates time consuming data transfers between the R environment and the C++ core during model fitting, resulting in improved computational performance and allows for a fully object-oriented code design \citep{ood_book}. 
+As expected, the runtime of \package scales linearly with genome size and number of iterations, and scales polynomially with the number of mixture distributions in the data set. 
+The polynomial increase in runtime with the number of mixture distributions is due to the necessity to condition the gene assignment on the estimation of gene specific parameters, such as, protein synthesis rate.
+
+%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Data Simulation}
+In addition to fitting the models to datasets, \package can be used to generate simulated data sets as well.
+On their own, simulated datasets are useful for model development and analysis.
+Simulating data under different conditions allows the user to explore model behavior and explore theoretical scenarios. 
+Different conditions can include the addition or elimination of parameters, or simply allowing a set of parameter values to vary.
+Fitting models to simulated data can provide insight into potential pitfalls or shortcomings when fitting observational data and can serve as the basis for evaluating model adequacy of a model fit to observational data \citep{gumi2015}.
+Significant differences between simulated and observational data suggests the current set of parameters or the model as a whole fail to include or adequately represent biological mechanisms underlying the observed data.
+ 
+%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Available models}
+\package currently provides codon models for analyzing genome scale data.
+The ROC model implements and extends the codon usage bias (CUB) models developed by \citet{gilchrist2015,wallace2013,shah2011}, which can reliably estimate the strength of selection on \underline{r}ibosome \underline{o}verhead \underline{c}ost, mutation bias and allows for the inference of protein synthesis rates.
+This model allows for the separation of effects of mutation and selection based on gene ordering by protein synthesis rate, and the addition of a mixture distribution allows for gene clustering based on mutation bias and selection for translation efficiency.
+In addition to identifying the most efficient codons, ROC provides estimates of mutation bias allowing the approximation of mutation ratios between codons \citep{gilchrist2015,wallace2013}.
+
+The ability to estimate protein synthesis rates in the absence of empirical data is useful for investigating CUB of non-model organisms for which such data is lacking and enables the usage of protein synthesis rate in comparative frameworks or other analyses requiring protein synthesis rate information \citep{dunn2018}.
+Use of the mixture model allows for the investigation of CUB heterogeneity at the genome or gene level.  
+Following the same framework, additional models included in \package provide estimates of codon-specific nonsense errors rates (FONSE) and ribosome pausing times (PA and PANSE).
+
+Parameters estimated with the evolutionary models ROC and FONSE represent evolutionary averages and do not depend on experimental conditions. 
+In contrast, PA and PANSE estimate the distribution of biologically relevant parameters like ribosome pausing times along a gene from experimental data such as ribosome footprinting data. 
+The distribution can be dependent (PANSE) or independent (PA) of evidence for nonsense errors in the data.  
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Supplementary Material}
+AnaCoDa allows for the estimation of biologically relevant parameters like mutation bias or ribosome pausing
+time, depending on the model employed. Bayesian estimation of parameters is performed using an adaptive
+Metropolis-Hasting within Gibbs sampling approach. Models implemented in AnaCoDa are currently able to
+handle gene coding sequences and ribosome footprinting data.
+
+\subsection{The AnaCoDa framework}
+The AnaCoDa framework works with gene specific data such as codon frequencies or position specific footprint
+counts. Conceptually, AnaCoDa uses three different types of parameters.
+
+\begin{itemize}
+	\item The first type of parameters are \textbf{gene specific parameters} such as gene expression level or functionality.
+Gene-specific parameters are estimated separately for each gene and can vary between potential gene
+categories or sets.
+	\item The second type of parameters are \textbf{gene-set specific parameters}, such as mutation bias terms or
+translation error rates. These parameters are shared across genes within a set and can be exclusive to a
+single set or shared with other sets. While the number of gene sets must be pre-defined by the user, set
+assignment of genes can be pre-defined or estimated as part of the model fitting. Estimation of the set
+assignment provides the probability of a gene being assigned to a set allowing the user to asses the
+uncertainty in each assignment.
+	\item The third type of parameters are \textbf{hyperparameters}, such as parameters controlling the prior distribution
+for mutation bias or error rate. Hyperparameters can be set specific or shared across multiple sets
+and allow for the construction and analysis of hierarchical models, by controlling prior distributions for
+gene or gene-set specific parameters.
+\end{itemize}
+
+\subsubsection{Analyzing protein coding gene sequences}
+AnaCoDa always requires the following four objects:
+\begin{itemize}
+	\item \textbf{Genome} contains the codon data read from a fasta file as well as empirical protein synthesis rate in
+the form of a comma separated (.csv) ID/Value pairs.
+	\item \textbf{Parameter} represents the parameter set (including parameter traces) for a given genome. The
+parameter object also hold the mapping of parameters to specified sets.
+	\item \textbf{Model} allows you to specify which model should be applied to the genome and the parameter object.
+	\item \textbf{MCMC} specifies how many samples from the posterior distribution of the specified model should be
+stored to obtain parameter estimates.
+\end{itemize}
+
+\subsection{AnaCoDa setup}
+\subsubsection{Application of codon model to single genome}
+In this example we are assuming a genome with only one set of gene-set specific parameters, hence \textbf{num.mixtures $ = 1$}. 
+We assign all genes the same gene-set, and provide an initial value for the hyperparameter sphi ($s_\phi$). $s_\phi$ controls the lognormal prior distribution on the gene specific parameters like the protein synthesis rate $\phi$. 
+To ensure identifiability the expected value of the prior distribution is assumed to be $1$.
+
+\begin{equation}
+E[\phi] = \exp\left(m_\phi + \frac{s^2_\phi}{2}\right) = 1
+\end{equation}
+Therfore the mean $m_\phi$ is set to be $-\frac{s^2_\phi}{2}$.
+For more details see \citet{gilchrist2015}.
+
+After choosing the model and specifying the necessary arguments for the MCMC routine, the MCMC is run
+
+\begin{lstlisting}[language=R]
+genome <- initializeGenomeObject(file = "genome.fasta")
+parameter <- initializeParameterObject(genome = genome, sphi = 1, 
+			num.mixtures = 1, 
+			gene.assignment = rep(1, length(genome)))
+model <- initializeModelObject(parameter = parameter, model = "ROC")
+mcmc <- initializeMCMCObject(samples = 5000, thinning = 10, 
+			adaptive.width=50)
+runMCMC(mcmc = mcmc, genome = genome, model = model)
+\end{lstlisting}
+
+\textbf{runMCMC} does not return a value, the results of the MCMC are stored automatically in the mcmc and parameter
+objects created earlier.
+
+\begin{quote}
+\textbf{Please note that AnaCoDa utilizes C++ obejct orientation and therefore employs pointer structures. 
+This means that no return value is necessary for such objects as they are modified within the the runMCMC routine. 
+You will find that after a completed run, the parameter object will contain all necessary information without being directly passed into the MCMC routine. 
+This might be confusing at first as it is not default R behaviour.}
+\end{quote}
+
+\subsubsection{Application of codon model to a mixture of genomes}
+This case applies if we assume that parts of the genome differ in their gene-set specific parameters. 
+This could be due to introgression events or strand specific mutation difference, horizontal gene transfers or other reasons. 
+We make the assumption that all sets of genes are independent of one another. 
+For two sets of gene-set specific parameter with a random gene assignment we can use:
+
+\begin{lstlisting}[language=R]
+parameter <- initializeParameterObject(genome = genome, 
+			sphi = c(0.5, 2), num.mixtures = 2,
+			gene.assignment = sample.int(2, 
+				length(genome), replace = T))
+gene.assignment = sample.int(2, length(genome), replace = T))
+\end{lstlisting}
+
+To accommodate for this mixing we only have to adjust \textbf{sphi}, which is now a vector of length 2, \textbf{num.mixtures},
+and \textbf{gene.assignment}, which is chosen at random here.
+
+\subsubsection{Empirical protein synthesis rate values}
+To use empirical values as prior information one can simply specify an observed.expression.file when
+initializing the genome object.
+
+\begin{lstlisting}[language=R]
+genome <- initializeGenomeObject(file = "genome.fasta",
+		observed.expression.file = "synthesis_values.csv")
+\end{lstlisting}
+
+These observed expression or synthesis values ($\Phi$) are independent of the number of gene-sets. 
+The error in the observed $\Phi$ values is estimated and described by sepsilon ($s_\epsilon$). 
+The csv file can contain multiple observation sets separated by comma.
+For each set of observations an initial $s_\epsilon$ has to be specified.
+
+\begin{lstlisting}[language=R]
+# One case of observed data
+sepsilon <- 0.1
+# Two cases of observed data
+sepsilon <- c(0.1, 0.5)
+# ...
+# Five cases of observed data
+sepsilon <- c(0.1, 0.5, 1, 0.8, 3)
+parameter <- initializeParameterObject(genome = genome, sphi = 1, 
+			num.mixtures = 1,
+			gene.assignment = rep(1, length(genome)),
+			init.sepsilon = sepsilon)
+\end{lstlisting}
+
+In addition one can choose to keep the noise in the observations ($s_\epsilon$) constant by using the \textbf{fix.observation.noise} flag in the model object.
+
+\begin{lstlisting}[language=R]
+model <- initializeModelObject(parameter = parameter, model = "ROC",
+fix.observation.noise = TRUE)
+\end{lstlisting}
+
+\subsubsection{Fixing parameter types}
+It can sometime be advantages to fix certain parameters, like the gene specific parameters. 
+For example in cases where only few sequences are available but gene expression measurements are at hand we can fix the gene specific parameters to increase confidence in our estimates of gene-set specific parameters.
+
+We again initialize the \textbf{genome}, \textbf{parameter}, and \textbf{model} objects.
+
+\begin{lstlisting}[language=R]
+genome <- initializeGenomeObject(file = "genome.fasta")
+parameter <- initializeParameterObject(genome = genome, sphi = 1, 
+			num.mixtures = 1,
+			gene.assignment = rep(1, length(genome)))
+model <- initializeModelObject(parameter = parameter, model = "ROC")
+\end{lstlisting}
+
+To fix gene specific parameters we will set the \textbf{est.expression} flag to \textbf{FALSE}. This will estimate only gene-set
+specific parameters, hyperparameters, and the assignments of genes to various sets.
+
+\begin{lstlisting}[language=R]
+mcmc <- initializeMCMCObject(samples, thinning=1, 
+			adaptive.width=100, est.expression=FALSE, 
+			est.csp=TRUE, est.hyper=TRUE, est.mix=TRUE)
+\end{lstlisting}
+
+If we would like to fix gene-set specific parameters we instead disable the \textbf{est.csp} flag.
+
+\begin{lstlisting}[language=R]
+mcmc <- initializeMCMCObject(samples, thinning=1, 
+			adaptive.width=100, est.expression=TRUE, 
+			est.csp=FALSE, est.hyper=TRUE, est.mix=TRUE)
+\end{lstlisting}
+
+The same applies to the hyper parameters (\textbf{est.hyper}),
+
+\begin{lstlisting}[language=R]
+mcmc <- initializeMCMCObject(samples, thinning=1, 
+			adaptive.width=100, est.expression=TRUE, 
+			est.csp=TRUE, est.hyper=FALSE, est.mix=TRUE)
+\end{lstlisting}
+
+and gene set assignment (\textbf{est.mix}).
+
+\begin{lstlisting}[language=R]
+mcmc <- initializeMCMCObject(samples, thinning=1, 
+			adaptive.width=100, est.expression=TRUE, 
+			est.csp=TRUE, est.hyper=TRUE, est.mix=FALSE)
+\end{lstlisting}
+
+We can use these flags to fix parameters in any combination.
+
+\subsubsection{Combining various gene-set specific parameters to a gene-set description.}
+
+We distinguish between three simple cases of gene-set descriptions, and the ability to customize the parameter
+mapping. The specification is done when initializing the parameter object with the \textbf{mixture.definition}
+argument.
+
+We encounter the simplest case when we assume that all gene sets are independent.
+
+\begin{lstlisting}[language=R]
+parameter <- initializeParameterObject(genome = genome, 
+			sphi = c(0.5, 2), num.mixtures = 2,
+			gene.assignment = sample.int(2, 
+				length(genome), replace = T),
+			mixture.definition = "allUnique")
+\end{lstlisting}
+
+The \textbf{allUnique} keyword allows each type of gene-set specific parameter to be estimated independent of parameters describing other gene sets.
+
+In case we want to share mutation parameter between gene sets we can use the keyword \textbf{mutationShared}
+
+\begin{lstlisting}[language=R]
+parameter <- initializeParameterObject(genome = genome, 
+			sphi = c(0.5, 2), num.mixtures = 2,
+			gene.assignment = sample.int(2, 
+				length(genome), replace = T),
+			mixture.definition = "mutationShared")
+\end{lstlisting}
+
+This will force all gene sets to share the same mutation parameters.
+
+The same can be done with parameters describing selection, using the keyword \textbf{selectionShared}
+
+\begin{lstlisting}[language=R]
+parameter <- initializeParameterObject(genome = genome, 
+			sphi = c(0.5, 2), num.mixtures = 2,
+			gene.assignment = sample.int(2, 
+				length(genome), replace = T),
+			mixture.definition = "selectionShared")
+\end{lstlisting}
+
+For more intricate compositions of gene sets, one can specify a custom $n \times 2$ matrix, where $n$ is the number of gene sets, to describe how gene-set specific parameters should be shared. 
+Instead of using the \textbf{mixture.definition} argument one uses the \textbf{mixture.definition.matrix} argument.
+
+The matrix representation of \textbf{mutationShared} can be obtained by
+
+\begin{lstlisting}[language=R]
+# [,1] [,2]
+#[1,] 1 1
+#[2,] 1 2
+#[3,] 1 3
+def.matrix <- matrix(c(1,1,1,1,2,3), ncol=2)
+parameter <- initializeParameterObject(genome = genome, 
+			sphi = c(0.5, 2, 1), num.mixtures = 3,
+			gene.assignment = sample.int(3, 
+				length(genome), replace = T),
+			mixture.definition.matrix = def.matrix)
+\end{lstlisting}
+
+Columns represent mutation and selection, while each row represents a gene set. 
+In this case we have three gene sets, each sharing the same mutation category and three different selection categories.
+In the same way one can produce the matrix for three independent gene sets equivalent to the \textbf{allUnique} keyword.
+
+\begin{lstlisting}[language=R]
+# [,1] [,2]
+#[1,] 1 1
+#[2,] 2 2
+#[3,] 3 3
+def.matrix <- matrix(c(1,2,3,1,2,3), ncol=2)
+\end{lstlisting}
+
+We can also use this matrix to produce more complex gene set compositions.
+
+\begin{lstlisting}[language=R]
+# [,1] [,2]
+#[1,] 1 1
+#[2,] 2 1
+#[3,] 1 2
+def.matrix <- matrix(c(1,2,1,1,1,2), ncol=2)
+\end{lstlisting}
+
+In this case gene set one and three share their mutation parameters, while gene set one and two share their selection parameters.
+
+\subsubsection{Checkpointing}
+
+AnaCoDa does provide checkpointing functionality in case runtime has to be restiricted. 
+To enable checkpointing, one can use the function \textbf{setRestartSettings}.
+
+\begin{lstlisting}[language=R]
+# writing a restart file every 1000 samples
+setRestartSettings(mcmc, "restart_file", 1000, write.multiple=TRUE)
+# writing a restart file every 1000 samples 
+# but overwriting it every time
+setRestartSettings(mcmc, "restart_file", 1000, write.multiple=FALSE)
+\end{lstlisting}
+
+To re-initialize a parameter object from a restart file one can simply pass the restart file to the initialization function:
+
+\begin{lstlisting}[language=R]
+initializeParameterObject(init.with.restart.file="restart_file.rst")
+\end{lstlisting}
+
+\subsubsection{Load and save parameter objects}
+AnaCoDa is based on C++ objects using the Rcpp \citep{rcpp_package}. 
+This comes with the problem that C++ objects are by default not serializable and can therefore not be saved/loaded with the default R save/load functions.
+
+AnaCoDa however, does provide functions to load and save parameter and mcmc objects. 
+These are the only two objects that store information during a run.
+
+\begin{lstlisting}[language=R]
+#save objects after a run
+runMCMC(mcmc = mcmc, genome = genome, model = model)
+writeParameterObject(parameter = parameter, file = "parameter.Rda")
+writeMCMCObject(mcmc = mcmc, file = "mcmc_out.Rda")
+\end{lstlisting}
+
+As \textbf{genome}, and \textbf{model} objects are purely storage containers, no save/load function is provided at this point, but will be added in the future.
+
+\begin{lstlisting}[language=R]
+#load objects
+parameter <- loadParameterObject(file = "parameter.Rda")
+mcmc <- loadMCMCObject(file = "mcmc_out.Rda")
+\end{lstlisting}
+
+\subsection{File formats}
+
+\subsubsection{protein coding sequence}
+Protein coding sequences are provided by fasta file with the default format. One line containing the sequence
+id starting with $>$ followed by the id and one or more lines containing the sequence. The sequences are
+expected to have a length that is a multiple of three. If a codon can not be recognized (e.g AGN) it is ignored.
+
+\begin{verbatim}
+>YAL001C
+TTGGTTCTGACTCATTAGCCAGACGAACTGGTTCAA
+CATGTTTCTGACATTCATTCTAACATTGGCATTCAT
+ACTCTGAACCAACTGTAAGACCATTCTGGCATTTAG
+>YAL002W
+TTGGAACAAAACGGCCTGGACCACGACTCACGCTCT
+TCACATGACACTACTCATAACGACACTCAAATTACT
+TTCCTGGAATTCCGCTCTTAGACTCAACTGTCAGAA
+\end{verbatim}
+
+\subsubsection{Empirical gene expression}
+
+Empirical expression or gene specific parameters are provided in a csv file format. The first line is expected to
+be a header describing each column. The first column is expected be the gene id, and every additional column
+is expected to be represent a measurement. Each row corresponds to one gene and contains all measurements
+for that gene, including missing values.
+
+\begin{verbatim}
+>YAL001C
+ORF,DATA_1,DATA_2,...DATA_N
+YAL001C,0.254,0.489,...,0.156
+YAL002W,1.856,1.357,...,2.014
+YAL003W,10.45,NA,...,9.564
+YAL005C,0.556,0.957,...,0.758
+\end{verbatim}
+
+\subsubsection{Ribosome foot-printing counts}
+
+Ribosome foot-printing (RFP) counts are provided in a csv file format. The first line is expected to be a
+header describing each column. The columns are expected in the following order gene id, position, codon,
+rfpcount. Each row corresponds to a single codon with an associated number of ribosome footprints.
+
+\begin{verbatim}
+GeneID,Position,Codon,rfpCount
+YBR177C, 0, ATA, 8
+YBR177C, 1, CGG, 1
+YBR177C, 2, GTT, 8
+YBR177C, 3, CGC, 1
+\end{verbatim}
+
+\subsection{Analyzing and Visualizating results}
+
+\subsubsection{Parameter estimates}
+
+After we have completed the model fitting, we are interested in the results. 
+AnaCoDa provides functions to obtain the posterior estimate for each parameter. 
+For gene-set specific parameters or codon specific parameters we can use the function \textbf{getCSPEstimates}. 
+Again we can specify for which mixture we would like the posterior estimate and how many samples should be used. 
+\textbf{getCSPEstimates} has an optional argument filename which will cause the routine to write the result as a csv file instead of returning a \textbf{data.frame}.
+
+\begin{lstlisting}[language=R]
+csp_mat <- getCSPEstimates(parameter = parameter, CSP="Mutation", 
+			mixture = 1, samples = 1000)
+head(csp_mat)
+# AA Codon Posterior 0.025% 0.975%
+#1 A GCA -0.2435340 -0.2720696 -0.2165220
+#2 A GCC 0.4235546 0.4049132 0.4420680
+#3 A GCG 0.7004484 0.6648690 0.7351707
+#4 C TGC 0.2016298 0.1679025 0.2387024
+#5 D GAC 0.5775052 0.5618199 0.5936979
+#6 E GAA -0.4524295 -0.4688044 -0.4356677
+getCSPEstimates(parameter = parameter, filename = "mutation.csv",
+			CSP="Mutation", mixture = 1, samples = 1000)
+\end{lstlisting}
+
+To obtain posterior estimates for the gene specific parameters, we can use the function \textbf{getExpressionEstimatesForMixture}.
+In the case below we ask to get the gene specific parameters for all genes, and under the assumption each gene is assigned to mixture $1$.
+
+\begin{lstlisting}[language=R]
+phi_mat <- getExpressionEstimates(parameter = parameter,
+			gene.index = 1:length(genome),
+			samples = 1000)
+head(phi_mat)
+# PHI log10.PHI Std.Error log10.Std.Error 0.025 0.975 log10.025 ...
+#[1,] 0.2729446 -0.6188447 0.0001261525 2.362358e-04 0.07331819 ...
+#[2,] 1.4221716 0.1498953 0.0001669425 5.194123e-05 1.09593642 ...
+#[3,] 0.7459888 -0.1512764 0.0002313539 1.529267e-04 0.31559618 ...
+#[4,] 0.6573082 -0.2030291 0.0001935466 1.400333e-04 0.31591233 ...
+#[5,] 1.6316901 0.2098120 0.0001846631 4.986347e-05 1.28410352 ...
+#[6,] 0.6179711 -0.2286806 0.0001744928 1.374863e-04 0.28478950 ...
+\end{lstlisting}
+
+However we can decide to only obtain certain gene parameters. in the first case we sample 100 random genes.
+
+\begin{lstlisting}[language=R]
+# sampling 100 genes at random
+phi_mat <- getExpressionEstimates(parameter = parameter,
+			gene.index = sample(1:length(genome), 100),
+			samples = 1000)
+\end{lstlisting}
+
+Furthermore, AnaCoDa allows to calculate the selection coefficient s for each codon and each gene. We can
+use the function \textbf{getSelectionCoefficients} to do so. Please note, that this function returns the $log(sNe)$.
+
+\textbf{getSelectionCoefficients} returns a matrix with $log(sNe)$ relative to the most efficient synonymous codon.
+
+\begin{lstlisting}[language=R]
+selection.coefficients <- getSelectionCoefficients(genome = genome,
+			parameter = parameter, samples = 1000)
+head(selection.coefficients)
+# GCA GCC GCG GCT TGC TGT GAC GAT ...
+#SAKL0A00132g -0.1630284 -0.008695144 -0.2097771 0 -0.1014373 ...
+#SAKL0A00154g -0.8494558 -0.045305847 -1.0930388 0 -0.5285367 ...
+#SAKL0A00176g -0.4455753 -0.023764823 -0.5733448 0 -0.2772397 ...
+#SAKL0A00198g -0.3926068 -0.020939740 -0.5051875 0 -0.2442824 ...
+#SAKL0A00220g -0.9746002 -0.051980440 -1.2540685 0 -0.6064022 ...
+#SAKL0A00242g -0.3691110 -0.019686586 -0.4749542 0 -0.2296631 ...
+\end{lstlisting}
+
+We can compare these values to the weights from the codon adaptatoin index (CAI) citep{Sharp1987} or
+effective number of codons ($N_c$) \citep{Wright1990} by using the functions \textbf{getCAIweights} and \textbf{getNcAA}.
+
+\begin{lstlisting}[language=R]
+cai.weights <- getCAIweights(referenceGenome = genome)
+head(cai.weights)
+# GCA GCC GCG GCT TGC TGT
+#0.7251276 0.6282192 0.2497737 1.0000000 0.6222628 1.0000000
+nc.per.aa <- getNcAA(genome = genome)
+head(nc.per.aa)
+# A C D E F G ...
+#SAKL0A00132g 3.611111 1.000000 2.200000 2.142857 1.792453 ...
+#SAKL0A00154g 1.843866 2.500000 2.035782 1.942505 1.986595 ...
+#SAKL0A00176g 5.142857 NA 1.857143 1.652174 1.551724 3.122449 ...
+#SAKL0A00198g 3.800000 NA 1.924779 1.913043 2.129032 4.136364 ...
+#SAKL0A00220g 3.198529 1.666667 1.741573 1.756757 2.000000 ...
+#SAKL0A00242g 4.500000 NA 2.095890 2.000000 1.408163 3.734043 ...
+\end{lstlisting}
+
+We can also compare the distribution of selection coefficients to the CAI values estimated from a reference set of
+genes.
+
+\begin{lstlisting}[language=R]
+selection.coefficients <- getSelectionCoefficients(genome = genome,
+			parameter = parameter, samples = 1000)
+s <- exp(selection.coefficients)
+cai.weights <- getCAIweights(referenceGenome = ref.genome)
+codon.names <- colnames(s)
+h <- hist(s[, 1], plot = F)
+plot(NULL, NULL, axes = F, xlim = c(0,1), 
+			ylim = range(c(0,h$counts)),
+			xlab = "s", ylab = "Frequency", 
+			main = codon.names[1], cex.lab = 1.2)
+lines(x = h$breaks, y = c(0,h$counts), type = "S", lwd=2)
+abline(v = cai.weights[1], lwd=2, lty=2)
+axis(1, lwd = 3, cex.axis = 1.2)
+axis(2, lwd = 3, cex.axis = 1.2)
+\end{lstlisting}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=3in]{fig02a-circle}\\
+  \caption{Distribution of s for codon GCA for amino acid alanine. Dashed line indicates the CAI weight for
+GCA. The comparisson provides a more nuanced picture as we can see that the selection on GCA varies
+across the genome.}
+  \label{fig:sne_dummy}
+\end{figure} 
+
+\subsubsection{Diagnostic Plots}
+A first step after every run should be to determine if the sampling routine has converged. 
+To do that, AnaCoDa provides plotting routines to visualize all sampled parameter traces from which the posterior sample is obtained.
+First we have to obtain the \textbf{trace} object stored within our \textbf{parameter} object. 
+Now we can simply plot the \textbf{trace} object. The argument \textbf{what} specifies which type of parameter should be plotted.
+Here we plot the selection parameter $\Delta \eta$ of the ROC model. 
+These parameters are mixture specific and one can decide which mixture set to visualize using the argument \textbf{mixture}.
+
+\begin{lstlisting}[language=R]
+trace <- getTrace(parameter)
+plot(x = trace, what = "Mutation", mixture = 1)
+\end{lstlisting}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=3in]{fig02a-circle}\\
+  \caption{Trace plot showing the traces of all 40 codon specific selection parameters organized by amino acid.}
+  \label{fig:mutation_trace}
+\end{figure} 
+
+A special case is the plotting of traces of the protein synthesis rate $\phi$. 
+As the number of traces for the different $\phi$ traces is usually in the thousands, a \textbf{geneIndex} has to be passed to determine for which gene the trace should be plotted. 
+This allows to inspect the trace of every gene under every mixture assignment.
+
+\begin{lstlisting}[language=R]
+trace <- parameter$getTraceObject()
+plot(x = trace, what = "Expression", mixture = 1, geneIndex = 669)
+\end{lstlisting}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=3in]{fig02a-circle}\\
+  \caption{Trace plot showing the protein synthesis trace for gene 669.}
+  \label{fig:logphi_trace}
+\end{figure} 
+
+We can find the likelihood and posterior trace of the model fit in the \textbf{mcmc object}. 
+The trace can be plotted by just passing the \textbf{mcmc} object to the \textbf{plot} routine. 
+Again we can switch between $\log(likelihood)$ and $\log(posterior)$ using the argument \textbf{what}. 
+The argument \textbf{zoom.window} is used to inspect a specified window in more detail. 
+It defaults to the last 10 \% of the trace. 
+The $\log(posterior)$ displayed in the figure title is estimated over the \textbf{zoom.window}.
+
+\begin{lstlisting}[language=R]
+plot(mcmc, what = "LogPosterior", zoom.window = c(9000, 10000))
+\end{lstlisting}
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=3in]{fig02a-circle}\\
+  \caption{Trace plot showing the $\log(posterior)$ trace for the current model fit}
+  \label{fig:logpost_trace}
+\end{figure} 
+
+\subsubsection{Model visualization}
+We can visualize the results of the model fit by plotting the \textbf{model} object. 
+For this we require the model and the \textbf{genome} object. 
+We can adjust which mixture set we would like to visualize and how many samples should be used to obtain the posterior estimate for each parameter. 
+For more details see \citet{gilchrist2015}.
+
+\begin{lstlisting}[language=R]
+# use the last 500 samples from mixture 1 for posterior estimate.
+plot(x = model, genome = genome, samples = 500, mixture = 1)
+\end{lstlisting}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=3in]{fig02a-circle}\\
+  \caption{Fit of the ROC model for a random yeast. The solid line represent the model fit from the data,
+showing how synonymous codon frequencies change with gene expression. The points are the observed mean
+frequencies of a codon in that synthesis rate bin and the wisks indicate the standard diviation within the bin.
+The codon favored by selection is indicated by a "*". The bottom right panel shows how many genes are
+contained in heach bin}
+  \label{fig:cub_dummy}
+\end{figure} 
+
+As AnaCoDa is designed with the idea to allow gene-sets to have independent gene-set specific parameters, AnaCoDa also provides the option to compare different gene-sets by plotting the parameter object. 
+Here we compare the selection parameter estimated by ROC for seven yeast species.
+
+\begin{lstlisting}[language=R]
+# use the last 500 samples from mixture 1 for posterior estimate.
+plot(parameter, what = "Selection", samples = 500)
+\end{lstlisting}
+
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=3in]{fig02a-circle}\\
+  \caption{Comparisson of the selection parameter of seven yeast species estimated with ROC-SEMPPR.}
+  \label{fig:comp_dummy}
+\end{figure} 
