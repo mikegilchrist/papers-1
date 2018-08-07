@@ -186,7 +186,13 @@ Estimates of \DE show higher agreement between endogenous and exogenous genes ($
 However, only nine codon families favor the same codon in the endogenous and exogenous genes.
 Unlike the mutation bias, we find selection to be heavily biased towards A/T ending codons ($\sim 89 \%$) in the exogenous genes.
 In contrast, the selection environment in the endogenous genes is G/C biased ($\sim 58 \%$).
-Thus, recognizing and treating endogenous and exogenous genes as separate sets avoids the inference of incorrect synonymous codon preferences (Table \ref{tab:codon_pref_deta}).
+
+Under the null hypothesis, we assumed that $\DM_{exo} = \DM_{endo}$ and $\DE_{exo} = \DE_{endo}$.
+We find that in that case, the codon most favored by mutation bias $\DM_{complete}$ is in concordance with the exogenous $\DM_{exo}$ estimates in 15 cases and in concordance with the endogenous $\DM_{endo}$ in only 3 cases (Table \ref{tab:codon_pref_dm}).
+We find two cases, Isoleucine (Ile, I) and Arginine (Arg, R), in which the mutation preference of the complete genome is in discordance with both, the exogenous and the endogenous estimates.
+Our estimate of the codon most favored by selection bias $\DE_{complete}$ are in concordance with the exogenous $\DE_{exo}$ estimates in 14 cases and are in concordance with the endogenous $\DE_{endo}$ in 13 cases (Table \ref{tab:codon_pref_deta}).
+The estimated optimal codon between $\DE_{complete}$, $\DE_{exo}$, and $\DE_{endo}$ are in discordance for seven codon families.
+Thus, recognizing and treating endogenous and exogenous genes as separate sets avoids the inference of incorrect synonymous codon preferences.
 
 \subsection*{Determining Source of Exogenous Genes}
 
@@ -216,13 +222,13 @@ Given these results, we conclude that the \gossypii lineage is the most likely s
 \subsection*{Estimating Introgression Age}
 
 We estimated the introgression age using an exponential model of decay for mutation bias, by assuming that \gossypii is still representative of the mutation bias of its ancestral source lineage at the time of the introgression.
-We utilize the \DM estimates for all two codon amino acids and infer the age of the introgression to be on the order of $6\pm1\times 10^8$ generations. 
+We utilize the \DM estimates for all two codon amino acids and infer the age of the introgression to be on the order of $6.2\pm1.2\times 10^8$ generations. 
 We assume a mutation rate of $3.8\times 10^{-10}$ per nucleotide per generation, a value in line with other estimates \citep{zhu2014, lang2008}.
-\kluyveri experiences between one and eight generations per day, we therefore expect the introgression to have occurred about $205,000 \pm XXX$ to $1,600,000 \pm XXX$ years ago which is  longer than previous estimates of \citet{friedrich2015}.
+\kluyveri experiences between one and eight generations per day, we therefore expect the introgression to have occurred about $205,000$ to $1,600,000$ years ago which is  longer than previous estimates of \citet{friedrich2015}.
 However, our estimates are likely overestimates as they assume a purely neutral decay.
 
 Furthermore, we estimated the persistence of the signal of the foreign cellular environment.
-Assuming that differences in mutation bias will decay more slowly than differences in selection bias, we predict that the \DM signal of the source cellular environment will have decayed to be within one percent of the \kluyveri environment within about $5\times 10^9 \pm XXX$ generations.
+Assuming that differences in mutation bias will decay more slowly than differences in selection bias, we predict that the \DM signal of the source cellular environment will have decayed to be within one percent of the \kluyveri environment within about $5.4\pm0.2\times 10^9 $ generations.
 
 
 \subsection*{Fitness Burden of the Exogenous Genes}
@@ -362,7 +368,7 @@ All genes could be uniquely assigned to one or the other gene set.
 After manual inspection to verify that the MCMC had converged, parameter posterior means were estimated from the last 500 samples.
 
 \subsection*{Comparing codon specific parameter estimates}
-Choice of reference codon does reorganize codon families relative to each other, therefore all parameter estimates are relative to the mean for each codon family.
+Choice of reference codon does reorganize codon families coding for an amino acid relative to each other, therefore all parameter estimates are relative to the mean for each codon family.
 \begin{equation}
 \DM_{i,a}^c = \DM_{i,a} - \bar{\DM_a}
 \end{equation}
@@ -385,22 +391,22 @@ We modeled the change in codon frequency over time using an exponential model fo
 \label{mut_ode}
 \end{equation}
 where $\mu_{i,j}$ is the rate at which codon $i$ mutates to codon $j$ and $c_1$ is the frequency of the reference codon.
-Our estimates of \DM can be directly related to the steady state of equation \ref{mut_ode}.
+Our estimates of $\DM_{endo}$ can be directly related to the steady state of equation \ref{mut_ode}.
 \begin{equation}
-\frac{m_{2,1}}{\mu_{1,2} + \mu_{2,1}} = \frac{1}{1+\exp(\DM)}
+\frac{\mu_{2,1}}{\mu_{1,2} + \mu_{2,1}} = \frac{1}{1+\exp(\DM_{endo})}
 \end{equation}
-Solving for $\mu_{1,2}$ gives us $\mu_{1,2} = \DM\exp(\mu_{2,1})$ which allows us to rewrite and solve equation \ref{mut_ode} as
+Solving for $\mu_{1,2}$ gives us $\mu_{1,2} = \DM_{endo}\exp(\mu_{2,1})$ which allows us to rewrite and solve equation \ref{mut_ode} as
 \begin{equation}
-c_1(t) = \frac{\exp(-t(1+\DM)\mu_{2,1})\exp(t(1+\DM)\mu_{2,1}) + (1+\DM)K}{1+\DM}
+c_1(t) = \frac{\exp(-t(1+\DM_{endo})\mu_{2,1})\exp(t(1+\DM_{endo})\mu_{2,1}) + (1+\DM_{endo})K}{1+\DM_{endo}}
 \label{mut_close_form}
 \end{equation}
 where K is
 \begin{equation}
-K = \frac{-1 + c_1(0) + c_1(0)\DM}{1+\DM}
+K = \frac{-1 + c_1(0) + c_1(0)\DM_{endo}}{1+\DM_{endo}}
 \end{equation}
 
 Equation \ref{mut_close_form} was solved over time with a mutation rate $m_{2,1}$ of $3.8\times 10^{-10}$ per nucleotide per generation \citep{lang2008}. 
-Initial codon frequencies $c_1(0)$ for each codon family where taken from our estimates of \DM from \gossypii. 
+Initial codon frequencies $c_1(0)$ for each codon family where taken from our estimates of $\DM_{gos}$ from \gossypii. 
 Current codon frequencies for each codon family where taken from our estimates of \DM from the exogenous genes.
 Mathematica (9.0.1.0) \citep{Mathematica} was used to calculate the time $t_{exo}$ it takes for the initial codon frequencies $c_1(0)$ for each codon family to change to the current exogenous codon frequencies.
 The same equation was used to determine the time $t_{endo}$ at which the signal of the exogenous cellular environment has decayed to within $1 \%$ of the endogenous environment.
@@ -420,15 +426,16 @@ where $(sN_e)g$ is the selection against translation inefficiency relative to dr
 $\phi_g$ is the estimated protein synthesis rate for gene $g$ in the exogenous gene set.
 $n_{g,i}$ is the codon count of each codon $i$ in the codon set $C$ for each gene $g$.
 $\kappa$ is a constant, scaling the efficacy of selection between cellular environments.
+Like stated previously, our \DE are relative to the mean of the codon family.
 We find that the fitness burden of the introgressed genes  is minimized at $\kappa \sim 5$ (Figure \ref{fig:sne_scaling}b).
 Thus, we set $\kappa = 1$ if we calculate the $(sN_e)g$ for the endogenous and the current exogenous genes, and $\kappa = 5$ for $(sN_e)g$ for the fitness burden at the time of introgression.
 Since we are unable to observe codon counts for the replaced endogenous genes and for the exogenous genes at the time of introgression, we calculate expected codon counts
 \begin{equation}
-E[n_{g,i}] = \frac{\exp(-\DM_i -\DE_i\phi_g)}{1+\sum_j^C \exp(-\DM_j -\DE_j\phi_g)}\times m_{a_i}
+E[n_{g,i}] = \frac{\exp(-\DM_i -\DE_i\phi_g)}{\sum_j^C \exp(-\DM_j -\DE_j\phi_g)}\times m_{a_i}
 \end{equation} 
 $m_{a_i}$ is the number of occurrences of amino acid $a$ that codon $i$ codes for.
 
-We report the fitness burden of the introgression as $\Delta sN_e = (sN_e)_{I} - (sN_e)_{Endo}$ where $(sN_e)_{I}$ is either the fitness burden at the time of the introgression or presently.
+We report the fitness burden of the introgression as $\Delta sN_e = (sN_e)_{Intro} - (sN_e)_{Endo}$ where $(sN_e)_{Intro}$ is either the fitness burden at the time of the introgression or presently.
 
 \section*{Acknowledgments}
 
