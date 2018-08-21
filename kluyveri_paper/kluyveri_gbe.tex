@@ -23,9 +23,10 @@
 \doublespacing
 \linenumbers
 
-\newcommand{\kluyveri}{\textit{L. kluyveri}\xspace}
-\newcommand{\dubl}{\textit{C. dubliniensis}\xspace}
-\newcommand{\gossypii}{\textit{E. gossypii}\xspace}
+\newcommand{\kluyveri}{\emph{L. kluyveri}\xspace}
+\newcommand{\Lklu}{\emph{L. kluyveri}\xspace}
+\newcommand{\dubl}{\emph{C. dubliniensis}\xspace}
+\newcommand{\gossypii}{\emph{E. gossypii}\xspace}
 \newcommand{\ROC}{ROC SEMPPR\xspace}
 \newcommand{\GC}{GC content\xspace}
 \newcommand{\DM}{\ensuremath{{\Delta M}}\xspace}
@@ -78,15 +79,18 @@ M\textsc{ICHAEL} A.~{G\textsc{ILCHRIST}}$^{1,2}$}
 \newpage
 
 \begin{abstract}
-Codon usage has been used as a measure for adaptation of genes to their cellular environment for decades. 
-The introgression of genes from one cellular environment to another may cause well adapted genes to suddenly be less adapted due to them having evolved in a different environment.
-As a result, we expect that transferred genes result in a large fitness burden for the new host organism.
-Here we examine the yeast \textit{Lachancea kluyveri} which has experienced a large introgression, replacing the left arm of chromosome C ($\sim 10 \%$ of its genome).
-The \kluyveri genome provides an opportunity to study the evolution of introgressed genes to a novel cellular environment and estimate the fitness cost such a transfer imposes.
-We quantified the effects of mutation bias and selection against translation inefficiency on the codon usage pattern of the endogenous and introgressed exogenous genes using a Bayesian mixture framework.
-We found substantial differences in codon usage between the endogenous and exogenous genes, and show that these differences can be largely attributed to a shift in mutation bias from A/T ending codons in the endogenous genes to C/G ending codons in the exogenous genes.
-Recognizing the two different signatures of mutation and selection bias improved our ability to predict protein synthesis rate by $17 \%$ and allowed us to accurately assess codon preferences.
-In addition we utilize the estimates of mutation bias and selection against translation inefficiency to determine \textit{Eremothecium gossypii} as potential source lineage, estimate the time since introgression to be on the order of $6\times 10^8$ and assess the fitness burden across introgressed loci, showing the advantage of mechanistic models when analyzing codon data.
+Here we examine variation in codon usage patterns of endogenous and exogenous genes in the yeast \emph{Lachancea kluyveri}.
+Previous studies indicate that the left arm of chromosome C, or $\sim 10 \%$ of the \Lklu genome, is the result of an large introgression of exogenous genes.
+Thus, the \Lklu genome provides an opportunity to study the adaptation of these exogenous to a novel cellular environment and estimate how the genetic load of these genes changes over time.
+In order to quantiatively describe \Klu's codon usage environment, we fitted a bayesian, mechanistic model of codon usage bias evolution, ROC-SEMPPR, to \Klu's endogenous gene in order to estimate the strength of mutation bias and selection on codon usage.
+We then compared these parameter estimates to those we obtained by fitting ROC-SEMPPR to \Klu's exogenous genes, which provides a biased estimate of the ancestral environment of the exogenous genes.
+Our results indicate the differences in codon usage between \Klu's endogenous and exogenous genes are largely due to differences in mutation bias, rather than selection.
+% differences from A/T ending codons in the endogenous genes to C/G ending codons in the exogenous genes
+Estimating mutation and selection parameters separately for the endogenous and exogenous genes improved our ability to predict empirical estimates of protein synthesis by 17\% and avoided errors in identifying \Klu's selectively favored or `optimal' codons.
+By comparing our mutation and selection parameters to those estimated for other yeast species, we identified \emph{Eremothecium gossypii} as the most likely source of \Klu's exogenous genes.
+Using these parameters and available estimates of mutation rates in yeast, we estimated the age of the introgression to be on the order of $6\times 10^8$ generation.
+Finally, we estimated the genetic load of the exogeneous genes both at the time of introgression and currently.
+In summary, our work shows the advantage of using mechanistic models that separate the effects of selection and mutation on codon usage.
 \end{abstract}
 \newpage
 
@@ -114,7 +118,7 @@ We expect a greater fitness burden of transferred genes if donor and recipient e
 More practically, if transferred genes are unaccounted for, they may distort parameters by biasing estimates.
 This can lead to the conclusion of the wrong codon preference for an amino acid when analyzing a genome that has experienced such transfer events.  
 
-In this study, we analyze the synonymous codon usage of the genome of \textit{Lachancea kluyveri}, the earliest diverging lineage of the Lachancea clade.
+In this study, we analyze the synonymous codon usage of the genome of \emph{Lachancea kluyveri}, the earliest diverging lineage of the Lachancea clade.
 The Lachancea clade diverged from the Saccharomyces clade prior to the whole genome duplication, about 100 Mya ago.
 Since its divergence from the other Lachancea, \kluyveri  has experienced a large introgression of exogenous genes.
 The introgression replaced the left arm of the C chromosome and displays a $13 \%$ higher \GC than the endogenous \kluyveri genome \citep{payen2009, friedrich2015}.
@@ -197,7 +201,7 @@ Thus, recognizing and treating endogenous and exogenous genes as separate sets a
 \subsection*{Determining Source of Exogenous Genes}
 
 We combined our estimates of mutation bias ($\Delta M$) and selection bias ($\Delta \eta$) with synteny information and searched for potential source lineages of the introgressed region.
-We examined 38 yeast lineages of which two (\textit{Eremothecium gossypii} and \textit{Candida dubliniensis}) showed a strong positive correlation in codon usage (Figure \ref{fig:csp_endo_exo_comp}a).
+We examined 38 yeast lineages of which two (\emph{Eremothecium gossypii} and \emph{Candida dubliniensis}) showed a strong positive correlation in codon usage (Figure \ref{fig:csp_endo_exo_comp}a).
 \begin{figure}[h]
     \centering
     \begin{subfigure}
@@ -298,8 +302,8 @@ The comparison of the endogenous and exogenous \DM and \DE estimates to 38 other
 Similar, we find strong similarities in selection bias between examined yeasts, potentially indicating stabilizing selection on codon usage.
 However, the exogenous genes do not share this commonality (Figure \ref{fig:csp_comp}a), as their mutation bias strongly deviates from the endogenous genes and most other yeast species examined. 
 This large difference in mutation bias between endogenous and exogenous genes allowed us to limit our candidate list to only two likely lineages, \dubl and \gossypii.
-Interestingly, we did not find \textit{Lachancea thermotolerance}, a thermophilic lineage closely related to \kluyveri, as a potential candidate.
-While \textit{L. thermotolerance} does have a strong synteny relationship with \kluyveri, it does not show similarity in codon usage with the exogenous genes and does not share their high \GC.
+Interestingly, we did not find \emph{Lachancea thermotolerance}, a thermophilic lineage closely related to \kluyveri, as a potential candidate.
+While \emph{L. thermotolerance} does have a strong synteny relationship with \kluyveri, it does not show similarity in codon usage with the exogenous genes and does not share their high \GC.
 
 Inference of synteny relationships between the exogenous region and \dubl and \gossypii as well as closely related species showed that synteny relationship is limited to the Saccharomycetaceae clade (Figure \ref{fig:synteny_species}b).
 \gossypii showed the highest syntenty coverage and is the only species with similar codon usage.
@@ -335,10 +339,10 @@ However, as the introgression appears to have reached fixation \citep{friedrich2
 
 The large genetic load the exogenous genes represented at the time of the introgression indicates that the fixation of the introgression was a very unlikely event in a population with a large $N_e$ as it is typical for yeasts.
 It is hard to contextualize the probability of this introgression being fixed as we are not aware of any estimates of the frequency at which such large scale introgressions of genes with very different signatures of codon usage occur.
-One example is \textit{Saccharomyces bayanus}, a hybrid of \textit{Saccharomyces uvarum},\textit{Saccharomyces cerevisiae}, and \textit{Saccharomyces eubayanus}.
+One example is \emph{Saccharomyces bayanus}, a hybrid of \emph{Saccharomyces uvarum},\emph{Saccharomyces cerevisiae}, and \emph{Saccharomyces eubayanus}.
 However, unlike with \kluyveri and \gossypii it appears that the donor lineages show similar codon usage.
-\textit{Saccharomyces cerevisiae} and \textit{Saccharomyces eubayanus} show a very strong correlation between selection bias \DE of $\rho = 0.98$ and a strong correlation between mutation bias \DM of $ \rho = 0.83$
-We were unable to identify codon usage for \textit{Saccharomyces uvarum}.
+\emph{Saccharomyces cerevisiae} and \emph{Saccharomyces eubayanus} show a very strong correlation between selection bias \DE of $\rho = 0.98$ and a strong correlation between mutation bias \DM of $ \rho = 0.83$
+We were unable to identify codon usage for \emph{Saccharomyces uvarum}.
 However, \kluyveri diverged about 85 Mya ago from the rest of the Lachancea clade.
 This represents between $10^{10}$ to $10^{11}$ generations.
 Assuming for yeasts typical effective population size on the order of $10^8$, we are left with $10^{18}$ to $10^{19}$ opportunities for such an event to occur.
