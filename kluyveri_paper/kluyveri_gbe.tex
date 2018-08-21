@@ -96,12 +96,12 @@ In summary, our work shows the advantage of using mechanistic models that separa
 
 
 \section*{Introduction}
-
-Mutation, selection and genetic drift can be used to quantify the environment a genome has evolved in.
-Mutation bias is purely determined by the cellular environment, while the strength and efficacy of selection relative to drift is determined by the cellular environment, e.g. tRNA abundance, and the natural environment e.g. gene expression.
-A lineages effective population size determines the efficacy of selection relative to drift.
-Synonymous codon usage, the non-uniform usage of codons encoding the same amino acid, is a reflection of both, the cellular and the natural environment.
-Decomposing codon usage, therefore, provides us the necessary information to describe the environment a genome has evolved in in terms of its codon usage. 
+Synonymous codon usage patterns often varies within a genome and between taxa and reflects the effects of mutation bias, selection, and genetic drift.
+The signature of mutation bias is largely determined by the organism's internal or cellular environment, such as their complement DNA repair genes.
+The signature of selection on codon usage is also largely determined by an organism's cellular environment, such as its translational machinery. 
+In contrast, the strength of selection on the codon usage of an individual gene is largely determined by its expression level which, in turn, is largely determined by the organism's external environment.
+The efficacy of this selection on codon usage relative to drift is a function of the organism's effective population size \Ne which, in turn, is largely determined by its external environment.
+Thus, the codon usage patterns of a genome provides us with a unique signature of the organism's internalby decomposing the patterns codon usage bias across a set of genes allows us to genome provides us with information about the organism's cellular and external environment.
 
 In general, the strength of selection on codon usage increases with gene expression \citep{ikemura1985, gouy1982}.
 Conversely, the impact of mutation bias on codon usage declines with gene expression.
@@ -110,31 +110,31 @@ Together, the mutation process favoring specific synonymous codons - or mutation
 This mutation-selection-drift balance model allows us to explicitly describe the environment in which genes evolve with respect to mutation and selection bias.
 Here we show that estimating the influence of mutation bias and selection bias on a gene's codon usage allows us to not only predict protein synthesis rate $\phi$, but also, to infer its history and make predictions about its future with respect to these forces.
 
-Most studies implicitly assume that synonymous codon usage of a genome is shaped by a single cellular environment. 
-However, it is easy to think about the influence of multiple cellular environments within a cell, as genes are horizontally transferred, introgress, or as species hybridize.
-Genes introduced via horizontal gene transfer, introgression, or hybridization may carry the signature of a different, foreign cellular environment.
-These transferred genes may be less adapted to their new cellular environment, potentially imposing large fitness burdens to the organism.
-We expect a greater fitness burden of transferred genes if donor and recipient environment differ greatly in their selection bias, making such transfers less likely.
-More practically, if transferred genes are unaccounted for, they may distort parameters by biasing estimates.
-This can lead to the conclusion of the wrong codon preference for an amino acid when analyzing a genome that has experienced such transfer events.  
+Most studies implicitly assume that synonymous codon usage of a genome is reflects the single mutational and selective cellular environment of the organism. 
+However, any introgressed genes, whether the result of hybridization or horizontal gene transfer, should carry the signature of the exogenous cellular environment whence they came and, in turn, impose a genetic load on the recipient lineage.
+The magnitude of the exogenous genes' genetic load on the recipient or endogenous lineage should increase as the mutation and selective environments differ between the donor and recipient lineages as well as with the expression level of the genes in the recipient cells.
+Thus codon usage patterns likely play a critical role in the rates of introgression between lineages and, as a result, can serve as an important source of information about such events.
 
-In this study, we analyze the synonymous codon usage of the genome of \emph{Lachancea kluyveri}, the earliest diverging lineage of the Lachancea clade.
+Here we analyze the synonymous codon usage of the genome of \emph{Lachancea kluyveri}, the earliest diverging lineage of the Lachancea clade.
 The Lachancea clade diverged from the Saccharomyces clade prior to the whole genome duplication, about 100 Mya ago.
 Since its divergence from the other Lachancea, \kluyveri  has experienced a large introgression of exogenous genes.
-The introgression replaced the left arm of the C chromosome and displays a $13 \%$ higher \GC than the endogenous \kluyveri genome \citep{payen2009, friedrich2015}.
-These characteristics make \kluyveri an ideal model to study the effects of an introgressed cellular environment and the resulting mismatch codon usage.
+These introgressed exogenous genes replaced XXXX genes, constituting the entire left arm of \Klu's C chromosome, and were identified due to their $\sim13\%$ elevation in \GC bias relative to the remaining, endogenous genes of the \Klu genome \citep{payen2009, friedrich2015}.
 
-Using \ROC, a population genetics Bayesian model, allows us to quantify the cellular environment in which genes have evolved by separating and estimating effects of mutation bias and selection bias, and predicting protein production rate \citep{gilchrist2015}.
-We use \ROC to describe two cellular environments reflected in the \kluyveri genome, a native endogenous and an introgressed exogenous environment.
+In order to study the effects of introgression and the resulting mismatches in codon usage in the \Klu genome,  we use \ROC, a mechanistic model of codon usage bias evolution grounded in population genetics.
+\ROC, which uses a bayesian MCMC method for model fitting,  allows us to quantify the contributions of mutation bias and selection on to the codon usage patterns of a set of genes.
+\ROC also allows us to predict a gene's average predicting protein production rate based on its individual codon usage pattern with a precision comprable to that of more direct empirical methods \citep{gilchrist2015}.
+By fitting \ROC separately to \Klu's endogenous and exogenous sets of genes we generate a quantiative description of their signatures of mutation bias and natural selection for efficient protein translation.
 Our results indicate that the difference in \GC between endogenous and exogenous genes mostly to differences in mutation bias.
-Recognizing the differences in codon usage between the endogenous and exogenous gene sets also improves our ability to predict protein synthesis rate from the sequence data alone.
+In addition, we show that separately fitting \ROC to endogenous and exogenous gene sets substantially improves our ability to predict empirical estimates of protein synthesis rates over fitting ROC to a combined dataset of endogenous and exogenous genes.
 
-With our improved model fits, we obtained more reliable estimates of mutation bias, selection bias and protein synthesis rate, allowing us to address more refined questions of biological importance.
-First we determine a potential source lineage of the exogenous genes using a combination of information in codon usage and gene synteny.
-We compared estimates of mutation bias (\DM) and selection bias (\DE) for the exogenous genes to 38 yeast lineages and further investigated candidate lineages using synteny.
-Second, we estimate the time since introgression and the persistence of the signal of the exogenous cellular environment from our estimates of \DM using an exponential model of decay.
-Third, we estimate the selective cost of the mismatched codon usage for the introgression, using our estimates of \DE and protein synthesis rate $\phi$. 
-Thus, in addition to being able to estimate codon preference and gene expression to describe codon usage patterns, we also gain insights into the evolution of genes that have been transferred between lineages.
+In order to identify a potential source lineage for \Klu's exogenous gene set we fit \ROC to the genomes of 38 yeastspecies.
+We then compared ROCs parameter estimates of mutation bias and selection of \Klu's exogenous genes to these species and found a strong correlation in only two species, \gossypii and \dubl.
+We also compared the synteny of \Klu's exogenous genes to these lineages.
+We found strong synteny in a number of cases, most notably in \gossypii but not \dubl.
+As a result, we conclude that of the yeast species we examined, the \gossypii lineage is most closely related to the the donor of \Klu's exogenous genes.
+Assuming that \gossypii's mutation bias is similar to the source of the exogenous genes, we estimated the introgression occurred approximately $6 \times 10^8$ generations ago using a model of exponential decay to describe the  shift in mutation bias of the exogenous genes.
+Finally, we estimate the selective cost or genetic load of the exogenous genes due to codon usage mismatch using our estimates of the selection parameters from \Klu's endogenous genes and the our estimates of the protein synthesis rate of the exongenous genes.
+%Thus, in addition to being able to estimate codon preference and gene expression to describe codon usage patterns, we also gain insights into the evolution of genes that have been transferred between lineages.
 
 \section*{Results}
 Model selection and validation confirmed that the \kluyveri genome contains signatures of at least two cellular environments.
