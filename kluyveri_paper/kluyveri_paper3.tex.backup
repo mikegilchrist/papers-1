@@ -140,7 +140,7 @@ Furthermore, we utilize the differences in model fit and parameters estimated fr
 
 AIC indicates that parameter estimates for mutation bias (\DM) and selection bias (\DE) differ greatly between exogenous and endogenous gene sets.
 As a result, the partitioning of the \kluyveri genome into an endogenous and exogenous gene set is clearly favored by model selection.
-The inclusion of 81 additional parameters ($40$ for \DM, $40$ for \DE, and one for $s_{\phi}$) necessary to describe both gene sets separately improves our model fit by $\sim 75,000$ AIC units (5,311,060 for the combined gene set vs 5,235,598 for the separated gene sets).
+The inclusion of 81 additional parameters ($40$ for \DM, $40$ for \DE, and one for $s_{\phi}$) necessary to describe both gene sets separately improves our model fit by $\sim 78,000$ AIC units (5,313,110 for the combined gene set vs 5,235,598 for the separated gene sets).
 
 \begin{figure}[t]
     \centering
