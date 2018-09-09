@@ -90,23 +90,30 @@
 }
 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[RO,LE]{Thesis Title}
+\fancyfoot{}
+\fancyfoot[LE,RO]{\thepage}
+\fancyfoot[LO,CE]{Chapter \thechapter}
 
-	\newcommand{\package}{\textbf{AnaCoDa}\xspace} % Use xspace, not two commands!
 
-	\newcommand{\kluyveri}{\textit{L. kluyveri}\xspace}
-	\newcommand{\dubl}{\textit{C. dubliniensis}\xspace}
-	\newcommand{\gossypii}{\textit{E. gossypii}\xspace}
-	\newcommand{\ROC}{ROC SEMPPR\xspace}
-	\newcommand{\GC}{GC content\xspace}
-	\newcommand{\DM}{\ensuremath{{\Delta M}}\xspace}
-	\newcommand{\DE}{\ensuremath{{\Delta \eta}}\xspace}
-	\newcommand{\beginsupplement}{%
-        \setcounter{table}{0}
-        \renewcommand{\thetable}{S\arabic{table}}%
-        \setcounter{figure}{0}
-        \renewcommand{\thefigure}{S\arabic{figure}}%
+  \newcommand{\package}{\textbf{AnaCoDa}\xspace} % Use xspace, not two commands!
+  \newcommand{\kluyveri}{\textit{L. kluyveri}\xspace}
+  \newcommand{\dubl}{\textit{C. dubliniensis}\xspace}
+  \newcommand{\gossypii}{\textit{E. gossypii}\xspace}
+  \newcommand{\ROC}{ROC SEMPPR\xspace}
+  \newcommand{\GC}{GC content\xspace}
+  \newcommand{\DM}{\ensuremath{{\Delta M}}\xspace}
+  \newcommand{\DE}{\ensuremath{{\Delta \eta}}\xspace}
+  \newcommand{\beginsupplement}{%
+       \setcounter{table}{0}
+       \renewcommand{\thetable}{S\arabic{table}}%
+       \setcounter{figure}{0}
+       \renewcommand{\thefigure}{S\arabic{figure}}%
      }
 
 

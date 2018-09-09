@@ -1,10 +1,12 @@
 \chapter{AnaCoDa: Analyzing Codon Data with Bayesian mixture models} 
 \label{ch:anacoda}
 
+\newpage
 %%%%%%%%%%%%%%%%%%
 %%% %%   ABSTRACT   %%%%%%
 %%%%%%%%%%%%%%%%%%
-\begin{abstract}
+\begin{center}\textbf{Abstract}\end{center}
+%\begin{abstract}
 \textbf{\package} is an R package for estimating biologically relevant parameters of mixture models, such as selection against translation inefficiency, nonsense error rate, and ribosome pausing time, from genomic and high throughput datasets.
 \package provides an adaptive Bayesian MCMC algorithm, fully implemented in C++ for high performance with an ergonomic R interface to improve usability. 
 \package employs a generic object-oriented design to allow users to extend the framework and implement their own models.
@@ -20,7 +22,9 @@ Finally, \package contains a set of visualization routines and the ability to re
 \textbf{\package} is freely available under the Mozilla Public License 2.0
 on CRAN (\url{https://cran.r-project.org/web/packages/AnaCoDa/}).
 
-\end{abstract}
+%\end{abstract}
+
+\newpage
 
 %%%%%%%%%%%%%%%%%%
 %%%   INTRODUCTION   %%%%%%
@@ -29,7 +33,7 @@ on CRAN (\url{https://cran.r-project.org/web/packages/AnaCoDa/}).
 
 \package is  an open-source software implemented in R \citep{rcore} that allows researchers to analyze genome-scale data like coding sequences and ribosome footprinting data using evolutionary or analytical models in a Bayesian framework. 
 \package was developed to analyze selection on synonymous codon usage in the form of ribosome overhead cost (\citep{gilchrist2015,wallace2013,shah2011}).
-However, other codon metrics like the codon adaptation index \citep{Sharp1987} or the effective number of codons \citep{Wright1990} are also provided as reference.
+However, other codon metrics like the codon adaptation index \citep{sharp1987} or the effective number of codons \citep{Wright1990} are also provided as reference.
 %% addded to introduction
 In addition, three currently unpublished models to analyze coding sequences for evidence of selection against nonsense errors and estimate ribosome pausing times from ribosome footprinting data are included.
 \package implements an adaptive Gibbs sampler within a Metropolis-Hastings Monte Carlo Markov Chain (MCMC). 
