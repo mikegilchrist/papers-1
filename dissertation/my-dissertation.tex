@@ -42,12 +42,19 @@
 \usepackage[inactive]{srcltx}		 	% necessary to use forward and inverse searching in DVI
 \usepackage{relsize}                    % font sizing hierarchy
 \usepackage{booktabs}                   % professional looking tables
-\usepackage[config, labelfont={bf}]{caption,subfig} % nice sub figures
+%\usepackage[config, labelfont={bf}]{caption,subfig} % nice sub figures
 \usepackage{mathrsfs}                   % additional math scripts
 \usepackage[titletoc]{appendix}			% format appendix correctly
 \usepackage{pdflscape}					% to produce landscape pages if necessary
 
 %%%%% MY PACKAGES %%%%%%%%
+
+\usepackage{setspace}
+\usepackage{subfigure}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{hyperref}
+
 \usepackage{xspace}
 \usepackage[svgnames]{xcolor}
 \usepackage{listings}
@@ -83,8 +90,34 @@
 }
 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[RO,LE]{Thesis Title}
+\fancyfoot{}
+\fancyfoot[LE,RO]{\thepage}
+\fancyfoot[LO,CE]{Chapter \thechapter}
+
+
+  \newcommand{\package}{\textbf{AnaCoDa}\xspace} % Use xspace, not two commands!
+  \newcommand{\kluyveri}{\textit{L. kluyveri}\xspace}
+  \newcommand{\dubl}{\textit{C. dubliniensis}\xspace}
+  \newcommand{\gossypii}{\textit{E. gossypii}\xspace}
+  \newcommand{\ROC}{ROC SEMPPR\xspace}
+  \newcommand{\GC}{GC content\xspace}
+  \newcommand{\DM}{\ensuremath{{\Delta M}}\xspace}
+  \newcommand{\DE}{\ensuremath{{\Delta \eta}}\xspace}
+  \newcommand{\beginsupplement}{%
+       \setcounter{table}{0}
+       \renewcommand{\thetable}{S\arabic{table}}%
+       \setcounter{figure}{0}
+       \renewcommand{\thefigure}{S\arabic{figure}}%
+     }
+
+
+
     \pagenumbering{alph} % this is needed to clear certain issues with the hyperref package
     %
     \addToPDFBookmarks{0}{Front Matter}{rootNode} % create a root node named "Front Matter" in the pdf bookmarks
