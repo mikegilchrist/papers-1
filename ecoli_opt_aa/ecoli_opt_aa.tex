@@ -84,7 +84,7 @@ M\textsc{ICHAEL} A.~{G\textsc{ILCHRIST}}$^{1,2}$}
 \printglossaries
 
 \begin{abstract}
-Protein production is a very costly process every cell performs, resulting in selection for proteins that can perform a function optimal.
+Protein production is a very costly process every cell performs, resulting in selection for proteins that can perform their function most efficiently.
 The efficacy of selection is limited by the effective population size $N_e$, leading to genetic load via the introduction of mutations.
 As all proteins have to face this selection-mutation-drift barrier, we expect to find proteins near a fitness peak, but never at the peak.
 Here we assess the efficacy of selection on individual proteins and quantify the genetic load by phylogenetic inference of the optimal amino acid at each site using SelAC.
@@ -101,16 +101,16 @@ We also observe a higher genetic load in CytB than in TEM, which is to be expect
 \begin{itemize}
 	\item Natural selection favors proteins with greater functionality.
 	\begin{itemize}
-		\item However, selection can be overpowered by mutation or drift causing proteins to move away from the optimum.
+		\item However, selection can be overpowered by mutation or drift causing proteins to move away from a fitness peak and introducting genetic load
 	\end{itemize}
 	\item Genetic load is usually assessed relative to a predefined wild-type.
 	\begin{itemize}
 		\item One can, however, assess genetic load relative to the genotype encoding a function of interest most optimally.
-		\item However, this requires to assess the fitness of each genotype. 
+		\item This requires to assess the fitness of each genotype. 
 	\end{itemize}
 	\item Previously, deep mutation scanning (DMS) experiments have been utilized to assess site specific amino acid fitness for a variety of proteins.
 	\begin{itemize}
-		\item However, these experiments are limited to fast growing organisms that can be manipulated under laboratory conditions, and proteins where a specific selection pressure can be applied.
+		\item These experiments are limited to fast growing organisms that can be manipulated under laboratory conditions, and proteins where a specific selection pressure can be applied.
 		\item Furthermore, DMS experiments utilize prepared libraries containing each genotype (ignoring epistatis), causing extremely low effective population sizes. 
 		\item Thus, while mutation does not play a role, genetic drift reduces the efficacy of selection dramatically making it necessary to apply extremely high selection pressures. 
 	\end{itemize}
@@ -130,7 +130,18 @@ We also observe a higher genetic load in CytB than in TEM, which is to be expect
 
 \section*{Results}
 \begin{itemize}
-	\item We predicted the functionally optimal amino acid at each site from the observed sequence variation using SelAC.
+	\item We compared how well deep mutation scanning experiments can explain observed sequences and compared it to SelAC.
+	\begin{itemize}
+		\item We utilized DMS results from Stifler et al. for $\beta$-lactamase in E. coli. 
+		\item We utilized phydms a tool designed to incorporate fitness estimates obtained from the DMS experiment into a phylogenetic framework.
+		\item Model selection reveals that SelAC outperformes the the DMS experiment and better explains the observed sequences.
+		\item Furthermore, we estimated the expected sequences given the fitness landscape described by DMS and SelAC.
+		\begin{item}
+			\item Simiulated sequences evolve to about 60 \% sequence similarity.
+			\item We would also expect to observe less genetic load as sequences had time to evolve, assuming a reasonable $N_e$ of 1,000 or greater.
+		\end{item}
+	\end{itemize}
+	\item We extimated the functionally optimal amino acid at each site from the observed sequence variation using SelAC.
 	\begin{itemize}
 		\item The observed TEM alignment shows a high percentage of homogeneous sites.
 		\begin{itemize} 
@@ -180,6 +191,12 @@ We also observe a higher genetic load in CytB than in TEM, which is to be expect
 \section*{Discussion}
 \begin{itemize}
 	\item We demonstrate the inference of site specific selection from protein coding sequence data using phylogenetics.
+	\begin{itemize}
+		\item We find that the fitness landscape estimated by SelAC better explains the observed sequences than DMS.
+		\item Simulations show that the observed sequences would not arrise under the imposed selection during the DMS experiments.
+		\item While DMS allows for the inferece of properties such as substitutions confering antibiotic resistance, it does not allow to explain natural sequence variation.
+		\item In addition, as researrchers show more and more interests in non-model organisms, the limitation to proteins and organsism that can be manipulated under laboratory conditions limits its uses across the tree of life.
+	\end{itemize}
 	\item We estimate the genetic load of natural occurring proteins relative to an inferred optimal amino acid sequence.
 	\item The optimal amino acid at each site was inferred from the observed proteins and their phylogenetic relationship.
 	\item In both cases, TEM and CytB, we find high agreement between the consensus sequence inferred by ignoring the phylogenetic relationship and the optimal sequence inferred using SelAC (TEM: $99 \%$, CytB: $95 \%$).
@@ -220,8 +237,14 @@ We also observe a higher genetic load in CytB than in TEM, which is to be expect
 		\item To no surprise, model selection clearly favored the optimal sequence inferred by SelAC when using SelAC, however, when using this sequence in phydms we find that the inferences from SelAC still explained the data better, but the increase in parameters did not merit the increase in likelihood.
 		\item This highlights the limitations of DMS sequences to explain natural evolution.
 	\end{itemize}
-
 \end{itemize}
+
+\begin{figure}[H]
+     \centering
+	\includegraphics[width=\textwidth]{img/simulated_seqs_gl_dist.pdf}
+	\caption{Sequences simulated under various values of $N_e$ and for various times. }
+	\label{fig:sim_seqs}
+\end{figure}
 
 \begin{figure}[H]
      \centering
