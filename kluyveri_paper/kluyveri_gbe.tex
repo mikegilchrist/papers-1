@@ -33,14 +33,21 @@
 \newcommand{\DM}{\ensuremath{{\Delta M}}\xspace}
 \newcommand{\DE}{\ensuremath{{\Delta \eta}}\xspace}
 \newcommand{\Ne}{\ensuremath{N_e}\xspace}
-\newcommand{\LLik}{\ensuremath{\log(Likelihood)}\xspace}
+\newcommand{\Lik}{\ensuremath{\mathcal{L}}\xspace}
+\newcommand{\LLik}{\ensuremath{\text{\emph{L}}}\xspace}
 
 \newcommand{\beginsupplement}{%
-        \setcounter{table}{0}
-        \renewcommand{\thetable}{S\arabic{table}}%
-        \setcounter{figure}{0}
-        \renewcommand{\thefigure}{S\arabic{figure}}%
-     }
+  %%% commands for getting SM pages and figures labeled with S
+  %% different than with other .cls
+  \setcounter{section}{19} %appendix environment set in .cls file.  Set this to 19 to get an 'S' for figures
+  \setcounter{page}{1}
+  \renewcommand{\thepage}{S\arabic{page}} %this works
+
+  \setcounter{table}{0}
+  \renewcommand{\thetable}{S\arabic{table}}%
+  \setcounter{figure}{0}
+  \renewcommand{\thefigure}{S\arabic{figure}}%
+}
 
 \noindent RH: LANDERER ET AL.--- Intragenomic variation in codon usage
 % put in your own RH (running head)
@@ -99,79 +106,34 @@ In summary, our work shows the advantage of using mechanistic models that separa
 
 
 \section*{Introduction}
-Synonymous codon usage patterns often varies within a genome and between taxa and reflects the effects of mutation bias, selection, and genetic drift.
-The signature of mutation bias is largely determined by the organism's internal or cellular environment, such as their complement DNA repair genes.
-The signature of selection on codon usage is also largely determined by an organism's cellular environment, such as its translational machinery. 
-In contrast, the strength of selection on the codon usage of an individual gene is largely determined by its expression level which, in turn, is largely determined by the organism's external environment.
-The efficacy of this selection on codon usage relative to drift is a function of the organism's effective population size \Ne which, in turn, is largely determined by its external environment.
-Thus, the codon usage patterns of a genome provides us with a unique signature of the organism's internalby decomposing the patterns codon usage bias across a set of genes allows us to genome provides us with information about the organism's cellular and external environment.
+Synonymous codon usage patterns often varies within a genome and between taxa, reflecting differences in mutation bias, selection, and genetic drift.
+The signature of mutation bias is largely determined by the organism's internal or cellular environment, such as their DNA repair genes or UV exposure.
+The signature of selection on codon usage is also largely determined by an organism's cellular environment, such as its tRNA species, their copy number, and post-transcriptional modifications.
+In contrast, the strength of selection on the codon usage of an individual gene is largely determined by its expression level which, in turn, is also largely determined by the organism's external environment.
+In turn, the efficacy of selection on codon usage is a function of the organism's effective population size \Ne which, in turn, is largely determined by its external environment.
+Thus, disentangling the evolutionary forces responsible for the patterns codon usage bias (CUB) encoded in an species genome, should provide biologically meaningful information about the lineage's historical cellular and external environment.
 
-In general, the strength of selection on codon usage increases with gene expression \citep{ikemura1985, gouy1982}.
-Conversely, the impact of mutation bias on codon usage declines with gene expression.
-Thus, we can easily imagine that with increasing gene expression, codon usage shifts from a process dominated mutation to a process dominated by selection.
-Together, the mutation process favoring specific synonymous codons - or mutation bias -  and the selection for translation efficiency scaled by gene expression and effective population size - or selection bias -  shape codon usage in a genome.
-This mutation-selection-drift balance model allows us to explicitly describe the environment in which genes evolve with respect to mutation and selection bias.
-Here we show that estimating the influence of mutation bias and selection bias on a gene's codon usage allows us to not only predict protein synthesis rate $\phi$, but also, to infer its history and make predictions about its future with respect to these forces.
+
+
+In order to disentangle the forces of mutation, selection, and drift behind CUB we utilize a quantiative, population genetics based approach after \citet{Bulmer1991}.
+More specifically, we utilize the Ribosome Overhead Cost (ROC) version of \citet{ShahAndGilchrist2011} of the more general Stochastic Evolutionary Model of Protein Production Rates (SEMPPR) introduced in \citet{Gilchrist2007} using the R software package \textt{AnaCoDa}\citet{LandererEtAl2018}.   
+The population genetics mutation-selection-drift framework of ROC SEMPPR allows us to quantiatively describe the environment in which genes evolve with respect to mutation bias and selection bias, which are the codon specific selection terms implicitly scaled by \Ne and explicitly scaled by the average expression level of a gene \citep[See][for more details]{GilchristEtAl2015}, using only coding sequenced data.
+Here we expand upon our previous work with ROC to accommodate the additional complications of gene introgression.
 
 Most studies implicitly assume that synonymous codon usage of a genome is reflects the single mutational and selective cellular environment of the organism. 
 However, any introgressed genes, whether the result of hybridization or horizontal gene transfer, should carry the signature of the exogenous cellular environment whence they came and, in turn, impose a genetic load on the recipient lineage.
 The magnitude of the exogenous genes' genetic load on the recipient or endogenous lineage should increase as the mutation and selective environments differ between the donor and recipient lineages as well as with the expression level of the genes in the recipient cells.
 Thus codon usage patterns likely play a critical role in the rates of introgression between lineages and, as a result, can serve as an important source of information about such events.
 
-Here we analyze the synonymous codon usage of the genome of \emph{Lachancea kluyveri}, the earliest diverging lineage of the Lachancea clade.
-The Lachancea clade diverged from the Saccharomyces clade prior to the whole genome duplication, about 100 Mya ago.
-Since its divergence from the other Lachancea, \kluyveri  has experienced a large introgression of exogenous genes.
-These introgressed exogenous genes replaced XXXX genes, constituting the entire left arm of \Klu's C chromosome, and were identified due to their $\sim13\%$ elevation in \GC bias relative to the remaining, endogenous genes of the \Klu genome \citep{payen2009, friedrich2015}.
 
-In order to study the effects of introgression and the resulting mismatches in codon usage in the \Klu genome,  we use \ROC, a mechanistic model of codon usage bias evolution grounded in population genetics.
-\ROC, which uses a bayesian MCMC method for model fitting,  allows us to quantify the contributions of mutation bias and selection on to the codon usage patterns of a set of genes.
-\ROC also allows us to predict a gene's average predicting protein production rate based on its individual codon usage pattern with a precision comprable to that of more direct empirical methods \citep{gilchrist2015}.
-By fitting \ROC separately to \Klu's endogenous and exogenous sets of genes we generate a quantiative description of their signatures of mutation bias and natural selection for efficient protein translation.
-Our results indicate that the difference in \GC between endogenous and exogenous genes mostly to differences in mutation bias.
-In addition, we show that separately fitting \ROC to endogenous and exogenous gene sets substantially improves our ability to predict empirical estimates of protein synthesis rates over fitting ROC to a combined dataset of endogenous and exogenous genes.
+To illustrate these ideas, here we analyze the synonymous codon usage of the genome of \emph{Lachancea kluyveri}, the earliest diverging lineage of the Lachancea clade.
+The Lachancea clade diverged from the Saccharomyces clade about 100 Mya ago, predating Saccharomyces most recent genome duplication.
+Since its divergence from the other Lachancea, \kluyveri has experienced a large introgression of exogenous genes, replacing the $\sim500$ on the left arm of \Klu's C chromosome.
+This introgression of exogenous genes was previously identified by its $\sim13\%$ elevation in \GC content relative to \Klu's remaining $\sim5,000$ endogenous genes \citep{payen2009, friedrich2015}.
+Taking into account the different signatures of mutation bias and selection bias of these endogenous and exogenous sets of genes substantially improves our ability to predict present day protein synthesis rate $\phi$.
+It also allows us to identify \gossypii as the most likely source of the introgressed genes out of the 38 yeast lineages with sequenced genomes, estimate the age of the introgression to be on the order of 0.2-1 mya, hypothesize about the genetic load of these genes, both at the time of introgression and now, as well as make predictions about the CUB of the introgressed genes will evolve in the future.
 
-In order to identify a potential source lineage for \Klu's exogenous gene set we fit \ROC to the genomes of 38 yeastspecies.
-We then compared ROCs parameter estimates of mutation bias and selection of \Klu's exogenous genes to these species and found a strong correlation in only two species, \gossypii and \dubl.
-We also compared the synteny of \Klu's exogenous genes to these lineages.
-We found strong synteny in a number of cases, most notably in \gossypii but not \dubl.
-As a result, we conclude that of the yeast species we examined, the \gossypii lineage is most closely related to the the donor of \Klu's exogenous genes.
-Assuming that \gossypii's mutation bias is similar to the source of the exogenous genes, we estimated the introgression occurred approximately $6 \times 10^8$ generations ago using a model of exponential decay to describe the  shift in mutation bias of the exogenous genes.
-Finally, we estimate the selective cost or genetic load of the exogenous genes due to codon usage mismatch using our estimates of the selection parameters from \Klu's endogenous genes and the our estimates of the protein synthesis rate of the exongenous genes.
-%Thus, in addition to being able to estimate codon preference and gene expression to describe codon usage patterns, we also gain insights into the evolution of genes that have been transferred between lineages.
 
-Need to discuss introgression
-\begin{itemize}
-\item Load calculations 
-  \begin{itemize}
-  \item Some genes pre-adapted to new environment
-  \item Most genes not
-  \item Load estimate indicates strong selection against introgression sequences alone
-  \end{itemize}
-\item Explaining introgression
-  \begin{itemize}
-  \item Assuming introduction is continuous as it appears, indicates little recombination during spread
-  \item Data suggests introgression spread quickly
-  \item Potential explanations
-    \begin{itemize}
-    \item Identified wrong source, though even current load is quite large.
-    \item Major flaws in our calculation of fitness costs.
-%      For example, if the relationship between expression and fitness is flat, then CU cost could be reduced if expression is reduced. -- This specific example would seem to fall into the regulatory realm below since we'd need a reduction in expression simultaneously.
-    \item Failure for positive selection on at amino acid or regulatory sequence at one or more loci, countering the selection on CU
-    \item Introgression triggered speciation event, thus \Ne was very small ($<100$) so even if strongly selected against it still had a reasonable probability of fixing. 
-    \item Unlikely event, but introgressions happen frequently.
-      Note here mutation is actually an introgression event, not a nt change.
-      Although pop gen predicts fixation probability is very low.
-      However, pop gen also tells us that if such an unlikely fixation occurs, it is very likely to happen quickly.
-      Thus, continuous nature of introgression also consistent with a rare, maladaptive fixation event.
-    \item Other adaptive effects of introgression seems most plausible, but since we don't know have reasonable estimates about frequently hybridiations occur nor accurate estimate of how frequent such introgressions fix, the maladaptive explanation is hard to evaluate.
-    \item Combination of most maladaptive, some adaptive alleles, and speciation could also be a feasible hypothesis.
-    \end{itemize}
-  \end{itemize}
-\item Terminiology
-  \begin{itemize}
-  \item Codon families?
-  \end{itemize}
-\end{itemize}
 \section*{Results}
 \subsection*{\Klu's Genome Contains Signatures from Two Cellular Environments}
 We used our software package AnaCoDa \citep{landerer2018} to compare model fits of \ROC to the entire \kluyveri genome and its genome separated into two sets of 4,864 endogenous and 497 exogenous genes.
@@ -302,7 +264,6 @@ At the time of the introgression, we predict that only a few genes were weakly e
 However, these highly expressed genes show the greatest rate of adaptation to the \kluyveri cellular environment (Figures \ref{fig:sne_fitness_burden}a, \ref{fig:adapt_tot}).
 
 \section*{Discussion}
-
 Using \ROC we show that the \kluyveri genome contains two distinct signatures of cellular environments, its own endogenous and a foreign exogenous one obtained by an introgression event ($\Delta AIC = 78,000$).
 Following \citet{payen2009}, who defined the boundary of the anomalous chromosome region based on its elevated \GC, we partitioned the \kluyveri genome into an endogenous and an exogenous gene set using gene location.
 We estimated the codon usage of the entire \kluyveri genome and the separated endogenous and exogenous gene sets (Figure \ref{fig:cub_all_sets}).
@@ -390,6 +351,63 @@ In contrast to other approaches used to study codon usage like CAI \citep{sharp1
 We highlight potential pitfalls when estimating codon preferences, as estimates can be biased by the signature of a second, historical cellular environment.
 In addition, we show how quantitative estimates of mutation bias and selection relative to drift can be obtained from codon data and used to infer the fitness cost of an introgression as well as its history and potential future.
 
+
+\subsection*{Text from Intro That Might Be Useful in Discussion}
+In general, the strength of selection on codon usage increases with gene expression \citep{ikemura1985, gouy1982}.
+Conversely, the impact of mutation bias on codon usage declines with gene expression.
+Thus, we can easily imagine that with increasing gene expression, codon usage shifts from a process dominated mutation to a process dominated by selection.
+Together, the mutation process favoring specific synonymous codons - or mutation bias -  and the selection for translation efficiency scaled by gene expression and effective population size - or selection bias -  shape codon usage in a genome.
+
+
+In order to study the effects of introgression and the resulting mismatches in codon usage in the \Klu genome,  we use \ROC, a mechanistic model of codon usage bias evolution grounded in population genetics.
+\ROC, which uses a bayesian MCMC method for model fitting,  allows us to quantify the contributions of mutation bias and selection on to the codon usage patterns of a set of genes.
+\ROC also allows us to predict a gene's average predicting protein production rate based on its individual codon usage pattern with a precision comprable to that of more direct empirical methods \citep{gilchrist2015}.
+By fitting \ROC separately to \Klu's endogenous and exogenous sets of genes we generate a quantiative description of their signatures of mutation bias and natural selection for efficient protein translation.
+Our results indicate that the difference in \GC between endogenous and exogenous genes mostly to differences in mutation bias.
+In addition, we show that separately fitting \ROC to endogenous and exogenous gene sets substantially improves our ability to predict empirical estimates of protein synthesis rates over fitting ROC to a combined dataset of endogenous and exogenous genes.
+
+In order to identify a potential source lineage for \Klu's exogenous gene set we fit \ROC to the genomes of 38 yeastspecies.
+We then compared ROCs parameter estimates of mutation bias and selection of \Klu's exogenous genes to these species and found a strong correlation in only two species, \gossypii and \dubl.
+We also compared the synteny of \Klu's exogenous genes to these lineages.
+We found strong synteny in a number of cases, most notably in \gossypii but not \dubl.
+As a result, we conclude that of the yeast species we examined, the \gossypii lineage is most closely related to the the donor of \Klu's exogenous genes.
+Assuming that \gossypii's mutation bias is similar to the source of the exogenous genes, we estimated the introgression occurred approximately $6 \times 10^8$ generations ago using a model of exponential decay to describe the  shift in mutation bias of the exogenous genes.
+Finally, we estimate the selective cost or genetic load of the exogenous genes due to codon usage mismatch using our estimates of the selection parameters from \Klu's endogenous genes and the our estimates of the protein synthesis rate of the exongenous genes.
+%Thus, in addition to being able to estimate codon preference and gene expression to describe codon usage patterns, we also gain insights into the evolution of genes that have been transferred between lineages.
+
+Need to discuss introgression
+\begin{itemize}
+\item Load calculations 
+  \begin{itemize}
+  \item Some genes pre-adapted to new environment
+  \item Most genes not
+  \item Load estimate indicates strong selection against introgression sequences alone
+  \end{itemize}
+\item Explaining introgression
+  \begin{itemize}
+  \item Assuming introduction is continuous as it appears, indicates little recombination during spread
+  \item Data suggests introgression spread quickly
+  \item Potential explanations
+    \begin{itemize}
+    \item Identified wrong source, though even current load is quite large.
+    \item Major flaws in our calculation of fitness costs.
+%      For example, if the relationship between expression and fitness is flat, then CU cost could be reduced if expression is reduced. -- This specific example would seem to fall into the regulatory realm below since we'd need a reduction in expression simultaneously.
+    \item Failure for positive selection on at amino acid or regulatory sequence at one or more loci, countering the selection on CU
+    \item Introgression triggered speciation event, thus \Ne was very small ($<100$) so even if strongly selected against it still had a reasonable probability of fixing. 
+    \item Unlikely event, but introgressions happen frequently.
+      Note here mutation is actually an introgression event, not a nt change.
+      Although pop gen predicts fixation probability is very low.
+      However, pop gen also tells us that if such an unlikely fixation occurs, it is very likely to happen quickly.
+      Thus, continuous nature of introgression also consistent with a rare, maladaptive fixation event.
+    \item Other adaptive effects of introgression seems most plausible, but since we don't know have reasonable estimates about frequently hybridiations occur nor accurate estimate of how frequent such introgressions fix, the maladaptive explanation is hard to evaluate.
+    \item Combination of most maladaptive, some adaptive alleles, and speciation could also be a feasible hypothesis.
+    \end{itemize}
+  \end{itemize}
+\item Terminiology
+  \begin{itemize}
+  \item Codon families?
+  \end{itemize}
+\end{itemize}
 
 \section*{Materials and Methods}
 
@@ -507,11 +525,7 @@ The authors would like to thank Brian C. O'Meara and Alexander Cope for their he
 
 \clearpage
 
-%%% commands for getting SM pages and figures labeled with S
-%% different than with other .cls
-\setcounter{section}{19} %appendix environment set in .cls file.  Set this to 19 to get an 'S' for figures
-\setcounter{page}{1}
-\renewcommand{\thepage}{S\arabic{page}} %this works
+\beginsupplement
 
 
 \section*{Supplementary Material}
@@ -629,3 +643,6 @@ Bold face codons indicate synonyms whose ...
 \end{figure}
 
 \end{document}
+
+
+
