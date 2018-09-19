@@ -1,0 +1,64 @@
+\BOOKMARK [0][-]{rootNode.0}{Front Matter}{}
+\BOOKMARK [1][-]{a.1}{Title}{rootNode.0}
+\BOOKMARK [1][-]{b.1}{Dedication}{rootNode.0}
+\BOOKMARK [1][-]{c.1}{Acknowledgements}{rootNode.0}
+\BOOKMARK [1][-]{d.1}{Quote}{rootNode.0}
+\BOOKMARK [1][-]{e.1}{Abstract}{rootNode.0}
+\BOOKMARK [0][-]{f.0}{Table of Contents}{}
+\BOOKMARK [0][-]{section*.13}{List of Tables}{}
+\BOOKMARK [0][-]{section*.15}{List of Figures}{}
+\BOOKMARK [0][-]{g.0}{Nomenclature}{}
+\BOOKMARK [0][-]{chapter.1}{1 Introduction}{}
+\BOOKMARK [1][-]{section.1.1}{1.1 Patterns and Explanations for CUB}{chapter.1}
+\BOOKMARK [2][-]{subsection.1.1.1}{1.1.1 Role of translation errors}{section.1.1}
+\BOOKMARK [2][-]{subsection.1.1.2}{1.1.2 Role of translation efficiency}{section.1.1}
+\BOOKMARK [2][-]{subsection.1.1.3}{1.1.3 Role of mRNA secondary structure in affecting gene expression}{section.1.1}
+\BOOKMARK [0][-]{chapter.2}{2 Effect of correlated tRNA abundances on translation errors and evolution of codon usage bias.}{}
+\BOOKMARK [1][-]{section.2.1}{2.1 Introduction}{chapter.2}
+\BOOKMARK [1][-]{section.2.2}{2.2 Results}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.2.1}{2.2.1 Modeling translation errors}{section.2.2}
+\BOOKMARK [2][-]{subsection.2.2.2}{2.2.2 Error Rates vs. Elongation Rates}{section.2.2}
+\BOOKMARK [2][-]{subsection.2.2.3}{2.2.3 Intra- and Inter-specific Variation in the Relationship between Elongation and Error Rates}{section.2.2}
+\BOOKMARK [1][-]{section.2.3}{2.3 Discussion}{chapter.2}
+\BOOKMARK [1][-]{section.2.4}{2.4 Methods}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.4.1}{2.4.1 tRNA competition}{section.2.4}
+\BOOKMARK [2][-]{subsection.2.4.2}{2.4.2 Intra-ribosomal dynamics}{section.2.4}
+\BOOKMARK [2][-]{subsection.2.4.3}{2.4.3 Wobble effects}{section.2.4}
+\BOOKMARK [2][-]{subsection.2.4.4}{2.4.4 Estimation of cognate and near-cognate elongation rates}{section.2.4}
+\BOOKMARK [1][-]{section.2.5}{2.5 Acknowledgments}{chapter.2}
+\BOOKMARK [1][-]{section.2.6}{2.6 Supporting Information}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.6.1}{2.6.1 Parameter Sensitivity}{section.2.6}
+\BOOKMARK [2][-]{subsection.2.6.2}{2.6.2 Estimating probability of elongation at a codon during one tRNA insertion attempt}{section.2.6}
+\BOOKMARK [0][-]{chapter.3}{3 Explaining complex codon usage patterns with selection for translational efficiency, mutation bias, and genetic drift}{}
+\BOOKMARK [1][-]{section.3.1}{3.1 Introduction}{chapter.3}
+\BOOKMARK [1][-]{section.3.2}{3.2 Model}{chapter.3}
+\BOOKMARK [1][-]{section.3.3}{3.3 Results}{chapter.3}
+\BOOKMARK [2][-]{subsection.3.3.1}{3.3.1 Model Behavior.}{section.3.3}
+\BOOKMARK [2][-]{subsection.3.3.2}{3.3.2 Model Fit to S. cerevisiae Genome.}{section.3.3}
+\BOOKMARK [2][-]{subsection.3.3.3}{3.3.3 Model Fit vs. Model Predictions.}{section.3.3}
+\BOOKMARK [1][-]{section.3.4}{3.4 Discussion}{chapter.3}
+\BOOKMARK [2][-]{subsection.3.4.1}{3.4.1 Broader Interpretation of tij.}{section.3.4}
+\BOOKMARK [1][-]{section.3.5}{3.5 Methods}{chapter.3}
+\BOOKMARK [2][-]{subsection.3.5.1}{3.5.1 Estimation of tij and i/j from observed data}{section.3.5}
+\BOOKMARK [2][-]{subsection.3.5.2}{3.5.2 Estimation of tij from tRNA gene copy numbers}{section.3.5}
+\BOOKMARK [1][-]{section.3.6}{3.6 Acknowledgements}{chapter.3}
+\BOOKMARK [1][-]{section.3.7}{3.7 Supporting Information}{chapter.3}
+\BOOKMARK [2][-]{subsection.3.7.1}{3.7.1 Analytical solutions of the model}{section.3.7}
+\BOOKMARK [2][-]{subsection.3.7.2}{3.7.2 An argument against model over-parametrization}{section.3.7}
+\BOOKMARK [0][-]{chapter.4}{4 Is thermosensing property of RNA thermometers unique?}{}
+\BOOKMARK [1][-]{section.4.1}{4.1 Introduction}{chapter.4}
+\BOOKMARK [1][-]{section.4.2}{4.2 Methods}{chapter.4}
+\BOOKMARK [1][-]{section.4.3}{4.3 Results}{chapter.4}
+\BOOKMARK [2][-]{subsection.4.3.1}{4.3.1 Capturing the behavior of RNA thermometers}{section.4.3}
+\BOOKMARK [2][-]{subsection.4.3.2}{4.3.2 Comparing thermometers and non-thermometers}{section.4.3}
+\BOOKMARK [1][-]{section.4.4}{4.4 Discussion}{chapter.4}
+\BOOKMARK [1][-]{section.4.5}{4.5 Acknowledgments}{chapter.4}
+\BOOKMARK [0][-]{chapter.5}{5 Conclusion}{}
+\BOOKMARK [1][-]{section.5.1}{5.1 Synthesis}{chapter.5}
+\BOOKMARK [2][-]{subsection.5.1.1}{5.1.1 Consensus and disagreement}{section.5.1}
+\BOOKMARK [1][-]{section.5.2}{5.2 Beyond translation}{chapter.5}
+\BOOKMARK [2][-]{subsection.5.2.1}{5.2.1 Identifying genes under selection}{section.5.2}
+\BOOKMARK [2][-]{subsection.5.2.2}{5.2.2 Phylogenetic inference and codon bias}{section.5.2}
+\BOOKMARK [2][-]{subsection.5.2.3}{5.2.3 Codon usage and medicine}{section.5.2}
+\BOOKMARK [0][-]{section*.25}{Bibliography}{}
+\BOOKMARK [0][-]{section*.27}{Vita}{}

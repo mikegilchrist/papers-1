@@ -1,7 +1,15 @@
 \chapter{Decomposing mutation and selection to identify mismatched codon usage}
 \label{ch:kluyveri}
 
-\newpage
+
+This chapter is a lightly revised version of a paper to be submitted to Genome Biology and Evolution and co-authored with Michael A. Gilchrist.\\
+\newline
+\newline
+C. Landerer, M.A. Gilchrist, Decomposing mutation and selection to identify mismatched codon usage
+
+\clearpage
+\pagebreak
+
 \begin{center}\textbf{Abstract}\end{center}
 Codon usage has been used as a measure for adaptation of genes to their cellular environment for decades. 
 The introgression of genes from one cellular environment to another may cause well adapted genes to suddenly be less adapted due to them having evolved in a different environment.
@@ -77,7 +85,8 @@ The inclusion of 81 additional parameters ($40$ for \DM, $40$ for \DE, and one f
         \centering
         \includegraphics[width=.45\textwidth]{ch3/phi_corr_plot_split_Genome_estim.pdf}
     \end{subfigure}
-    \caption{Comparison of predicted protein synthesis rate $\phi$ to Microarray data from XX for (a) the combined genome and (b) the separated endogenous and exogenous genes. Endogenous genes are displayed in black and exogenous genes in red. Black line indicates type II regression line.}
+    \caption{Comparison of predicted protein synthesis rate $\phi$ to Microarray data from \citet{tsankov2010} for (a) the combined genome and (b) the separated endogenous and exogenous genes. 
+    Endogenous genes are displayed in black and exogenous genes in gray. Black line indicates type II regression line.}
     \label{fig:phi_corr_two_cond}
 \end{figure}
 
@@ -172,7 +181,7 @@ We define genetic load as the difference between the fitness of an expected, rep
         \centering
         \includegraphics[width=.45\textwidth]{ch3/fitness_difference_exo.pdf}
     \end{subfigure}
-    \caption{Fitness burden $\Delta sN_e$ (a) at the time of introgression ($\kappa = 5$), and (b) currently ($\kappa = 1$). }
+    \caption{Genetic load $\Delta s$ (left) at the time of introgression ($\kappa = 5$), and (right) currently ($\kappa = 1$).}
     \label{fig:sne_fitness_burden}
 \end{figure}
 
@@ -181,7 +190,7 @@ These estimates are dependent on three key assumptions.
 First, we assume again that the current cellular environment of \gossypii is reflective of the ancestral environment.
 Second, we assume that the current amino acid composition of the exogenous genes is the same as in the replaced endogenous genes.
 Third, we assume that the difference in the efficacy of selection between \gossypii and \kluyveri can be described with a simple scaling term we call $\kappa$ (Figure \ref{fig:sne_scaling}b).
-As \DE is defined as $\DE = 2N_eq(\eta_i-\eta_j)$, we can not distinguish if $\kappa$ is a scaling on protein synthesis rate $\phi$, effective population size $N_e$ the value of an ATP $q$\citep{gilchrist2015}.
+As \DE is defined as $\DE = 2N_eq(\eta_i-\eta_j)$, we can not distinguish if $\kappa$ is scaling protein synthesis rate $\phi$, effective population size $N_e$, or the value of an ATP $q$ \citep{gilchrist2015}.
 
 At the time of the introgression, we predict that only a few genes were weakly exapted (Figure \ref{fig:sne_fitness_burden}a) with all high expression genes ($\phi > 1$) being maladapted to the novel cellular environment.
 However, these highly expressed genes show the greatest rate of adaptation to the \kluyveri cellular environment (Figures \ref{fig:sne_fitness_burden}a, \ref{fig:adapt_tot}).
@@ -439,18 +448,18 @@ Supporting Materials for \emph{Fitness consequences of mismatched codon usage} \
 \end{table}
 
 \clearpage
-
 \begin{figure}[h]
     \centering
     \begin{subfigure}
         \centering
-        \includegraphics[width=.45\textwidth]{ch3/synteny_blocks_and_gc.pdf}
+        \includegraphics[width=.45\textwidth]{ch3/synteny_coverage.pdf}
     \end{subfigure}
     \begin{subfigure}
         \centering
-        \includegraphics[width=.45\textwidth]{ch3/synteny_coverage.pdf}
+        \includegraphics[width=.45\textwidth]{ch3/synteny_blocks_and_gc.pdf}
     \end{subfigure}
-    \caption{Suppl Fig: Synteny relationship of \gossypii and the exogenous genes (left), Amount of synteny for each species (Units of std dev) checked for synteny.}
+    \caption{Synteny relationship of the exogenous chromosome arm C-left with 13 yeast species. The size of the circle indicates the amount of synteny in units of standard deviation. 
+    \gossypii displays the highest amount of synteny. The synteny relationship between the exogenous chromosome arm and \gossypii and the \GC of the exogenous chromosome arm is displayed on the right.}
     \label{fig:synteny_species}
 \end{figure}
 
@@ -479,7 +488,9 @@ Supporting Materials for \emph{Fitness consequences of mismatched codon usage} \
 \begin{figure}[H]
      \centering
 	\includegraphics[width=\textwidth]{ch3/CUB_cleft_main.pdf}
-	\caption{Suppl Fig}
+	\caption{Predictions of codon frequencies as a function of protein synthesis rate $\phi$ for all amino acids. 
+	Solid, dashed, and dotted lines represent model fits for the endogenous gene set, the exogenous gene set, and the whole \kluyveri genome respectively.
+	The bottom right panel shows corresponding histograms of the protein synthesis rate $\phi$.}
 	\label{fig:cub_all_sets}
 \end{figure}
 

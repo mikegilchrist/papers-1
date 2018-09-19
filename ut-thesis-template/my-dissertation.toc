@@ -1,0 +1,60 @@
+\contentsline {chapter}{List of Tables}{xi}{section*.13}
+\contentsline {chapter}{List of Figures}{xii}{section*.15}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Patterns and Explanations for CUB}{3}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Role of translation errors}{3}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Role of translation efficiency}{5}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.3}Role of mRNA secondary structure in affecting gene expression}{6}{subsection.1.1.3}
+\contentsline {chapter}{\numberline {2}Effect of correlated tRNA abundances on translation errors and evolution of codon usage bias.}{8}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introduction}{10}{section.2.1}
+\contentsline {section}{\numberline {2.2}Results}{12}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Modeling translation errors}{20}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Error Rates vs. Elongation Rates}{21}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Intra- and Inter-specific Variation in the Relationship between Elongation and Error Rates}{30}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}Discussion}{32}{section.2.3}
+\contentsline {section}{\numberline {2.4}Methods}{36}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}tRNA competition}{36}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Intra-ribosomal dynamics}{36}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Wobble effects}{37}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.4}Estimation of cognate and near-cognate elongation rates}{38}{subsection.2.4.4}
+\contentsline {section}{\numberline {2.5}Acknowledgments}{39}{section.2.5}
+\contentsline {section}{\numberline {2.6}Supporting Information}{40}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Parameter Sensitivity}{40}{subsection.2.6.1}
+\contentsline {subsubsection}{Cognate elongation rate versus error rates}{40}{section*.19}
+\contentsline {subsection}{\numberline {2.6.2}Estimating probability of elongation at a codon during one tRNA insertion attempt}{42}{subsection.2.6.2}
+\contentsline {chapter}{\numberline {3}Explaining complex codon usage patterns with selection for translational efficiency, mutation bias, and genetic drift}{44}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introduction}{46}{section.3.1}
+\contentsline {section}{\numberline {3.2}Model}{47}{section.3.2}
+\contentsline {section}{\numberline {3.3}Results}{50}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Model Behavior.}{50}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Model Fit to {\it S. cerevisiae} Genome.}{51}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Model Fit vs. Model Predictions.}{60}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.4}Discussion}{66}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Broader Interpretation of $\Delta t_{ij}$.}{66}{subsection.3.4.1}
+\contentsline {section}{\numberline {3.5}Methods}{68}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Estimation of $\Delta t_{ij}$ and $\mu _i/\mu _j$ from observed data}{68}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Estimation of $\Delta t_{ij}$ from tRNA gene copy numbers}{70}{subsection.3.5.2}
+\contentsline {section}{\numberline {3.6}Acknowledgements}{70}{section.3.6}
+\contentsline {section}{\numberline {3.7}Supporting Information}{71}{section.3.7}
+\contentsline {subsection}{\numberline {3.7.1}Analytical solutions of the model}{71}{subsection.3.7.1}
+\contentsline {subsubsection}{One amino acid with two codons}{71}{section*.21}
+\contentsline {subsubsection}{One amino acid with $k$ codons}{73}{section*.22}
+\contentsline {subsubsection}{Multiple amino acids with varying number of codons}{73}{section*.23}
+\contentsline {subsection}{\numberline {3.7.2}An argument against model over-parametrization}{75}{subsection.3.7.2}
+\contentsline {chapter}{\numberline {4}Is thermosensing property of RNA thermometers unique?}{76}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction}{78}{section.4.1}
+\contentsline {section}{\numberline {4.2}Methods}{80}{section.4.2}
+\contentsline {section}{\numberline {4.3}Results}{84}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Capturing the behavior of RNA thermometers}{84}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Comparing thermometers and non-thermometers}{86}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}Discussion}{91}{section.4.4}
+\contentsline {section}{\numberline {4.5}Acknowledgments}{94}{section.4.5}
+\contentsline {chapter}{\numberline {5}Conclusion}{95}{chapter.5}
+\contentsline {section}{\numberline {5.1}Synthesis}{95}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Consensus and disagreement}{96}{subsection.5.1.1}
+\contentsline {section}{\numberline {5.2}Beyond translation}{97}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Identifying genes under selection}{97}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Phylogenetic inference and codon bias}{98}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Codon usage and medicine}{99}{subsection.5.2.3}
+\contentsline {chapter}{Bibliography}{100}{section*.25}
+\contentsline {chapter}{Vita}{117}{section*.27}

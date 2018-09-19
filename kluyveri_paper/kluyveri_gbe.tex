@@ -82,9 +82,9 @@ M\textsc{ICHAEL} A.~{G\textsc{ILCHRIST}}$^{1,2}$}
 Here we examine variation in codon usage patterns of endogenous and exogenous genes in the yeast \emph{Lachancea kluyveri}.
 Previous studies indicate that the left arm of chromosome C, or $\sim 10 \%$ of the \Lklu genome, is the result of an large introgression of exogenous genes.
 Thus, the \Lklu genome provides an opportunity to study the adaptation of these exogenous to a novel cellular environment and estimate how the genetic load of these genes changes over time.
-In order to quantiatively describe \Klu's codon usage environment, we fitted a bayesian, mechanistic model of codon usage bias evolution, ROC-SEMPPR, to \Klu's endogenous gene in order to estimate the strength of mutation bias and selection on codon usage.
-We then compared these parameter estimates to those we obtained by fitting ROC-SEMPPR to \Klu's exogenous genes, which provides a biased estimate of the ancestral environment of the exogenous genes.
-Our results indicate the differences in codon usage between \Klu's endogenous and exogenous genes are largely due to differences in mutation bias, rather than selection.
+In order to quantiatively describe \LKlu's codon usage environment, we fitted a bayesian, mechanistic model of codon usage bias evolution, ROC-SEMPPR, to \Klu's endogenous gene in order to estimate the strength of mutation bias and selection on codon usage.
+We then compared these parameter estimates to those we obtained by fitting ROC-SEMPPR to \LKlu's exogenous genes, which provides a biased estimate of the ancestral environment of the exogenous genes.
+Our results indicate the differences in codon usage between \LKlu's endogenous and exogenous genes are largely due to differences in mutation bias, rather than selection.
 % differences from A/T ending codons in the endogenous genes to C/G ending codons in the exogenous genes
 Estimating mutation and selection parameters separately for the endogenous and exogenous genes improved our ability to predict empirical estimates of protein synthesis by 17\% and avoided errors in identifying \Klu's selectively favored or `optimal' codons.
 By comparing our mutation and selection parameters to those estimated for other yeast species, we identified \emph{Eremothecium gossypii} as the most likely source of \Klu's exogenous genes.
@@ -118,18 +118,18 @@ Thus codon usage patterns likely play a critical role in the rates of introgress
 Here we analyze the synonymous codon usage of the genome of \emph{Lachancea kluyveri}, the earliest diverging lineage of the Lachancea clade.
 The Lachancea clade diverged from the Saccharomyces clade prior to the whole genome duplication, about 100 Mya ago.
 Since its divergence from the other Lachancea, \kluyveri  has experienced a large introgression of exogenous genes.
-These introgressed exogenous genes replaced XXXX genes, constituting the entire left arm of \Klu's C chromosome, and were identified due to their $\sim13\%$ elevation in \GC bias relative to the remaining, endogenous genes of the \Klu genome \citep{payen2009, friedrich2015}.
+These introgressed exogenous genes replaced 497 genes, constituting the entire left arm of \LKlu's C chromosome, and were identified due to their $\sim 13\%$ elevation in \GC bias relative to the remaining, endogenous genes of the \Klu genome \citep{payen2009, friedrich2015}.
 
-In order to study the effects of introgression and the resulting mismatches in codon usage in the \Klu genome,  we use \ROC, a mechanistic model of codon usage bias evolution grounded in population genetics.
+In order to study the effects of introgression and the resulting mismatches in codon usage in the \LKlu genome,  we use \ROC, a mechanistic model of codon usage bias evolution grounded in population genetics.
 \ROC, which uses a bayesian MCMC method for model fitting,  allows us to quantify the contributions of mutation bias and selection on to the codon usage patterns of a set of genes.
-\ROC also allows us to predict a gene's average predicting protein production rate based on its individual codon usage pattern with a precision comprable to that of more direct empirical methods \citep{gilchrist2015}.
-By fitting \ROC separately to \Klu's endogenous and exogenous sets of genes we generate a quantiative description of their signatures of mutation bias and natural selection for efficient protein translation.
-Our results indicate that the difference in \GC between endogenous and exogenous genes mostly to differences in mutation bias.
+\ROC also allows us to predict a gene's average protein production rate based on its individual codon usage pattern with a precision comprable to that of more direct empirical methods \citep{gilchrist2015}.
+By fitting \ROC separately to \LKlu's endogenous and exogenous sets of genes we generate a quantiative description of their signatures of mutation bias and natural selection for efficient protein translation.
+Our results indicate that the difference in \GC between endogenous and exogenous genes mostly due to differences in mutation bias.
 In addition, we show that separately fitting \ROC to endogenous and exogenous gene sets substantially improves our ability to predict empirical estimates of protein synthesis rates over fitting ROC to a combined dataset of endogenous and exogenous genes.
 
-In order to identify a potential source lineage for \Klu's exogenous gene set we fit \ROC to the genomes of 38 yeastspecies.
+In order to identify a potential source lineage for \LKlu's exogenous gene set we fit \ROC to the genomes of 38 yeast species.
 We then compared ROCs parameter estimates of mutation bias and selection of \Klu's exogenous genes to these species and found a strong correlation in only two species, \gossypii and \dubl.
-We also compared the synteny of \Klu's exogenous genes to these lineages.
+We also compared the synteny of \LKlu's exogenous genes to a subset of these lineages.
 We found strong synteny in a number of cases, most notably in \gossypii but not \dubl.
 As a result, we conclude that of the yeast species we examined, the \gossypii lineage is most closely related to the the donor of \Klu's exogenous genes.
 Assuming that \gossypii's mutation bias is similar to the source of the exogenous genes, we estimated the introgression occurred approximately $6 \times 10^8$ generations ago using a model of exponential decay to describe the  shift in mutation bias of the exogenous genes.
@@ -156,7 +156,7 @@ The inclusion of 81 additional parameters ($40$ for \DM, $40$ for \DE, and one f
         \centering
         \includegraphics[width=.45\textwidth]{img/phi_corr_plot_split_Genome_estim.pdf}
     \end{subfigure}
-    \caption{Comparison of predicted protein synthesis rate $\phi$ to Microarray data from XX for (a) the combined genome and (b) the separated endogenous and exogenous genes. Endogenous genes are displayed in black and exogenous genes in red. Black line indicates type II regression line.}
+    \caption{Comparison of predicted protein synthesis rate $\phi$ to Microarray data from \citet{tsankov2010} for (a) the combined genome and (b) the separated endogenous and exogenous genes. Endogenous genes are displayed in black and exogenous genes in red. Black line indicates type II regression line.}
     \label{fig:phi_corr_two_cond}
 \end{figure}
 
