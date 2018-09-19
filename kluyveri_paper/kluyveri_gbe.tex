@@ -26,6 +26,7 @@
 \newcommand{\kluyveri}{\emph{L. kluyveri}\xspace}
 \newcommand{\Lklu}{\emph{L. kluyveri}\xspace}
 \newcommand{\Klu}{\Lklu}
+\newcommand{\LKlu}{\Lklu}
 \newcommand{\dubl}{\emph{C. dubliniensis}\xspace}
 \newcommand{\gossypii}{\emph{E. gossypii}\xspace}
 \newcommand{\ROC}{ROC SEMPPR\xspace}
@@ -196,26 +197,21 @@ Therefore, it is important to recognize and treat endogenous and exogenous genes
 \subsection*{Determining Source of Exogenous Genes}
 
 We combined our estimates of mutation bias ($\Delta M$) and selection bias ($\Delta \eta$) with synteny information and searched for potential source lineages of the introgressed region.
-We examined 38 yeast lineages of which two (\emph{Eremothecium gossypii} and \emph{Candida dubliniensis}) showed a strong positive correlation in codon usage (Figure \ref{fig:csp_endo_exo_comp}a).
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}
-        \centering
-        \includegraphics[width=.45\textwidth]{img/csp_mean_correlation_exo.pdf}
-    \end{subfigure}
-    \begin{subfigure}
-        \centering
-        \includegraphics[width=.45\textwidth]{img/csp_mean_correlation_endo.pdf}
-    \end{subfigure}
-    \caption{Correlation of \DM and \DE of the (a) exogenous and (b) endogenous genes with 38 examined yeast lineages. Dots indicate the correlation of \DM and \DE of the lineages with the endogenous and exogenous parameter estimates. All regressions were performed using a type II regression.}
-    \label{fig:csp_endo_exo_comp}
+We examined 38 yeast lineages of which two (\emph{Eremothecium gossypii} and \emph{Candida dubliniensis}) showed a strong positive correlation in codon usage (Figure \ref{fig:csp_exo_comp}).
+
+\begin{figure}[H]
+     \centering
+	\includegraphics[width=.45\textwidth]{img/csp_mean_correlation_exo.pdf}
+	\caption{Correlation of \DM and \DE of the exogenous genes with 38 examined yeast lineages. Dots indicate the correlation of \DM and \DE of the lineages with the endogenous and exogenous parameter estimates. All regressions were performed using a type II regression.}
+	\label{fig:csp_exo_comp}
 \end{figure}
-The endogenous \kluyveri genome exhibits codon usage very similar to most yeast lineages examined, indicating little variation in codon usage among the examined yeasts (Figure \ref{fig:csp_endo_exo_comp}b).
+
+The endogenous \kluyveri genome exhibits codon usage very similar to most yeast lineages examined, indicating little variation in codon usage among the examined yeasts (Figure \ref{fig:csp_endo_comp}).
 Four lineages show a positive correlation for $\Delta M$ and $\Delta \eta$ with the exogenous genes and have a weak to moderate positive correlation in selection bias with the endogenous genes; but, like the exogenous genes, tend to have a negative correlation in $\Delta M$ with the endogenous genes.
 
-Comparing synteny between the exogenous left arm of chromosome C, and \gossypii and \dubl as well as closely related yeast species we find that \gossypii displays the highest synteny coverage  (Figure \ref{fig:synteny_species}a,b).
+Comparing synteny between the exogenous left arm of chromosome C, and \gossypii and \dubl as well as closely related yeast species we find that \gossypii displays the highest synteny coverage  (Figure \ref{fig:synt_rel}, \ref{fig:synteny_species}).
 \dubl, even though it displays similar codon usage does not show synteny with the exogenous region.
-Furthermore, the synteny relationship between the exogenous region and other yeasts appears to be limited to the Saccharomycetacease group(Figure \ref{fig:synteny_species}b).
+Furthermore, the synteny relationship between the exogenous region and other yeasts appears to be limited to the Saccharomycetacease group(Figure \ref{fig:synteny_species}).
 Given these results, we conclude that the \gossypii lineage is the most likely source of the introgressed exogenous genes.
 
 \subsection*{Estimating Introgression Age}
@@ -597,19 +593,30 @@ Bold face codons indicate synonyms whose ...
 
 \clearpage
 
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}
-        \centering
-        \includegraphics[width=.45\textwidth]{img/synteny_blocks_and_gc.pdf}
-    \end{subfigure}
-    \begin{subfigure}
-        \centering
-        \includegraphics[width=.45\textwidth]{img/synteny_coverage.pdf}
-    \end{subfigure}
-    \caption{Suppl Fig: Synteny relationship of \gossypii and the exogenous genes (left), Amount of synteny for each species (Units of std dev) checked for synteny.}
-    \label{fig:synteny_species}
+\begin{figure}[H]
+     \centering
+	\includegraphics[width=\textwidth]{img/csp_mean_correlation_exo.pdf}
+	\caption{Correlation of \DM and \DE of the endogenous genes with 38 examined yeast lineages. Dots indicate the correlation of \DM and \DE of the lineages with the endogenous and exogenous parameter estimates. All regressions were performed using a type II regression.}
+	\label{fig:csp_endo_comp}
 \end{figure}
+
+
+\begin{figure}[H]
+     \centering
+	\includegraphics[width=\textwidth]{img/synteny_blocks_and_gc.pdf}
+	\caption{Synteny relationship of \gossypii and the exogenous genes}
+	\label{fig:synt_rel}
+\end{figure}
+
+
+\begin{figure}[H]
+     \centering
+	\includegraphics[width=\textwidth]{img/synteny_coverage.pdf}
+	\caption{Amount of synteny for each species (Units of std dev) checked for synteny.}
+	\label{fig:synteny_species}
+\end{figure}
+
+
 
 \begin{figure}[h]
     \centering
@@ -627,7 +634,7 @@ Bold face codons indicate synonyms whose ...
 
 \begin{figure}[H]
      \centering
-	\includegraphics[width=\textwidth]{img/adaptation_total.pdf}
+	\includegraphics[width=.45\textwidth]{img/adaptation_total.pdf}
 	\caption{Total amount of adaptation between time of introgression and now}
 	\label{fig:adapt_tot}
 \end{figure}
