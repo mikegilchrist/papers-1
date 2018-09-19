@@ -25,12 +25,14 @@
 
 \newcommand{\kluyveri}{\emph{L. kluyveri}\xspace}
 \newcommand{\Lklu}{\emph{L. kluyveri}\xspace}
+\newcommand{\Klu}{\Lklu}
 \newcommand{\dubl}{\emph{C. dubliniensis}\xspace}
 \newcommand{\gossypii}{\emph{E. gossypii}\xspace}
 \newcommand{\ROC}{ROC SEMPPR\xspace}
 \newcommand{\GC}{GC content\xspace}
 \newcommand{\DM}{\ensuremath{{\Delta M}}\xspace}
 \newcommand{\DE}{\ensuremath{{\Delta \eta}}\xspace}
+\newcommand{\Ne}{\ensuremath{N_e}\xspace}
 
 \newcommand{\beginsupplement}{%
         \setcounter{table}{0}
@@ -164,16 +166,18 @@ Need to discuss introgression
     \item Combination of most maladaptive, some adaptive alleles, and speciation could also be a feasible hypothesis.
     \end{itemize}
   \end{itemize}
+\item Terminiology
+  \begin{itemize}
+  \item Codon families?
+  \end{itemize}
 \end{itemize}
 \section*{Results}
-Model selection and validation confirmed that the \kluyveri genome contains signatures of at least two cellular environments.
-We compared model fits of \ROC to the homogeneous \kluyveri genome and the separated sets of endogenous and exogenous genes of 4864 and 497 genes respectively, using AnaCoDa \citep{landerer2018}.
-We compared estimates of the cellular environment to describe differences in endogenous and exogenous codon usage.
-Furthermore, we utilize the differences in model fit and parameters estimated from the endogenous and exogenous genes to explore the evolution of the exogenous gene set.
+\subsection*{\Klu's Genome Contains Signatures from Two Cellular Environments}
+We used our software package AnaCoDa \citep{landerer2018} to compare model fits of \ROC to the entire \kluyveri genome and its genome separated into two sets of 4,864 endogenous and 497 exogenous genes.
+AIC values ($\Delta\text{AIC} = 75,462$; Table \ref{tab:AIC}) strongly support the hypothesis that the \kluyveri genome consists of genes with two different and distinct patterns of codon usage bias.
+We found additional support for this hypothesis when we compared our predictions of gene expression to empirically observed values.
+Specfically, the correlation between our predictions and observed values improved by almost 20\%, from $\rho = 0.57$ to 0.68 (Figure \ref{fig:phi_corr_two_cond}).
 
-AIC indicates that parameter estimates for mutation bias (\DM) and selection bias (\DE) differ greatly between exogenous and endogenous gene sets.
-As a result, the partitioning of the \kluyveri genome into an endogenous and exogenous gene set is clearly favored by model selection.
-The inclusion of 81 additional parameters ($40$ for \DM, $40$ for \DE, and one for $s_{\phi}$) necessary to describe both gene sets separately improves our model fit by $\sim 78,000$ AIC units (5,313,110 for the combined gene set vs 5,235,598 for the separated gene sets).
 
 \begin{figure}[t]
     \centering
@@ -189,18 +193,14 @@ The inclusion of 81 additional parameters ($40$ for \DM, $40$ for \DE, and one f
     \label{fig:phi_corr_two_cond}
 \end{figure}
 
-In addition to model selection, we utilized independent information on gene expression to evaluate model fit.
-Recognizing differences in \DM and \DE for the endogenous and exogenous gene sets substantially improves our ability to predict protein synthesis rate $\phi$ ($\rho = 0.69$ vs. $\rho = 0.59$ for the full genome;  Figure \ref{fig:phi_corr_two_cond}).
 
 \subsection*{Differences in the Endogenous and Exogenous Codon Usage}
-
-As our estimates of parameters for a codon family coding for an amino acid are relative to a reference codon, changes in the reference codon will change the order between sets.
-To better compare our estimates of of mutation bias (\DM) and selection bias (\DE) obtained from fitting \ROC between the endogenous and exogenous gene sets, we express our estimates relative to the mean for each codon family.
-As 
-We find larger differences between \DM than \DE (Figure \ref{fig:csp_comp}). 
-Estimates of \DM in the endogenous genes negatively correlate with the \DM estimates for the exogenous genes ($\rho = -0.49$) indicating strong discordance in the mutation environment between \kluyveri and the donor lineage of the exogenous genes.
-For example, $\sim 95 \%$ of codon families show mutation preference for A/T ending codons, in contrast, the exogenous genes display an equally strong mutation bias towards C/G ending codons.
-Only the two codon amino acid Phenylalanine (Phe, F) shows complete concordance between endogenous and exogenous genes in their \DM values.
+To better understand the differences in the endogenous and exogenous cellular environments,  we compared our parameter estimates of mutation bias \DM and selection \DE for the two sets of genes.
+Our estimates of \DM  for the endogenous and exogenous genes were negatively correlated ($\rho = -0.49$),  indicating strong discordance between the two mutation environments  (Figure \ref{fig:csp_comp}).
+% between \kluyveri and the donor lineage of the exogenous genes.
+For example, the endogenous genes show a mutational preference for A and T ending codons in $\sim95\%$ of the codon families.
+In contrast, the exogenous genes display an equally consistent mutational preference towards C and G ending codons  (Table \ref{tab:codon_pref_dm}).
+As a result, only the two codon amino acid Phenylalanine (Phe, F) has the same rank order for the endogenous and exogenous \DM values.
 \begin{figure}[h]
     \centering
     \begin{subfigure}
@@ -211,9 +211,14 @@ Only the two codon amino acid Phenylalanine (Phe, F) shows complete concordance 
         \centering
         \includegraphics[width=.45\textwidth]{img/csp_corr_deta.pdf}
     \end{subfigure}
-    \caption{Comparison of (a) mutation bias \DM and (b) selection bias \DE of endogenous and exogenous genes. Estimates are relative to the mean for each codon family. Black dots indicate parameters with sign concordance, red dots indicate parameters with sign discordance between endogenous and exogenous genes. Black line shows the type II regression. Dashed lines mark quadrants.}
+    \caption{Comparison of (a) mutation bias \DM and (b) selection bias \DE parameters for endogenous and exogenous genes.
+      Estimates are relative to the mean for each codon family.
+      Black dots indicate \DM or \DE parameters with the same sign for the endogenous and exogenous genes, red dots indicate parameters with different signs.
+      Black line shows the type II regression.
+      Dashed lines mark quadrants.}
     \label{fig:csp_comp}
 \end{figure}
+
 
 Estimates of \DE show higher agreement between endogenous and exogenous genes ($\rho = 0.69$) than our estimates of \DM.
 However, only nine codon families favor the same codon in the endogenous and exogenous genes.
@@ -401,6 +406,10 @@ All genes could be uniquely assigned to one or the other gene set.
 After manual inspection to verify that the MCMC had converged, parameter posterior means were estimated from the last 500 samples.
 
 \subsection*{Comparing codon specific parameter estimates}
+Because our \DM and \DE are meaningful only for comparisons between synonymous codons, \ROC returns mutation bias \DM and selection bias \DE parameter values relative to a reference codon.
+While \ROC's choice of the reference codon is largely arbitrary, changes in the reference codon affect [NEED TO COMPLETE]
+To circumvent this issue, we express our estimates relative to the mean for each codon family.
+
 Choice of reference codon does reorganize codon families coding for an amino acid relative to each other, therefore all parameter estimates are relative to the mean for each codon family.
 \begin{equation}
 \DM_{i,a}^c = \DM_{i,a} - \bar{\DM_a}
@@ -480,13 +489,37 @@ The authors would like to thank Brian C. O'Meara and Alexander Cope for their he
 \bibliographystyle{unsrtnat}
 \bibliography{kluyveri_paper}
 
+\section*{Figures}
+
+\section*{Table}
+\begin{table}
+  \begin{tabular}{lrrrr}
+    Hypothesis             & \LLik &$n$ &  AIC & $\Delta$AIC\\ \hline 
+    Endogenous \& Exogenous& & & 5,235,598&      0\\
+    Combined               & & & 5,311,060& 75,462\\
+
+  \end{tabular}
+  \caption{\LLik, number of model parameters $n$, AIC, and $\Delta$AIC.
+    }
+  \label{tab:AIC}
+\end{table}
+
 \clearpage
+
+%%% commands for getting SM pages and figures labeled with S
+%% different than with other .cls
+\setcounter{section}{19} %appendix environment set in .cls file.  Set this to 19 to get an 'S' for figures
+\setcounter{page}{1}
+\renewcommand{\thepage}{S\arabic{page}} %this works
+
+
 \section*{Supplementary Material}
 \beginsupplement
 
 Supporting Materials for \emph{Fitness consequences of mismatched codon usage} \ by Landerer \emph{et al.}.
 
 
+\subsection*{Tables}
 \begin{table}
     \centering
 \begin{tabular}{  l  c  c  c  c  }
@@ -496,12 +529,12 @@ Supporting Materials for \emph{Fitness consequences of mismatched codon usage} \
 	Cys C & TGC & TGT & TGC & TGC \\ \hline
 	Asp D & GAC & GAT & GAC & GAC \\ \hline
 	Glu E & GAG & GAA & GAG & GAG \\ \hline
-	Phe F & TTC & TTT & TTT & TTT \\ \hline
+	Phe F & TTC & TTT & \textbf{TTT} & TTT \\ \hline
 	Gly G & GGC & GGT & GGC & GGC \\ \hline
 	His H & CAC & CAT & CAC & CAC \\ \hline
 	Ile I & ATC & ATT & ATC & ATA \\ \hline
 	Lys K & AAG & AAA & AAG & AAA \\ \hline
-	Leu L & CTG & TTG & CTG & CTG \\ \hline
+	Leu L & CTG & \textbf{TTG} & CTG & CTG \\ \hline
 	Asn N & AAC & AAT & AAC & AAT \\ \hline
 	Pro P & CCG & CCA & CCG & CCG \\ \hline
 	Gln Q & CAG & CAA & CAG & CAG \\ \hline
@@ -512,7 +545,9 @@ Supporting Materials for \emph{Fitness consequences of mismatched codon usage} \
 	Tyr Y & TAC & TAT & TAC & TAC \\ \hline
 	Ser$_2$ Z & AGC & AGT & AGC & AGC \\ \hline
 \end{tabular}
-    \caption{Synonymous codon preference in the various data sets based on our estimates of $\Delta M$}
+\caption{Synonymous codons with the greatest mutational preference (i.e.~largest $\DM$ value).
+Bold face codons indicate synonyms whose ...
+}
     \label{tab:codon_pref_dm}
 \end{table}
 
