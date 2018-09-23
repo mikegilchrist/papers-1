@@ -11,14 +11,32 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{epstopdf}
 \usepackage{natbib}
-\usepackage{amsmath}
+
+\usepackage{glossaries}
+
+\makeglossaries
+\newglossaryentry{geneticLoad}
+{
+    name=genetic Load,
+    description={$sN_e$ relative to an optimal sequence}
+}
+\newglossaryentry{consensusSeq}
+{
+    name=consensus sequence,
+    description={Sequence constructed based in the most frequent amino acid at each site}
+}
+\newglossaryentry{obsSeq}
+{
+    name=observed sequence,
+    description={The input sequence alignment}
+}
+
+
 
 \begin{document}
 \doublespacing
 \linenumbers
 
-
-\newcommand{\LLik}{\ensuremath{\text{\emph{L}}}\xspace}
 
 
 \noindent RH: LANDERER ET AL.--- Estimating genetic load
@@ -63,6 +81,7 @@ M\textsc{ICHAEL} A.~{G\textsc{ILCHRIST}}$^{1,2}$}
 \newpage
 
 
+\printglossaries
 
 \begin{abstract}
 Protein production is a very costly process every cell performs, resulting in selection for proteins that can perform their function most efficiently.
@@ -218,75 +237,40 @@ We also observe a higher genetic load in CytB than in TEM, which is to be expect
 	\end{itemize}
 \end{itemize}
 
-\begin{table}
-  \centering
-  \begin{tabular}{lrrrr}
-    Model	& \LLik &$n$ & AIC & $\Delta$AIC\\ \hline 
-    SelAC	& -1498 & 374& 3744&  0\\
-    SelAC+DMS 	& -1768 & 111& 3758& 14\\
-    phyDMS 	& -2060 & 105& 4331& 586\\
-
-  \end{tabular}
-  \caption{\LLik, number of model parameters $n$, AIC, and $\Delta$AIC.}
-  \label{tab:AIC}
-\end{table}
-
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}
-        \centering
-        \includegraphics[width=.45\textwidth]{img/simulated_dist_time.pdf}
-    \end{subfigure}
-    \begin{subfigure}
-        \centering
-        \includegraphics[width=.45\textwidth]{img/simulated_gl_time.pdf}
-    \end{subfigure}
-    \caption{Sequences simulated under various values of $N_e$ and for various times.}
-    \label{fig:dms_sim}
-\end{figure}
-
 \begin{figure}[H]
      \centering
-	\includegraphics[width=0.6\textwidth]{img/simulated_seqs_gl_dist.pdf}
-	\caption{Sequences simulated under various values of $N_e$ and for various times.}
+	\includegraphics[width=\textwidth]{img/simulated_seqs_gl_dist.pdf}
+	\caption{Sequences simulated under various values of $N_e$ and for various times. }
 	\label{fig:sim_seqs}
 \end{figure}
 
 \begin{figure}[H]
      \centering
-	\includegraphics[width=\textwidth]{img/seq_simil_short.pdf}
-	\caption{DMS and simulation based on DMS do not reflect natural sequences}
-	\label{fig:sim_seqs_cons}
+	\includegraphics[width=\textwidth]{img/sNe_TEM2016}
+	\caption{TEM, sNe of whole sequence, variation across tips.}
+	\label{fig:sne_tem2016}
 \end{figure}
 
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}
-        \centering
-        \includegraphics[width=.45\textwidth]{img/sNe_TEM2016.pdf}
-    \end{subfigure}
-    \begin{subfigure}
-        \centering
-        \includegraphics[width=.45\textwidth]{img/sNe_whale.pdf}
-    \end{subfigure}
-    \caption{$sN_e$ of whole sequence, variation across tips. TEM(left), CytB(right)}
-    \label{fig:dms_sim}
+\begin{figure}[H]
+     \centering
+	\includegraphics[width=\textwidth]{img/sNe_whale}
+	\caption{CytB}
+	\label{fig:sne_whale}
 \end{figure}
-
 
 
 \begin{figure}[H]
      \centering
 	\includegraphics[width=\textwidth]{img/sNe_slide_TEM2016}
 	\caption{TEM, bars are different seconday structure elements, dashed line is DMS sNe, solid is SelAC., horizontal lines are active/binding sites.}
-	\label{fig:tem2016_sse}
+	\label{fig:sne_tem2016}
 \end{figure}
 
 \begin{figure}[H]
      \centering
 	\includegraphics[width=\textwidth]{img/sNe_slide_whale}
 	\caption{CytB}
-	\label{fig:whale_sse}
+	\label{fig:sne_whale}
 \end{figure}
 
 \end{document}
