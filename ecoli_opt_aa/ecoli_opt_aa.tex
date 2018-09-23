@@ -99,33 +99,31 @@ We also observe a higher genetic load in CytB than in TEM, which is to be expect
 
 \section*{Introduction}
 \begin{itemize}
-	\item Natural selection favors proteins with greater functionality.
+	\item Genetic load is a measure of distance between the average genotype's fitness and the genotype with the highest fitness.
 	\begin{itemize}
-		\item However, selection can be overpowered by mutation or drift causing proteins to move away from a fitness peak and introducting genetic load
+		\item The genotype with the highest fitness is assed based on the set of observed genotypes.
+		\item Mutation constantly introduces new, potentially deleterious mutations increasing the genetic load of a population.
+		\item Genetic drift limits the efficacy of natural selection.
+		\item Therefore, the optimal genotype is likely not among the observed genotypes.
+		\item To remedy this, experimental procedures like deep mutation scanning can be employed to asses the fitness of genotypes.
 	\end{itemize}
-	\item Genetic load is usually assessed relative to a predefined wild-type.
+	\item Deep mutation scanning (DMS) requires a library of mutants for which the fitness should be assessed.
 	\begin{itemize}
-		\item One can, however, assess genetic load relative to the genotype encoding a function of interest most optimally.
-		\item This requires to assess the fitness of each genotype. 
+		\item This limits the application of DMS experiments to organisms that can be manipulated under laboratory conditions, and have a sufficiently short generation time.
+		\item It also requires that artificial selection can be applied.
+		\item This limits DMS experiments even further to proteins for which we can assume they respond to a singular stress factor.
+		\item While it is save to ignore effects of mutation, the low population size does severely limit the efficacy of selection.
+		\item It is therefore required to apply extremely strong selection pressure.
 	\end{itemize}
-	\item Previously, deep mutation scanning (DMS) experiments have been utilized to assess site specific amino acid fitness for a variety of proteins.
+	\item In this study, we assess how well DMS experiments can explain genetic load produced by natural evolution.
 	\begin{itemize}
-		\item These experiments are limited to fast growing organisms that can be manipulated under laboratory conditions, and proteins where a specific selection pressure can be applied.
-		\item Furthermore, DMS experiments utilize prepared libraries containing each genotype (ignoring epistatis), causing extremely low effective population sizes. 
-		\item Thus, while mutation does not play a role, genetic drift reduces the efficacy of selection dramatically making it necessary to apply extremely high selection pressures. 
+		\item It has previously been demonstrated that incorporation of DMS experiments into phylogenetic approaches improve model fit when compared to classical approaches like GY94.
+		\item However, model adequacy has not been assessed.
+		\item First we show that the models fits achieved by the incorporation of DMS experiments can be improved upon using a novel phylogenetic framework, SelAC.
+		\item We compare the genetic load of natural TEM variants according to DMS and SelAC and show that DMS predicts an increased genetic load.
+		\item We find that we would not expect to observe the natural TEM variants when simulating under the DMS inferred fitness landscape.
 	\end{itemize}
-	\item We utilize SelAC, a phylogenetic framework, to assess the genetic load of naturally occurring sequence variation on the species level.
-	\begin{itemize}
-		\item SelAC is a mechanistic phylogenetic model rooted in population genetics, and estimates site specific selection from sequence data.
-		\item SelAC does not assume a uniform stationary amino acid distribution across sites, thus allowing it to estimate the optimal amino acid for each position given the available sequence data.
-		\item Furthermore, SelAC is applicable to the whole tree of life and not limited to fast growing organisms that can be manipulated under laboratory conditions.
-	\end{itemize}
-	\item We predict the site specific optimal amino acid from sequence alignments of TEM, a $\beta$-lactamase in E. coli and cytochrome b (CytB), a mitochondrial transmembrane protein in whales.
-	\item We then assess the genetic load of naturally occurring sequences TEM and CytB relative to the predicted functionally optimal amino acid sequence.
-	\begin{itemize}
-		\item We compare our genetic load estimates for TEM to empirical DMS estimates and find an increase of genetic load.
-	\end{itemize}
-	\item Furthermore, we will illustrate how the strength of selection varies along the analyzed proteins.
+	\item Having shown that SelAC provides more adequate inference of genetic load we further demonstrate its generality by assessing the genetic load of cytochrome B in whales.
 \end{itemize}
 
 \section*{Results}
