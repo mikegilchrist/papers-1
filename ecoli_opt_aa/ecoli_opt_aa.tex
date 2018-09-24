@@ -96,79 +96,55 @@ We also observe a higher genetic load in CytB than in TEM, which is to be expect
 		\item While it is save to ignore effects of mutation, the low population size does severely limit the efficacy of selection.
 		\item It is therefore required to apply extremely strong selection pressure.
 	\end{itemize}
-	\item In this study, we assess how well DMS experiments can explain genetic load produced by natural evolution.
+	\item In this study, we assess how well DMS experiments are suited to assess genetic load produced by natural evolution.
+	\item NOTE: Use Substitutional Load instead (Kimura and Maruyama 1968)? Initial frequency implicid 1/2Ne?
 	\begin{itemize}
 		\item It has previously been demonstrated that incorporation of DMS experiments into phylogenetic approaches improve model fit when compared to classical approaches like GY94.
 		\item However, model adequacy has not been assessed.
 		\item First we show that the models fits achieved by the incorporation of DMS experiments can be improved upon using a novel phylogenetic framework, SelAC.
-		\item We compare the genetic load of natural TEM variants according to DMS and SelAC and show that DMS predicts an increased genetic load.
 		\item We find that we would not expect to observe the natural TEM variants when simulating under the DMS inferred fitness landscape.
+		\item We then compare the genetic load of natural TEM variants according to DMS and SelAC and show that DMS predicts an increased genetic load.
 	\end{itemize}
-	\item Having shown that SelAC provides more adequate inference of genetic load we further demonstrate its generality by assessing the genetic load of cytochrome B in whales.
+	\item Having shown that SelAC provides more adequate inference of genetic load we further demonstrate its generality by assessing the genetic load of cytochrome B in whales, an organisms for which DMS experiments are not possible.
 \end{itemize}
 
 \section*{Results}
 \begin{itemize}
-	\item We compared how well deep mutation scanning experiments can explain observed sequences and compared it to SelAC.
+	\item We used SelAC and phyDMS to compare model fits to TEM sequence variants.
 	\begin{itemize}
-		\item We utilized DMS results from Stifler et al. for $\beta$-lactamase in E. coli. 
-		\item We utilized phydms a tool designed to incorporate fitness estimates obtained from the DMS experiment into a phylogenetic framework.
-		\item Model selection reveals that SelAC outperformes the the DMS experiment and better explains the observed sequences.
-		\item Furthermore, we estimated the expected sequences given the fitness landscape described by DMS and SelAC.
-		\begin{item}
-			\item Simiulated sequences evolve to about 60 \% sequence similarity.
-			\item We would also expect to observe less genetic load as sequences had time to evolve, assuming a reasonable $N_e$ of 1,000 or greater.
-		\end{item}
+		\item AIC values showed that SelAC provided an improved model fit (Tabel \ref{tab:AIC}).
+		\item Ignoring the phylogenetic relationship, sequence comparison reveals that the sequence with the highest cumulative fitness acroding to DMS only shows $\sim49 \%$ agreement with the consensus of the observed TEM variants (Figure \ref{fig:sim_seqs_cons}).
+		\item In contrast, the optimal amino acid sequence inferred by SelAC shows $99\%$ sequence similarity.
 	\end{itemize}
-	\item We extimated the functionally optimal amino acid at each site from the observed sequence variation using SelAC.
+	\item Simulations of sequence evolution using the site specific DMS fitness estimates show that DMS does not reflect natural sequence evolution.
 	\begin{itemize}
-		\item The observed TEM alignment shows a high percentage of homogeneous sites.
-		\begin{itemize} 
-			\item $68 \%$ of sites had only one codon present.
-			\item $75 \%$ of sites encoded the same amino acid.
-		\end{itemize}
-		\item The observed CytB alignment shows a more codon heterogeneity but a similar homogeneity in amino acids.
-		\begin{itemize} 
-			\item $22 \%$ of sites had only one codon present.
-			\item $78 \%$ of sites encoded the same amino acid.
-		\end{itemize}
-		\item We find that the predicted optimal amino acid sequence has high agreement with the observed consensus sequence of the alignment (TEM: $99 \%$, CytB: $95 \%$).
-		\item In contrast, the experimentally obtained sequence estimate only has an agreement of $49 \%$ with the observed TEM consensus sequence.
-		%\item Simulations based on the inferred optimal sequences showed that the we would not expect to the observed sequences to have evolved.
+		\item Assuming reasonable, but still small effective population sizes for \textit{E. coli} ($10,000 - 1,000,000$), we would expect to observe a sequence similarity of $\sim 70 \%$ (Figure \ref{fig:dms_sim}a).
+		\item We also expect to only observed half the genetic load (Observed mean: $\sim 22$ v Expected mean: $\sim 10$) (Figure \ref{fig:gl_TEM_whale}a and \ref{fig:dms_sim}b)
+		\item However, even with an effective populaiton size as small as 100, we would expect a significantly lower genetic load than observed.
+		\item In contrast, SelAC estimates a much lower genetic load ($3 - 20$ fold) (Figure \ref{fig:gl_TEM_whale}a).
 	\end{itemize}
-	\item We assessed the genetic load of the observed sequences.
+	\item Using SelAC, we estimated the genetic load each site carries from the alignemnt.
 	\begin{itemize}
-		\item We find that the genetic load of TEM differs greatly depending on the optimal amino acid sequence assumed.
-		\begin{itemize}
-			\item The genetic load of the observed sequences increases $3-20$ fold when using the experimentally inferred optimal sequence compared to the SelAC inferred optimal sequence.
-			\item Besides the great variation that arises from the usage of different optimal amino acid sequences, we also find variation within each optimal amino acid sequence.
-			\item E.g. $sN_e$ varies between $\sim0$ to $\sim-10$ for the SelAC optimal sequence and between $\sim -20$ to $\sim -27$ for the optimal sequence obtained from the DMS experiment.
-		\end{itemize}
-		\item We lack the ability to compare our estimates of genetic load for CytB as DMS experiment can not be performed on whales.
-		\item We find a higher genetic load and greater variation in $sN_e$ for the CytB (not taken into account: sequences differ in length).
-		\begin{itemize}
-			\item $sN_e$ varies between $\sim -10$ to $\sim -35$.
-		\end{itemize}
+		\item The alignement of observed TEM variants has high homogeneity;  $68 \%$ of sites had only one codon present; $75 \%$ of sites encoded the same amino acid.
+		\item Increases of genetic load apear to be clustered, mostly between secondary structure elements but not limited to unstructured regions (Figure \ref{fig:tem2016_sse}).
+		\item We find that the DMS genetic load is always greater than the genetic load inferred by SelAC.
 	\end{itemize}
-	\item We are able to map variation in selection along the sequence and determine sites with higher contribution to genetic load.
+	\item Highlighting the generality of a phylogenetic approach, we estimated the genetic load of Cytochrome B in a small set of whales.
 	\begin{itemize}
-		\item Increases in genetic load appear to be locally confined to a few regions among the TEM alignment but do not appear to be associated with any particular structural features.
-		\item In contrast, CytB shows variation of genetic load across its whole sequence with a particularly strong increase in genetic load within the 5th transmembrane helix.
-	\end{itemize}
-	\item Previous work highlighted the advantages of DMS experiments for phylogenetic inferences.
-	\item However, our estimates of genetic load of observed TEM sequences show that natural sequences would actually represent a large genetic load.
-	\begin{itemize}
-		\item The SelAC estimated optimal amino acid sequence outperformed the consensus sequence and the experimentally sequence explaining the data. 
-		\item A second model selection was performed using phydms as an independent comparison.
-		\begin{itemize}
-			\item Model selection revealed that the main advantage of the DMS experiment comes from the fact that the input alignment is not needed to estimate amino acid preferences.
-			\item While the experimentally inferred optimal sequence does a worse job explaining the observed sequences, model selection reveals that the improvement in likelihood does not justify the increased number of parameters required to run phydms with the SelAC or the consensus amino acid preferences.
-		\end{itemize}
+		\item The optimal amino acid sequence inferred by SelAC shows $95\%$ sequence similarity.
+		\item This is a slightly lower agreement than in the TEM case, however, CytB is less homogenous as well; $22 \%$ of sites had only one codon present; $78 \%$ of sites encoded the same amino acid.
+		\item Genetic load and variation carried by CytB sequences is higher than for TEM variants (Figure \ref{fig:gl_TEM_whale}b).
+		\item Genetic load also does not apear to be clustered, but spread out over the whole sequence, with the highest load located within the 5th akpha helix.
+		\item Genetic load apears to decrease closer to the active sites, with the exception of the binding site at the end of the 4th alpha helix.
 	\end{itemize}
 \end{itemize}
 
 \section*{Discussion}
 \begin{itemize}
+	\item 
+
+
+
 	\item We demonstrate the inference of site specific selection from protein coding sequence data using phylogenetics.
 	\begin{itemize}
 		\item We find that the fitness landscape estimated by SelAC better explains the observed sequences than DMS.
@@ -231,6 +207,14 @@ We also observe a higher genetic load in CytB than in TEM, which is to be expect
   \label{tab:AIC}
 \end{table}
 
+
+\begin{figure}[H]
+     \centering
+	\includegraphics[width=\textwidth]{img/seq_simil_short.pdf}
+	\caption{Every 5th residue. DMS and simulation based on DMS do not reflect natural sequences}
+	\label{fig:sim_seqs_cons}
+\end{figure}
+
 \begin{figure}[h]
     \centering
     \begin{subfigure}
@@ -248,16 +232,10 @@ We also observe a higher genetic load in CytB than in TEM, which is to be expect
 \begin{figure}[H]
      \centering
 	\includegraphics[width=0.6\textwidth]{img/simulated_seqs_gl_dist.pdf}
-	\caption{Sequences simulated under various values of $N_e$ and for various times.}
+	\caption{Suppl: Sequences simulated under various values of $N_e$ and for various times. TODO: replace clouds by mean+sd bars}
 	\label{fig:sim_seqs}
 \end{figure}
 
-\begin{figure}[H]
-     \centering
-	\includegraphics[width=\textwidth]{img/seq_simil_short.pdf}
-	\caption{DMS and simulation based on DMS do not reflect natural sequences}
-	\label{fig:sim_seqs_cons}
-\end{figure}
 
 \begin{figure}[h]
     \centering
@@ -270,7 +248,7 @@ We also observe a higher genetic load in CytB than in TEM, which is to be expect
         \includegraphics[width=.45\textwidth]{img/sNe_whale.pdf}
     \end{subfigure}
     \caption{$sN_e$ of whole sequence, variation across tips. TEM(left), CytB(right)}
-    \label{fig:dms_sim}
+    \label{fig:gl_TEM_whale}
 \end{figure}
 
 
@@ -278,14 +256,14 @@ We also observe a higher genetic load in CytB than in TEM, which is to be expect
 \begin{figure}[H]
      \centering
 	\includegraphics[width=\textwidth]{img/sNe_slide_TEM2016}
-	\caption{TEM, bars are different seconday structure elements, dashed line is DMS sNe, solid is SelAC., horizontal lines are active/binding sites.}
+	\caption{TEM, bars are different seconday structure elements. Dashed dotted line is DMS, solid is SelAC sNe, all lines are means of all sequences, sliding window of 10 sites. vertical lines are active/binding sites.,}
 	\label{fig:tem2016_sse}
 \end{figure}
 
 \begin{figure}[H]
      \centering
 	\includegraphics[width=\textwidth]{img/sNe_slide_whale}
-	\caption{CytB}
+	\caption{solid lines is average Genetic Load of CytB alignment,. dashed and dotted lines are different types ofbinding sites. Horizontal bars are alpha helices.}
 	\label{fig:whale_sse}
 \end{figure}
 
