@@ -68,21 +68,22 @@ M\textsc{ICHAEL} A.~{G\textsc{ILCHRIST}}$^{1,2}$}
 Protein production is a very costly process every cell performs, resulting in selection for proteins that can perform their function most efficiently.
 The efficacy of selection is limited by the effective population size $N_e$, leading to genetic load via the introduction of mutations.
 As all proteins have to face this selection-mutation-drift barrier, we expect to find proteins near a fitness peak, but never at the peak.
-Here we assess the efficacy of selection on individual proteins and quantify the genetic load by phylogenetic inference of the optimal amino acid at each site using SelAC.
-We demonstrate the assessment of the genetic load proteins impose for TEM in \textit{E. coli} and for cytochrome B in whales.
-We quantify the genetic load for 49 TEM sequences and 12 cytochrome B sequences. 
-We compare the inferred optimal TEM  amino acid sequence to fitness estimates from deep mutation scanning experiments.
-We find that the observed TEM sequences have a 3 to 20 fold increased genetic load when compared to the DMS estimates instead of the SelAC inference.
-Furthermore, we find that the DMS inference only shows 49 \% sequence agreement with the consensus sequence of the observed alignment.
-We also observe a higher genetic load in CytB than in TEM, which is to be expected given the difference in $N_e$ between whales and \textit{E. coli}. 
-
+Here, we assess the efficacy of selection on individual proteins and quantify the genetic load by phylogenetic inference of the optimal amino acid at each site using SelAC.
+We compare our estimates of site specific amino acid fitness and genetic load to empirical estimates from deep mutation scanning experiments.
+Our work demonstrates the shortcomings of empirical fitness estimates obtained under laboratory conditions and highlights the general applicability of SelAC.
+Using model selection, we show that phylogenetic estimates of fitness are preferred over empirical estimates ($\Delta$AIC $ = 586$). 
+Using the empirical estimates, the genotype with the highest fitness only shows $49\%$ sequence identity with the observed TEM variants.
+Simulations reveal that the empirical fitness values do not adequately reflect natural evolution as we would not expect to observe the natural TEM sequence variants.
+Furthermore, we demonstrate the generality of SelAC by estimating the genetic load of cytochrome B in whales.
+These results indicate that genetic load varies greatly along cytochrome B.
 \end{abstract}
 
 \section*{Introduction}
 \begin{itemize}
+	\item NOTE: Use Substitutional Load instead (Kimura and Maruyama 1968)? Initial frequency implicit 1/2Ne?
 	\item Genetic load is a measure of distance between the average genotype's fitness and the genotype with the highest fitness.
 	\begin{itemize}
-		\item The genotype with the highest fitness is assed based on the set of observed genotypes.
+		\item The genotype with the highest fitness is assessed based on the set of observed genotypes.
 		\item Mutation constantly introduces new, potentially deleterious mutations increasing the genetic load of a population.
 		\item Genetic drift limits the efficacy of natural selection.
 		\item Therefore, the optimal genotype is likely not among the observed genotypes.
@@ -97,7 +98,6 @@ We also observe a higher genetic load in CytB than in TEM, which is to be expect
 		\item It is therefore required to apply extremely strong selection pressure.
 	\end{itemize}
 	\item In this study, we assess how well DMS experiments are suited to assess genetic load produced by natural evolution.
-	\item NOTE: Use Substitutional Load instead (Kimura and Maruyama 1968)? Initial frequency implicid 1/2Ne?
 	\begin{itemize}
 		\item It has previously been demonstrated that incorporation of DMS experiments into phylogenetic approaches improve model fit when compared to classical approaches like GY94.
 		\item However, model adequacy has not been assessed.
@@ -113,84 +113,102 @@ We also observe a higher genetic load in CytB than in TEM, which is to be expect
 	\item We used SelAC and phyDMS to compare model fits to TEM sequence variants.
 	\begin{itemize}
 		\item AIC values showed that SelAC provided an improved model fit (Tabel \ref{tab:AIC}).
-		\item Ignoring the phylogenetic relationship, sequence comparison reveals that the sequence with the highest cumulative fitness acroding to DMS only shows $\sim49 \%$ agreement with the consensus of the observed TEM variants (Figure \ref{fig:sim_seqs_cons}).
+		\item Ignoring the phylogenetic relationship, sequence comparison reveals that the sequence with the highest cumulative fitness according to DMS only shows $\sim49 \%$ agreement with the consensus of the observed TEM variants (Figure \ref{fig:sim_seqs_cons}).
 		\item In contrast, the optimal amino acid sequence inferred by SelAC shows $99\%$ sequence similarity.
 	\end{itemize}
 	\item Simulations of sequence evolution using the site specific DMS fitness estimates show that DMS does not reflect natural sequence evolution.
 	\begin{itemize}
 		\item Assuming reasonable, but still small effective population sizes for \textit{E. coli} ($10,000 - 1,000,000$), we would expect to observe a sequence similarity of $\sim 70 \%$ (Figure \ref{fig:dms_sim}a).
 		\item We also expect to only observed half the genetic load (Observed mean: $\sim 22$ v Expected mean: $\sim 10$) (Figure \ref{fig:gl_TEM_whale}a and \ref{fig:dms_sim}b)
-		\item However, even with an effective populaiton size as small as 100, we would expect a significantly lower genetic load than observed.
-		\item In contrast, SelAC estimates a much lower genetic load ($3 - 20$ fold) (Figure \ref{fig:gl_TEM_whale}a).
+		\item However, even with an effective population size as small as 100, we would expect a significantly lower genetic load than observed.
 	\end{itemize}
-	\item Using SelAC, we estimated the genetic load each site carries from the alignemnt.
+	\item SelAC estimates a much lower genetic load ($3 - 20$ fold) than DMS (Figure \ref{fig:gl_TEM_whale}a).
 	\begin{itemize}
-		\item The alignement of observed TEM variants has high homogeneity;  $68 \%$ of sites had only one codon present; $75 \%$ of sites encoded the same amino acid.
-		\item Increases of genetic load apear to be clustered, mostly between secondary structure elements but not limited to unstructured regions (Figure \ref{fig:tem2016_sse}).
+		\item Using the DMS estimated optimal amino acid sequence, SelAC estimates similar genetic loads to DMS.
+	\end{itemize}
+	\item Using SelAC, we estimated the genetic load each site carries from the alignment.
+	\begin{itemize}
+		\item The alignment of observed TEM variants has high homogeneity; $68 \%$ of sites had only one codon present; $75 \%$ of sites encoded the same amino acid.
+		\item Increases of genetic load appears to be clustered, mostly between secondary structure elements but not limited to unstructured regions (Figure \ref{fig:tem2016_sse}).
 		\item We find that the DMS genetic load is always greater than the genetic load inferred by SelAC.
+		\item We also find an increase in genetic load at the catalytic triad.
 	\end{itemize}
 	\item Highlighting the generality of a phylogenetic approach, we estimated the genetic load of Cytochrome B in a small set of whales.
 	\begin{itemize}
 		\item The optimal amino acid sequence inferred by SelAC shows $95\%$ sequence similarity.
-		\item This is a slightly lower agreement than in the TEM case, however, CytB is less homogenous as well; $22 \%$ of sites had only one codon present; $78 \%$ of sites encoded the same amino acid.
+		\item This is a slightly lower agreement than in the TEM case, however, CytB is less homogeneous as well; $22 \%$ of sites had only one codon present; $78 \%$ of sites encoded the same amino acid.
 		\item Genetic load and variation carried by CytB sequences is higher than for TEM variants (Figure \ref{fig:gl_TEM_whale}b).
-		\item Genetic load also does not apear to be clustered, but spread out over the whole sequence, with the highest load located within the 5th akpha helix.
-		\item Genetic load apears to decrease closer to the active sites, with the exception of the binding site at the end of the 4th alpha helix.
+		\item Genetic load also does not appear to be clustered, but spread out over the whole sequence, with the highest load located within the 5th alpha helix.
+		\item Genetic load appears to decrease closer to the active sites, with the exception of the binding site at the end of the 4th alpha helix.
 	\end{itemize}
 \end{itemize}
 
 \section*{Discussion}
 \begin{itemize}
-	\item 
-
-
-
-	\item We demonstrate the inference of site specific selection from protein coding sequence data using phylogenetics.
+	\item Incorporating selection into phylogenetic frameworks is already a long lasting endeavor.
 	\begin{itemize}
-		\item We find that the fitness landscape estimated by SelAC better explains the observed sequences than DMS.
-		\item Simulations show that the observed sequences would not arrise under the imposed selection during the DMS experiments.
-		\item While DMS allows for the inferece of properties such as substitutions confering antibiotic resistance, it does not allow to explain natural sequence variation.
-		\item In addition, as researrchers show more and more interests in non-model organisms, the limitation to proteins and organsism that can be manipulated under laboratory conditions limits its uses across the tree of life.
-	\end{itemize}
-	\item We estimate the genetic load of natural occurring proteins relative to an inferred optimal amino acid sequence.
-	\item The optimal amino acid at each site was inferred from the observed proteins and their phylogenetic relationship.
-	\item In both cases, TEM and CytB, we find high agreement between the consensus sequence inferred by ignoring the phylogenetic relationship and the optimal sequence inferred using SelAC (TEM: $99 \%$, CytB: $95 \%$).
-	\begin{itemize}
-		\item The strong agreement between consensus sequence and estimated optimal sequence for both proteins can be seen as an indication that the phylogenetic relationship does not play a large role in the examined cases.
-		\item However, such an assumption should not be made a priory.
-		\item The similarity between consensus and predicted optimal sequence could be because the proteins are under stabilizing selection like the model assumes, because rate of shifts in the optimal amino acid sequence is low, or because not enough time has passed for shifts to occur, despite diversifying selection.
-		\item The used alignments contain a high amount of homogeneous sites (TEM: $ 75 \%$, CytB: $78 \%$), thus these sites do not allow for the inferred optimal amino acid to deviate from the observed consensus.
-	\end{itemize}
-	\item In contrast, the experimentally inferred optimal amino acid sequence for TEM only has $49 \%$ agreement with the observed consensus.
-	\begin{itemize}
-		\item Assuming that this inferred sequence is free of any bias introduced by the experimental conditions, we could only come to the conclusion that the observed TEM sequences show either strong mal-adaptation or did not have enough time to evolve towards the optimal sequence.
-		\item However, \textit{E. coli} has a large effective population size, estimates are on the order of $10^8$ to $10^9$ (Ochman and Wilson 1987, Hartl et al 1994).
-		\item The large $N_e$ would allow \textit{E. coli} to effectively "explore" the sequence space.
-		\item On the other hand, each mutation in the library used for the DMS experiments starts of with only a few copies, potentially biasing the results due to strong genetic drift.
-	\end{itemize}
-	\item The genetic load of the observed sequences was inferred relative to the optimal amino acid sequence estimated by SelAC.
-	\begin{itemize}
-		\item Both, CytB and TEM show variation in the genetic load represented by each observed sequence, CytB represents a higher genetic load than TEM.
-		\item Most TEM sequences show a small genetic load, likely due to the high selection pressure on TEM due to its usage in chemical warfare between microorganisms.
+		\item As the type of selection on a protein is not always clear, or differs between proteins phylogenetic models have to make generalizing assumptions.
+		\item Incorporating selection from experimental sources therefore seems like an attractive option.
+		\item Incorporating empirical fitness has some important features.
 		\begin{itemize}
-			\item If the experimental sequence is assumed to be most optimal, the observed TEM proteins represent a high genetic load to the organism. 
-			\item This is would be in conflict with a large effective population size and therefore high efficacy of selection.
-			\item However, while this would make fixation unlikely, it would not be impossible.
-			\item In addition, the experimental sequence was inferred based on small population sizes for each genotype and artificial selection pressure. 
+			\item It allows for site specific amino acid preferences, acknowledging the heterogeneity of selection along the protein sequence.
+			\item It greatly reduces the number of parameters that have to be estimated from the data.
+		\end{itemize}
+		\item However, the incorporation of empirical fitness also has some important short comings.
+		\begin{itemize}
+			\item DMS experiments are limited to proteins and organisms that can be manipulated under laboratory conditions.
+			\item But even in the case of TEM, the applied selection pressure is limited to the defense against a specific antibiotic.
+			\item TEM, however, has evolved to compete against con-specifics using secreting metabolites to gain an advantage.
+			\item Furthermore, DMS relies on a library of mutants and therefore on a population with very low $N_e$.
+			\item Therefore, it is important to ask how adequate such experiments reflect natural evolution. 
+		\end{itemize}
+		\item We evaluated how well experimental selection estimates from DMS experiments explain natural sequence evolution and compared it to a novel phylogenetic framework, SelAC.
+		\begin{itemize}
+			\item Previous work has shown that DMS selection estimates can improve model fit over classical approaches like GY94.
+			\item Adequacy of the DMS selection has not been assessed.
 		\end{itemize}
 	\end{itemize}
-	\item Genetic load varies across the sequence.
-	\begin{itemize}
-		\item For both proteins, variation of $sN_e$ across the sequence is not associated with any particular structural features but mostly with variation in the alignment.
-		\item However, TEM shows increased genetic load near the binding site, and the highest genetic load is found in the last beta sheet of the protein.
-		\item The genetic load is generally higher for CytB than for TEM, and like for TEM genetic load appears to increase around the binding sites.
-		\item However, for both proteins, increases in genetic load are not limited to the binding sites.
+	\item Model selection favored the SelAC model fit and the corresponding fitness estimates over the DMS estimates using both, SelAC and phyDMS (Table \ref{tab:AIC}).
+	\begin{itemize}	
+		\item The amino acid with the cumulative highest fitness experimentally estimated with DMS only has $49 \%$ concordance with the observed alignment.
+		\item In contrast, the SelAC estimate has $99 \%$ concordance (Figure \ref{fig:sim_seqs_cons}). 
 	\end{itemize}
-	\item DMS experiments have been incorporated into phylogenetic studies to supplement information on selection on amino acids.
+	\item Assuming that the DMS selection inference adequately reflects natural evolution, the observed TEM sequences are either mal-adapted or where unable to reach a fitness peak.
 	\begin{itemize}
-		\item In contrast, this study shows that information on selection can be extracted from alignments of protein coding sequences.
-		\item To no surprise, model selection clearly favored the optimal sequence inferred by SelAC when using SelAC, however, when using this sequence in phydms we find that the inferences from SelAC still explained the data better, but the increase in parameters did not merit the increase in likelihood.
-		\item This highlights the limitations of DMS sequences to explain natural evolution.
+		\item \textit{E. coli} has a large effective population size, estimates are on the order of $10^8$ to $10^9$ (Ochman and Wilson 1987, Hartl et al 1994).
+		\item The large $N_e$ would allow \textit{E. coli} to effectively "explore" the sequence space, thus suggesting that the TEM sequences are mal-adapted according to the DMS estimates.
+		\item Our simulations of sequence evolution with various $N_e$ values and the DMS fitness values in contrast show that we would expect higher adaptation even with much smaller $N_e$ (Figure \ref{fig:dms_sim}).
+	\end{itemize}
+	\item DMS estimates of the observed TEM variants predict them to be mal-adapted while SelAC predicts them to be near the optimum.
+	\begin{itemize}
+		\item Given \textit{E. coli}'s large effective population size, the efficacy of selection should be very large.
+		\item We therefore expect the observed sequence variants to be at the selection-mutation-drift barrier, which in turn can expected to be near the optimum.
+		\item We find the majority of sequences near the optimum, therefore the SelAC estimates are consistent with theoretical population genetics results.
+		\item Further, we find that SelAC can recreate the DMS genetic loads if the DMS optimum is assumed.
+	\end{itemize}
+	\item Mapping of the genetic load on to the TEM sequence revealed clusters of increased variation mostly located between secondary structure elements. 	
+	\begin{itemize}
+		\item Unstructured regions tend to be more robust to amino acid substitutions.
+		\item Despite the clustering in the unstructured regions, the highest peak in genetic load is observed in the last beta-sheet (Anything special about this?).
+	\end{itemize}
+	
+	\item CytB has a higher genetic load in whales than TEM in \textit{E. coli} (Figure \ref{fig:gl_TEM_whale})
+	\begin{itemize}
+		\item No surprise here as whales have a much lower $N_e$, therefore the efficacy of selection is weaker.
+		\item CytB shows more variation in genetic load across the sequence.
+		\item Some binding site have increased, genetic load, some none (Figure \ref{fig:whale_sse}).
+	\end{itemize}
+	\item Caveats
+	\begin{itemize}
+		\item DMS and SelAC assume site independence.
+		\item SelAC assumes stabilizing selection, reasons why that might not be the case?
+		\item SelAC assumes selection is proportional to distance in physicochemical space, a lot of different properties, maybe we used the wrong ones.
+		\item SelAC is limited by observed sequence variation
+	\end{itemize}
+	\item DMS experiments have been proposed to supplement information on selection on amino acids in phylogenetic studies.
+	\begin{itemize}
+		\item This study shows that information on selection can be extracted from alignments of protein coding sequences.
+		\item This highlights the limitations of DMS to explain natural evolution.
 	\end{itemize}
 \end{itemize}
 
