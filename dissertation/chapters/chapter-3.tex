@@ -449,20 +449,30 @@ Supporting Materials for \emph{Fitness consequences of mismatched codon usage} \
 \end{table}
 
 \clearpage
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}
-        \centering
-        \includegraphics[width=.45\textwidth]{ch3/synteny_coverage.pdf}
-    \end{subfigure}
-    \begin{subfigure}
-        \centering
-        \includegraphics[width=.45\textwidth]{ch3/synteny_blocks_and_gc.pdf}
-    \end{subfigure}
-    \caption{Synteny relationship of the exogenous chromosome arm C-left with 13 yeast species. The size of the circle indicates the amount of synteny in units of standard deviation. 
-    \gossypii displays the highest amount of synteny. The synteny relationship between the exogenous chromosome arm and \gossypii and the \GC of the exogenous chromosome arm is displayed on the right.}
-    \label{fig:synteny_species}
+\begin{figure}[H]
+     \centering
+	\includegraphics[width=0.5\textwidth]{ch3/csp_mean_correlation_exo.pdf}
+	\caption{Correlation of \DM and \DE of the endogenous genes with 38 examined yeast lineages. Dots indicate the correlation of \DM and \DE of the lineages with the endogenous and exogenous parameter estimates. All regressions were performed using a type II regression.}
+	\label{fig:csp_endo_comp}
 \end{figure}
+
+
+\begin{figure}[H]
+     \centering
+	\includegraphics[width=0.5\textwidth]{ch3/synteny_blocks_and_gc.pdf}
+	\caption{Synteny relationship of \gossypii and the exogenous genes}
+	\label{fig:synt_rel}
+\end{figure}
+
+
+\begin{figure}[H]
+     \centering
+	\includegraphics[width=0.5\textwidth]{ch3/synteny_coverage.pdf}
+	\caption{Amount of synteny for each species (Units of std dev) checked for synteny.}
+	\label{fig:synteny_species}
+\end{figure}
+
+
 
 \begin{figure}[h]
     \centering
@@ -480,7 +490,7 @@ Supporting Materials for \emph{Fitness consequences of mismatched codon usage} \
 
 \begin{figure}[H]
      \centering
-	\includegraphics[width=\textwidth]{ch3/adaptation_total.pdf}
+	\includegraphics[width=.5\textwidth]{ch3/adaptation_total.pdf}
 	\caption{Total amount of adaptation between time of introgression and now}
 	\label{fig:adapt_tot}
 \end{figure}
@@ -489,9 +499,7 @@ Supporting Materials for \emph{Fitness consequences of mismatched codon usage} \
 \begin{figure}[H]
      \centering
 	\includegraphics[width=\textwidth]{ch3/CUB_cleft_main.pdf}
-	\caption{Predictions of codon frequencies as a function of protein synthesis rate $\phi$ for all amino acids. 
-	Solid, dashed, and dotted lines represent model fits for the endogenous gene set, the exogenous gene set, and the whole \kluyveri genome respectively.
-	The bottom right panel shows corresponding histograms of the protein synthesis rate $\phi$.}
+	\caption{Suppl Fig}
 	\label{fig:cub_all_sets}
 \end{figure}
 

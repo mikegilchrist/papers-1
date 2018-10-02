@@ -1,28 +1,26 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Codon Usage Bias}{2}{section.1.1}
-\contentsline {section}{\numberline {1.2}Amino Acid Usage}{2}{section.1.2}
-\contentsline {chapter}{\numberline {2}AnaCoDa: Analyzing Codon Data with Bayesian mixture models}{4}{chapter.2}
-\contentsline {section}{\numberline {2.1}Introduction}{6}{section.2.1}
-\contentsline {section}{\numberline {2.2}Features}{7}{section.2.2}
-\contentsline {subsubsection}{Robust and efficient model fitting}{7}{section*.14}
-\contentsline {subsubsection}{Data Simulation}{8}{section*.15}
-\contentsline {subsubsection}{Available models}{8}{section*.16}
-\contentsline {section}{\numberline {2.3}Supplementary Material}{9}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}The AnaCoDa framework}{9}{subsection.2.3.1}
-\contentsline {subsubsection}{Analyzing protein coding gene sequences}{10}{section*.17}
-\contentsline {subsection}{\numberline {2.3.2}AnaCoDa setup}{11}{subsection.2.3.2}
-\contentsline {subsubsection}{Application of codon model to single genome}{11}{section*.18}
-\contentsline {subsubsection}{Application of codon model to a mixture of genomes}{12}{section*.19}
-\contentsline {subsubsection}{Empirical protein synthesis rate values}{12}{section*.20}
-\contentsline {subsubsection}{Fixing parameter types}{13}{section*.21}
-\contentsline {subsubsection}{Combining various gene-set specific parameters to a gene-set description.}{14}{section*.22}
-\contentsline {subsubsection}{Checkpointing}{16}{section*.23}
-\contentsline {subsubsection}{Load and save parameter objects}{16}{section*.24}
-\contentsline {subsection}{\numberline {2.3.3}File formats}{17}{subsection.2.3.3}
-\contentsline {subsubsection}{protein coding sequence}{17}{section*.25}
-\contentsline {subsubsection}{Empirical gene expression}{18}{section*.26}
-\contentsline {subsubsection}{Ribosome foot-printing counts}{18}{section*.27}
-\contentsline {subsection}{\numberline {2.3.4}Analyzing and Visualizating results}{18}{subsection.2.3.4}
-\contentsline {subsubsection}{Parameter estimates}{18}{section*.28}
-\contentsline {subsubsection}{Diagnostic Plots}{21}{section*.29}
-\contentsline {subsubsection}{Model visualization}{23}{section*.30}
+\contentsline {chapter}{\numberline {2}AnaCoDa: Analyzing Codon Data with Bayesian mixture models}{2}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introduction}{4}{section.2.1}
+\contentsline {section}{\numberline {2.2}Features}{5}{section.2.2}
+\contentsline {subsubsection}{Robust and efficient model fitting}{5}{section*.14}
+\contentsline {subsubsection}{Data Simulation}{6}{section*.15}
+\contentsline {subsubsection}{Available models}{6}{section*.16}
+\contentsline {section}{\numberline {2.3}Supplementary Material}{7}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}The AnaCoDa framework}{7}{subsection.2.3.1}
+\contentsline {subsubsection}{Analyzing protein coding gene sequences}{8}{section*.17}
+\contentsline {subsection}{\numberline {2.3.2}AnaCoDa setup}{9}{subsection.2.3.2}
+\contentsline {subsubsection}{Application of codon model to single genome}{9}{section*.18}
+\contentsline {subsubsection}{Application of codon model to a mixture of genomes}{10}{section*.19}
+\contentsline {subsubsection}{Empirical protein synthesis rate values}{10}{section*.20}
+\contentsline {subsubsection}{Fixing parameter types}{11}{section*.21}
+\contentsline {subsubsection}{Combining various gene-set specific parameters to a gene-set description.}{12}{section*.22}
+\contentsline {subsubsection}{Checkpointing}{14}{section*.23}
+\contentsline {subsubsection}{Load and save parameter objects}{14}{section*.24}
+\contentsline {subsection}{\numberline {2.3.3}File formats}{15}{subsection.2.3.3}
+\contentsline {subsubsection}{protein coding sequence}{15}{section*.25}
+\contentsline {subsubsection}{Empirical gene expression}{16}{section*.26}
+\contentsline {subsubsection}{Ribosome foot-printing counts}{16}{section*.27}
+\contentsline {subsection}{\numberline {2.3.4}Analyzing and Visualizating results}{16}{subsection.2.3.4}
+\contentsline {subsubsection}{Parameter estimates}{16}{section*.28}
+\contentsline {subsubsection}{Diagnostic Plots}{19}{section*.29}
+\contentsline {subsubsection}{Model visualization}{21}{section*.30}

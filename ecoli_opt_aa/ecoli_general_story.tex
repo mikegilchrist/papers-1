@@ -1,0 +1,117 @@
+\documentclass[12pt]{article}
+
+\usepackage{setspace}
+\usepackage[margin=1in]{geometry}
+\begin{document}
+\doublespacing
+
+
+
+\noindent RH: LANDERER ET AL.--- Estimating genetic load
+% put in your own RH (running head)
+% for POVs the RH is always POINT OF VIEW
+\bigskip
+\medskip
+\begin{center}
+
+% Insert your title:
+\noindent{\Large \bf Phylogenetic model of stabilizing selection is more informative about site specific selection than extrapolation from laboratory estimates.}
+\bigskip
+
+\noindent{C\textsc{EDRIC} ~{L\textsc{ANDERER}}$^{1,2,*}$,
+B\textsc{RIAN} C.~ {O\textsc{MEARA}}$^{1,2}$,
+\textsc{AND}
+M\textsc{ICHAEL} A.~{G\textsc{ILCHRIST}}$^{1,2}$}
+
+\end{center}
+
+\vfill
+
+{\small
+\noindent$^{1}$Department of Ecology \& Evolutionary Biology, University of Tennessee, Knoxville, TN 37996-1610\\
+\noindent$^{2}$National Institute for Mathematical and Biological Synthesis, Knoxville, TN 37996-3410\\
+\noindent$^{*}$Corresponding author. E-mail:~cedric.landerer@gmail.com
+}
+
+\vfill
+\centerline{Version dated: \today}
+\vfill
+\newpage
+
+
+
+
+\section*{Introduction}
+\begin{itemize}
+ \item Phylogenetic inference of sequence relationship was long focused on rates of substitutions.
+ \begin{itemize}
+  \item Focus has shifted towards site specific equilibrium frequencies (HB98, Bloom2014, ...)in the last 20 years.
+  \item Such models however, tend to be not feasible as they are to parameter rich.
+  \item Inference of site specific selection on amino acids from laboratory experiments e.g. DMS is therefore appealing.
+ \end{itemize}
+ \item Incorporation of external information on site specific selection on amino acids allows for the fitting more complex models.
+  \begin{itemize}
+   \item This comes with a loss of generality as DMS experiments are limited to fast growing organisms that can be manipulated under laboratory conditions.
+   \item Strong artificial selection and very heterogeneous population with a lot of competing genotypes are a potential source of bias.
+   \item In the case of TEM, the application of only one very specific antibiotic is unlikely evolutionary history, may reflect modern hospital environments.
+  \end{itemize}
+ \item In this study we will assess how adequate DMS inference of site specific selection on amino acids is using TEM and provide an alternative, more generally applicable solution.
+ \begin{itemize}
+  \item Simulations under the DMS inferred site specific selection on amino acids show that we would not expect to observe the natural TEM variants; revealing the inadequacy of DMS.
+  \item We show that models fits achieved by the incorporation of DMS experiments can be improved upon using a hierarchical phylogenetic framework of stabilizing selection, SelAC.
+  \item We further show that extrapolation even between sequences (TEM and SHV) with related function can be inadequate.
+ \end{itemize}
+\end{itemize}
+
+\section*{Results}
+
+\begin{itemize}
+ \item Model selection shows that DMS can improve phylogenetic inference.
+ \begin{itemize}
+   \item phyDMS improved model fit to 49 TEM sequences by 142 log(likelihood) units
+   \item number of parameters comparable to GY94 and others despite complex description of fitness landscape thanks to experimental estimates.
+ \end{itemize}
+  
+  
+ \item Lab inferences of selection (DMS) are inconsistent with natural sequence evolution.
+ \begin{itemize}
+   \item The inferred fitness landscape does not reflect observed sequences.
+   \begin{itemize}
+    \item The optimal amino acid sequence inferred by DMS only shows $49 \%$ sequence similarity with the observed sequences.
+   \end{itemize}
+ \item Observed sequences unlikely under the lab inferred fitness landscape.
+   \begin{itemize}
+    \item We would expect about half of the observed fitness burden.
+    \item Sequence similarity is expected to be about $\sim 70 \%$.
+   \end{itemize}
+ \item Estimates of selection coefficients do not represent natural evolution.
+   \begin{itemize}
+    \item Due to artificial selection environment; Heterogeneous population, very large $s$. 
+    \item Only one antibiotic used, maybe a mixture of antibiotics would better reflect natural evolution.
+   \end{itemize}
+ \end{itemize}
+ 
+ \item SelAC better explains observed sequences than DMS and other models.
+ \begin{itemize}
+  \item Model selection shows that SelAC outperforms phydms (only for AIC).
+  \item Model adequacy shows that SelAC better represents the observed sequences.
+ \end{itemize}
+ 
+ \item SelAC is a more general approach, applicable to all protein coding sequences.
+ \begin{itemize}
+  \item Application of SelAC to TEM, site specific estimates of aa fitness.
+  \begin{itemize}
+   \item most sites show the estimated optimal amino acid.
+   \item We find that selection against used amino acids is clustered and locally confined.
+  \end{itemize}
+  \item Comparison between TEM and SHV reveals that extrapolation is not always a good idea.
+  \begin{itemize}
+   \item Site specific G terms for TEM and SHV are only weakly correlated ($\rho = 0.17$), despite similar $\alpha_G$.
+   \item Greatest difference is observed in the physicochemical properties, specifically $\alpha$.
+  \end{itemize}
+ \end{itemize}
+\end{itemize}
+
+\section*{Discussion}
+
+\end{document}
