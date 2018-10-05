@@ -1,21 +1,37 @@
 \documentclass[12pt]{article}
 
-\usepackage{setspace}
 \usepackage{float}
 \usepackage{color}
 \usepackage{caption}
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath}
 \usepackage{xspace}
+\usepackage{setspace}
 \usepackage{lineno}
 \usepackage{graphicx}
 \usepackage{subfigure}
 \begin{document}
 \doublespacing
-
+\linenumbers
 
 \newcommand{\LLik}{\ensuremath{\text{\emph{L}}}\xspace}
 \newcommand{\selac}{\emph{SelAC}\xspace}
+\newcommand{\phydms}{\emph{phydms}\xspace}
+
+
+\newcommand{\beginsupplement}{%
+  %%% commands for getting SM pages and figures labeled with S
+  %% different than with other .cls
+  \setcounter{section}{19} %appendix environment set in .cls file.  Set this to 19 to get an 'S' for figures
+  \setcounter{page}{1}
+  \renewcommand{\thepage}{S\arabic{page}} %this works
+
+  \setcounter{table}{0}
+  \renewcommand{\thetable}{S\arabic{table}}%
+  \setcounter{figure}{0}
+  \renewcommand{\thefigure}{S\arabic{figure}}%
+}
+
 
 \noindent RH: LANDERER ET AL.--- Estimating genetic load
 % put in your own RH (running head)
@@ -87,18 +103,22 @@ M\textsc{ICHAEL} A.~{G\textsc{ILCHRIST}}$^{1,2}$}
 
 \section*{Results}
 \subsection*{Site Specific Selection on Amino Acids Improves Model Fit}
-We compared the models phydms and \selac, models of stabilizing site specific amino acid selection, to 281 other codon and nucleotide models by fitting them to the $\beta$-lactamase TEM.
-Models with site specific selection on amino acids improved model fits by at least 917 AICc units over codon or nucleotide models without site specific selection (Table \ref(tab:AIC)).
-\selac estimates 263 site specific parameters, $\sim5\%$ of the 4997 parameters necessary to estimate the site specific selection on amino acids.
-In contrast, phydms utilizes site specific selection on amino acids estimated from deep mutation scanning experiments.
+We compared the models \phydms and \selac, models of stabilizing site specific amino acid selection, to 281 other codon and nucleotide models by fitting them to 49 sequences of the \beta$-lactamase TEM.
+Models with site specific selection on amino acids improved model fits by 917 to XXX AICc units over codon or nucleotide models without site specific selection (Table \ref(tab:AIC)).
+In addition, \selac does outperform \phydms by XXX to  XXX AICc units.
+
+\selac utilizes a hierarchical model framework and estimates 263 site specific parameters, $\sim5\%$ of the 4997 parameters necessary to fully describe the site specific selection on amino acids.
+In contrast, \phydms does not infer any site specific parameters, but utilizes site specific selection on amino acids estimated from deep mutation scanning experiments.
+Incorporating site specific selection on amino acids estimated from deep mutation scanning experiments into \selac (\selac+DMS) yields similar a AICc value to \selac without that information.
+This is solely due to a decrease in the number of parameters estimated, as the \LLik decreases from $-1498$ to $-1768$ (Table \ref(tab:AIC)).
 
 \begin{table}
   \centering
-  \begin{tabular}{lrrrr}
-    Model	& \LLik &$n$ & AIC & $\Delta$AIC\\ \hline 
-    SelAC	& -1498 & 374& 3744&  0\\
-    SelAC+DMS 	& -1768 & 111& 3758& 14\\
-    phyDMS 	& -2060 & 105& 4331& 586\\
+  \begin{tabular}{lrrrrr}
+    Model		& \LLik &$n$ & AIC & $\Delta$AIC & AICc & $\Delta$AICc\\ \hline 
+    \selac		& -1498 & 374& 3744&  0 	$ X  $ 6 \\
+    \selac+DMS 	& -1768 & 111& 3758& 14	$ X  $ 0\\
+    \phydms 		& -2060 & 105& 4331& 586$ X $ X\\
 
   \end{tabular}
   \caption{\LLik, number of model parameters $n$, AIC, and $\Delta$AIC., Full table has $>$ 200 models}
@@ -109,6 +129,7 @@ In contrast, phydms utilizes site specific selection on amino acids estimated fr
 Improved model fits with phydms are deceiving.
 The site specific selection inferred by the deep mutation scanning experiment is inconsistent with the observed TEM sequences.
 We find that the sequence of selectively favored amino acids has only 49 \% sequence similarity with the observed consensus sequence (Figure \ref{fig:sim_seqs_cons}).
+This is in contrast to the 99 \% of sequence similarity with the sequence of selectively favored amino acids estimated by \selac.
 
 \begin{figure}[H]
      \centering
@@ -117,9 +138,12 @@ We find that the sequence of selectively favored amino acids has only 49 \% sequ
 	\label{fig:sim_seqs_cons}
 \end{figure}
 
-Simulating under the experimentally inferred fitness landscape reveals that the observed sequences are unlikely to occur.
-Sequences simulated using a wide range of effective population sizes $N_e$  show that we expect a sequence similarity of $\sim 70 \%$ (Figure \ref{fig:dms_sim}a).
-Similarly, the observed substitutional load is a twice the substitutional load of the sequences simulated under the experimentally inferred fitness landscape (Figure \ref{fig:dms_sim}b).
+Simulations of codon sequences under the experimentally inferred site specific selection for amino acids reveals that we would not expect to see the observed TEM sequences.
+We simulated under a wide range of effective population sizes $N_e$, and find that the experimentally inferred site specific selection is very strong.
+Only when $N_e$ is on the order of $10^0$ drift is overpowering the efficacy of selection.
+With realistic values for $N_e$, we expect that the observed sequences show sequence similarity of $\sim 70 \%$ with the sequence of selectively favored amino acids inferred by the deep mutation scanning experiment (Figure \ref{fig:dms_sim}a).
+Similarly, we expect that the substitutional load of the observed sequences should be half of the observed substitutional load (Figure \ref{fig:dms_sim}b).
+
 \begin{figure}[h]
     \centering
     \begin{subfigure}
@@ -130,21 +154,34 @@ Similarly, the observed substitutional load is a twice the substitutional load o
         \centering
         \includegraphics[width=.45\textwidth]{img/simulated_gl_time.pdf}
     \end{subfigure}
-    \caption{Sequences simulated under various values of $N_e$ and for various times.}
+    \caption{Sequences simulated under various values of $N_e$ and for various times (expected sustitutions per site). TODO: Add starting point and observed values.}
     \label{fig:dms_sim}
 \end{figure}
 
-\subsection*{SelAC better explains observed Sequences}
-
+\subsection*{\selac Model Adequacy}
+\selac better explains the observed TEM sequences.
+Simulations of codon sequences under the \selac inferred site specific selection for amino acids shows high consistency with the observed TEM sequences.
 
 \subsection*{Site specific estimates of Selection on Amino Acids}
 
+
+
+\begin{figure}[H]
+     \centering
+	\includegraphics[width=\textwidth]{img/sNe_slide_TEM2016}
+	\caption{TEM, bars are different seconday structure elements. Dashed dotted line is DMS, solid is SelAC sNe, all lines are means of all sequences, sliding window of 10 sites. vertical lines are active/binding sites.,}
+	\label{fig:tem2016_sse}
+\end{figure}
+
+
 \begin{itemize}
-	\item Model selection shows that DMS can improve phylogenetic inference.
+	\item Site Specific Selection on Amino Acids Improves Model Fit
 	\begin{itemize}
 		\item phyDMS improved model fit to 49 TEM sequences by 917 AICc units
 		\item Number of parameters estimated from data comparable to GY94 and others despite complex description of fitness landscape because of experimental estimates.
+		\item Model selection shows that SelAC outperforms phydms (Table \ref{tab:AIC}).
 	\end{itemize}
+
   
 	\item Lab inferences of selection (DMS) are inconsistent with observed sequences.
 	\begin{itemize}
@@ -158,13 +195,12 @@ Similarly, the observed substitutional load is a twice the substitutional load o
 			\item Sequence similarity is expected to be about $\sim 70 \%$.
 		\end{itemize}
 	\end{itemize}
- 
-	\item SelAC better explains observed sequences than DMS and other models.
+
+	\item \selac Model Adequacy.
 	\begin{itemize}
-		\item Model selection shows that SelAC outperforms phydms (Table \ref{tab:AIC}).
 		\item Model adequacy assessed by sequence similarity shows that SelAC better represents the observed sequences.
 	\end{itemize}
- 
+
 	\item Application of SelAC to TEM.
 	\begin{itemize}
 		\item Site specific estimates of aa fitness (Figure \ref{fig:tem2016_sse}).
@@ -186,7 +222,6 @@ Similarly, the observed substitutional load is a twice the substitutional load o
 \section*{Discussion}
 
 \begin{itemize}
-	\item Given 
 	\item We evaluated how well experimental selection estimates from DMS experiments explain natural sequence evolution and compared it to a novel phylogenetic framework, SelAC.
 	\begin{itemize}
 		\item Previous work has shown that DMS selection estimates can improve model fit over classical approaches like GY94 and our work confirms this.
@@ -275,55 +310,12 @@ Similarly, the observed substitutional load is a twice the substitutional load o
 	\end{itemize}
 \end{itemize}
 
-
-\section*{Tables}
-
-
-\begin{table}
-  \centering
-  \begin{tabular}{lrrrr}
-    Model	& \LLik &$n$ & AIC & $\Delta$AIC\\ \hline 
-    SelAC	& -1498 & 374& 3744&  0\\
-    SelAC+DMS 	& -1768 & 111& 3758& 14\\
-    phyDMS 	& -2060 & 105& 4331& 586\\
-
-  \end{tabular}
-  \caption{\LLik, number of model parameters $n$, AIC, and $\Delta$AIC., Full table has $>$ 200 models}
-  \label{tab:AIC}
-\end{table}
-
-
 \section*{Figures}
-
-
-\begin{figure}[H]
-     \centering
-	\includegraphics[width=\textwidth]{img/seq_simil_short.pdf}
-	\caption{Every 5th residue. DMS and simulation based on DMS do not reflect natural sequences}
-	\label{fig:sim_seqs_cons}
-\end{figure}
-
-
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}
-        \centering
-        \includegraphics[width=.45\textwidth]{img/simulated_dist_time.pdf}
-    \end{subfigure}
-    \begin{subfigure}
-        \centering
-        \includegraphics[width=.45\textwidth]{img/simulated_gl_time.pdf}
-    \end{subfigure}
-    \caption{Sequences simulated under various values of $N_e$ and for various times.}
-    \label{fig:dms_sim}
-\end{figure}
-
-
 
 \begin{figure}[H]
      \centering
 	\includegraphics[width=\textwidth]{img/sNe_slide_TEM2016}
-	\caption{TEM, bars are different seconday structure elements. Dashed dotted line is DMS, solid is SelAC sNe, all lines are means of all sequences, sliding window of 10 sites. vertical lines are active/binding sites.,}
+	\caption{TEM, bars are different seconday structure elements. Dashed dotted line is DMS, solid is SelAC sNe, all lines are means of all sequences, sliding window of 10 sites. vertical lines are active/binding sites.}
 	\label{fig:tem2016_sse}
 \end{figure}
 
@@ -342,8 +334,8 @@ Similarly, the observed substitutional load is a twice the substitutional load o
 \end{figure}
 
 
-
-\section*{Suppl. Figures}
+\beginsupplement
+\section*{Supplementary Figures}
 
 \begin{figure}[H]
      \centering

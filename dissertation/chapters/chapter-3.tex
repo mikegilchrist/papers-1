@@ -154,44 +154,40 @@ Comparing synteny between the exogenous left arm of chromosome C, and \gossypii 
 Furthermore, the synteny relationship between the exogenous region and other yeasts appears to be limited to the Saccharomycetacease group(Figure \ref{fig:synteny_species}b).
 Given these results, we conclude that the \gossypii lineage is the most likely source of the introgressed exogenous genes.
 
-\subsection{Estimating Introgression Age}
+\subsection*{Estimating Introgression Age}
 
-We estimated the introgression age using an exponential model of decay for mutation bias, by assuming that \gossypii is still representative of the mutation bias of its ancestral source lineage at the time of the introgression.
-We utilize the \DM estimates for all two codon amino acids and infer the age of the introgression to be on the order of $6.2\pm1.2\times 10^8$ generations. 
-We assume a mutation rate of $3.8\times 10^{-10}$ per nucleotide per generation, a value in line with other estimates \citep{zhu2014, lang2008}.
-\kluyveri experiences between one and eight generations per day, we therefore expect the introgression to have occurred about $205,000$ to $1,600,000$ years ago which is  longer than previous estimates of \citet{friedrich2015}.
+We estimated the introgression assuming that \gossypii is still representative of the mutation bias of its ancestral source lineage at the time of the introgression.
+We infer the age of the introgression to be on the order of $6.2\pm1.2\times 10^8$ generations. 
+\kluyveri experiences between one and eight generations per day, we therefore expect the introgression to have occurred between $205,000$ to $1,600,000$ years ago.
+This estimates the introgression to be older than previous assumed \citet{friedrich2015}.
 However, our estimates are likely overestimates as they assume a purely neutral decay.
 
-Furthermore, we estimated the persistence of the signal of the foreign cellular environment.
+We also estimated the persistence of the signal of the foreign cellular environment.
 Assuming that differences in mutation bias will decay more slowly than differences in selection bias, we predict that the \DM signal of the source cellular environment will have decayed to be within one percent of the \kluyveri environment within about $5.4\pm0.2\times 10^9 $ generations.
 
-\subsection{Fitness Burden of the Exogenous Genes}
+\subsection*{Genetic Load of the Exogenous Genes}
 
 Estimates of selection bias for the exogenous genes show that, while well correlated with the endogenous genes, only nine amino acids share the optimal codon.
 We therefore expect that the introgressed genes represent a significant reduction in fitness, or genetic load for \kluyveri, and even more so at the time of introgression.
 As the introgression occurred before the diversification of \kluyveri and has fixed since then throughout the various populations, we are left without the original chromosome arm \citep{friedrich2015}.
-However, using our estimates of $\Delta M$ and $\Delta \eta$ from the endogenous genes, we can estimate the genetic load of the exogenous genes relative to an expected gene set.
-We define genetic load as the difference between the fitness of an expected, replaced endogenous gene and the inferred introgressed gene relative to drift $sN_e \propto \phi \DE$ (See Methods for details).
+Using our estimates of $\Delta M$ and $\Delta \eta$ from the endogenous genes, we can estimate the genetic load of the exogenous genes relative to an expected gene set.
+We define genetic load as the difference between the fitness of an expected, replaced endogenous gene and the inferred introgressed gene relative to drift $s \propto \phi \DE$ (See Methods for details).
 \begin{figure}[h]
     \centering
     \begin{subfigure}
         \centering
-        \includegraphics[width=.45\textwidth]{ch3/fitness_difference_gos_kappa5.pdf}
+        \includegraphics[width=.45\textwidth]{img/fitness_difference_gos_kappa5.pdf}
     \end{subfigure}
     \begin{subfigure}
         \centering
-        \includegraphics[width=.45\textwidth]{ch3/fitness_difference_exo.pdf}
+        \includegraphics[width=.45\textwidth]{img/fitness_difference_exo.pdf}
     \end{subfigure}
-    \caption{Genetic load $\Delta s$ (left) at the time of introgression ($\kappa = 5$), and (right) currently ($\kappa = 1$).}
+    \caption{Fitness burden $\Delta sN_e$ (a) at the time of introgression ($\kappa = 5$), and (b) currently ($\kappa = 1$). }
     \label{fig:sne_fitness_burden}
 \end{figure}
 
 We estimate the genetic load of the exogenous genes at the time of introgression (Figure \ref{fig:sne_fitness_burden}a) and currently (Figure \ref{fig:sne_fitness_burden}b).
-These estimates are dependent on three key assumptions.
-First, we assume again that the current cellular environment of \gossypii is reflective of the ancestral environment.
-Second, we assume that the current amino acid composition of the exogenous genes is the same as in the replaced endogenous genes.
-Third, we assume that the difference in the efficacy of selection between \gossypii and \kluyveri can be described with a simple scaling term we call $\kappa$ (Figure \ref{fig:sne_scaling}b).
-As \DE is defined as $\DE = 2N_eq(\eta_i-\eta_j)$, we can not distinguish if $\kappa$ is scaling protein synthesis rate $\phi$, effective population size $N_e$, or the value of an ATP $q$ \citep{gilchrist2015}.
+As \DE is defined as $\DE = 2N_eq(\eta_i-\eta_j)$, we can not distinguish if $\kappa$ is a scaling on protein synthesis rate $\phi$, effective population size $N_e$ the value of an ATP $q$\citep{gilchrist2015}.
 
 At the time of the introgression, we predict that only a few genes were weakly exapted (Figure \ref{fig:sne_fitness_burden}a) with all high expression genes ($\phi > 1$) being maladapted to the novel cellular environment.
 However, these highly expressed genes show the greatest rate of adaptation to the \kluyveri cellular environment (Figures \ref{fig:sne_fitness_burden}a, \ref{fig:adapt_tot}).
@@ -345,31 +341,32 @@ Current codon frequencies for each codon family where taken from our estimates o
 Mathematica (9.0.1.0) \citep{Mathematica} was used to calculate the time $t_{exo}$ it takes for the initial codon frequencies $c_1(0)$ for each codon family to change to the current exogenous codon frequencies.
 The same equation was used to determine the time $t_{endo}$ at which the signal of the exogenous cellular environment has decayed to within $1 \%$ of the endogenous environment.
 
-\subsection{Estimating fitness burden}
+\subsection*{Estimating Genetic Load}
 
 To estimate the fitness burden, we made three key assumptions.
 First, we assumed that the current exogenous amino acid composition of genes is representative of the replaced endogenous genes.
 Second, we assume that the currently observed cellular environment of \gossypii reflects the cellular environment that the exogenous genes experienced before transfer to \kluyveri.
 Lastly, we assume that the difference in the efficacy of selection between the cellular environments of the source lineage and \kluyveri can be expressed as a scaling constant and that protein synthesis rate $\phi$ has not changed between the replaced endogenous and the introgressed exogenous genes.
 
+Using estimates for $N_e$ from XXX et al. we scale our estimates of \DE and define $\DE' = \frac{\DE}{N_e}$.
 We calculated the fitness burden each gene represents assuming additive fitness effects as 
 \begin{equation}
-(sN_e)_g = \sum_i^{C} -\kappa \phi_g \DE_i n_{g,i} 
+s_g = \sum_i^{C} -\kappa \phi_g \DE'_i n_{g,i} 
 \end{equation}
-where $(sN_e)g$ is the selection against translation inefficiency relative to drift.
+where $s_g$ is the selection against translation inefficiency.
 $\phi_g$ is the estimated protein synthesis rate for gene $g$ in the exogenous gene set.
 $n_{g,i}$ is the codon count of each codon $i$ in the codon set $C$ for each gene $g$.
 $\kappa$ is a constant, scaling the efficacy of selection between cellular environments.
 Like stated previously, our \DE are relative to the mean of the codon family.
 We find that the fitness burden of the introgressed genes  is minimized at $\kappa \sim 5$ (Figure \ref{fig:sne_scaling}b).
-Thus, we set $\kappa = 1$ if we calculate the $(sN_e)g$ for the endogenous and the current exogenous genes, and $\kappa = 5$ for $(sN_e)g$ for the fitness burden at the time of introgression.
+Thus, we set $\kappa = 1$ if we calculate the $s_g$ for the endogenous and the current exogenous genes, and $\kappa = 5$ for $s_g$ for the fitness burden at the time of introgression.
 Since we are unable to observe codon counts for the replaced endogenous genes and for the exogenous genes at the time of introgression, we calculate expected codon counts
 \begin{equation}
 E[n_{g,i}] = \frac{\exp(-\DM_i -\DE_i\phi_g)}{\sum_j^C \exp(-\DM_j -\DE_j\phi_g)}\times m_{a_i}
 \end{equation} 
 $m_{a_i}$ is the number of occurrences of amino acid $a$ that codon $i$ codes for.
 
-We report the fitness burden of the introgression as $\Delta sN_e = (sN_e)_{Intro} - (sN_e)_{Endo}$ where $(sN_e)_{Intro}$ is either the fitness burden at the time of the introgression or presently.
+We report the genetic load of the introgression as $\Delta s = s_{Intro} - s_{Endo}$ where $s_{Intro}$ is either the fitness burden at the time of the introgression or presently.
 
 \section{Acknowledgments}
 
