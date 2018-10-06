@@ -103,22 +103,22 @@ M\textsc{ICHAEL} A.~{G\textsc{ILCHRIST}}$^{1,2}$}
 
 \section*{Results}
 \subsection*{Site Specific Selection on Amino Acids Improves Model Fit}
-We compared the models \phydms and \selac, models of stabilizing site specific amino acid selection, to 281 other codon and nucleotide models by fitting them to 49 sequences of the \beta$-lactamase TEM.
-Models with site specific selection on amino acids improved model fits by 917 to XXX AICc units over codon or nucleotide models without site specific selection (Table \ref(tab:AIC)).
+We compared the models \phydms and \selac, models of stabilizing site specific amino acid selection, to 281 other codon and nucleotide models by fitting them to 49 sequences of the $\beta$-lactamase TEM.
+Models with site specific selection on amino acids improved model fits by 917 to XXX AICc units over codon or nucleotide models without site specific selection (Table \ref{tab:AIC}).
 In addition, \selac does outperform \phydms by XXX to  XXX AICc units.
 
 \selac utilizes a hierarchical model framework and estimates 263 site specific parameters, $\sim5\%$ of the 4997 parameters necessary to fully describe the site specific selection on amino acids.
 In contrast, \phydms does not infer any site specific parameters, but utilizes site specific selection on amino acids estimated from deep mutation scanning experiments.
 Incorporating site specific selection on amino acids estimated from deep mutation scanning experiments into \selac (\selac+DMS) yields similar a AICc value to \selac without that information.
-This is solely due to a decrease in the number of parameters estimated, as the \LLik decreases from $-1498$ to $-1768$ (Table \ref(tab:AIC)).
+This is solely due to a decrease in the number of parameters estimated, as the \LLik decreases from $-1498$ to $-1768$ (Table \ref{tab:AIC}).
 
 \begin{table}
   \centering
-  \begin{tabular}{lrrrrr}
+  \begin{tabular}{lrrrrrr}
     Model		& \LLik &$n$ & AIC & $\Delta$AIC & AICc & $\Delta$AICc\\ \hline 
-    \selac		& -1498 & 374& 3744&  0 	$ X  $ 6 \\
-    \selac+DMS 	& -1768 & 111& 3758& 14	$ X  $ 0\\
-    \phydms 		& -2060 & 105& 4331& 586$ X $ X\\
+    \selac		& -1498 & 374& 3744&  0 	& X  & 6 \\
+    \selac+DMS 	& -1768 & 111& 3758& 14	& X  & 0\\
+    \phydms 		& -2060 & 105& 4331& 586& X & X\\
 
   \end{tabular}
   \caption{\LLik, number of model parameters $n$, AIC, and $\Delta$AIC., Full table has $>$ 200 models}
