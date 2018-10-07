@@ -9,6 +9,7 @@
 \usepackage{setspace}
 \usepackage{lineno}
 \usepackage{graphicx}
+\usepackage{natbib}
 \usepackage{subfigure}
 \begin{document}
 \doublespacing
@@ -68,12 +69,21 @@ M\textsc{ICHAEL} A.~{G\textsc{ILCHRIST}}$^{1,2}$}
 
 
 \section*{Introduction}
-\begin{itemize}
 
+Incorporation of selection into phylogenetic frameworks has already been a long lasting endeavor.
+Early models focused the influence of selection on the substitution rate between a resident and a mutant \citep{GoldmanAndYang1994, MuseAndGaut1994, thorne1996}.
+These models however, lack site specific equilibrium frequencies.
+The importance of site specific equilibrium frequencies has long been noted \citep{felsenstein1981, gojobori1983}.
+\citet{HalpernAndBruno1998} first introduced a framework to incorporate the site specific equilibrium frequencies of amino acids.
+However, they had to concede that their model was to parameter rich and therefore intractable for biological data sets without simplifying assumptions.
+
+
+
+\begin{itemize}
 	\item Incorporating selection into phylogenetic frameworks is already a long lasting endeavor.
 	\begin{itemize}
 		\item Phylogenetic inference of sequence relationship was long focused on rates of substitutions.
-		\item Focus has shifted towards site specific equilibrium frequencies (HB98, Bloom2014, ...) in the last 20 years.
+		\item No site specific equilibrium frequencies until (HB98, Bloom2014, ...).
 		\item Such models however, tend to be unfeasible as they are very parameter rich.
 		\item The type of selection on a protein is not always clear, or differs between proteins phylogenetic models also have to make generalizing assumptions.
 		\item Incorporating selection from experimental sources therefore seems like an attractive option.
@@ -103,7 +113,7 @@ M\textsc{ICHAEL} A.~{G\textsc{ILCHRIST}}$^{1,2}$}
 
 \section*{Results}
 \subsection*{Site Specific Selection on Amino Acids Improves Model Fit}
-We compared the models \phydms and \selac, models of stabilizing site specific amino acid selection, to 281 other codon and nucleotide models by fitting them to 49 sequences of the $\beta$-lactamase TEM.
+We compared the models \phydms \citep{hilton2017} and \selac \citep{beaulieu2018}, models of stabilizing site specific amino acid selection, to 281 other codon and nucleotide models by fitting them to 49 sequences of the $\beta$-lactamase TEM.
 Models with site specific selection on amino acids improved model fits by 917 to 1483 AICc units over codon or nucleotide models without site specific selection (Table \ref{tab:AIC}).
 In addition, \selac does outperform \phydms by 560 to  566 AICc units.
 
@@ -143,7 +153,7 @@ Simulations of codon sequences under the experimentally inferred site specific s
 We simulated under a wide range of effective population sizes $N_e$, and find that the experimentally inferred site specific selection is very strong.
 Only when $N_e$ is on the order of $10^0$ drift is overpowering the efficacy of selection.
 With realistic values for $N_e$, we expect that the observed sequences show sequence similarity of $\sim 70 \%$ with the sequence of selectively favored amino acids inferred by the deep mutation scanning experiment (Figure \ref{fig:dms_sim}a).
-Similarly, we expect that the substitutional load of the observed sequences should be half of the observed substitutional load (Figure \ref{fig:dms_sim}b).
+Similarly, we expect that the genetic load of the observed sequences should be half of the observed genetic load (Figure \ref{fig:dms_sim}b).
 
 \begin{figure}[h]
     \centering
@@ -155,35 +165,52 @@ Similarly, we expect that the substitutional load of the observed sequences shou
         \centering
         \includegraphics[width=.45\textwidth]{img/simulated_gl_time.pdf}
     \end{subfigure}
-    \caption{Sequences simulated under various values of $N_e$ and for various times (expected sustitutions per site). TODO: Add starting point and observed values.}
+    \caption{Sequences simulated under various values of $N_e$ and for various times (expected substitutions per site). TODO: Add starting point and observed values.}
     \label{fig:dms_sim}
 \end{figure}
 
-\subsection*{\selac Model Adequacy}
-\selac better explains the observed TEM sequences.
-Simulations of codon sequences under the \selac inferred site specific selection for amino acids shows high consistency with the observed TEM sequences.
+\subsection*{\selac Model Adequacy} 
+When assessing model adequacy, we find that \selac better explains the observed TEM sequences.
+The observed consensus sequence has a very high sequence similarity with the sequence of selectively favored amino acids estimated by \selac (99 \%).
+Furthermore, assuming the site specific selection estimated by \selac, the observed sequences only show a minimal genetic load (Figure \ref{fig:gl_TEM}).
+
+We then simulated codon sequences forward in time for various length of time to assess the sequence similarity, assuming the \selac inferred site specific selection for amino acids.
+% Ancestral starting point
+Using the ancestral state of the 49 TEM variants as initial sequence we find that 
+
+
+% Random starting point
+To further demonstrate the consistency of \selac, we utilized random codon sequences as starting points.
+We find that the sequence similarity increases with effective population size $N_e$.
+The random sequences start of with a similarity of $5 \% - 8 \%$ which increases with $N_e$ to $26 \% - 34 \%$.
+The same initial sequences under the site specific selection inferred by the deep mutation scanning experiment increase only to $X \% - Y \%$ in sequence similarity.
+
+
 
 \subsection*{Site specific estimates of Selection on Amino Acids}
-We find that the whole sequence is under string selection and near the optimum with a small genetic load.
-We find stronger selection and a higher sustitutional load in beta sheets than in helices and unstructured regions (Table \ref{tab:selection}).
+We find that the whole sequence is under strong selection and near the optimum with a small genetic load.
+We find stronger selection and a lower genetic load in beta sheets than in helices and unstructured regions (Table \ref{tab:selection}).
+
+The Active sites appear to be under the strongest selection, with no accumulated genetic load.
+This is in concordance with the experimental estimates.
 
 \begin{table}
   \centering
   \begin{tabular}{lrrrr}
-    Secondary Structure	& Mean G & SE G & Mean Subst. Load & SE Subst. Load \\ \hline 
-    Helix		& 206.1 & 12.4 & -0.003 & 0.0007 \\
-    Beta Sheet 		& 238.6 & 15.8 & -0.011 & 0.0094 \\
-    Unstructured	& 224.8 & 11.4 & -0.006 & 0.0023 \\
+    Secondary Structure	& Mean G & SE G & Mean Genetic Load & SE Genetic Load \\ \hline 
+    Helix		& 206.1 & 12.4 & $0.18\times10^{-7}$ & $0.13\times10^{-7}$ \\
+    Beta Sheet 		& 238.6 & 15.8 & $6.8\times10^{-8}$ & $2.9\times10^{-8}$ \\
+    Unstructured	& 224.8 & 11.4 & $0.19\times10^{-7}$ & $8.1\times10^{-8}$ \\
     Active Sites	& 300   & 0    & 0      & 0      \\
   \end{tabular}
-  \caption{\LLik, number of model parameters $n$, AIC, and $\Delta$AIC., Full table has 231 models}
+  \caption{\LLik, number of model parameters $n$, AIC, and $\Delta$AIC., Full table has 231 models, TODO: Update numbers}
   \label{tab:selection}
 \end{table}
 
 \begin{figure}[H]
      \centering
 	\includegraphics[width=\textwidth]{img/sNe_slide_TEM2016}
-	\caption{TEM, bars are different seconday structure elements. Dashed dotted line is DMS, solid is SelAC sNe, all lines are means of all sequences, sliding window of 10 sites. vertical lines are active/binding sites.,}
+	\caption{TEM, bars are different secondary structure elements. Dashed dotted line is DMS, solid is SelAC sNe, all lines are means of all sequences, sliding window of 10 sites. vertical lines are active/binding sites.,}
 	\label{fig:tem2016_sse}
 \end{figure}
 
@@ -323,6 +350,48 @@ We find stronger selection and a higher sustitutional load in beta sheets than i
 		\item This highlights the limitations of DMS to explain natural evolution.
 	\end{itemize}
 \end{itemize}
+
+
+\section*{Materials and Methods}
+
+\subsection*{Phylogenetic Inference and Model selection}
+
+TEM sequences were obtained from \citet{bloom2017} and already aligned. 
+Experimentally fitness values for TEM were taken from \citet{stiffler2016}.
+We chose the highest concentration (2500 $\mu g/mL$) treatment of ampicillin for our comparison.
+We modified the experimental fitness such that the amino acid with the highest fitness at each site has a value of one.
+
+\selac (version 1.6.1) was fitted to the TEM alignment using R (version 3.4.1) \citep{rcore} with and without site specific selection on amino acids estimated from deep mutation scanning experiments.
+\phydms (version 2.0.5) was fitted using site specific selection on amino acids estimated from deep mutation scanning experiments from \citet{stiffler2016}.
+All other models were fitted using IQTree \citep{nguyen2015}.
+
+We report each model's $\log(likelihood)$, AIC, and  AICc. 
+Models were selected based on the AICc values.
+
+\subsection*{Sequence Simulation}
+
+Sequences were simulated by stochastic simulations using a Gillespie algorithm \citep{gillespie1976} that was model independent.
+The simulation followed \citet{SellaAndHirsh2005} to calculate fixation probabilities.
+Mutation rates were taken from the \selac or \selac+DMS fit.
+The initial sequences were either a random sample of codons or the ancestral sequence reconstructed using FastML \citep{fastml} (last accessed: 30.09.2018).
+Each sequence was simulated 10 times and we report average genetic load and sequence similarity as well as the standard error.
+
+\subsection*{Model Adequacy}
+
+Model adequacy was assessed by comparing the observed sequences and simulations under the site specific selection inferred by the deep mutation scanning experiment or \selac.
+First, similarity between the sequence of selectively favored amino acids and the observed TEM sequences was assessed.
+Sequence similarity was measured as the number of differences in the amino acid sequence.
+Second, the genetic load of the observed and the simulated sequences was calculated using either the site specific selection inferred by the deep mutation scanning experiment or \selac.
+
+Genetic load was calculated as
+\begin{equation}
+L = \frac{w_{max} - w_i}{w_{max}}
+\end{equation}
+were $w_{max}$ is the fitness of the sequence of selectively favored amino acids estimated using  the site specific selection inferred by the deep mutation scanning experiment or \selac.
+$w_i$ represents the fitness of the $i$th observed or simulated sequence.
+
+\bibliographystyle{unsrtnat}
+\bibliography{ecoli}
 
 \section*{Figures}
 
