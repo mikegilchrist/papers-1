@@ -18,6 +18,7 @@
 \newcommand{\Lik}{\ensuremath{\mathcal{L}}\xspace}
 \newcommand{\selac}{\emph{SelAC}\xspace}
 \newcommand{\phydms}{\emph{phydms}\xspace}
+\newcommand{\gy}{\emph{GY94}\xspace}
 
 
 \newcommand{\beginsupplement}{%
@@ -122,8 +123,6 @@ In contrast, \phydms does not infer any site specific parameters, but utilizes s
 Incorporating site specific selection on amino acids estimated from deep mutation scanning experiments into \selac (\selac+DMS) yields similar a AICc value to \selac without that information.
 This is solely due to a decrease in the number of parameters estimated, as the $\log(\Lik)$ decreases from $-1498$ to $-1768$ (Table \ref{tab:AIC}).
 
-Interestingely, the best codon model (GY94) \citep{GoldmanAndYang1994} is outperformed by a variety of nucleotide model e.g. SYM \citep{zharkikh1994}.
-
 \begin{table}
   \centering
   \begin{tabular}{lrrrrrr}
@@ -138,14 +137,16 @@ Interestingely, the best codon model (GY94) \citep{GoldmanAndYang1994} is outper
   \label{tab:AIC}
 \end{table}
 
-Figure \ref{fig:phylo} shows that the estimated phylogenetic trees shift from long terminal branches (\selac) to longer internal branches (\phydms).
+Interestingely, the best codon model (\gy) \citep{GoldmanAndYang1994} is outperformed by a variety of nucleotide model e.g. \emph{SYM} \citep{zharkikh1994}.
+This indicates that negative frequency dependent selection like it is modeled in \gy is not appropriate for TEM \citep{beaulieu2018}.
+Figure \ref{fig:phylo} shows that the estimated phylogenetic trees shift from long terminal branches (\selac) to longer internal branches (\phydms, \gy).
 All models produce polytomies but their location differs along the phylogeny between models.
 The largest polytomies appear in the experimentally informed phylogenies.
 
 \begin{figure}[H]
      \centering
 	\includegraphics[width=\textwidth]{img/phy_TEM2016.pdf}
-	\caption{Phylogenies estimated using \selac, \selac+DMS, \phydms, and GY94.}
+	\caption{Phylogenies estimated using \selac, \selac+DMS, \phydms, and \gy.}
 	\label{fig:phylo}
 \end{figure}
 

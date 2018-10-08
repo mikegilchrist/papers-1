@@ -120,8 +120,10 @@ In addition, \selac does outperform \phydms by 560 to  566 AICc units.
 
 \selac utilizes a hierarchical model framework and estimates 263 site specific parameters, $\sim5\%$ of the 4997 parameters necessary to fully describe the site specific selection on amino acids.
 In contrast, \phydms does not infer any site specific parameters, but utilizes site specific selection on amino acids estimated from deep mutation scanning experiments.
-Incorporating site specific selection on amino acids estimated from deep mutation scanning experiments into \selac (\selac+DMS) yields similar a AICc value to \selac without that information.
+Incorporating site specific selection on amino acids estimated from deep mutation scanning experiments into \selac (\selac+DMS) yields a similar AICc value to \selac without that information.
+However, \selac+DMS is favored by AICc.
 This is solely due to a decrease in the number of parameters estimated, as the $\log(\Lik)$ decreases from $-1498$ to $-1768$ (Table \ref{tab:AIC}).
+The number of parameter for \selac, however, is reported conservatively as the number of unique site patterns in the TEM alignemnt is only 27 and thus the number of paramters would be 123.
 
 \begin{table}
   \centering
