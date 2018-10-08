@@ -15,9 +15,10 @@
 \doublespacing
 \linenumbers
 
-\newcommand{\LLik}{\ensuremath{\text{\emph{L}}}\xspace}
+\newcommand{\Lik}{\ensuremath{\mathcal{L}}\xspace}
 \newcommand{\selac}{\emph{SelAC}\xspace}
 \newcommand{\phydms}{\emph{phydms}\xspace}
+\newcommand{\gy}{\emph{GY94}\xspace}
 
 
 \newcommand{\beginsupplement}{%
@@ -34,7 +35,7 @@
 }
 
 
-\noindent RH: LANDERER ET AL.--- Estimating genetic load
+\noindent RH: LANDERER ET AL.--- Estimating site specific selection
 % put in your own RH (running head)
 % for POVs the RH is always POINT OF VIEW
 \bigskip
@@ -120,20 +121,37 @@ In addition, \selac does outperform \phydms by 560 to  566 AICc units.
 \selac utilizes a hierarchical model framework and estimates 263 site specific parameters, $\sim5\%$ of the 4997 parameters necessary to fully describe the site specific selection on amino acids.
 In contrast, \phydms does not infer any site specific parameters, but utilizes site specific selection on amino acids estimated from deep mutation scanning experiments.
 Incorporating site specific selection on amino acids estimated from deep mutation scanning experiments into \selac (\selac+DMS) yields similar a AICc value to \selac without that information.
-This is solely due to a decrease in the number of parameters estimated, as the \LLik decreases from $-1498$ to $-1768$ (Table \ref{tab:AIC}).
+This is solely due to a decrease in the number of parameters estimated, as the $\log(\Lik)$ decreases from $-1498$ to $-1768$ (Table \ref{tab:AIC}).
 
 \begin{table}
   \centering
   \begin{tabular}{lrrrrrr}
-    Model		& \LLik &$n$ & AIC & $\Delta$AIC & AICc & $\Delta$AICc\\ \hline 
+    Model		& $\log(\Lik)$ &$n$ & AIC & $\Delta$AIC & AICc & $\Delta$AICc\\ \hline 
     \selac		& -1498 & 374& 3744&  0 	& 3766  & 6 \\
-    \selac+DMS 	& -1768 & 111& 3758& 14	& 3760  & 0\\
-    \phydms 		& -2060 & 105& 4331& 586& 4326 & 566\\
+    \selac+DMS 		& -1768 & 111& 3758& 14	& 3760  & 0\\
+    \phydms 		& -2061 & 102& 4326& 582& 4328 & 568\\
     SYM+R2 		& -2230 & 102& 4663& 919& 4694 & 934 \\
+    GY+F1X4+R2 		& -2243 & 102& 4690& 946& 4821 & 1061 \\
   \end{tabular}
-  \caption{\LLik, number of model parameters $n$, AIC, and $\Delta$AIC., Full table has 231 models}
+  \caption{Model selection, shown are the three models of stabilizing site specific amino acid selection (\selac, \selac+DMS, \phydms) and the best performing codon and nucleotide model. See full table for all 231 models}
   \label{tab:AIC}
 \end{table}
+
+Interestingely, the best codon model (\gy) \citep{GoldmanAndYang1994} is outperformed by a variety of nucleotide model e.g. \emph{SYM} \citep{zharkikh1994}.
+This indicates that negative frequency dependent selection like it is modeled in \gy is not appropriate for TEM \citep{beaulieu2018}.
+Figure \ref{fig:phylo} shows that the estimated phylogenetic trees shift from long terminal branches (\selac) to longer internal branches (\phydms, \gy).
+All models produce polytomies but their location differs along the phylogeny between models.
+The largest polytomies appear in the experimentally informed phylogenies.
+
+\begin{figure}[H]
+     \centering
+	\includegraphics[width=\textwidth]{img/phy_TEM2016.pdf}
+	\caption{Phylogenies estimated using \selac, \selac+DMS, \phydms, and \gy.}
+	\label{fig:phylo}
+\end{figure}
+
+
+
 
 
 \subsection*{Laboratory inferences of selection are inconsistent with observed sequences.}
@@ -152,115 +170,149 @@ This is in contrast to the 99 \% of sequence similarity with the sequence of sel
 Simulations of codon sequences under the experimentally inferred site specific selection for amino acids reveals that we would not expect to see the observed TEM sequences.
 We simulated under a wide range of effective population sizes $N_e$, and find that the experimentally inferred site specific selection is very strong.
 Only when $N_e$ is on the order of $10^0$ drift is overpowering the efficacy of selection.
-With realistic values for $N_e$, we expect that the observed sequences show sequence similarity of $\sim 70 \%$ with the sequence of selectively favored amino acids inferred by the deep mutation scanning experiment (Figure \ref{fig:dms_sim}a).
-Similarly, we expect that the genetic load of the observed sequences should be half of the observed genetic load (Figure \ref{fig:dms_sim}b).
+With realistic values for $N_e = 10^7$, we find that the simulated sequences to show sequence similarity of $62 \%$ with the observed consensus sequence (Figure \ref{fig:dms_sim}a).
+This is a higher similarity than the observed consensus sequence shows with the the sequence of selectively favored amino acids estimated using deep mutation scanning.
+The genetic load of the simulated sequences deacrease slowely with increasing $N_e$ (Figure \ref{fig:dms_sim}b).
+At time 1 and $N_e = 10^7$ the simulated sequences show a genetic load of 0.25, which is in contrast to the $\sim 8$ times higher observed load of 2.1.
+Thus it appears unlikely that the observed sequences have evolved under the experimentally inferred site specific selection for amino acids.
+
 
 \begin{figure}[h]
     \centering
     \begin{subfigure}
         \centering
-        \includegraphics[width=.45\textwidth]{img/simulated_dist_time.pdf}
+        \includegraphics[width=.45\textwidth]{img/simulated_dist_time_DMS_ancest.pdf}
     \end{subfigure}
     \begin{subfigure}
         \centering
-        \includegraphics[width=.45\textwidth]{img/simulated_gl_time.pdf}
+        \includegraphics[width=.45\textwidth]{img/simulated_gl_time_DMS_ancest.pdf}
     \end{subfigure}
-    \caption{Sequences simulated under various values of $N_e$ and for various times (expected substitutions per site). TODO: Add starting point and observed values.}
+    \caption{Sequences simulated from the ancestral state under the site specific selection on amino acids estimated using deep mutation scanning. 
+    (left) Sequence similarity to the observed consensus sequence at various times for a range on values of $N_e$.
+    (right) Genetic load of the simulated sequences at various times for a range on values of $N_e$.
+    Time is given in number of expected substitutions.
+    Points indicate sample means and vertical bars indicate standard deviations. Initial sequence is the inferred ancestral state of the TEM variants and not shown.}
     \label{fig:dms_sim}
 \end{figure}
 
 \subsection*{\selac Model Adequacy} 
-When assessing model adequacy, we find that \selac better explains the observed TEM sequences.
+We assessed model adequacy and find that \selac better explains the observed TEM sequences.
 The observed consensus sequence has a very high sequence similarity with the sequence of selectively favored amino acids estimated by \selac (99 \%).
-Furthermore, assuming the site specific selection estimated by \selac, the observed sequences only show a minimal genetic load (Figure \ref{fig:gl_TEM}).
+Furthermore, assuming the site specific selection estimated by \selac, the observed sequences only show a minimal genetic load (Table \ref{tab:selection}, Figure \ref{fig:tem2016_sse}).
 
-We then simulated codon sequences forward in time for various length of time to assess the sequence similarity, assuming the \selac inferred site specific selection for amino acids.
+We simulated codon sequences forward in time for various length of time to assess the sequence similarity, assuming the \selac inferred site specific selection for amino acids.
 % Ancestral starting point
-Using the ancestral state of the 49 TEM variants as initial sequence we find that 
+We simulated the evolution of TEM from the inferred ancestral state using a wide range of effective population sizes $N_e$ (Figure \ref{fig:selac_sim}a).
+The ancestral state state was estimated to be the observed consensus sequence.
+For small $N_e$, we find that sequences drift away from the observed consensus. 
+In turn, the genetic load increases drastically.
+With increasing $N_e = 10^7$ the simulated sequences reach a sequence similarity at time 1 of $83 \%$, this is in contrast to the observed sequence similarity $98 \%$.
+We calculated the genetic load at this time of the simulated sequences to be $9.8\times10^{-6}$ (Figure \ref{fig:selac_sim}b).
+The genetic load of the observed sequences is estimated $4.2\times 10^{-5}$, one order of magnitute higher.
+Thus, the simulated sequences show a lower genetic load despite the greater divergence from the observed consensus sequence.
 
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}
+        \centering
+        \includegraphics[width=.45\textwidth]{img/simulated_dist_time_SELAC_ancest.pdf}
+    \end{subfigure}
+    \begin{subfigure}
+        \centering
+        \includegraphics[width=.45\textwidth]{img/simulated_gl_time_SELAC_ancest.pdf}
+    \end{subfigure}
+    \caption{Sequences simulated from the ancestral state under the site specific selection on amino acids estimated using \selac. 
+    (left) Sequence similarity to the observed consensus sequence at various times for a range on values of $N_e$.
+    (right) Genetic load of the simulated sequences at various times for a range on values of $N_e$.
+    Time is given in number of expected substitutions.
+    Points indicate sample means and vertical bars indicate standard deviations. Initial sequence is the inferred ancestral state of the TEM variants and not shown.}
+    \label{fig:selac_sim}
+\end{figure}
 
 % Random starting point
 To further demonstrate the consistency of \selac, we utilized random codon sequences as starting points.
 We find that the sequence similarity increases with effective population size $N_e$.
-The random sequences start of with a similarity of $5 \% - 8 \%$ which increases with $N_e$ to $26 \% - 34 \%$.
-The same initial sequences under the site specific selection inferred by the deep mutation scanning experiment increase only to $X \% - Y \%$ in sequence similarity.
+The random sequences start of with a similarity of $\sim6 \%$ which increases with $N_e$ to $\sim28 \%$ (Figure \ref{fig:selac_sim_rand}a).
+The same initial sequences under the site specific selection inferred by the deep mutation scanning experiment increase only to $\sim18 \%$ in sequence similarity.
 
 
 
 \subsection*{Site specific estimates of Selection on Amino Acids}
-We find that the whole sequence is under strong selection and near the optimum with a small genetic load.
-We find stronger selection and a lower genetic load in beta sheets than in helices and unstructured regions (Table \ref{tab:selection}).
-
+\selac allows for the site specific estimation of selection on amino acids and the genetic load of an observed amino acid relative to the inferred optimal amino acid.
+We find that the genetic load is distributed along most of the observed TEM sequence with the exception of the region between residue 80 to 120 were three consequtive helices are located (Figure \ref{fig:tem2016_sse}). 
+The most noticable increases in genetic load are found in unstructured regions
+The largest increase in genetic load however, is located at the begining of the last helix.
+We therefore estimate similar genetic loads for helices and unstructured regions in the observed TEM sequences (Table \ref{tab:selection})
+The highest 
 The Active sites appear to be under the strongest selection, with no accumulated genetic load.
 This is in concordance with the experimental estimates.
 
 \begin{table}
   \centering
-  \begin{tabular}{lrrrr}
-    Secondary Structure	& Mean G & SE G & Mean Genetic Load & SE Genetic Load \\ \hline 
-    Helix		& 206.1 & 12.4 & $0.18\times10^{-7}$ & $0.13\times10^{-7}$ \\
-    Beta Sheet 		& 238.6 & 15.8 & $6.8\times10^{-8}$ & $2.9\times10^{-8}$ \\
-    Unstructured	& 224.8 & 11.4 & $0.19\times10^{-7}$ & $8.1\times10^{-8}$ \\
-    Active Sites	& 300   & 0    & 0      & 0      \\
+  \begin{tabular}{llrrrr}
+    Protein & Secondary Structure	& Mean G & SE G & Mean Genetic Load & SE Genetic Load \\ \hline 
+    TEM	&		& 219.3 & 7.5 & $0.16\times10^{-7}$ & $6.5\times10^{-8}$ \\
+    &Helix 		& 206.1 & 12.4 & $0.18\times10^{-7}$ & $0.13\times10^{-7}$ \\
+    &Beta Sheet 	& 238.6 & 15.8 & $6.8\times10^{-8}$ & $2.9\times10^{-8}$ \\
+    &Unstructured 	& 224.8 & 11.4 & $0.19\times10^{-7}$ & $8.1\times10^{-8}$ \\
+    &Active Sites 	& 300   & 0    & 0      & 0      \\ \hline
+    
+    SHV&		& 244.9 & 6.8  & $4.0\times10^{-8}$ & $1.9\times10^{-8}$ \\
+    &Helix		& 234.6 & 11.5 & $7.3\times10^{-8}$ & $4.8\times10^{-8}$ \\
+    &Beta Sheet 	& 253.1 & 12.8 & $2.1\times10^{-8}$ & $1.1\times10^{-8}$ \\
+    &Unstructured	& 250.3 & 11.0 & $1.8\times10^{-8}$ & $59\times10^{-8}$  \\
+    &Active Sites	& 199.9 & 100  & $2.4\times10^{-8}$ & $2.4\times10^{-8}$ \\
+
   \end{tabular}
-  \caption{\LLik, number of model parameters $n$, AIC, and $\Delta$AIC., Full table has 231 models, TODO: Update numbers}
+  \caption{Efficacy of selection (G) and Genetic Load for TEM and SHV and separated by secondary structure.}
   \label{tab:selection}
 \end{table}
 
 \begin{figure}[H]
      \centering
-	\includegraphics[width=\textwidth]{img/sNe_slide_TEM2016}
-	\caption{TEM, bars are different secondary structure elements. Dashed dotted line is DMS, solid is SelAC sNe, all lines are means of all sequences, sliding window of 10 sites. vertical lines are active/binding sites.,}
+	\includegraphics[width=\textwidth]{img/GL_slide_TEM2016}
+	\caption{TEM, bars are different secondary structure elements. Dashed dotted line is DMS, solid is SelAC sNe, all lines are means of all sequences. vertical lines are active/binding sites.}
 	\label{fig:tem2016_sse}
 \end{figure}
 
+It was previously proposed that experimentally inferred site specific selection for amino acids can be used to extraplotate the fitness landscape of related proteins \citep{bloom2014}.
+We therefore compared the site specific efficacy of selection G, the \selac selection parameters of our \selac TEM model fit to a \selac model fit of SHV, and genetic load.
+We find that site specific efficacy of selection G differes greatly between SHV and TEM ($\rho = 0.17$), despite a similar estimate of the parameter $\alpha_G$ describing the distribution of G values (Figure \ref{fig:tem_shv_param_comp}a).
+With the expection of the active site, we find that G is increased in SHV (Table \ref{tab:selection}).
+In general, most \selac selection parameters are very similar between the TEM and the SHV model fit. 
+An exception is the weight for the physicochemical composition property $\alpha_c$ (Figure \ref{fig:tem_shv_param_comp}b).
 
-\begin{itemize}
-	\item Site Specific Selection on Amino Acids Improves Model Fit
-	\begin{itemize}
-		\item phyDMS improved model fit to 49 TEM sequences by 917 AICc units
-		\item Number of parameters estimated from data comparable to GY94 and others despite complex description of fitness landscape because of experimental estimates.
-		\item Model selection shows that SelAC outperforms phydms (Table \ref{tab:AIC}).
-	\end{itemize}
+The genetic load in SHV is by an order of magnitute lower than in TEM with the exception of residues found in $\beta$-sheets and the active site (Table \ref{tab:selection}).
+This is consitent with the elevated site specific efficacy of selection G in SHV.
+As a comparison of site specific efficacy of selection G already indicated, the sites introducing genetic load differ between SHV and TEM (Figure \ref{fig:shv2016_sse}).
+We find the highest genetic load in SHV at the end of the first helix.
+However, we do find a peak of similar magnitute in the TEM sequence at the end of the first helix.
 
-  
-	\item Lab inferences of selection (DMS) are inconsistent with observed sequences.
-	\begin{itemize}
- 		\item The inferred fitness landscape is inconsistent with observed sequences.
-		\begin{itemize}
-			\item The optimal amino acid sequence inferred by DMS only shows $49 \%$ sequence similarity with the observed sequences (Figure \ref{fig:sim_seqs_cons}).
-		\end{itemize}
-		\item Observed sequences unlikely under the lab inferred fitness landscape (Figure \ref{fig:dms_sim}a,b).
-		\begin{itemize}
-			\item We would expect about half of the observed fitness burden.
-			\item Sequence similarity is expected to be about $\sim 70 \%$.
-		\end{itemize}
-	\end{itemize}
-
-	\item \selac Model Adequacy.
-	\begin{itemize}
-		\item Model adequacy assessed by sequence similarity shows that SelAC better represents the observed sequences.
-	\end{itemize}
-
-	\item Application of SelAC to TEM.
-	\begin{itemize}
-		\item Site specific estimates of aa fitness (Figure \ref{fig:tem2016_sse}).
-		\begin{itemize}
-			\item Fitness burden based on SSE.
-			\item Fitness burden at binding sites
-			\item Most sites show the estimated optimal amino acid.
-			\item We find that selection against used amino acids is clustered and locally confined.
-			\item Role of secondary structures?
-		\end{itemize}
-		\item Application of SelAC to TEM and comparison to TEM
-		\begin{itemize}
-			\item Site specific G terms for TEM and SHV are only weakly correlated ($\rho = 0.17$), despite similar $\alpha_G$ (Figure \ref{fig:tem_shv_param_comp}a).
-			\item Greatest difference is observed in the physicochemical properties, specifically $\alpha$ (which PC is that?) (Figure \ref{fig:tem_shv_param_comp}b).
-		\end{itemize}
-	\end{itemize}
-\end{itemize}
 
 \section*{Discussion}
+
+We evaluated how well experimental selection estimates from laboratory experiments, specifically deep mutation scanning, explain sequence evolution and compared it to \selac, a novel phylogenetic framework.
+Previous work has shown that laboratory estimates of selection can improve model fit over classical approaches like GY94 \citep{bloom2014, bloom2017}.
+While our study confirms this notion, we also raise awarness for shortcomings of these laboratory estimates and propose a more general applicable alternative.
+\selac, in contrast, is a more general alternative that does not depend on costly laboratory estimates of selection and is favored by model selectin (Table \ref{tab:AIC}).
+
+While previous work showed the advantages of experimentally informed phylogenetics estimates, they did not assess how adequate the estimated selection reflects observed sequences.
+This becomes abherent in the low sequence similarity between the observed consensus sequence and the sequence of selectively favored amino acids estimated from deep mutation scanning experiments.
+In contrast, the selectively favored amino acids estimated by \selac shows a high sequence similarity with the observed consensus sequence.
+This begs the question how well the experimental selection coefficients represent evolution.
+Deep mutation scanning experiments are performed using a comprehensive library of mutants and a strong artificial selection pressure \citep{FirnbergAndOstermeier2012, Jain2014, FowlerAndFields2014, Fowler2014}.
+This results in a very large selection coefficient $s$ and a competing heterogeneous population.
+
+The induced selection pressure during the deep mutation scanning experiment was limited to ampicillin \citep{stiffler2016} and focused on the TEM-1 variant.
+However, TEM can also confer resistance to a wide range of other antibiotics, like other penicillins, cephalosporins, cefotaxime, ceftazidime, or aztreonam.
+Thus, the inferred selection is biased towards ampicillin and is therefore unlikely to reflect the evolution the observed TEM variants have experienced.
+We therfore propose to include a variety of selection pressures if the experimental selection estimates are used for phylogenetic inference.
+
+TODO:  Lack of repeatability between labs introduces further problems (Firnberg et al 2014 vs. Stifler et al. 2016).
+
+
+
 
 \begin{itemize}
 	\item We evaluated how well experimental selection estimates from DMS experiments explain natural sequence evolution and compared it to a novel phylogenetic framework, SelAC.
@@ -270,7 +322,7 @@ This is in concordance with the experimental estimates.
 	\end{itemize}
 
 	\item Adequacy of the DMS selection has previously not been assessed.
-	\begin{itemize}	
+	\begin{itemize}
 		\item The amino acid with the cumulative highest fitness experimentally estimated with DMS only has $49 \%$ concordance with the observed alignment.
 		\item In contrast, the SelAC estimate has $99 \%$ concordance (Figure \ref{fig:sim_seqs_cons}). 
 		\item Estimates of selection coefficients do not represent evolution.
@@ -293,6 +345,7 @@ This is in concordance with the experimental estimates.
 		\item Due to artificial selection environment; Heterogeneous population, very large $s$. 
 		\item Only one antibiotic used, maybe a mixture of antibiotics would better reflect natural evolution.
 		\item Lack of repeatability between labs introduces further problems (Firnberg et al 2014 vs. Stifler et al. 2016).
+		\item Still better than models without site specific equilibrium frequencies.
 	\end{itemize}
 
 	\item DMS estimates of the observed TEM variants predict them to be mal-adapted while SelAC predicts most TEM variants to be well adapted.
@@ -356,25 +409,49 @@ This is in concordance with the experimental estimates.
 
 \subsection*{Phylogenetic Inference and Model selection}
 
-TEM sequences were obtained from \citet{bloom2017} and already aligned. 
+TEM and SHV sequences were obtained from \citet{bloom2017} already aligned.
+We however, separated the TEM and SHV sequences into individual alignemnts.
 Experimentally fitness values for TEM were taken from \citet{stiffler2016}.
-We chose the highest concentration (2500 $\mu g/mL$) treatment of ampicillin for our comparison.
-We modified the experimental fitness such that the amino acid with the highest fitness at each site has a value of one.
+We followed \citep{bloom2017} to convert the experimental fitness values into site specific equilibrium frequencies for \phydms. 
 
 \selac (version 1.6.1) was fitted to the TEM alignment using R (version 3.4.1) \citep{rcore} with and without site specific selection on amino acids estimated from deep mutation scanning experiments.
-\phydms (version 2.0.5) was fitted using site specific selection on amino acids estimated from deep mutation scanning experiments from \citet{stiffler2016}.
+\phydms (version 2.5.1) was fitted using site specific selection on amino acids estimated from deep mutation scanning experiments from \citet{stiffler2016} and python (version 3.6).
 All other models were fitted using IQTree \citep{nguyen2015}.
 
-We report each model's $\log(likelihood)$, AIC, and  AICc. 
+We report each model's $\log(\Lik)$, AIC, and  AICc. 
 Models were selected based on the AICc values.
 
 \subsection*{Sequence Simulation}
 
 Sequences were simulated by stochastic simulations using a Gillespie algorithm \citep{gillespie1976} that was model independent.
 The simulation followed \citet{SellaAndHirsh2005} to calculate fixation probabilities.
+The fitness values were estimated using \selac or experimentally inferred.
+We chose the fitnest values of the highest concentration (2500 $\mu g/mL$) treatment of ampicillin for our comparison.
+We modified the experimental fitness such that the amino acid with the highest fitness at each site has a value of one.
 Mutation rates were taken from the \selac or \selac+DMS fit.
-The initial sequences were either a random sample of codons or the ancestral sequence reconstructed using FastML \citep{fastml} (last accessed: 30.09.2018).
-Each sequence was simulated 10 times and we report average genetic load and sequence similarity as well as the standard error.
+The initial sequences were either a random sample of 263 codons or the ancestral sequence reconstructed using FastML \citep{fastml} (last accessed: 30.09.2018).
+Each sequence was simulated 10 times and we report average genetic load and sequence similarity and the corresponding standard error.
+
+\subsection*{Estimating site specific G}
+
+
+\subsection*{Estimating site specific fitness values $w_i$}
+
+Following \citet{beaulieu2018} $w_i$ is proportional to
+\begin{equation}
+w_i \propto \exp(-A_0\eta\psi)
+\end{equation}
+were $A_0$ decribes the decline in fitness with each high energy phosphate bond, and $\psi$ is the protein's production rate.
+$\eta$ is the cost/benefit ratio of a protein (see \citep{beaulieu2018} for details). 
+However, \selac only estimates a composition parameter $\psi' = A_0\times\psi\times N_e\times q$.
+$N_e$ describes the effective population size and is assumed by \selac to be $5\times 10^6$.
+$q$ is the XXX and is assumed by \selac to be $4\times 10^{-7}$.
+$A_0$ assumed to be $4$.
+Thus, 
+\begin{equation}
+\psi = \frac{\psi'}{A_0N_eq}
+\end{equation}
+
 
 \subsection*{Model Adequacy}
 
@@ -385,21 +462,48 @@ Second, the genetic load of the observed and the simulated sequences was calcula
 
 Genetic load was calculated as
 \begin{equation}
-L = \frac{w_{max} - w_i}{w_{max}}
+L_i = \frac{w_{max} - w_i}{w_{max}}
 \end{equation}
 were $w_{max}$ is the fitness of the sequence of selectively favored amino acids estimated using  the site specific selection inferred by the deep mutation scanning experiment or \selac.
-$w_i$ represents the fitness of the $i$th observed or simulated sequence.
+$w_i$ represents the fitness of the $i$th residue.
+This the genetic load $L$ of a sequence is given by $\sum_{i=1}^n L_i$ where $n$ is the number of amino acids.
+
+
 
 \bibliographystyle{unsrtnat}
 \bibliography{ecoli}
 
 \section*{Figures}
 
+
+
+\beginsupplement
+\section*{Supplementary Figures}
+
+
 \begin{figure}[H]
      \centering
-	\includegraphics[width=\textwidth]{img/sNe_slide_TEM2016}
-	\caption{TEM, bars are different seconday structure elements. Dashed dotted line is DMS, solid is SelAC sNe, all lines are means of all sequences, sliding window of 10 sites. vertical lines are active/binding sites.}
-	\label{fig:tem2016_sse}
+	\includegraphics[width=\textwidth]{img/GL_slide_SHV2016}
+	\caption{SHV, bars are different secondary structure elements. Dashed dotted line is DMS, solid is SelAC sNe, all lines are means of all sequences. vertical lines are active/binding sites.}
+	\label{fig:shv2016_sse}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}
+        \centering
+        \includegraphics[width=.45\textwidth]{img/simulated_dist_time_SELAC_random.pdf}
+    \end{subfigure}
+    \begin{subfigure}
+        \centering
+        \includegraphics[width=.45\textwidth]{img/simulated_gl_time_SELAC_random.pdf}
+    \end{subfigure}
+    \caption{{Sequences simulated from a random codon sequence under the site specific selection on amino acids estimated using \selac. 
+    (left) Sequence similarity to the observed consensus sequence at various times for a range on values of $N_e$.
+    (right) Genetic load of the simulated sequences at various times for a range on values of $N_e$.
+    Time is given in number of expected substitutions.
+    Points indicate sample means and vertical bars indicate standard deviations. Initial sequence is the inferred ancestral state of the TEM variants and not shown.}}
+    \label{fig:selac_sim_rand}
 \end{figure}
 
 \begin{figure}[h]
@@ -414,25 +518,6 @@ $w_i$ represents the fitness of the $i$th observed or simulated sequence.
     \end{subfigure}
     \caption{Comparisson of selection related parameters between TEM and SHV.}
     \label{fig:tem_shv_param_comp}
-\end{figure}
-
-
-\beginsupplement
-\section*{Supplementary Figures}
-
-\begin{figure}[H]
-     \centering
-	\includegraphics[width=0.6\textwidth]{img/simulated_seqs_gl_dist.pdf}
-	\caption{Suppl: Sequences simulated under various values of $N_e$ and for various times. TODO: replace clouds by mean+sd bars}
-	\label{fig:sim_seqs}
-\end{figure}
-
-
-\begin{figure}[H]
-     \centering
-	\includegraphics[width=0.6\textwidth]{img/sNe_TEM2016.pdf}
-	\caption{Suppl: $sN_e$ of whole sequence, variation across tips. TEM}
-	\label{fig:gl_TEM}
 \end{figure}
 
 \end{document}
