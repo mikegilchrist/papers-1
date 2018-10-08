@@ -94,6 +94,16 @@ year = {1976},
 pages = {403-434},
 }
 
+@Article{zharkikh1994,
+  Title                    = {Estimation of evolutionary distances between nucleotide sequences},
+  Author                   = {Zharkikh, A},
+  Journal                  = {Journal of Molecular Evolution},
+  Year                     = {1994},
+  Pages                    = {315-329},
+  Volume                   = {39},
+  number	           = {3}
+}
+
 @Article{GoldmanAndYang1994,
   Title                    = {Codon-based model of nucleotide substitution for protein-coding {{DNA}}-sequences},
   Author                   = {Goldman, N. and Yang, Z. H.},
@@ -114,7 +124,7 @@ pages = {666-673},
 
 @Article{MuseAndGaut1994,
   Title                    = {A likelihood approach for comparing synonymous and nonsynonymous nucleotide substitution rates, with application to the chloroplast genome.},
-  Author                   = {Muse, Spencer V and Gaut, Brandon S},
+  Author                   = {Muse, SV and Gaut, BS},
   Journal                  = {Molecular Biology and Evolution},
   Year                     = {1994},
   Number                   = {5},
@@ -150,6 +160,70 @@ year = {1998},
 pages = {910-917},
 }
 
+@article{FowlerAndFields2014,
+author = {Fowler, DM and Fields, S},
+title = {Deep mutational scanning: a new style of protein science},
+journal = {Nature Methods},
+volume = {11},
+year = {2014},
+pages = {801-807},
+}
 
+@article{Fowler2014,
+author = {Fowler, DM and Stephany, JJ and Fields, S},
+title = {Measuring the activity of protein variants on a large scale using deep mutational scanning},
+journal = {Nature Protocols},
+volume = {9},
+year = {2014},
+pages = {2267-2284},
+}
+
+@article{FirnbergAndOstermeier2012,
+author = {Firnberg, E and Ostermeier, M},
+title = {PFunkel: Efficient, Expansive, User-Defined Mutagenesis},
+journal = {PLOS ONE},
+volume = {7},
+number = {12},
+year = {2012},
+pages = {e52031},
+}
+
+@article{Jain2014,
+author = {Jain, PC and Varadarajan, R},
+title = {A rapid, efficient, and economical inverse polymerase chain reaction-based method for generating a site saturation mutant library},
+journal = {Analytical Biochemistry},
+volume = {449},
+year = {2014},
+pages = {90-981},
+}
+
+@article{gilchrist2007,
+author = {Gilchrist. MA},
+title = {Combining Models of Protein Translation and Population Genetics to Predict Protein Production Rates from Codon Usage Patterns},
+journal = {Molecular Biology and Evolution},
+volume = {24},
+number = {11},
+year = {2007},
+pages = {2362-2372},
+}
+
+@article{hartl1994,
+author = {Hartl, DL and Moriyama, EN and Sawyer, SA},
+title = {Selection intensity for codon bias},
+journal = {Genetics},
+volume = {138},
+year = {1994},
+pages = {227-234},
+}
+
+@inbook{OchmanAndWilson1987, 
+place={Washington DC}, 
+title={Evolutionary history of enteric bacterian}, 
+booktitle={Escherichia coli and Salmonella typhimurium: Cellular and Molecular Biology}, 
+publisher={ASM Press}, 
+author={Ochman, H and Wilson, AC}, 
+year={1987}, 
+pages={1649-1654}
+}
 
 

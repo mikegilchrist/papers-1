@@ -1,4 +1,4 @@
-\begin{thebibliography}{21}
+\begin{thebibliography}{25}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -12,7 +12,7 @@ N.~Goldman and Z.~H. Yang.
 \newblock \emph{Molecular Biology and Evolution}, 11:\penalty0 725--736, 1994.
 
 \bibitem[Muse and Gaut(1994)]{MuseAndGaut1994}
-Spencer~V Muse and Brandon~S Gaut.
+SV~Muse and BS~Gaut.
 \newblock A likelihood approach for comparing synonymous and nonsynonymous
   nucleotide substitution rates, with application to the chloroplast genome.
 \newblock \emph{Molecular Biology and Evolution}, 11\penalty0 (5):\penalty0
@@ -41,6 +41,19 @@ AL~Halpern and WJ~Bruno.
 \newblock \emph{Molecular Biology and Evolution}, 15\penalty0 (7):\penalty0
   910--917, 1998.
 
+\bibitem[Bloom(2014)]{bloom2014}
+JD~Bloom.
+\newblock An experimentally informed evolutionary model improves phylogenetic
+  fit to divergent lactamase homologs.
+\newblock \emph{Molecular Biology and Evolution}, 31\penalty0 (10):\penalty0
+  2753--2769, 2014.
+
+\bibitem[Fowler et~al.(2014)Fowler, Stephany, and Fields]{Fowler2014}
+DM~Fowler, JJ~Stephany, and S~Fields.
+\newblock Measuring the activity of protein variants on a large scale using
+  deep mutational scanning.
+\newblock \emph{Nature Protocols}, 9:\penalty0 2267--2284, 2014.
+
 \bibitem[Hilton et~al.(2017)Hilton, Doud, and Bloom]{hilton2017}
 SK~Hilton, MB~Doud, and JD~Bloom.
 \newblock phydms: software for phylogenetic analyses informed by deep mutation
@@ -59,13 +72,6 @@ A~Zharkikh.
 \newblock Estimation of evolutionary distances between nucleotide sequences.
 \newblock \emph{Journal of Molecular Evolution}, 39\penalty0 (3):\penalty0
   315--329, 1994.
-
-\bibitem[Bloom(2014)]{bloom2014}
-JD~Bloom.
-\newblock An experimentally informed evolutionary model improves phylogenetic
-  fit to divergent lactamase homologs.
-\newblock \emph{Molecular Biology and Evolution}, 31\penalty0 (10):\penalty0
-  2753--2769, 2014.
 
 \bibitem[Bloom(2017)]{bloom2017}
 JD~Bloom.
@@ -89,17 +95,27 @@ DM~Fowler and S~Fields.
 \newblock Deep mutational scanning: a new style of protein science.
 \newblock \emph{Nature Methods}, 11:\penalty0 801--807, 2014.
 
-\bibitem[Fowler et~al.(2014)Fowler, Stephany, and Fields]{Fowler2014}
-DM~Fowler, JJ~Stephany, and S~Fields.
-\newblock Measuring the activity of protein variants on a large scale using
-  deep mutational scanning.
-\newblock \emph{Nature Protocols}, 9:\penalty0 2267--2284, 2014.
-
 \bibitem[Stiffler et~al.(2016)Stiffler, Hekstra, and R]{stiffler2016}
 MA~Stiffler, DR~Hekstra, and Ranganathan R.
 \newblock Evolvability as a function of purifying selection in tem-1
   $\beta$-lactamase.
 \newblock \emph{Cell}, 160:\penalty0 882--892, 2016.
+
+\bibitem[Ochman and Wilson(1987)]{OchmanAndWilson1987}
+H~Ochman and AC~Wilson.
+\newblock \emph{Evolutionary history of enteric bacterian}, pages 1649--1654.
+\newblock ASM Press, 1987.
+
+\bibitem[Hartl et~al.(1994)Hartl, Moriyama, and Sawyer]{hartl1994}
+DL~Hartl, EN~Moriyama, and SA~Sawyer.
+\newblock Selection intensity for codon bias.
+\newblock \emph{Genetics}, 138:\penalty0 227--234, 1994.
+
+\bibitem[Matagne et~al.(1998)Matagne, Lamotte-Brasseur, and Frere]{matagne1998}
+A~Matagne, J~Lamotte-Brasseur, and JM~Frere.
+\newblock Catalytic properties of class a beta-lactamases: efficiency and
+  diversity.
+\newblock \emph{Biochemistry Journal}, 300:\penalty0 581--598, 1998.
 
 \bibitem[{R Core Team}(2013)]{rcore}
 {R Core Team}.
@@ -136,5 +152,12 @@ H~Ashkenazy, O~Penn, A~Doron-Faigenboim, O~Cohen, G~Cannarozzi, O~Zomer, and
   sequences.
 \newblock \emph{Nucleic Acids Research}, 40\penalty0 (Web Server
   Issue):\penalty0 W580--4, 2012.
+
+\bibitem[MA(2007)]{gilchrist2007}
+Gilchrist. MA.
+\newblock Combining models of protein translation and population genetics to
+  predict protein production rates from codon usage patterns.
+\newblock \emph{Molecular Biology and Evolution}, 24\penalty0 (11):\penalty0
+  2362--2372, 2007.
 
 \end{thebibliography}
