@@ -1,0 +1,140 @@
+\begin{thebibliography}{21}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Goldman and Yang(1994)]{GoldmanAndYang1994}
+N.~Goldman and Z.~H. Yang.
+\newblock Codon-based model of nucleotide substitution for protein-coding
+  {{DNA}}-sequences.
+\newblock \emph{Molecular Biology and Evolution}, 11:\penalty0 725--736, 1994.
+
+\bibitem[Muse and Gaut(1994)]{MuseAndGaut1994}
+Spencer~V Muse and Brandon~S Gaut.
+\newblock A likelihood approach for comparing synonymous and nonsynonymous
+  nucleotide substitution rates, with application to the chloroplast genome.
+\newblock \emph{Molecular Biology and Evolution}, 11\penalty0 (5):\penalty0
+  715--724, 1994.
+
+\bibitem[Thorne et~al.(1996)Thorne, Goldman, and Jones]{thorne1996}
+JL~Thorne, N~Goldman, and DT~Jones.
+\newblock Combinng protein evolution and secondary structure.
+\newblock \emph{Molecular Biology and Evolution}, 13:\penalty0 666--673, 1996.
+
+\bibitem[Felsenstein(1981)]{felsenstein1981}
+J~Felsenstein.
+\newblock Evolutionary trees from dna sequences: a maximum likelihood approach.
+\newblock \emph{Journal of Molecular Evolution}, 17:\penalty0 368--376, 1981.
+
+\bibitem[Gojobori(1983)]{gojobori1983}
+T~Gojobori.
+\newblock Codon substitution in evolution and the "saturation" of synonymous
+  changes.
+\newblock \emph{Genetics}, 105:\penalty0 1011--1027, 1983.
+
+\bibitem[Halpern and Bruno(1998)]{HalpernAndBruno1998}
+AL~Halpern and WJ~Bruno.
+\newblock Evolutionary distances for protein-coding sequences: Modeling
+  site-specific residue frequencies.
+\newblock \emph{Molecular Biology and Evolution}, 15\penalty0 (7):\penalty0
+  910--917, 1998.
+
+\bibitem[Hilton et~al.(2017)Hilton, Doud, and Bloom]{hilton2017}
+SK~Hilton, MB~Doud, and JD~Bloom.
+\newblock phydms: software for phylogenetic analyses informed by deep mutation
+  scanning.
+\newblock \emph{PeerJ}, 5:\penalty0 e3657, 2017.
+
+\bibitem[Beaulieu et~al.(in review)Beaulieu, O'Meara, Zaretzki, Landerer, Chai,
+  and Gilchrist]{beaulieu2018}
+JM~Beaulieu, BC~O'Meara, R~Zaretzki, C~Landerer, JJ~Chai, and MA~Gilchrist.
+\newblock Population genetics based phylogenetics under stabilizing selection
+  for an optimal amino acid sequence: A nested modeling approach.
+\newblock \emph{Molecular Biology and Evolution}, X:\penalty0 NA, in review.
+
+\bibitem[Zharkikh(1994)]{zharkikh1994}
+A~Zharkikh.
+\newblock Estimation of evolutionary distances between nucleotide sequences.
+\newblock \emph{Journal of Molecular Evolution}, 39\penalty0 (3):\penalty0
+  315--329, 1994.
+
+\bibitem[Bloom(2014)]{bloom2014}
+JD~Bloom.
+\newblock An experimentally informed evolutionary model improves phylogenetic
+  fit to divergent lactamase homologs.
+\newblock \emph{Molecular Biology and Evolution}, 31\penalty0 (10):\penalty0
+  2753--2769, 2014.
+
+\bibitem[Bloom(2017)]{bloom2017}
+JD~Bloom.
+\newblock Identification of positive selection in genes is greatly improved by
+  using experimentally infromed site-specific models.
+\newblock \emph{Biology Direct}, 12:\penalty0 1, 2017.
+
+\bibitem[Firnberg and Ostermeier(2012)]{FirnbergAndOstermeier2012}
+E~Firnberg and M~Ostermeier.
+\newblock Pfunkel: Efficient, expansive, user-defined mutagenesis.
+\newblock \emph{PLOS ONE}, 7\penalty0 (12):\penalty0 e52031, 2012.
+
+\bibitem[Jain and Varadarajan(2014)]{Jain2014}
+PC~Jain and R~Varadarajan.
+\newblock A rapid, efficient, and economical inverse polymerase chain
+  reaction-based method for generating a site saturation mutant library.
+\newblock \emph{Analytical Biochemistry}, 449:\penalty0 90--981, 2014.
+
+\bibitem[Fowler and Fields(2014)]{FowlerAndFields2014}
+DM~Fowler and S~Fields.
+\newblock Deep mutational scanning: a new style of protein science.
+\newblock \emph{Nature Methods}, 11:\penalty0 801--807, 2014.
+
+\bibitem[Fowler et~al.(2014)Fowler, Stephany, and Fields]{Fowler2014}
+DM~Fowler, JJ~Stephany, and S~Fields.
+\newblock Measuring the activity of protein variants on a large scale using
+  deep mutational scanning.
+\newblock \emph{Nature Protocols}, 9:\penalty0 2267--2284, 2014.
+
+\bibitem[Stiffler et~al.(2016)Stiffler, Hekstra, and R]{stiffler2016}
+MA~Stiffler, DR~Hekstra, and Ranganathan R.
+\newblock Evolvability as a function of purifying selection in tem-1
+  $\beta$-lactamase.
+\newblock \emph{Cell}, 160:\penalty0 882--892, 2016.
+
+\bibitem[{R Core Team}(2013)]{rcore}
+{R Core Team}.
+\newblock \emph{R: A Language and Environment for Statistical Computing}.
+\newblock R Foundation for Statistical Computing, Vienna, Austria, 2013.
+\newblock URL \url{http://www.R-project.org/}.
+
+\bibitem[Nguyen et~al.(2015)Nguyen, Schmidt, von Haeseler, and
+  Minh]{nguyen2015}
+LT~Nguyen, HA~Schmidt, A~von Haeseler, and BQ~Minh.
+\newblock Iq-tree: A fast and effective stochastic algorithm for estimating
+  maximum-likelihood phylogenies.
+\newblock \emph{Molecular Biology and Evolution}, 32\penalty0 (1):\penalty0
+  268--274, 2015.
+
+\bibitem[Gillespie(1976)]{gillespie1976}
+DT~Gillespie.
+\newblock A general method for numerically simulating the stochastic time
+  evolution of coupled chemical reactions.
+\newblock \emph{Journal of Computational Physics}, 22\penalty0 (4):\penalty0
+  403--434, 1976.
+
+\bibitem[Sella and Hirsh(2005)]{SellaAndHirsh2005}
+G~Sella and AE~Hirsh.
+\newblock The application of statistical physics to evolutionary biology.
+\newblock \emph{Proceedings of the National Academy of Sciences of the United
+  States of America}, 102:\penalty0 9541--9546, 2005.
+
+\bibitem[Ashkenazy et~al.(2012)Ashkenazy, Penn, Doron-Faigenboim, Cohen,
+  Cannarozzi, Zomer, and Pupko]{fastml}
+H~Ashkenazy, O~Penn, A~Doron-Faigenboim, O~Cohen, G~Cannarozzi, O~Zomer, and
+  T~Pupko.
+\newblock Fastml: a web server for probabilistic reconstruction of ancestral
+  sequences.
+\newblock \emph{Nucleic Acids Research}, 40\penalty0 (Web Server
+  Issue):\penalty0 W580--4, 2012.
+
+\end{thebibliography}
