@@ -23,7 +23,7 @@
 \newcommand{\phydms}{\emph{phydms}\xspace}
 \newcommand{\gy}{\emph{GY94}\xspace}
 \newcommand{\ecoli}{\textit{E. coli}\xspace}
-
+\newcommand{\PC}{physicochemical\xspace}
 
 \newcommand{\beginsupplement}{%
   %%% commands for getting SM pages and figures labeled with S
@@ -70,8 +70,12 @@ M\textsc{ICHAEL} A.~{G\textsc{ILCHRIST}}$^{1,2}$}
 \vfill
 \newpage
 
+\begin{abstract}
+Here we examine the adequacy of experimentally inferred site specific selection for amino acids to inform phylogenetic inferences of sequence evolution.
+Previous work has shown that laboratory estimates of selection can improve model fit but did not assess their adequacy.
 
-
+\end{abstract}
+\newpage
 
 \section*{Introduction}
 
@@ -81,55 +85,34 @@ These models however, lack site specific equilibrium frequencies.
 The importance of site specific equilibrium frequencies has long been noted \citep{felsenstein1981, gojobori1983}.
 \citet{HalpernAndBruno1998} first introduced a framework to incorporate the site specific equilibrium frequencies of amino acids.
 However, they had to concede that their model was to parameter rich and therefore intractable for biological data sets without simplifying assumptions.
-In addition, it is often  unclear under what selection a protein has evolved, leading to generalizing assumptions in phylogenetic models.
-It therefore is an attractive option to utilize laboratory experiments to empirically estimate the site specific selection on amino acids \citep{bloom2014}.
+More recent models that incorporate site specific equilibrium frequencies still require a large number of parameter to be estimated from the sequence data \citep{LartillotAndPhilippe2004,le2008,wang2008,holder2008,wu2013,tamuri2014}.
+Other approaches treat site specific selection as a random effect \citep{rodrigue2010,rodrigue2013,rodrigue2014}.
+A full parameterization requires $19\times L$ parameters were $L$ is the length of the sequence.
+It therefore is an attractive option to utilize laboratory experiments to empirically estimate the site specific selection on amino acids \citep{bloom2014, thyagarajan2014, bloom2017}.
 
 Deep mutation scanning (DMS) is often used to generate comprehensive fitness estimates of proteins \citep{Fowler2014}.
 The quality of empirical estimates of site specific selection on amino acids from DMS depents on many factors, e.g. the initial library of mutants and the applied selection pressure.
 
 Incorporating empirical estimates of site specific selection on amino acids has some important features.
-The usage of site specific selection acknowledging the heterogeneity in selection along the protein sequence \citep{hilton2017}.
+Individual amino acid site along show differences in evolutionary rates strong preferences for amino acids \citep{HalpernAndBruno1998, ashenberg2013, echave2016}
+The usage of site specific selection acknowledges the heterogeneity in selection along the protein sequence \citep{hilton2017}.
 It reduces the number of parameters that have to be estimated from the data, making it applicable to smaller data sets and allowing for more complex models.
 The incorporation of empirical estimates of selection does also have some shortcomings.
 The need for empirical estimates of selection limits the application to fast growing organisms that can be manipulated under laboratory conditions.
-This limits the application of experimentally informed as many organims can not be cultivated under laboratory conditions or have a to long generation time.
+This limits the application of experimentally informed models as many organims can not be cultivated under laboratory conditions or have a to long generation time.
 
-
-\begin{itemize}
-	\item Incorporating selection into phylogenetic frameworks is already a long lasting endeavor.
-	\begin{itemize}
-		\item Phylogenetic inference of sequence relationship was long focused on rates of substitutions.
-		\item No site specific equilibrium frequencies until (HB98, Bloom2014, ...).
-		\item Such models however, tend to be unfeasible as they are very parameter rich.
-		\item The type of selection on a protein is not always clear, or differs between proteins phylogenetic models also have to make generalizing assumptions.
-		\item Incorporating selection from experimental sources therefore seems like an attractive option.
-		\item Incorporating empirical fitness has some important features.
-		\begin{itemize}
-			\item It allows for site specific amino acid preferences, acknowledging the heterogeneity of selection along the protein sequence.
-			\item It greatly reduces the number of parameters that have to be estimated from the data.
-			\item It allows for the fitting more complex models
-		\end{itemize}
-		\item However, the incorporation of empirical fitness also has some important short comings.
-		\begin{itemize}
-			\item Loss of generality.
-			\item DMS experiments are limited to proteins and organisms that can be manipulated under laboratory conditions.
-			\item But even in the case of TEM, the applied selection pressure is limited to the defense against a specific antibiotic.
-			\item TEM, however, has evolved to compete against conspecifics and other microbes using secreted metabolites to gain an advantage.
-			\item Furthermore, DMS relies on a library of mutants and therefore on a heterogeneous population with competing genotypes.
-			\item Therefore, it is important to ask how adequate such experiments reflect natural evolution. 
-		\end{itemize}
-	\end{itemize}
-	\item In this study we will assess how adequate DMS inference of site specific selection on amino acids, using TEM and provide an alternative, more generally applicable solution.
-	\begin{itemize}
-		\item Simulations using DMS inferred site specific selection on amino acids show that observed TEM variants are unexpected; revealing the inadequacy of DMS.
-		\item Models fits achieved by the incorporation of DMS experiments can be improved upon using a hierarchical phylogenetic framework of stabilizing selection: SelAC.
-		\item Extrapolating site specific selection on amino acids between sequences (TEM and SHV) with related function can be inadequate.
-	\end{itemize}
-\end{itemize}
+Even in the cases were empirical estimates of site specific selection on amino acids can be optained their usefulness for phylogenetic reconstruction is not yet fullly clear.
+In this study, we assess the adequacy of experimentally inferred site specific selection using DMS to inform phylogenetic models.
+We use site specific estimates of slection on amino acids for the $\beta$-lactamase TEM from \citet{stiffler2016}.
+We find that experimentally inferred selection does not adequatly reflect evolution in the wild.
+In contrast, \selac a mechanistical phylogenetic model of stabilizing selection rooted in first princibles with site specific equilibrium frequencies improves model fit, and better reflects evolution in the wild \citep{beaulieu2018}.
+\selac does not require extensive laboratory estimates for site specific selection on amino acids.
+\selac assumes that the distance of two amino acids in \PC space affects substitution probabilities and estimates only one discrete parameter per site, the optimal amino acid at a site.
+Therefore \selac only requires $19$ site specific parameters instead of $19\times L$.
 
 \section*{Results}
 \subsection*{Site Specific Stabilizing Selection on Amino Acids Improves Model Fit}
-We compared the models \phydms \citep{hilton2017} and \selac \citep{beaulieu2018}, models of stabilizing site specific amino acid selection, to 281 other codon and nucleotide models by fitting them to 49 sequences of the $\beta$-lactamase TEM.
+We compared the models \phydms \citep{hilton2017} and \selac, models of stabilizing site specific amino acid selection, to 281 other codon and nucleotide models by fitting them to 49 sequences of the $\beta$-lactamase TEM.
 Models with site specific selection on amino acids improved model fits by 917 to 1483 AICc units over codon or nucleotide models without site specific selection (Table \ref{tab:AIC}).
 In addition, \selac does outperform \phydms by 560 to  566 AICc units.
 
@@ -175,7 +158,7 @@ The largest polytomies appear in the experimentally informed phylogenies.
 \subsection*{Laboratory Inferences of Selection are inconsistent with Observed Sequences.}
 Improved model fits with phydms are deceiving.
 The site specific selection inferred by the deep mutation scanning experiment is inconsistent with the observed TEM sequences.
-We find that the sequence of selectively favored amino acids has only 49 \% sequence similarity with the observed consensus sequence (Figure \ref{fig:sim_seqs_cons}).
+We find that the sequence of selectively favored amino acids has only $52 \%$ sequence similarity with the observed consensus sequence (Figure \ref{fig:sim_seqs_cons}).
 This is in contrast to the 99 \% of sequence similarity with the sequence of selectively favored amino acids estimated by \selac.
 
 \begin{figure}[H]
@@ -213,7 +196,7 @@ Thus it appears unlikely that the observed sequences have evolved under the expe
     \label{fig:dms_sim}
 \end{figure}
 
-\subsection*{Stabilizing Selection for Optimal Physico-Chemical Probabilities increases Model Adequacy} 
+\subsection*{Stabilizing Selection for Optimal Physicochemical Probabilities increases Model Adequacy} 
 We assessed model adequacy and find that \selac better explains the observed TEM sequences.
 The observed consensus sequence has a very high sequence similarity with the sequence of selectively favored amino acids estimated by \selac (99 \%).
 Furthermore, assuming the site specific selection estimated by \selac, the observed sequences only show a minimal genetic load (Table \ref{tab:selection}, Figure \ref{fig:tem2016_sse}).
@@ -284,9 +267,16 @@ This is in concordance with the experimental estimates.
     &Active Sites	& 199.9 & 100  & $2.4\times10^{-8}$ & $2.4\times10^{-8}$ \\
 
   \end{tabular}
-  \caption{Efficacy of selection (G) and Genetic Load for TEM and SHV and separated by secondary structure.}
+  \caption{Efficacy of selection (G) and Genetic Load for TEM and SHV and separated by secondary structure. UPDATE TABLE, MAKE EVERYTHING 10-8}
   \label{tab:selection}
 \end{table}
+
+It was previously proposed that experimentally inferred site specific selection for amino acids can be used to extraplotate the fitness landscape of related proteins \citep{bloom2014}.
+We therefore compared the site specific efficacy of selection G, the \selac selection parameters of our \selac TEM model fit to a \selac model fit of SHV, and genetic load.
+We find that site specific efficacy of selection G differes greatly between SHV and TEM ($\rho = 0.12$), despite a similar estimate of the parameter $\alpha_G$ describing the distribution of G values (Figure \ref{fig:tem_shv_param_comp}a).
+With the expection of the active site, we find that G is increased in SHV (Table \ref{tab:selection}).
+In general, most \selac selection parameters are very similar between the TEM and the SHV model fit. 
+An exception is the weight for the \PC composition property $\alpha_c$ (Figure \ref{fig:tem_shv_param_comp}b).
 
 \begin{figure}[H]
      \centering
@@ -294,13 +284,6 @@ This is in concordance with the experimental estimates.
 	\caption{TEM, bars are different secondary structure elements. Dashed dotted line is DMS, solid is SelAC sNe, all lines are means of all sequences. vertical lines are active/binding sites.}
 	\label{fig:tem2016_sse}
 \end{figure}
-
-It was previously proposed that experimentally inferred site specific selection for amino acids can be used to extraplotate the fitness landscape of related proteins \citep{bloom2014}.
-We therefore compared the site specific efficacy of selection G, the \selac selection parameters of our \selac TEM model fit to a \selac model fit of SHV, and genetic load.
-We find that site specific efficacy of selection G differes greatly between SHV and TEM ($\rho = 0.17$), despite a similar estimate of the parameter $\alpha_G$ describing the distribution of G values (Figure \ref{fig:tem_shv_param_comp}a).
-With the expection of the active site, we find that G is increased in SHV (Table \ref{tab:selection}).
-In general, most \selac selection parameters are very similar between the TEM and the SHV model fit. 
-An exception is the weight for the physicochemical composition property $\alpha_c$ (Figure \ref{fig:tem_shv_param_comp}b).
 
 The genetic load in SHV is by an order of magnitute lower than in TEM with the exception of residues found in $\beta$-sheets and the active site (Table \ref{tab:selection}).
 This is consitent with the elevated site specific efficacy of selection G in SHV.
@@ -311,25 +294,24 @@ However, we do find a peak of similar magnitute in the TEM sequence at the end o
 
 \section*{Discussion}
 
-We evaluated how well experimental selection estimates from laboratory experiments, specifically deep mutation scanning, explain sequence evolution and compared it to \selac, a novel phylogenetic framework.
+Here we revisited how well experimental selection estimates from laboratory experiments, specifically deep mutation scanning, explain sequence evolution and compared it to \selac, a novel phylogenetic framework.
 Previous work has shown that laboratory estimates of selection can improve model fit over classical approaches like GY94 \citep{bloom2014, bloom2017}.
-While our study confirms this notion, we also raise awarness for shortcomings of these laboratory estimates and propose a more general applicable alternative.
-\selac, in contrast, is a more general alternative that does not depend on costly laboratory estimates of selection and is favored by model selectin (Table \ref{tab:AIC}).
+While our study confirms this notion, we identify improtant shortcomings of these laboratory estimates.
+In contrast, \selac is a more general phylogenetic model of stabilizing selection that does not depend on costly laboratory estimates of selection and is favored by model selection (Table \ref{tab:AIC}).
 
 While previous work showed the advantages of experimentally informed phylogenetics estimates, they did not assess how adequate the estimated selection reflects observed sequences.
 This becomes abherent in the low sequence similarity between the observed consensus sequence and the sequence of selectively favored amino acids estimated from deep mutation scanning experiments.
-In contrast, the selectively favored amino acids estimated by \selac shows a high sequence similarity with the observed consensus sequence.
-This begs the question how well the experimental selection coefficients represent evolution.
+This begs the question how well the experimental selection coefficients represent evolution in the wild.
 Deep mutation scanning experiments are performed using a comprehensive library of mutants and a strong artificial selection pressure \citep{FirnbergAndOstermeier2012, Jain2014, FowlerAndFields2014, Fowler2014}.
 This results in a very large selection coefficient $s$ and a competing heterogeneous population.
 
 The induced selection pressure during the deep mutation scanning experiment was limited to ampicillin \citep{stiffler2016} and focused on the TEM-1 variant.
-However, TEM can also confer resistance to a wide range of other antibiotics, like other penicillins, cephalosporins, cefotaxime, ceftazidime, or aztreonam.
-Thus, the inferred selection is biased towards ampicillin and is therefore unlikely to reflect the evolution the observed TEM variants have experienced.
+However, TEM can also confer resistance to a wide range of other antibiotics, like other penicillins, cephalosporins, cefotaxime, ceftazidime, or aztreonam \citep{sougakoff1988,sougakoff1989,goussard1991,mabilat1992,chanal1992,brun1994}.
+Thus, the inferred selection is biased towards ampicillin and as our simulations show does not reflect the evolution the observed TEM variants have experienced (Figure \ref{fig:dms_sim}).
 This may very well be very appropriate to explore the selection on TEM in a modern hospital environment but is unlikely to be applicable to the selection faced in the wild.
 We therfore propose to include a variety of selection pressures if the experimental selection estimates are used for phylogenetic inference.
 
-TODO:  Lack of repeatability between labs introduces further problems (Firnberg et al 2014 vs. Stifler et al. 2016).
+%TODO:  Lack of repeatability between labs introduces further problems (Firnberg et al 2014 vs. Stifler et al. 2016).
 
 If we assume that the experimental selection estimates underly the evolution of the observed TEM sequences we are left with two possible explanations for the observed sequences.
 First, the sequences are unable to reach a fitness peak, potntially due to a lack of selection of not enough time.
@@ -341,66 +323,34 @@ We therefore expect the observed sequence variants to be near mutation-selection
 This is confirmed by our simulations as we would expect to observe a higher sequence similarity and decreased genetic load even with much smaller $N_e$ (Figure \ref{fig:dms_sim}).
 Previous work showed that TEM the catalytic reaction of penicillin-class antibiotics is close the diffusion limit, making TEM a so-called perfect enzyme \citep{matagne1998}.
 
-In contrast to the experimental selection estimates, the \selac selection estimates are consistent with the observed sequences.
+As experimental selection estimates are not readily available, one solution is to extrapolate the estimates to homologeous gene families \citep{bloom2014, bloom2017}.
+When extrapolating the selection estimates from the $\beta$-lactamase family TEM to SHV, the sequence similarity between the observed consensus sequence and the sequence of selectively favored amino acids estimated from deep mutation scanning experiments drops rom $52 \% $ to $49 \%$.
+Comparrison of the site specific efficacy of selection (G) revealed large differences in the site specific selection on amino acids between TEM and SHV.
+The missmatched in \PC weights also indicates differences in selection constrains. 
+While the polarity of amino aicds is of similar importance in TEM and SHV, amino acid composition plays a much greater role in SHV than in TEM.
 
-\begin{itemize}
+In contrast to the experimental selection estimates, the \selac selection estimates are consistent with the observed sequences, e.g. the selectively favored amino acids estimated by \selac shows a high sequence similarity with the observed consensus sequence ($99 \%$).
+\selac does not rely on artifically induced selection in the laboratory but is a mechanistical framework rooted in first princibles.
+It estimates site specific selection on amino acids from the seqeuence data based on distances between amino acids in \PC space \citep{grantham1974,beaulieu2018}.
+This allows \selac to be applied to any set of protein coding sequences, eliminating the need to extrapolate from one homologeous gene family to the next (e.g. from TEM to SHV).
 
-	\item DMS estimates of the observed TEM variants predict them to be mal-adapted while SelAC predicts most TEM variants to be well adapted.
-	\begin{itemize}
-		\item Given \textit{E. coli}'s large effective population size, the efficacy of selection should be very large.
-		\item We therefore expect the observed sequence variants to be at the selection-mutation-drift barrier, which in turn can expected to be near the optimum.
-		\item We find the majority of sequences near the optimum, therefore the SelAC estimates are consistent with theoretical population genetics results.
-		\item In contrast, finding strong selection against the observed TEM variants indicates that DMS is not consistent with theoretical population genetics expectations.
-		\item This is consistent when thinking about that DMS only reflects the selection on the TEM sequence with regards to one antibiotic, which seems appropriate to model selection in modern hospital environments but not when the interest lies in the natural evolution of TEM.
-	\end{itemize}
+While \selac better explains the observed TEM sequences than the experimental estimates of site specific selection on amino acids, it is not without shortcomings itself.
+While \selac allows for site heterogeneity in selection for amino acids, it still assumes multiplicative fitness across all sites and therfore ignores epistatis.
+This however, is a shortcoming shared with experimental estimates by deep mutation scanning, as each mutation typically only carries one mutation \citep{FirnbergAndOstermeier2012, Jain2014}.
+\selac is a model stabilizing selection, however, not every protein is under stabilizing selection.
+TEM playes a role in chemical warfare with conspecifics and other microbes, therfore some sites may be under negative frequency dependent selection.
+This potential heterogeneity in selection highlights another shortcoming of \selac.
+\selac assumes the same distribution for the efficacy of selection (G) across the whole proteins.
+However, it is easy to imagine that sites in different secondary structures or at active sites do not share a common distribution.
 
-	\item We find that SelAC produces similar selection against the observed TEM variants  if we assume the fitness peaks (optimal AA) that are estimated by DMS.
-	\begin{itemize}
-		\item This shows that DMS and SelAC can provide consistent estimates of selection against amino acids.
-		\item SelAC has the advantage that it can be applied to any protein coding sequence alignment.
-		\item This removes the need for extrapolation e.g. from TEM to SHV.
-	\end{itemize}
+As \selac assumes that the fitness of an amino acid at a site declines with its distance in \PC space to the optimal amino acid, the choice of \PC properties becomes important.
+In this study, we assumed the \PC properties estimated by \citet{grantham1974} for all sites.
+However, a wide range of \PC properties of amino acids have been assessed.
+A more optimal choice of \PC properties may be possible as well as the a relaxation of the assumptions that the same properties apply to all sites equally.
+The hierarchical model structure allows to easilly address these shortcoming as needed.
 
-	\item SelAC has the advantage that it can be applied to any protein coding sequence alignment.
-	\begin{itemize}
-		\item This removes the need for extrapolation e.g. from TEM to SHV.
-	\end{itemize}
-
-	\item Difference in selection parameters between TEM and SHV indicate that extrapolation is not a good idea.
-	\begin{itemize}
-		\item The difference in the site specific strength of selection shows that TEM and SHV are facing different selection pressures.
-		\item this is also highlighted by the differences in physicochemical weightings between the two proteins.
-	\end{itemize}
-
-	\item SelAC outperforms DMS, but is not without flaws itself
-	\begin{itemize}
-		\item Like DMS and most phylogenetic models, SelAC assumes site independence.
-		\item SelAC is a model of stabilizing selection, in contrast to e.g. GY94 which is a model of frequency dependent selection.
-		\begin{itemize}
-			\item Since TEM plays a role in the chemical warfare with conspecifics and other microbes, some sites may be under negative frequency dependent selection.
-		\end{itemize}
-		\item SelAC assumes the same G distribution across all sites.
-		\begin{itemize}
-			\item Different G distribution for each type of secondary structure
-			\item active sites may not follow distribution.
-		\end{itemize}
-		\item SelAC assumes that selection is proportional to distance in physicochemical space. 
-		\begin{itemize}
-			\item We used Grantham (1974) properties, however many other distances are available which may an even better model fit.
-		\end{itemize}
-	\end{itemize}
-	\item Low sequence variation in the TEM may be cause for concern as it could be misinterpreted by the model as stabilizing selection because of the short branches.
-	\begin{itemize}
-		\item However, provided our simulations support that TEM is actually under stabilizing selection
-	\end{itemize}
-
-	\item In conclusion, DMS experiments have been proposed to supplement information on selection on amino acids in phylogenetic studies.
-	\begin{itemize}
-		\item This study shows that information on selection can be extracted from alignments of protein coding sequences.
-		\item This highlights the limitations of DMS to explain natural evolution.
-	\end{itemize}
-\end{itemize}
-
+In conclusion, experimental estimates of site specific selection on amino acids have to be treated with great care and their adequacy should be assessed before informing phylogenetic studies.
+We also show that information on site specific selection on amino acids can be extracted from sequence data with mechanistical models rooted in first princibles.
 
 \section*{Materials and Methods}
 
@@ -412,6 +362,7 @@ Experimentally fitness values for TEM were taken from \citet{stiffler2016}.
 We followed \citep{bloom2017} to convert the experimental fitness values into site specific equilibrium frequencies for \phydms. 
 
 \selac (version 1.6.1) was fitted to the TEM alignment using R (version 3.4.1) \citep{rcore} with and without site specific selection on amino acids estimated from deep mutation scanning experiments.
+We assumed the \PC properties estimated by \citet{grantham1974}.
 \phydms (version 2.5.1) was fitted using site specific selection on amino acids estimated from deep mutation scanning experiments from \citet{stiffler2016} and python (version 3.6).
 All other models were fitted using IQTree \citep{nguyen2015}.
 
@@ -472,12 +423,9 @@ This the genetic load $L$ of a sequence is given by $\sum_{i=1}^n L_i$ where $n$
 \bibliographystyle{unsrtnat}
 \bibliography{ecoli}
 
-\section*{Figures}
-
-
-
+\clearpage
 \beginsupplement
-\section*{Supplementary Figures}
+\section*{Supplementary Material}
 
 
 \begin{figure}[H]

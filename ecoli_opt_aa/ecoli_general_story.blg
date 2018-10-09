@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: ecoli_general_story.aux
 The style file: unsrtnat.bst
 Database file #1: ecoli.bib
-You've used 25 entries,
+You've used 44 entries,
             2481 wiz_defined-function locations,
-            714 strings with 8538 characters,
-and the built_in function-call counts, 9566 in all, are:
-= -- 820
-> -- 413
-< -- 17
-+ -- 168
-- -- 118
-* -- 732
-:= -- 1511
-add.period$ -- 76
-call.type$ -- 25
-change.case$ -- 48
-chr.to.int$ -- 25
-cite$ -- 25
-duplicate$ -- 484
-empty$ -- 927
-format.name$ -- 159
-if$ -- 2064
+            828 strings with 12045 characters,
+and the built_in function-call counts, 17407 in all, are:
+= -- 1457
+> -- 850
+< -- 22
++ -- 334
+- -- 246
+* -- 1389
+:= -- 2782
+add.period$ -- 133
+call.type$ -- 44
+change.case$ -- 86
+chr.to.int$ -- 44
+cite$ -- 44
+duplicate$ -- 845
+empty$ -- 1644
+format.name$ -- 312
+if$ -- 3730
 int.to.chr$ -- 1
-int.to.str$ -- 26
-missing$ -- 25
-newline$ -- 134
-num.names$ -- 75
-pop$ -- 181
+int.to.str$ -- 45
+missing$ -- 44
+newline$ -- 229
+num.names$ -- 132
+pop$ -- 314
 preamble$ -- 1
-purify$ -- 25
+purify$ -- 44
 quote$ -- 0
-skip$ -- 286
+skip$ -- 484
 stack$ -- 0
-substring$ -- 555
-swap$ -- 62
+substring$ -- 1031
+swap$ -- 100
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 172
+type$ -- 305
 warning$ -- 0
-while$ -- 76
+while$ -- 133
 width$ -- 0
-write$ -- 334
+write$ -- 581
