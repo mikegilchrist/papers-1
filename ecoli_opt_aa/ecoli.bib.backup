@@ -198,7 +198,7 @@ pages = {90-981}
 }
 
 @article{gilchrist2007,
-author = {Gilchrist. MA},
+author = {Gilchrist, MA},
 title = {Combining Models of Protein Translation and Population Genetics to Predict Protein Production Rates from Codon Usage Patterns},
 journal = {Molecular Biology and Evolution},
 volume = {24},
@@ -352,5 +352,103 @@ number = {4154},
 year = {1974},
 pages = {862-864}
 }
+
+@article{sougakoff1988,
+author = {Sougakoff, W and Goussard, S and Courvalin, P},
+title = {The TEM-3 beta-lactamase, which hydrolyzes broad-spectrum cephalosporins, is derived from the TEM-2 penicillinase by two amino acid substitutions},
+journal = {FEMS Microbiology Letters},
+volume = {56},
+year = {1988},
+pages = {343-348}
+}
+
+@article{mabilat1992,
+author = {Mabilat, C and Lourencao-Vital, J and Goussard, S and Courvalin, P},
+title = {A new example of physical linkage between Tn1 and Tn21: the antibiotic multiple-resistance region of plasmid pCFF04 encoding extended-spectrum beta-lactamase TEM-3},
+journal = {Mol Gen Genet},
+volume = {235},
+year = {1992},
+pages = {113-121}
+}
+
+@article{sougakoff1989,
+author = {Sougakoff, W and Petit, A and Goussard, S and Sirot, D and Bure, A and Courvalin, P},
+title = {Characterization of the plasmid genes blaT-4 and blaT-5 which encode the broad-spectrum beta-lactamases TEM-4 and TEM-5 in enterobacteriaceae},
+journal = {Gene},
+volume = {78},
+year = {1989},
+pages = {339-348}
+}
+
+@article{goussard1991,
+author = {Goussard, S and Sougakoff, W and Mabilat, C and Bauernfeind, A and Courvalin, P},
+title = {An IS1-like element is responsible for high-level synthesis of extended-spectrum beta-lactamase TEM-6 in Enterobacteriaceae},
+journal = {J. Gen. Microbiol.},
+volume = {137},
+year = {1991},
+pages = {2681-2687}
+}
+
+@article{chanal1992,
+author = {Chanal, C and Poupart, MC and Sirot, D and Labia, R and Sirot, J and Cluzel, R},
+title = {Nucleotide sequences of CAZ-2, CAZ-6, and CAZ-7 beta-lactamase genes},
+journal = {Antimicrob. Agents Chemother.},
+volume = {36},
+year = {1992},
+pages = {1817-1820}
+}
+
+@article{brun1994,
+author = {Brun, T and Peduzzi, J and Canica, MM and Paul, G and Nevot, P and Barthelemy, M and Labia, R},
+title = {Characterization and amino acid sequence of IRT-4, a novel TEM-type enzyme with a decreased susceptibility to beta-lactamase inhibitors},
+journal = {FEMS Microbiology Letters},
+volume = {120},
+year = {1994},
+pages = {111-117}
+}
+
+
+@article{yang1994,
+  Title                    = {Maximum-likelihood phylogenetic estimation from {{DNA}}-sequences with variable rates over sites - approximate methods},
+  Author                   = {Yang, ZH},
+  Journal                  = {Journal of Molecular Evolution},
+  Year                     = {1994},
+  Pages                    = {306-314},
+  Volume                   = {39},
+}
+
+@Article{Felsenstein2001,
+  Title                    = {Taking Variation of Evolutionary Rates Between Sites into Account in Inferring Phylogenies},
+  Author                   = {Felsenstein, J},
+  Journal                  = {Journal of Molecular Evolution},
+  Year                     = {2001},
+  Number                   = {4},
+  Pages                    = {447-455},
+  Volume                   = {53},
+}
+
+@Article{KosiolEtAl07,
+  Title                    = {An empirical codon model for protein sequence evolution.},
+  Author                   = {Carolin Kosiol and Ian Holmes and Nick Goldman},
+  Journal                  = {Molecular Biology and Evolution},
+  Year                     = {2007},
+  Month                    = {Jul},
+  Number                   = {7},
+  Pages                    = {1464--1479},
+  Volume                   = {24},
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

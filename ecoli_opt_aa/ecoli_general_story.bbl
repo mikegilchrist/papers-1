@@ -1,4 +1,4 @@
-\begin{thebibliography}{44}
+\begin{thebibliography}{48}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -122,6 +122,19 @@ DM~Fowler, JJ~Stephany, and S~Fields.
   deep mutational scanning.
 \newblock \emph{Nature Protocols}, 9:\penalty0 2267--2284, 2014.
 
+\bibitem[Firnberg et~al.(2014)Firnberg, Labonte, Gray, and
+  Ostermeier]{firnberg2014}
+E~Firnberg, JW~Labonte, JJ~Gray, and M~Ostermeier.
+\newblock A comprehensive, high-resolution map of a gene's fitness landscape.
+\newblock \emph{Molecular Biology and Evolution}, 31\penalty0 (6):\penalty0
+  1581--1592, 2014.
+
+\bibitem[Stiffler et~al.(2016)Stiffler, Hekstra, and R]{stiffler2016}
+MA~Stiffler, DR~Hekstra, and Ranganathan R.
+\newblock Evolvability as a function of purifying selection in tem-1
+  $\beta$-lactamase.
+\newblock \emph{Cell}, 160:\penalty0 882--892, 2016.
+
 \bibitem[Ashenberg et~al.(2013)Ashenberg, Gong, and Bloom]{ashenberg2013}
 O~Ashenberg, LI~Gong, and JD~Bloom.
 \newblock Mutational effects on stability are largely conserved during protein
@@ -140,18 +153,18 @@ SK~Hilton, MB~Doud, and JD~Bloom.
   scanning.
 \newblock \emph{PeerJ}, 5:\penalty0 e3657, 2017.
 
-\bibitem[Stiffler et~al.(2016)Stiffler, Hekstra, and R]{stiffler2016}
-MA~Stiffler, DR~Hekstra, and Ranganathan R.
-\newblock Evolvability as a function of purifying selection in tem-1
-  $\beta$-lactamase.
-\newblock \emph{Cell}, 160:\penalty0 882--892, 2016.
-
 \bibitem[Beaulieu et~al.(in review)Beaulieu, O'Meara, Zaretzki, Landerer, Chai,
   and Gilchrist]{beaulieu2018}
 JM~Beaulieu, BC~O'Meara, R~Zaretzki, C~Landerer, JJ~Chai, and MA~Gilchrist.
 \newblock Population genetics based phylogenetics under stabilizing selection
   for an optimal amino acid sequence: A nested modeling approach.
 \newblock \emph{Molecular Biology and Evolution}, X:\penalty0 NA, in review.
+
+\bibitem[Kosiol et~al.(2007)Kosiol, Holmes, and Goldman]{KosiolEtAl07}
+Carolin Kosiol, Ian Holmes, and Nick Goldman.
+\newblock An empirical codon model for protein sequence evolution.
+\newblock \emph{Molecular Biology and Evolution}, 24\penalty0 (7):\penalty0
+  1464--1479, Jul 2007.
 
 \bibitem[Zharkikh(1994)]{zharkikh1994}
 A~Zharkikh.
@@ -245,6 +258,12 @@ R~Grantham.
 \newblock R Foundation for Statistical Computing, Vienna, Austria, 2013.
 \newblock URL \url{http://www.R-project.org/}.
 
+\bibitem[Yang(1994)]{yang1994}
+ZH~Yang.
+\newblock Maximum-likelihood phylogenetic estimation from {{DNA}}-sequences
+  with variable rates over sites - approximate methods.
+\newblock \emph{Journal of Molecular Evolution}, 39:\penalty0 306--314, 1994.
+
 \bibitem[Nguyen et~al.(2015)Nguyen, Schmidt, von Haeseler, and
   Minh]{nguyen2015}
 LT~Nguyen, HA~Schmidt, A~von Haeseler, and BQ~Minh.
@@ -274,6 +293,13 @@ H~Ashkenazy, O~Penn, A~Doron-Faigenboim, O~Cohen, G~Cannarozzi, O~Zomer, and
   sequences.
 \newblock \emph{Nucleic Acids Research}, 40\penalty0 (Web Server
   Issue):\penalty0 W580--4, 2012.
+
+\bibitem[Felsenstein(2001)]{Felsenstein2001}
+J~Felsenstein.
+\newblock Taking variation of evolutionary rates between sites into account in
+  inferring phylogenies.
+\newblock \emph{Journal of Molecular Evolution}, 53\penalty0 (4):\penalty0
+  447--455, 2001.
 
 \bibitem[Gilchrist(2007)]{gilchrist2007}
 MA~Gilchrist.
