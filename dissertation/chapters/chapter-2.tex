@@ -566,7 +566,7 @@ axis(2, lwd = 3, cex.axis = 1.2)
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=3in]{fig02a-circle}\\
+  \includegraphics[width=.6\textwidth]{ch2/sel_cai_comp.png}\\
   \caption{Distribution of s for codon GCA for amino acid alanine. Dashed line indicates the CAI weight for
 GCA. The comparisson provides a more nuanced picture as we can see that the selection on GCA varies
 across the genome.}
@@ -588,8 +588,8 @@ plot(x = trace, what = "Mutation", mixture = 1)
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=3in]{fig02a-circle}\\
-  \caption{Trace plot showing the traces of all 40 codon specific selection parameters organized by amino acid.}
+  \includegraphics[width=\textwidth]{ch2/selection_trace.png}\\
+  \caption{Trace plot showing the traces of all 40 codon specific selection parameters $\Delta \eta$ organized by amino acid.}
   \label{fig:mutation_trace}
 \end{figure} 
 
@@ -604,8 +604,8 @@ plot(x = trace, what = "Expression", mixture = 1, geneIndex = 669)
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=3in]{fig02a-circle}\\
-  \caption{Trace plot showing the protein synthesis trace for gene 669.}
+  \includegraphics[width=3in]{ch2/expression_trace.png}\\
+  \caption{Trace plot showing the protein synthesis trace $\phi$ for gene 669.}
   \label{fig:logphi_trace}
 \end{figure} 
 
@@ -623,8 +623,8 @@ plot(mcmc, what = "LogPosterior", zoom.window = c(9000, 10000))
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=3in]{fig02a-circle}\\
-  \caption{Trace plot showing the $\log(posterior)$ trace for the current model fit}
+  \includegraphics[width=3in]{ch2/logpost_trace.png}\\
+  \caption{Trace plot showing the $\log(Posterior)$ trace for the current model fit. Window inset shows the last 1.000 samples}
   \label{fig:logpost_trace}
 \end{figure} 
 
@@ -641,7 +641,7 @@ plot(x = model, genome = genome, samples = 500, mixture = 1)
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=3in]{fig02a-circle}\\
+  \includegraphics[width=\textwidth]{ch2/model_fit.png}\\
   \caption{Fit of the ROC model for a random yeast. The solid line represent the model fit from the data,
 showing how synonymous codon frequencies change with gene expression. The points are the observed mean
 frequencies of a codon in that synthesis rate bin and the wisks indicate the standard diviation within the bin.
@@ -662,7 +662,7 @@ plot(parameter, what = "Selection", samples = 500)
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=3in]{fig02a-circle}\\
+  \includegraphics[width=\textwidth]{ch2/param_comp.png}\\
   \caption{Comparisson of the selection parameter of seven yeast species estimated with ROC-SEMPPR.}
   \label{fig:comp_dummy}
 \end{figure} 

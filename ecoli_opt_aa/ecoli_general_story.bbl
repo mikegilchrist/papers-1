@@ -1,4 +1,4 @@
-\begin{thebibliography}{48}
+\begin{thebibliography}{50}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -54,8 +54,8 @@ SQ~Le, N~Lartillot, and Gascuel O.
 \newblock \emph{Philos Trans R Soc Lond B Biol Sci}, 363:\penalty0 3965--3976,
   2008.
 
-\bibitem[HC et~al.(2008)HC, Li, Susko, and Roger]{wang2008}
-Wang HC, K~Li, E~Susko, and AJ~Roger.
+\bibitem[Wang et~al.(2008)Wang, Li, Susko, and Roger]{wang2008}
+HC~Wang, K~Li, E~Susko, and AJ~Roger.
 \newblock A class frequency mixture model that adjusts for site-specific amino
   acid frequencies and improves inference of protein phylogeny.
 \newblock \emph{BMC Evolutionary Biology}, 8:\penalty0 331, 2008.
@@ -135,6 +135,11 @@ MA~Stiffler, DR~Hekstra, and Ranganathan R.
   $\beta$-lactamase.
 \newblock \emph{Cell}, 160:\penalty0 882--892, 2016.
 
+\bibitem[Firnberg and Ostermeier(2012)]{FirnbergAndOstermeier2012}
+E~Firnberg and M~Ostermeier.
+\newblock Pfunkel: Efficient, expansive, user-defined mutagenesis.
+\newblock \emph{PLOS ONE}, 7\penalty0 (12):\penalty0 e52031, 2012.
+
 \bibitem[Ashenberg et~al.(2013)Ashenberg, Gong, and Bloom]{ashenberg2013}
 O~Ashenberg, LI~Gong, and JD~Bloom.
 \newblock Mutational effects on stability are largely conserved during protein
@@ -152,6 +157,14 @@ SK~Hilton, MB~Doud, and JD~Bloom.
 \newblock phydms: software for phylogenetic analyses informed by deep mutation
   scanning.
 \newblock \emph{PeerJ}, 5:\penalty0 e3657, 2017.
+
+\bibitem[Nguyen et~al.(2015)Nguyen, Schmidt, von Haeseler, and
+  Minh]{nguyen2015}
+LT~Nguyen, HA~Schmidt, A~von Haeseler, and BQ~Minh.
+\newblock Iq-tree: A fast and effective stochastic algorithm for estimating
+  maximum-likelihood phylogenies.
+\newblock \emph{Molecular Biology and Evolution}, 32\penalty0 (1):\penalty0
+  268--274, 2015.
 
 \bibitem[Beaulieu et~al.(in review)Beaulieu, O'Meara, Zaretzki, Landerer, Chai,
   and Gilchrist]{beaulieu2018}
@@ -172,10 +185,10 @@ A~Zharkikh.
 \newblock \emph{Journal of Molecular Evolution}, 39\penalty0 (3):\penalty0
   315--329, 1994.
 
-\bibitem[Firnberg and Ostermeier(2012)]{FirnbergAndOstermeier2012}
-E~Firnberg and M~Ostermeier.
-\newblock Pfunkel: Efficient, expansive, user-defined mutagenesis.
-\newblock \emph{PLOS ONE}, 7\penalty0 (12):\penalty0 e52031, 2012.
+\bibitem[Grantham(1974)]{grantham1974}
+R~Grantham.
+\newblock Amino acid differences formula to help explain protein evolution.
+\newblock \emph{Science}, 185\penalty0 (4154):\penalty0 862--864, 1974.
 
 \bibitem[Jain and Varadarajan(2014)]{Jain2014}
 PC~Jain and R~Varadarajan.
@@ -241,16 +254,23 @@ DL~Hartl, EN~Moriyama, and SA~Sawyer.
 \newblock Selection intensity for codon bias.
 \newblock \emph{Genetics}, 138:\penalty0 227--234, 1994.
 
+\bibitem[de~Koning and De~Sanctis(2018)]{deKoning259507}
+APJ de~Koning and BD~De~Sanctis.
+\newblock The rate of molecular evolution when mutation may not be weak.
+\newblock \emph{bioRxiv}, 2018.
+
 \bibitem[Matagne et~al.(1998)Matagne, Lamotte-Brasseur, and Frere]{matagne1998}
 A~Matagne, J~Lamotte-Brasseur, and JM~Frere.
 \newblock Catalytic properties of class a beta-lactamases: efficiency and
   diversity.
 \newblock \emph{Biochemistry Journal}, 300:\penalty0 581--598, 1998.
 
-\bibitem[Grantham(1974)]{grantham1974}
-R~Grantham.
-\newblock Amino acid differences formula to help explain protein evolution.
-\newblock \emph{Science}, 185\penalty0 (4154):\penalty0 862--864, 1974.
+\bibitem[Kawashima et~al.(2008)Kawashima, Pokarowski, Pokarowska, Kolinski,
+  Katayama, and Kanehisa]{Kawashima2008}
+S~Kawashima, P~Pokarowski, M~Pokarowska, A~Kolinski, T~Katayama, and
+  M~Kanehisa.
+\newblock Aaindex: amino acid index database, progress report 2008.
+\newblock \emph{Nucleic Acids Research}, 36:\penalty0 D202--D205, 2008.
 
 \bibitem[{R Core Team}(2013)]{rcore}
 {R Core Team}.
@@ -263,14 +283,6 @@ ZH~Yang.
 \newblock Maximum-likelihood phylogenetic estimation from {{DNA}}-sequences
   with variable rates over sites - approximate methods.
 \newblock \emph{Journal of Molecular Evolution}, 39:\penalty0 306--314, 1994.
-
-\bibitem[Nguyen et~al.(2015)Nguyen, Schmidt, von Haeseler, and
-  Minh]{nguyen2015}
-LT~Nguyen, HA~Schmidt, A~von Haeseler, and BQ~Minh.
-\newblock Iq-tree: A fast and effective stochastic algorithm for estimating
-  maximum-likelihood phylogenies.
-\newblock \emph{Molecular Biology and Evolution}, 32\penalty0 (1):\penalty0
-  268--274, 2015.
 
 \bibitem[Gillespie(1976)]{gillespie1976}
 DT~Gillespie.
