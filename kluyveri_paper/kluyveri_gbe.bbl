@@ -1,0 +1,145 @@
+\begin{thebibliography}{18}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bulmer(1991)]{Bulmer1991}
+M.~Bulmer.
+\newblock The selection-mutation-drift theory of synonymous codon usage.
+\newblock \emph{Genetics}, 129:\penalty0 897--907, 1991.
+
+\bibitem[Shah and Gilchrist(2011)]{ShahAndGilchrist2011}
+Premal Shah and Michael~A. Gilchrist.
+\newblock Explaining complex codon usage patterns with selection for
+  translational efficiency, mutation bias, and genetic drift.
+\newblock \emph{Proceedings of the National Academy of Sciences of the United
+  States of America}, 108\penalty0 (25):\penalty0 10231--10236, 2011.
+\newblock \doi{10.1073/pnas.1016719108}.
+\newblock URL \url{http://www.pnas.org/content/108/25/10231.abstract}.
+
+\bibitem[Gilchrist(2007)]{Gilchrist2007}
+M.~A. Gilchrist.
+\newblock Combining models of protein translation and population genetics to
+  predict protein production rates from codon usage patterns.
+\newblock \emph{Molecular Biology and Evolution}, 24:\penalty0 2362--2373,
+  2007.
+\newblock \doi{doi:10.1093/molbev/msm169}.
+\newblock URL \url{http://mbe.oxfordjournals.org/cgi/reprint/msm169v2.pdf}.
+
+\bibitem[Landerer et~al.(2018)Landerer, Cope, Zaretzki, and
+  Gilchrist]{landerer2018}
+Cedric Landerer, Alexander Cope, Russell Zaretzki, and Michael~A Gilchrist.
+\newblock Anacoda: analyzing codon data with bayesian mixture models.
+\newblock \emph{Bioinformatics}, 34\penalty0 (14):\penalty0 2496--2498, 2018.
+
+\bibitem[Gilchrist et~al.(2015{\natexlab{a}})Gilchrist, Chen, Shah, Landerer,
+  and Zaretzki]{GilchristEtAl2015}
+Michael~A. Gilchrist, Wei-Chen Chen, Premal Shah, Cedric~L. Landerer, and
+  Russell Zaretzki.
+\newblock Estimating gene expression and codon-specific translational
+  efficiencies, mutation biases, and selection coefficients from genomic data
+  alone.
+\newblock \emph{Genome Biology and Evolution}, 7\penalty0 (6):\penalty0
+  1559--1579, 2015{\natexlab{a}}.
+\newblock \doi{10.1093/gbe/evv087}.
+\newblock URL \url{http://gbe.oxfordjournals.org/content/7/6/1559.abstract}.
+
+\bibitem[Payen et~al.(2009)Payen, Fischer, Marck, Proux, Sherman, Coppée,
+  Johnston, Dujon, and Neuvéglise]{payen2009}
+Célia Payen, Gilles Fischer, Christian Marck, Caroline Proux, David~James
+  Sherman, Jean-Yves Coppée, Mark Johnston, Bernard Dujon, and Cécile
+  Neuvéglise.
+\newblock Unusual composition of a yeast chromosome arm is associated with its
+  delayed replication.
+\newblock \emph{Genome Research}, 19\penalty0 (10):\penalty0 1710--1721, 2009.
+
+\bibitem[Friedrich et~al.(2015)Friedrich, Reiser, Fischer, and
+  Schacherer]{friedrich2015}
+A~Friedrich, C~Reiser, G~Fischer, and J~Schacherer.
+\newblock Population genomics reveals chromosome-scale heterogeneous evolution
+  in a protoploid yeast.
+\newblock \emph{Molecular Biology and Evolution}, 32\penalty0 (1):\penalty0 184
+  -- 192, 2015.
+
+\bibitem[Tsankov et~al.(2010)Tsankov, Thompson, Socha, Regev, and
+  Rando]{tsankov2010}
+AM~Tsankov, DA~Thompson, A~Socha, A~Regev, and OJ~Rando.
+\newblock The role of nucleosome positioning in the evolution of gene
+  regulation.
+\newblock \emph{PLoS Biol}, 8\penalty0 (7):\penalty0 e1000414, 2010.
+
+\bibitem[Gilchrist et~al.(2015{\natexlab{b}})Gilchrist, Chen, Shah, Landerer,
+  and Zaretzki]{gilchrist2015}
+MA~Gilchrist, WC~Chen, P~Shah, CL~Landerer, and R~Zaretzki.
+\newblock Estimating gene expression and codon-specific translational
+  efficiencies, mutation biases, and selection coefficients from genomic data
+  alone.
+\newblock \emph{Genome Biology and Evolution}, 7:\penalty0 1559--1579,
+  2015{\natexlab{b}}.
+
+\bibitem[Vakirlis et~al.(2016)Vakirlis, Sarilar, Drillon, Fleiss, Agier,
+  Meyniel, Blanpain, Carbone, Devillers, Dubois, Gillet-Markowska, Graziani,
+  Huu-Vang, Poirel, Reisser, Schott, Schacherer, Lafontaine, Llorente,
+  Neuv{\'{e}}glise, and Fischer]{vakirlis2016}
+Nikolaos Vakirlis, V{\'{e}}ronique Sarilar, Gu{\'{e}}nola Drillon, Aubin
+  Fleiss, Nicolas Agier, Jean-Philippe Meyniel, Lou Blanpain, Alessandra
+  Carbone, Hugo Devillers, Kenny Dubois, Alexandre Gillet-Markowska,
+  St{\'{e}}phane Graziani, Nguyen Huu-Vang, Marion Poirel, Cyrielle Reisser,
+  Jonathan Schott, Joseph Schacherer, Ingrid Lafontaine, Bertrand Llorente,
+  C{\'{e}}cile Neuv{\'{e}}glise, and Gilles Fischer.
+\newblock {Reconstruction of ancestral chromosome architecture and gene
+  repertoire reveals principles of genome evolution in a model yeast genus.}
+\newblock \emph{Genome research}, 26\penalty0 (7):\penalty0 918--32, 2016.
+
+\bibitem[Sharp(1987)]{sharp1987}
+PM~Sharp.
+\newblock The codon adaptatoin index - a meassure of directional synonymous
+  codon usage bias, and its potential applications.
+\newblock \emph{Nucleic Acids Research}, 15:\penalty0 1281--1295, 1987.
+
+\bibitem[dos Reis et~al.(2004)dos Reis, Savva, and Wernisch]{dosreis2004}
+M~dos Reis, R~Savva, and L~Wernisch.
+\newblock Solving the riddle of codon usage preferences: a test for
+  translational selection.
+\newblock \emph{Nucleic Acids Research}, 32\penalty0 (17):\penalty0 5036--5044,
+  2004.
+
+\bibitem[Ikemura(1985)]{ikemura1985}
+T~Ikemura.
+\newblock Codon usage and trna content in unicellular and multicellular
+  organisms.
+\newblock \emph{Molecular Biology and Evolution}, 2:\penalty0 13--34, 1985.
+
+\bibitem[Gouy and Gautier(1982)]{gouy1982}
+M~Gouy and C~Gautier.
+\newblock Codon usage in bacteria: correlation with gene expressivity.
+\newblock \emph{Nucleic Acids Research}, 10:\penalty0 7055--7074, 1982.
+
+\bibitem[Soderlund et~al.(2006)Soderlund, Nelson, Shoemaker, and
+  Paterson]{soderlund2006}
+C~Soderlund, W~Nelson, A~Shoemaker, and A~Paterson.
+\newblock Symap\: A system for discovering and viewing syntenic regions of fpc
+  maps.
+\newblock \emph{Genome Research}, 16:\penalty0 1159 -- 1168, 2006.
+
+\bibitem[Soderlund et~al.(2011)Soderlund, Bomhoff, and Nelson]{soderlund2011}
+C~Soderlund, M~Bomhoff, and W~Nelson.
+\newblock Symap v3.4: a turnkey synteny system with application to plant
+  genomes.
+\newblock \emph{Nucleic Acids Research}, 39\penalty0 (10):\penalty0 e68, 2011.
+
+\bibitem[Lang and Murray(2008)]{lang2008}
+Gregory~I. Lang and Andrew~W. Murray.
+\newblock Estimating the per-base-pair mutation rate in the yeast saccharomyces
+  cerevisiae.
+\newblock \emph{Genetics}, 178\penalty0 (1):\penalty0 67 -- 82, 2008.
+\newblock ISSN 0016-6731.
+
+\bibitem[Inc.()]{Mathematica}
+Wolfram~Research{,} Inc.
+\newblock Mathematica, {V}ersion 9.0.
+\newblock Champaign, IL, 2012.
+
+\end{thebibliography}

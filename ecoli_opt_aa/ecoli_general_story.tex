@@ -151,7 +151,7 @@ This however would likely be an under estimate of the number of parameteres esti
   \end{tabular}
   \caption{Model selection, shown are the three models of stabilizing site specific amino acid selection (\selac, \selacDMS, \phydms) and the best performing codon and nucleotide model. 
   Reported are the log-likelihood ($\log(\Lik)$), the number of parameters estiamted $n$ including edge length, AIC, $\Delta$AIC, AICc, and $\Delta$AICc values.
-  See Table \ref{tab:AIC_full} for all models tested.}
+  See Table \ref{tab:AIC} for all models tested.}
   \label{tab:AIC}
 \end{table}
 
@@ -182,8 +182,8 @@ This is in contrast to the $99 \%$ of sequence similarity with the sequence of s
 
 \begin{figure}[H]
      \centering
-	\includegraphics[width=\textwidth]{img/seq_simil_short.pdf}
-	\caption{Every 5th residue of TEM. DMS and simulation based on DMS do not reflect natural sequences. TODO: full alignemnt? at least adjust names and numbering}
+	\includegraphics[width=\textwidth]{img/seq_simil_all.eps}
+	\caption{Alignment of TEM optimal and simulated sequences. Indicated is the percentage identity at each site.}
 	\label{fig:sim_seqs_cons}
 \end{figure}
 
@@ -211,7 +211,7 @@ Thus it appears unlikely that the observed sequences have evolved under the DMS 
     (left) Sequence similarity to the observed consensus sequence at various times for a range on values of $N_e$.
     (right) Genetic load of the simulated sequences at various times for a range on values of $N_e$.
     Time is given in number of expected mutations per site, which equals the substitution rate of a neutral mutation.
-    Points indicate sample means and vertical bars indicate standard deviations. Initial sequence is the inferred ancestral state of the TEM variants and not shown.}
+    Points indicate sample means and vertical bars indicate standard deviations. Initial sequence is the inferred ancestral state of the TEM variants and indicated by a black triangle.}
     \label{fig:dms_sim}
 \end{figure}
 
@@ -247,7 +247,7 @@ Thus, the simulated sequences show a lower genetic load despite the greater dive
     (left) Sequence similarity to the observed consensus sequence at various times for a range on values of $N_e$.
     (right) Genetic load of the simulated sequences at various times for a range on values of $N_e$.
     Time is given in number of expected mutations per site, which equals the substitution rate of a neutral mutation.
-    Points indicate sample means and vertical bars indicate standard deviations. Initial sequence is the inferred ancestral state of the TEM variants and not shown.}
+    Points indicate sample means and vertical bars indicate standard deviations. Initial sequence is the inferred ancestral state of the TEM variants and indicated by a black triangle.}
     \label{fig:selac_sim}
 \end{figure}
 
@@ -464,7 +464,7 @@ The authors would like to thank Russel Zaretzki, Jeremy Beaulieu and Alexander C
 
 
 
-\bibliographystyle{unsrtnat}
+\bibliographystyle{plain}
 \bibliography{ecoli}
 
 \clearpage
@@ -732,11 +732,11 @@ The authors would like to thank Russel Zaretzki, Jeremy Beaulieu and Alexander C
         \centering
         \includegraphics[width=.45\textwidth]{img/simulated_gl_time_SELAC_random.pdf}
     \end{subfigure}
-    \caption{{Sequences simulated from a random codon sequence under the site specific selection on amino acids estimated using \selac. 
+    \caption{Sequences simulated from a random codon sequence under the site specific selection on amino acids estimated using \selac. 
     (left) Sequence similarity to the observed consensus sequence at various times for a range on values of $N_e$.
     (right) Genetic load of the simulated sequences at various times for a range on values of $N_e$.
     Time is given in number of expected mutations per site, which equals the substitution rate of a neutral mutation.
-    Points indicate sample means and vertical bars indicate standard deviations. Initial sequence is the inferred ancestral state of the TEM variants and not shown.}}
+    Points indicate sample means and vertical bars indicate standard deviations. Initial sequence is the inferred ancestral state of the TEM variants and indicated by a black triangle.}
     \label{fig:selac_sim_rand}
 \end{figure}
 
@@ -750,12 +750,12 @@ The authors would like to thank Russel Zaretzki, Jeremy Beaulieu and Alexander C
         \centering
         \includegraphics[width=.45\textwidth]{img/simulated_gl_time_DMS_random.pdf}
     \end{subfigure}
-    \caption{{Sequences simulated from a random codon sequence under the site specific selection on amino acids estimated using deep mutation scanning. 
+    \caption{Sequences simulated from a random codon sequence under the site specific selection on amino acids estimated using deep mutation scanning. 
     (left) Sequence similarity to the observed consensus sequence at various times for a range on values of $N_e$.
     (right) Genetic load of the simulated sequences at various times for a range on values of $N_e$.
     Time is given in number of expected mutations per site, which equals the substitution rate of a neutral mutation.
-    Points indicate sample means and vertical bars indicate standard deviations. Initial sequence is the inferred ancestral state of the TEM variants and not shown.}}
-    \label{fig:selac_sim_rand}
+    Points indicate sample means and vertical bars indicate standard deviations. Initial sequence is the inferred ancestral state of the TEM variants and indicated by a black triangle.}
+    \label{fig:dms_sim_rand}
 \end{figure}
 
 \begin{figure}[h]

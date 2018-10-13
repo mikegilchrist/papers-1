@@ -1,0 +1,84 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: my-dissertation.aux
+A level-1 auxiliary file: front-matter/dedication.aux
+A level-1 auxiliary file: front-matter/acknowledgments.aux
+A level-1 auxiliary file: front-matter/quote.aux
+A level-1 auxiliary file: front-matter/abstract.aux
+A level-1 auxiliary file: chapters/chapter-1.aux
+A level-1 auxiliary file: chapters/chapter-2.aux
+A level-1 auxiliary file: chapters/chapter-3.aux
+A level-1 auxiliary file: chapters/chapter-4.aux
+A level-1 auxiliary file: chapters/chapter-5.aux
+The style file: apalike.bst
+Illegal, another \bibdata command---line 107 of file my-dissertation.aux
+ : \bibdata
+ :         {dissertation}
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: back-matter/vita.aux
+Database file #1: ./bioinfo.bib
+Database file #2: ./kluyveri_paper.bib
+Repeated entry---line 85 of file ./kluyveri_paper.bib
+ : @article{sharp1987
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 103 of file ./kluyveri_paper.bib
+ : @article{wallace2013
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 112 of file ./kluyveri_paper.bib
+ : @article{gilchrist2015
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 314 of file ./kluyveri_paper.bib
+ : @manual{rcore
+ :              ,
+I'm skipping whatever remains of this entry
+Database file #3: ./ecoli.bib
+Repeated entry---line 40 of file ./ecoli.bib
+ : @manual{rcore
+ :              ,
+I'm skipping whatever remains of this entry
+Warning--empty year in Mathematica
+You've used 72 entries,
+            1935 wiz_defined-function locations,
+            904 strings with 16237 characters,
+and the built_in function-call counts, 30195 in all, are:
+= -- 2886
+> -- 1313
+< -- 35
++ -- 482
+- -- 446
+* -- 2696
+:= -- 5291
+add.period$ -- 216
+call.type$ -- 72
+change.case$ -- 580
+chr.to.int$ -- 72
+cite$ -- 73
+duplicate$ -- 1013
+empty$ -- 2101
+format.name$ -- 550
+if$ -- 5882
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 72
+newline$ -- 363
+num.names$ -- 216
+pop$ -- 424
+preamble$ -- 1
+purify$ -- 583
+quote$ -- 0
+skip$ -- 761
+stack$ -- 0
+substring$ -- 2405
+swap$ -- 83
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 428
+warning$ -- 1
+while$ -- 214
+width$ -- 0
+write$ -- 934
+(There were 6 error messages)

@@ -1,46 +1,46 @@
 This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: ecoli_general_story.aux
-The style file: unsrtnat.bst
+The style file: plain.bst
 Database file #1: ecoli.bib
 You've used 50 entries,
-            2481 wiz_defined-function locations,
-            861 strings with 12953 characters,
-and the built_in function-call counts, 19744 in all, are:
-= -- 1649
-> -- 966
-< -- 25
-+ -- 380
+            2118 wiz_defined-function locations,
+            807 strings with 12499 characters,
+and the built_in function-call counts, 17300 in all, are:
+= -- 1677
+> -- 838
+< -- 1
++ -- 345
 - -- 280
-* -- 1580
-:= -- 3157
-add.period$ -- 151
+* -- 1326
+:= -- 2954
+add.period$ -- 150
 call.type$ -- 50
-change.case$ -- 98
-chr.to.int$ -- 50
+change.case$ -- 288
+chr.to.int$ -- 0
 cite$ -- 50
-duplicate$ -- 958
-empty$ -- 1866
-format.name$ -- 354
-if$ -- 4228
-int.to.chr$ -- 1
-int.to.str$ -- 51
+duplicate$ -- 560
+empty$ -- 1325
+format.name$ -- 280
+if$ -- 3563
+int.to.chr$ -- 0
+int.to.str$ -- 50
 missing$ -- 50
-newline$ -- 259
-num.names$ -- 150
-pop$ -- 358
+newline$ -- 253
+num.names$ -- 100
+pop$ -- 201
 preamble$ -- 1
-purify$ -- 50
+purify$ -- 240
 quote$ -- 0
-skip$ -- 547
+skip$ -- 373
 stack$ -- 0
-substring$ -- 1166
-swap$ -- 113
+substring$ -- 1331
+swap$ -- 62
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 347
+type$ -- 198
 warning$ -- 0
 while$ -- 150
-width$ -- 0
-write$ -- 658
+width$ -- 52
+write$ -- 551

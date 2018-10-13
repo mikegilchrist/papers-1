@@ -1,323 +1,293 @@
-\begin{thebibliography}{50}
-\providecommand{\natexlab}[1]{#1}
-\providecommand{\url}[1]{\texttt{#1}}
-\expandafter\ifx\csname urlstyle\endcsname\relax
-  \providecommand{\doi}[1]{doi: #1}\else
-  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+\begin{thebibliography}{10}
 
-\bibitem[Goldman and Yang(1994)]{GoldmanAndYang1994}
-N.~Goldman and Z.~H. Yang.
-\newblock Codon-based model of nucleotide substitution for protein-coding
-  {{DNA}}-sequences.
-\newblock \emph{Molecular Biology and Evolution}, 11:\penalty0 725--736, 1994.
-
-\bibitem[Muse and Gaut(1994)]{MuseAndGaut1994}
-SV~Muse and BS~Gaut.
-\newblock A likelihood approach for comparing synonymous and nonsynonymous
-  nucleotide substitution rates, with application to the chloroplast genome.
-\newblock \emph{Molecular Biology and Evolution}, 11\penalty0 (5):\penalty0
-  715--724, 1994.
-
-\bibitem[Thorne et~al.(1996)Thorne, Goldman, and Jones]{thorne1996}
-JL~Thorne, N~Goldman, and DT~Jones.
-\newblock Combinng protein evolution and secondary structure.
-\newblock \emph{Molecular Biology and Evolution}, 13:\penalty0 666--673, 1996.
-
-\bibitem[Felsenstein(1981)]{felsenstein1981}
-J~Felsenstein.
-\newblock Evolutionary trees from dna sequences: a maximum likelihood approach.
-\newblock \emph{Journal of Molecular Evolution}, 17:\penalty0 368--376, 1981.
-
-\bibitem[Gojobori(1983)]{gojobori1983}
-T~Gojobori.
-\newblock Codon substitution in evolution and the "saturation" of synonymous
-  changes.
-\newblock \emph{Genetics}, 105:\penalty0 1011--1027, 1983.
-
-\bibitem[Halpern and Bruno(1998)]{HalpernAndBruno1998}
-AL~Halpern and WJ~Bruno.
-\newblock Evolutionary distances for protein-coding sequences: Modeling
-  site-specific residue frequencies.
-\newblock \emph{Molecular Biology and Evolution}, 15\penalty0 (7):\penalty0
-  910--917, 1998.
-
-\bibitem[Lartillot and Philippe(2004)]{LartillotAndPhilippe2004}
-N~Lartillot and H~Philippe.
-\newblock A bayesian mixture model for across-site heterogeneities in the
-  amino-acid replacement process.
-\newblock \emph{Molecular Biology and Evolution}, 21:\penalty0 1095--1109,
-  2004.
-
-\bibitem[Le et~al.(2008)Le, Lartillot, and O]{le2008}
-SQ~Le, N~Lartillot, and Gascuel O.
-\newblock Phylogenetic mixture models for proteins.
-\newblock \emph{Philos Trans R Soc Lond B Biol Sci}, 363:\penalty0 3965--3976,
-  2008.
-
-\bibitem[Wang et~al.(2008)Wang, Li, Susko, and Roger]{wang2008}
-HC~Wang, K~Li, E~Susko, and AJ~Roger.
-\newblock A class frequency mixture model that adjusts for site-specific amino
-  acid frequencies and improves inference of protein phylogeny.
-\newblock \emph{BMC Evolutionary Biology}, 8:\penalty0 331, 2008.
-
-\bibitem[Holder et~al.(2008)Holder, Zwickl, and Dessimoz]{holder2008}
-MT~Holder, DJ~Zwickl, and C~Dessimoz.
-\newblock Evaluating the robustness of phylogenetic methods to among-site
-  variability in substitution processes.
-\newblock \emph{Philos Trans R Soc Lond B}, 363:\penalty0 4013--4021, 2008.
-
-\bibitem[Wu et~al.(2013)Wu, Suchard, and Drummond]{wu2013}
-CH~Wu, MA~Suchard, and AJ~Drummond.
-\newblock Bayesian selection of nucleotide substitution models and their site
-  assignments.
-\newblock \emph{Molecular Biology and Evolution}, 30:\penalty0 669--688, 2013.
-
-\bibitem[Tamuri et~al.(2014)Tamuri, Goldman, and dos Reis]{tamuri2014}
-AU~Tamuri, N~Goldman, and M~dos Reis.
-\newblock A penalized likelihood method for estimating the distribution of
-  selection coefficients from phylogenetic data.
-\newblock \emph{Genetics}, 197:\penalty0 257--271, 2014.
-
-\bibitem[Rodrigue et~al.(2010)Rodrigue, Philippe, and Lartillot]{rodrigue2010}
-N~Rodrigue, H~Philippe, and N~Lartillot.
-\newblock Mutation-selection models of coding sequence evolution with
-  site-heterogeneous amino acid fitness profiles.
-\newblock \emph{Proccedings of the National Academy of Sciences U.S.A},
-  107:\penalty0 4629--4634, 2010.
-
-\bibitem[Rodrigue(2013)]{rodrigue2013}
-N~Rodrigue.
-\newblock On the statistical interpretation of site-specific variables in
-  phylogeny-based substitution models.
-\newblock \emph{Genetics}, 193:\penalty0 557--564, 2013.
-
-\bibitem[Rodrigue and Lartillot(2014)]{rodrigue2014}
-N~Rodrigue and N~Lartillot.
-\newblock Site-heterogeneous mutation-selection models within the
-  phylobayes-mpi package.
-\newblock \emph{Bioinformatics}, 30:\penalty0 1020--1021, 2014.
-
-\bibitem[Bloom(2014)]{bloom2014}
-JD~Bloom.
-\newblock An experimentally informed evolutionary model improves phylogenetic
-  fit to divergent lactamase homologs.
-\newblock \emph{Molecular Biology and Evolution}, 31\penalty0 (10):\penalty0
-  2753--2769, 2014.
-
-\bibitem[Thyagarajan and Bloom(2014)]{thyagarajan2014}
-B~Thyagarajan and JD~Bloom.
-\newblock The inherent mutational tolerance and antigenic evolvability of
-  influenza hemagglutinin.
-\newblock \emph{eLife}, 3:\penalty0 e03300, 2014.
-
-\bibitem[Bloom(2017)]{bloom2017}
-JD~Bloom.
-\newblock Identification of positive selection in genes is greatly improved by
-  using experimentally infromed site-specific models.
-\newblock \emph{Biology Direct}, 12:\penalty0 1, 2017.
-
-\bibitem[Fowler et~al.(2014)Fowler, Stephany, and Fields]{Fowler2014}
-DM~Fowler, JJ~Stephany, and S~Fields.
-\newblock Measuring the activity of protein variants on a large scale using
-  deep mutational scanning.
-\newblock \emph{Nature Protocols}, 9:\penalty0 2267--2284, 2014.
-
-\bibitem[Firnberg et~al.(2014)Firnberg, Labonte, Gray, and
-  Ostermeier]{firnberg2014}
-E~Firnberg, JW~Labonte, JJ~Gray, and M~Ostermeier.
-\newblock A comprehensive, high-resolution map of a gene's fitness landscape.
-\newblock \emph{Molecular Biology and Evolution}, 31\penalty0 (6):\penalty0
-  1581--1592, 2014.
-
-\bibitem[Stiffler et~al.(2016)Stiffler, Hekstra, and R]{stiffler2016}
-MA~Stiffler, DR~Hekstra, and Ranganathan R.
-\newblock Evolvability as a function of purifying selection in tem-1
-  $\beta$-lactamase.
-\newblock \emph{Cell}, 160:\penalty0 882--892, 2016.
-
-\bibitem[Firnberg and Ostermeier(2012)]{FirnbergAndOstermeier2012}
-E~Firnberg and M~Ostermeier.
-\newblock Pfunkel: Efficient, expansive, user-defined mutagenesis.
-\newblock \emph{PLOS ONE}, 7\penalty0 (12):\penalty0 e52031, 2012.
-
-\bibitem[Ashenberg et~al.(2013)Ashenberg, Gong, and Bloom]{ashenberg2013}
+\bibitem{ashenberg2013}
 O~Ashenberg, LI~Gong, and JD~Bloom.
 \newblock Mutational effects on stability are largely conserved during protein
   evolution.
-\newblock \emph{Proccedings of the National Academy of Sciences U.S.A},
-  110:\penalty0 21071--21076, 2013.
+\newblock {\em Proccedings of the National Academy of Sciences U.S.A},
+  110:21071--21076, 2013.
 
-\bibitem[Echave et~al.(2016)Echave, Spielman, and Wilke]{echave2016}
-J~Echave, SJ~Spielman, and CO~Wilke.
-\newblock Causes of evolutionary rate variation among protein sites.
-\newblock \emph{Nature Reviews Genetics}, 17:\penalty0 109--121, 2016.
-
-\bibitem[Hilton et~al.(2017)Hilton, Doud, and Bloom]{hilton2017}
-SK~Hilton, MB~Doud, and JD~Bloom.
-\newblock phydms: software for phylogenetic analyses informed by deep mutation
-  scanning.
-\newblock \emph{PeerJ}, 5:\penalty0 e3657, 2017.
-
-\bibitem[Nguyen et~al.(2015)Nguyen, Schmidt, von Haeseler, and
-  Minh]{nguyen2015}
-LT~Nguyen, HA~Schmidt, A~von Haeseler, and BQ~Minh.
-\newblock Iq-tree: A fast and effective stochastic algorithm for estimating
-  maximum-likelihood phylogenies.
-\newblock \emph{Molecular Biology and Evolution}, 32\penalty0 (1):\penalty0
-  268--274, 2015.
-
-\bibitem[Beaulieu et~al.(in review)Beaulieu, O'Meara, Zaretzki, Landerer, Chai,
-  and Gilchrist]{beaulieu2018}
-JM~Beaulieu, BC~O'Meara, R~Zaretzki, C~Landerer, JJ~Chai, and MA~Gilchrist.
-\newblock Population genetics based phylogenetics under stabilizing selection
-  for an optimal amino acid sequence: A nested modeling approach.
-\newblock \emph{Molecular Biology and Evolution}, X:\penalty0 NA, in review.
-
-\bibitem[Kosiol et~al.(2007)Kosiol, Holmes, and Goldman]{KosiolEtAl07}
-Carolin Kosiol, Ian Holmes, and Nick Goldman.
-\newblock An empirical codon model for protein sequence evolution.
-\newblock \emph{Molecular Biology and Evolution}, 24\penalty0 (7):\penalty0
-  1464--1479, Jul 2007.
-
-\bibitem[Zharkikh(1994)]{zharkikh1994}
-A~Zharkikh.
-\newblock Estimation of evolutionary distances between nucleotide sequences.
-\newblock \emph{Journal of Molecular Evolution}, 39\penalty0 (3):\penalty0
-  315--329, 1994.
-
-\bibitem[Grantham(1974)]{grantham1974}
-R~Grantham.
-\newblock Amino acid differences formula to help explain protein evolution.
-\newblock \emph{Science}, 185\penalty0 (4154):\penalty0 862--864, 1974.
-
-\bibitem[Jain and Varadarajan(2014)]{Jain2014}
-PC~Jain and R~Varadarajan.
-\newblock A rapid, efficient, and economical inverse polymerase chain
-  reaction-based method for generating a site saturation mutant library.
-\newblock \emph{Analytical Biochemistry}, 449:\penalty0 90--981, 2014.
-
-\bibitem[Fowler and Fields(2014)]{FowlerAndFields2014}
-DM~Fowler and S~Fields.
-\newblock Deep mutational scanning: a new style of protein science.
-\newblock \emph{Nature Methods}, 11:\penalty0 801--807, 2014.
-
-\bibitem[Sougakoff et~al.(1988)Sougakoff, Goussard, and
-  Courvalin]{sougakoff1988}
-W~Sougakoff, S~Goussard, and P~Courvalin.
-\newblock The tem-3 beta-lactamase, which hydrolyzes broad-spectrum
-  cephalosporins, is derived from the tem-2 penicillinase by two amino acid
-  substitutions.
-\newblock \emph{FEMS Microbiology Letters}, 56:\penalty0 343--348, 1988.
-
-\bibitem[Sougakoff et~al.(1989)Sougakoff, Petit, Goussard, Sirot, Bure, and
-  Courvalin]{sougakoff1989}
-W~Sougakoff, A~Petit, S~Goussard, D~Sirot, A~Bure, and P~Courvalin.
-\newblock Characterization of the plasmid genes blat-4 and blat-5 which encode
-  the broad-spectrum beta-lactamases tem-4 and tem-5 in enterobacteriaceae.
-\newblock \emph{Gene}, 78:\penalty0 339--348, 1989.
-
-\bibitem[Goussard et~al.(1991)Goussard, Sougakoff, Mabilat, Bauernfeind, and
-  Courvalin]{goussard1991}
-S~Goussard, W~Sougakoff, C~Mabilat, A~Bauernfeind, and P~Courvalin.
-\newblock An is1-like element is responsible for high-level synthesis of
-  extended-spectrum beta-lactamase tem-6 in enterobacteriaceae.
-\newblock \emph{J. Gen. Microbiol.}, 137:\penalty0 2681--2687, 1991.
-
-\bibitem[Mabilat et~al.(1992)Mabilat, Lourencao-Vital, Goussard, and
-  Courvalin]{mabilat1992}
-C~Mabilat, J~Lourencao-Vital, S~Goussard, and P~Courvalin.
-\newblock A new example of physical linkage between tn1 and tn21: the
-  antibiotic multiple-resistance region of plasmid pcff04 encoding
-  extended-spectrum beta-lactamase tem-3.
-\newblock \emph{Mol Gen Genet}, 235:\penalty0 113--121, 1992.
-
-\bibitem[Chanal et~al.(1992)Chanal, Poupart, Sirot, Labia, Sirot, and
-  Cluzel]{chanal1992}
-C~Chanal, MC~Poupart, D~Sirot, R~Labia, J~Sirot, and R~Cluzel.
-\newblock Nucleotide sequences of caz-2, caz-6, and caz-7 beta-lactamase genes.
-\newblock \emph{Antimicrob. Agents Chemother.}, 36:\penalty0 1817--1820, 1992.
-
-\bibitem[Brun et~al.(1994)Brun, Peduzzi, Canica, Paul, Nevot, Barthelemy, and
-  Labia]{brun1994}
-T~Brun, J~Peduzzi, MM~Canica, G~Paul, P~Nevot, M~Barthelemy, and R~Labia.
-\newblock Characterization and amino acid sequence of irt-4, a novel tem-type
-  enzyme with a decreased susceptibility to beta-lactamase inhibitors.
-\newblock \emph{FEMS Microbiology Letters}, 120:\penalty0 111--117, 1994.
-
-\bibitem[Ochman and Wilson(1987)]{OchmanAndWilson1987}
-H~Ochman and AC~Wilson.
-\newblock \emph{Evolutionary history of enteric bacterian}, pages 1649--1654.
-\newblock ASM Press, 1987.
-
-\bibitem[Hartl et~al.(1994)Hartl, Moriyama, and Sawyer]{hartl1994}
-DL~Hartl, EN~Moriyama, and SA~Sawyer.
-\newblock Selection intensity for codon bias.
-\newblock \emph{Genetics}, 138:\penalty0 227--234, 1994.
-
-\bibitem[de~Koning and De~Sanctis(2018)]{deKoning259507}
-APJ de~Koning and BD~De~Sanctis.
-\newblock The rate of molecular evolution when mutation may not be weak.
-\newblock \emph{bioRxiv}, 2018.
-
-\bibitem[Matagne et~al.(1998)Matagne, Lamotte-Brasseur, and Frere]{matagne1998}
-A~Matagne, J~Lamotte-Brasseur, and JM~Frere.
-\newblock Catalytic properties of class a beta-lactamases: efficiency and
-  diversity.
-\newblock \emph{Biochemistry Journal}, 300:\penalty0 581--598, 1998.
-
-\bibitem[Kawashima et~al.(2008)Kawashima, Pokarowski, Pokarowska, Kolinski,
-  Katayama, and Kanehisa]{Kawashima2008}
-S~Kawashima, P~Pokarowski, M~Pokarowska, A~Kolinski, T~Katayama, and
-  M~Kanehisa.
-\newblock Aaindex: amino acid index database, progress report 2008.
-\newblock \emph{Nucleic Acids Research}, 36:\penalty0 D202--D205, 2008.
-
-\bibitem[{R Core Team}(2013)]{rcore}
-{R Core Team}.
-\newblock \emph{R: A Language and Environment for Statistical Computing}.
-\newblock R Foundation for Statistical Computing, Vienna, Austria, 2013.
-\newblock URL \url{http://www.R-project.org/}.
-
-\bibitem[Yang(1994)]{yang1994}
-ZH~Yang.
-\newblock Maximum-likelihood phylogenetic estimation from {{DNA}}-sequences
-  with variable rates over sites - approximate methods.
-\newblock \emph{Journal of Molecular Evolution}, 39:\penalty0 306--314, 1994.
-
-\bibitem[Gillespie(1976)]{gillespie1976}
-DT~Gillespie.
-\newblock A general method for numerically simulating the stochastic time
-  evolution of coupled chemical reactions.
-\newblock \emph{Journal of Computational Physics}, 22\penalty0 (4):\penalty0
-  403--434, 1976.
-
-\bibitem[Sella and Hirsh(2005)]{SellaAndHirsh2005}
-G~Sella and AE~Hirsh.
-\newblock The application of statistical physics to evolutionary biology.
-\newblock \emph{Proceedings of the National Academy of Sciences of the United
-  States of America}, 102:\penalty0 9541--9546, 2005.
-
-\bibitem[Ashkenazy et~al.(2012)Ashkenazy, Penn, Doron-Faigenboim, Cohen,
-  Cannarozzi, Zomer, and Pupko]{fastml}
+\bibitem{fastml}
 H~Ashkenazy, O~Penn, A~Doron-Faigenboim, O~Cohen, G~Cannarozzi, O~Zomer, and
   T~Pupko.
 \newblock Fastml: a web server for probabilistic reconstruction of ancestral
   sequences.
-\newblock \emph{Nucleic Acids Research}, 40\penalty0 (Web Server
-  Issue):\penalty0 W580--4, 2012.
+\newblock {\em Nucleic Acids Research}, 40(Web Server Issue):W580--4, 2012.
 
-\bibitem[Felsenstein(2001)]{Felsenstein2001}
+\bibitem{beaulieu2018}
+JM~Beaulieu, BC~O'Meara, R~Zaretzki, C~Landerer, JJ~Chai, and MA~Gilchrist.
+\newblock Population genetics based phylogenetics under stabilizing selection
+  for an optimal amino acid sequence: A nested modeling approach.
+\newblock {\em Molecular Biology and Evolution}, X:NA, in review.
+
+\bibitem{bloom2014}
+JD~Bloom.
+\newblock An experimentally informed evolutionary model improves phylogenetic
+  fit to divergent lactamase homologs.
+\newblock {\em Molecular Biology and Evolution}, 31(10):2753--2769, 2014.
+
+\bibitem{bloom2017}
+JD~Bloom.
+\newblock Identification of positive selection in genes is greatly improved by
+  using experimentally infromed site-specific models.
+\newblock {\em Biology Direct}, 12:1, 2017.
+
+\bibitem{brun1994}
+T~Brun, J~Peduzzi, MM~Canica, G~Paul, P~Nevot, M~Barthelemy, and R~Labia.
+\newblock Characterization and amino acid sequence of irt-4, a novel tem-type
+  enzyme with a decreased susceptibility to beta-lactamase inhibitors.
+\newblock {\em FEMS Microbiology Letters}, 120:111--117, 1994.
+
+\bibitem{chanal1992}
+C~Chanal, MC~Poupart, D~Sirot, R~Labia, J~Sirot, and R~Cluzel.
+\newblock Nucleotide sequences of caz-2, caz-6, and caz-7 beta-lactamase genes.
+\newblock {\em Antimicrob. Agents Chemother.}, 36:1817--1820, 1992.
+
+\bibitem{deKoning259507}
+APJ de~Koning and BD~De~Sanctis.
+\newblock The rate of molecular evolution when mutation may not be weak.
+\newblock {\em bioRxiv}, 2018.
+
+\bibitem{echave2016}
+J~Echave, SJ~Spielman, and CO~Wilke.
+\newblock Causes of evolutionary rate variation among protein sites.
+\newblock {\em Nature Reviews Genetics}, 17:109--121, 2016.
+
+\bibitem{felsenstein1981}
+J~Felsenstein.
+\newblock Evolutionary trees from dna sequences: a maximum likelihood approach.
+\newblock {\em Journal of Molecular Evolution}, 17:368--376, 1981.
+
+\bibitem{Felsenstein2001}
 J~Felsenstein.
 \newblock Taking variation of evolutionary rates between sites into account in
   inferring phylogenies.
-\newblock \emph{Journal of Molecular Evolution}, 53\penalty0 (4):\penalty0
-  447--455, 2001.
+\newblock {\em Journal of Molecular Evolution}, 53(4):447--455, 2001.
 
-\bibitem[Gilchrist(2007)]{gilchrist2007}
+\bibitem{firnberg2014}
+E~Firnberg, JW~Labonte, JJ~Gray, and M~Ostermeier.
+\newblock A comprehensive, high-resolution map of a gene's fitness landscape.
+\newblock {\em Molecular Biology and Evolution}, 31(6):1581--1592, 2014.
+
+\bibitem{FirnbergAndOstermeier2012}
+E~Firnberg and M~Ostermeier.
+\newblock Pfunkel: Efficient, expansive, user-defined mutagenesis.
+\newblock {\em PLOS ONE}, 7(12):e52031, 2012.
+
+\bibitem{FowlerAndFields2014}
+DM~Fowler and S~Fields.
+\newblock Deep mutational scanning: a new style of protein science.
+\newblock {\em Nature Methods}, 11:801--807, 2014.
+
+\bibitem{Fowler2014}
+DM~Fowler, JJ~Stephany, and S~Fields.
+\newblock Measuring the activity of protein variants on a large scale using
+  deep mutational scanning.
+\newblock {\em Nature Protocols}, 9:2267--2284, 2014.
+
+\bibitem{gilchrist2007}
 MA~Gilchrist.
 \newblock Combining models of protein translation and population genetics to
   predict protein production rates from codon usage patterns.
-\newblock \emph{Molecular Biology and Evolution}, 24\penalty0 (11):\penalty0
-  2362--2372, 2007.
+\newblock {\em Molecular Biology and Evolution}, 24(11):2362--2372, 2007.
+
+\bibitem{gillespie1976}
+DT~Gillespie.
+\newblock A general method for numerically simulating the stochastic time
+  evolution of coupled chemical reactions.
+\newblock {\em Journal of Computational Physics}, 22(4):403--434, 1976.
+
+\bibitem{gojobori1983}
+T~Gojobori.
+\newblock Codon substitution in evolution and the "saturation" of synonymous
+  changes.
+\newblock {\em Genetics}, 105:1011--1027, 1983.
+
+\bibitem{GoldmanAndYang1994}
+N.~Goldman and Z.~H. Yang.
+\newblock Codon-based model of nucleotide substitution for protein-coding
+  {{DNA}}-sequences.
+\newblock {\em Molecular Biology and Evolution}, 11:725--736, 1994.
+
+\bibitem{goussard1991}
+S~Goussard, W~Sougakoff, C~Mabilat, A~Bauernfeind, and P~Courvalin.
+\newblock An is1-like element is responsible for high-level synthesis of
+  extended-spectrum beta-lactamase tem-6 in enterobacteriaceae.
+\newblock {\em J. Gen. Microbiol.}, 137:2681--2687, 1991.
+
+\bibitem{grantham1974}
+R~Grantham.
+\newblock Amino acid differences formula to help explain protein evolution.
+\newblock {\em Science}, 185(4154):862--864, 1974.
+
+\bibitem{HalpernAndBruno1998}
+AL~Halpern and WJ~Bruno.
+\newblock Evolutionary distances for protein-coding sequences: Modeling
+  site-specific residue frequencies.
+\newblock {\em Molecular Biology and Evolution}, 15(7):910--917, 1998.
+
+\bibitem{hartl1994}
+DL~Hartl, EN~Moriyama, and SA~Sawyer.
+\newblock Selection intensity for codon bias.
+\newblock {\em Genetics}, 138:227--234, 1994.
+
+\bibitem{hilton2017}
+SK~Hilton, MB~Doud, and JD~Bloom.
+\newblock phydms: software for phylogenetic analyses informed by deep mutation
+  scanning.
+\newblock {\em PeerJ}, 5:e3657, 2017.
+
+\bibitem{holder2008}
+MT~Holder, DJ~Zwickl, and C~Dessimoz.
+\newblock Evaluating the robustness of phylogenetic methods to among-site
+  variability in substitution processes.
+\newblock {\em Philos Trans R Soc Lond B}, 363:4013--4021, 2008.
+
+\bibitem{Jain2014}
+PC~Jain and R~Varadarajan.
+\newblock A rapid, efficient, and economical inverse polymerase chain
+  reaction-based method for generating a site saturation mutant library.
+\newblock {\em Analytical Biochemistry}, 449:90--981, 2014.
+
+\bibitem{Kawashima2008}
+S~Kawashima, P~Pokarowski, M~Pokarowska, A~Kolinski, T~Katayama, and
+  M~Kanehisa.
+\newblock Aaindex: amino acid index database, progress report 2008.
+\newblock {\em Nucleic Acids Research}, 36:D202--D205, 2008.
+
+\bibitem{KosiolEtAl07}
+Carolin Kosiol, Ian Holmes, and Nick Goldman.
+\newblock An empirical codon model for protein sequence evolution.
+\newblock {\em Molecular Biology and Evolution}, 24(7):1464--1479, Jul 2007.
+
+\bibitem{LartillotAndPhilippe2004}
+N~Lartillot and H~Philippe.
+\newblock A bayesian mixture model for across-site heterogeneities in the
+  amino-acid replacement process.
+\newblock {\em Molecular Biology and Evolution}, 21:1095--1109, 2004.
+
+\bibitem{le2008}
+SQ~Le, N~Lartillot, and Gascuel O.
+\newblock Phylogenetic mixture models for proteins.
+\newblock {\em Philos Trans R Soc Lond B Biol Sci}, 363:3965--3976, 2008.
+
+\bibitem{mabilat1992}
+C~Mabilat, J~Lourencao-Vital, S~Goussard, and P~Courvalin.
+\newblock A new example of physical linkage between tn1 and tn21: the
+  antibiotic multiple-resistance region of plasmid pcff04 encoding
+  extended-spectrum beta-lactamase tem-3.
+\newblock {\em Mol Gen Genet}, 235:113--121, 1992.
+
+\bibitem{matagne1998}
+A~Matagne, J~Lamotte-Brasseur, and JM~Frere.
+\newblock Catalytic properties of class a beta-lactamases: efficiency and
+  diversity.
+\newblock {\em Biochemistry Journal}, 300:581--598, 1998.
+
+\bibitem{MuseAndGaut1994}
+SV~Muse and BS~Gaut.
+\newblock A likelihood approach for comparing synonymous and nonsynonymous
+  nucleotide substitution rates, with application to the chloroplast genome.
+\newblock {\em Molecular Biology and Evolution}, 11(5):715--724, 1994.
+
+\bibitem{nguyen2015}
+LT~Nguyen, HA~Schmidt, A~von Haeseler, and BQ~Minh.
+\newblock Iq-tree: A fast and effective stochastic algorithm for estimating
+  maximum-likelihood phylogenies.
+\newblock {\em Molecular Biology and Evolution}, 32(1):268--274, 2015.
+
+\bibitem{OchmanAndWilson1987}
+H~Ochman and AC~Wilson.
+\newblock {\em Evolutionary history of enteric bacterian}, pages 1649--1654.
+\newblock ASM Press, 1987.
+
+\bibitem{rcore}
+{R Core Team}.
+\newblock {\em R: A Language and Environment for Statistical Computing}.
+\newblock R Foundation for Statistical Computing, Vienna, Austria, 2013.
+
+\bibitem{rodrigue2013}
+N~Rodrigue.
+\newblock On the statistical interpretation of site-specific variables in
+  phylogeny-based substitution models.
+\newblock {\em Genetics}, 193:557--564, 2013.
+
+\bibitem{rodrigue2014}
+N~Rodrigue and N~Lartillot.
+\newblock Site-heterogeneous mutation-selection models within the
+  phylobayes-mpi package.
+\newblock {\em Bioinformatics}, 30:1020--1021, 2014.
+
+\bibitem{rodrigue2010}
+N~Rodrigue, H~Philippe, and N~Lartillot.
+\newblock Mutation-selection models of coding sequence evolution with
+  site-heterogeneous amino acid fitness profiles.
+\newblock {\em Proccedings of the National Academy of Sciences U.S.A},
+  107:4629--4634, 2010.
+
+\bibitem{SellaAndHirsh2005}
+G~Sella and AE~Hirsh.
+\newblock The application of statistical physics to evolutionary biology.
+\newblock {\em Proceedings of the National Academy of Sciences of the United
+  States of America}, 102:9541--9546, 2005.
+
+\bibitem{sougakoff1988}
+W~Sougakoff, S~Goussard, and P~Courvalin.
+\newblock The tem-3 beta-lactamase, which hydrolyzes broad-spectrum
+  cephalosporins, is derived from the tem-2 penicillinase by two amino acid
+  substitutions.
+\newblock {\em FEMS Microbiology Letters}, 56:343--348, 1988.
+
+\bibitem{sougakoff1989}
+W~Sougakoff, A~Petit, S~Goussard, D~Sirot, A~Bure, and P~Courvalin.
+\newblock Characterization of the plasmid genes blat-4 and blat-5 which encode
+  the broad-spectrum beta-lactamases tem-4 and tem-5 in enterobacteriaceae.
+\newblock {\em Gene}, 78:339--348, 1989.
+
+\bibitem{stiffler2016}
+MA~Stiffler, DR~Hekstra, and Ranganathan R.
+\newblock Evolvability as a function of purifying selection in tem-1
+  $\beta$-lactamase.
+\newblock {\em Cell}, 160:882--892, 2016.
+
+\bibitem{tamuri2014}
+AU~Tamuri, N~Goldman, and M~dos Reis.
+\newblock A penalized likelihood method for estimating the distribution of
+  selection coefficients from phylogenetic data.
+\newblock {\em Genetics}, 197:257--271, 2014.
+
+\bibitem{thorne1996}
+JL~Thorne, N~Goldman, and DT~Jones.
+\newblock Combinng protein evolution and secondary structure.
+\newblock {\em Molecular Biology and Evolution}, 13:666--673, 1996.
+
+\bibitem{thyagarajan2014}
+B~Thyagarajan and JD~Bloom.
+\newblock The inherent mutational tolerance and antigenic evolvability of
+  influenza hemagglutinin.
+\newblock {\em eLife}, 3:e03300, 2014.
+
+\bibitem{wang2008}
+HC~Wang, K~Li, E~Susko, and AJ~Roger.
+\newblock A class frequency mixture model that adjusts for site-specific amino
+  acid frequencies and improves inference of protein phylogeny.
+\newblock {\em BMC Evolutionary Biology}, 8:331, 2008.
+
+\bibitem{wu2013}
+CH~Wu, MA~Suchard, and AJ~Drummond.
+\newblock Bayesian selection of nucleotide substitution models and their site
+  assignments.
+\newblock {\em Molecular Biology and Evolution}, 30:669--688, 2013.
+
+\bibitem{yang1994}
+ZH~Yang.
+\newblock Maximum-likelihood phylogenetic estimation from {{DNA}}-sequences
+  with variable rates over sites - approximate methods.
+\newblock {\em Journal of Molecular Evolution}, 39:306--314, 1994.
+
+\bibitem{zharkikh1994}
+A~Zharkikh.
+\newblock Estimation of evolutionary distances between nucleotide sequences.
+\newblock {\em Journal of Molecular Evolution}, 39(3):315--329, 1994.
 
 \end{thebibliography}

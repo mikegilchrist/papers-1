@@ -2,10 +2,10 @@
 \label{ch:kluyveri}
 
 
-This chapter is a lightly revised version of a paper to be submitted to Genome Biology and Evolution and co-authored with Michael A. Gilchrist.\\
+This chapter is a lightly revised version of a paper to be submitted to Genome Biology and Evolution and co-authored with Michael A. Gilchrist and Russel Zaretzki.\\
 \newline
 \newline
-C. Landerer, M.A. Gilchrist, Decomposing mutation and selection to identify mismatched codon usage
+C. Landerer, R. Zaretzki, M.A. Gilchrist, Decomposing mutation and selection to identify mismatched codon usage
 
 \clearpage
 \pagebreak
@@ -132,26 +132,21 @@ Therefore, it is important to recognize and treat endogenous and exogenous genes
 \subsection{Determining Source of Exogenous Genes}
 
 We combined our estimates of mutation bias ($\Delta M$) and selection bias ($\Delta \eta$) with synteny information and searched for potential source lineages of the introgressed region.
-We examined 38 yeast lineages of which two (\textit{Eremothecium gossypii} and \textit{Candida dubliniensis}) showed a strong positive correlation in codon usage (Figure \ref{fig:csp_endo_exo_comp}a).
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}
-        \centering
-        \includegraphics[width=.45\textwidth]{ch3/csp_mean_correlation_exo.pdf}
-    \end{subfigure}
-    \begin{subfigure}
-        \centering
-        \includegraphics[width=.45\textwidth]{ch3/csp_mean_correlation_endo.pdf}
-    \end{subfigure}
-    \caption{Correlation of \DM and \DE of the (a) exogenous and (b) endogenous genes with 38 examined yeast lineages. Dots indicate the correlation of \DM and \DE of the lineages with the endogenous and exogenous parameter estimates. All regressions were performed using a type II regression.}
-    \label{fig:csp_endo_exo_comp}
+We examined 38 yeast lineages of which two (\emph{Eremothecium gossypii} and \emph{Candida dubliniensis}) showed a strong positive correlation in codon usage (Figure \ref{fig:csp_exo_comp}).
+
+\begin{figure}[H]
+     \centering
+	\includegraphics[width=.45\textwidth]{ch3/csp_mean_correlation_exo.pdf}
+	\caption{Correlation of \DM and \DE of the exogenous genes with 38 examined yeast lineages. Dots indicate the correlation of \DM and \DE of the lineages with the endogenous and exogenous parameter estimates. All regressions were performed using a type II regression.}
+	\label{fig:csp_exo_comp}
 \end{figure}
-The endogenous \kluyveri genome exhibits codon usage very similar to most yeast lineages examined, indicating little variation in codon usage among the examined yeasts (Figure \ref{fig:csp_endo_exo_comp}b).
+
+The endogenous \kluyveri genome exhibits codon usage very similar to most yeast lineages examined, indicating little variation in codon usage among the examined yeasts (Figure \ref{fig:csp_endo_comp}).
 Four lineages show a positive correlation for $\Delta M$ and $\Delta \eta$ with the exogenous genes and have a weak to moderate positive correlation in selection bias with the endogenous genes; but, like the exogenous genes, tend to have a negative correlation in $\Delta M$ with the endogenous genes.
 
-Comparing synteny between the exogenous left arm of chromosome C, and \gossypii and \dubl as well as closely related yeast species we find that \gossypii displays the highest synteny coverage  (Figure \ref{fig:synteny_species}a,b).
+Comparing synteny between the exogenous left arm of chromosome C, and \gossypii and \dubl as well as closely related yeast species we find that \gossypii displays the highest synteny coverage  (Figure \ref{fig:synt_rel}, \ref{fig:synteny_species}).
 \dubl, even though it displays similar codon usage does not show synteny with the exogenous region.
-Furthermore, the synteny relationship between the exogenous region and other yeasts appears to be limited to the Saccharomycetacease group(Figure \ref{fig:synteny_species}b).
+Furthermore, the synteny relationship between the exogenous region and other yeasts appears to be limited to the Saccharomycetacease group(Figure \ref{fig:synteny_species}).
 Given these results, we conclude that the \gossypii lineage is the most likely source of the introgressed exogenous genes.
 
 \subsection{Estimating Introgression Age}
@@ -348,7 +343,7 @@ First, we assumed that the current exogenous amino acid composition of genes is 
 Second, we assume that the currently observed cellular environment of \gossypii reflects the cellular environment that the exogenous genes experienced before transfer to \kluyveri.
 Lastly, we assume that the difference in the efficacy of selection between the cellular environments of the source lineage and \kluyveri can be expressed as a scaling constant and that protein synthesis rate $\phi$ has not changed between the replaced endogenous and the introgressed exogenous genes.
 
-Using estimates for $N_e$ from XXX et al. we scale our estimates of \DE and define $\DE' = \frac{\DE}{N_e}$.
+Using estimates for $N_e = 1.36\times10^7$ \citep{wagner2005} for \textit{Saccharomyces paradoxus} we scale our estimates of \DE and define $\DE' = \frac{\DE}{N_e}$.
 We calculated the fitness burden each gene represents assuming additive fitness effects as 
 \begin{equation}
 s_g = \sum_i^{C} -\kappa \phi_g \DE'_i n_{g,i} 
@@ -375,12 +370,12 @@ CL received support as a Graduate Student Fellow at the National Institute for M
 The authors would like to thank Brian C. O'Meara and Alexander Cope for their helpful criticisms and suggestions for this work.
 
 
-\bibliographystyle{unsrtnat}
-\bibliography{kluyveri_paper}
+%\bibliographystyle{unsrtnat}
+%\bibliography{kluyveri_paper}
 
 \clearpage
 \section{Supplementary Material}
-\beginsupplement
+%\beginsupplement
 
 Supporting Materials for \emph{Fitness consequences of mismatched codon usage} \ by Landerer \emph{et al.}.
 
@@ -457,7 +452,7 @@ Supporting Materials for \emph{Fitness consequences of mismatched codon usage} \
 \begin{figure}[H]
      \centering
 	\includegraphics[width=0.5\textwidth]{ch3/synteny_blocks_and_gc.pdf}
-	\caption{Synteny relationship of \gossypii and the exogenous genes}
+	\caption{Synteny relationship of \gossypii and the exogenous genes. Indicated is the \GC along the introgression.}
 	\label{fig:synt_rel}
 \end{figure}
 
@@ -465,7 +460,7 @@ Supporting Materials for \emph{Fitness consequences of mismatched codon usage} \
 \begin{figure}[H]
      \centering
 	\includegraphics[width=0.5\textwidth]{ch3/synteny_coverage.pdf}
-	\caption{Amount of synteny for each species (Units of std dev) checked for synteny.}
+	\caption{Amount of synteny for each species in units of standard deviations for selected species.}
 	\label{fig:synteny_species}
 \end{figure}
 
@@ -481,23 +476,22 @@ Supporting Materials for \emph{Fitness consequences of mismatched codon usage} \
         \centering
         \includegraphics[width=.45\textwidth]{ch3/fitness_phi_scaling_gos.pdf}
     \end{subfigure}
-    \caption{Suppl Fig: Fitness burden (left) without scaling of $\phi$, and change of total fitness burden with scaling $\kappa$}
+    \caption{Genetic load (left) without scaling of $\phi$ per gene, and change of total genetic load with scaling $\kappa$ between \gossypii and \kluyveri (right)}
     \label{fig:sne_scaling}
 \end{figure}
 
 \begin{figure}[H]
      \centering
 	\includegraphics[width=.5\textwidth]{ch3/adaptation_total.pdf}
-	\caption{Total amount of adaptation between time of introgression and now}
+	\caption{Total amount of adaptation estimated to have occured between time of introgression and currently observed per gene.}
 	\label{fig:adapt_tot}
 \end{figure}
 
-\clearpage
 \begin{figure}[H]
      \centering
-	\includegraphics[width=\textwidth]{ch3/CUB_cleft_main.pdf}
-	\caption{Suppl Fig}
+	\includegraphics[width=0.9\textwidth]{ch3/CUB_cleft_main.pdf}
+	\caption{Codon usage patterns for 19 amino acids. Amino acids are indicated as one letter code. 
+	The amino acids Serine was split into two groups (S and Z) as Serine coded for by two groups of codons that are separated bymore than one mutation.
+	Solid line indicates the endogenous codon usage, dashed line indicates the exogenous codon usage, dotted line indicates the combined codon usage.}
 	\label{fig:cub_all_sets}
 \end{figure}
-
-\end{document}

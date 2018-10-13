@@ -18,7 +18,6 @@
 \documentclass[thesis,letterpaper,12pt]{utthesis} %dissertation
 % some alternatives are:
 %\documentclass[thesis,monochrome,letterpaper,12pt]{utthesis} %thesis, monochrome text
-\renewcommand{\baselinestretch}{1.5} 	 % line Spacing
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % TO DO: FILL IN YOUR INFORMATION BELOW - READ THIS SECTION CAREFULLY
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -26,8 +25,11 @@
 \author{Cedric Landerer}                			% author's name
 \copyrightYear{2018}            				% copyright year of your thesis/dissertation
 \graduationMonth{December}           				% month of graduation for your thesis/dissertation
+%\keywords{molecular evolution, codon usage, population genetics, phylogenetics, genetic load, amino aicd usage}	% keywords (optional) separated by commas - these are used in the PDF file properties
+%\major{Ecology and Evolutionary Biology}	% major: Mechanical Engineering, Aerospace Engineering, Mathematics...
 \degree{Doctor of Philosophy}	    			% degree: Doctor of Philosophy, Master of Science, Master of Engineering...
-\university{The University  of Tennessee, Knoxville}	% school name
+%\dept{Ecology and Evolutionary Biology}	% department
+\university{The University of Tennessee, Knoxville}	% school name
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % LOAD SOME USEFUL PACKAGES. 
 % No need to change anything here, although if you'd like to add packages you can do that here. Note that packages preloaded with the utthesis class are: amsmath,amsthm,amssymb,setspace,geometry,hyperref,and color
@@ -54,7 +56,7 @@
 \usepackage{color}
 \usepackage{amsmath}
 \usepackage{hyperref}
-
+\usepackage{longtable}
 \usepackage{xspace}
 \usepackage[svgnames]{xcolor}
 \usepackage{listings}
@@ -93,12 +95,12 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
-\pagestyle{fancy}
-\fancyhead{}
-\fancyhead[RO,LE]{Thesis Title}
-\fancyfoot{}
-\fancyfoot[LE,RO]{\thepage}
-\fancyfoot[LO,CE]{Chapter \thechapter}
+%\pagestyle{fancy}
+%\fancyhead{}
+%\fancyhead[RO,LE]{Separate the effects of mutation, selection, and drift}
+%\fancyfoot{}
+%\fancyfoot[LE,RO]{\thepage}
+%\fancyfoot[LO,CE]{Chapter \thechapter}
 
 
   \newcommand{\package}{\textbf{AnaCoDa}\xspace} % Use xspace, not two commands!
@@ -109,13 +111,14 @@
   \newcommand{\GC}{GC content\xspace}
   \newcommand{\DM}{\ensuremath{{\Delta M}}\xspace}
   \newcommand{\DE}{\ensuremath{{\Delta \eta}}\xspace}
-  \newcommand{\beginsupplement}{%
-       \setcounter{table}{0}
-       \renewcommand{\thetable}{S\arabic{table}}%
-       \setcounter{figure}{0}
-       \renewcommand{\thefigure}{S\arabic{figure}}%
-     }
-
+  \newcommand{\Lik}{\ensuremath{\mathcal{L}}\xspace}
+  \newcommand{\selac}{\emph{SelAC}\xspace}
+  \newcommand{\selacDMS}{\emph{SelAC}+DMS\xspace}
+  \newcommand{\phydms}{\emph{phydms}\xspace}
+  \newcommand{\gy}{\emph{GY94}\xspace}
+  \newcommand{\ecoli}{\textit{E. coli}\xspace}
+  \newcommand{\PC}{physicochemical\xspace}  
+  
 
 
     \pagenumbering{alph} % this is needed to clear certain issues with the hyperref package
@@ -138,6 +141,9 @@
     \addToPDFBookmarks{1}{Acknowledgments}{c} % add a pdf bookmark to the acknowledgments page
     \include{front-matter/acknowledgments} % include the acknowledgments
     
+    \addToPDFBookmarks{1}{Quote}{d} % add a pdf bookmark to the quotation page
+    \include{front-matter/quote} % include a quote    
+    
     \addToPDFBookmarks{1}{Abstract}{e} % add a pdf bookmark to the abstract page
     \include{front-matter/abstract} % your abstract
 
@@ -152,15 +158,18 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % INCLUDE THE CHAPTERS STARTING WITH THE NOMENCLATURE IF PRESENT
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \include{front-matter}
+    %\include{front-matter}
     \include{chapters/chapter-1}
     \include{chapters/chapter-2}
     \include{chapters/chapter-3}
     \include{chapters/chapter-4}
+    \include{chapters/chapter-5}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % BIBLIOGRAPHY
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \makeBibliographyPage % make the bibliography title page
+    %\bibliographystyle{unsrtnat} % bibliography style - recommend using apalike-doi as it hyperlinks DOIs
+    \bibliography{./bioinfo,./kluyveri_paper,./ecoli}% references.bib included in the references directory
 \newpage
 
 % To make the bibliography, use \utbiblio{#1}{}{} command. Always use "#1" for the first entry. The second entry is your bibliography style, and the third entry is the name of your bibliography file (.bib file extension) 
@@ -173,10 +182,10 @@
     % APPENDIX - OPTIONAL - COMMENT OUT IF NOT NEEDED
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
-    \makeAppendixPage{2}   % Input the number of appendices
-    \appendix    
-    \include{back-matter/appendix-1}
-    \include{back-matter/appendix-2}
+    %\makeAppendixPage{2}   % Input the number of appendices
+    %\appendix    
+    %\include{back-matter/appendix-1}
+    %\include{back-matter/appendix-2}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % A VITA IS REQUIRED
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

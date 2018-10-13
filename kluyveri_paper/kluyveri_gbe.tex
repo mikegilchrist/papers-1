@@ -114,7 +114,7 @@ In turn, the efficacy of selection on codon usage is a function of the organism'
 Thus, disentangling the evolutionary forces responsible for the patterns codon usage bias (CUB) encoded in an species genome, should provide biologically meaningful information about the lineage's historical cellular and external environment.
 
 In order to disentangle the forces of mutation, selection, and drift behind CUB we utilize a quantiative, population genetics based approach after \citet{Bulmer1991}.
-More specifically, we utilize the Ribosome Overhead Cost (ROC) version of \citet{ShahAndGilchrist2011} of the more general Stochastic Evolutionary Model of Protein Production Rates (SEMPPR) introduced in \citet{Gilchrist2007} using the R software package \text{AnaCoDa}\citet{LandererEtAl2018}.   
+More specifically, we utilize the Ribosome Overhead Cost (ROC) version of \citet{ShahAndGilchrist2011} of the more general Stochastic Evolutionary Model of Protein Production Rates (SEMPPR) introduced in \citet{Gilchrist2007} using the R software package \text{AnaCoDa}\citet{landerer2018}.   
 The population genetics mutation-selection-drift framework of ROC SEMPPR allows us to quantiatively describe the environment in which genes evolve with respect to mutation bias and selection bias, which are the codon specific selection terms implicitly scaled by \Ne and explicitly scaled by the average expression level of a gene \citep[See][for more details]{GilchristEtAl2015}, using only coding sequenced data.
 Here we expand upon our previous work with ROC to accommodate the additional complications of gene introgression.
 
@@ -466,7 +466,7 @@ First, we assumed that the current exogenous amino acid composition of genes is 
 Second, we assume that the currently observed cellular environment of \gossypii reflects the cellular environment that the exogenous genes experienced before transfer to \kluyveri.
 Lastly, we assume that the difference in the efficacy of selection between the cellular environments of the source lineage and \kluyveri can be expressed as a scaling constant and that protein synthesis rate $\phi$ has not changed between the replaced endogenous and the introgressed exogenous genes.
 
-Using estimates for $N_e$ from XXX et al. we scale our estimates of \DE and define $\DE' = \frac{\DE}{N_e}$.
+Using estimates for $N_e = 1.36\times10^7$ \citep{wagner2005} for \textit{Saccharomyces paradoxus} we scale our estimates of \DE and define $\DE' = \frac{\DE}{N_e}$.
 We calculated the fitness burden each gene represents assuming additive fitness effects as 
 \begin{equation}
 s_g = \sum_i^{C} -\kappa \phi_g \DE'_i n_{g,i} 

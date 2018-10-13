@@ -1,60 +1,22 @@
 \chapter{Introduction} 
 \label{ch:introduction}
 
-The goal of this dissertation is to study the molecular evolution of protein sequences.
-Proteins are encoded on the genome using a combination of the possible 64 codons representing 20 amino acids. 
-This variety of possibilities to produce a protein allows us to ask questions about usage of codons and amino acids.
-I will first explore how a given amino acid sequence can be encoded to reduce the energetic cost of translation.
-The codon usage bias of an organism is assumed to provide insights into the energetic cost associated with the translation of a codon (Sharp et al. 1993).
-Second, I will explore the preferred amino acid usage across a protein.
-Changes in preferred amino acid usage at a site and adaptive codon bias provide insights into the underlying fitness landscape of a protein.
 
-Chapters One and Two explore how a given protein is encoded efficiently using the degenerated code of the DNA.
-A software is developed implementing various models estimating the evolutionary forces driving the evolution of codon usage bias.
-The developed software is applied to the organism \textit{Lachancea kluyveri} to explore optimal codon usage and variation within a genome resulting from a hybridization.
+%INTRODUCTION
+% - Mutation, selection, drift are three main forces of evolution
+% - Selection can only act on standing variation \citep{LuriaAndDelbruck1943}
+% - Protein peptide sequence contains information e.g. Structure \citep{anfinsen1973}
+% - Fitness effects of mutations, synonymous and non-synonymous
+% -- Protein production is expensive \citep{warner1999,AkashiAndGojobori2002}
+% - phylogenetics, rate of evolution \citep{ZuckerkandlAndPauling1962}
 
-Chapters Three and Four explore how the amino acid composition can alter relative protein functionality.
-The fitness landscape of amino acids in four different proteins is explored using phylogenetic methods and compared to empirical fitness landscapes from deep mutation scanning experiments.
-The methodology is then applied to three influenza proteins to explore the effects of environmental shifts in selection on amino acid sequences. 
+%MECHANISTIC MODELS
+% - Mechanistic model can extract information on mutation and selection that describtive ones can not
+% -- CAI, indifferent to mutation \citep{sharp1987}
+% -- F_opt \citep{ikemura1981}
+% -- CBI \citep{BennetzenAndHall1982}
+% - Phylogenetic models
 
-\section{Codon Usage Bias}
-Codon usage bias referes to the differential usage of synonymous codons used to encode amino acids and can vary between organism (Grantham et al 1980a, Grantham et al 1980b, Kanaya et al. 2001). 
-The genetic code consists of 64 codons encoding only 20 amino acids. 
-Due to this overabundance of codons, most amino acids are encoded by multiple codons. 
-The frequency of codon usage is influenced by mutation bias, selection for efficient translation, and genetic drift (Bulmer 1991, Sharp et al. 1993).
+%INTROGRESSION
 
-Mutation bias refers to non-uniform mutation rates between nucleotides and can be caused by differences in nucleotide stability.
-Nucleotide stability can differ for multiple reasons, like radiation or methylation patterns.
-Methylation of the DNA can lead to spontaneous deamination causing methylated cytosine to mutate to thymine.
-Radiation, for example in the form of ultraviolet radiation, can lead to oxidative damage.
-Guanine residues are most likely to experience oxidative damage.
-
-Selection for translation efficiency refers to selection favoring codons that increase elongation rates or reduce error rates.
-Codons differ in their ribosome pausing time, allowing the ribosome to translate some codons faster and more efficiently than others.
-It is assumed that selection is scaled with average protein synthesis rate (Guoy \& Gautier 1982) and that the codon usage of highly expressed genes reflects the tRNA pool of the organism (Clarke 1970, Ikemura 1981, Kanaya et al. 1999, Kanaya et al. 2001, dos Reis 2004). 
-The effectiveness of selection in high expression genes is influenced by the effective population size $N_e$. 
-It is therefore assumed that adaptive codon usage bias is found mainly in organisms with large $N_e$ - often fast growing micro-organisms.
-
-\section{Amino Acid Usage}
-Amino acid usage of a protein is determined by the function, and the structure necessary to perform the given function.
-The function of a protein imposes constraints on the protein structure and the composition of functional sites.
-Membrane proteins require helices to be embedded into the membrane; therefore, amino acids with properties allowing for the formation of helices are favored in trans-membrane regions.
-Amino acids that do not allow the formation of helices (e.g. Proline) or reduce the efficiency of helix formation will result in a fitness reduction due to reduced protein functionality. 
-
-The 20 amino acids can be differentiated by their properties, e.g. volume, polarity, or composition (Grantham 1974). 
-The preference for an amino acids at a given site within a protein depends on the necessary properties that are required at that site to perform a given function.
-While amino acids can be classified in categories like polar, large, or acidic, no two amino acids are identical in properties.
-For example, alanine and glycine are both classified as small, however they differ in size by $28 \r{A}^3$ (Grantham 1974).
-Amino acids also differ in their production cost and this cost is dependent on the medium an amino acid is produced from (Kaleta et al 2013).
-
-Across the tree of life, we recognize very different realizations of proteins performing the same function.
-For example, the pyruvate kinase is found as a homo-tetramer in eubacteria and archea while the protein complex consists of a homo-dimer and a homo-tetramer in metazoans (Lynch 2013). 
-The difference in protein interaction to form a functioning enzyme imposes different constrains on the amino acid sequence, making the usage of amino acids for a protein performing a given function context dependent. 
-
-Proteins in closely related organisms share a common ancestor, and we can assume have similar functions.
-These proteins are likely occupying a similar locations on the functional landscape. 
-When a new protein arises, it is unlikely that the protein is found at a fitness peak. 
-The protein will move towards a fitness peak if selection is strong enough.
-However, the protein does not have to approach the global optimum but can tend towards any local optimum.
-A global optimum can only be reached if a series of functional mutations exist connecting the current state of a protein with the theoretically optimal state (Maynard-Smith 1962).
-If no such path exists, the fitness landscape is discontinuous, potentially resulting in the  different compositions and conformations of proteins performing the same function (Lynch 2013).
+%PROTEIN FUNCTIONALLITY
