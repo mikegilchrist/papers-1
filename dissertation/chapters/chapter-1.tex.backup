@@ -1,6 +1,17 @@
 \chapter{Introduction} 
 \label{ch:introduction}
 
+Mathematical and statistical have long been used to describe or summarize observations in genetics and genomics.
+Mostly without addressing the underlying biological mechanisms mutation, selection, and drift shaping DNA sequences, but as phenomelogical description.
+However, as researchers learn more about the underlying processes and more genetic and genomic data is available, the mathematical descriptions that allow us to extract information from this data have to keep up.
+For example, after the unreaveling the degenerate genetic code by \citet{MatthaeiAndNirenberg1961,NirenbergAndMatthaei1961,Maxwell1962,LederAndNirenberg1964}, and many others, researchers noticed that synonymous codons are not found in uniform proportions \citep{fitch1976,grantham1980,ikemura1981,grantham1981,sharp1988}.
+Models of codon usage, however, where long purley describtive and heuristic \citep{ikemura1981,BennetzenAndHall1982,sharp1987,wright1990}.
+Similarly, phylogenetic models are largely phenomelogical \citep{JukesAndCantor1969,Dayhoff1978,Kimura1980,felsenstein1981,Altschul1991}, describing the rate at which one state is transformed in another, without regards for the fundamental forces of evolution mutation, selection, and drift.
+\citet{ZuckerkandlAndPauling1962} described the distance between hemoglobin proteins and proposed that the evolution of proteins is constant over time and between lineages before the genetic code was fully deciphered.
+This dissertation is therefore focues on the application of mechanistic models rooted in first principles.
+
+These models can be uto study how mutation, selection, and genetic drift 
+
 
 %INTRODUCTION
 % - Mutation, selection, drift are three main forces of evolution
@@ -18,5 +29,6 @@
 % - Phylogenetic models
 
 %INTROGRESSION
+% -
 
 %PROTEIN FUNCTIONALLITY

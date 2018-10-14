@@ -7,17 +7,36 @@ A level-1 auxiliary file: front-matter/quote.aux
 A level-1 auxiliary file: front-matter/abstract.aux
 A level-1 auxiliary file: chapters/chapter-1.aux
 A level-1 auxiliary file: chapters/chapter-2.aux
+Case mismatch error between cite keys Wright1990 and wright1990
+---line 10 of file chapters/chapter-2.aux
+ : \citation{Wright1990
+ :                     }
+I'm skipping whatever remains of this command
+Case mismatch error between cite keys Wright1990 and wright1990
+---line 57 of file chapters/chapter-2.aux
+ : \citation{Wright1990
+ :                     }
+I'm skipping whatever remains of this command
 A level-1 auxiliary file: chapters/chapter-3.aux
 A level-1 auxiliary file: chapters/chapter-4.aux
 A level-1 auxiliary file: chapters/chapter-5.aux
 The style file: apalike.bst
-Illegal, another \bibdata command---line 107 of file my-dissertation.aux
+Illegal, another \bibdata command---line 122 of file my-dissertation.aux
  : \bibdata
  :         {dissertation}
 I'm skipping whatever remains of this command
 A level-1 auxiliary file: back-matter/vita.aux
-Database file #1: ./bioinfo.bib
-Database file #2: ./kluyveri_paper.bib
+Database file #1: ./intro_conc.bib
+Repeated entry---line 123 of file ./intro_conc.bib
+ : @article{ikemura1981
+ :                     ,
+I'm skipping whatever remains of this entry
+Database file #2: ./bioinfo.bib
+Repeated entry---line 19 of file ./bioinfo.bib
+ : @article{Wright1990
+ :                    ,
+I'm skipping whatever remains of this entry
+Database file #3: ./kluyveri_paper.bib
 Repeated entry---line 85 of file ./kluyveri_paper.bib
  : @article{sharp1987
  :                   ,
@@ -34,51 +53,51 @@ Repeated entry---line 314 of file ./kluyveri_paper.bib
  : @manual{rcore
  :              ,
 I'm skipping whatever remains of this entry
-Database file #3: ./ecoli.bib
+Database file #4: ./ecoli.bib
 Repeated entry---line 40 of file ./ecoli.bib
  : @manual{rcore
  :              ,
 I'm skipping whatever remains of this entry
 Warning--empty year in Mathematica
-You've used 72 entries,
+You've used 89 entries,
             1935 wiz_defined-function locations,
-            904 strings with 16237 characters,
-and the built_in function-call counts, 30195 in all, are:
-= -- 2886
-> -- 1313
-< -- 35
-+ -- 482
-- -- 446
-* -- 2696
-:= -- 5291
-add.period$ -- 216
-call.type$ -- 72
-change.case$ -- 580
-chr.to.int$ -- 72
-cite$ -- 73
-duplicate$ -- 1013
-empty$ -- 2101
-format.name$ -- 550
-if$ -- 5882
-int.to.chr$ -- 1
+            1003 strings with 19041 characters,
+and the built_in function-call counts, 37192 in all, are:
+= -- 3574
+> -- 1538
+< -- 51
++ -- 561
+- -- 518
+* -- 3297
+:= -- 6470
+add.period$ -- 267
+call.type$ -- 89
+change.case$ -- 699
+chr.to.int$ -- 88
+cite$ -- 90
+duplicate$ -- 1269
+empty$ -- 2639
+format.name$ -- 655
+if$ -- 7299
+int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 72
-newline$ -- 363
-num.names$ -- 216
-pop$ -- 424
+missing$ -- 91
+newline$ -- 448
+num.names$ -- 267
+pop$ -- 511
 preamble$ -- 1
-purify$ -- 583
+purify$ -- 704
 quote$ -- 0
-skip$ -- 761
+skip$ -- 961
 stack$ -- 0
-substring$ -- 2405
-swap$ -- 83
-text.length$ -- 1
+substring$ -- 3035
+swap$ -- 116
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 428
+type$ -- 526
 warning$ -- 1
-while$ -- 214
+while$ -- 267
 width$ -- 0
-write$ -- 934
-(There were 6 error messages)
+write$ -- 1155
+(There were 10 error messages)

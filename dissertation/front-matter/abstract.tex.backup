@@ -1,0 +1,6 @@
+\chapter*{Abstract}\label{ch:abstract}
+Mutation, selection, and drift are the three forces guiding evolution.
+
+Interplay of forces is complicated.
+
+Efficacy of one depends on the others, e.g. population mutation rate is $\muN_e$, efficacy of selection is $sN_e$.

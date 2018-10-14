@@ -159,36 +159,9 @@ pages = {111-120},
 year = {1980},
 }
 
-@article{Dayhoff1978,
-author = {Dayhoff, MO andSchwartz, RM and Orcutt, BC},
-title = {A model of evolutionary change in proteins},
-journal = {Atlas of Protein Sequence and Structure},
-volume = {5},
-number = {3},
-pages = {345-352},
-year = {1978},
-}
 
-@article{Altschul1991,
-author = {Altschul, SF},
-title = {Amino acid substitution matrices from an information theoretic perspective},
-journal = {Journal of Molecular Biology},
-volume = {219},
-number = {3},
-pages = {555-565},
-year = {1991},
-}
 
-@article{ShahAndGilchrist2011,
-author = {Shah, P and Gilchrist, MA},
-title = {Explaining complex codon usage patterns with selection for translational efficiency, mutation bias, and genetic drift},
-journal = {Proccedings of the National Academy of Sciences U.S.A},
-volume = {108},
-number = {25},
-pages = {10231-10236},
-year = {2011},
-}
-
+Kimura M (1980). "A simple method for estimating evolutionary rates of base substitutions through comparative studies of nucleotide sequences". Journal of Molecular Evolution. 16 (2): 111–120. 
 
 
 

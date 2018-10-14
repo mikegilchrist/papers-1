@@ -144,6 +144,7 @@
     \addToPDFBookmarks{1}{Quote}{d} % add a pdf bookmark to the quotation page
     \include{front-matter/quote} % include a quote    
     
+    \doublespacing
     \addToPDFBookmarks{1}{Abstract}{e} % add a pdf bookmark to the abstract page
     \include{front-matter/abstract} % your abstract
 
@@ -169,7 +170,7 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \makeBibliographyPage % make the bibliography title page
     %\bibliographystyle{unsrtnat} % bibliography style - recommend using apalike-doi as it hyperlinks DOIs
-    \bibliography{./bioinfo,./kluyveri_paper,./ecoli}% references.bib included in the references directory
+    \bibliography{./intro_conc,./bioinfo,./kluyveri_paper,./ecoli}% references.bib included in the references directory
 \newpage
 
 % To make the bibliography, use \utbiblio{#1}{}{} command. Always use "#1" for the first entry. The second entry is your bibliography style, and the third entry is the name of your bibliography file (.bib file extension) 

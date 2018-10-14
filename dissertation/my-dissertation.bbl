@@ -1,5 +1,16 @@
 \begin{thebibliography}{}
 
+\bibitem[Altschul, 1991]{Altschul1991}
+Altschul, S. (1991).
+\newblock Amino acid substitution matrices from an information theoretic
+  perspective.
+\newblock {\em Journal of Molecular Biology}, 219(3):555--565.
+
+\bibitem[Anfinsen, 1973]{anfinsen1973}
+Anfinsen, C. (1973).
+\newblock Pronciples that govern the folding of protein chains.
+\newblock {\em Science}, 181(4096):223--230.
+
 \bibitem[Ashenberg et~al., 2013]{ashenberg2013}
 Ashenberg, O., Gong, L., and Bloom, J. (2013).
 \newblock Mutational effects on stability are largely conserved during protein
@@ -20,6 +31,11 @@ Beaulieu, J., O'Meara, B., Zaretzki, R., Landerer, C., Chai, J., and Gilchrist,
 \newblock Population genetics based phylogenetics under stabilizing selection
   for an optimal amino acid sequence: A nested modeling approach.
 \newblock {\em Molecular Biology and Evolution}, X:NA.
+
+\bibitem[Bennetzen and Hall, 1982]{BennetzenAndHall1982}
+Bennetzen, J. and Hall, B. (1982).
+\newblock Codon selection in yeast.
+\newblock {\em J. Biol. Chem.}, 257:3026--3031.
 
 \bibitem[Bloom, 2014]{bloom2014}
 Bloom, J. (2014).
@@ -50,6 +66,11 @@ Chanal, C., Poupart, M., Sirot, D., Labia, R., Sirot, J., and Cluzel, R.
   (1992).
 \newblock Nucleotide sequences of caz-2, caz-6, and caz-7 beta-lactamase genes.
 \newblock {\em Antimicrob. Agents Chemother.}, 36:1817--1820.
+
+\bibitem[Dayhoff and Orcutt, 1978]{Dayhoff1978}
+Dayhoff, MO~andSchwartz, R. and Orcutt, B. (1978).
+\newblock A model of evolutionary change in proteins.
+\newblock {\em Atlas of Protein Sequence and Structure}, 5(3):345--352.
 
 \bibitem[de~Koning and De~Sanctis, 2018]{deKoning259507}
 de~Koning, A. and De~Sanctis, B. (2018).
@@ -98,6 +119,11 @@ Firnberg, E., Labonte, J., Gray, J., and Ostermeier, M. (2014).
 Firnberg, E. and Ostermeier, M. (2012).
 \newblock Pfunkel: Efficient, expansive, user-defined mutagenesis.
 \newblock {\em PLOS ONE}, 7(12):e52031.
+
+\bibitem[Fitch, 1976]{fitch1976}
+Fitch, W. (1976).
+\newblock Is there selection against wobble in codon-anticodon pairing?
+\newblock {\em Science}, 194:1173--1174.
 
 \bibitem[Fowler and Fields, 2014]{FowlerAndFields2014}
 Fowler, D. and Fields, S. (2014).
@@ -164,6 +190,18 @@ Grantham, R. (1974).
 \newblock Amino acid differences formula to help explain protein evolution.
 \newblock {\em Science}, 185(4154):862--864.
 
+\bibitem[Grantham et~al., 1980]{grantham1980}
+Grantham, R., Gautier, C., and Gouy, M. (1980).
+\newblock Codon frequencies in 119 individual genes confirms consistent choices
+  of degenerate bases according to genome type.
+\newblock {\em Nucleotide Acid Research}, 8:1893--1912.
+
+\bibitem[Grantham et~al., 1981]{grantham1981}
+Grantham, R., Gautier, C., Gouy, M., Jacobzone, M., and Mercier, R. (1981).
+\newblock Codon catalog usage is a genome strategy modulated for gene
+  expressivity.
+\newblock {\em Nucleic Acids Research}, 9:43--74.
+
 \bibitem[Halpern and Bruno, 1998]{HalpernAndBruno1998}
 Halpern, A. and Bruno, W. (1998).
 \newblock Evolutionary distances for protein-coding sequences: Modeling
@@ -187,6 +225,14 @@ Holder, M., Zwickl, D., and Dessimoz, C. (2008).
   variability in substitution processes.
 \newblock {\em Philos Trans R Soc Lond B}, 363:4013--4021.
 
+\bibitem[Ikemura, 1981]{ikemura1981}
+Ikemura, T. (1981).
+\newblock Correlation between the abundance of \textit{Escherichia coli}
+  transfer rnas and the occurrence of the respective codons in its protein
+  genes: a proposal for a synonymous codon choice that is optimal for the
+  \textit{E. coli} translational system.
+\newblock {\em Journal of Molecular Biology}, 151:389--409.
+
 \bibitem[Ikemura, 1985]{ikemura1985}
 Ikemura, T. (1985).
 \newblock Codon usage and trna content in unicellular and multicellular
@@ -204,11 +250,22 @@ Jain, P. and Varadarajan, R. (2014).
   reaction-based method for generating a site saturation mutant library.
 \newblock {\em Analytical Biochemistry}, 449:90--981.
 
+\bibitem[Jukes and Cantor, 1969]{JukesAndCantor1969}
+Jukes, T. and Cantor, C. (1969).
+\newblock {\em Evolution of Protein Molecules}, pages 21--132.
+\newblock Academic Press.
+
 \bibitem[Kawashima et~al., 2008]{Kawashima2008}
 Kawashima, S., Pokarowski, P., Pokarowska, M., Kolinski, A., Katayama, T., and
   Kanehisa, M. (2008).
 \newblock Aaindex: amino acid index database, progress report 2008.
 \newblock {\em Nucleic Acids Research}, 36:D202--D205.
+
+\bibitem[Kimura, 1980]{Kimura1980}
+Kimura, M. (1980).
+\newblock A simple method for estimating evolutionary rates of base
+  substitutions through comparative studies of nucleotide sequences.
+\newblock {\em Journal of Molecular Evolution}, 16(2):111--120.
 
 \bibitem[Kosiol et~al., 2007]{KosiolEtAl07}
 Kosiol, C., Holmes, I., and Goldman, N. (2007).
@@ -237,6 +294,13 @@ Le, S., Lartillot, N., and O, G. (2008).
 \newblock Phylogenetic mixture models for proteins.
 \newblock {\em Philos Trans R Soc Lond B Biol Sci}, 363:3965--3976.
 
+\bibitem[Leder and Nierenberg, 1964]{LederAndNirenberg1964}
+Leder, P. and Nierenberg, M. (1964).
+\newblock Rna codewords and protein synthesis, iii. on the nucleotide sequence
+  of a cysteine and leucine rna codeword.
+\newblock {\em Proccedings of the National Academy of Sciences U.S.A},
+  52:1521--1529.
+
 \bibitem[Mabilat et~al., 1992]{mabilat1992}
 Mabilat, C., Lourencao-Vital, J., Goussard, S., and Courvalin, P. (1992).
 \newblock A new example of physical linkage between tn1 and tn21: the
@@ -249,6 +313,20 @@ Matagne, A., Lamotte-Brasseur, J., and Frere, J. (1998).
 \newblock Catalytic properties of class a beta-lactamases: efficiency and
   diversity.
 \newblock {\em Biochemistry Journal}, 300:581--598.
+
+\bibitem[Matthaei and Nierenberg, 1961]{MatthaeiAndNirenberg1961}
+Matthaei, J. and Nierenberg, M. (1961).
+\newblock Characteristics and stabilization of dnaase-sensitice protein
+  synthesis in \textit{E. coli} extracts.
+\newblock {\em Proccedings of the National Academy of Sciences U.S.A},
+  47(10):1580--1588.
+
+\bibitem[Maxwell, 1962]{Maxwell1962}
+Maxwell, E. (1962).
+\newblock Stimulation of amino acid incorporation into protein by natural and
+  synthetic polyribonucleotides in a mammalian cell-free system.
+\newblock {\em Proccedings of the National Academy of Sciences U.S.A},
+  48(9):1639--1643.
 
 \bibitem[Mi et~al., 2015]{gumi2015}
 Mi, G., Di, Y., and Schafer, D. (2015).
@@ -267,6 +345,13 @@ Nguyen, L., Schmidt, H., von Haeseler, A., and Minh, B. (2015).
 \newblock Iq-tree: A fast and effective stochastic algorithm for estimating
   maximum-likelihood phylogenies.
 \newblock {\em Molecular Biology and Evolution}, 32(1):268--274.
+
+\bibitem[Nierenberg and Matthaei, 1961]{NirenbergAndMatthaei1961}
+Nierenberg, M. and Matthaei, J. (1961).
+\newblock The dependence of cell-free protein synthesis in \textit{E. coli}
+  upon naturally occurring or synthetic polyribonucleotides.
+\newblock {\em Proccedings of the National Academy of Sciences U.S.A},
+  47(10):1588--1602.
 
 \bibitem[Ochman and Wilson, 1987]{OchmanAndWilson1987}
 Ochman, H. and Wilson, A. (1987).
@@ -310,8 +395,15 @@ Sella, G. and Hirsh, A. (2005).
 \newblock {\em Proceedings of the National Academy of Sciences of the United
   States of America}, 102:9541--9546.
 
-\bibitem[Shah and Gilchrist, 2011]{shah2011}
-Shah, P. and Gilchrist, M. (2011).
+\bibitem[Shah and Gilchrist, 2011a]{ShahAndGilchrist2011}
+Shah, P. and Gilchrist, M. (2011a).
+\newblock Explaining complex codon usage patterns with selection for
+  translational efficiency, mutation bias, and genetic drift.
+\newblock {\em Proccedings of the National Academy of Sciences U.S.A},
+  108(25):10231--10236.
+
+\bibitem[Shah and Gilchrist, 2011b]{shah2011}
+Shah, P. and Gilchrist, M. (2011b).
 \newblock Explaining complex codon usage patterns with selection for
   translational efficiency, mutation bias, and genetic drift.
 \newblock {\em Proc Natl Acad Sci USA}, 108:10231--6.
@@ -321,6 +413,14 @@ Sharp, P. (1987).
 \newblock The codon adaptatoin index - a meassure of directional synonymous
   codon usage bias, and its potential applications.
 \newblock {\em Nucleic Acids Research}, 15:1281--1295.
+
+\bibitem[Sharp et~al., 1988]{sharp1988}
+Sharp, P., Cowe, E., Higgins, D., Shields, D., Wolfe, K., and Wright, F.
+  (1988).
+\newblock Codon usage patterns in escherichia coli, bacillus subtilis,
+  saccharomyces cerevisiae, schizosaccharomyces pombe, drosophila melanogaster
+  and homo sapiens; a review of the considerable within species diversity.
+\newblock {\em Nucleic Acids Research}, 16:8207--8211.
 
 \bibitem[Soderlund et~al., 2011]{soderlund2011}
 Soderlund, C., Bomhoff, M., and Nelson, W. (2011).
@@ -404,10 +504,10 @@ Wang, H., Li, K., Susko, E., and Roger, A. (2008).
   acid frequencies and improves inference of protein phylogeny.
 \newblock {\em BMC Evolutionary Biology}, 8:331.
 
-\bibitem[Wright, 1990]{Wright1990}
+\bibitem[Wright, 1990]{wright1990}
 Wright, F. (1990).
 \newblock The 'effective number of codons' used in a gene.
-\newblock {\em Gene}, 87:23--29.
+\newblock {\em Gene}, 87(1):23--29.
 
 \bibitem[Wu et~al., 2013]{wu2013}
 Wu, C., Suchard, M., and Drummond, A. (2013).
@@ -425,5 +525,11 @@ Yang, Z. (1994).
 Zharkikh, A. (1994).
 \newblock Estimation of evolutionary distances between nucleotide sequences.
 \newblock {\em Journal of Molecular Evolution}, 39(3):315--329.
+
+\bibitem[Zuckerkandl and Pauling, 1962]{ZuckerkandlAndPauling1962}
+Zuckerkandl, E. and Pauling, L. (1962).
+\newblock {\em Molecular disease, evolution, and genic heterogeneity}, pages
+  189--225.
+\newblock Academic Press.
 
 \end{thebibliography}
