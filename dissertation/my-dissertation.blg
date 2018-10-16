@@ -21,7 +21,7 @@ A level-1 auxiliary file: chapters/chapter-3.aux
 A level-1 auxiliary file: chapters/chapter-4.aux
 A level-1 auxiliary file: chapters/chapter-5.aux
 The style file: apalike.bst
-Illegal, another \bibdata command---line 122 of file my-dissertation.aux
+Illegal, another \bibdata command---line 124 of file my-dissertation.aux
  : \bibdata
  :         {dissertation}
 I'm skipping whatever remains of this command

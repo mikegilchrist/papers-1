@@ -42,20 +42,20 @@
 \contentsline {section}{\numberline {3.6}Supplementary Material}{49}{section.3.6}
 \contentsline {chapter}{\numberline {4}Phylogenetic model of stabilizing selection is more informative about site specific selection than extrapolation from laboratory estimates}{55}{chapter.4}
 \contentsline {section}{\numberline {4.1}Introduction}{57}{section.4.1}
-\contentsline {section}{\numberline {4.2}Results}{58}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Site Specific Stabilizing Selection on Amino Acids Improves Model Fit}{58}{subsection.4.2.1}
+\contentsline {section}{\numberline {4.2}Results}{59}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Site Specific Stabilizing Selection on Amino Acids Improves Model Fit}{59}{subsection.4.2.1}
 \contentsline {subsection}{\numberline {4.2.2}Laboratory Inferences Inconsistent with Observed Sequences.}{62}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}Stabilizing Selection for Optimal Physicochemical Properties Improves Model Adequacy}{64}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}Site Specific estimates of Selection on Amino Acids}{66}{subsection.4.2.4}
-\contentsline {section}{\numberline {4.3}Discussion}{68}{section.4.3}
-\contentsline {section}{\numberline {4.4}Materials and Methods}{72}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Phylogenetic Inference and Model selection}{72}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Sequence Simulation}{73}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Estimating site specific efficacy of selection G}{73}{subsection.4.4.3}
-\contentsline {subsection}{\numberline {4.4.4}Estimating site specific fitness values $w_i$}{73}{subsection.4.4.4}
-\contentsline {subsection}{\numberline {4.4.5}Model Adequacy}{74}{subsection.4.4.5}
-\contentsline {section}{\numberline {4.5}Acknowledgments}{74}{section.4.5}
-\contentsline {section}{\numberline {4.6}Supplementary Material}{76}{section.4.6}
-\contentsline {chapter}{\numberline {5}Conclusion}{84}{chapter.5}
-\contentsline {chapter}{Bibliography}{85}{section*.34}
-\contentsline {chapter}{Vita}{100}{section*.36}
+\contentsline {subsection}{\numberline {4.2.4}Estimating Site Specific Selection on Amino Acids}{66}{subsection.4.2.4}
+\contentsline {section}{\numberline {4.3}Discussion}{69}{section.4.3}
+\contentsline {section}{\numberline {4.4}Materials and Methods}{73}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Phylogenetic Inference and Model selection}{73}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Sequence Simulation}{74}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Estimating site specific efficacy of selection G}{74}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.4}Estimating site specific fitness values $w_i$}{74}{subsection.4.4.4}
+\contentsline {subsection}{\numberline {4.4.5}Model Adequacy}{75}{subsection.4.4.5}
+\contentsline {section}{\numberline {4.5}Acknowledgments}{75}{section.4.5}
+\contentsline {section}{\numberline {4.6}Supplementary Material}{77}{section.4.6}
+\contentsline {chapter}{\numberline {5}Conclusion}{86}{chapter.5}
+\contentsline {chapter}{Bibliography}{87}{section*.34}
+\contentsline {chapter}{Vita}{102}{section*.36}
