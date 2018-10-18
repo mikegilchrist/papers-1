@@ -1,6 +1,6 @@
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces }}{2}{figure.1.1}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Decline in fitness with distance in physicochemical space from the optimal amino acid. Fitness decline of amino acids (black dots) relative to optimal amino acid (Alanine). Weighting of properties was obtained from \citet {grantham1974}.}}{4}{figure.1.2}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces ROC-SEMPPER model behaviour for Isoleucine. The proportion of each codon observed changes with protein synthesis rate. Mutation is dominant when protein synthesis rate is low, mutationally favored codons are observed with the highest frequency. With the increase of protein synthesis rate, the influence of selection increases until the system is dominated by selection. The selectively favord codon is observed with the highest frequency.}}{2}{figure.1.1}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Decline in fitness with distance in physicochemical space from the optimal amino acid. Fitness decline of amino acids (black dots) relative to optimal amino acid (Alanine). Weighting of properties according to \citet {grantham1974}.}}{4}{figure.1.2}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Distribution of s for codon GCA for amino acid alanine. Dashed line indicates the CAI weight for GCA. The comparisson provides a more nuanced picture as we can see that the selection on GCA varies across the genome.}}{24}{figure.2.1}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Trace plot showing the traces of all 40 codon specific selection parameters $\Delta \eta $ organized by amino acid.}}{27}{figure.2.2}

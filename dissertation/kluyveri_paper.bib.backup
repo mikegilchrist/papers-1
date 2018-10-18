@@ -325,22 +325,3 @@ year = {2008}
   title = {Mathematica, {V}ersion 9.0},
   note = {Champaign, IL, 2012}
 }
-
-@article{MHM2015,
-author = {Marcet-Houben, M and Gabaldón, T},
-journal = {PLoS Biology},
-number = {8},
-pages = {e1002220},
-title = {Beyond the Whole-Genome Duplication: Phylogenetic Evidence for an Ancient Interspecies Hybridization in the Baker's Yeast Lineage},
-volume = {13},
-year = {2015}
-}
-
-@article{Beimforde2014,
-author = {Beimforde, C and Feldberg, K and Nylinder, S and Rikkinen, J and Tuovila, H and Dörfelt, H and Gube, M and Jackson, DJ and Reitner, J and Seyfullah, LJ and Schmidt, AR},
-title = {Estimating the Phanerozoic history of the Ascomycota lineages: combining fossil and molecular data.},
-journal = {Mol. Phylogenet. Evol.},
-volume = {78},
-pages = {386-398},
-year = {2014}
-}

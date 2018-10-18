@@ -55,45 +55,45 @@ Repeated entry---line 40 of file ./ecoli.bib
  :              ,
 I'm skipping whatever remains of this entry
 Warning--empty year in Mathematica
-You've used 92 entries,
+You've used 98 entries,
             1935 wiz_defined-function locations,
-            1018 strings with 19383 characters,
-and the built_in function-call counts, 38350 in all, are:
-= -- 3689
-> -- 1571
-< -- 54
-+ -- 573
-- -- 528
-* -- 3398
-:= -- 6667
-add.period$ -- 276
-call.type$ -- 92
-change.case$ -- 719
-chr.to.int$ -- 91
-cite$ -- 93
-duplicate$ -- 1311
-empty$ -- 2730
-format.name$ -- 672
-if$ -- 7531
+            1051 strings with 20700 characters,
+and the built_in function-call counts, 41643 in all, are:
+= -- 3982
+> -- 1799
+< -- 56
++ -- 657
+- -- 612
+* -- 3732
+:= -- 7253
+add.period$ -- 294
+call.type$ -- 98
+change.case$ -- 791
+chr.to.int$ -- 97
+cite$ -- 99
+duplicate$ -- 1395
+empty$ -- 2912
+format.name$ -- 766
+if$ -- 8151
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 94
-newline$ -- 463
-num.names$ -- 276
-pop$ -- 522
+missing$ -- 100
+newline$ -- 493
+num.names$ -- 294
+pop$ -- 580
 preamble$ -- 1
-purify$ -- 724
+purify$ -- 796
 quote$ -- 0
-skip$ -- 994
+skip$ -- 1056
 stack$ -- 0
-substring$ -- 3142
-swap$ -- 119
+substring$ -- 3352
+swap$ -- 125
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 544
+type$ -- 580
 warning$ -- 1
-while$ -- 276
+while$ -- 294
 width$ -- 0
-write$ -- 1194
+write$ -- 1272
 (There were 9 error messages)

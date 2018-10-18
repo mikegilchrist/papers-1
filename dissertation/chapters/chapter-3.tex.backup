@@ -48,7 +48,7 @@ More practically, if transferred genes are unaccounted for, they may distort par
 This can lead to the conclusion of the wrong codon preference for an amino acid when analyzing a genome that has experienced such transfer events.  
 
 In this study, we analyze the synonymous codon usage of the genome of \textit{Lachancea kluyveri}, the earliest diverging lineage of the Lachancea clade.
-The Lachancea clade diverged from the Saccharomyces clade prior to the whole genome duplication, about 100 Mya ago \citep{MHM2015,Beimforde2014}.
+The Lachancea clade diverged from the Saccharomyces clade prior to the whole genome duplication, about 100 Mya ago.
 Since its divergence from the other Lachancea, \kluyveri  has experienced a large introgression of exogenous genes.
 The introgression replaced the left arm of the C chromosome and displays a $13 \%$ higher \GC than the endogenous \kluyveri genome \citep{payen2009, friedrich2015}.
 These characteristics make \kluyveri an ideal model to study the effects of an introgressed cellular environment and the resulting mismatch codon usage.

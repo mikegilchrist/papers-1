@@ -10,23 +10,26 @@ Similarly, phylogenetic models have long been phenomelogical \citep{JukesAndCant
 \citet{ZuckerkandlAndPauling1962} described the distance between hemoglobin proteins and proposed that the evolution of proteins is constant over time and between lineages before the genetic code was fully deciphered and were protein production was barely understood.
 This dissertation is therefore focues on the application of mechanistic models rooted in first principles to protein coding sequences.
 
+Mechanistic models are used throughout biology \citep{GoldmanAndYang1994,loreau1998,DavisAndPelsor2001,adf2007,McGill2007}.
+By modeling the process underlying the observed data mechanisitc models provide insights into the processes and estimates of paramerers shaping the data \citep{Liberles2013}.
 A wide variety of information is stored in protein and protein coding sequences, e.g. structure \citep{anfinsen1973}, mutation bias \citep{ShahAndGilchrist2011, gilchrist2015}, protein synthesis rate \citep{gilchrist2007,gilchrist2015}. 
 Mechanistic models can be used extract these informations and to study the relative strength of mutation, selection, and genetic drift leading to the observed sequences.
-Mechanistic models have a long standing history throughout biology \citep{loreau1998,DavisAndPelsor2001,adf2007}. 
-The provide insights into the paramerers leading to 
-
-
-Understanding the contributions of mutation, selection and drift on the evolution of observed sequences allows us to use this information to learn more about these seqeunces.
-Mutation bias in codon usage is a reflection of the cellular environment while selection on codon usage allows us to make inferences about the cellular and external evironment a genome and its genes are exposed to.
+Specifically, in this dissertation, mechanistic models lead to an understanding of the contributions of mutation, selection and drift on the evolution of observed sequences.
 
 \begin{figure}[H]
      \centering
 	\includegraphics[width=0.6\textwidth]{ch1/expl_model}
-	\caption{}
+	\caption{ROC-SEMPPER model behaviour for Isoleucine.
+	The proportion of each codon observed changes with protein synthesis rate.
+	Mutation is dominant when protein synthesis rate is low, mutationally favored codons are observed with the highest frequency.
+	With the increase of protein synthesis rate, the influence of selection increases until the system is dominated by selection.
+	The selectively favord codon is observed with the highest frequency.}
 	\label{fig:expl_model}
 \end{figure}
 
+\section{Decomposing Codon Usage}
 
+Mutation bias in codon usage is a reflection of the cellular environment while selection on codon usage allows us to make inferences about the cellular and external evironment a genome and its genes are exposed to.
 The relative strength of mutation and selection on individual genes varies, allowing us to separate the effects of mutation bias and selection, specifically selection against translation overhead cost.
 Genes with low protein synthesis rates are thought to be under weak selection and their codon usage is therfore dominated by mutation bias.
 In contrast, genes with high protein synthesis rate are thought to be under strong selection and their codon usage is therfore dominated by selection.
@@ -44,14 +47,16 @@ This information was used to determine a potential donor lineage in \gossypii, e
      \centering
 	\includegraphics[width=0.7\textwidth]{ch1/decl_fitness2}
 	\caption{Decline in fitness with distance in physicochemical space from the optimal amino acid. 
-	Fitness decline of amino acids (black dots) relative to optimal amino acid (Alanine). Weighting of properties was obtained from \citet{grantham1974}.}
+	Fitness decline of amino acids (black dots) relative to optimal amino acid (Alanine). Weighting of properties according to \citet{grantham1974}.}
 	\label{fig:decl_fit}
 \end{figure}
 
+\section{Selection on Amino acids}
 
 I chapter \ref{ch:phylogeny}, I shifted my focus from the cost of protein synthesis to the functionallity or benefit a protein produces.
 For that matter I utilized a mechanisitc phylogenetic model of stabilizing selection rooted in population genetics, SelAC \cite{beaulieu2018}.
-
+I explore the selection on amino acids in the $\beta$-lactamase protein TEM.
+ 
 
 
 % Variation in genomic environment shaping codon usage , therefore we did chapter 2.

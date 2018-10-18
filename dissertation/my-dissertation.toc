@@ -1,5 +1,6 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Decomposing Codon Usage}{2}{section.1.1}
+\contentsline {section}{\numberline {1.1}Decomposing Codon Usage}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}Selection on Amino acids}{4}{section.1.2}
 \contentsline {chapter}{\numberline {2}AnaCoDa: Analyzing Codon Data with Bayesian mixture models}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Introduction}{7}{section.2.1}
 \contentsline {section}{\numberline {2.2}Features}{8}{section.2.2}
@@ -31,15 +32,15 @@
 \contentsline {subsection}{\numberline {3.2.1}Differences in the Endogenous and Exogenous Codon Usage}{36}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Determining Source of Exogenous Genes}{38}{subsection.3.2.2}
 \contentsline {subsection}{\numberline {3.2.3}Estimating Introgression Age}{39}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Genetic Load of the Exogenous Genes}{40}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.4}Genetic Load of the Exogenous Genes}{39}{subsection.3.2.4}
 \contentsline {section}{\numberline {3.3}Discussion}{41}{section.3.3}
 \contentsline {section}{\numberline {3.4}Materials and Methods}{46}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Separating endogenous and exogenous genes}{46}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Model Fitting with ROC SEMPPR\xspace }{47}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.2}Model Fitting with ROC SEMPPR\xspace }{46}{subsection.3.4.2}
 \contentsline {subsection}{\numberline {3.4.3}Comparing codon specific parameter estimates}{47}{subsection.3.4.3}
 \contentsline {subsection}{\numberline {3.4.4}Synteny}{47}{subsection.3.4.4}
-\contentsline {subsection}{\numberline {3.4.5}Determining introgression timeline}{48}{subsection.3.4.5}
-\contentsline {section}{\numberline {3.5}Acknowledgments}{50}{section.3.5}
+\contentsline {subsection}{\numberline {3.4.5}Determining introgression timeline}{47}{subsection.3.4.5}
+\contentsline {section}{\numberline {3.5}Acknowledgments}{49}{section.3.5}
 \contentsline {section}{\numberline {3.6}Supplementary Material}{51}{section.3.6}
 \contentsline {chapter}{\numberline {4}Phylogenetic model of stabilizing selection is more informative about site specific selection than extrapolation from laboratory estimates}{57}{chapter.4}
 \contentsline {section}{\numberline {4.1}Introduction}{59}{section.4.1}
@@ -59,4 +60,4 @@
 \contentsline {section}{\numberline {4.6}Supplementary Material}{79}{section.4.6}
 \contentsline {chapter}{\numberline {5}Conclusion}{88}{chapter.5}
 \contentsline {chapter}{Bibliography}{89}{section*.34}
-\contentsline {chapter}{Vita}{97}{section*.35}
+\contentsline {chapter}{Vita}{98}{section*.35}

@@ -32,6 +32,14 @@ Beaulieu, J., O'Meara, B., Zaretzki, R., Landerer, C., Chai, J., and Gilchrist,
   for an optimal amino acid sequence: A nested modeling approach.
 \newblock {\em Molecular Biology and Evolution}, X:NA.
 
+\bibitem[Beimforde et~al., 2014]{Beimforde2014}
+Beimforde, C., Feldberg, K., Nylinder, S., Rikkinen, J., Tuovila, H., Dörfelt,
+  H., Gube, M., Jackson, D., Reitner, J., Seyfullah, L., and Schmidt, A.
+  (2014).
+\newblock Estimating the phanerozoic history of the ascomycota lineages:
+  combining fossil and molecular data.
+\newblock {\em Mol. Phylogenet. Evol.}, 78:386--398.
+
 \bibitem[Bennetzen and Hall, 1982]{BennetzenAndHall1982}
 Bennetzen, J. and Hall, B. (1982).
 \newblock Codon selection in yeast.
@@ -306,6 +314,11 @@ Laureau, M. (1998).
 \newblock {\em Proccedings of the National Academy of Sciences U.S.A},
   95:5632--5636.
 
+\bibitem[Lawrence and Ochman, 1997]{lawrence1997}
+Lawrence, J. and Ochman, H. (1997).
+\newblock Amelioration of bacterial genomes: Rates of change and exchange.
+\newblock {\em Journal of Molecular Miology}, 44:383--397.
+
 \bibitem[Le et~al., 2008]{le2008}
 Le, S., Lartillot, N., and O, G. (2008).
 \newblock Phylogenetic mixture models for proteins.
@@ -318,12 +331,24 @@ Leder, P. and Nierenberg, M. (1964).
 \newblock {\em Proccedings of the National Academy of Sciences U.S.A},
   52:1521--1529.
 
+\bibitem[Liberles et~al., 2013]{Liberles2013}
+Liberles, D., Teufel, A., Liu, L., and Stadler, T. (2013).
+\newblock Species abundance distributions: moving beyond single prediction
+  theories to integration within an ecological framework.
+\newblock {\em Genome Biology and Evolution}, 5(10):2008--2018.
+
 \bibitem[Mabilat et~al., 1992]{mabilat1992}
 Mabilat, C., Lourencao-Vital, J., Goussard, S., and Courvalin, P. (1992).
 \newblock A new example of physical linkage between tn1 and tn21: the
   antibiotic multiple-resistance region of plasmid pcff04 encoding
   extended-spectrum beta-lactamase tem-3.
 \newblock {\em Mol Gen Genet}, 235:113--121.
+
+\bibitem[Marcet-Houben and Gabaldón, 2015]{MHM2015}
+Marcet-Houben, M. and Gabaldón, T. (2015).
+\newblock Beyond the whole-genome duplication: Phylogenetic evidence for an
+  ancient interspecies hybridization in the baker's yeast lineage.
+\newblock {\em PLoS Biology}, 13(8):e1002220.
 
 \bibitem[Matagne et~al., 1998]{matagne1998}
 Matagne, A., Lamotte-Brasseur, J., and Frere, J. (1998).
@@ -345,6 +370,15 @@ Maxwell, E. (1962).
 \newblock {\em Proccedings of the National Academy of Sciences U.S.A},
   48(9):1639--1643.
 
+\bibitem[McGill et~al., 2007]{McGill2007}
+McGill, B., Etienne, R., Gray, J., Alonso, D., Anderson, M., Benecha, H.,
+  Dornelas, M., Enquist, B., Green, J., He, F., Hurlbert, A., Magurran, A.,
+  Marquet, P., Maurer, B., Ostling, A., Soykan, C., Ugland, K., and White, E.
+  (2007).
+\newblock Species abundance distributions: moving beyond single prediction
+  theories to integration within an ecological framework.
+\newblock {\em Ecology Letters}, 10(10):995--1015.
+
 \bibitem[Mi et~al., 2015]{gumi2015}
 Mi, G., Di, Y., and Schafer, D. (2015).
 \newblock Goodness-of-fit tests and model diagnostics for negative binomial
@@ -356,6 +390,11 @@ Muse, S. and Gaut, B. (1994).
 \newblock A likelihood approach for comparing synonymous and nonsynonymous
   nucleotide substitution rates, with application to the chloroplast genome.
 \newblock {\em Molecular Biology and Evolution}, 11(5):715--724.
+
+\bibitem[Médigue et~al., 1991]{medigue1991}
+Médigue, C., Rouxel, T., Vigier, P., Hénaut, A., and Danchin, A. (1991).
+\newblock Evidence for horizontal gene transfer in escherichia coli speciation.
+\newblock {\em Journal of Molecular Miology}, 222(4):851--856.
 
 \bibitem[Nguyen et~al., 2015]{nguyen2015}
 Nguyen, L., Schmidt, H., von Haeseler, A., and Minh, B. (2015).
