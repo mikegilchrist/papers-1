@@ -40,7 +40,7 @@ on CRAN (\url{https://cran.r-project.org/web/packages/AnaCoDa/}).
 \section{Introduction}
 
 \package is  an open-source software implemented in R \citep{rcore} that allows researchers to analyze genome-scale data like coding sequences and ribosome footprinting data using evolutionary or analytical models in a Bayesian framework. 
-\package was developed to analyze selection on synonymous codon usage in the form of ribosome overhead cost (\citep{gilchrist2015,wallace2013,shah2011}).
+\package was developed to analyze selection on synonymous codon usage in the form of ribosome overhead cost \citep{gilchrist2015,wallace2013,shah2011}.
 However, other codon metrics like the codon adaptation index \citep{sharp1987} or the effective number of codons \citep{Wright1990} are also provided as reference.
 %% addded to introduction
 In addition, three currently unpublished models to analyze coding sequences for evidence of selection against nonsense errors and estimate ribosome pausing times from ribosome footprinting data are included.
@@ -508,9 +508,9 @@ phi_mat <- getExpressionEstimates(parameter = parameter,
 \end{lstlisting}
 
 Furthermore, AnaCoDa allows to calculate the selection coefficient s for each codon and each gene. We can
-use the function \textbf{getSelectionCoefficients} to do so. Please note, that this function returns the $log(sNe)$.
+use the function \textbf{getSelectionCoefficients} to do so. Please note, that this function returns the $\log(sNe)$.
 
-\textbf{getSelectionCoefficients} returns a matrix with $log(sNe)$ relative to the most efficient synonymous codon.
+\textbf{getSelectionCoefficients} returns a matrix with $\log(sNe)$ relative to the most efficient synonymous codon.
 
 \begin{lstlisting}[language=R]
 selection.coefficients <- getSelectionCoefficients(genome = genome,

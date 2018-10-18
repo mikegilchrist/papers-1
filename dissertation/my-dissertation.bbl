@@ -67,6 +67,12 @@ Chanal, C., Poupart, M., Sirot, D., Labia, R., Sirot, J., and Cluzel, R.
 \newblock Nucleotide sequences of caz-2, caz-6, and caz-7 beta-lactamase genes.
 \newblock {\em Antimicrob. Agents Chemother.}, 36:1817--1820.
 
+\bibitem[Davis and Pelsor, 2001]{DavisAndPelsor2001}
+Davis, M. and Pelsor, M. (2001).
+\newblock Experimental support for a resource‐based mechanistic model of
+  invasibility.
+\newblock {\em Ecology Letters}, 4(5):421--428.
+
 \bibitem[Dayhoff and Orcutt, 1978]{Dayhoff1978}
 Dayhoff, MO~andSchwartz, R. and Orcutt, B. (1978).
 \newblock A model of evolutionary change in proteins.
@@ -76,6 +82,11 @@ Dayhoff, MO~andSchwartz, R. and Orcutt, B. (1978).
 de~Koning, A. and De~Sanctis, B. (2018).
 \newblock The rate of molecular evolution when mutation may not be weak.
 \newblock {\em bioRxiv}.
+
+\bibitem[Doron-Faigenboim and Pupko, 2007]{adf2007}
+Doron-Faigenboim, A. and Pupko, T. (2007).
+\newblock A combined empirical and mechanistic codon model.
+\newblock {\em Molecular Biology and Evolution}, 24(2):388--397.
 
 \bibitem[dos Reis et~al., 2004]{dosreis2004}
 dos Reis, M., Savva, R., and Wernisch, L. (2004).
@@ -288,6 +299,12 @@ Lartillot, N. and Philippe, H. (2004).
 \newblock A bayesian mixture model for across-site heterogeneities in the
   amino-acid replacement process.
 \newblock {\em Molecular Biology and Evolution}, 21:1095--1109.
+
+\bibitem[Laureau, 1998]{loreau1998}
+Laureau, M. (1998).
+\newblock Biodiversity and ecosystem functioning: A mechanistic model.
+\newblock {\em Proccedings of the National Academy of Sciences U.S.A},
+  95:5632--5636.
 
 \bibitem[Le et~al., 2008]{le2008}
 Le, S., Lartillot, N., and O, G. (2008).

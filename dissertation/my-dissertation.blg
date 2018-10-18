@@ -21,10 +21,6 @@ A level-1 auxiliary file: chapters/chapter-3.aux
 A level-1 auxiliary file: chapters/chapter-4.aux
 A level-1 auxiliary file: chapters/chapter-5.aux
 The style file: apalike.bst
-Illegal, another \bibdata command---line 124 of file my-dissertation.aux
- : \bibdata
- :         {dissertation}
-I'm skipping whatever remains of this command
 A level-1 auxiliary file: back-matter/vita.aux
 Database file #1: ./intro_conc.bib
 Repeated entry---line 123 of file ./intro_conc.bib
@@ -59,45 +55,45 @@ Repeated entry---line 40 of file ./ecoli.bib
  :              ,
 I'm skipping whatever remains of this entry
 Warning--empty year in Mathematica
-You've used 89 entries,
+You've used 92 entries,
             1935 wiz_defined-function locations,
-            1003 strings with 19041 characters,
-and the built_in function-call counts, 37192 in all, are:
-= -- 3574
-> -- 1538
-< -- 51
-+ -- 561
-- -- 518
-* -- 3297
-:= -- 6470
-add.period$ -- 267
-call.type$ -- 89
-change.case$ -- 699
-chr.to.int$ -- 88
-cite$ -- 90
-duplicate$ -- 1269
-empty$ -- 2639
-format.name$ -- 655
-if$ -- 7299
+            1018 strings with 19383 characters,
+and the built_in function-call counts, 38350 in all, are:
+= -- 3689
+> -- 1571
+< -- 54
++ -- 573
+- -- 528
+* -- 3398
+:= -- 6667
+add.period$ -- 276
+call.type$ -- 92
+change.case$ -- 719
+chr.to.int$ -- 91
+cite$ -- 93
+duplicate$ -- 1311
+empty$ -- 2730
+format.name$ -- 672
+if$ -- 7531
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 91
-newline$ -- 448
-num.names$ -- 267
-pop$ -- 511
+missing$ -- 94
+newline$ -- 463
+num.names$ -- 276
+pop$ -- 522
 preamble$ -- 1
-purify$ -- 704
+purify$ -- 724
 quote$ -- 0
-skip$ -- 961
+skip$ -- 994
 stack$ -- 0
-substring$ -- 3035
-swap$ -- 116
+substring$ -- 3142
+swap$ -- 119
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 526
+type$ -- 544
 warning$ -- 1
-while$ -- 267
+while$ -- 276
 width$ -- 0
-write$ -- 1155
-(There were 10 error messages)
+write$ -- 1194
+(There were 9 error messages)

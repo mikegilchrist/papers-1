@@ -95,14 +95,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
-%\pagestyle{fancy}
-%\fancyhead{}
-%\fancyhead[RO,LE]{Separate the effects of mutation, selection, and drift}
-%\fancyfoot{}
-%\fancyfoot[LE,RO]{\thepage}
-%\fancyfoot[LO,CE]{Chapter \thechapter}
-
-
   \newcommand{\package}{\textbf{AnaCoDa}\xspace} % Use xspace, not two commands!
   \newcommand{\kluyveri}{\textit{L. kluyveri}\xspace}
   \newcommand{\dubl}{\textit{C. dubliniensis}\xspace}
@@ -132,9 +124,9 @@
     %
     \makeCopyrightPage % make the copyright page
     %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%The dedication and acknowledgments are optional. If you wish not to include them, simply comment out both the "\addToPDF..." line and the "\include{...}" line for each.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %The dedication and acknowledgments are optional. If you wish not to include them, simply comment out both the "\addToPDF..." line and the "\include{...}" line for each.
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \addToPDFBookmarks{1}{Dedication}{b} % add a pdf bookmark to the dedication page
     \include{front-matter/dedication} % include the dedication
 
@@ -170,14 +162,14 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \makeBibliographyPage % make the bibliography title page
     %\bibliographystyle{unsrtnat} % bibliography style - recommend using apalike-doi as it hyperlinks DOIs
-    \bibliography{./intro_conc,./bioinfo,./kluyveri_paper,./ecoli}% references.bib included in the references directory
-\newpage
+    %\bibliography{./intro_conc,./bioinfo,./kluyveri_paper,./ecoli}% references.bib included in the references directory
+    \newpage
 
-% To make the bibliography, use \utbiblio{#1}{}{} command. Always use "#1" for the first entry. The second entry is your bibliography style, and the third entry is the name of your bibliography file (.bib file extension) 
-% bibliography style - recommend using apalike-doi as it hyperlinks DOIs
-% Be sure to run BibTeX in order to generate the bibliography correctly.
+    % To make the bibliography, use \utbiblio{#1}{}{} command. Always use "#1" for the first entry. The second entry is your bibliography style, and the third entry is the name of your bibliography file (.bib file extension) 
+    % bibliography style - recommend using apalike-doi as it hyperlinks DOIs
+    % Be sure to run BibTeX in order to generate the bibliography correctly.
 
-\utbiblio{#1}{apalike}{dissertation}
+    \utbiblio{#1}{apalike}{./intro_conc,./bioinfo,./kluyveri_paper,./ecoli}
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % APPENDIX - OPTIONAL - COMMENT OUT IF NOT NEEDED
