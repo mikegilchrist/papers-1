@@ -39,8 +39,9 @@ To provide researchers with a software tool, AnaCoDa \cite{landerer2018}, to add
 However, there is a significant difference to classical mixutre approaches as ROC-SEMPPR not only estimates population specific paramerers (mutation and selection) that are now modelled as mixture distibutions but also a gene specific parameter (protein synthesis rate). 
 Therefore, the protein synthesis rate has to be estimated for each population, providing aditional insight into the adaptiveness of a gene to alternative genomic environments.
 
-In chaper \ref{ch:kluyveri}, I apply AnaCoDa to the yeast \kluyveri which experienced a large scale introgression replacing the whole left arm of chromosome C.
-Applying a mechanistic models allowed me to separate the effects of mutation and selection in the exogenous \kluyveri genes and the introgressed exogenous genes.
+In chaper \ref{ch:kluyveri}, I apply AnaCoDa to analyze the synonymous codon usage of the yeast \kluyveri which experienced a large scale introgression replacing the whole left arm of chromosome C \citep{friedrich2015}.
+I studied the differences in the parameters describing codon usage between the endogenous \kluyveri genes and the introgressed exogenous genes.
+Applying a mechanistic models allowed me to separate the effects of mutation and selection in the endogenous \kluyveri genes and the introgressed exogenous genes.
 This information was used to determine a potential donor lineage in \gossypii, estimate a time since introgression, and estimate the genetic load the introgression introduced into the  \kluyveri genome.
 
 \begin{figure}[H]
@@ -53,7 +54,7 @@ This information was used to determine a potential donor lineage in \gossypii, e
 
 \section{Selection on Amino acids}
 
-I chapter \ref{ch:phylogeny}, I shifted my focus from the cost of protein synthesis to the functionallity or benefit a protein produces.
+In chapter \ref{ch:phylogeny}, I shifted my focus from the cost of protein synthesis to the functionallity or benefit a protein produces.
 For that matter I utilized a mechanisitc phylogenetic model of stabilizing selection rooted in population genetics, SelAC \cite{beaulieu2018}.
 I explore the selection on amino acids in the $\beta$-lactamase protein TEM.
  

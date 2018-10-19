@@ -1,5 +1,5 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Decomposing Codon Usage}{3}{section.1.1}
+\contentsline {section}{\numberline {1.1}Decomposing Codon Usage}{2}{section.1.1}
 \contentsline {section}{\numberline {1.2}Selection on Amino acids}{4}{section.1.2}
 \contentsline {chapter}{\numberline {2}AnaCoDa: Analyzing Codon Data with Bayesian mixture models}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Introduction}{7}{section.2.1}
