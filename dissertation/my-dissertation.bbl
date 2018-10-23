@@ -1,5 +1,12 @@
 \begin{thebibliography}{}
 
+\bibitem[Akashi and Gojobori, 2002]{AkashiAndGojobori2002}
+Akashi, H. and Gojobori, T. (2002).
+\newblock Metabolic efficiency and amino acid composition in the proteoms of
+  \textit{Escherichia coli} and \textit{Bacillus subtilis}.
+\newblock {\em Proccedings of the National Academy of Sciences U.S.A},
+  99:3695--3670.
+
 \bibitem[Altschul, 1991]{Altschul1991}
 Altschul, S. (1991).
 \newblock Amino acid substitution matrices from an information theoretic
@@ -68,6 +75,11 @@ Brun, T., Peduzzi, J., Canica, M., Paul, G., Nevot, P., Barthelemy, M., and
 \newblock Characterization and amino acid sequence of irt-4, a novel tem-type
   enzyme with a decreased susceptibility to beta-lactamase inhibitors.
 \newblock {\em FEMS Microbiology Letters}, 120:111--117.
+
+\bibitem[Buttgereit and Brand, 1995]{buttgereit1995}
+Buttgereit, F. and Brand, M. (1995).
+\newblock A hierachy of atp-consuming processes in mammalian cells.
+\newblock {\em Biochemical Journal}, 312(1):163--167.
 
 \bibitem[Chanal et~al., 1992]{chanal1992}
 Chanal, C., Poupart, M., Sirot, D., Labia, R., Sirot, J., and Cluzel, R.
@@ -291,6 +303,12 @@ Kosiol, C., Holmes, I., and Goldman, N. (2007).
 \newblock An empirical codon model for protein sequence evolution.
 \newblock {\em Molecular Biology and Evolution}, 24(7):1464--1479.
 
+\bibitem[Lafay et~al., 1999]{Lafay1999}
+Lafay, B., Sharp, P., Lloyd, A., McLean, M., Devine, K., and Wolfe, K. (1999).
+\newblock Proteome composition and codon usage in spirochaetes:
+  Species-specific and dna strand-specific mutational biases.
+\newblock {\em Nucleic Acids Research}, 27(7):1642--1649.
+
 \bibitem[Landerer et~al., 2018]{landerer2018}
 Landerer, C., Cope, A., Zaretzki, R., and Gilchrist, M.~A. (2018).
 \newblock Anacoda: analyzing codon data with bayesian mixture models.
@@ -333,9 +351,15 @@ Leder, P. and Nierenberg, M. (1964).
 
 \bibitem[Liberles et~al., 2013]{Liberles2013}
 Liberles, D., Teufel, A., Liu, L., and Stadler, T. (2013).
-\newblock Species abundance distributions: moving beyond single prediction
-  theories to integration within an ecological framework.
+\newblock On the need for mechanistic models in computational genomics and
+  metagenomics.
 \newblock {\em Genome Biology and Evolution}, 5(10):2008--2018.
+
+\bibitem[Lindqvist et~al., 2018]{lindqvist2018}
+Lindqvist, L., Tandoc, K., Topisirovic, I., and Furic, L. (2018).
+\newblock Cross-talk between protein synthesis, energy metabolism and autophagy
+  in cancer.
+\newblock {\em Current Opinion in Genetics and Development}, 48:104--111.
 
 \bibitem[Mabilat et~al., 1992]{mabilat1992}
 Mabilat, C., Lourencao-Vital, J., Goussard, S., and Courvalin, P. (1992).
@@ -444,6 +468,19 @@ Rodrigue, N., Philippe, H., and Lartillot, N. (2010).
   site-heterogeneous amino acid fitness profiles.
 \newblock {\em Proccedings of the National Academy of Sciences U.S.A},
   107:4629--4634.
+
+\bibitem[Romero et~al., 2000]{Romero2000}
+Romero, H., Zavala, A., and Musto, H. (2000).
+\newblock Codon usage in chlamydia trachomatis is the result of strand-specific
+  mutational biases and a complex pattern of selective forces.
+\newblock {\em Nucleic Acids Research}, 28(10):2084--2090.
+
+\bibitem[Sagi et~al., 2016]{sagi2016}
+Sagi, D., Rak, R., Gingold, H., Adir, I., Maayan, G., Dahan, O., Broday, L.,
+  Pilpel, Y., and Rechavi, O. (2016).
+\newblock Tissue- and time-specific expression of otherwise identical trna
+  genes.
+\newblock {\em PLOS Genetics}, 12(8):1--27.
 
 \bibitem[Sella and Hirsh, 2005]{SellaAndHirsh2005}
 Sella, G. and Hirsh, A. (2005).
@@ -559,6 +596,11 @@ Wang, H., Li, K., Susko, E., and Roger, A. (2008).
 \newblock A class frequency mixture model that adjusts for site-specific amino
   acid frequencies and improves inference of protein phylogeny.
 \newblock {\em BMC Evolutionary Biology}, 8:331.
+
+\bibitem[Warner, 1999]{warner1999}
+Warner, J. (1999).
+\newblock The economics of ribosome biosynthesis in yeast.
+\newblock {\em Trends Biochem Sci}, 24:437--440.
 
 \bibitem[Wright, 1990]{wright1990}
 Wright, F. (1990).

@@ -1,9 +1,9 @@
 \chapter{Introduction} 
 \label{ch:introduction}
 
-Mathematical and statistical have long been used to describe or summarize observations in genetics and genomics.
-Mostly without addressing the underlying biological mechanisms mutation, selection, and drift shaping DNA sequences, but as phenomelogical description.
-However, as researchers learn more about the underlying processes and more genetic and genomic data is available, the mathematical descriptions that allow us to extract information from this data have to keep up.
+Mathematical and statistical models have long been used to describe or summarize observations in genetics and genomics.
+Often without addressing the underlying biological mechanisms mutation, selection, and drift shaping DNA sequences, but as phenomelogical description.
+However, as researchers learn more about the underlying processes and more genetic and genomic data is available, the mathematical descriptions allowing fo the extraction of information from this data have to keep up.
 For example, after the unraveling of the degenerate genetic code by \citet{MatthaeiAndNirenberg1961,NirenbergAndMatthaei1961,Maxwell1962,LederAndNirenberg1964}, and many others, researchers noticed that synonymous codons are not found in uniform proportions \citep{fitch1976,grantham1980,ikemura1981,grantham1981,sharp1988}.
 Models of codon usage, however, where long purely descriptive and heuristic \citep{ikemura1981,BennetzenAndHall1982,sharp1987,wright1990}.
 Similarly, phylogenetic models have long been phenomelogical \citep{JukesAndCantor1969,Dayhoff1978,Kimura1980,felsenstein1981,Altschul1991}, describing the rate at which one state is transformed into another, without regards for the fundamental forces of evolution mutation, selection, and drift.
@@ -16,14 +16,20 @@ A wide variety of information is stored in protein and protein coding sequences,
 Mechanistic models can be used extract these informations and to study the relative strength of mutation, selection, and genetic drift leading to the observed sequences.
 Specifically, in this dissertation, mechanistic models lead to an understanding of the contributions of mutation, selection and drift on the evolution of observed sequences.
 
-\section{Decomposing Codon Usage}
+Protein production is the most costly metabolic process a cell performs \citep{buttgereit1995,warner1999,AkashiAndGojobori2002,lindqvist2018} yielding high selection to maximize the benefit of protein production.
+Studying the cost/benefit ratio is therefore important to understand the evolution of protein coding sequences.
+The interaction between cost and benefit cause for non-linear dynamics that are extremly difficult to model.
+I therefore apply mechanistic models that either account for the cost or the benefit of protein production.
+
+
+\section{Cost: Decomposing Codon Usage}
 
 Mutation bias in codon usage is a reflection of the cellular environment while selection on codon usage allows us to make inferences about the cellular and external environment a genome and its genes are exposed to.
-The relative strength of mutation and selection on individual genes varies, allowing us to separate the effects of mutation bias and selection, specifically selection against translation overhead cost.
+The relative strength of mutation and selection on individual genes varies, allowing us to separate the effects of mutation bias and selection, specifically selection against translation overhead cost \citep{gilchrist2007,ShahAndGilchrist2011,gilchrist2015}.
 Genes with low protein synthesis rates are thought to be under weak selection and their codon usage is therefore dominated by mutation bias.
 In contrast, genes with high protein synthesis rate are thought to be under strong selection and their codon usage is therefore dominated by selection.
 However, mutation bias and selection can differ within the genome.
-For example, strand specific mutation rates, differences in the tRNA pool throughout life stages or introgressions can produce or reflect of multiple genomic environments.
+For example, strand specific mutation bias \citep{Lafay1999,Romero2000}, differences in the tRNA pool throughout life stages \citep{sagi2016}, or introgressionsand horizontal gene transfer \citep{medigue1991,lawrence1997} can produce or reflect of multiple genomic environments.
 To provide researchers with a software tool, AnaCoDa \cite{landerer2018}, to address intra genomic variation in codon usage, chapter \ref{ch:anacoda} extends the mechanistic model ROC-SEMPPR \cite{gilchrist2015} to allow for a mixture distribution of mutation and selection parameters.
 However, there is a significant difference to classical mixture approaches as ROC-SEMPPR not only estimates population specific parameters (mutation and selection) that are now modeled as mixture distributions but also a gene specific parameter (protein synthesis rate). 
 Therefore, the protein synthesis rate has to be estimated for each population, providing additional insight into the adaptiveness of a gene to alternative genomic environments.
@@ -45,7 +51,7 @@ Recognizing the differences in codon usage between the endogenous and exogenous 
 Applying a mechanistic models also allowed me to separate the effects of mutation and selection in the endogenous \kluyveri genes and the introgressed exogenous genes.
 This information was used to determine a potential donor lineage in \gossypii, estimate a time since introgression, and estimate the genetic load the introgression introduced into the \kluyveri genome.
 
-\section{Selection on Amino acids}
+\section{Benefit: Selection on Amino acids}
 
 In chapter \ref{ch:phylogeny}, I shifted my focus from the cost of protein synthesis to the functionality or benefit a protein produces.
 For that matter I utilized a mechanistic phylogenetic model of stabilizing selection rooted in population genetics, SelAC \cite{beaulieu2018}.
@@ -59,30 +65,3 @@ I explore the selection on amino acids in the $\beta$-lactamase protein TEM.
 	\label{fig:decl_fit}
 \end{figure}
 
-
-% Variation in genomic environment shaping codon usage , therefore we did chapter 2.
-% Applied chapter 2 to kluyveri in chapter 3
-% While analysing cost of protein synthesis in chapter 3, what about protein functionality
-% chapter 4 looks at protein functionality in e.coli.
-
-
-
-%INTRODUCTION
-% - Mutation, selection, drift are three main forces of evolution
-% - Selection can only act on standing variation \citep{LuriaAndDelbruck1943}
-% - Protein peptide sequence contains information e.g. Structure \citep{anfinsen1973}
-% - Fitness effects of mutations, synonymous and non-synonymous
-% -- Protein production is expensive \citep{warner1999,AkashiAndGojobori2002}
-% - phylogenetics, rate of evolution \citep{ZuckerkandlAndPauling1962}
-
-%MECHANISTIC MODELS
-% - Mechanistic model can extract information on mutation and selection that describtive ones can not
-% -- CAI, indifferent to mutation \citep{sharp1987}
-% -- F_opt \citep{ikemura1981}
-% -- CBI \citep{BennetzenAndHall1982}
-% - Phylogenetic models
-
-%INTROGRESSION
-% -
-
-%PROTEIN FUNCTIONALLITY

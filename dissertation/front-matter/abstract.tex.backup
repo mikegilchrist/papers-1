@@ -1,6 +1,10 @@
 \chapter*{Abstract}\label{ch:abstract}
+
+Mathematical and statistical models are useful for describing and understanding observations in genetics and genomics.
+Mathematical models have to constantly be updated to relfect current biologucal understanding.
+Early models were largely descriptive and phenomenological, but mechanistic models allow for the extraction of more biologically relevant information. 
 Mutation, selection, and drift are the three forces guiding evolution.
-
-Interplay of forces is complicated.
-
-Efficacy of one depends on the others, e.g. population mutation rate is $\muN_e$, efficacy of selection is $sN_e$.
+Mechanistic models allow us to separate and distinguish hoe these forces shape the observed data.
+I demonstrate the usage of mechanistic models to relate protein coding sequences to their fitness landscapes and the evolutionary forces shaping it.
+Using the yeast \textit{L. kluyveri}, I show the increased cost of protein synthesis due to a large scale inrogression with mismatched codon usage.
+Furthermore, I analyze the site specific selection on amino amino acids in the $\beta$-lactamase protein TEM which confers antibiotic resistance in \textit{E. coli} and related species. 
