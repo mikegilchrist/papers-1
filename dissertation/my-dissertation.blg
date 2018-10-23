@@ -54,46 +54,52 @@ Repeated entry---line 40 of file ./ecoli.bib
  : @manual{rcore
  :              ,
 I'm skipping whatever remains of this entry
+Name 1 in "Lindqvist, LM, and Tandoc, K and Topisirovic, I and Furic, L" has a comma at the end for entry lindqvist2018
+while executing---line 1023 of file apalike.bst
+Name 1 in "Lindqvist, LM, and Tandoc, K and Topisirovic, I and Furic, L" has a comma at the end for entry lindqvist2018
+while executing---line 1023 of file apalike.bst
 Warning--empty year in Mathematica
-You've used 98 entries,
+Name 1 in "Lindqvist, LM, and Tandoc, K and Topisirovic, I and Furic, L" has a comma at the end for entry lindqvist2018
+while executing---line 1098 of file apalike.bst
+You've used 105 entries,
             1935 wiz_defined-function locations,
-            1051 strings with 20700 characters,
-and the built_in function-call counts, 41643 in all, are:
-= -- 3982
-> -- 1799
-< -- 56
-+ -- 657
-- -- 612
-* -- 3732
-:= -- 7253
-add.period$ -- 294
-call.type$ -- 98
-change.case$ -- 791
-chr.to.int$ -- 97
-cite$ -- 99
-duplicate$ -- 1395
-empty$ -- 2912
-format.name$ -- 766
-if$ -- 8151
+            1095 strings with 22041 characters,
+and the built_in function-call counts, 44790 in all, are:
+= -- 4278
+> -- 1954
+< -- 59
++ -- 715
+- -- 666
+* -- 4028
+:= -- 7803
+add.period$ -- 315
+call.type$ -- 105
+change.case$ -- 853
+chr.to.int$ -- 104
+cite$ -- 106
+duplicate$ -- 1493
+empty$ -- 3122
+format.name$ -- 831
+if$ -- 8761
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 100
-newline$ -- 493
-num.names$ -- 294
-pop$ -- 580
+missing$ -- 107
+newline$ -- 528
+num.names$ -- 315
+pop$ -- 625
 preamble$ -- 1
-purify$ -- 796
+purify$ -- 858
 quote$ -- 0
-skip$ -- 1056
+skip$ -- 1129
 stack$ -- 0
-substring$ -- 3352
-swap$ -- 125
+substring$ -- 3596
+swap$ -- 132
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 580
+type$ -- 622
 warning$ -- 1
-while$ -- 294
+while$ -- 315
 width$ -- 0
-write$ -- 1272
-(There were 9 error messages)
+write$ -- 1363
+(There were 12 error messages)

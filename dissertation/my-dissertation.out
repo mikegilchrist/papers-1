@@ -6,8 +6,8 @@
 \BOOKMARK [1][-]{e.1}{Abstract}{rootNode.0}% 6
 \BOOKMARK [0][-]{f.0}{Table of Contents}{}% 7
 \BOOKMARK [0][-]{chapter.1}{1 Introduction}{}% 8
-\BOOKMARK [1][-]{section.1.1}{1.1 Decomposing Codon Usage}{chapter.1}% 9
-\BOOKMARK [1][-]{section.1.2}{1.2 Selection on Amino acids}{chapter.1}% 10
+\BOOKMARK [1][-]{section.1.1}{1.1 Cost: Decomposing Codon Usage}{chapter.1}% 9
+\BOOKMARK [1][-]{section.1.2}{1.2 Benefit: Selection on Amino acids}{chapter.1}% 10
 \BOOKMARK [0][-]{chapter.2}{2 AnaCoDa: Analyzing Codon Data with Bayesian mixture models}{}% 11
 \BOOKMARK [1][-]{section.2.1}{2.1 Introduction}{chapter.2}% 12
 \BOOKMARK [1][-]{section.2.2}{2.2 Features}{chapter.2}% 13

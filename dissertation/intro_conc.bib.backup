@@ -276,13 +276,3 @@ year = {1999}
     volume = {48},
     pages = {104-111}
 }
-
-@article{buttgereit1995,
-    author = {Buttgereit, F and Brand, MD},
-    journal = {Biochemical Journal},
-    title = {A hierachy of ATP-consuming processes in mammalian cells},
-    year = {1995},
-    volume = {312},
-    number = {1},
-    pages = {163-167}
-}
