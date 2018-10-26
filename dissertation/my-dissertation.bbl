@@ -118,7 +118,7 @@ dos Reis, M., Savva, R., and Wernisch, L. (2004).
 Dunn, C., Zapata, F., Munro, C., Siebert, S., and Hejnol, A. (2018).
 \newblock Pairwise comparisons across species are problematic when analyzing
   functional genomic data.
-\newblock {\em Proc Natl Acad Sci USA}.
+\newblock {\em Proc Natl Acad Sci USA}, 115(3):E409--E417.
 
 \bibitem[Echave et~al., 2016]{echave2016}
 Echave, J., Spielman, S., and Wilke, C. (2016).
@@ -185,6 +185,12 @@ Gilchrist, M., Chen, W., Shah, P., Landerer, C., and Zaretzki, R. (2015).
   efficiencies, mutation biases, and selection coefficients from genomic data
   alone.
 \newblock {\em Genome Biology and Evolution}, 7:1559--1579.
+
+\bibitem[Gilchrist et~al., 2009]{gilchrist2009}
+Gilchrist, M., Shah, P., and Zaretzki, R. (2009).
+\newblock Measuring and detecting molecular adaptation in codon usage against
+  nonsense errors during protein translation.
+\newblock {\em Genetics}, 183(4):1493--1505.
 
 \bibitem[Gillespie, 1976]{gillespie1976}
 Gillespie, D. (1976).
@@ -602,10 +608,10 @@ Warner, J. (1999).
 \newblock The economics of ribosome biosynthesis in yeast.
 \newblock {\em Trends Biochem Sci}, 24:437--440.
 
-\bibitem[Wright, 1990]{wright1990}
+\bibitem[Wright, 1990]{Wright1990}
 Wright, F. (1990).
 \newblock The 'effective number of codons' used in a gene.
-\newblock {\em Gene}, 87(1):23--29.
+\newblock {\em Gene}, 87:23--29.
 
 \bibitem[Wu et~al., 2013]{wu2013}
 Wu, C., Suchard, M., and Drummond, A. (2013).

@@ -401,7 +401,7 @@ L_i = \frac{w_{max} - w_i}{w_{max}}
 \end{equation}
 where $w_{max}$ is the fitness of the sequence of selectively favored amino acids estimated using  the site specific selection inferred by the deep mutation scanning experiment or \selac.
 $w_i$ represents the fitness of the $i$th residue.
-This the genetic load $L$ of a sequence is given by $L = \sum_{i=1}^n L_i$ where $n$ is the number of amino acids.
+This the genetic load $L$ of a sequence is given by $\sum_{i=1}^n L_i$ where $n$ is the number of amino acids.
 
 \section{Acknowledgments}
 

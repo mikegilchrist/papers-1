@@ -7,16 +7,6 @@ A level-1 auxiliary file: front-matter/quote.aux
 A level-1 auxiliary file: front-matter/abstract.aux
 A level-1 auxiliary file: chapters/chapter-1.aux
 A level-1 auxiliary file: chapters/chapter-2.aux
-Case mismatch error between cite keys Wright1990 and wright1990
----line 10 of file chapters/chapter-2.aux
- : \citation{Wright1990
- :                     }
-I'm skipping whatever remains of this command
-Case mismatch error between cite keys Wright1990 and wright1990
----line 57 of file chapters/chapter-2.aux
- : \citation{Wright1990
- :                     }
-I'm skipping whatever remains of this command
 A level-1 auxiliary file: chapters/chapter-3.aux
 A level-1 auxiliary file: chapters/chapter-4.aux
 A level-1 auxiliary file: chapters/chapter-5.aux
@@ -28,10 +18,6 @@ Repeated entry---line 123 of file ./intro_conc.bib
  :                     ,
 I'm skipping whatever remains of this entry
 Database file #2: ./bioinfo.bib
-Repeated entry---line 19 of file ./bioinfo.bib
- : @article{Wright1990
- :                    ,
-I'm skipping whatever remains of this entry
 Database file #3: ./kluyveri_paper.bib
 Repeated entry---line 85 of file ./kluyveri_paper.bib
  : @article{sharp1987
@@ -61,45 +47,45 @@ while executing---line 1023 of file apalike.bst
 Warning--empty year in Mathematica
 Name 1 in "Lindqvist, LM, and Tandoc, K and Topisirovic, I and Furic, L" has a comma at the end for entry lindqvist2018
 while executing---line 1098 of file apalike.bst
-You've used 105 entries,
+You've used 106 entries,
             1935 wiz_defined-function locations,
-            1095 strings with 22041 characters,
-and the built_in function-call counts, 44790 in all, are:
-= -- 4278
-> -- 1954
+            1103 strings with 22239 characters,
+and the built_in function-call counts, 45323 in all, are:
+= -- 4331
+> -- 1972
 < -- 59
-+ -- 715
-- -- 666
-* -- 4028
-:= -- 7803
-add.period$ -- 315
-call.type$ -- 105
-change.case$ -- 853
-chr.to.int$ -- 104
-cite$ -- 106
-duplicate$ -- 1493
-empty$ -- 3122
-format.name$ -- 831
-if$ -- 8761
++ -- 721
+- -- 672
+* -- 4082
+:= -- 7889
+add.period$ -- 318
+call.type$ -- 106
+change.case$ -- 861
+chr.to.int$ -- 105
+cite$ -- 107
+duplicate$ -- 1508
+empty$ -- 3165
+format.name$ -- 838
+if$ -- 8870
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 107
-newline$ -- 528
-num.names$ -- 315
-pop$ -- 625
+missing$ -- 108
+newline$ -- 533
+num.names$ -- 318
+pop$ -- 629
 preamble$ -- 1
-purify$ -- 858
+purify$ -- 866
 quote$ -- 0
-skip$ -- 1129
+skip$ -- 1139
 stack$ -- 0
-substring$ -- 3596
-swap$ -- 132
+substring$ -- 3662
+swap$ -- 133
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 622
+type$ -- 628
 warning$ -- 1
-while$ -- 315
+while$ -- 319
 width$ -- 0
-write$ -- 1363
-(There were 12 error messages)
+write$ -- 1377
+(There were 9 error messages)

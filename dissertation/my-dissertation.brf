@@ -13,7 +13,7 @@
 \backcite {ikemura1981}{{1}{1}{chapter.1}}
 \backcite {BennetzenAndHall1982}{{1}{1}{chapter.1}}
 \backcite {sharp1987}{{1}{1}{chapter.1}}
-\backcite {wright1990}{{1}{1}{chapter.1}}
+\backcite {Wright1990}{{1}{1}{chapter.1}}
 \backcite {JukesAndCantor1969}{{1}{1}{chapter.1}}
 \backcite {Dayhoff1978}{{1}{1}{chapter.1}}
 \backcite {Kimura1980}{{1}{1}{chapter.1}}
@@ -35,12 +35,16 @@
 \backcite {warner1999}{{2}{1}{chapter.1}}
 \backcite {AkashiAndGojobori2002}{{2}{1}{chapter.1}}
 \backcite {lindqvist2018}{{2}{1}{chapter.1}}
+\backcite {gilchrist2009}{{2}{1}{chapter.1}}
+\backcite {ShahAndGilchrist2011}{{2}{1}{chapter.1}}
+\backcite {gilchrist2015}{{2}{1}{chapter.1}}
+\backcite {beaulieu2018}{{2}{1}{chapter.1}}
 \backcite {gilchrist2007}{{2}{1.1}{section.1.1}}
 \backcite {ShahAndGilchrist2011}{{2}{1.1}{section.1.1}}
 \backcite {gilchrist2015}{{2}{1.1}{section.1.1}}
-\backcite {Lafay1999}{{2}{1.1}{section.1.1}}
-\backcite {Romero2000}{{2}{1.1}{section.1.1}}
-\backcite {sagi2016}{{2}{1.1}{section.1.1}}
+\backcite {Lafay1999}{{3}{1.1}{section.1.1}}
+\backcite {Romero2000}{{3}{1.1}{section.1.1}}
+\backcite {sagi2016}{{3}{1.1}{section.1.1}}
 \backcite {medigue1991}{{3}{1.1}{section.1.1}}
 \backcite {lawrence1997}{{3}{1.1}{section.1.1}}
 \backcite {landerer2018}{{3}{1.1}{section.1.1}}
@@ -53,6 +57,7 @@
 \backcite {wallace2013}{{8}{2.1}{section.2.1}}
 \backcite {shah2011}{{8}{2.1}{section.2.1}}
 \backcite {sharp1987}{{8}{2.1}{section.2.1}}
+\backcite {Wright1990}{{8}{2.1}{section.2.1}}
 \backcite {rcpp_package}{{10}{2.2}{section*.16}}
 \backcite {ood_book}{{10}{2.2}{section*.16}}
 \backcite {gumi2015}{{10}{2.2}{section*.17}}
@@ -64,6 +69,7 @@
 \backcite {dunn2018}{{11}{2.2}{section*.18}}
 \backcite {gilchrist2015}{{13}{2.3.2}{equation.2.3.1}}
 \backcite {rcpp_package}{{19}{2.3.2}{section*.26}}
+\backcite {Wright1990}{{24}{2.3.4}{lstnumber.-24.10}}
 \backcite {gilchrist2015}{{26}{2.3.4}{section*.32}}
 \backcite {ikemura1985}{{34}{3.1}{section.3.1}}
 \backcite {gouy1982}{{34}{3.1}{section.3.1}}
