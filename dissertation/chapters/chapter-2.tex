@@ -57,7 +57,8 @@ The second type are gene-set specific parameters, such as mutation bias terms or
 These parameters are shared across genes within a set and can be exclusive to a single set or shared with other sets.
 While the number of gene sets must be pre-defined by the user, set assignment of genes can be pre-defined or estimated as part of the model fitting.
 Estimation of the set assignment provides the probability of a gene being assigned to a set allowing the user to asses the uncertainty in each assignment.
-The third type are hyperparameters allowing for the construction and analysis of hierarchical model. Hyperparameters control the prior distribution for gene and gene-set specific parameters such as mutation bias or protein synthesis rate.
+The third type are hyperparameters allowing for the construction and analysis of hierarchical model. 
+Hyperparameters control the prior distribution for gene and gene-set specific parameters such as mutation bias or protein synthesis rate.
 
 %%%%%%%%%%%%%%%%%%
 %%%%%% FEATURES   %%%%%%
@@ -69,7 +70,7 @@ As a result, \package is accessible to researchers with minimal computational ex
 The interface of \package is designed for quick and efficient data analysis.
 Generally, the only input needed for fitting a model to the data are protein-coding codon sequences in the form of a FASTA file or a flat-file containing codon counts obtained from ribosome foot-printing experiments. 
 \package also provides visualization functionality, including plotting functions to compare parameter estimates for different mixture distributions and display codon usage patterns. 
-In addition, diagnostic functions such as those for calculating and visualizing the degree of autocorrelation in the parameter tracess are provided.
+In addition, diagnostic functions such as those for calculating and visualizing the degree of autocorrelation in the parameter traces are provided.
 
 %%%%%%%%%%%%%%%%%%%
 \subsubsection{Robust and efficient model fitting}
@@ -77,7 +78,7 @@ In addition, diagnostic functions such as those for calculating and visualizing 
 For example, the implemented MCMC automatically adapts the proposal width for sampled parameters such that an user defined acceptance range is met, improving sampling efficiency of the MCMC and computational performance.
 Even though \package is written in C++, analysis of large datasets and/or complex models can be very computationally intensive.
 To protect users from computer failures or aid in the collection of additional MCMC samples, \package can periodically produce output checkpoint files, which can be used to restart an MCMC chain from a previous time point.
-In addition, \package automatically thins all parameter traces -  meaning only every $k^{th}$ sample is kept - increasing the effective number of samples and reducing its memory foorprint. 
+In addition, \package automatically thins all parameter traces -  meaning only every $k^{th}$ sample is kept - increasing the effective number of samples and reducing its memory footprint. 
 
 Although \package is provided as an R package, the main computational work is implemented in C++.
 Because R does not provide native C++ support, Rcpp was employed to expose whole C++ classes as modules to R \citep{rcpp_package}.
@@ -158,7 +159,7 @@ To ensure identifiability the expected value of the prior distribution is assume
 \begin{equation}
 E[\phi] = \exp\left(m_\phi + \frac{s^2_\phi}{2}\right) = 1
 \end{equation}
-Therfore the mean $m_\phi$ is set to be $-\frac{s^2_\phi}{2}$.
+Therefore the mean $m_\phi$ is set to be $-\frac{s^2_\phi}{2}$.
 For more details see \citet{gilchrist2015}.
 
 After choosing the model and specifying the necessary arguments for the MCMC routine, the MCMC is run
@@ -178,10 +179,10 @@ runMCMC(mcmc = mcmc, genome = genome, model = model)
 objects created earlier.
 
 \begin{quote}
-\textbf{Please note that AnaCoDa utilizes C++ obejct orientation and therefore employs pointer structures. 
+\textbf{Please note that AnaCoDa utilizes C++ object orientation and therefore employs pointer structures. 
 This means that no return value is necessary for such objects as they are modified within the the runMCMC routine. 
 You will find that after a completed run, the parameter object will contain all necessary information without being directly passed into the MCMC routine. 
-This might be confusing at first as it is not default R behaviour.}
+This might be confusing at first as it is not default R behavior.}
 \end{quote}
 
 \subsubsection{Application of codon model to a mixture of genomes}
@@ -369,7 +370,7 @@ In this case gene set one and three share their mutation parameters, while gene 
 
 \subsubsection{Checkpointing}
 
-AnaCoDa does provide checkpointing functionality in case runtime has to be restiricted. 
+AnaCoDa does provide checkpointing functionality in case runtime has to be restricted. 
 To enable checkpointing, one can use the function \textbf{setRestartSettings}.
 
 \begin{lstlisting}[language=R]
@@ -525,7 +526,7 @@ head(selection.coefficients)
 #SAKL0A00242g -0.3691110 -0.019686586 -0.4749542 0 -0.2296631 ...
 \end{lstlisting}
 
-We can compare these values to the weights from the codon adaptatoin index (CAI) citep{Sharp1987} or
+We can compare these values to the weights from the codon adaptation index (CAI) citep{Sharp1987} or
 effective number of codons ($N_c$) \citep{Wright1990} by using the functions \textbf{getCAIweights} and \textbf{getNcAA}.
 
 \begin{lstlisting}[language=R]
@@ -568,7 +569,7 @@ axis(2, lwd = 3, cex.axis = 1.2)
   \centering
   \includegraphics[width=.6\textwidth]{ch2/sel_cai_comp.png}\\
   \caption{Distribution of s for codon GCA for amino acid alanine. Dashed line indicates the CAI weight for
-GCA. The comparisson provides a more nuanced picture as we can see that the selection on GCA varies
+GCA. The comparison provides a more nuanced picture as we can see that the selection on GCA varies
 across the genome.}
   \label{fig:sne_dummy}
 \end{figure} 
@@ -644,9 +645,9 @@ plot(x = model, genome = genome, samples = 500, mixture = 1)
   \includegraphics[width=\textwidth]{ch2/model_fit.png}\\
   \caption{Fit of the ROC model for a random yeast. The solid line represent the model fit from the data,
 showing how synonymous codon frequencies change with gene expression. The points are the observed mean
-frequencies of a codon in that synthesis rate bin and the wisks indicate the standard diviation within the bin.
+frequencies of a codon in that synthesis rate bin and the whisks indicate the standard deviation within the bin.
 The codon favored by selection is indicated by a "*". The bottom right panel shows how many genes are
-contained in heach bin}
+contained in each bin}
   \label{fig:cub_dummy}
 \end{figure} 
 
@@ -663,6 +664,6 @@ plot(parameter, what = "Selection", samples = 500)
 \begin{figure}[h]
   \centering
   \includegraphics[width=\textwidth]{ch2/param_comp.png}\\
-  \caption{Comparisson of the selection parameter of seven yeast species estimated with ROC-SEMPPR.}
+  \caption{Comparison of the selection parameter of seven yeast species estimated with ROC-SEMPPR.}
   \label{fig:comp_dummy}
 \end{figure} 

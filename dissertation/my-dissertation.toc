@@ -59,5 +59,7 @@
 \contentsline {section}{\numberline {4.5}Acknowledgments}{78}{section.4.5}
 \contentsline {section}{\numberline {4.6}Supplementary Material}{80}{section.4.6}
 \contentsline {chapter}{\numberline {5}Conclusion}{89}{chapter.5}
+\contentsline {section}{\numberline {5.1}Mechanistic models extract information beyond the phenomenon they describe}{89}{section.5.1}
+\contentsline {section}{\numberline {5.2}Mechanistic models supplement experiments}{89}{section.5.2}
 \contentsline {chapter}{Bibliography}{90}{section*.34}
 \contentsline {chapter}{Vita}{99}{section*.35}
