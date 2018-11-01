@@ -1,19 +1,20 @@
 \chapter{AnaCoDa: Analyzing Codon Data with Bayesian mixture models} 
 \label{ch:anacoda}
 
+
+\clearpage
+\pagebreak
 This chapter is a lightly revised version of a paper by the same name published in Bioinformatics and co-authored with Alexander Cope, Russell Zaretzki, and Michael A. Gilchrist.\\
 \newline
 \newline
 C. Landerer, A. Cope, R. Zaretzki, M.A. Gilchrist, AnaCoDa: analyzing codon data with Bayesian mixture models, Bioinformatics, 34, 2018, 2496-2498
 
-\clearpage
-\pagebreak
-
 
 %%%%%%%%%%%%%%%%%%
 %%% %%   ABSTRACT   %%%%%%
 %%%%%%%%%%%%%%%%%%
-\begin{center}\textbf{Abstract}\end{center}
+\section{Abstract}
+%\begin{center}\textbf{Abstract}\end{center}
 %\begin{abstract}
 \textbf{\package} is an R package for estimating biologically relevant parameters of mixture models, such as selection against translation inefficiency, nonsense error rate, and ribosome pausing time, from genomic and high throughput datasets.
 \package provides an adaptive Bayesian MCMC algorithm, fully implemented in C++ for high performance with an ergonomic R interface to improve usability. 
@@ -112,7 +113,7 @@ The distribution can be dependent (PANSE) or independent (PA) of evidence for no
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Supplementary Material}
+\section{Appendix: Supplementary Material}
 AnaCoDa allows for the estimation of biologically relevant parameters like mutation bias or ribosome pausing
 time, depending on the model employed. Bayesian estimation of parameters is performed using an adaptive
 Metropolis-Hasting within Gibbs sampling approach. Models implemented in AnaCoDa are currently able to

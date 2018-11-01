@@ -1,16 +1,16 @@
 \chapter{Phylogenetic model of stabilizing selection is more informative about site specific selection than extrapolation from laboratory estimates} 
 \label{ch:phylogeny}
 
+\clearpage
+\pagebreak
+
 This chapter is a lightly revised version of a paper to be submitted to Genome Biology and Evolution and co-authored with Michael A. Gilchrist and Brian C. O'Meara.\\
 \newline
 \newline
 C. Landerer, B.C. O'Meara, M.A. Gilchrist, Decomposing mutation and selection to identify mismatched codon usage
 
-\clearpage
-\pagebreak
-
-
-\begin{center}\textbf{Abstract}\end{center}
+\section{Abstract}
+%\begin{center}\textbf{Abstract}\end{center}
 Here we examine the adequacy of experimentally inferred site specific selection for amino acids to inform phylogenetic inferences of sequence evolution.
 Previous work has shown that laboratory estimates of selection can improve model fit but did not assess their adequacy.
 We assess the adequacy of experimentally inferred site specific selection using DMS to inform phylogenetic models.
@@ -71,6 +71,9 @@ We incorporated the experimentally inferred site specific amino acids by estimat
 
 \begin{table}
   \centering
+  \caption{Model selection, shown are the three models of stabilizing site specific amino acid selection (\selac, \selacDMS, \phydms) and the best performing codon and nucleotide model. 
+  Reported are the log-likelihood ($\log(\Lik)$), the number of parameters estimated $n$ including edge length, AIC, $\Delta$AIC, AICc, and $\Delta$AICc values.
+  See Table \ref{tab:AIC} for all models tested.}  
   \begin{tabular}{lrrrrrr}
     Model		& $\log(\Lik)$ & n & AIC & $\Delta$AIC & AICc & $\Delta$AICc\\ \hline 
     \selacDMS 		& -1768 & 111& 3758& 14	& 3760  & 0\\
@@ -79,9 +82,6 @@ We incorporated the experimentally inferred site specific amino acids by estimat
     SYM+R2 		& -2230 & 102& 4663& 919& 4694 & 934 \\
     GY+F1X4+R2 		& -2243 & 102& 4690& 946& 4821 & 1061 \\
   \end{tabular}
-  \caption{Model selection, shown are the three models of stabilizing site specific amino acid selection (\selac, \selacDMS, \phydms) and the best performing codon and nucleotide model. 
-  Reported are the log-likelihood ($\log(\Lik)$), the number of parameters estimated $n$ including edge length, AIC, $\Delta$AIC, AICc, and $\Delta$AICc values.
-  See Table \ref{tab:AIC} for all models tested.}
   \label{tab:AIC}
 \end{table}
 
@@ -92,12 +92,14 @@ However, it is unclear if discrete parameters contribute to the Kullback-Leibler
 Therefore, the number of parameter for \selac is reported conservatively as the number of unique site patterns in the TEM alignment is only 27 which would yield a total number of $138$ parameters (96 edge length, 15 mutation/selection parameters, and 27 optimal amino acids).
 This however would likely be an under estimate of the number of parameters estimated and the true number of parameters remains unclear at this point due to the inherent non-independence of the underlying data and the discrete nature of the optimized parameters.
 
+\singlespacing
 \begin{figure}[H]
      \centering
 	\includegraphics[width=\textwidth]{ch4/phy_TEM2016.pdf}
 	\caption{Phylogenies resulting from \selac, \selacDMS, \phydms, and \gy. As \selac is currently to slow for the inference of topologies, the topology for the \selac phylogenies was inferred using the codon model of \citet{KosiolEtAl07}.}
 	\label{fig:phylo}
 \end{figure}
+\doublespacing
 
 We observe differences in the topology between model fits.
 The \selac model is currently too slow to estimate the topology, therefore the topology was estimated using the codon model of \citet{KosiolEtAl07}.
@@ -118,12 +120,14 @@ We find that the sequence of selectively favored amino acids has only $52 \%$ se
 In addition, assuming the site specific selection estimated by DMS, the observed TEM sequences represent an unexpected high genetic load.
 %This is in contrast to the $99 \%$ of sequence similarity with the sequence of selectively favored amino acids estimated by \selac.
 
+\singlespacing
 \begin{figure}[H]
      \centering
 	\includegraphics[width=\textwidth]{ch4/seq_simil_all.eps}
 	\caption{Alignment of TEM optimal and simulated sequences. Indicated is the percentage identity at each site.}
 	\label{fig:sim_seqs_cons}
 \end{figure}
+\doublespacing
 
 Simulations of codon sequences under the experimentally inferred site specific selection for amino acids reveals that we would not expect to see the observed TEM sequences.
 We simulated under a wide range of effective population sizes $N_e$, and find that the experimentally inferred site specific selection is very strong.
@@ -215,6 +219,7 @@ Again, differences between secondary structure elements are not statistically si
 
 \begin{table}
   \centering
+  \caption{Efficacy of selection (G) and Genetic Load for TEM and SHV, and separated by secondary structure. G was estimated as a truncated variable with an upper bound of 300.}
   \begin{tabular}{llrrrrr}
     & & & \multicolumn{2}{c}{G} & \multicolumn{2}{c}{Genetic Load $L_i$} \\ 
     Protein & Secondary Structure & \# Residues	& \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{SE} & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{SE} \\ \hline 
@@ -231,7 +236,6 @@ Again, differences between secondary structure elements are not statistically si
     &Active Sites	&   5 & 239.9 & 60.0 & $1.5\times10^{-8}$ & $1.5\times10^{-8}$ \\
 
   \end{tabular}
-  \caption{Efficacy of selection (G) and Genetic Load for TEM and SHV, and separated by secondary structure. G was estimated as a truncated variable with an upper bound of 300.}
   \label{tab:selection}
 \end{table}
 
@@ -253,7 +257,7 @@ An exception is the weight for the \PC composition property $\alpha_c$ (Figure \
 Furthermore, we find that the sequences of selectively favored amino acids estimated by \selac for TEM and SHV only show $68 \%$ sequence similarity.
 
 
-
+\singlespacing
 \begin{figure}[H]
      \centering
 	\includegraphics[width=\textwidth]{ch4/GL_slide_TEM2016}
@@ -263,6 +267,7 @@ Furthermore, we find that the sequences of selectively favored amino acids estim
 	The three residues forming the active sites are indicated by three triangles at the top of the plot.}
 	\label{fig:tem2016_sse}
 \end{figure}
+\doublespacing
 
 \section{Discussion}
 
@@ -417,10 +422,12 @@ The authors would like to thank Russel Zaretzki, Jeremy Beaulieu and Alexander C
 
 \clearpage
 %\beginsupplement
-\section{Supplementary Material}
+\section{Appendix: Supplementary Material}
 
 \singlespacing
 \begin{longtable}{clrrrrrr}
+  \caption{Model selection of 230 models of nucleotide and codon evolution.}\\
+  
 	No. & Model & LnL & n & AIC & $\Delta$AIC & AICc & $\Delta$AICc \\ \hline
 	1 & \selacDMS+G4 & -1768 & 111 & 3758 & 14 & 3760 & 0 \\ 
 	2 & \selac+G4 & -1498 & 374 & 3744 & 0 & 3766 & 6 \\ 
@@ -652,7 +659,6 @@ The authors would like to thank Russel Zaretzki, Jeremy Beaulieu and Alexander C
 	228 & SCHN05+F+R4 & -2303.45 & 161 & 4928.9 & 1184.9 & 5445.375 & 1685.375 \\ 
 	229 & KOSI07+F & -2357.579 & 155 & 5025.157 & 1281.157 & 5477.12 & 1717.12 \\ 
 	230 & SCHN05+F & -2379.264 & 155 & 5068.528 & 1324.528 & 5520.491 & 1760.491 \\ 
-  \caption{Model selection of 230 models of nucleotide and codon evolution.}
   \label{tab:AIC_full}
 \end{longtable}
 
@@ -729,3 +735,5 @@ The authors would like to thank Russel Zaretzki, Jeremy Beaulieu and Alexander C
     Protein functionality production rate $\psi$, \PC weight for amino acid composition $\alpha_c$, \PC weight for amino acid polarity $\alpha_p$, and the parameter describing the distribution of $G$, $\alpha_G$ estimated by \selac.}
     \label{fig:tem_shv_param_comp}
 \end{figure}
+
+\doublespacing

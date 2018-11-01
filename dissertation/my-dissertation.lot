@@ -1,10 +1,11 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Synonymous codon preference in the various data sets based on our estimates of $\Delta M$}}{52}{table.3.1}
-\contentsline {table}{\numberline {3.2}{\ignorespaces Synonymous codon preference in the various data sets based on our estimates of $\Delta \eta $}}{53}{table.3.2}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Model selection of the two competing hyopthesis. Reported are the log-likelihood ($\qopname \relax o{log}(\ensuremath {\mathcal {L}}\xspace )$), the number of parameters estimated $n$, AIC, and $\Delta $AIC values}}{37}{table.3.1}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Synonymous codon preference in the various data sets based on our estimates of $\Delta M$}}{53}{table.3.2}
+\contentsline {table}{\numberline {3.3}{\ignorespaces Synonymous codon preference in the various data sets based on our estimates of $\Delta \eta $}}{54}{table.3.3}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Model selection, shown are the three models of stabilizing site specific amino acid selection (\emph {SelAC}\xspace , \emph {SelAC}+DMS\xspace , \emph {phydms}\xspace ) and the best performing codon and nucleotide model. Reported are the log-likelihood ($\qopname \relax o{log}(\ensuremath {\mathcal {L}}\xspace )$), the number of parameters estimated $n$ including edge length, AIC, $\Delta $AIC, AICc, and $\Delta $AICc values. See Table \ref {tab:AIC} for all models tested.}}{63}{table.4.1}
-\contentsline {table}{\numberline {4.2}{\ignorespaces Efficacy of selection (G) and Genetic Load for TEM and SHV, and separated by secondary structure. G was estimated as a truncated variable with an upper bound of 300.}}{70}{table.4.2}
-\contentsline {table}{\numberline {4.3}{Model selection of 230 models of nucleotide and codon evolution.}}{85}{table.4.3}
+\contentsline {table}{\numberline {4.1}{\ignorespaces Model selection, shown are the three models of stabilizing site specific amino acid selection (\emph {SelAC}\xspace , \emph {SelAC}+DMS\xspace , \emph {phydms}\xspace ) and the best performing codon and nucleotide model. Reported are the log-likelihood ($\qopname \relax o{log}(\ensuremath {\mathcal {L}}\xspace )$), the number of parameters estimated $n$ including edge length, AIC, $\Delta $AIC, AICc, and $\Delta $AICc values. See Table \ref {tab:AIC} for all models tested.}}{64}{table.4.1}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Efficacy of selection (G) and Genetic Load for TEM and SHV, and separated by secondary structure. G was estimated as a truncated variable with an upper bound of 300.}}{71}{table.4.2}
+\contentsline {table}{\numberline {4.3}{Model selection of 230 models of nucleotide and codon evolution.}}{80}{table.4.3}
 \addvspace {10\p@ }

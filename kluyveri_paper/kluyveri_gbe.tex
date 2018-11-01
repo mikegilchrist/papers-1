@@ -226,10 +226,10 @@ Assuming that differences in mutation bias will decay more slowly than differenc
 \subsection*{Genetic Load of the Exogenous Genes}
 
 Estimates of selection bias for the exogenous genes show that, while well correlated with the endogenous genes, only nine amino acids share the optimal codon.
-We therefore expect that the introgressed genes represent a significant reduction in fitness, or genetic load for \kluyveri, and even more so at the time of introgression.
-As the introgression occurred before the diversification of \kluyveri and has fixed since then throughout the various populations, we are left without the original chromosome arm \citep{friedrich2015}.
-Using our estimates of $\Delta M$ and $\Delta \eta$ from the endogenous genes, we can estimate the genetic load of the exogenous genes relative to an expected gene set.
-We define genetic load as the difference between the fitness of an expected, replaced endogenous gene and the inferred introgressed gene relative to drift $s \propto \phi \DE$ (See Methods for details).
+Exogenous genes are therefore expected to represent a significant reduction in fitness, or genetic load for \kluyveri.
+As the introgression occurred before the diversification of \kluyveri and has become fixed in \kuyveri, we are left without the original chromosome arm \citep{friedrich2015}.
+Using our estimates of $\Delta M$ and $\Delta \eta$ from the endogenous genes, we estimate the genetic load of the exogenous genes relative to an expected gene set.
+We define genetic load as the difference between the fitness of an expected, replaced endogenous gene and the exogenous gene relative to drift $s \propto \phi \DE$ (See Methods for details).
 \begin{figure}[h]
     \centering
     \begin{subfigure}
@@ -245,10 +245,11 @@ We define genetic load as the difference between the fitness of an expected, rep
 \end{figure}
 
 We estimate the genetic load of the exogenous genes at the time of introgression (Figure \ref{fig:sne_fitness_burden}a) and currently (Figure \ref{fig:sne_fitness_burden}b).
-As \DE is defined as $\DE = 2N_eq(\eta_i-\eta_j)$, we can not distinguish if $\kappa$ is a scaling on protein synthesis rate $\phi$, effective population size $N_e$ the value of an ATP $q$\citep{gilchrist2015}.
-
-At the time of the introgression, we predict that only a few genes were weakly exapted (Figure \ref{fig:sne_fitness_burden}a) with all high expression genes ($\phi > 1$) being maladapted to the novel cellular environment.
-However, these highly expressed genes show the greatest rate of adaptation to the \kluyveri cellular environment (Figures \ref{fig:sne_fitness_burden}a, \ref{fig:adapt_tot}).
+We scale the difference in the efficacy of selection on codon usage between the donor lineage and \kluyveri using a linear scaling factor $\kappa$.
+As \DE is defined as $\DE = 2N_eq(\eta_i-\eta_j)$, we can not distinguish if $\kappa$ is a scaling on protein synthesis rate $\phi$, effective population size $N_e$, or the value of an ATP $q$\citep{Gilchrist2007, gilchrist2015}.
+We predict that only some low expression genes ($\phi < 1$) were weakly exapted at the time of the introgression (Figure \ref{fig:sne_fitness_burden}a).
+High expression genes ($\phi > 1$) are predicted to carry the highest genetic load in the novel cellular environment.
+These highly expressed genes also show the greatest rate of adaptation to the \kluyveri cellular environment (Figures \ref{fig:sne_fitness_burden}a, \ref{fig:adapt_tot}).
 
 \section*{Discussion}
 Using \ROC we show that the \kluyveri genome contains two distinct signatures of cellular environments, its own endogenous and a foreign exogenous one obtained by an introgression event ($\Delta AIC = 78,000$).
@@ -500,14 +501,13 @@ The authors would like to thank Brian C. O'Meara and Alexander Cope for their he
 
 \section*{Table}
 \begin{table}
+  \centering
+  \caption{Model selection of the two competing hyopthesis. Reported are the log-likelihood ($\log(\Lik)$), the number of parameters estimated $n$, AIC, and $\Delta$AIC values}
   \begin{tabular}{lrrrr}
-    Hypothesis             & \LLik &$n$ &  AIC & $\Delta$AIC\\ \hline 
-    Endogenous \& Exogenous& & & 5,235,598&      0\\
-    Combined               & & & 5,311,060& 75,462\\
-
+    Hypothesis             & $\log(\Lik)$ &$n$ &  AIC & $\Delta$AIC\\ \hline 
+    Endogenous \& Exogenous& -2,612,397 & 5,402 & 5,235,598&      0\\
+    Combined               & -2,650,047 & 5,483 & 5,311,060& 75,462\\
   \end{tabular}
-  \caption{\LLik, number of model parameters $n$, AIC, and $\Delta$AIC.
-    }
   \label{tab:AIC}
 \end{table}
 

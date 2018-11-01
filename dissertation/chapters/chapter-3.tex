@@ -1,16 +1,16 @@
 \chapter{Decomposing mutation and selection to identify mismatched codon usage}
 \label{ch:kluyveri}
 
+\clearpage
+\pagebreak
 
 This chapter is a lightly revised version of a paper to be submitted to Genome Biology and Evolution and co-authored with Michael A. Gilchrist and Russel Zaretzki.\\
 \newline
 \newline
 C. Landerer, R. Zaretzki, M.A. Gilchrist, Decomposing mutation and selection to identify mismatched codon usage
 
-\clearpage
-\pagebreak
-
-\begin{center}\textbf{Abstract}\end{center}
+\section{Abstract}
+%\begin{center}\textbf{Abstract}\end{center}
 Codon usage has been used as a measure for adaptation of genes to their cellular environment for decades. 
 The introgression of genes from one cellular environment to another may cause well adapted genes to suddenly be less adapted due to them having evolved in a different environment.
 As a result, we expect that transferred genes result in a large fitness burden for the new host organism.
@@ -71,9 +71,20 @@ We compared model fits of \ROC to the homogeneous \kluyveri genome and the separ
 We compared estimates of the cellular environment to describe differences in endogenous and exogenous codon usage.
 Furthermore, we utilize the differences in model fit and parameters estimated from the endogenous and exogenous genes to explore the evolution of the exogenous gene set.
 
+\begin{table}
+  \centering
+  \caption{Model selection of the two competing hyopthesis. Reported are the log-likelihood ($\log(\Lik)$), the number of parameters estimated $n$, AIC, and $\Delta$AIC values}
+  \begin{tabular}{lrrrr}
+    Hypothesis             & $\log(\Lik)$ &$n$ &  AIC & $\Delta$AIC\\ \hline 
+    Endogenous \& Exogenous& -2,612,397 & 5,402 & 5,235,598&      0\\
+    Combined               & -2,650,047 & 5,483 & 5,311,060& 75,462\\
+  \end{tabular}
+  \label{tab:AIC_klu}
+\end{table}
+
 AIC indicates that parameter estimates for mutation bias (\DM) and selection bias (\DE) differ greatly between exogenous and endogenous gene sets.
 As a result, the partitioning of the \kluyveri genome into an endogenous and exogenous gene set is clearly favored by model selection.
-The inclusion of 81 additional parameters ($40$ for \DM, $40$ for \DE, and one for $s_{\phi}$) necessary to describe both gene sets separately improves our model fit by $\sim 75,000$ AIC units (5,311,060 for the combined gene set vs 5,235,598 for the separated gene sets).
+The inclusion of 81 additional parameters ($40$ for \DM, $40$ for \DE, and one for $s_{\phi}$) necessary to describe both gene sets separately improves our model fit by $\sim 75,000$ AIC units (Table \ref{tab:AIC_klu})).
 
 \begin{figure}[t]
     \centering
@@ -136,12 +147,14 @@ Therefore, it is important to recognize and treat endogenous and exogenous genes
 We combined our estimates of mutation bias ($\Delta M$) and selection bias ($\Delta \eta$) with synteny information and searched for potential source lineages of the introgressed region.
 We examined 38 yeast lineages of which two (\emph{Eremothecium gossypii} and \emph{Candida dubliniensis}) showed a strong positive correlation in codon usage (Figure \ref{fig:csp_exo_comp}).
 
+\singlespacing
 \begin{figure}[H]
      \centering
 	\includegraphics[width=.45\textwidth]{ch3/csp_mean_correlation_exo.pdf}
 	\caption{Correlation of \DM and \DE of the exogenous genes with 38 examined yeast lineages. Dots indicate the correlation of \DM and \DE of the lineages with the endogenous and exogenous parameter estimates. All regressions were performed using a type II regression.}
 	\label{fig:csp_exo_comp}
 \end{figure}
+\doublespacing
 
 The endogenous \kluyveri genome exhibits codon usage very similar to most yeast lineages examined, indicating little variation in codon usage among the examined yeasts (Figure \ref{fig:csp_endo_comp}).
 Four lineages show a positive correlation for $\Delta M$ and $\Delta \eta$ with the exogenous genes and have a weak to moderate positive correlation in selection bias with the endogenous genes; but, like the exogenous genes, tend to have a negative correlation in $\Delta M$ with the endogenous genes.
@@ -165,10 +178,10 @@ Assuming that differences in mutation bias will decay more slowly than differenc
 \subsection{Genetic Load of the Exogenous Genes}
 
 Estimates of selection bias for the exogenous genes show that, while well correlated with the endogenous genes, only nine amino acids share the optimal codon.
-We therefore expect that the introgressed genes represent a significant reduction in fitness, or genetic load for \kluyveri, and even more so at the time of introgression.
-As the introgression occurred before the diversification of \kluyveri and has fixed since then throughout the various populations, we are left without the original chromosome arm \citep{friedrich2015}.
-Using our estimates of $\Delta M$ and $\Delta \eta$ from the endogenous genes, we can estimate the genetic load of the exogenous genes relative to an expected gene set.
-We define genetic load as the difference between the fitness of an expected, replaced endogenous gene and the inferred introgressed gene relative to drift $s \propto \phi \DE$ (See Methods for details).
+Exogenous genes are therefore expected to represent a significant reduction in fitness, or genetic load for \kluyveri.
+As the introgression occurred before the diversification of \kluyveri and has become fixed in \kuyveri, we are left without the original chromosome arm \citep{friedrich2015}.
+Using our estimates of $\Delta M$ and $\Delta \eta$ from the endogenous genes, we estimate the genetic load of the exogenous genes relative to an expected gene set.
+We define genetic load as the difference between the fitness of an expected, replaced endogenous gene and the exogenous gene relative to drift $s \propto \phi \DE$ (See Methods for details).
 \begin{figure}[h]
     \centering
     \begin{subfigure}
@@ -184,10 +197,11 @@ We define genetic load as the difference between the fitness of an expected, rep
 \end{figure}
 
 We estimate the genetic load of the exogenous genes at the time of introgression (Figure \ref{fig:sne_fitness_burden}a) and currently (Figure \ref{fig:sne_fitness_burden}b).
-As \DE is defined as $\DE = 2N_eq(\eta_i-\eta_j)$, we can not distinguish if $\kappa$ is a scaling on protein synthesis rate $\phi$, effective population size $N_e$ the value of an ATP $q$\citep{gilchrist2015}.
-
-At the time of the introgression, we predict that only a few genes were weakly exapted (Figure \ref{fig:sne_fitness_burden}a) with all high expression genes ($\phi > 1$) being maladapted to the novel cellular environment.
-However, these highly expressed genes show the greatest rate of adaptation to the \kluyveri cellular environment (Figures \ref{fig:sne_fitness_burden}a, \ref{fig:adapt_tot}).
+We scale the difference in the efficacy of selection on codon usage between the donor lineage and \kluyveri using a linear scaling factor $\kappa$.
+As \DE is defined as $\DE = 2N_eq(\eta_i-\eta_j)$, we can not distinguish if $\kappa$ is a scaling on protein synthesis rate $\phi$, effective population size $N_e$, or the value of an ATP $q$\citep{Gilchrist2007, gilchrist2015}.
+We predict that only some low expression genes ($\phi < 1$) were weakly exapted at the time of the introgression (Figure \ref{fig:sne_fitness_burden}a).
+High expression genes ($\phi > 1$) are predicted to carry the highest genetic load in the novel cellular environment.
+These highly expressed genes also show the greatest rate of adaptation to the \kluyveri cellular environment (Figures \ref{fig:sne_fitness_burden}a, \ref{fig:adapt_tot}).
 
 \section{Discussion}
 
@@ -376,14 +390,16 @@ The authors would like to thank Brian C. O'Meara and Alexander Cope for their he
 %\bibliography{kluyveri_paper}
 
 \clearpage
-\section{Supplementary Material}
+\pagebreak
+\section{Appendix: Supplementary Material}
 %\beginsupplement
 
-Supporting Materials for \emph{Fitness consequences of mismatched codon usage} \ by Landerer \emph{et al.}.
+%Supporting Materials for \emph{Fitness consequences of mismatched codon usage} \ by Landerer \emph{et al.}.
 
-
-\begin{table}
+\singlespace
+\begin{table}[H]
     \centering
+    \caption{Synonymous codon preference in the various data sets based on our estimates of $\Delta M$}
 \begin{tabular}{  l  c  c  c  c  }
 \hline
 	Amino Acid & \gossypii & Endogenous & Exogenous & \kluyveri \\ \hline \hline
@@ -407,7 +423,6 @@ Supporting Materials for \emph{Fitness consequences of mismatched codon usage} \
 	Tyr Y & TAC & TAT & TAC & TAC \\ \hline
 	Ser$_2$ Z & AGC & AGT & AGC & AGC \\ \hline
 \end{tabular}
-    \caption{Synonymous codon preference in the various data sets based on our estimates of $\Delta M$}
     \label{tab:codon_pref_dm}
 \end{table}
 
@@ -415,6 +430,7 @@ Supporting Materials for \emph{Fitness consequences of mismatched codon usage} \
 
 \begin{table}
     \centering
+    \caption{Synonymous codon preference in the various data sets based on our estimates of $\Delta \eta$}
 \begin{tabular}{  l  c  c  c  c  }
 \hline
 	Amino Acid & \gossypii & Endogenous & Exogenous & \kluyveri \\ \hline \hline
@@ -438,7 +454,6 @@ Supporting Materials for \emph{Fitness consequences of mismatched codon usage} \
 	Tyr Y & TAT & TAC & TAT & TAC \\ \hline
 	Ser$_2$ Z & AGT & AGT & AGT & AGT \\ \hline
 \end{tabular}
-    \caption{Synonymous codon preference in the various data sets based on our estimates of $\Delta \eta$}
     \label{tab:codon_pref_deta}
 \end{table}
 
@@ -497,3 +512,4 @@ Supporting Materials for \emph{Fitness consequences of mismatched codon usage} \
 	Solid line indicates the endogenous codon usage, dashed line indicates the exogenous codon usage, dotted line indicates the combined codon usage.}
 	\label{fig:cub_all_sets}
 \end{figure}
+\doublespacing
