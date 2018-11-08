@@ -3,6 +3,7 @@
 
 Protein production is the most costly metabolic process a cell performs \citep{buttgereit1995,warner1999,AkashiAndGojobori2002,lindqvist2018} yielding high selection to maximize the benefit of protein production or performing it as efficient as possible.
 Studying the ratio of cost to benefit in protein synthesis is therefore important to understand the evolution of protein coding sequences \citep{gilchrist2009,ShahAndGilchrist2011,gilchrist2015,beaulieu2018}.
+We can formalize the cost and benefit a protein coding sequence has to a cell and formulate mathematical models.
 Mathematical and statistical models have long been used to describe or summarize observations in genetics and genomics.
 Often without addressing the underlying biological mechanisms mutation, selection, and drift shaping DNA sequences, but as phenomelogical description.
 However, as researchers learn more about the underlying processes and more genetic and genomic data is available, the mathematical descriptions allowing fo the extraction of information from this data have to keep up.
@@ -25,10 +26,13 @@ The relative strength of mutation and selection on individual genes varies, allo
 Genes with low protein synthesis rates are thought to be under weak selection and their codon usage is therefore dominated by mutation bias.
 In contrast, genes with high protein synthesis rate are thought to be under strong selection and their codon usage is therefore dominated by selection.
 However, mutation bias and selection can differ within the genome.
+
 For example, strand specific mutation bias \citep{Lafay1999,Romero2000}, differences in the tRNA pool throughout life stages \citep{sagi2016}, or introgressions and horizontal gene transfer \citep{medigue1991,lawrence1997} can produce or reflect of multiple genomic environments.
 To provide researchers with a software tool, AnaCoDa \cite{landerer2018}, to address intra genomic variation in codon usage, chapter \ref{ch:anacoda} extends the mechanistic model ROC-SEMPPR \cite{gilchrist2015} to allow for a mixture distribution of mutation and selection parameters.
-However, there is a significant difference to classical mixture approaches as ROC-SEMPPR not only estimates gene population specific parameters (mutation and selection) that are now modeled as mixture distributions but also a gene specific parameter (protein synthesis rate). 
-Therefore, the protein synthesis rate has to be estimated for each population, providing additional insight into the adaptiveness of a gene to alternative genomic environments.
+However, there is a significant difference to classical mixture approaches as ROC-SEMPPR not only estimates gene population specific parameters (mutation and selection) that are now modeled as mixture distributions but also a gene specific parameter (protein synthesis rate $\phi$). 
+Therefore, the protein synthesis rate $\phi$ has to be estimated for each population, providing additional insight into the adaptiveness of a gene to alternative genomic environments.
+Figure \ref{fig:expl_model} illustrates how the gene specific protein synthesis rate $\phi$ controls the efficacy of selection.
+When $\phi$ is small, mutation bias between codon dominates the system while with increasing protein synthesis rate $\phi$ the efficacy of selection increases (see \cite{gilchrist2015} for details). 
 
 \singlespacing
 \begin{figure}[H]
@@ -50,20 +54,35 @@ Applying a mechanistic models also allowed me to separate the effects of mutatio
 This information was used to determine a potential donor lineage in \gossypii, estimate a time since introgression, and estimate the genetic load the introgression introduced into the \kluyveri genome.
 
 \section{Benefit: Selection on Amino acids}
+Genes are evolving with natural selection favoring proteins that encode their function optimally, with genomic mutations and genetic drift pushing genes away from this optimum.
+Amino acid preference and the relative strength of mutation, selection and drift usually varies between sites along the protein sequence.
+As the number of parameters increases exponentially with the length of the protein if interactions between sites are accounted for, attempts to incorporate selection into phylogenetic approaches are limited to site specific selection.
+Accounting for this variation and estimating the efficacy of site specific selection on amino acids is the therefore the goal of chapter \ref{ch:phylogeny}.
 
-Proteins are respondsible for everything and therefore benefit. 
-Understanding selection on amino acids 
+Ignoring interactions between sites allows to describe the site specific fitness landscape of proteins.
+Some approaches rely on the description of the full fitness landscape and therefore require $19 \times L$, where $L$ is the length of the peptide in amino acids, parameters \citep{LartillotAndPhilippe2004,le2008,wang2008,holder2008,wu2013,tamuri2014}.
+As these approaches still require a large number of parameters, experimentally assessed site specific selection on amino acids was used \citep{bloom2014, thyagarajan2014, bloom2017}. 
+Alternatively, assumptions about the nature of selection can reduce the number of parameters required.
+Utilizing \PC properties with either negative frequency dependent selection \citep{GoldmanAndYang1994, MuseAndGaut1994, thorne1996} or stabilizing selection \citep{beaulieu2018} reduces the number of parameters greatly.
 
-chapter \ref{ch:phylogeny}, I shifted my focus from the cost of protein synthesis to the functionality or benefit a protein produces.
-For that matter I utilized a mechanistic phylogenetic model of stabilizing selection rooted in population genetics, SelAC \cite{beaulieu2018}.
-I explore the selection on amino acids in the $\beta$-lactamase protein TEM.
 
 \singlespacing
 \begin{figure}[H]
      \centering
 	\includegraphics[width=0.7\textwidth]{ch1/decl_fitness2}
-	\caption{Decline in fitness with distance in physicochemical space from the optimal amino acid. 
-	Fitness decline of amino acids (black dots) relative to optimal amino acid (Alanine). Weighting of properties according to \citet{grantham1974}.}
+	\caption{Decline in fitness with distance in \PC space from the optimal amino acid. 
+	Fitness decline of amino acids (black dots) relative to optimal amino acid (Alanine). Weighting of \PC properties according to \citet{grantham1974}.
+	The full fitness surface can be described but only 20 discrete amino acid states are available for selection to act on.}
 	\label{fig:decl_fit}
 \end{figure}
 \doublespacing
+
+In a model of stabilizing selection, the fitness of each amino acid is assessed relative to the fitness peak (Figure \ref{fig:decl_fit}).
+Fitness is assumed to decline exponentially with distance in \PC space to the optimal amino acid.
+In chapter \ref{ch:phylogeny} I apply \selac \citep{beaulieu2018} to the $\beta-lactamase$ TEM to estimate site specific selection on amino acids and compare the obtained fitness landscape to empirical estimates obtained using deep mutation scanning \citet{stiffler2016}.
+I find that experimentally informed amino acid preferences improve model fit but do not accurately reflect the evolution of TEM.
+Furthermore, I show that the information on site specific selection on amino acid can be extracted from protein coding sequences by models rooted in first principles.
+
+
+
+

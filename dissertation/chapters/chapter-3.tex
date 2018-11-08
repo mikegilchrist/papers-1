@@ -75,9 +75,10 @@ Furthermore, we utilize the differences in model fit and parameters estimated fr
   \centering
   \caption{Model selection of the two competing hyopthesis. Reported are the log-likelihood ($\log(\Lik)$), the number of parameters estimated $n$, AIC, and $\Delta$AIC values}
   \begin{tabular}{lrrrr}
+    \hline
     Hypothesis             & $\log(\Lik)$ &$n$ &  AIC & $\Delta$AIC\\ \hline 
     Endogenous \& Exogenous& -2,612,397 & 5,402 & 5,235,598&      0\\
-    Combined               & -2,650,047 & 5,483 & 5,311,060& 75,462\\
+    Combined               & -2,650,047 & 5,483 & 5,311,060& 75,462\\ \hline
   \end{tabular}
   \label{tab:AIC_klu}
 \end{table}
@@ -179,7 +180,7 @@ Assuming that differences in mutation bias will decay more slowly than differenc
 
 Estimates of selection bias for the exogenous genes show that, while well correlated with the endogenous genes, only nine amino acids share the optimal codon.
 Exogenous genes are therefore expected to represent a significant reduction in fitness, or genetic load for \kluyveri.
-As the introgression occurred before the diversification of \kluyveri and has become fixed in \kuyveri, we are left without the original chromosome arm \citep{friedrich2015}.
+As the introgression occurred before the diversification of \kluyveri and has become fixed in \kluyveri, we are left without the original chromosome arm \citep{friedrich2015}.
 Using our estimates of $\Delta M$ and $\Delta \eta$ from the endogenous genes, we estimate the genetic load of the exogenous genes relative to an expected gene set.
 We define genetic load as the difference between the fitness of an expected, replaced endogenous gene and the exogenous gene relative to drift $s \propto \phi \DE$ (See Methods for details).
 \begin{figure}[h]
@@ -402,25 +403,25 @@ The authors would like to thank Brian C. O'Meara and Alexander Cope for their he
     \caption{Synonymous codon preference in the various data sets based on our estimates of $\Delta M$}
 \begin{tabular}{  l  c  c  c  c  }
 \hline
-	Amino Acid & \gossypii & Endogenous & Exogenous & \kluyveri \\ \hline \hline
-	Ala A & GCG & GCA & GCG & GCG \\ \hline
-	Cys C & TGC & TGT & TGC & TGC \\ \hline
-	Asp D & GAC & GAT & GAC & GAC \\ \hline
-	Glu E & GAG & GAA & GAG & GAG \\ \hline
-	Phe F & TTC & TTT & TTT & TTT \\ \hline
-	Gly G & GGC & GGT & GGC & GGC \\ \hline
-	His H & CAC & CAT & CAC & CAC \\ \hline
-	Ile I & ATC & ATT & ATC & ATA \\ \hline
-	Lys K & AAG & AAA & AAG & AAA \\ \hline
-	Leu L & CTG & TTG & CTG & CTG \\ \hline
-	Asn N & AAC & AAT & AAC & AAT \\ \hline
-	Pro P & CCG & CCA & CCG & CCG \\ \hline
-	Gln Q & CAG & CAA & CAG & CAG \\ \hline
-	Arg R & CGC & AGA & AGG & CGG \\ \hline
-	Ser$_4$ S & TCG & TCT & TCG & TCG \\ \hline
-	Thr T & ACG & ACA & ACG & ACG \\ \hline
-	Val V & GTG & GTT & GTG & GTG \\ \hline
-	Tyr Y & TAC & TAT & TAC & TAC \\ \hline
+	Amino Acid & \gossypii & Endogenous & Exogenous & \kluyveri \\ \hline
+	Ala A & GCG & GCA & GCG & GCG \\ 
+	Cys C & TGC & TGT & TGC & TGC \\ 
+	Asp D & GAC & GAT & GAC & GAC \\ 
+	Glu E & GAG & GAA & GAG & GAG \\ 
+	Phe F & TTC & TTT & TTT & TTT \\ 
+	Gly G & GGC & GGT & GGC & GGC \\ 
+	His H & CAC & CAT & CAC & CAC \\ 
+	Ile I & ATC & ATT & ATC & ATA \\ 
+	Lys K & AAG & AAA & AAG & AAA \\ 
+	Leu L & CTG & TTG & CTG & CTG \\ 
+	Asn N & AAC & AAT & AAC & AAT \\ 
+	Pro P & CCG & CCA & CCG & CCG \\ 
+	Gln Q & CAG & CAA & CAG & CAG \\ 
+	Arg R & CGC & AGA & AGG & CGG \\ 
+	Ser$_4$ S & TCG & TCT & TCG & TCG \\
+	Thr T & ACG & ACA & ACG & ACG \\ 
+	Val V & GTG & GTT & GTG & GTG \\ 
+	Tyr Y & TAC & TAT & TAC & TAC \\ 
 	Ser$_2$ Z & AGC & AGT & AGC & AGC \\ \hline
 \end{tabular}
     \label{tab:codon_pref_dm}
@@ -433,25 +434,25 @@ The authors would like to thank Brian C. O'Meara and Alexander Cope for their he
     \caption{Synonymous codon preference in the various data sets based on our estimates of $\Delta \eta$}
 \begin{tabular}{  l  c  c  c  c  }
 \hline
-	Amino Acid & \gossypii & Endogenous & Exogenous & \kluyveri \\ \hline \hline
-	Ala A & GCT & GCT & GCT & GCT \\ \hline
-	Cys C & TGT & TGT & TGT & TGT \\ \hline
-	Asp D & GAT & GAC & GAT & GAT \\ \hline
-	Glu E & GAA & GAA & GAA & GAA \\ \hline
-	Phe F & TTT & TTC & TTC & TTC \\ \hline
-	Gly G & GGA & GGT & GGT & GGT \\ \hline
-	His H & CAT & CAC & CAT & CAT \\ \hline
-	Ile I & ATA & ATC & ATT & ATT \\ \hline
-	Lys K & AAA & AAG & AAA & AAG \\ \hline
-	Leu L & TTA & TTG & TTG & TTG \\ \hline
-	Asn N & AAT & AAC & AAT & AAC \\ \hline
-	Pro P & CCA & CCA & CCT & CCA \\ \hline
-	Gln Q & CAA & CAA & CAA & CAA \\ \hline
-	Arg R & AGA & AGA & AGA & AGA \\ \hline
-	Ser$_4$ S & TCA & TCC & TCT & TCT \\ \hline
-	Thr T & ACT & ACC & ACT & ACT \\ \hline
-	Val V & GTT & GTC & GTT & GTT \\ \hline
-	Tyr Y & TAT & TAC & TAT & TAC \\ \hline
+	Amino Acid & \gossypii & Endogenous & Exogenous & \kluyveri \\ \hline
+	Ala A & GCT & GCT & GCT & GCT \\ 
+	Cys C & TGT & TGT & TGT & TGT \\ 
+	Asp D & GAT & GAC & GAT & GAT \\ 
+	Glu E & GAA & GAA & GAA & GAA \\ 
+	Phe F & TTT & TTC & TTC & TTC \\ 
+	Gly G & GGA & GGT & GGT & GGT \\ 
+	His H & CAT & CAC & CAT & CAT \\ 
+	Ile I & ATA & ATC & ATT & ATT \\ 
+	Lys K & AAA & AAG & AAA & AAG \\ 
+	Leu L & TTA & TTG & TTG & TTG \\ 
+	Asn N & AAT & AAC & AAT & AAC \\ 
+	Pro P & CCA & CCA & CCT & CCA \\ 
+	Gln Q & CAA & CAA & CAA & CAA \\ 
+	Arg R & AGA & AGA & AGA & AGA \\ 
+	Ser$_4$ S & TCA & TCC & TCT & TCT \\ 
+	Thr T & ACT & ACC & ACT & ACT \\ 
+	Val V & GTT & GTC & GTT & GTT \\ 
+	Tyr Y & TAT & TAC & TAT & TAC \\ 
 	Ser$_2$ Z & AGT & AGT & AGT & AGT \\ \hline
 \end{tabular}
     \label{tab:codon_pref_deta}

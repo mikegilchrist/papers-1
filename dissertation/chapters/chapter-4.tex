@@ -25,7 +25,7 @@ We demonstrate the capability of \selac by estimating site specific genetic load
 \section{Introduction}
 
 Numerous attempts to incorporate selection into phylogenetic models have been made.
-Early models focused on the influence of selection on the substitution rate and fixation probability between a resident and a mutant introduced into a population\citep{GoldmanAndYang1994, MuseAndGaut1994, thorne1996}.
+Early models focused on the influence of selection on the substitution rate and fixation probability between a resident and a mutant introduced into a population \citep{GoldmanAndYang1994, MuseAndGaut1994, thorne1996}.
 These models however, lack site specific equilibrium frequencies.
 The importance of site specific equilibrium frequencies has long been noted \citep{felsenstein1981, gojobori1983}.
 \citet{HalpernAndBruno1998} first introduced a model to incorporate site specific equilibrium frequencies of amino acids.
@@ -75,12 +75,13 @@ We incorporated the experimentally inferred site specific amino acids by estimat
   Reported are the log-likelihood ($\log(\Lik)$), the number of parameters estimated $n$ including edge length, AIC, $\Delta$AIC, AICc, and $\Delta$AICc values.
   See Table \ref{tab:AIC} for all models tested.}  
   \begin{tabular}{lrrrrrr}
+    \hline
     Model		& $\log(\Lik)$ & n & AIC & $\Delta$AIC & AICc & $\Delta$AICc\\ \hline 
     \selacDMS 		& -1768 & 111& 3758& 14	& 3760  & 0\\
     \selac		& -1498 & 374& 3744&  0	& 3766  & 6 \\
     \phydms 		& -2061 & 102& 4326& 582& 4328 & 568\\
     SYM+R2 		& -2230 & 102& 4663& 919& 4694 & 934 \\
-    GY+F1X4+R2 		& -2243 & 102& 4690& 946& 4821 & 1061 \\
+    GY+F1X4+R2 		& -2243 & 102& 4690& 946& 4821 & 1061 \\ \hline
   \end{tabular}
   \label{tab:AIC}
 \end{table}
