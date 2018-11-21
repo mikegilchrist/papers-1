@@ -10,7 +10,7 @@ A level-1 auxiliary file: chapters/chapter-2.aux
 A level-1 auxiliary file: chapters/chapter-3.aux
 A level-1 auxiliary file: chapters/chapter-4.aux
 A level-1 auxiliary file: chapters/chapter-5.aux
-The style file: apalike.bst
+The style file: genetics.bst
 A level-1 auxiliary file: back-matter/vita.aux
 Database file #1: ./intro_conc.bib
 Repeated entry---line 123 of file ./intro_conc.bib
@@ -31,7 +31,7 @@ Repeated entry---line 112 of file ./kluyveri_paper.bib
  : @article{gilchrist2015
  :                       ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 314 of file ./kluyveri_paper.bib
+Repeated entry---line 323 of file ./kluyveri_paper.bib
  : @manual{rcore
  :              ,
 I'm skipping whatever remains of this entry
@@ -40,52 +40,64 @@ Repeated entry---line 40 of file ./ecoli.bib
  : @manual{rcore
  :              ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 200 of file ./ecoli.bib
+ : @article{gilchrist2007
+ :                       ,
+I'm skipping whatever remains of this entry
 Name 1 in "Lindqvist, LM, and Tandoc, K and Topisirovic, I and Furic, L" has a comma at the end for entry lindqvist2018
-while executing---line 1023 of file apalike.bst
+while executing---line 1403 of file genetics.bst
 Name 1 in "Lindqvist, LM, and Tandoc, K and Topisirovic, I and Furic, L" has a comma at the end for entry lindqvist2018
-while executing---line 1023 of file apalike.bst
-Warning--empty year in Mathematica
+while executing---line 1403 of file genetics.bst
+Warning--empty year in Mathematica; set to ????
+Warning--empty chapter and pages in JukesAndCantor1969
 Name 1 in "Lindqvist, LM, and Tandoc, K and Topisirovic, I and Furic, L" has a comma at the end for entry lindqvist2018
-while executing---line 1098 of file apalike.bst
-You've used 106 entries,
-            1935 wiz_defined-function locations,
-            1103 strings with 22239 characters,
-and the built_in function-call counts, 45323 in all, are:
-= -- 4331
-> -- 1972
-< -- 59
-+ -- 721
-- -- 672
-* -- 4082
-:= -- 7889
-add.period$ -- 318
-call.type$ -- 106
-change.case$ -- 861
-chr.to.int$ -- 105
-cite$ -- 107
-duplicate$ -- 1508
-empty$ -- 3165
-format.name$ -- 838
-if$ -- 8870
+while executing---line 1470 of file genetics.bst
+Name 1 in "Lindqvist, LM, and Tandoc, K and Topisirovic, I and Furic, L" has a comma at the end for entry lindqvist2018
+while executing---line 1470 of file genetics.bst
+Warning--empty chapter and pages in OchmanAndWilson1987
+Warning--empty chapter and pages in Reeds1985
+Warning--empty chapter and pages in SokalAndRohlf1981
+Warning--empty chapter and pages in WaterlowAndMillward1989
+Warning--empty chapter and pages in ZuckerkandlAndPauling1962
+You've used 118 entries,
+            2828 wiz_defined-function locations,
+            1284 strings with 24464 characters,
+and the built_in function-call counts, 79198 in all, are:
+= -- 6498
+> -- 3674
+< -- 65
++ -- 1715
+- -- 948
+* -- 6944
+:= -- 11332
+add.period$ -- 236
+call.type$ -- 118
+change.case$ -- 887
+chr.to.int$ -- 117
+cite$ -- 125
+duplicate$ -- 5901
+empty$ -- 5877
+format.name$ -- 1312
+if$ -- 15992
 int.to.chr$ -- 2
-int.to.str$ -- 0
-missing$ -- 108
-newline$ -- 533
-num.names$ -- 318
-pop$ -- 629
+int.to.str$ -- 1
+missing$ -- 1017
+newline$ -- 476
+num.names$ -- 472
+pop$ -- 2217
 preamble$ -- 1
-purify$ -- 866
+purify$ -- 776
 quote$ -- 0
-skip$ -- 1139
+skip$ -- 2263
 stack$ -- 0
-substring$ -- 3662
-swap$ -- 133
-text.length$ -- 3
+substring$ -- 3962
+swap$ -- 3333
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 628
-warning$ -- 1
-while$ -- 319
+type$ -- 1041
+warning$ -- 7
+while$ -- 474
 width$ -- 0
-write$ -- 1377
-(There were 9 error messages)
+write$ -- 1415
+(There were 11 error messages)

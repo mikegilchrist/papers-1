@@ -1,49 +1,59 @@
 This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: kluyveri_gbe.aux
+Case mismatch error between cite keys gilchrist2007 and Gilchrist2007
+---line 37 of file kluyveri_gbe.aux
+ : \citation{gilchrist2007
+ :                        ,gilchrist2015}
+I'm skipping whatever remains of this command
 The style file: unsrtnat.bst
 Database file #1: kluyveri_paper.bib
 Database file #2: mike.bib
+Repeated entry---line 25982 of file mike.bib
+ : @article{Wagner2005
+ :                    ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "dosreis2003"
 Warning--empty year in Mathematica
-You've used 18 entries,
+You've used 19 entries,
             2481 wiz_defined-function locations,
-            675 strings with 8286 characters,
-and the built_in function-call counts, 7923 in all, are:
-= -- 618
-> -- 488
-< -- 8
-+ -- 185
-- -- 148
-* -- 706
-:= -- 1310
-add.period$ -- 61
-call.type$ -- 18
-change.case$ -- 36
-chr.to.int$ -- 17
-cite$ -- 19
-duplicate$ -- 337
-empty$ -- 690
-format.name$ -- 172
-if$ -- 1650
+            682 strings with 8385 characters,
+and the built_in function-call counts, 8277 in all, are:
+= -- 651
+> -- 495
+< -- 9
++ -- 189
+- -- 150
+* -- 729
+:= -- 1364
+add.period$ -- 64
+call.type$ -- 19
+change.case$ -- 38
+chr.to.int$ -- 18
+cite$ -- 20
+duplicate$ -- 356
+empty$ -- 729
+format.name$ -- 175
+if$ -- 1728
 int.to.chr$ -- 2
-int.to.str$ -- 19
-missing$ -- 17
-newline$ -- 105
-num.names$ -- 54
-pop$ -- 128
+int.to.str$ -- 20
+missing$ -- 18
+newline$ -- 110
+num.names$ -- 57
+pop$ -- 135
 preamble$ -- 1
-purify$ -- 18
+purify$ -- 19
 quote$ -- 0
-skip$ -- 187
+skip$ -- 198
 stack$ -- 0
-substring$ -- 457
-swap$ -- 38
+substring$ -- 486
+swap$ -- 40
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 126
+type$ -- 133
 warning$ -- 1
-while$ -- 54
+while$ -- 57
 width$ -- 0
-write$ -- 253
-(There was 1 warning)
+write$ -- 266
+(There were 2 error messages)

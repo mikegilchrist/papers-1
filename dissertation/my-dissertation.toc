@@ -1,68 +1,73 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {section}{\numberline {1.1}Cost: Decomposing Codon Usage}{2}{section.1.1}
-\contentsline {section}{\numberline {1.2}Benefit: Selection on Amino acids}{4}{section.1.2}
-\contentsline {chapter}{\numberline {2}AnaCoDa: Analyzing Codon Data with Bayesian mixture models}{6}{chapter.2}
-\contentsline {section}{\numberline {2.1}Abstract}{7}{section.2.1}
-\contentsline {section}{\numberline {2.2}Introduction}{9}{section.2.2}
-\contentsline {section}{\numberline {2.3}Features}{10}{section.2.3}
-\contentsline {subsubsection}{Robust and efficient model fitting}{10}{section*.16}
-\contentsline {subsubsection}{Data Simulation}{11}{section*.17}
-\contentsline {subsubsection}{Available models}{12}{section*.18}
-\contentsline {section}{\numberline {2.4}Appendix: Supplementary Material}{12}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}The AnaCoDa framework}{13}{subsection.2.4.1}
-\contentsline {subsubsection}{Analyzing protein coding gene sequences}{13}{section*.19}
-\contentsline {subsection}{\numberline {2.4.2}AnaCoDa setup}{14}{subsection.2.4.2}
-\contentsline {subsubsection}{Application of codon model to single genome}{14}{section*.20}
-\contentsline {subsubsection}{Application of codon model to a mixture of genomes}{15}{section*.21}
-\contentsline {subsubsection}{Empirical protein synthesis rate values}{16}{section*.22}
-\contentsline {subsubsection}{Fixing parameter types}{17}{section*.23}
-\contentsline {subsubsection}{Combining various gene-set specific parameters to a gene-set description.}{18}{section*.24}
-\contentsline {subsubsection}{Checkpointing}{20}{section*.25}
-\contentsline {subsubsection}{Load and save parameter objects}{20}{section*.26}
-\contentsline {subsection}{\numberline {2.4.3}File formats}{21}{subsection.2.4.3}
-\contentsline {subsubsection}{protein coding sequence}{21}{section*.27}
-\contentsline {subsubsection}{Empirical gene expression}{22}{section*.28}
-\contentsline {subsubsection}{Ribosome foot-printing counts}{22}{section*.29}
-\contentsline {subsection}{\numberline {2.4.4}Analyzing and Visualizating results}{23}{subsection.2.4.4}
-\contentsline {subsubsection}{Parameter estimates}{23}{section*.30}
-\contentsline {subsubsection}{Diagnostic Plots}{26}{section*.31}
-\contentsline {subsubsection}{Model visualization}{27}{section*.32}
-\contentsline {chapter}{\numberline {3}Decomposing mutation and selection to identify mismatched codon usage}{33}{chapter.3}
-\contentsline {section}{\numberline {3.1}Abstract}{34}{section.3.1}
-\contentsline {section}{\numberline {3.2}Introduction}{36}{section.3.2}
-\contentsline {section}{\numberline {3.3}Results}{38}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Differences in the Endogenous and Exogenous Codon Usage}{39}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Determining Source of Exogenous Genes}{41}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Estimating Introgression Age}{42}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Genetic Load of the Exogenous Genes}{43}{subsection.3.3.4}
-\contentsline {section}{\numberline {3.4}Discussion}{44}{section.3.4}
-\contentsline {section}{\numberline {3.5}Materials and Methods}{49}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Separating endogenous and exogenous genes}{49}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Model Fitting with ROC SEMPPR\xspace }{50}{subsection.3.5.2}
-\contentsline {subsection}{\numberline {3.5.3}Comparing codon specific parameter estimates}{50}{subsection.3.5.3}
-\contentsline {subsection}{\numberline {3.5.4}Synteny}{50}{subsection.3.5.4}
-\contentsline {subsection}{\numberline {3.5.5}Determining introgression timeline}{51}{subsection.3.5.5}
-\contentsline {section}{\numberline {3.6}Acknowledgments}{53}{section.3.6}
-\contentsline {section}{\numberline {3.7}Appendix: Supplementary Material}{54}{section.3.7}
-\contentsline {chapter}{\numberline {4}Phylogenetic model of stabilizing selection is more informative about site specific selection than extrapolation from laboratory estimates}{60}{chapter.4}
-\contentsline {section}{\numberline {4.1}Abstract}{61}{section.4.1}
-\contentsline {section}{\numberline {4.2}Introduction}{62}{section.4.2}
-\contentsline {section}{\numberline {4.3}Results}{64}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Site Specific Stabilizing Selection on Amino Acids Improves Model Fit}{64}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Laboratory Inferences Inconsistent with Observed Sequences.}{67}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Stabilizing Selection for Optimal Physicochemical Properties Improves Model Adequacy}{69}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Estimating Site Specific Selection on Amino Acids}{71}{subsection.4.3.4}
-\contentsline {section}{\numberline {4.4}Discussion}{74}{section.4.4}
-\contentsline {section}{\numberline {4.5}Materials and Methods}{77}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Phylogenetic Inference and Model selection}{77}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}Sequence Simulation}{78}{subsection.4.5.2}
-\contentsline {subsection}{\numberline {4.5.3}Estimating site specific efficacy of selection G}{78}{subsection.4.5.3}
-\contentsline {subsection}{\numberline {4.5.4}Estimating site specific fitness values $w_i$}{79}{subsection.4.5.4}
-\contentsline {subsection}{\numberline {4.5.5}Model Adequacy}{79}{subsection.4.5.5}
-\contentsline {section}{\numberline {4.6}Acknowledgments}{80}{section.4.6}
-\contentsline {section}{\numberline {4.7}Appendix: Supplementary Material}{81}{section.4.7}
-\contentsline {chapter}{\numberline {5}Conclusion}{90}{chapter.5}
-\contentsline {section}{\numberline {5.1}Mechanistic models extract information beyond the phenomenon they describe}{90}{section.5.1}
-\contentsline {section}{\numberline {5.2}Mechanistic models supplement experiments}{90}{section.5.2}
-\contentsline {chapter}{Bibliography}{91}{section*.34}
-\contentsline {chapter}{Vita}{105}{section*.35}
+\contentsline {section}{\numberline {1.1}Cost: Decomposing Codon Usage}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}Benefit: Selection on Amino acids}{5}{section.1.2}
+\contentsline {chapter}{\numberline {2}AnaCoDa: Analyzing Codon Data with Bayesian mixture models}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}Abstract}{8}{section.2.1}
+\contentsline {section}{\numberline {2.2}Introduction}{10}{section.2.2}
+\contentsline {section}{\numberline {2.3}Features}{11}{section.2.3}
+\contentsline {subsubsection}{Robust and efficient model fitting}{11}{section*.16}
+\contentsline {subsubsection}{Data Simulation}{12}{section*.17}
+\contentsline {subsubsection}{Available models}{13}{section*.18}
+\contentsline {section}{\numberline {2.4}Appendix: Supplementary Material}{14}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}The AnaCoDa framework}{14}{subsection.2.4.1}
+\contentsline {subsubsection}{Analyzing protein coding gene sequences}{15}{section*.19}
+\contentsline {subsection}{\numberline {2.4.2}AnaCoDa setup}{15}{subsection.2.4.2}
+\contentsline {subsubsection}{Application of codon model to single genome}{15}{section*.20}
+\contentsline {subsubsection}{Application of codon model to a mixture of genomes}{16}{section*.21}
+\contentsline {subsubsection}{Empirical protein synthesis rate values}{17}{section*.22}
+\contentsline {subsubsection}{Fixing parameter types}{18}{section*.23}
+\contentsline {subsubsection}{Combining various gene-set specific parameters to a gene-set description.}{19}{section*.24}
+\contentsline {subsubsection}{Checkpointing}{21}{section*.25}
+\contentsline {subsubsection}{Load and save parameter objects}{22}{section*.26}
+\contentsline {subsection}{\numberline {2.4.3}File formats}{22}{subsection.2.4.3}
+\contentsline {subsubsection}{Protein coding sequence}{22}{section*.27}
+\contentsline {subsubsection}{Empirical gene expression}{23}{section*.28}
+\contentsline {subsubsection}{Ribosome foot-printing counts}{23}{section*.29}
+\contentsline {subsection}{\numberline {2.4.4}Analyzing and Visualizing results}{24}{subsection.2.4.4}
+\contentsline {subsubsection}{Parameter estimates}{24}{section*.30}
+\contentsline {subsubsection}{Diagnostic Plots}{27}{section*.31}
+\contentsline {subsubsection}{Model visualization}{31}{section*.32}
+\contentsline {chapter}{\numberline {3}Decomposing mutation and selection to identify mismatched codon usage}{34}{chapter.3}
+\contentsline {section}{\numberline {3.1}Abstract}{35}{section.3.1}
+\contentsline {section}{\numberline {3.2}Introduction}{37}{section.3.2}
+\contentsline {section}{\numberline {3.3}Results}{39}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}The Signatures of two Cellular Environments within \textit {L. kluyveri}\xspace 's Genome}{39}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Comparing Differences in the Endogenous and Exogenous Codon Usage}{41}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Determining Source of Exogenous Genes}{43}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Estimating Introgression Age}{44}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Genetic Load of the Exogenous Genes}{45}{subsection.3.3.5}
+\contentsline {section}{\numberline {3.4}Discussion}{45}{section.3.4}
+\contentsline {section}{\numberline {3.5}Materials and Methods}{50}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Separating Endogenous and Exogenous Genes}{50}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Model Fitting with ROC SEMPPR\xspace }{51}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}Comparing Codon Specific Parameter Estimates}{51}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.4}Synteny Comparison}{52}{subsection.3.5.4}
+\contentsline {subsection}{\numberline {3.5.5}Estimating Age of Introgression}{52}{subsection.3.5.5}
+\contentsline {section}{\numberline {3.6}Acknowledgments}{54}{section.3.6}
+\contentsline {section}{\numberline {3.7}Appendix: Supplementary Material}{55}{section.3.7}
+\contentsline {chapter}{\numberline {4}Phylogenetic model of stabilizing selection is more informative about site specific selection than extrapolation from laboratory estimates}{63}{chapter.4}
+\contentsline {section}{\numberline {4.1}Abstract}{64}{section.4.1}
+\contentsline {section}{\numberline {4.2}Introduction}{65}{section.4.2}
+\contentsline {section}{\numberline {4.3}Results}{67}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Site Specific Stabilizing Selection on Amino Acids Improves Model Fit}{67}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Laboratory Inferences Inconsistent with Observed Sequences.}{71}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Stabilizing Selection for Optimal Physicochemical Properties Improves Model Adequacy}{72}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Estimating Site Specific Selection on Amino Acids}{75}{subsection.4.3.4}
+\contentsline {section}{\numberline {4.4}Discussion}{78}{section.4.4}
+\contentsline {section}{\numberline {4.5}Materials and Methods}{82}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Phylogenetic Inference and Model selection}{82}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Sequence Simulation}{83}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3}Estimating site specific efficacy of selection $G$}{83}{subsection.4.5.3}
+\contentsline {subsection}{\numberline {4.5.4}Estimating site specific fitness values $w_i$}{83}{subsection.4.5.4}
+\contentsline {subsection}{\numberline {4.5.5}Model Adequacy}{84}{subsection.4.5.5}
+\contentsline {section}{\numberline {4.6}Acknowledgments}{85}{section.4.6}
+\contentsline {section}{\numberline {4.7}Appendix: Supplementary Material}{86}{section.4.7}
+\contentsline {chapter}{\numberline {5}Conclusion}{97}{chapter.5}
+\contentsline {section}{\numberline {5.1}Summary}{97}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}The Value of Mechanistic Models}{98}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Mechanistic Models Supplement Experiments}{99}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Estimating Protein Functional and Fitness Landscape}{99}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}The Importance of Translation Errors}{99}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Homogeneous Selection}{101}{subsection.5.2.2}
+\contentsline {chapter}{Bibliography}{102}{section*.34}
+\contentsline {chapter}{Vita}{117}{section*.36}

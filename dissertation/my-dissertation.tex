@@ -16,12 +16,14 @@
 %First, is this a thesis or dissertation? Choose one by commenting out the one you don't need:
 %\documentclass[thesis,letterpaper,12pt]{utthesis} % thesis
 \documentclass[dissertation,letterpaper,12pt]{utthesis} %dissertation
+
+
 % some alternatives are:
 %\documentclass[thesis,monochrome,letterpaper,12pt]{utthesis} %thesis, monochrome text
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % TO DO: FILL IN YOUR INFORMATION BELOW - READ THIS SECTION CAREFULLY
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{Application of mechanistic models to separate the effects of mutation, selection, and drift on protein sequence evolution}	       	% title of thesis/dissertation
+\title{Application of mechanistic models to separate the effects of mutation, selection, and drift on protein sequence evolution}	       	% ti tle of thesis/dissertation
 \author{Cedric Lars Florian Landerer}                			% author's name
 \copyrightYear{2018}            				% copyright year of your thesis/dissertation
 \graduationMonth{December}           				% month of graduation for your thesis/dissertation
@@ -36,7 +38,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{nomencl}                    % produces a nomenclature
 \usepackage{float}                      % figure floats
-\usepackage[numbers]{natbib}                     % this package allows you to link your references
+%\usepackage[numbers]{natbib}                     % this package allows you to link your references
 \usepackage{graphicx}					% graphics package
 \graphicspath{ {figures/}{figures/eps/}{figures/pdf/}{figures/png/} }% specify the path where figures are located
 \usepackage{fancyhdr}                   % fancy headers and footers
@@ -61,11 +63,12 @@
 \usepackage[svgnames]{xcolor}
 \usepackage{listings}
 \lstset{language=R,
+    frame=single,
     basicstyle=\small\ttfamily,
     stringstyle=\color{DarkGreen},
     otherkeywords={0,1,2,3,4,5,6,7,8,9},
     morekeywords={TRUE,FALSE},
-    deletekeywords={data,frame,length,as,character},
+    deletekeywords={data,frame,length,as,character,model},
     keywordstyle=\color{blue},
     commentstyle=\color{DarkGreen},
     backgroundcolor = \color{white}
@@ -73,6 +76,10 @@
 \usepackage{etoolbox}
 \AtBeginEnvironment{quote}{\singlespacing\small}
 \usepackage{verbatim}
+
+\usepackage{sectsty}
+\usepackage{natbib}
+\chapterfont{\large\centering}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % This section formats landscape pages properly with the correct page number.
@@ -168,8 +175,10 @@
     % To make the bibliography, use \utbiblio{#1}{}{} command. Always use "#1" for the first entry. The second entry is your bibliography style, and the third entry is the name of your bibliography file (.bib file extension) 
     % bibliography style - recommend using apalike-doi as it hyperlinks DOIs
     % Be sure to run BibTeX in order to generate the bibliography correctly.
-
-    \utbiblio{#1}{apalike}{./intro_conc,./bioinfo,./kluyveri_paper,./ecoli}
+    %\bibliographystyle{genetics}
+    \bibliographystyle{genetics} % bibliography style - recommend using apalike-doi as it hyperlinks DOIs
+    \bibliography{./intro_conc,./bioinfo,./kluyveri_paper,./ecoli}
+    %\utbiblio{#1}{genetics}{./intro_conc,./bioinfo,./kluyveri_paper,./ecoli}
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % APPENDIX - OPTIONAL - COMMENT OUT IF NOT NEEDED

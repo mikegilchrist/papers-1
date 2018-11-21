@@ -337,12 +337,12 @@ The matrix representation of \textbf{mutationShared} can be obtained by
 #[1,] 1 1
 #[2,] 1 2
 #[3,] 1 3
-def.matrix <- matrix(c(1,1,1,1,2,3), ncol=2)
+defMatrix <- matrix(c(1,1,1,1,2,3), ncol=2)
 parameter <- initializeParameterObject(genome = genome, 
 			sphi = c(0.5, 2, 1), num.mixtures = 3,
 			gene.assignment = sample.int(3, 
 				length(genome), replace = T),
-			mixture.definition.matrix = def.matrix)
+			mixture.definition.matrix = defMatrix)
 \end{lstlisting}
 
 Columns represent mutation and selection, while each row represents a gene set. 
@@ -354,7 +354,7 @@ In the same way one can produce the matrix for three independent gene sets equiv
 #[1,] 1 1
 #[2,] 2 2
 #[3,] 3 3
-def.matrix <- matrix(c(1,2,3,1,2,3), ncol=2)
+defMatrix <- matrix(c(1,2,3,1,2,3), ncol=2)
 \end{lstlisting}
 
 We can also use this matrix to produce more complex gene set compositions.
@@ -364,7 +364,7 @@ We can also use this matrix to produce more complex gene set compositions.
 #[1,] 1 1
 #[2,] 2 1
 #[3,] 1 2
-def.matrix <- matrix(c(1,2,1,1,1,2), ncol=2)
+defMatrix <- matrix(c(1,2,1,1,1,2), ncol=2)
 \end{lstlisting}
 
 In this case gene set one and three share their mutation parameters, while gene set one and two share their selection parameters.
@@ -412,7 +412,7 @@ mcmc <- loadMCMCObject(file = "mcmc_out.Rda")
 
 \subsection{File formats}
 
-\subsubsection{protein coding sequence}
+\subsubsection{Protein coding sequence}
 Protein coding sequences are provided by fasta file with the default format. One line containing the sequence
 id starting with $>$ followed by the id and one or more lines containing the sequence. The sequences are
 expected to have a length that is a multiple of three. If a codon can not be recognized (e.g AGN) it is ignored.
@@ -458,7 +458,7 @@ YBR177C, 2, GTT, 8
 YBR177C, 3, CGC, 1
 \end{verbatim}
 
-\subsection{Analyzing and Visualizating results}
+\subsection{Analyzing and Visualizing results}
 
 \subsubsection{Parameter estimates}
 
@@ -469,9 +469,9 @@ Again we can specify for which mixture we would like the posterior estimate and 
 \textbf{getCSPEstimates} has an optional argument filename which will cause the routine to write the result as a csv file instead of returning a \textbf{data.frame}.
 
 \begin{lstlisting}[language=R]
-csp_mat <- getCSPEstimates(parameter = parameter, CSP="Mutation", 
+cspMat <- getCSPEstimates(parameter = parameter, CSP="Mutation", 
 			mixture = 1, samples = 1000)
-head(csp_mat)
+head(cspMat)
 # AA Codon Posterior 0.025% 0.975%
 #1 A GCA -0.2435340 -0.2720696 -0.2165220
 #2 A GCC 0.4235546 0.4049132 0.4420680
@@ -487,10 +487,10 @@ To obtain posterior estimates for the gene specific parameters, we can use the f
 In the case below we ask to get the gene specific parameters for all genes, and under the assumption each gene is assigned to mixture $1$.
 
 \begin{lstlisting}[language=R]
-phi_mat <- getExpressionEstimates(parameter = parameter,
+phiMat <- getExpressionEstimates(parameter = parameter,
 			gene.index = 1:length(genome),
 			samples = 1000)
-head(phi_mat)
+head(phiMat)
 # PHI log10.PHI Std.Error log10.Std.Error 0.025 0.975 log10.025 ...
 #[1,] 0.2729446 -0.6188447 0.0001261525 2.362358e-04 0.07331819 ...
 #[2,] 1.4221716 0.1498953 0.0001669425 5.194123e-05 1.09593642 ...
@@ -504,20 +504,20 @@ However we can decide to only obtain certain gene parameters. in the first case 
 
 \begin{lstlisting}[language=R]
 # sampling 100 genes at random
-phi_mat <- getExpressionEstimates(parameter = parameter,
+phiMat <- getExpressionEstimates(parameter = parameter,
 			gene.index = sample(1:length(genome), 100),
 			samples = 1000)
 \end{lstlisting}
 
 Furthermore, AnaCoDa allows to calculate the selection coefficient s for each codon and each gene. We can
-use the function \textbf{getSelectionCoefficients} to do so. Please note, that this function returns the $\log(sNe)$.
+use the function \textbf{getSelectionCoefficients} to do so. Please note, that this function returns the $\log(sN_e)$.
 
-\textbf{getSelectionCoefficients} returns a matrix with $\log(sNe)$ relative to the most efficient synonymous codon.
+\textbf{getSelectionCoefficients} returns a matrix with $\log(sN_e)$ relative to the most efficient synonymous codon.
 
 \begin{lstlisting}[language=R]
-selection.coefficients <- getSelectionCoefficients(genome = genome,
+selectionCoefficients <- getSelectionCoefficients(genome = genome,
 			parameter = parameter, samples = 1000)
-head(selection.coefficients)
+head(selectionCoefficients)
 # GCA GCC GCG GCT TGC TGT GAC GAT ...
 #SAKL0A00132g -0.1630284 -0.008695144 -0.2097771 0 -0.1014373 ...
 #SAKL0A00154g -0.8494558 -0.045305847 -1.0930388 0 -0.5285367 ...
@@ -531,8 +531,8 @@ We can compare these values to the weights from the codon adaptation index (CAI)
 effective number of codons ($N_c$) \citep{Wright1990} by using the functions \textbf{getCAIweights} and \textbf{getNcAA}.
 
 \begin{lstlisting}[language=R]
-cai.weights <- getCAIweights(referenceGenome = genome)
-head(cai.weights)
+caiWeights <- getCAIweights(referenceGenome = genome)
+head(caiWeights)
 # GCA GCC GCG GCT TGC TGT
 #0.7251276 0.6282192 0.2497737 1.0000000 0.6222628 1.0000000
 nc.per.aa <- getNcAA(genome = genome)
@@ -548,54 +548,59 @@ head(nc.per.aa)
 
 We can also compare the distribution of selection coefficients to the CAI values estimated from a reference set of
 genes.
+Figure \ref{fig:sel_cai_comp}, produced by the code below, shows that selection coefficients for the same codon can vary greatly between the genes.
+%In contrast, CAI does not account for the varation in the efficacy of selection between genes.
 
 \begin{lstlisting}[language=R]
-selection.coefficients <- getSelectionCoefficients(genome = genome,
+selectionCoefficients <- getSelectionCoefficients(genome = genome,
 			parameter = parameter, samples = 1000)
-s <- exp(selection.coefficients)
-cai.weights <- getCAIweights(referenceGenome = ref.genome)
-codon.names <- colnames(s)
+s <- exp(selectionCoefficients)
+caiWeights <- getCAIweights(referenceGenome = ref.genome)
+codonNames <- colnames(s)
 h <- hist(s[, 1], plot = F)
 plot(NULL, NULL, axes = F, xlim = c(0,1), 
 			ylim = range(c(0,h$counts)),
 			xlab = "s", ylab = "Frequency", 
-			main = codon.names[1], cex.lab = 1.2)
+			main = codonNames[1], cex.lab = 1.2)
 lines(x = h$breaks, y = c(0,h$counts), type = "S", lwd=2)
 abline(v = cai.weights[1], lwd=2, lty=2)
 axis(1, lwd = 3, cex.axis = 1.2)
 axis(2, lwd = 3, cex.axis = 1.2)
 \end{lstlisting}
 
-\begin{figure}[h]
+\begin{figure}
   \centering
   \includegraphics[width=.6\textwidth]{ch2/sel_cai_comp.png}\\
   \caption{Distribution of s for codon GCA for amino acid alanine. Dashed line indicates the CAI weight for
 GCA. The comparison provides a more nuanced picture as we can see that the selection on GCA varies
 across the genome.}
-  \label{fig:sne_dummy}
+  \label{fig:sel_cai_comp}
 \end{figure} 
 
 \subsubsection{Diagnostic Plots}
 A first step after every run should be to determine if the sampling routine has converged. 
-To do that, AnaCoDa provides plotting routines to visualize all sampled parameter traces from which the posterior sample is obtained.
+To do that, AnaCoDa provides plotting routines to visualize all sampled parameter traces from which the posterior sample is obtained (Figure \ref{fig:selection_trace}).
 First we have to obtain the \textbf{trace} object stored within our \textbf{parameter} object. 
 Now we can simply plot the \textbf{trace} object. The argument \textbf{what} specifies which type of parameter should be plotted.
 Here we plot the selection parameter $\Delta \eta$ of the ROC model. 
 These parameters are mixture specific and one can decide which mixture set to visualize using the argument \textbf{mixture}.
 
-\begin{lstlisting}[language=R]
-trace <- getTrace(parameter)
-plot(x = trace, what = "Mutation", mixture = 1)
-\end{lstlisting}
-
-\begin{figure}[h]
+\begin{figure}
   \centering
   \includegraphics[width=\textwidth]{ch2/selection_trace.png}\\
   \caption{Trace plot showing the traces of all 40 codon specific selection parameters $\Delta \eta$ organized by amino acid.}
-  \label{fig:mutation_trace}
+  \label{fig:selection_trace}
 \end{figure} 
 
-A special case is the plotting of traces of the protein synthesis rate $\phi$. 
+\clearpage
+
+\begin{lstlisting}[language=R]
+trace <- getTrace(parameter)
+plot(x = trace, what = "Selection", mixture = 1)
+\end{lstlisting}
+
+
+A special case is the plotting of traces of the protein synthesis rate $\phi$ (Figure \ref{fig:logphi_trace}). 
 As the number of traces for the different $\phi$ traces is usually in the thousands, a \textbf{geneIndex} has to be passed to determine for which gene the trace should be plotted. 
 This allows to inspect the trace of every gene under every mixture assignment.
 
@@ -604,34 +609,34 @@ trace <- parameter$getTraceObject()
 plot(x = trace, what = "Expression", mixture = 1, geneIndex = 669)
 \end{lstlisting}
 
-\begin{figure}[h]
+\begin{figure}
   \centering
   \includegraphics[width=3in]{ch2/expression_trace.png}\\
   \caption{Trace plot showing the protein synthesis trace $\phi$ for gene 669.}
   \label{fig:logphi_trace}
 \end{figure} 
 
-We can find the likelihood and posterior trace of the model fit in the \textbf{mcmc object}. 
+We find the likelihood and posterior trace of the model fit in the \textbf{mcmc object}. 
 The trace can be plotted by just passing the \textbf{mcmc} object to the \textbf{plot} routine. 
 Again we can switch between $\log(likelihood)$ and $\log(posterior)$ using the argument \textbf{what}. 
 The argument \textbf{zoom.window} is used to inspect a specified window in more detail. 
 It defaults to the last 10 \% of the trace. 
-The $\log(posterior)$ displayed in the figure title is estimated over the \textbf{zoom.window}.
+The $\log(posterior)$ displayed in the figure title is estimated over the \textbf{zoom.window} (Figure \ref{fig:logpost_trace}).
 
 \begin{lstlisting}[language=R]
 plot(mcmc, what = "LogPosterior", zoom.window = c(9000, 10000))
 \end{lstlisting}
 
 
-\begin{figure}[h]
+\begin{figure}
   \centering
   \includegraphics[width=3in]{ch2/logpost_trace.png}\\
-  \caption{Trace plot showing the $\log(Posterior)$ trace for the current model fit. Window inset shows the last 1.000 samples}
+  \caption{Trace plot showing the $\log(posterior)$ trace for the current model fit. Window inset shows the last 1.000 samples}
   \label{fig:logpost_trace}
 \end{figure} 
 
 \subsubsection{Model visualization}
-We can visualize the results of the model fit by plotting the \textbf{model} object. 
+We can visualize the results of the model fit by plotting the \textbf{model} object (Figure \ref{fig:cub_dummy}). 
 For this we require the model and the \textbf{genome} object. 
 We can adjust which mixture set we would like to visualize and how many samples should be used to obtain the posterior estimate for each parameter. 
 For more details see \citet{gilchrist2015}.
@@ -641,7 +646,7 @@ For more details see \citet{gilchrist2015}.
 plot(x = model, genome = genome, samples = 500, mixture = 1)
 \end{lstlisting}
 
-\begin{figure}[h]
+\begin{figure}
   \centering
   \includegraphics[width=\textwidth]{ch2/model_fit.png}\\
   \caption{Fit of the ROC model for a random yeast. The solid line represent the model fit from the data,
@@ -653,7 +658,8 @@ contained in each bin}
 \end{figure} 
 
 As AnaCoDa is designed with the idea to allow gene-sets to have independent gene-set specific parameters, AnaCoDa also provides the option to compare different gene-sets by plotting the parameter object. 
-Here we compare the selection parameter estimated by ROC for seven yeast species.
+Figure \ref{fig:comp_dummy} allows us to compare the selection parameter estimated by ROC for seven yeast species.
+The code below illustrates how the figure is plotted.
 
 \begin{lstlisting}[language=R]
 # use the last 500 samples from mixture 1 for posterior estimate.
@@ -662,7 +668,7 @@ plot(parameter, what = "Selection", samples = 500)
 
 
 
-\begin{figure}[h]
+\begin{figure}
   \centering
   \includegraphics[width=\textwidth]{ch2/param_comp.png}\\
   \caption{Comparison of the selection parameter of seven yeast species estimated with ROC-SEMPPR.}

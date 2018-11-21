@@ -4,7 +4,7 @@
 Protein synthesis from mRNA is the metabolically most expensive process a cell performs with about $20 \%$ of the cells total energy budget \citep{Reeds1985,WaterlowAndMillward1989}.
 The direct cost for the translation of a protein of length $L$ requires $4L+4$ high energy phosphate bonds provided by ATP and GTP molecules.
 Protein synthesis is the results of a complex interplay of many different metabolic and regulatory pathways.
-%From transcriptional regulation and transcription over the transport of mRNA into the cytosol to the translation of mRNA into proteins.
+From transcriptional regulation and transcription over the transport of mRNA into the cytosol to the translation of mRNA into proteins.
 Each step of protein synthesis is under selection and prone to errors with consequences for downstream processes. % , the translation of mRNA was always a strong focus of a wide body of research.
 This enormous energy expenditure for the translation of a protein from mRNA leads to strong selection for efficient translation \citep{gilchrist2007, DrummondAndWilke2008, gilchrist2009, ShahAndGilchrist2011, gilchrist2015}.
 However, the efficacy of selection varies with the effective population size $N_e$ between organisms, the rate of protein synthesis, and absolute difference in metabolic expenditure with changes in amino acid and codon usage.
@@ -44,7 +44,7 @@ Furthermore hypothesis could be formulated about the differing importance of \PC
 
 \section{Estimating Protein Functional and Fitness Landscape}
 
-The selection on a protein sequence is highly complex. 
+Proteins have highly complex fitness landscapes. 
 A protein of length $L$ has $20^L$ possible states it can occupy in a $L$ dimensional fitness landscape.
 This enormous complexity makes it prohibitively expensive to study protein fitness landscapes without simplifying assumptions.
 It is therefore important to be aware of potential impacts such assumptions have on the obtained results and how models can be further improved.

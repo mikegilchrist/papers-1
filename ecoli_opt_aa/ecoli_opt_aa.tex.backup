@@ -18,7 +18,7 @@
 \linenumbers
 
 
-\newcommand{\Lik}{\ensuremath{\text{\emph{L}}}\xspace}
+\newcommand{\LLik}{\ensuremath{\text{\emph{L}}}\xspace}
 \newcommand{\selacDMS}{\emph{SelAC}+DMS\xspace}
 \newcommand{\phydms}{\emph{phydms}\xspace}
 \newcommand{\selac}{\emph{SelAC}\xspace}
@@ -100,11 +100,9 @@ M\textsc{ICHAEL} A.~{G\textsc{ILCHRIST}}$^{1,2}$}
 \subsection*{Site Specific Stabilizing Selection on Amino Acids Improves Model Fit}
 \begin{itemize}
 	\item We compared models of site specific selection to 227 other codon and nucleotide models.
-	\begin{itemize}
-		\item Models of site specific selection improved model fit to 49 observed TEM sequences.
-		\item Number of parameters estimated from phylogenetic data differs between \selac, and \selacDMS and \phydms, resulting in slightly worse AICc for \selac.
-		\item However, \selac outperforms \phydms (Table \ref{tab:AIC}).
-	\end{itemize}
+	\item Models of site specific selection improved model fit to 49 observed TEM sequences.
+	\item Number of parameters estimated from phylogenetic data differs between \selac, and \selacDMS and \phydms, resulting in slightly worse AICc for \selac.
+	\item However, \selac outperforms \phydms (Table \ref{tab:AIC}).
 \end{itemize}
 
 \begin{table}[h]
@@ -126,11 +124,9 @@ M\textsc{ICHAEL} A.~{G\textsc{ILCHRIST}}$^{1,2}$}
 
 \begin{itemize}
 	\item We observe differences in topology.
-	\begin{itemize}
-		\item \selac is to slow for a topology search, therefore unclear if the difference in topology can be attributes to the experimentally inferred selection.
-		\item \gy is outperformed by several nucleotide model e.g. \emph{SYM}+R2, potentially indicating that negative frequency dependent selection is inappropriate for TEM.
-		\item Results indicate shift in the evolution from the tips (\selac) to internal branches (\selacDMS, \phydms, \gy).
-	\end{itemize}
+	\item \selac is to slow for a topology search, therefore unclear if the difference in topology can be attributes to the experimentally inferred selection.
+	\item \gy is outperformed by several nucleotide model e.g. \emph{SYM}+R2, potentially indicating that negative frequency dependent selection is inappropriate for TEM.
+	\item Results indicate shift in the evolution from the tips (\selac) to internal branches (\selacDMS, \phydms, \gy).
 \end{itemize}
 
 \subsection*{Assessing Adequacy of Laboratory and \selac Inferences of Site Specific Selection}
@@ -164,34 +160,39 @@ M\textsc{ICHAEL} A.~{G\textsc{ILCHRIST}}$^{1,2}$}
 	\end{itemize}
 \end{itemize}
 
-\subsection*{Comparing \selac Inferences of Site Specific Selection for Homologous Sequences TEM and SHV}
-\begin{itemize}
-	\item Site specific G terms for TEM and SHV are only weakly correlated ($\rho = 0.17$), despite similar $\alpha_G$ (Figure \ref{fig:tem_shv_param_comp}a).
-	\item Greatest difference is observed in the physicochemical properties, specifically $\alpha$ (which PC is that?) (Figure \ref{fig:tem_shv_param_comp}b).
-	\item Role of secondary structures?
-\end{itemize}
 
-\begin{table}[h]
-  \centering
-  \caption{Efficacy of selection ($G$) and genetic load for TEM and SHV, and separated by secondary structure. $G$ was estimated as a truncated variable with an upper bound of 300.}
-  \begin{tabular}{llrrrrr}
-    \hline
-    & & & \multicolumn{2}{c}{$G$} & \multicolumn{2}{c}{Genetic Load $L_i$} \\ 
-    Protein & Secondary Structure & \# Residues	& \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{SE} & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{SE} \\ \hline 
-    TEM	&		& 263 & 219.3 & 7.5  & $15.9\times10^{-8}$ & $6.5\times10^{-8}$ \\
-    &Helix 		& 113 & 206.1 & 12.4 & $17.5\times10^{-8}$ & $13.1\times10^{-8}$ \\
-    &$\beta$-Sheet 	&  48 & 238.6 & 15.8 & $ 6.8\times10^{-8}$ & $2.9\times10^{-8}$ \\
-    &Unstructured 	& 102 & 224.8 & 11.4 & $18.6\times10^{-8}$ & $8.1\times10^{-8}$ \\
-    &Active/Binding Sites 	&   5 & 202.6 & 62.2 & $0.01\times10^{-8}$& $0.01\times10^{-8}$ \\ \hline
-    
-    SHV&		& 263 & 244.9 & 6.8  & $4.0\times10^{-8}$ & $1.9\times10^{-8}$ \\
-    &Helix		& 102 & 234.6 & 11.5 & $7.3\times10^{-8}$ & $4.8\times10^{-8}$ \\
-    &$\beta$-Sheet 	&  66 & 253.1 & 12.8 & $2.1\times10^{-8}$ & $1.1\times10^{-8}$ \\
-    &Unstructured	&  95 & 224.7 & 11.4 & $1.5\times10^{-8}$ & $0.6\times10^{-8}$  \\
-    &Active/Binding Sites	&   5 & 239.9 & 60.0 & $1.5\times10^{-8}$ & $1.5\times10^{-8}$ \\ \hline
-  \end{tabular}
-  \label{tab:selection}
-\end{table}
+
+\subsection*{Comparing \selac Inferences of Site Specific Selection for Homologous Sequences TEM and SHV}
+	\begin{itemize}
+ 		\item The inferred fitness landscape is inconsistent with observed sequences.
+		\item Observed sequences unlikely under the lab inferred fitness landscape (Figure \ref{fig:dms_sim}a,b).
+		\begin{itemize}
+			\item We would expect about half of the observed fitness burden.
+			\item Sequence similarity is expected to be about $\sim 70 \%$.
+		\end{itemize}
+	\end{itemize}
+
+	\item \selac Model Adequacy.
+	\begin{itemize}
+		\item Model adequacy assessed by sequence similarity shows that SelAC better represents the observed sequences.
+	\end{itemize}
+
+	\item Application of SelAC to TEM.
+	\begin{itemize}
+		\item Site specific estimates of aa fitness (Figure \ref{fig:tem2016_sse}).
+		\begin{itemize}
+			\item Fitness burden based on SSE.
+			\item Fitness burden at binding sites
+			\item Most sites show the estimated optimal amino acid.
+			\item We find that selection against used amino acids is clustered and locally confined.
+			\item Role of secondary structures?
+		\end{itemize}
+		\item Application of SelAC to TEM and comparison to SHV
+		\begin{itemize}
+			\item Site specific G terms for TEM and SHV are only weakly correlated ($\rho = 0.17$), despite similar $\alpha_G$ (Figure \ref{fig:tem_shv_param_comp}a).
+			\item Greatest difference is observed in the physicochemical properties, specifically $\alpha$ (which PC is that?) (Figure \ref{fig:tem_shv_param_comp}b).
+		\end{itemize}
+	\end{itemize}
 
 
 \section*{Discussion}

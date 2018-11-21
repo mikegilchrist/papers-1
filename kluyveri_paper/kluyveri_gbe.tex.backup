@@ -217,7 +217,7 @@ Given these results, we conclude that the \gossypii lineage is the most likely s
 
 We estimated the introgression assuming that \gossypii is still representative of the mutation bias of its ancestral source lineage at the time of the introgression.
 We infer the age of the introgression to be on the order of $6.2\pm1.2\times 10^8$ generations. 
-\kluyveri experiences between one and eight generations per day, we therefore expect the introgression to have occurred between $212,000$ to $1,700,000$ years ago.
+\kluyveri experiences between one and eight generations per day, we therefore expect the introgression to have occurred between $205,000$ to $1,600,000$ years ago.
 This estimates the introgression to be older than previous assumed \citet{friedrich2015}.
 However, our estimates are likely overestimates as they assume a purely neutral decay.
 
@@ -229,7 +229,7 @@ Assuming that differences in mutation bias will decay more slowly than differenc
 
 Estimates of selection bias for the exogenous genes show that, while well correlated with the endogenous genes, only nine amino acids share the optimal codon.
 Exogenous genes are therefore expected to represent a significant reduction in fitness, or genetic load for \kluyveri.
-As the introgression occurred before the diversification of \kluyveri and has become fixed throughout all populations, we are left without the original chromosome arm \citep{friedrich2015}.
+As the introgression occurred before the diversification of \kluyveri and has become fixed in \kuyveri, we are left without the original chromosome arm \citep{friedrich2015}.
 Using our estimates of $\Delta M$ and $\Delta \eta$ from the endogenous genes, we estimate the genetic load of the exogenous genes relative to an expected gene set.
 We define genetic load as the difference between the fitness of an expected, replaced endogenous gene and the exogenous gene relative to drift $s \propto \phi \DE$ (See Methods for details).
 \begin{figure}[h]
@@ -248,7 +248,7 @@ We define genetic load as the difference between the fitness of an expected, rep
 
 We estimate the genetic load of the exogenous genes at the time of introgression (Figure \ref{fig:sne_fitness_burden}a) and currently (Figure \ref{fig:sne_fitness_burden}b).
 We scale the difference in the efficacy of selection on codon usage between the donor lineage and \kluyveri using a linear scaling factor $\kappa$.
-As \DE is defined as $\DE = 2N_eq(\eta_i-\eta_j)$, we can not distinguish if $\kappa$ is a scaling on protein synthesis rate $\phi$, effective population size $N_e$, or the value of an ATP $q$\citep{gilchrist2007, gilchrist2015}.
+As \DE is defined as $\DE = 2N_eq(\eta_i-\eta_j)$, we can not distinguish if $\kappa$ is a scaling on protein synthesis rate $\phi$, effective population size $N_e$, or the value of an ATP $q$\citep{Gilchrist2007, gilchrist2015}.
 We predict that only some low expression genes ($\phi < 1$) were weakly exapted at the time of the introgression (Figure \ref{fig:sne_fitness_burden}a).
 High expression genes ($\phi > 1$) are predicted to carry the highest genetic load in the novel cellular environment.
 These highly expressed genes also show the greatest rate of adaptation to the \kluyveri cellular environment (Figures \ref{fig:sne_fitness_burden}a, \ref{fig:adapt_tot}).
@@ -318,23 +318,18 @@ Our Load estimates, therefore, indicate strong selection against introgressed se
 The large genetic load the exogenous genes represented at the time of the introgression indicates that the fixation of the introgression was a very unlikely event in a population with a large $N_e$ as it is typical for yeasts.
 It is hard to contextualize the probability of this introgression being fixed as we are not aware of any estimates of the frequency at which such large scale introgressions of genes with very different signatures of codon usage occur.
 One example is \emph{Saccharomyces bayanus}, a hybrid of \emph{Saccharomyces uvarum},\emph{Saccharomyces cerevisiae}, and \emph{Saccharomyces eubayanus}.
-However, unlike with \kluyveri and \gossypii the donor lineages show similar codon usage.
+However, unlike with \kluyveri and \gossypii it appears that the donor lineages show similar codon usage.
 \emph{Saccharomyces cerevisiae} and \emph{Saccharomyces eubayanus} show a very strong correlation between selection bias \DE of $\rho = 0.98$ and a strong correlation between mutation bias \DM of $ \rho = 0.83$
 We were unable to identify codon usage for \emph{Saccharomyces uvarum}.
 However, \kluyveri diverged about 85 Mya ago from the rest of the Lachancea clade.
 This represents between $10^{10}$ to $10^{11}$ generations.
 Assuming for yeasts typical effective population size on the order of $10^8$, we are left with $10^{18}$ to $10^{19}$ opportunities for such an event to occur.
-In addition, the strong mutation bias towards G/C ending codons in the exogenous genes may have contributed to the fixation of this introgression.
+In addition, the strong mutation bias towards G/C ending codons in the exogenous genes may have contributed to the fixation of this introgression (include figure of \DM v \DE).
 It is, on the other hand, also possible that despite their mismatch in codon usage, the exogenous genes have represented a fitness increase due to external environmental factors resulting in the fixation of the introgression.
-However, if that is the case one has to wonder why recombination events did not limit the magnitude of the fixed introgression.
-As previously mentioned, the exogenous region show a low recombination rate, potentially due to low homology with the rests of the genome.
-Alternatively, our results and population genetics principles suggest that the introgression has spread very rapidly as the time to fixation does not depend on the sign but only the magnitude of the selection coefficient $s$.
-Furthermore, it is possible that the introgression triggered a speciation event, resulting in a small effective population size $N_e < 100$.
-Thus, even an event with a large genetic load has a reasonable fixation probability.
  
 In conclusion, our results show the usefulness of the separation of mutation bias and selection bias and the importance of recognizing the presence of multiple cellular environments in the study of codon usage.
 We also illustrate how a mechanistic model like \ROC and the quantitative estimates it provides can be used for more sophisticated hypothesis testing in the future.
-In contrast to other approaches used to study codon usage like CAI \citep{sharp1987} or tAI \citep{dosreis2003, dosreis2004}, \ROC is sensitive to differences in mutation bias.
+In contrast to other approaches used to study codon usage like CAI \citep{sharp1987} or tAI \citep{dosreis2004}, \ROC is sensitive to differences in mutation bias.
 We highlight potential pitfalls when estimating codon preferences, as estimates can be biased by the signature of a second, historical cellular environment.
 In addition, we show how quantitative estimates of mutation bias and selection relative to drift can be obtained from codon data and used to infer the fitness cost of an introgression as well as its history and potential future.
 
