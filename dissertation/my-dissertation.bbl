@@ -1,4 +1,4 @@
-\begin{thebibliography}{118}
+\begin{thebibliography}{119}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{\sc Akashi}(2003)}]{Akashi2003}
@@ -77,6 +77,11 @@
   irt-4, a novel tem-type enzyme with a decreased susceptibility to
   beta-lactamase inhibitors.
 \newblock FEMS Microbiology Letters {\bf 120}: 111--117.
+
+\bibitem[{{\sc Bulmer}(1990)}]{bulmer1990}
+{\sc Bulmer, M.}, 1990 The selection-mutation-drift theory of synonymous codon
+  usage.
+\newblock Genetics {\bf 129}: 897--907.
 
 \bibitem[{{\sc Buttgereit} and {\sc Brand}(1995)}]{buttgereit1995}
 {\sc Buttgereit, F.}, and {\sc M.~Brand}, 1995 A hierachy of atp-consuming

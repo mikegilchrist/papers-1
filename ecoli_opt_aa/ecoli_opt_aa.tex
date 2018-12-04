@@ -60,35 +60,32 @@ M\textsc{ICHAEL} A.~{G\textsc{ILCHRIST}}$^{1,2}$}
 
 \section*{Introduction}
 \begin{itemize}
-	\item Incorporating selection into phylogenetic frameworks is already a long lasting endeavor.
+	\item Numerous attempts to incorporate selection into phylogenetic models have been made.
 	\begin{itemize}
 		\item Phylogenetic inference of sequence relationship was long only focused on substitution rates and fixation probabilities.
-		\item Importance of site specific equilibrium frequencies has long been noted.
-		\item Such models however, tend to be unfeasible as they are very parameter rich.
-		%\item The type of selection on a protein is not always clear, or differs between proteins phylogenetic models also have to make generalizing assumptions.
+		\item However, the importance of site specific equilibrium frequencies has long been noted.
+		\item Models of site specific equilibrium frequencies tend to be unfeasible as they are very parameter rich.
+		\item Independent fitness estimates have potential to greatly reduce number of parameters estimated from phylogenetic data.
 		\item Incorporating selection from experimental sources therefore seems like an attractive option.
-		\item empirical fitness estimates greatly reduces number of parameters that have to be estimated from phylogenetic data.
 		\begin{itemize}
 			\item site specific amino acid preferences acknowledge the heterogeneity of selection along the protein sequence.
 			\item It allows for the fitting complex site specific models to smaller data sets.
-			\item DMS allows to estimate empirical selection on amino acids for a wide range of mutations.
+			\item DMS allows to estimate empirical selection on amino acids for large amount of mutations on a single experiment.
 		\end{itemize}
-		\item Quality of DMS depends on many factors like initial library of mutants and applied selection.
+		\item Value of DMS depends on many factors like initial library of mutants and applied selection.
 		\begin{itemize}
 			\item Extensive mutation libraries lead to heterogeneous competing population.
 			\item DMS experiments are limited to proteins and organisms that can be manipulated under laboratory conditions.
 			\item Greatly limiting application of experimentally informed phylogenetic models.
 		\end{itemize}
-		\item Even when empirical selection estimates are available, their application for phylogenetic inference is questionable.
-		\begin{itemize}
-			\item In this study, we assess the ability of experimentally inferred site specific selection to inform phylogenetic models and offer an alternative approach.
-			\item We used the class A $\beta$-lactamase TEM found in gram-negative bacteria like \ecoli for which empirical selection estimates are available.  
-			\item The applied selection pressure was limited to ampicillin and focused on the sequence variant TEM-1.
-			\item TEM can confer resistance to a wide range of antibiotics.
-		\end{itemize}
 	\end{itemize}
+	\item Even when empirical selection estimates are available, their application for phylogenetic inference is questionable.
+	\item In this study, we compared experimentally inferred site specific selection to inform phylogenetic models to a site specific model of stabilizing selection.
 	\item We assessed model fit of two codon models of site specific stabilizing selection with (\selacDMS, \phydms) and without (\selac) experimentally inferred selection and compared the models fits to 227 other codon and nucleotide models.
 	\begin{itemize}
+		\item We used the class A $\beta$-lactamase TEM found in gram-negative bacteria like \ecoli for which empirical selection estimates are available.  
+		\item The applied selection pressure was limited to ampicillin and focused on the sequence variant TEM-1.
+		\item TEM can confer resistance to a wide range of antibiotics.
 		\item Models fits informed by experimentally inferred selection improve model fit over conventional codon and nucleotide models but can be improved upon using a hierarchical phylogenetic framework of stabilizing selection: \selac.
 		\item Simulations highlight the inadequacy of experimentally inferred selection.
 		\item Comparison between \selac and empirical estimates of selection show that they are comparable when site specific selection is captured adequately by the experiment.
@@ -99,9 +96,9 @@ M\textsc{ICHAEL} A.~{G\textsc{ILCHRIST}}$^{1,2}$}
 \section*{Results}
 \subsection*{Site Specific Stabilizing Selection on Amino Acids Improves Model Fit}
 \begin{itemize}
-	\item We compared models of site specific selection to 227 other codon and nucleotide models.
+	\item We evaluated here model fits of site specific selection and 227 other codon and nucleotide models to 49 observed TEM sequences.
 	\begin{itemize}
-		\item Models of site specific selection improved model fit to 49 observed TEM sequences.
+		\item All three models of site specific selection improved model fit.
 		\item Number of parameters estimated from phylogenetic data differs between \selac, and \selacDMS and \phydms, resulting in slightly worse AICc for \selac.
 		\item However, \selac outperforms \phydms (Table \ref{tab:AIC}).
 	\end{itemize}
@@ -135,7 +132,7 @@ M\textsc{ICHAEL} A.~{G\textsc{ILCHRIST}}$^{1,2}$}
 
 \subsection*{Assessing Adequacy of Laboratory and \selac Inferences of Site Specific Selection}
 \begin{itemize}
-	\item Assessing model adequacy as sequence similarity.
+	\item Assessing model adequacy as sequence similarity sequence of selectively favored amino acids and observed consensus sequence.
 	\begin{itemize}
 		\item Experimentally inferred selection is inconsistent with observed sequences.
 		\item Experimentally inferred sequence of selectively favored amino acids has only $52 \%$ sequence similarity with the observed consensus sequence.
@@ -166,9 +163,12 @@ M\textsc{ICHAEL} A.~{G\textsc{ILCHRIST}}$^{1,2}$}
 
 \subsection*{Comparing \selac Inferences of Site Specific Selection for Homologous Sequences TEM and SHV}
 \begin{itemize}
-	\item Site specific G terms for TEM and SHV are only weakly correlated ($\rho = 0.17$), despite similar $\alpha_G$ (Figure \ref{fig:tem_shv_param_comp}a).
-	\item Greatest difference is observed in the physicochemical properties, specifically $\alpha$ (which PC is that?) (Figure \ref{fig:tem_shv_param_comp}b).
-	\item Role of secondary structures?
+	\item Site specific genetic load for TEM and SHV is not correlated ($\rho = 0.006$) and , despite similar $\alpha_G$
+	\begin{itemize}
+	 \item Exclusing site with no genetic load and calculating the correlation on the log scale lead to a correlation coefficient of $\rho = 0.22$. 
+	\end{itemize}
+	\item Greatest difference is observed in the physicochemical properties, specifically $\alpha$.
+	\item No significant differences are observed in average genetic load between secondary structure elements (Table \ref{tab:selection}).
 \end{itemize}
 
 \begin{table}[h]

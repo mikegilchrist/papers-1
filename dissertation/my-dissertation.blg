@@ -59,45 +59,45 @@ Warning--empty chapter and pages in Reeds1985
 Warning--empty chapter and pages in SokalAndRohlf1981
 Warning--empty chapter and pages in WaterlowAndMillward1989
 Warning--empty chapter and pages in ZuckerkandlAndPauling1962
-You've used 118 entries,
+You've used 119 entries,
             2828 wiz_defined-function locations,
-            1284 strings with 24464 characters,
-and the built_in function-call counts, 79198 in all, are:
-= -- 6498
-> -- 3674
-< -- 65
-+ -- 1715
-- -- 948
-* -- 6944
-:= -- 11332
-add.period$ -- 236
-call.type$ -- 118
-change.case$ -- 887
-chr.to.int$ -- 117
-cite$ -- 125
-duplicate$ -- 5901
-empty$ -- 5877
-format.name$ -- 1312
-if$ -- 15992
+            1289 strings with 24554 characters,
+and the built_in function-call counts, 79694 in all, are:
+= -- 6541
+> -- 3685
+< -- 66
++ -- 1721
+- -- 951
+* -- 6978
+:= -- 11412
+add.period$ -- 238
+call.type$ -- 119
+change.case$ -- 893
+chr.to.int$ -- 118
+cite$ -- 126
+duplicate$ -- 5940
+empty$ -- 5920
+format.name$ -- 1316
+if$ -- 16092
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 1017
-newline$ -- 476
-num.names$ -- 472
-pop$ -- 2217
+missing$ -- 1024
+newline$ -- 480
+num.names$ -- 476
+pop$ -- 2227
 preamble$ -- 1
-purify$ -- 776
+purify$ -- 781
 quote$ -- 0
-skip$ -- 2263
+skip$ -- 2276
 stack$ -- 0
-substring$ -- 3962
-swap$ -- 3333
+substring$ -- 3996
+swap$ -- 3352
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1041
+type$ -- 1050
 warning$ -- 7
-while$ -- 474
+while$ -- 478
 width$ -- 0
-write$ -- 1415
+write$ -- 1427
 (There were 11 error messages)

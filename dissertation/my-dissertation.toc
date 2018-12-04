@@ -32,17 +32,17 @@
 \contentsline {section}{\numberline {3.2}Introduction}{37}{section.3.2}
 \contentsline {section}{\numberline {3.3}Results}{39}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}The Signatures of two Cellular Environments within \textit {L. kluyveri}\xspace 's Genome}{39}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Comparing Differences in the Endogenous and Exogenous Codon Usage}{41}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Determining Source of Exogenous Genes}{43}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Estimating Introgression Age}{44}{subsection.3.3.4}
-\contentsline {subsection}{\numberline {3.3.5}Genetic Load of the Exogenous Genes}{45}{subsection.3.3.5}
-\contentsline {section}{\numberline {3.4}Discussion}{45}{section.3.4}
+\contentsline {subsection}{\numberline {3.3.2}Comparing Differences in the Endogenous and Exogenous Codon Usage}{40}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Determining Source of Exogenous Genes}{42}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Estimating Introgression Age}{43}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Genetic Load of the Exogenous Genes}{44}{subsection.3.3.5}
+\contentsline {section}{\numberline {3.4}Discussion}{44}{section.3.4}
 \contentsline {section}{\numberline {3.5}Materials and Methods}{50}{section.3.5}
 \contentsline {subsection}{\numberline {3.5.1}Separating Endogenous and Exogenous Genes}{50}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Model Fitting with ROC SEMPPR\xspace }{51}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.2}Model Fitting with ROC SEMPPR\xspace }{50}{subsection.3.5.2}
 \contentsline {subsection}{\numberline {3.5.3}Comparing Codon Specific Parameter Estimates}{51}{subsection.3.5.3}
-\contentsline {subsection}{\numberline {3.5.4}Synteny Comparison}{52}{subsection.3.5.4}
-\contentsline {subsection}{\numberline {3.5.5}Estimating Age of Introgression}{52}{subsection.3.5.5}
+\contentsline {subsection}{\numberline {3.5.4}Synteny Comparison}{51}{subsection.3.5.4}
+\contentsline {subsection}{\numberline {3.5.5}Estimating Age of Introgression}{51}{subsection.3.5.5}
 \contentsline {section}{\numberline {3.6}Acknowledgments}{54}{section.3.6}
 \contentsline {section}{\numberline {3.7}Appendix: Supplementary Material}{55}{section.3.7}
 \contentsline {chapter}{\numberline {4}Phylogenetic model of stabilizing selection is more informative about site specific selection than extrapolation from laboratory estimates}{63}{chapter.4}
