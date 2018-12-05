@@ -200,32 +200,27 @@ These highly expressed genes are inferred to have the greatest degree of adaptat
         \centering
         \includegraphics[width=.45\textwidth]{ch3/fitness_difference_exo.pdf}
     \end{subfigure}
-    \caption{Fitness burden $\Delta sN_e$ (a) at the time of introgression ($\kappa = 5$), and (b) currently ($\kappa = 1$). }
+    \caption{Fitness burden $s = \DE \phi$ (a) at the time of introgression ($\kappa = 5$), and (b) currently ($\kappa = 1$). }
     \label{fig:sne_fitness_burden}
 \end{figure}
 
 
 \section{Discussion}
-
-In order to study the effects of an introgression and the resulting mismatch in codon usage in the \kluyveri genome, we used \ROC \citep{gilchrist2015}, a mechanistic model to analyze codon usage bias grounded in population genetics.
-We show that the \kluyveri genome contains two distinct signatures of cellular environments, its own endogenous and the introgressed exogenous environment.
+In order to study the evolutionary effects of an introgression, we used \ROC, a mechanistic model of ribosome movement along an mRNA.
+Our parameter estimates indicate that the \kluyveri genome contains distinct signatures of mutation and selection bias from both an endogenous and exogenous cellular environment.
 By fitting \ROC separately to \kluyveri's endogenous and exogenous sets of genes we generate a quantitative description of their signatures of mutation bias and natural selection for efficient protein translation.
-Our results indicate that the difference in \GC between endogenous and exogenous genes is mostly due to differences in mutation bias, but we also show that the strength of selection within a codon family differs between the gene sets, causing changes in rank order.
-Failing to recognize the difference in codon preference our estimates would not have been reflective of the codon usage of the \kluyveri genome but of a relatively small introgressed gene set.
-The small number of exogenous genes ($\sim 10 \%$ of genes) has a disproportional impact on our estimates of \DM and \DE when fitting \ROC to the entire \kluyveri genome.
+Our results indicate that the difference in \GC between endogenous and exogenous genes is mostly due to differences in mutation bias, but we also show that the strength and rank order of selection within a codon family differ between endogenous and exogenous cellular environments.  
+Even though the exogenous genes make up only $\sim10\%$ of the \kluyveri genome, when we fail to recognize these differences our estimates of \DM and \DE deviate substantial from their actual values (Figure XX).
+\marginpar{Include this figure in SM and refer to it in the results section when comparing parameter values.}
 While this sensitivity of our parameters to a second cellular environment may be surprising, it highlights the importance of recognizing different cellular environments reflected by a genome.
 Furthermore, our results indicate that we can attribute the increased \GC in the exogenous genes mostly to differences in mutation bias favoring G/C ending codons rather than selection.
 
-The separation of the endogenous and exogenous genes improves our estimates of protein synthesis rate $\phi$ by $42 \%$ relative to the full genome estimate ($R^2 = 0.32$ vs. $R^2 = 0.46$, respectively).
-Furthermore, we find that the magnitude of variation in our estimates of $\phi$ is more consistent with most estimates of gene expression (compare Figure \ref{fig:phi_corr_two_cond}a \& b).
-Thus we hypothesize that the small variation in $\phi$ estimates may serve as an indicator for the presents of the signature of multiple cellular environments and help recognize it in future work.
-\ROC assumes that estimates of $\phi$ follow a log-normal distribution with an expected value $E[\phi] = 1$. 
-For two codon amino acids, the inflection point represents the point at which mutation and selection are contributing equally to a codons occurrence.
-In the case of the \kluyveri genome, the severe mismatch in \DM causes $\phi$ values for low expression genes ($\phi < 1$) to increase towards the inflection point where the dominance of mutation gives way to selection.
-We find this inflection point around $\phi = 1$ for most 2 codon amino acids (Figure \ref{fig:cub_all_sets}). 
-Assuming $E[\phi] = 1$ allows us to interpret \DE as the strength of selection relative to drift ($sN_e$) for a codon in a gene with an estimated protein synthesis rate $\phi = 1$.
-However, this also ties the mean and standard deviation of the prior distribution together.
-Therefore, an increase in $\phi$ for low expression genes has to be meet with a decrease of $\phi$ for high expression genes as we observe in the case of our $\phi$ estimates for the \kluyveri genome, reducing the overall variance in $\phi$ (see \citet{gilchrist2015} for details). 
+The separation of the endogenous and exogenous genes improves our estimates of protein synthesis rate $\phi$ by $42 \%$ relative to the full genome estimate ($R^2 = 0.32$ vs. $0.46$, respectively).
+Furthermore, failing to separately analyze the endogenous and exogenous genes results in an unrealistically small amount of intergenic variation in $\phi$ (compare Figure \ref{fig:phi_corr_two_cond}a \& b).
+This behavior is due, in part, to constraining $E[\phi] = 1$.
+This constraint not only allows us to compare the efficacy of selection across genomes, but extremely small variances in the $\phi$ values estimated by \ROC, could indicate that a genome contains the signature of multiple cellular environments.
+
+\marginpar{Need to include brief application of fact that $\DE$ represents the strength of selection on a codon in a gene with average expression level in Results.}
 
 The codon usage bias of the introgressed exogenous genes reflect the influence of a foreign cellular environment.
 We, therefore, utilize it to find a potential source lineage.
@@ -356,15 +351,12 @@ Using estimates for $N_e = 1.36\times10^7$ \citep{wagner2005} for \textit{Saccha
 
 We scale the difference in the efficacy of selection on codon usage between the donor lineage and \kluyveri using a linear scaling factor $\kappa$.
 As \DE is defined as $\DE = 2N_eq(\eta_i-\eta_j)$, we can not distinguish if $\kappa$ is a scaling on protein synthesis rate $\phi$, effective population size $N_e$, or the selective cost of an ATP $q$ \citep{gilchrist2007, gilchrist2015}.
+\marginpar{Move \DE definition to first usage of \DE in Methods.}
 We calculated the fitness burden each gene represents assuming additive fitness effects as 
 \begin{equation}
-s_g = \sum_i^{C} -\kappa \phi_g \DE'_i n_{g,i} 
+s_g = \sum_{i=1}^{n_g} -\kappa \phi_g \DE'_i 
 \end{equation}
-where $s_g$ is the selection against translation inefficiency.
-%Can we rephrase this as 'selection for translational efficiency'?
-$\phi_g$ is the estimated protein synthesis rate for gene $g$ in the exogenous gene set.
-$n_{g,i}$ is the codon count of each codon $i$ in the codon set $C$ for each gene $g$.
-$\kappa$ is a constant, scaling the efficacy of selection between the cellular environments.
+where $s_g$ is the overall strength of selection for translational efficiency on gene $g$  in the exogenous gene set, $\kappa$ is a constant, scaling the efficacy of selection between the endogenous and exogenous cellular environments, $n_{g}$ is length of the protein, $\phi_g$ is the estimated protein synthesis rate of the gene in the endogenous environment, and $\DE'_i$, is the \DE' for the codon at position $i$.
 As stated previously, our \DE are relative to the mean of the codon family.
 We find that the fitness burden of the introgressed genes  is minimized at $\kappa \sim 5$ (Figure \ref{fig:sne_scaling}b).
 Thus, we set $\kappa = 1$ if we calculate the $s_g$ for the endogenous and the current exogenous genes, and $\kappa = 5$ for $s_g$ for the fitness burden at the time of introgression.
