@@ -45,7 +45,7 @@ Such distortion could lead to the wrong codon preference for an amino acid, unde
 
 To illustrate these ideas, we analyze the CUB of the genome of \emph{Lachancea kluyveri}, the earliest diverging lineage of the Lachancea clade.
 The Lachancea clade diverged from the Saccharomyces clade, prior to its whole genome duplication $\sim 100$ Mya ago \citep{MHM2015,Beimforde2014}.
-Since that time, \kluyveri has experienced a large introgression of exogenous genes found in all populations\citep{friedrich2015}.
+Since that time, \kluyveri has experienced a large introgression of exogenous genes found in all populations \citep{friedrich2015}.
 The introgression replaced the left arm of the C chromosome and displays a $13 \%$ higher \GC than the endogenous \kluyveri genome \citep{payen2009, friedrich2015}.
 These characteristics make \kluyveri an ideal model to study the effects of an introgressed cellular environment and the resulting mismatch in codon usage.
 
@@ -148,7 +148,7 @@ We examined 38 yeast lineages of which two (\emph{Eremothecium gossypii} and \em
 The endogenous \kluyveri genome exhibits codon usage very similar to most yeast lineages examined, indicating little variation in codon usage among the examined yeasts (Figure \ref{fig:csp_endo_comp}).
 Four lineages show a positive correlation for $\Delta M$ and $\Delta \eta$ with the exogenous genes and have a weak to moderate positive correlation in selection bias with the endogenous genes; but, like the exogenous genes, tend to have a negative correlation in $\Delta M$ with the endogenous genes.
 
-Comparing synteny between the exogenous left arm of chromosome C, and \gossypii and \dubl as well as closely related yeast species we find that \gossypii displays the highest synteny (Figures \ref{fig:synt_rel} \& \ref{fig:synteny_species}).
+Comparing synteny between the exogenous genes, which are restricted to the left arm of chromosome C, and \gossypii and \dubl as well as closely related yeast species we find that \gossypii displays the highest synteny (Figures \ref{fig:synt_rel} \& \ref{fig:synteny_species}).
 \dubl, even though it displays similar codon usage does not show synteny with the exogenous region.
 Furthermore, the synteny relationship between the exogenous region and other yeasts appears to be limited to the Saccharomycetacease clade (Figure \ref{fig:synteny_species}).
 Given these results, we conclude that of the 38 examined yeast lineages the \gossypii lineage is the most likely source of the introgressed exogenous genes.
@@ -178,7 +178,7 @@ We predict that the \DM signal of the source cellular environment will have deca
 Together, these results indicate that the mutation signature of the exogenous genes will persist for a very long time.
 
 \subsection{Genetic Load of the Exogenous Genes}
-
+\marginpar{Explicitly mention value for genetic load}
 We define genetic load as the difference between the fitness of an expected, replaced endogenous gene and the exogenous gene, $s \propto \phi \DE$ (See Methods for details).
 Estimates of selection bias for the exogenous genes show that, while well correlated with the endogenous genes, only nine amino acids share the same optimal codon.
 Exogenous genes are, therefore, expected to represent a significant reduction in fitness, or genetic load for \kluyveri.
@@ -215,60 +215,57 @@ Even though the exogenous genes make up only $\sim10\%$ of the \kluyveri genome,
 While this sensitivity of our parameters to a second cellular environment may be surprising, it highlights the importance of recognizing different cellular environments reflected by a genome.
 Furthermore, our results indicate that we can attribute the increased \GC in the exogenous genes mostly to differences in mutation bias favoring G/C ending codons rather than selection.
 
-The separation of the endogenous and exogenous genes improves our estimates of protein synthesis rate $\phi$ by $42 \%$ relative to the full genome estimate ($R^2 = 0.32$ vs. $0.46$, respectively).
+The separation of the endogenous and exogenous genes improves our estimates of protein synthesis rate $\phi$ by $42 \%$ relative to the full genome estimate ($R^2 = 0.32$ vs.~$0.46$, respectively).
 Furthermore, failing to separately analyze the endogenous and exogenous genes results in an unrealistically small amount of intergenic variation in $\phi$ (compare Figure \ref{fig:phi_corr_two_cond}a \& b).
-This behavior is due, in part, to constraining $E[\phi] = 1$.
-This constraint not only allows us to compare the efficacy of selection across genomes, but extremely small variances in the $\phi$ values estimated by \ROC, could indicate that a genome contains the signature of multiple cellular environments.
+This behavior is due, in part, to constraining $E[\phi] = 1$ which allows us to compare the efficacy of selection $s \Ne$  across genomes.
+Extremely small variances in the $\phi$ values estimated by \ROC could indicate that a genome contains the signature of multiple cellular environments.
 
 \marginpar{Need to include brief application of fact that $\DE$ represents the strength of selection on a codon in a gene with average expression level in Results.}
 
-The codon usage bias of the introgressed exogenous genes reflect the influence of a foreign cellular environment.
-We, therefore, utilize it to find a potential source lineage.
-The \gossypii and \dubl lineages stand out from the other examined yeast lineages as they do not share the same similarity in mutation bias and selection bias with the endogenous genes as most other examined yeasts (Figure \ref{fig:csp_comp}).
-When validating our inference using synteny between the exogenous region and \dubl and \gossypii as well as closely related species we found that synteny is limited to the Saccharomycetaceae clade (Figure \ref{fig:synteny_species}b).
-The \gossypii lineage showed the highest syntenty coverage and is the only species with similar codon usage parameters \DM and \DE.
-\gossypii is also the only species examined with a \GC $> 50 \%$ like it is observed in the exogenous region.
-The synteny coverage extends along the whole exogenous regions with the exception to the very 3' and 5' end of the exogenous region. 
-The lack of synteny at the ends of the region also coincides with a drop in \GC, potentially indicating remains of the original replaced region or greater adaptation.
+The mutation and selection bias parameters \DM and \DE of the introgressed exogenous genes contain information, albeit decaying, about its previous cellular environment.
+We, therefore, utilize \DM and \DE to identify potential source lineages.
+The \gossypii and \dubl lineages stand out from the other 36 yeast lineages in that the correlation coefficients between their \DM and \DE parameters and those of the exogenous genes are $>0.5$  (Figure \ref{fig:csp_comp}).
+In terms of gene order, we found that synteny with the exogenous genes is limited to the Saccharomycetaceae clade, which \dubl is outside of.
+Overall, the synteny coverage extends along the whole exogenous regions with the exception of the 3' and 5' ends of the exogenous region   (Figure \ref{fig:synteny_species}b). 
+Further, of the 38 species examined, \gossypii is the only genome with a \GC $> 50 \%$, making it most similar to the exogenous genes.
+Thus, only the \gossypii genome displays strong correlations in \DM and \DE, synteny, and similar \GC  with the exogenous genes.
 
-\citet{payen2009} found that the exogenous region has a lower rate of recombination and a lack of transposable elements which may as well be due the difference in \GC as recombination rate decreases with dissimilarity between genomic regions.
-The low recombination rate also provides a hypothesis as to why such a large scale introgression was able to fix without being broken up by recombination.
-The recombination rate reduces with decreasing sequence homology as the sequence is not properly recognized and can not be recombined with other regions.
-It is therefore possible that recombination along the left arm of the \kluyveri chromosome could not take place while both, the endogenous and exogenous regions were both present in the population.
 
 With \gossypii identified as potential source lineage of the introgressed region, we inferred the time since the introgression occurred using our estimates of mutation bias \DM.
 Our \DM estimates are well suited for this task as they are free of the influence of selection and unbiased by $N_e$ and other scaling terms, which is in contrast to our estimates of \DE \citep{gilchrist2015}.
-Our estimated time since introgression of $6.2\pm1.2\times 10^8$ generations is $\sim 10$ times longer time than a previous minimum estimate by \citet{friedrich2015} of $5.6\times 10^7$ generations .
-We assume in our estimation of the introgression age that all mutations are neutral as our estimate is only based on our estimates of \DM.
-Therefore, our estimate of the introgression age is conservative, potentially best interpreted as an upper boundary on the time since introgression.
-Our estimate of the time since introgression also depend on the assumption that the current \gossypii and \kluyveri cellular environment reflect their ancestral states at the time of the introgression.
-If the ancestral mutation environments were similar at the time of the introgression than our result is an overestimate.
-On the other hand, if the ancestral mutation environments were more dissimilar at the time of the introgression our estimate is an underestimated.
+Our estimated age of the introgression of $6.2\pm1.2\times 10^8$ generations is $\sim 10$ times longer time than a previous minimum estimate by \citet{friedrich2015} of $5.6\times 10^7$ generations.
+Our estimate assumes that the current \gossypii and \kluyveri cellular environment reflect their ancestral states at the time of the introgression.
+If the ancestral mutation environments were more similar (dissimilar) at the time of the introgression than now our result is an overestimate (underestimate).
 
-When estimating the fitness consequences of the introgression we had to make three assumptions as the introgression has reached fixation across all \kluyveri populations \citet{friedrich2015}:
-1) the replaced endogenous genes and the new exogenous genes shared the same amino acid composition, 2) the current \kluyveri cellular environment is reflective of the cellular environment at the time of the introgression, and 3) as previously assumed, the \gossypii cellular environment reflects its ancestral environment at the time of the introgression.
+
+\marginpar{Explicitly mention value for genetic load.}
+In order to estimate the introgression's genetic load due to codon mismatch, we had to make three key assumptions: 1) at the time of introgression the amino acid sequences of the endogenous genes and exogenous genes where highly similar, 2) the current \kluyveri cellular environment is reflective of the cellular environment at the time of the introgression, and 3) the \gossypii cellular environment reflects its ancestral environment at the time of the introgression.
 In general due to their very nature, low expression genes contribute little to the genetic load.
 Indeed, a small number of low expression exogenous genes appeared to be exapted at the time of the introgression.
 These exapted genes are likely due to the mutation bias in the endogenous genes matching the selection bias in the exogenous genes for G/C ending codons.
 In contrast, highly expressed genes are predicted to have imposed a large genetic load.
 Many of these genes appear to still represent a significant genetic load.
-Overall, our estimates of genetic load, therefore, indicate strong selection against the introgressed sequences.
+Overall, our estimates of codon mismatch genetic load, therefore, suggest strong selection against the introgression.
 
-The large genetic load of the exogenous genes at the time of the introgression would seem to indicate that the fixation of the introgression was a very unlikely event, especially in a lineage with a large $N_e$ as typically seen in yeasts.
 It is hard to contextualize the probability of this introgression being fixed as we are not aware of any estimates of the frequency at which such large scale introgressions of genes occur.
-One example of a large scale transfer of genomic material is \emph{Saccharomyces bayanus}.
-\emph{S. bayanus} is currently understood to be a hybrid of \emph{Saccharomyces uvarum}, \emph{Saccharomyces cerevisiae}, and \emph{Saccharomyces eubayanus} lineages.
-However, unlike with \kluyveri and \gossypii the donor lineages show similar codon usage parameters.
-\emph{Saccharomyces cerevisiae} and \emph{Saccharomyces eubayanus} show a very strong correlation between selection bias \DE of $\rho = 0.98$ and a strong correlation between mutation bias \DM of $ \rho = 0.83$ (data not shown).
-We were unable to estimate the codon usage for \emph{Saccharomyces uvarum} as we could not reliably identify CDS.
+A related example of a large scale merger of genomic material can be found in \emph{S.~bayanus}, which is currently believed to be a hybrid of \emph{S.~cerevisiae}, \emph{S.~eubayanus}, and \emph{S.~uvarum} lineages.
+Unlike with \kluyveri and \gossypii, the  progenitor lineages of \emph{S.~bayanus} have similar codon usage parameters.
+For example, the correlation between \DM and \DE for these two lineages are  $\rho = 0.83$ and  $0.98$ (data not shown).
+\marginpar{Get uvarum genome and analyze!}
+These similarities in \DM and \DE parameters suggest that the genetic load for \emph{S.~bayanus} due to codon usage mismatch is small relative to the exongenous genes considered here. 
+The large genetic load of the exogenous genes due to codon mismatch at the time of the introgression would seem to indicate that the fixation of the introgression was either a fluke event or the codon mismatch genetic load was countered by one or more highly advantagous loci within the introgression.
 
-However, \kluyveri diverged about 85 Mya ago from the rest of the Lachancea clade.
-This represents between $10^{10}$ to $10^{11}$ generations between the time of the divergence and today.
-Assuming an effective population size $N_e$ typical for yeasts on the order of $10^8$, we are left with $10^{18}$ to $10^{19}$ opportunities for such an event to occur.
-In addition, the strong mutation bias towards G/C ending codons which matches the selection bias in the exogenous genes may have contributed to the fixation of this introgression.
-On the other hand, it is also possible that despite their mismatch in codon usage, the exogenous genes have represented an adaptation and external environmental factors resulted in the fixation of the introgression.
-However, if it is the case that the exogenous genes have represented an adaptation then one may wonder why recombination events did not limit the magnitude of the fixed introgression to the adaptive loci.
+In the  first scenario, where the introgression fixed in spite of strong selection against it, it is worth noting that \kluyveri diverged from the rest of the Lachancea clade around 85 Mya [CITATION].
+Again assuming 1 to 8 generations/day implies $10^{10}$ to $10^{11}$ generations between the time of \kluyveri's divergence and today.
+Assuming an effective population size $N_e$ on the order of $10^8$ [CITATION] and rapid fixation of the introgression, implies $10^{18}$ to $10^{19}$ opportunities for such an event to have occurred.
+
+In the second scenario, where the introgression contained highly advantagous loci, one may wonder why recombination events did not limit the introgression to only the adaptive loci.
 One explanation for this is the low recombination rate found in the exogenous region, potentially due to low homology with the rest of the genome.
+
+\citet{payen2009} found that the exogenous region has a lower rate of recombination and a lack of transposable elements which may as well be due the difference in \GC as recombination rate decreases with dissimilarity between genomic regions.
+The low recombination rate also provides a hypothesis as to why such a large scale introgression was able to fix without being broken up by recombination.
+The recombination rate reduces with decreasing sequence homology as the sequence is not properly recognized and can not be recombined with other regions.
+It is therefore possible that recombination along the left arm of the \kluyveri chromosome could not take place while both, the endogenous and exogenous regions were both present in the population.
 
 On the other hand, our estimates of the genetic load indicate that selection against the exogenous codon usage was strong (Figure \ref{fig:sne_fitness_burden} a). 
 Taken together with population genetics principles, this suggest that the introgression has spread very rapidly as the time to fixation does not depend on the sign but only the magnitude of the selection coefficient.
