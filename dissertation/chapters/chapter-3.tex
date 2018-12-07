@@ -177,15 +177,17 @@ We assume that differences in mutation bias will decay more slowly than differen
 We predict that the \DM signal of the source cellular environment will have decayed to be within one percent of the \kluyveri environment in $\sim 5.4\pm0.2\times 10^9 $ generations, or between $1,800,000$ and $15,000,000$ years.
 Together, these results indicate that the mutation signature of the exogenous genes will persist for a very long time.
 
-\subsection{Genetic Load of the Exogenous Genes}
+\subsection{Genetic Load due to Mismatching Codon Usage of the Exogenous Genes}
+
 \marginpar{Explicitly mention value for genetic load}
-We define genetic load as the difference between the fitness of an expected, replaced endogenous gene and the exogenous gene, $s \propto \phi \DE$ (See Methods for details).
+We define genetic load as the difference between the fitness of an expected, replaced endogenous gene and the exogenous gene, $s \propto \phi \DE$ due to the mismatch in codon usage parameters (See Methods for details).
 Estimates of selection bias for the exogenous genes show that, while well correlated with the endogenous genes, only nine amino acids share the same optimal codon.
-Exogenous genes are, therefore, expected to represent a significant reduction in fitness, or genetic load for \kluyveri.
+Exogenous genes are, therefore, expected to represent a significant reduction in fitness, or genetic load for \kluyveri due to this mismatch in codon usage.
 As the introgression occurred before the diversification of \kluyveri and has fixed throughout all populations \citep{friedrich2015}, we can not observe the original endogenous sequences that have been replaced by the introgression.
 Using our estimates of $\Delta M$ and $\Delta \eta$ from the endogenous genes and assuming hat the current exogenous amino acid composition of genes is representative of the replaced endogenous genes, we estimate the genetic load of the exogenous genes at the time of introgression (Figure \ref{fig:sne_fitness_burden}a) and currently (Figure \ref{fig:sne_fitness_burden}b).
+We find that the genetic load due to mismatched codon usage was XX at the time of the introgression and still represents a genetic load of XX today.
 
-In order to account for differences in the efficacy of selection on codon usage between the donor lineage and \kluyveri using a linear scaling factor $\kappa$ (See mMthods for details).
+In order to account for differences in the efficacy of selection on codon usage between the donor lineage and \kluyveri using a linear scaling factor $\kappa$ (See Methods for details).
 We predict that a small number of low expression genes ($\phi < 1$) were weakly exapted at the time of the introgression (Figure \ref{fig:sne_fitness_burden}a).
 High expression genes ($\phi > 1$) are predicted to have carried the largest genetic load in the novel cellular environment.
 These highly expressed genes are inferred to have the greatest degree of adaptation since the time of the introgression to the \kluyveri cellular environment (Figures \ref{fig:sne_fitness_burden}a \& \ref{fig:adapt_tot}).
@@ -217,7 +219,7 @@ Furthermore, our results indicate that we can attribute the increased \GC in the
 
 The separation of the endogenous and exogenous genes improves our estimates of protein synthesis rate $\phi$ by $42 \%$ relative to the full genome estimate ($R^2 = 0.32$ vs.~$0.46$, respectively).
 Furthermore, failing to separately analyze the endogenous and exogenous genes results in an unrealistically small amount of intergenic variation in $\phi$ (compare Figure \ref{fig:phi_corr_two_cond}a \& b).
-This behavior is due, in part, to constraining $E[\phi] = 1$ which allows us to compare the efficacy of selection $s \Ne$  across genomes.
+This behavior is due, in part, to constraining $E[\phi] = 1$ which allows us to compare the efficacy of selection $sN_e$  across genomes.
 Extremely small variances in the $\phi$ values estimated by \ROC could indicate that a genome contains the signature of multiple cellular environments.
 
 \marginpar{Need to include brief application of fact that $\DE$ represents the strength of selection on a codon in a gene with average expression level in Results.}
