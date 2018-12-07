@@ -44,11 +44,11 @@ Repeated entry---line 200 of file ./ecoli.bib
  : @article{gilchrist2007
  :                       ,
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "TsaiEtAl2008"
 Name 1 in "Lindqvist, LM, and Tandoc, K and Topisirovic, I and Furic, L" has a comma at the end for entry lindqvist2018
 while executing---line 1403 of file genetics.bst
 Name 1 in "Lindqvist, LM, and Tandoc, K and Topisirovic, I and Furic, L" has a comma at the end for entry lindqvist2018
 while executing---line 1403 of file genetics.bst
-Warning--empty year in Mathematica; set to ????
 Warning--empty chapter and pages in JukesAndCantor1969
 Name 1 in "Lindqvist, LM, and Tandoc, K and Topisirovic, I and Furic, L" has a comma at the end for entry lindqvist2018
 while executing---line 1470 of file genetics.bst
@@ -61,43 +61,43 @@ Warning--empty chapter and pages in WaterlowAndMillward1989
 Warning--empty chapter and pages in ZuckerkandlAndPauling1962
 You've used 120 entries,
             2828 wiz_defined-function locations,
-            1294 strings with 24685 characters,
+            1295 strings with 24681 characters,
 and the built_in function-call counts, 80480 in all, are:
-= -- 6603
+= -- 6598
 > -- 3732
 < -- 66
 + -- 1743
 - -- 963
-* -- 7052
-:= -- 11519
-add.period$ -- 240
+* -- 7051
+:= -- 11517
+add.period$ -- 239
 call.type$ -- 120
-change.case$ -- 902
+change.case$ -- 900
 chr.to.int$ -- 119
-cite$ -- 127
-duplicate$ -- 5997
-empty$ -- 5973
+cite$ -- 126
+duplicate$ -- 6000
+empty$ -- 5979
 format.name$ -- 1331
-if$ -- 16250
+if$ -- 16251
 int.to.chr$ -- 2
 int.to.str$ -- 1
 missing$ -- 1034
-newline$ -- 484
+newline$ -- 483
 num.names$ -- 480
 pop$ -- 2254
 preamble$ -- 1
 purify$ -- 789
 quote$ -- 0
-skip$ -- 2297
+skip$ -- 2303
 stack$ -- 0
-substring$ -- 4028
-swap$ -- 3386
+substring$ -- 4026
+swap$ -- 3388
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 1059
-warning$ -- 7
+warning$ -- 6
 while$ -- 482
 width$ -- 0
-write$ -- 1439
+write$ -- 1437
 (There were 11 error messages)

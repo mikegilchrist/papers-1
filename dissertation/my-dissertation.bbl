@@ -330,10 +330,6 @@
   multicellular organisms.
 \newblock Molecular Biology and Evolution {\bf 2}: 13--34.
 
-\bibitem[{{\sc Inc.}()}]{Mathematica}
-{\sc Inc., W.~R.}, ???? Mathematica, {V}ersion 9.0.
-\newblock Champaign, IL, 2012.
-
 \bibitem[{{\sc Jain} and {\sc Varadarajan}(2014)}]{Jain2014}
 {\sc Jain, P.}, and {\sc R.~Varadarajan}, 2014 A rapid, efficient, and
   economical inverse polymerase chain reaction-based method for generating a
@@ -692,6 +688,9 @@
 {\sc Waterlow, J.}, and {\sc D.~Millward}, 1989 {\em Energy cost of turnover of
   protein and other cellular constituents\/}.
 \newblock Georg Thieme Verlag, 277--282.
+
+\bibitem[{{\sc {Wolfram Research Inc.}}(2017)}]{Mathematica11}
+{\sc {Wolfram Research Inc.}}, 2017 {\em Mathematica 11\/}.
 
 \bibitem[{{\sc Wright}(1990)}]{Wright1990}
 {\sc Wright, F.}, 1990 The 'effective number of codons' used in a gene.
