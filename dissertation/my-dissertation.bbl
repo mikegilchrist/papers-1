@@ -1,4 +1,4 @@
-\begin{thebibliography}{119}
+\begin{thebibliography}{120}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{\sc Akashi}(2003)}]{Akashi2003}
@@ -352,6 +352,12 @@
   A.~Kolinski}, {\sc T.~Katayama}, {\em et~al.\/}, 2008 Aaindex: amino acid
   index database, progress report 2008.
 \newblock Nucleic Acids Research {\bf 36}: D202--D205.
+
+\bibitem[{{\sc Kensche} {\em et~al.\/}(2008){\sc Kensche}, {\sc Oti}, {\sc
+  Dutilh} and {\sc Huynen}}]{kensche2008}
+{\sc Kensche, P.}, {\sc M.~Oti}, {\sc B.~Dutilh}, and {\sc M.~Huynen}, 2008
+  Conservation of divergent transcription in fungi.
+\newblock Trends Genet. {\bf 5}: 207--211.
 
 \bibitem[{{\sc Kimura}(1980)}]{Kimura1980}
 {\sc Kimura, M.}, 1980 A simple method for estimating evolutionary rates of
