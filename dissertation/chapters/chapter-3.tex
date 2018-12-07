@@ -74,11 +74,12 @@ Specifically, the explanatory power between our predictions and observed values 
 
 \begin{table}[h]
   \centering
-  \caption{Model selection of the two competing hypothesis. Reported are the log-likelihood, $\log(\Lik)$, the number of parameters estimated $n$, AIC, and $\Delta$AIC values}
+  \caption{Model selection of the two competing hypothesis. 
+  Reported are the log-likelihood, $\log(\Lik)$, the number of parameters estimated $n$, AIC, and $\Delta$AIC values.}
   \begin{tabular}{lrrrr}
     \hline
     Hypothesis             & $\log(\Lik)$ &$n$ &  AIC & $\Delta$AIC\\ \hline 
-    Endogenous \& Exogenous& -2,612,397 & 5,402 & 5,235,598&      0\\
+    Separated		   & -2,612,397 & 5,402 & 5,235,598&      0\\
     Combined               & -2,650,047 & 5,483 & 5,311,060& 75,462\\ \hline
   \end{tabular}
   \label{tab:AIC_klu}
@@ -144,7 +145,7 @@ These results clearly show that it is important to recognize the difference in e
 \subsection{Determining Source of Exogenous Genes}
 
 We combined our estimates of mutation bias \DM and selection bias \DE with synteny information and searched for potential source lineages of the introgressed exogenous region.
-We examined 38 yeast lineages of which two (\emph{Eremothecium gossypii} and \emph{Candida dubliniensis}) showed a strong positive correlation in codon usage (Figure \ref{fig:csp_exo_comp}).
+We examined 38 yeast lineages (Table \ref{tab:org_overview}) of which two (\emph{Eremothecium gossypii} and \emph{Candida dubliniensis}) showed a strong positive correlation in codon usage (Figure \ref{fig:csp_exo_comp}).
 The endogenous \kluyveri genome exhibits codon usage very similar to most yeast lineages examined, indicating little variation in codon usage among the examined yeasts (Figure \ref{fig:csp_endo_comp}).
 Four lineages show a positive correlation for $\Delta M$ and $\Delta \eta$ with the exogenous genes and have a weak to moderate positive correlation in selection bias with the endogenous genes; but, like the exogenous genes, tend to have a negative correlation in $\Delta M$ with the endogenous genes.
 
@@ -185,7 +186,7 @@ Estimates of selection bias for the exogenous genes show that, while well correl
 Exogenous genes are, therefore, expected to represent a significant reduction in fitness, or genetic load for \kluyveri due to this mismatch in codon usage.
 As the introgression occurred before the diversification of \kluyveri and has fixed throughout all populations \citep{friedrich2015}, we can not observe the original endogenous sequences that have been replaced by the introgression.
 Using our estimates of $\Delta M$ and $\Delta \eta$ from the endogenous genes and assuming hat the current exogenous amino acid composition of genes is representative of the replaced endogenous genes, we estimate the genetic load of the exogenous genes at the time of introgression (Figure \ref{fig:sne_fitness_burden}a) and currently (Figure \ref{fig:sne_fitness_burden}b).
-We find that the genetic load due to mismatched codon usage was XX at the time of the introgression and still represents a genetic load of XX today.
+We find that the genetic load due to mismatched codon usage was -0.0008 at the time of the introgression and still represents a genetic load of -0.0003 today.
 
 In order to account for differences in the efficacy of selection on codon usage between the donor lineage and \kluyveri using a linear scaling factor $\kappa$ (See Methods for details).
 We predict that a small number of low expression genes ($\phi < 1$) were weakly exapted at the time of the introgression (Figure \ref{fig:sne_fitness_burden}a).
@@ -202,7 +203,7 @@ These highly expressed genes are inferred to have the greatest degree of adaptat
         \centering
         \includegraphics[width=.45\textwidth]{ch3/fitness_difference_exo.pdf}
     \end{subfigure}
-    \caption{Fitness burden $s = \DE \phi$ (a) at the time of introgression ($\kappa = 5$), and (b) currently ($\kappa = 1$). }
+    \caption{Genetic load $s = \DE \phi$ (a) at the time of introgression ($\kappa = 5$), and (b) currently ($\kappa = 1$). }
     \label{fig:sne_fitness_burden}
 \end{figure}
 
@@ -212,7 +213,7 @@ In order to study the evolutionary effects of an introgression, we used \ROC, a 
 Our parameter estimates indicate that the \kluyveri genome contains distinct signatures of mutation and selection bias from both an endogenous and exogenous cellular environment.
 By fitting \ROC separately to \kluyveri's endogenous and exogenous sets of genes we generate a quantitative description of their signatures of mutation bias and natural selection for efficient protein translation.
 Our results indicate that the difference in \GC between endogenous and exogenous genes is mostly due to differences in mutation bias, but we also show that the strength and rank order of selection within a codon family differ between endogenous and exogenous cellular environments.  
-Even though the exogenous genes make up only $\sim10\%$ of the \kluyveri genome, when we fail to recognize these differences our estimates of \DM and \DE deviate substantial from their actual values (Figure XX).
+Even though the exogenous genes make up only $\sim10\%$ of the \kluyveri genome, when we fail to recognize these differences our estimates of \DM and \DE deviate substantial from their actual values (Figure \ref{fig:csp_end_comb}).
 \marginpar{Include this figure in SM and refer to it in the results section when comparing parameter values.}
 While this sensitivity of our parameters to a second cellular environment may be surprising, it highlights the importance of recognizing different cellular environments reflected by a genome.
 Furthermore, our results indicate that we can attribute the increased \GC in the exogenous genes mostly to differences in mutation bias favoring G/C ending codons rather than selection.
@@ -243,7 +244,7 @@ If the ancestral mutation environments were more similar (dissimilar) at the tim
 \marginpar{Explicitly mention value for genetic load.}
 In order to estimate the introgression's genetic load due to codon mismatch, we had to make three key assumptions: 1) at the time of introgression the amino acid sequences of the endogenous genes and exogenous genes where highly similar, 2) the current \kluyveri cellular environment is reflective of the cellular environment at the time of the introgression, and 3) the \gossypii cellular environment reflects its ancestral environment at the time of the introgression.
 In general due to their very nature, low expression genes contribute little to the genetic load.
-Indeed, a small number of low expression exogenous genes appeared to be exapted at the time of the introgression.
+Indeed, $\sim 30 \%$ of low expression exogenous genes ($\phi < 1$) appeared to be exapted at the time of the introgression.
 These exapted genes are likely due to the mutation bias in the endogenous genes matching the selection bias in the exogenous genes for G/C ending codons.
 In contrast, highly expressed genes are predicted to have imposed a large genetic load.
 Many of these genes appear to still represent a significant genetic load.
@@ -447,12 +448,61 @@ The authors would like to thank Brian C. O'Meara and Alexander Cope for their he
 \end{table}
 \clearpage
 
+\begin{table}
+\begin{tabular}{ | l | l | l | c | c | l | l | }
+\hline
+	Taxon 				& Abbreviation 	& NCBI taxonomic ID 	& Codon Table	& \% GC & GC Source  		& CDS Source \\ \hline
+	Candida albicans 		& Calb 		& 5476 			&	12	& 34 	& NCBI Genome DB 	& KEGG \\ \hline
+	Saccharomyces bayanus 		& Sbay 		& 4931 			&	1	& 40 	& NCBI Genome DB 	& yeastgenome \\ \hline
+	Trichophyton benhamiae 		& Tben		& 63400 		&	1	& 49 	& NCBI Genome DB 	& KEGG \\ \hline
+	Tetrapisispora blattae 		& Tbla 		& 1071379 		&	1	& 32 	& NCBI Genome DB 	& KEGG \\ \hline
+	Saccharomyces castellii 	& Scas 		& 27288 		&	1	& 37 	& NCBI Genome DB 	& yeastgenome \\ \hline
+	Saccharomyces cerevisiae 	& Scer 		& 4932 			&	1	& 38 	& NCBI Genome DB 	& yeastgenome \\ \hline
+	Eremothecium cymbalariae 	& Ecym 		& 45285 		&	1	& 40 	& NCBI Genome DB 	& KEGG \\ \hline
+	Torulaspora delbrueckii 	& Tdel 		& 4950 			&	1	& 42 	& NCBI Genome DB 	& KEGG \\ \hline
+	Candida dubliniensis 		& Cdub 		& 42374 		&	12	& 33 	& NCBI Genome DB 	& KEGG \\ \hline
+	Lodderomyces elongisporus 	& Lelo 		& 36914 		&	1	& 37 	& NCBI Genome DB 	& KEGG \\ \hline
+	Saccharomyces eubayanus 	& Seub 		& 1080349 		&	1	& 40 	& NCBI Genome DB 	& ENA \\ \hline
+	Debaryomyces fabryi 		& Dfab 		& 58627 		&	1	& 36 	& NCBI Genome DB 	& ENA \\ \hline
+	Candida glabrata 		& Cgla 		& 5478 			&	1	& 39 	& NCBI Genome DB 	& KEGG \\ \hline
+	Eremothecium gossypii 		& Egos 		& 33169 		&	1	& 52 	& NCBI Genome DB 	& KEGG \\ \hline
+	Meyerozyma guilliermondii 	& Mgui 		& 4929 			&	12	& 44 	& NCBI Genome DB 	& KEGG \\ \hline
+	Debaryomyces hansenii 		& Dhan 		& 4959 			&	12	& 36 	& NCBI Genome DB 	& KEGG \\ \hline
+	Lachancea kluyveri 		& Lku 		& 4934 			&	1	& 40/53 & Payen et al. 2009 	& yeastgenome \\ \hline
+	Saccharomyces kudriavzevii 	& Skud 		& 114524 		&	1	& 41 	& NCBI Genome DB 	& yeastgenome \\ \hline
+	Kluyveromyces lactis 		& Klac 		& 28985 		&	1	& 39 	& NCBI Genome DB 	& KEGG \\ \hline
+	Lachancea lanzarotensis 	& Llan 		& 1245769 		&	1	& 44 	& NCBI Genome DB 	& ENA \\ \hline
+	Yarrowia lipolytica 		& Ylip 		& 4952 			&	1	& 49 	& NCBI Genome DB 	& KEGG \\ \hline
+	Clavispora lusitaniae 		& Clus 		& 36911 		&	12	& 45 	& NCBI Genome DB 	& ENA \\ \hline
+	Kluyveromyces marxianus 	& Kmar 		& 4911 			&	1	& 40 	& NCBI Genome DB 	& ENA \\ \hline
+	Saccharomyces mikatae 		& Smik 		& 114525 		&	1	& 38 	& NCBI Genome DB 	& yeastgenome \\ \hline
+	Sphaerulina musiva 		& Smus 		& 85929 		&	1	& 51 	& NCBI Genome DB 	& ENA \\ \hline
+	Kazachstania naganishii 	& Knag 		& 588726 		&	1	& 46 	& NCBI Genome DB 	& ENA \\ \hline
+	Saccharomyces paradoxus 	& Spar 		& 27291 		&	1	& 38 	& NCBI Genome DB 	& yeastgenome \\ \hline
+	Candida parapsilosis 		& Cpar 		& 5480 			&	12	& 38 	& NCBI Genome DB 	& ENA \\ \hline
+	Spathaspora passalidarum 	& Spas 		& 340170 		&	12	& 38 	& NCBI Genome DB 	& KEGG \\ \hline
+	Tetrapisispora phaffii 		& Tpha 		& 113608 		&	1	& 34 	& NCBI Genome DB 	& KEGG \\ \hline
+	Vanderwaltozyma polyspora 	& Vpol 		& 36033 		&	1	& 33 	& NCBI Genome DB 	& KEGG \\ \hline
+	Lachancea quebecensis 		& Lque 		& 1654605 		&	1	& 47 	& Freel et al. 2016 	& ENA \\ \hline
+	Zygosaccharomyces rouxii 	& Zrou 		& 4956 			&	1	& 40 	& NCBI Genome DB 	& KEGG \\ \hline
+	Scheffersomyces stipitis 	& Ssti 		& 4924 			&	12	& 41 	& NCBI Genome DB 	& KEGG \\ \hline
+	Lachancea thermotolerans 	& Lthe 		& 381046 		&	1	& 47 	& NCBI Genome DB 	& Genbank \\ \hline
+	Candida tropicalis 		& Ctro 		& 5482 			&	12	& 33 	& NCBI Genome DB 	& KEGG \\ \hline
+	Lachancea waltii 		& Lwal 		& 4914 			&	1	& 44 	& NCBI Genome DB 	& KEGG  \\ \hline
+	Cladophialophora yegresii 	& Cyeg 		& 470704 		&	1	& 54 	& NCBI Genome DB 	& ENA \\ \hline
+\end{tabular}
+\caption{}
+\label{tab:org_overview}
+\end{table}
+\clearpage
+
+
 \null
 \vfill
 \begin{figure}[H]
      \centering
 	\includegraphics[width=0.5\textwidth]{ch3/csp_mean_correlation_exo.pdf}
-	\caption{Correlation of \DM and \DE of the endogenous genes with 38 examined yeast lineages. 
+	\caption{Correlation coefficient of \DM and \DE of the endogenous genes with 38 examined yeast lineages. 
 	Dots indicate the correlation of \DM and \DE of the lineages with the endogenous and exogenous parameter estimates. 
 	All regressions were performed using a type II regression line \citep{SokalAndRohlf1981}.}
 	\label{fig:csp_endo_comp}
@@ -460,6 +510,31 @@ The authors would like to thank Brian C. O'Meara and Alexander Cope for their he
 \null
 \vfill
 \clearpage
+\null
+\vfill
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}
+        \centering
+        \includegraphics[width=.45\textwidth]{ch3/csp_corr_dm_full.pdf}
+    \end{subfigure}
+    \begin{subfigure}
+        \centering
+        \includegraphics[width=.45\textwidth]{ch3/csp_corr_deta_full.pdf}
+    \end{subfigure}
+    \caption{Comparison of (a) mutation bias \DM and (b) selection bias \DE parameters for endogenous genes and combined gene sets.
+      Estimates are relative to the mean for each codon family.
+      Black dots indicate \DM or \DE parameters with the same sign for the endogenous and exogenous genes, red dots indicate parameters with different signs.
+      Black line shows the type II regression line \citep{SokalAndRohlf1981}.
+      Dashed lines mark quadrants.}
+    \label{fig:csp_end_comb}
+\end{figure}
+\null
+\vfill
+\clearpage
+
+
 \null
 \vfill
 \begin{figure}[H]

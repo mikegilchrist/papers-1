@@ -35,8 +35,8 @@
 \contentsline {subsection}{\numberline {3.3.2}Comparing Differences in the Endogenous and Exogenous Codon Usage}{40}{subsection.3.3.2}
 \contentsline {subsection}{\numberline {3.3.3}Determining Source of Exogenous Genes}{42}{subsection.3.3.3}
 \contentsline {subsection}{\numberline {3.3.4}Estimating Introgression Age}{43}{subsection.3.3.4}
-\contentsline {subsection}{\numberline {3.3.5}Genetic Load of the Exogenous Genes}{44}{subsection.3.3.5}
-\contentsline {section}{\numberline {3.4}Discussion}{44}{section.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Genetic Load due to Mismatching Codon Usage of the Exogenous Genes}{44}{subsection.3.3.5}
+\contentsline {section}{\numberline {3.4}Discussion}{45}{section.3.4}
 \contentsline {section}{\numberline {3.5}Materials and Methods}{49}{section.3.5}
 \contentsline {subsection}{\numberline {3.5.1}Separating Endogenous and Exogenous Genes}{49}{subsection.3.5.1}
 \contentsline {subsection}{\numberline {3.5.2}Model Fitting with ROC SEMPPR\xspace }{50}{subsection.3.5.2}
@@ -45,29 +45,29 @@
 \contentsline {subsection}{\numberline {3.5.5}Estimating Age of Introgression}{51}{subsection.3.5.5}
 \contentsline {section}{\numberline {3.6}Acknowledgments}{53}{section.3.6}
 \contentsline {section}{\numberline {3.7}Appendix: Supplementary Material}{54}{section.3.7}
-\contentsline {chapter}{\numberline {4}Phylogenetic model of stabilizing selection is more informative about site specific selection than extrapolation from laboratory estimates}{62}{chapter.4}
-\contentsline {section}{\numberline {4.1}Abstract}{63}{section.4.1}
-\contentsline {section}{\numberline {4.2}Introduction}{64}{section.4.2}
-\contentsline {section}{\numberline {4.3}Results}{66}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Site Specific Stabilizing Selection on Amino Acids Improves Model Fit}{66}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Laboratory Inferences Inconsistent with Observed Sequences.}{70}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Stabilizing Selection for Optimal Physicochemical Properties Improves Model Adequacy}{71}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Estimating Site Specific Selection on Amino Acids}{74}{subsection.4.3.4}
-\contentsline {section}{\numberline {4.4}Discussion}{77}{section.4.4}
-\contentsline {section}{\numberline {4.5}Materials and Methods}{81}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}Phylogenetic Inference and Model selection}{81}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}Sequence Simulation}{82}{subsection.4.5.2}
-\contentsline {subsection}{\numberline {4.5.3}Estimating site specific efficacy of selection $G$}{82}{subsection.4.5.3}
-\contentsline {subsection}{\numberline {4.5.4}Estimating site specific fitness values $w_i$}{82}{subsection.4.5.4}
-\contentsline {subsection}{\numberline {4.5.5}Model Adequacy}{83}{subsection.4.5.5}
-\contentsline {section}{\numberline {4.6}Acknowledgments}{84}{section.4.6}
-\contentsline {section}{\numberline {4.7}Appendix: Supplementary Material}{85}{section.4.7}
-\contentsline {chapter}{\numberline {5}Conclusion}{96}{chapter.5}
-\contentsline {section}{\numberline {5.1}Summary}{96}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}The Value of Mechanistic Models}{97}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Mechanistic Models Supplement Experiments}{98}{subsection.5.1.2}
-\contentsline {section}{\numberline {5.2}Estimating Protein Functional and Fitness Landscape}{98}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}The Importance of Translation Errors}{98}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Homogeneous Selection}{100}{subsection.5.2.2}
-\contentsline {chapter}{Bibliography}{101}{section*.34}
-\contentsline {chapter}{Vita}{116}{section*.36}
+\contentsline {chapter}{\numberline {4}Phylogenetic model of stabilizing selection is more informative about site specific selection than extrapolation from laboratory estimates}{64}{chapter.4}
+\contentsline {section}{\numberline {4.1}Abstract}{65}{section.4.1}
+\contentsline {section}{\numberline {4.2}Introduction}{66}{section.4.2}
+\contentsline {section}{\numberline {4.3}Results}{68}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Site Specific Stabilizing Selection on Amino Acids Improves Model Fit}{68}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Laboratory Inferences Inconsistent with Observed Sequences.}{72}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Stabilizing Selection for Optimal Physicochemical Properties Improves Model Adequacy}{73}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Estimating Site Specific Selection on Amino Acids}{76}{subsection.4.3.4}
+\contentsline {section}{\numberline {4.4}Discussion}{79}{section.4.4}
+\contentsline {section}{\numberline {4.5}Materials and Methods}{83}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Phylogenetic Inference and Model selection}{83}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Sequence Simulation}{84}{subsection.4.5.2}
+\contentsline {subsection}{\numberline {4.5.3}Estimating site specific efficacy of selection $G$}{84}{subsection.4.5.3}
+\contentsline {subsection}{\numberline {4.5.4}Estimating site specific fitness values $w_i$}{84}{subsection.4.5.4}
+\contentsline {subsection}{\numberline {4.5.5}Model Adequacy}{85}{subsection.4.5.5}
+\contentsline {section}{\numberline {4.6}Acknowledgments}{86}{section.4.6}
+\contentsline {section}{\numberline {4.7}Appendix: Supplementary Material}{87}{section.4.7}
+\contentsline {chapter}{\numberline {5}Conclusion}{98}{chapter.5}
+\contentsline {section}{\numberline {5.1}Summary}{98}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}The Value of Mechanistic Models}{99}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Mechanistic Models Supplement Experiments}{100}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.2}Estimating Protein Functional and Fitness Landscape}{100}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}The Importance of Translation Errors}{100}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Homogeneous Selection}{102}{subsection.5.2.2}
+\contentsline {chapter}{Bibliography}{103}{section*.34}
+\contentsline {chapter}{Vita}{118}{section*.36}
