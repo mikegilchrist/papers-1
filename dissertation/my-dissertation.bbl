@@ -1,4 +1,4 @@
-\begin{thebibliography}{120}
+\begin{thebibliography}{122}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{\sc Akashi}(2003)}]{Akashi2003}
@@ -101,6 +101,14 @@
   between pairs of amino acids provide a precise description of their
   interaction.
 \newblock PLoS Comp. Biol. {\bf 5}: e1000470.
+
+\bibitem[{{\sc Cope} {\em et~al.\/}(2018){\sc Cope}, {\sc Hettich} and {\sc
+  Gilchrist}}]{cope2018}
+{\sc Cope, A.}, {\sc R.~Hettich}, and {\sc M.~Gilchrist}, 2018 {Quantifying
+  codon usage in signal peptides: Gene expression and amino acid usage explain
+  apparent selection for inefficient codons}.
+\newblock Biochimica et Biophysica Acta (BBA) - Biomembranes {\bf 1860}:
+  2479--2485.
 
 \bibitem[{{\sc Davis} and {\sc Pelsor}(2001)}]{DavisAndPelsor2001}
 {\sc Davis, M.}, and {\sc M.~Pelsor}, 2001 Experimental support for a
@@ -655,6 +663,13 @@
 {\sc Thyagarajan, B.}, and {\sc J.~Bloom}, 2014 The inherent mutational
   tolerance and antigenic evolvability of influenza hemagglutinin.
 \newblock eLife {\bf 3}: e03300.
+
+\bibitem[{{\sc Tsai} {\em et~al.\/}(2008){\sc Tsai}, {\sc Bensasson}, {\sc
+  Burt} and {\sc Koufopanou}}]{tsai2008}
+{\sc Tsai, I.}, {\sc D.~Bensasson}, {\sc A.~Burt}, and {\sc V.~Koufopanou},
+  2008 Population genomics of the wild yeast saccharomyces paradoxus:
+  quantifying the life cycle.
+\newblock Proc Natl Acad Sci U.S.A. {\bf 105}: 4957--4962.
 
 \bibitem[{{\sc Tsankov} {\em et~al.\/}(2010){\sc Tsankov}, {\sc Thompson}, {\sc
   Socha}, {\sc Regev} and {\sc Rando}}]{tsankov2010}

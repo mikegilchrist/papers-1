@@ -74,7 +74,8 @@ Specifically, the explanatory power between our predictions and observed values 
 
 \begin{table}[h]
   \centering
-  \caption{Model selection of the two competing hypothesis. Reported are the log-likelihood, $\log(\Lik)$, the number of parameters estimated $n$, AIC, and $\Delta$AIC values}
+  \caption{Model selection of the two competing hypothesis. 
+  Reported are the log-likelihood, $\log(\Lik)$, the number of parameters estimated $n$, AIC, and $\Delta$AIC values.}
   \begin{tabular}{lrrrr}
     \hline
     Hypothesis             & $\log(\Lik)$ &$n$ &  AIC & $\Delta$AIC\\ \hline 
@@ -185,7 +186,7 @@ Estimates of selection bias for the exogenous genes show that, while well correl
 Exogenous genes are, therefore, expected to represent a significant reduction in fitness, or genetic load for \kluyveri due to this mismatch in codon usage.
 As the introgression occurred before the diversification of \kluyveri and has fixed throughout all populations \citep{friedrich2015}, we can not observe the original endogenous sequences that have been replaced by the introgression.
 Using our estimates of $\Delta M$ and $\Delta \eta$ from the endogenous genes and assuming hat the current exogenous amino acid composition of genes is representative of the replaced endogenous genes, we estimate the genetic load of the exogenous genes at the time of introgression (Figure \ref{fig:sne_fitness_burden}a) and currently (Figure \ref{fig:sne_fitness_burden}b).
-We find that the genetic load due to mismatched codon usage was XX at the time of the introgression and still represents a genetic load of XX today.
+We find that the genetic load due to mismatched codon usage was -0.0008 at the time of the introgression and still represents a genetic load of -0.0003 today.
 
 In order to account for differences in the efficacy of selection on codon usage between the donor lineage and \kluyveri using a linear scaling factor $\kappa$ (See Methods for details).
 We predict that a small number of low expression genes ($\phi < 1$) were weakly exapted at the time of the introgression (Figure \ref{fig:sne_fitness_burden}a).
@@ -202,7 +203,7 @@ These highly expressed genes are inferred to have the greatest degree of adaptat
         \centering
         \includegraphics[width=.45\textwidth]{ch3/fitness_difference_exo.pdf}
     \end{subfigure}
-    \caption{Fitness burden $s = \DE \phi$ (a) at the time of introgression ($\kappa = 5$), and (b) currently ($\kappa = 1$). }
+    \caption{Genetic load $s = \DE \phi$ (a) at the time of introgression ($\kappa = 5$), and (b) currently ($\kappa = 1$). }
     \label{fig:sne_fitness_burden}
 \end{figure}
 
@@ -213,7 +214,6 @@ Our parameter estimates indicate that the \kluyveri genome contains distinct sig
 By fitting \ROC separately to \kluyveri's endogenous and exogenous sets of genes we generate a quantitative description of their signatures of mutation bias and natural selection for efficient protein translation.
 Our results indicate that the difference in \GC between endogenous and exogenous genes is mostly due to differences in mutation bias, but we also show that the strength and rank order of selection within a codon family differ between endogenous and exogenous cellular environments.  
 Even though the exogenous genes make up only $\sim10\%$ of the \kluyveri genome, when we fail to recognize these differences our estimates of \DM and \DE deviate substantial from their actual values (Figure \ref{fig:csp_end_comb}).
-\marginpar{Include this figure in SM and refer to it in the results section when comparing parameter values.}
 While this sensitivity of our parameters to a second cellular environment may be surprising, it highlights the importance of recognizing different cellular environments reflected by a genome.
 Furthermore, our results indicate that we can attribute the increased \GC in the exogenous genes mostly to differences in mutation bias favoring G/C ending codons rather than selection.
 
@@ -232,18 +232,15 @@ Overall, the synteny coverage extends along the whole exogenous regions with the
 Further, of the 38 species examined, \gossypii is the only genome with a \GC $> 50 \%$, making it most similar to the exogenous genes.
 Thus, only the \gossypii genome displays strong correlations in \DM and \DE, synteny, and similar \GC  with the exogenous genes.
 
-
 With \gossypii identified as potential source lineage of the introgressed region, we inferred the time since the introgression occurred using our estimates of mutation bias \DM.
 Our \DM estimates are well suited for this task as they are free of the influence of selection and unbiased by $N_e$ and other scaling terms, which is in contrast to our estimates of \DE \citep{gilchrist2015}.
 Our estimated age of the introgression of $6.2\pm1.2\times 10^8$ generations is $\sim 10$ times longer time than a previous minimum estimate by \citet{friedrich2015} of $5.6\times 10^7$ generations.
 Our estimate assumes that the current \gossypii and \kluyveri cellular environment reflect their ancestral states at the time of the introgression.
 If the ancestral mutation environments were more similar (dissimilar) at the time of the introgression than now our result is an overestimate (underestimate).
 
-
-\marginpar{Explicitly mention value for genetic load.}
 In order to estimate the introgression's genetic load due to codon mismatch, we had to make three key assumptions: 1) at the time of introgression the amino acid sequences of the endogenous genes and exogenous genes where highly similar, 2) the current \kluyveri cellular environment is reflective of the cellular environment at the time of the introgression, and 3) the \gossypii cellular environment reflects its ancestral environment at the time of the introgression.
 In general due to their very nature, low expression genes contribute little to the genetic load.
-Indeed, a small number of low expression exogenous genes appeared to be exapted at the time of the introgression.
+Indeed, $\sim 30 \%$ of low expression exogenous genes ($\phi < 1$) appeared to be exapted at the time of the introgression.
 These exapted genes are likely due to the mutation bias in the endogenous genes matching the selection bias in the exogenous genes for G/C ending codons.
 In contrast, highly expressed genes are predicted to have imposed a large genetic load.
 Many of these genes appear to still represent a significant genetic load.
@@ -255,28 +252,24 @@ Unlike with \kluyveri and \gossypii, the  progenitor lineages of \emph{S.~bayanu
 For example, the correlation between \DM and \DE for these two lineages are  $\rho = 0.83$ and  $0.98$ (data not shown).
 \marginpar{Get uvarum genome and analyze!}
 These similarities in \DM and \DE parameters suggest that the genetic load for \emph{S.~bayanus} due to codon usage mismatch is small relative to the exongenous genes considered here. 
-The large genetic load of the exogenous genes due to codon mismatch at the time of the introgression would seem to indicate that the fixation of the introgression was either a fluke event or the codon mismatch genetic load was countered by one or more highly advantagous loci within the introgression.
+The large genetic load of the exogenous genes due to codon mismatch at the time of the introgression would seem to indicate that the fixation of the introgression was either a fluke event or the codon mismatch genetic load was countered by one or more highly advantageous loci within the introgression.
 
-In the  first scenario, where the introgression fixed in spite of strong selection against it, it is worth noting that \kluyveri diverged from the rest of the Lachancea clade around 85 Mya \citep{kensche2008, MHM2015}.
-Again assuming 1 to 8 generations/day implies $10^{10}$ to $10^{11}$ generations between the time of \kluyveri's divergence and today.
-Assuming an effective population size $N_e$ on the order of $10^8$ \citep{wagner2005} and rapid fixation of the introgression, implies $10^{18}$ to $10^{19}$ opportunities for such an event to have occurred.
+Under the  first scenario, our best estimate of the selection coefficient against the introgression based on expected codon mismatch at that time is $s = -0.0008$ and an effective population size $N_e$ on the order of $10^8$ \citep{wagner2005} yields an approximate fixation probability of $(1-\exp[- s])/(1-\exp[2 - sN_e]) \approx 10^{-6950}$ \citep{SellaAndHirsh2005}.
+Even though \kluyveri diverged from the rest of the Lachancea clade around 85 Mya \citep{kensche2008, MHM2015}, if we assume 1 to 8 generations/day, which implies $10^{10}$ to $10^{11}$ generations since the time of divergence, one round of meiosis for every 1000 rounds of mitosis based on \emph{S.~paradoxus} \citep{TsaiEtAl2008}, and $N_e \approx 10^8$ there were only $10^{15}$ to $10^{16}$ opportunities for such an introgression to have occurred and fixed.
+Clearly, unless there was a severe bottleneck with $N_e < 1/|s| \approx 1,250$ around the time of introgression, which conceivably could have been triggered by a speciation event, this scenario seems very unlikely.
 
-In the second scenario, where the introgression contained highly advantageous loci, one may wonder why recombination events did not limit the introgression to only the adaptive loci.
-One explanation for this is the low recombination rate found in the exogenous region, potentially due to low homology with the rest of the genome.
+In the second scenario, where we assume the introgression contained advantageous loci, one may wonder why recombination events did not limit the introgression to only the adaptive loci.
+\citet{payen2009} found that the exogenous region has a lower rate of recombination, presumably due to the dissimilarity in \GC and/or a lower than average sequence homology between the exogenous region and the one it replaced.
+Compatible with this explanation is the possibility of several highly advantageous loci distributed across the region which then drove a rapid selective sweep and/or the population through a bottleneck speciation process
+A careful analysis of intra-specific genetic variation within the endogenous and exongenous regions could provide help us distinguish between these various scenarios.
 
-\citet{payen2009} found that the exogenous region has a lower rate of recombination and a lack of transposable elements which may as well be due the difference in \GC as recombination rate decreases with dissimilarity between genomic regions.
-The low recombination rate also provides a hypothesis as to why such a large scale introgression was able to fix without being broken up by recombination.
-The recombination rate reduces with decreasing sequence homology as the sequence is not properly recognized and can not be recombined with other regions.
-It is therefore possible that recombination along the left arm of the \kluyveri chromosome could not take place while both, the endogenous and exogenous regions were both present in the population.
 
-On the other hand, our estimates of the genetic load indicate that selection against the exogenous codon usage was strong (Figure \ref{fig:sne_fitness_burden} a). 
-Taken together with population genetics principles, this suggest that the introgression has spread very rapidly as the time to fixation does not depend on the sign but only the magnitude of the selection coefficient.
-It is also possible that the introgression triggered a speciation event, resulting in a small effective population size $N_e < 100$.
-Thus, even an event with a large genetic load may have had a reasonable fixation probability.
- 
+
 Overall, our results show the usefulness of the separation of mutation bias and selection bias and the importance of recognizing the presence of multiple cellular environments in the study of codon usage.
 We also illustrate how a mechanistic model like \ROC and the quantitative estimates it provides can be used for more sophisticated hypothesis testing in the future.
-In contrast to other approaches used to study codon usage like CAI \citep{sharp1987} or tAI \citep{dosreis2003, dosreis2004}, \ROC accounts for the influence of mutation bias on codon usage.
+In contrast to other approaches used to study codon usage like CAI \citep{sharp1987} or tAI \citep{dosreis2004}, \ROC incorporates the effects of mutation bias and amino acid composition explicitly\cite{CopeEtAl2018}.
+\marginpar{Discuss CAI and tAI in intro and start of discussion.
+}
 We highlight potential issues when estimating codon preferences, as estimates can be biased by the signature of a second, historical cellular environment.
 In addition, we show how quantitative estimates of mutation bias and selection relative to drift can be obtained from codon data and used to infer the fitness cost of an introgression as well as its history and potential future.
 
@@ -331,13 +324,13 @@ c_1(t) = \frac{\exp[-t(1+\DM_\text{endo})\mu_{2,1}]\exp[t(1+\DM_\text{endo})\mu_
 \end{equation}
 where K is
 \begin{equation}
-K = \frac{-1 + c_1(0) + c_1(0)\DM_\text{endo}}{1+\DM_\text{endo}}
+K = c_1(0) - \frac{1}{1+\DM_\text{endo}}
 \end{equation}
 
 Equation \ref{mut_close_form} was solved with a mutation rate $m_{2,1}$ of $3.8\times 10^{-10}$ per nucleotide per generation \citep{lang2008}. 
 Initial codon frequencies $c_1(0)$ for each codon family where taken from our mutation parameter estimates for \gossypii $\DM_\text{gos}$. 
 Current codon frequencies for each codon family where taken from our estimates of \DM from the exogenous genes.
-Mathematica (9.0.1.0) \citep{Mathematica} was used to calculate the time $t_\text{intro}$ it takes for the initial codon frequencies $c_1(0)$ for each codon family to equal the current exogenous codon frequencies.
+Mathematica (11.3) \citep{Mathematica11} was used to calculate the time $t_\text{intro}$ it takes for the initial codon frequencies $c_1(0)$ for each codon family to equal the current exogenous codon frequencies.
 The same equation was used to determine the time $t_\text{decay}$ at which the signal of the exogenous cellular environment has decayed to within $1 \%$ of the endogenous environment.
 
 \subsection*{Estimating Genetic Load}

@@ -44,7 +44,6 @@ Repeated entry---line 200 of file ./ecoli.bib
  : @article{gilchrist2007
  :                       ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "TsaiEtAl2008"
 Name 1 in "Lindqvist, LM, and Tandoc, K and Topisirovic, I and Furic, L" has a comma at the end for entry lindqvist2018
 while executing---line 1403 of file genetics.bst
 Name 1 in "Lindqvist, LM, and Tandoc, K and Topisirovic, I and Furic, L" has a comma at the end for entry lindqvist2018
@@ -59,45 +58,45 @@ Warning--empty chapter and pages in Reeds1985
 Warning--empty chapter and pages in SokalAndRohlf1981
 Warning--empty chapter and pages in WaterlowAndMillward1989
 Warning--empty chapter and pages in ZuckerkandlAndPauling1962
-You've used 120 entries,
+You've used 122 entries,
             2828 wiz_defined-function locations,
-            1295 strings with 24681 characters,
-and the built_in function-call counts, 80480 in all, are:
-= -- 6598
-> -- 3732
+            1304 strings with 25089 characters,
+and the built_in function-call counts, 82009 in all, are:
+= -- 6724
+> -- 3814
 < -- 66
-+ -- 1743
-- -- 963
-* -- 7051
-:= -- 11517
-add.period$ -- 239
-call.type$ -- 120
-change.case$ -- 900
-chr.to.int$ -- 119
-cite$ -- 126
-duplicate$ -- 6000
-empty$ -- 5979
-format.name$ -- 1331
-if$ -- 16251
++ -- 1781
+- -- 984
+* -- 7194
+:= -- 11727
+add.period$ -- 243
+call.type$ -- 122
+change.case$ -- 917
+chr.to.int$ -- 121
+cite$ -- 128
+duplicate$ -- 6109
+empty$ -- 6086
+format.name$ -- 1358
+if$ -- 16557
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 1034
-newline$ -- 483
-num.names$ -- 480
-pop$ -- 2254
+missing$ -- 1053
+newline$ -- 491
+num.names$ -- 488
+pop$ -- 2303
 preamble$ -- 1
-purify$ -- 789
+purify$ -- 804
 quote$ -- 0
-skip$ -- 2303
+skip$ -- 2342
 stack$ -- 0
-substring$ -- 4026
-swap$ -- 3388
+substring$ -- 4106
+swap$ -- 3452
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1059
+type$ -- 1077
 warning$ -- 6
-while$ -- 482
+while$ -- 491
 width$ -- 0
-write$ -- 1437
+write$ -- 1461
 (There were 11 error messages)

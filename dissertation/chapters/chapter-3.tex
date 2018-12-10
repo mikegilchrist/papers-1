@@ -39,7 +39,7 @@ By explicitly modeling the combined forces of mutation, selection, and drift, \R
 
 Most studies implicitly assume that the CUB of a genome is shaped by a single cellular environment. 
 As genes are horizontally transferred, introgress, or combined to form novel hybrid species, one would expect to see the influence of multiple cellular environments on a genomes codon usage pattern \citep{medigue1991,lawrence1997}.
-Given that transferred genes are likely to be less adapted than endogenous genes to their new cellular environment, we expect a greater fitness burden of transferred genes if donor and recipient environment differ greatly in their selection bias, making such transfers less likely.
+Given that transferred genes are likely to be less adapted than endogenous genes to their new cellular environment, we expect a greater genetic load of transferred genes if donor and recipient environment differ greatly in their selection bias, making such transfers less likely.
 More practically, if differences in codon usage of transferred genes are unaccounted for, they may distort parameter estimates.
 Such distortion could lead to the wrong codon preference for an amino acid, underestimate the variation in protein synthesis rate, or bias mutation estimates when analyzing a genome.
 
@@ -97,7 +97,7 @@ Specifically, the explanatory power between our predictions and observed values 
         \includegraphics[width=.45\textwidth]{ch3/phi_corr_plot_split_Genome_estim.pdf}
     \end{subfigure}
     \caption{Comparison of predicted protein synthesis rate $\phi$ to microarray data from \citet{tsankov2010} for (a) the combined genome and (b) the separated endogenous and exogenous genes. 
-    Endogenous genes are displayed in black and exogenous genes in red. Black line indicates type II regression line \cite{SokalAndRohlf1981}.}
+    Endogenous genes are displayed in black and exogenous genes in red. Black line indicates type II regression line \citep{SokalAndRohlf1981}.}
     \label{fig:phi_corr_two_cond}
 \end{figure}
 
@@ -158,7 +158,7 @@ Given these results, we conclude that of the 38 examined yeast lineages the \gos
 \begin{figure}
      \centering
 	\includegraphics[width=.45\textwidth]{ch3/csp_mean_correlation_exo.pdf}
-	\caption{Correlation of \DM and \DE of the exogenous genes with 38 examined yeast lineages. 
+	\caption{Correlation coefficients of \DM and \DE of the exogenous genes with 38 examined yeast lineages. 
 	Dots indicate the correlation of \DM and \DE of the lineages with the endogenous and exogenous parameter estimates. 
 	All regressions were performed using a type II regression \citep{SokalAndRohlf1981}.}
 	\label{fig:csp_exo_comp}
@@ -180,7 +180,6 @@ Together, these results indicate that the mutation signature of the exogenous ge
 
 \subsection{Genetic Load due to Mismatching Codon Usage of the Exogenous Genes}
 
-\marginpar{Explicitly mention value for genetic load}
 We define genetic load as the difference between the fitness of an expected, replaced endogenous gene and the exogenous gene, $s \propto \phi \DE$ due to the mismatch in codon usage parameters (See Methods for details).
 Estimates of selection bias for the exogenous genes show that, while well correlated with the endogenous genes, only nine amino acids share the same optimal codon.
 Exogenous genes are, therefore, expected to represent a significant reduction in fitness, or genetic load for \kluyveri due to this mismatch in codon usage.
@@ -255,7 +254,7 @@ These similarities in \DM and \DE parameters suggest that the genetic load for \
 The large genetic load of the exogenous genes due to codon mismatch at the time of the introgression would seem to indicate that the fixation of the introgression was either a fluke event or the codon mismatch genetic load was countered by one or more highly advantageous loci within the introgression.
 
 Under the  first scenario, our best estimate of the selection coefficient against the introgression based on expected codon mismatch at that time is $s = -0.0008$ and an effective population size $N_e$ on the order of $10^8$ \citep{wagner2005} yields an approximate fixation probability of $(1-\exp[- s])/(1-\exp[2 - sN_e]) \approx 10^{-6950}$ \citep{SellaAndHirsh2005}.
-Even though \kluyveri diverged from the rest of the Lachancea clade around 85 Mya \citep{kensche2008, MHM2015}, if we assume 1 to 8 generations/day, which implies $10^{10}$ to $10^{11}$ generations since the time of divergence, one round of meiosis for every 1000 rounds of mitosis based on \emph{S.~paradoxus} \citep{TsaiEtAl2008}, and $N_e \approx 10^8$ there were only $10^{15}$ to $10^{16}$ opportunities for such an introgression to have occurred and fixed.
+Even though \kluyveri diverged from the rest of the Lachancea clade around 85 Mya \citep{kensche2008, MHM2015}, if we assume 1 to 8 generations/day, which implies $10^{10}$ to $10^{11}$ generations since the time of divergence, one round of meiosis for every 1000 rounds of mitosis based on \emph{S.~paradoxus} \citep{tsai2008}, and $N_e \approx 10^8$ there were only $10^{15}$ to $10^{16}$ opportunities for such an introgression to have occurred and fixed.
 Clearly, unless there was a severe bottleneck with $N_e < 1/|s| \approx 1,250$ around the time of introgression, which conceivably could have been triggered by a speciation event, this scenario seems very unlikely.
 
 In the second scenario, where we assume the introgression contained advantageous loci, one may wonder why recombination events did not limit the introgression to only the adaptive loci.
@@ -267,7 +266,7 @@ A careful analysis of intra-specific genetic variation within the endogenous and
 
 Overall, our results show the usefulness of the separation of mutation bias and selection bias and the importance of recognizing the presence of multiple cellular environments in the study of codon usage.
 We also illustrate how a mechanistic model like \ROC and the quantitative estimates it provides can be used for more sophisticated hypothesis testing in the future.
-In contrast to other approaches used to study codon usage like CAI \citep{sharp1987} or tAI \citep{dosreis2004}, \ROC incorporates the effects of mutation bias and amino acid composition explicitly\cite{CopeEtAl2018}.
+In contrast to other approaches used to study codon usage like CAI \citep{sharp1987} or tAI \citep{dosreis2004}, \ROC incorporates the effects of mutation bias and amino acid composition explicitly \cite{cope2018}.
 \marginpar{Discuss CAI and tAI in intro and start of discussion.
 }
 We highlight potential issues when estimating codon preferences, as estimates can be biased by the signature of a second, historical cellular environment.
@@ -335,7 +334,7 @@ The same equation was used to determine the time $t_\text{decay}$ at which the s
 
 \subsection*{Estimating Genetic Load}
 
-To estimate the fitness burden, we made three key assumptions.
+To estimate the genetic load due to mismatched codon usage, we made three key assumptions.
 First, we assumed that the current exogenous amino acid sequence of a gene is representative of its ancestral state and the replaced endogenous gene it replaced.
 Second, we assume that the currently observed cellular environment of \gossypii reflects the cellular environment that the exogenous genes experienced before transfer to \kluyveri.
 Lastly, we assume that the difference in the efficacy of selection between the cellular environments due to differences in either effective population size $N_e$ or the selective cost of an ATP $q$ of the source lineage and \kluyveri can be expressed as a scaling constant and that protein synthesis rate $\phi$ has not changed between the replaced endogenous and the introgressed exogenous genes.
@@ -344,21 +343,22 @@ Using estimates for $N_e = 1.36\times10^7$ \citep{wagner2005} for \textit{Saccha
 We scale the difference in the efficacy of selection on codon usage between the donor lineage and \kluyveri using a linear scaling factor $\kappa$.
 As \DE is defined as $\DE = 2N_eq(\eta_i-\eta_j)$, we can not distinguish if $\kappa$ is a scaling on protein synthesis rate $\phi$, effective population size $N_e$, or the selective cost of an ATP $q$ \citep{gilchrist2007, gilchrist2015}.
 \marginpar{Move \DE definition to first usage of \DE in Methods.}
-We calculated the fitness burden each gene represents assuming additive fitness effects as 
+We calculated the genetic load each gene represents due to its mismatched codon usage assuming additive fitness effects as 
 \begin{equation}
 s_g = \sum_{i=1}^{n_g} -\kappa \phi_g \DE'_i 
 \end{equation}
-where $s_g$ is the overall strength of selection for translational efficiency on gene $g$  in the exogenous gene set, $\kappa$ is a constant, scaling the efficacy of selection between the endogenous and exogenous cellular environments, $n_{g}$ is length of the protein, $\phi_g$ is the estimated protein synthesis rate of the gene in the endogenous environment, and $\DE'_i$, is the \DE' for the codon at position $i$.
+where $s_g$ is the overall strength of selection for translational efficiency on gene, $g$  in the exogenous gene set, $\kappa$ is a constant, scaling the efficacy of selection between the endogenous and exogenous cellular environments, $n_{g}$ is length of the protein, $\phi_g$ is the estimated protein synthesis rate of the gene in the endogenous environment, and $\DE'_i$, is the \DE' for the codon at position $i$.
 As stated previously, our \DE are relative to the mean of the codon family.
-We find that the fitness burden of the introgressed genes  is minimized at $\kappa \sim 5$ (Figure \ref{fig:sne_scaling}b).
-Thus, we set $\kappa = 1$ if we calculate the $s_g$ for the endogenous and the current exogenous genes, and $\kappa = 5$ for $s_g$ for the fitness burden at the time of introgression.
+We find that the genetic load of the introgressed genes is minimized at $\kappa \sim 5$ (Figure \ref{fig:sne_scaling}b).
+Thus, we expect a five fold difference in the efficacy of selection between \kluyveri and \gossypii, either due to differences in either protein synthesis rate $\phi$, effective population size $N_e$, or the selective cost of an ATP $q$.
+Therefore, we set $\kappa = 1$ if we calculate the $s_g$ for the endogenous and the current exogenous genes, and $\kappa = 5$ for $s_g$ for the genetic load at the time of introgression.
+
 Since we are unable to observe codon counts for the replaced endogenous genes and for the exogenous genes at the time of introgression, we calculate expected codon counts
 \begin{equation}
 E[n_{g,i}] = \frac{\exp[-\DM_i -\DE_i\phi_g]}{\sum_j^C \exp[-\DM_j -\DE_j\phi_g]}\times m_{a_i}
 \end{equation} 
 $m_{a_i}$ is the number of occurrences of amino acid $a$ that codon $i$ codes for.
-
-We report the genetic load of the introgression as $E[s_g] = s_{\text{intro},g} - s_{\text{endo},g}$ where $s_{\text{intro},g}$ is the fitness burden of an introgressed gene $g$ either at the time of the introgression or presently.
+We report the genetic load due to mismatched codon usage of the introgression as $E[s_g] = s_{\text{intro},g} - s_{\text{endo},g}$ where $s_{\text{intro},g}$ is the genetic load of an introgressed gene $g$ either at the time of the introgression or presently.
 
 \section{Acknowledgments}
 
@@ -572,7 +572,7 @@ The authors would like to thank Brian C. O'Meara and Alexander Cope for their he
 \begin{figure}[H]
      \centering
 	\includegraphics[width=.5\textwidth]{ch3/adaptation_total.pdf}
-	\caption{Total amount of adaptation estimated to have occured between time of introgression and currently observed per gene.}
+	\caption{Total amount of adaptation estimated to have occurred between time of introgression and currently observed per gene.}
 	\label{fig:adapt_tot}
 \end{figure}
 \null
@@ -583,7 +583,7 @@ The authors would like to thank Brian C. O'Meara and Alexander Cope for their he
      \centering
 	\includegraphics[width=0.9\textwidth]{ch3/CUB_cleft_main.pdf}
 	\caption{Codon usage patterns for 19 amino acids. Amino acids are indicated as one letter code. 
-	The amino acids Serine was split into two groups (S and Z) as Serine coded for by two groups of codons that are separated by more than one mutation.
+	The amino acids Serine was split into two groups (S and Z) as Serine is coded for by two groups of codons that are separated by more than one mutation.
 	Solid line indicates the endogenous codon usage, dashed line indicates the exogenous codon usage, dotted line indicates the combined codon usage.}
 	\label{fig:cub_all_sets}
 \end{figure}
