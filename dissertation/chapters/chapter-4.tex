@@ -68,7 +68,7 @@ We utilize the TEM homologue SHV, another class A $\beta$-lactamase, to demonstr
 \subsection{Site Specific Stabilizing Selection on Amino Acids Improves Model Fit}
 We compared \phydms \citep{hilton2017} and \selac \citep{beaulieu2018}, models of site specific stabilizing selection on amino acids, to $227$ other codon and nucleotide models.
 We fitted all models to 49 observed sequences of the $\beta$-lactamase TEM \citep{bloom2014}.
-The \phydms and \selac models with site specific selection improved model fits by $366$ and $934$ AICc units, respectively, over the best performing codon or nucleotide models which lacks site specific selection (Table \ref{tab:AIC}).
+The \phydms and \selac models with site specific selection improved model fits by $366$ and $934$ AICc units, respectively, over the best performing codon or nucleotide models which lacks site specific selection (Table \ref{tab:AIC_selac}).
 In addition, \selac outperformed the experimentally informed model \phydms by $562$ to $568$ AICc units, depending whether site specific selection was inferred by \selac or experimentally informed.
 
 \selac utilizes a hierarchical model and estimates 263 site specific parameters, $\sim5\%$ of the $19\times N = 4997$ parameters necessary to fully describe site specific selection.
@@ -90,11 +90,11 @@ Incorporating site specific selection estimated from deep mutation scanning expe
     \emph{SYM}+R2 		& -2230 & 102& 4663& 919& 4694 & 934 \\
     \gy+F1X4+R2 		& -2243 & 102& 4690& 946& 4821 & 1061 \\ \hline
   \end{tabular}
-  \label{tab:AIC}
+  \label{tab:AIC_selac}
 \end{table}
 
 This improvement in AICc of \selacDMS over \selac is solely due to a decrease in the number of parameters estimated
-In contrast to AICc, the log-likelihood $\log(\Lik)$ of \selacDMS is $270$ $\log(\Lik)$ units worse than the \selac one (Table \ref{tab:AIC}).
+In contrast to AICc, the log-likelihood $\log(\Lik)$ of \selacDMS is $270$ $\log(\Lik)$ units worse than the \selac one (Table \ref{tab:AIC_selac}).
 However, it is statistically speaking unclear if discrete parameters bias ones estimate the Kullback-Leibler divergence in the same way.
 This is important since $263$ of the $374$ parameters estimated by \selac are the discrete optimal amino acid state at each site. 
 Thus, it is possible that we are over penalizing.
@@ -290,7 +290,7 @@ These results indicate that the extrapolation from one proteins fitness landscap
 Here we revisited how well site specific estimates of selection from deep mutation scanning experiments inform sequence evolution and compared it to \selac, a novel phylogenetic model of stabilizing selection.
 Previous work has shown that laboratory estimates of selection can improve model fit over classical approaches like GY94 \citep{bloom2014, bloom2017}.
 While our study confirms this notion, we identify important shortcomings of these laboratory estimates for phylogenetic studies.
-In contrast, \selac is a phylogenetic model of stabilizing selection based on \PC properties and does not require costly laboratory estimates of selection and is, nevertheless, favored by model selection (Table \ref{tab:AIC}).
+In contrast, \selac is a phylogenetic model of stabilizing selection based on \PC properties and does not require costly laboratory estimates of selection and is, nevertheless, favored by model selection (Table \ref{tab:AIC_selac}).
 More specifically, it estimates site specific selection on amino acids from the sequence data based on distances between amino acids in \PC space \citep{grantham1974,beaulieu2018}.
 This allows \selac to be applied to any set of protein coding sequences, eliminating the need to extrapolate from one homologous gene family to the next (e.g. from TEM to SHV).
 In addition this generality allows for the comparison of model parameters for these proteins.
