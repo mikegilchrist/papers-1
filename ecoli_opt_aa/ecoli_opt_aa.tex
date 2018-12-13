@@ -60,7 +60,71 @@ M\textsc{ICHAEL} A.~{G\textsc{ILCHRIST}}$^{1,2}$}
 
 \section*{Introduction}
 \begin{itemize}
-	\item Numerous attempts to incorporate selection into phylogenetic models have been made.
+\item Phylogenetics plays an ever increasingly important role in biology.
+  \begin{itemize}
+  \item Examples or just a list of citations.
+  \end{itemize}
+\item Most commonly used methods
+  \begin{itemize}
+  \item Strengths
+    \begin{itemize}
+    \item Fast
+    \item Easy to use (software packages)
+    \end{itemize}
+  \item Weaknesses
+    \begin{itemize}
+    \item Many ignore key forces in evolution.
+    \item Nucleotide models?
+      \begin{itemize}
+      \item Mutation only: UNREST, GTR, JC.
+      \item Mutation rates can vary between nucleotide positions.
+      \item Use the same matrix for all site
+      \end{itemize}
+    \item Amino Acid models
+      \begin{itemize}
+      \item `selection' strictly phenomenological: PAM, BLOSSOM?        
+      \item Used same matrix for all sites
+      \end{itemize}
+    \item Codon models
+      \begin{itemize}
+      \item Most popular one that includes selection (GY94 and derivatives)
+        \begin{itemize}
+        \item Commonly misinterpreted
+        \item Restricted selection scenario: freq dependence.
+        \end{itemize}
+      \end{itemize}
+    \item Mutation, AA, and codon models all end up with same AA equilibrium frequency for all sites.
+    \item Biologists have long recognized that equilibrium frequencies, and thus the substition matrix responsible, can vary substantially between sites.
+    \end{itemize}
+  \item \citet{HalpernAndBruno1998} provide general model
+    \begin{itemize}
+    \item Can have distinct substitution matrix for each site.
+    \item As a result requires $19 \times n$ parameters.
+    \item Large number of parameters makes implementation unfeasible
+    \end{itemize}
+  \item Potential solutions to parameterization issue
+    \begin{itemize}
+    \item Use additional information: experiments via DMS
+      \begin{itemize}
+      \item Discuss DMS
+      \end{itemize}
+    \item Use better models
+      \begin{itemize}
+      \item Lartillot and colleagues mitigate this issue using a site categorization approach. (Mention in discussion as potential next step to avoid reviewers asking you to do this.)
+      \item \SelAC solves parameterization problem by using a simplistic model of ...
+        \begin{itemize}
+        \item Discuss \SelAC's strengths and weaknesses
+        \item Slower than standard
+        \end{itemize}        
+      \end{itemize}
+    \item Use better models and additional data
+    \end{itemize}
+  \item Work done here
+  \item Main findings
+  \end{itemize}
+\end{itemize}
+
+  Numerous attempts to incorporate selection into phylogenetic models have been made.
 	\begin{itemize}
 		\item Phylogenetic inference of sequence relationship has long been focused on substitution rates and fixation probabilities.
 		\item However, the importance of site specific equilibrium frequencies has long been noted.
