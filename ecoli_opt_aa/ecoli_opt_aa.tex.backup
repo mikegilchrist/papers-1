@@ -60,44 +60,94 @@ M\textsc{ICHAEL} A.~{G\textsc{ILCHRIST}}$^{1,2}$}
 
 \section*{Introduction}
 \begin{itemize}
-	\item Numerous attempts to incorporate selection into phylogenetic models have been made.
+	\item Phylogenetics plays an ever increasingly important role in biology.
 	\begin{itemize}
-		\item Phylogenetic inference of sequence relationship has long been focused on substitution rates and fixation probabilities.
-		\item However, the importance of site specific equilibrium frequencies has long been noted.
-		\item Models of site specific equilibrium frequencies tend to be unfeasible as they are very parameter rich.
-		\item Incorporating selection from experimental sources therefore seems like an attractive option.
+		\item Coexpression
+		\item species relationship across all fields of biology
+		\item protein evolution
+		\item cancer
+	\end{itemize}
+	\item Most commonly used methods
+	\begin{itemize}
+		\item Strengths
 		\begin{itemize}
-			\item Site specific selection on amino acid allows to incorporate the heterogeneity of selection along the protein sequence into phylogenetic models.
+			\item Fast
+			\item Easy to use (software packages)
+		\end{itemize}
+		\item Weaknesses
+		\begin{itemize}
+			\item Many ignore key forces in evolution.
+			\item Nucleotide models account for mutation but not selection
+			\begin{itemize}
+				\item Mutation only: UNREST, GTR, JC.
+				\item Mutation rates can vary between nucleotide positions.
+				\item Use the same matrix for all site
+			\end{itemize}
+			\item Amino Acid models try to capture selection but mutation happens on nucleotide level.
+			\begin{itemize}
+				\item Selection strictly phenomenological: PAM, BLOSSUM, and WAG?
+				\item Use same matrix for all sites
+				\item Can also be applied with categorization approach introduced by Lartillot and colleagues.
+			\end{itemize}
+			\item Codon models to remidy problems of nucleotide and amino acid models
+			\begin{itemize}
+				\item Most popular one that includes selection (GY94 and derivatives) which is commonly misinterpreted and restricted selection scenario: freq dependence.
+				\item codon models allow to capture the mutation process on the nucleotide level and the selection on amino acids.
+			\end{itemize}
+			\item Mutation, AA, and codon models all end up with same AA equilibrium frequency for all sites.
+			\item Biologists have long recognized that equilibrium frequencies, and thus the substition matrix responsible, can vary substantially between sites.
+			\begin{itemize}
+				\item Lartillot and colleagues mitigate this issue using a site categorization approach.
+			\end{itemize}
+
+		\end{itemize}
+		\item \citet{HalpernAndBruno1998} provide general model
+		\begin{itemize}
+			\item Can have distinct substitution matrix for each site.
+			\item As a result requires $19 \times n$ parameters.
+			\item Large number of parameters makes implementation unfeasible
 		\end{itemize}
 	\end{itemize}
-	\item Independent fitness estimates have potential to greatly reduce number of parameters estimated from phylogenetic data.
+	\item Potential solutions to parameterization issue
 	\begin{itemize}
-		\item DMS generates estimates of site specific selection on amino acids for large amount of mutations in a single experiment.
-		\item This allows for the fitting complex site specific models to smaller data sets.
-		\item Empirical selection estimates are not always available, their application for phylogenetic inference is questionable.
+		\item Use additional information: experiments via DMS
 		\begin{itemize}
-			\item DMS experiments are limited to proteins and organisms that can be manipulated under laboratory conditions, greatly limiting application of experimentally informed phylogenetic models.
-			\item Selection estimates depend on many factors like initial library of mutants, which leads to heterogeneous competing population when using extensive mutation libraries.
-			\item The applied selection between the wild and the laboratory is likely to differ.
-			\item Hilton et al. (2017) showed that the variation between DMS experiments can have a significant effect on their utility.
+			\item DMS generates estimates of site specific selection on amino acids for large amount of mutations in a single experiment.
+			\item This allows for the fitting of complex site specific models to smaller data sets
+			\begin{itemize}
+				\item Site specific selection on amino acids improves model fits.
+			\end{itemize}
+			\item Empirical selection estimates are not always available, and their application for phylogenetic inference is questionable.
+			\begin{itemize}
+				\item DMS experiments are limited to proteins and organisms that can be manipulated under laboratory conditions, greatly limiting their application in phylogenetics.
+				\item Estimates depend on factors like initial library of mutants, leading to heterogeneous competing populations.
+				\item The applied selection between the wild and the laboratory is likely to differ.
+				\item Hilton et al. (2017) showed that the variation between DMS experiments can have a significant effect on their utility.
+			\end{itemize}
 		\end{itemize}
-		\item To understand the reliability of selection on amino acids infered by DMS to hylogenetic studies, we utilize a DMS experiment by Stiffler et al. (2016).
+		\item Use better models
 		\begin{itemize}
-			\item TEM is found in gram-negative bacteria like \ecoli.
-			\item The applied selection pressure was limited to ampicillin and focused on the sequence variant TEM-1.
-			\item TEM, however, can confer resistance to a wide range of antibiotics, causing it to be of wide interest.
+			%\item Lartillot and colleagues mitigate this issue using a site categorization approach. (Mention in discussion as potential next step to avoid reviewers asking you to do this.)
+			\item \selac continues the site categorization approach introduced by Lartillot and colleagues by using a simplistic model of amino acid distances in physicochemical space.
+			\begin{itemize}
+				\item \selac is rooted in population genetics
+			\end{itemize}        
 		\end{itemize}
-		
+		\item Idealy, we would use better models and additional data.
 	\end{itemize}
-	\item We compare experimentally inferred site specific selection to inform phylogenetic models using \phydms to \selac, a mechanistic model of site specific stabilizing selection on amino acids rooted in population genetics.
+	\item We assess the reliability of selection on amino acids infered by DMS to inform phylogenetic studies.
 	\begin{itemize}
-		\item We also compare model fit of the two codon models of site specific stabilizing selection to models fits of 227 other codon and nucleotide models using IQTree.
-		\item Models fits informed by experimentally inferred selection improve model fit over conventional codon and nucleotide models but can be improved upon by \selac.
+		\item we utilize a DMS experiment by Stiffler et al. (2016) for TEM.
+		\item TEM is found in gram-negative bacteria like \ecoli.
+		\item The applied selection pressure was limited to ampicillin and focused on the sequence variant TEM-1.
+		\item TEM, however, can confer resistance to a wide range of antibiotics, causing it to be of wide interest.
 	\end{itemize}
-	\item Simulations highlight the inadequacy of experimentally inferred selection.
-	
-%		\item Comparison between \selac and empirical estimates of selection show that they are comparable when site specific selection is captured adequately by the experiment.
-%		\item Furthermore, we show that extrapolating experimentally inferred selection between homologous proteins (TEM and SHV) can be inadequate.
+	\item Mechanistic model of site specific stabilizing selection on amino acids rooted in population genetics are an improvement over DMS.
+	\begin{itemize}
+		\item model selection prefered \selac over DMS estimates of selection.
+		\item Sequences similarity of optimal DMS sequence to observed consensus sequence lower than expected.
+		\item Genetic load of observed sequences higher than expected.
+	\end{itemize}
 \end{itemize}
 
 \section*{Results}
