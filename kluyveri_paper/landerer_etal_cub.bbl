@@ -1,0 +1,188 @@
+\begin{thebibliography}{}
+
+\bibitem[Baker {\em et~al.}(2015)Baker, Wang, Bellora, Peris, Hulfachor,
+  Koshalek, Adams, Libkind, and Hittinger]{baker2015}
+Baker, E., Wang, B., Bellora, N., {\em et~al.} 2015.
+\newblock The genome sequence of saccharomyces eubayanus and the domestication
+  of lager-brewing yeasts.
+\newblock {\em Molecular Biology and Evolution\/}, {32}(11): 2818--2831.
+
+\bibitem[Beimforde {\em et~al.}(2014)Beimforde, Feldberg, Nylinder, Rikkinen,
+  Tuovila, Dörfelt, Gube, Jackson, Reitner, Seyfullah, and
+  Schmidt]{Beimforde2014}
+Beimforde, C., Feldberg, K., Nylinder, S., {\em et~al.} 2014.
+\newblock Estimating the phanerozoic history of the ascomycota lineages:
+  combining fossil and molecular data.
+\newblock {\em Mol. Phylogenet. Evol.}, {78}: 386--398.
+
+\bibitem[Bulmer(1990)Bulmer]{bulmer1990}
+Bulmer, M. 1990.
+\newblock The selection-mutation-drift theory of synonymous codon usage.
+\newblock {\em Genetics\/}, {129}: 897--907.
+
+\bibitem[Cope {\em et~al.}(2018)Cope, Hettich, and Gilchrist]{cope2018}
+Cope, A., Hettich, R., and Gilchrist, M. 2018.
+\newblock {Quantifying codon usage in signal peptides: Gene expression and
+  amino acid usage explain apparent selection for inefficient codons}.
+\newblock {\em Biochimica et Biophysica Acta (BBA) - Biomembranes\/},
+  {1860}(12): 2479--2485.
+
+\bibitem[dos Reis {\em et~al.}(2004)dos Reis, Savva, and Wernisch]{dosreis2004}
+dos Reis, M., Savva, R., and Wernisch, L. 2004.
+\newblock Solving the riddle of codon usage preferences: a test for
+  translational selection.
+\newblock {\em Nucleic Acids Research\/}, {32}(17): 5036--5044.
+
+\bibitem[Friedrich {\em et~al.}(2015)Friedrich, Reiser, Fischer, and
+  Schacherer]{friedrich2015}
+Friedrich, A., Reiser, C., Fischer, G., and Schacherer, J. 2015.
+\newblock Population genomics reveals chromosome-scale heterogeneous evolution
+  in a protoploid yeast.
+\newblock {\em Molecular Biology and Evolution\/}, {32}(1): 184 -- 192.
+
+\bibitem[Gilchrist(2007)Gilchrist]{gilchrist2007}
+Gilchrist, M. 2007.
+\newblock Combining models of protein translation and population genetics to
+  predict protein production rates from codon usage patterns.
+\newblock {\em Molecular Biology and Evolution\/}, {24}(11): 2362--2372.
+
+\bibitem[Gilchrist {\em et~al.}(2015)Gilchrist, Chen, Shah, Landerer, and
+  Zaretzki]{gilchrist2015}
+Gilchrist, M., Chen, W., Shah, P., Landerer, C., and Zaretzki, R. 2015.
+\newblock Estimating gene expression and codon-specific translational
+  efficiencies, mutation biases, and selection coefficients from genomic data
+  alone.
+\newblock {\em Genome Biology and Evolution\/}, {7}: 1559--1579.
+
+\bibitem[Gouy and Gautier(1982)Gouy and Gautier]{gouy1982}
+Gouy, M. and Gautier, C. 1982.
+\newblock Codon usage in bacteria: correlation with gene expressivity.
+\newblock {\em Nucleic Acids Research\/}, {10}: 7055--7074.
+
+\bibitem[Ikemura(1985)Ikemura]{ikemura1985}
+Ikemura, T. 1985.
+\newblock Codon usage and trna content in unicellular and multicellular
+  organisms.
+\newblock {\em Molecular Biology and Evolution\/}, {2}: 13--34.
+
+\bibitem[Kensche {\em et~al.}(2008)Kensche, Oti, Dutilh, and
+  Huynen]{kensche2008}
+Kensche, P., Oti, M., Dutilh, B., and Huynen, M. 2008.
+\newblock Conservation of divergent transcription in fungi.
+\newblock {\em Trends Genet.}, {5}(24): 207--211.
+
+\bibitem[Landerer {\em et~al.}(2018)Landerer, Cope, Zaretzki, and
+  Gilchrist]{landerer2018}
+Landerer, C., Cope, A., Zaretzki, R., and Gilchrist, M.~A. 2018.
+\newblock Anacoda: analyzing codon data with bayesian mixture models.
+\newblock {\em Bioinformatics\/}, {34}(14): 2496--2498.
+
+\bibitem[Lang and Murray(2008)Lang and Murray]{lang2008}
+Lang, G.~I. and Murray, A.~W. 2008.
+\newblock Estimating the per-base-pair mutation rate in the yeast saccharomyces
+  cerevisiae.
+\newblock {\em Genetics\/}, {178}(1): 67 -- 82.
+
+\bibitem[Lawrence and Ochman(1997)Lawrence and Ochman]{lawrence1997}
+Lawrence, J. and Ochman, H. 1997.
+\newblock Amelioration of bacterial genomes: Rates of change and exchange.
+\newblock {\em Journal of Molecular Miology\/}, {44}: 383--397.
+
+\bibitem[Legendre(2018)Legendre]{lmodel2}
+Legendre, P. 2018.
+\newblock {\em lmodel2: Model II Regression\/}.
+\newblock R package version 1.7-3.
+
+\bibitem[Marcet-Houben and Gabaldón(2015)Marcet-Houben and Gabaldón]{MHM2015}
+Marcet-Houben, M. and Gabaldón, T. 2015.
+\newblock Beyond the whole-genome duplication: Phylogenetic evidence for an
+  ancient interspecies hybridization in the baker's yeast lineage.
+\newblock {\em PLoS Biology\/}, {13}(8): e1002220.
+
+\bibitem[Médigue {\em et~al.}(1991)Médigue, Rouxel, Vigier, Hénaut, and
+  Danchin]{medigue1991}
+Médigue, C., Rouxel, T., Vigier, P., Hénaut, A., and Danchin, A. 1991.
+\newblock Evidence for horizontal gene transfer in escherichia coli speciation.
+\newblock {\em Journal of Molecular Miology\/}, {222}(4): 851--856.
+
+\bibitem[Payen {\em et~al.}(2009)Payen, Fischer, Marck, Proux, Sherman,
+  Coppée, Johnston, Dujon, and Neuvéglise]{payen2009}
+Payen, C., Fischer, G., Marck, C., {\em et~al.} 2009.
+\newblock Unusual composition of a yeast chromosome arm is associated with its
+  delayed replication.
+\newblock {\em Genome Research\/}, {19}(10): 1710--1721.
+
+\bibitem[{R Core Team}(2013){R Core Team}]{rcore}
+{R Core Team} 2013.
+\newblock {\em R: A Language and Environment for Statistical Computing\/}.
+\newblock R Foundation for Statistical Computing, Vienna, Austria.
+
+\bibitem[Sella and Hirsh(2005)Sella and Hirsh]{SellaAndHirsh2005}
+Sella, G. and Hirsh, A. 2005.
+\newblock The application of statistical physics to evolutionary biology.
+\newblock {\em Proceedings of the National Academy of Sciences of the United
+  States of America\/}, {102}: 9541--9546.
+
+\bibitem[Shah and Gilchrist(2011)Shah and Gilchrist]{ShahAndGilchrist2011}
+Shah, P. and Gilchrist, M. 2011.
+\newblock Explaining complex codon usage patterns with selection for
+  translational efficiency, mutation bias, and genetic drift.
+\newblock {\em Proccedings of the National Academy of Sciences U.S.A\/},
+  {108}(25): 10231--10236.
+
+\bibitem[Sharp and Li(1987)Sharp and Li]{sharp1987}
+Sharp, P. and Li, W. 1987.
+\newblock The codon adaptation index - a meassure of directional synonymous
+  codon usage bias, and its potential applications.
+\newblock {\em Nucleic Acids Research\/}, {15}: 1281--1295.
+
+\bibitem[Soderlund {\em et~al.}(2006)Soderlund, Nelson, Shoemaker, and
+  Paterson]{soderlund2006}
+Soderlund, C., Nelson, W., Shoemaker, A., and Paterson, A. 2006.
+\newblock Symap\: A system for discovering and viewing syntenic regions of fpc
+  maps.
+\newblock {\em Genome Research\/}, {16}: 1159 -- 1168.
+
+\bibitem[Soderlund {\em et~al.}(2011)Soderlund, Bomhoff, and
+  Nelson]{soderlund2011}
+Soderlund, C., Bomhoff, M., and Nelson, W. 2011.
+\newblock Symap v3.4: a turnkey synteny system with application to plant
+  genomes.
+\newblock {\em Nucleic Acids Research\/}, {39}(10): e68.
+
+\bibitem[Sokal and Rohlf(1981)Sokal and Rohlf]{SokalAndRohlf1981}
+Sokal, R. and Rohlf, F. 1981.
+\newblock {\em Biometry - The principles and practice of statistics in
+  biological\/}, pages 547--555.
+\newblock W. H. Freeman.
+
+\bibitem[Tsai {\em et~al.}(2008)Tsai, Bensasson, Burt, and
+  Koufopanou]{tsai2008}
+Tsai, I., Bensasson, D., Burt, A., and Koufopanou, V. 2008.
+\newblock Population genomics of the wild yeast saccharomyces paradoxus:
+  quantifying the life cycle.
+\newblock {\em Proc Natl Acad Sci U.S.A.}, {105}: 4957--4962.
+
+\bibitem[Tsankov {\em et~al.}(2010)Tsankov, Thompson, Socha, Regev, and
+  Rando]{tsankov2010}
+Tsankov, A., Thompson, D., Socha, A., Regev, A., and Rando, O. 2010.
+\newblock The role of nucleosome positioning in the evolution of gene
+  regulation.
+\newblock {\em PLoS Biol\/}, {8}(7): e1000414.
+
+\bibitem[Wagner(2005)Wagner]{wagner2005}
+Wagner, A. 2005.
+\newblock Energy constraints on the evolution of gene expression.
+\newblock {\em Molecular Biology and Evolution\/}, {22}: 1365--1374.
+
+\bibitem[Wallace {\em et~al.}(2013)Wallace, Airoldi, and Drummond]{wallace2013}
+Wallace, E., Airoldi, E., and Drummond, D. 2013.
+\newblock Estimating selection on synonymous codon usage from noisy
+  experimental data.
+\newblock {\em Molecular Biology and Evolution\/}, {30}: 1438--1453.
+
+\bibitem[{Wolfram Research Inc.}(2017){Wolfram Research Inc.}]{Mathematica11}
+{Wolfram Research Inc.} 2017.
+\newblock {\em Mathematica 11\/}.
+
+\end{thebibliography}

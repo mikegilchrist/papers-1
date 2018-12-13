@@ -1,0 +1,28 @@
+\documentclass[11pt, letterpaper]{letter}
+
+\signature{Cedric Landerer\\Ph.~D.~Candidate\\Department of Ecology \&\\Evolutionary Biology}
+\address{Univeristy of Tennessee\\Department of Ecology \&\\Evolutionary Biology\\569 Dabney Hall\\Knoxville, TN 37996-1610}
+
+\begin{document}
+\begin{letter}{Editorial Staff\\Genome Biology and Evolution}
+
+
+
+\opening{Dear Editor,}
+
+On behalf of my co-authors, Dr.~ Brian C. O'Meara, Dr.~ Russel Zaretzki, Dr.~Michael Gilchrist, and myself, I would like to submit our article entitled ``Decomposing Mutation and Selection to Identify Mismatched Codon Usage'' for publication in \emph{Genome Biology and Evolution} as a \textbf{Research} article. 
+
+Most studies on codon usage implicitly assume that the codon uage patterns of a genome is shaped by a single cellular environment. 
+However, as species exchange genetic material, one would expect to see the influence of multiple cellular environments on a genomes codon usage pattern.
+Given that transferred genes are likely to be less adapted than endogenous genes to their new cellular environment, we expect a greater genetic load of transferred genes if donor and recipient environment differ greatly in their selection bias, making such transfers less likely.
+More practically, if differences in codon usage of transferred genes are unaccounted for, they may distort parameter estimates.
+
+To illustrate these ideas, we analyze the CUB of the genome of \emph{Lachancea kluyveri}, the earliest diverging lineage of the Lachancea clade.
+
+Thank you for your time in this matter.
+We look forward to hearing from you regarding this submission.
+
+\closing{Sincerly,}
+
+\end{letter}
+\end{document}

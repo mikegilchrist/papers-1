@@ -1,4 +1,4 @@
-\begin{thebibliography}{122}
+\begin{thebibliography}{123}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 
 \bibitem[{{\sc Akashi}(2003)}]{Akashi2003}
@@ -34,6 +34,13 @@
   {\sc G.~Cannarozzi}, {\em et~al.\/}, 2012 Fastml: a web server for
   probabilistic reconstruction of ancestral sequences.
 \newblock Nucleic Acids Research {\bf 40}: W580--4.
+
+\bibitem[{{\sc Baker} {\em et~al.\/}(2015){\sc Baker}, {\sc Wang}, {\sc
+  Bellora}, {\sc Peris}, {\sc Hulfachor} {\em et~al.\/}}]{baker2015}
+{\sc Baker, E.}, {\sc B.~Wang}, {\sc N.~Bellora}, {\sc D.~Peris}, {\sc
+  A.~Hulfachor}, {\em et~al.\/}, 2015 The genome sequence of saccharomyces
+  eubayanus and the domestication of lager-brewing yeasts.
+\newblock Molecular Biology and Evolution {\bf 32}: 2818--2831.
 
 \bibitem[{{\sc Beaulieu} {\em et~al.\/}(in review){\sc Beaulieu}, {\sc
   O'Meara}, {\sc Zaretzki}, {\sc Landerer}, {\sc Chai} {\em

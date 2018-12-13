@@ -418,6 +418,7 @@ The average genetic load for site $i$ in the alignment was calculated as
 L_i = \frac{w_{max,i} - \overline{w_i}}{w_{max,i}}
 \end{equation}
 where $w_{max,i}$ is the fitness of the selectively favored amino acids at position $i$, either estimated using the site specific selection inferred by DMS or \selac.
+We, however, rescaled all fitness estimates such that $w_{max,i} = 1$
 $\overline{w_i}$ represents the average fitness of the residues observed at position $i$.
 The average sequence specific genetic load $L$ was calculated as the sum of the site specific genetic loads $L = \frac{1}{n}\sum_{i=1}^n L_i$ where $n$ is the number of amino acid sites.
 

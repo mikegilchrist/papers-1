@@ -4,7 +4,7 @@
 \contentsline {table}{\numberline {3.1}{\ignorespaces Model selection of the two competing hypothesis. Reported are the log-likelihood, $\qopname \relax o{log}(\ensuremath {\mathcal {L}}\xspace )$, the number of parameters estimated $n$, AIC, and $\Delta $AIC values.}}{39}{table.3.1}
 \contentsline {table}{\numberline {3.2}{\ignorespaces Synonymous codon preference in the various data sets based on our estimates of $\Delta M$}}{54}{table.3.2}
 \contentsline {table}{\numberline {3.3}{\ignorespaces Synonymous codon preference in the various data sets based on our estimates of $\Delta \eta $}}{55}{table.3.3}
-\contentsline {table}{\numberline {3.4}{\ignorespaces }}{56}{table.3.4}
+\contentsline {table}{\numberline {3.4}{\ignorespaces Overview of yeast lineages used in this study.}}{56}{table.3.4}
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {4.1}{\ignorespaces Model selection, shown are the three models of stabilizing site specific amino acid selection (\emph {SelAC}\xspace , \emph {SelAC}+DMS\xspace , \emph {phydms}\xspace ) and the best performing codon and nucleotide model \citep {GoldmanAndYang1994, zharkikh1994}. Reported are the log-likelihood $\qopname \relax o{log}(\ensuremath {\mathcal {L}}\xspace )$, the number of parameters estimated $n$, AIC, $\Delta $AIC, AICc, and $\Delta $AICc values. See Table \ref {tab:AIC_full} for results from all models we tested.}}{69}{table.4.1}
 \contentsline {table}{\numberline {4.2}{\ignorespaces Efficacy of selection ($G$) and genetic load for TEM and SHV, and separated by secondary structure. $G$ was estimated as a truncated variable with an upper bound of 300.}}{77}{table.4.2}

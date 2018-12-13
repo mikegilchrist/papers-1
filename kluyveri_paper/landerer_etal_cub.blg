@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: landerer_etal_cub.aux
+The style file: natbib.bst
+Database file #1: kluyveri_paper.bib
+You've used 30 entries,
+            2401 wiz_defined-function locations,
+            716 strings with 9158 characters,
+and the built_in function-call counts, 15426 in all, are:
+= -- 1495
+> -- 860
+< -- 16
++ -- 296
+- -- 234
+* -- 1416
+:= -- 2593
+add.period$ -- 137
+call.type$ -- 30
+change.case$ -- 184
+chr.to.int$ -- 30
+cite$ -- 30
+duplicate$ -- 579
+empty$ -- 1004
+format.name$ -- 280
+if$ -- 3111
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 28
+newline$ -- 152
+num.names$ -- 120
+pop$ -- 216
+preamble$ -- 1
+purify$ -- 188
+quote$ -- 0
+skip$ -- 442
+stack$ -- 0
+substring$ -- 1092
+swap$ -- 116
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 267
+warning$ -- 0
+while$ -- 119
+width$ -- 0
+write$ -- 388
