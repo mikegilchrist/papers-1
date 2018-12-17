@@ -1,0 +1,35 @@
+\begin{thebibliography}{}
+
+\bibitem[H\"{o}hna {\em et~al.}(2016)H\"{o}hna, Landis, Heath, Boussau,
+  Lartillot, Moore, Huelsenbeck, and Ronquist]{revbayes}
+H\"{o}hna, S., Landis, M., Heath, T., {\em et~al.} 2016.
+\newblock Raxml version 8: A tool for phylogenetic analysis and post-analysis
+  of large phylogenies.
+\newblock {\em Systematic Biology\/}, {65}(4): 726--736.
+
+\bibitem[Nguyen {\em et~al.}(2015)Nguyen, Schmidt, von Haeseler, and
+  Minh]{nguyen2015}
+Nguyen, L., Schmidt, H., von Haeseler, A., and Minh, B. 2015.
+\newblock Iq-tree: A fast and effective stochastic algorithm for estimating
+  maximum-likelihood phylogenies.
+\newblock {\em Molecular Biology and Evolution\/}, {32}(1): 268--274.
+
+\bibitem[Stamatakis(2014)Stamatakis]{raxml}
+Stamatakis, A. 2014.
+\newblock Raxml version 8: A tool for phylogenetic analysis and post-analysis
+  of large phylogenies.
+\newblock {\em Bioinformatics\/}, {30}(9): 1312--1313.
+
+\bibitem[Tavare(1986)Tavare]{Tavare1986}
+Tavare, S. 1986.
+\newblock Some probabilistic and statistical problems in the analysis of dna
+  sequences.
+\newblock {\em Lectures on Mathematics in the Life Sciences\/}, {17}: 57--86.
+
+\bibitem[Yang(1994)Yang]{Yang1994}
+Yang, Z. 1994.
+\newblock Maximum-likelihood phylogenetic estimation from {{DNA}}-sequences
+  with variable rates over sites - approximate methods.
+\newblock {\em Journal Of Molecular Evolution\/}, {39}: 306--314.
+
+\end{thebibliography}

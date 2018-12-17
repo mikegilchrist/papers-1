@@ -29,19 +29,6 @@ year = {2016},
 pages = {726-736}
 }
 
-
-@article{Ruprecht2017,
-author = {Ruprecht, C and Proost, S and Hernandez‐Coronado, M and Ortiz‐Ramirez, C and Lang, D and Rensing, SA and Becker, JD and Vandepoele, K and Mutwil, M},
-title = {Phylogenomic analysis of gene co‐expression networks reveals the evolution of functional modules},
-journal = {The Plant Journal},
-volume = {90},
-number = {3},
-year = {2017},
-pages = {447-465}
-}
-
-
-
 @Article{Yang1994,
   Title                    = {Maximum-likelihood phylogenetic estimation from {{DNA}}-sequences with variable rates over sites - approximate methods},
   Author                   = {Yang, ZH},

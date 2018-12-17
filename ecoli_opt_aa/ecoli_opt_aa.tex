@@ -59,6 +59,16 @@ M\textsc{ICHAEL} A.~{G\textsc{ILCHRIST}}$^{1,2}$}
 
 
 \section*{Introduction}
+Phylogenetic inference is of ever increasing importance across biology \citep{Ruprecht2017}. 
+Most commonly used models used for phylogenetic inference are incorporated into powerful software packages \citep{raxml, revbayes, nguyen2015} and therefore fast and easy to use.
+However, these models come with significant shortcomings as they lack biological realism.
+
+Phylogenetic models focused on the nucleotide composition such as GTR, or UNREST \citep{Tavare1986,Yang1994} are limited to mutation effects and are agnostic to any higher level selection on codons or amino acids.
+Amino acid models attempt to capture selection, however, these do not properly account for mutations as they occur on the nucleotide level.
+In an attempt to remedy the issues of nucleotide and amino acid models, codon models combine mutation between nucleotides and selection on amino acids.
+However, all types of models have in common that they describe the same equilibrium frequencies at each site.
+
+
 \begin{itemize}
 	\item Phylogenetics plays an ever increasingly important role in biology.
 	\begin{itemize}
@@ -233,8 +243,22 @@ Qualitative comparison
 	\end{itemize}
 \end{itemize}
 
+
+\begin{table}[h]
+  \centering
+  \caption{Genetic load at heterogeneous and Homogeneous sites in the TEM alignement according to DMS and \selac}
+  \begin{tabular}{llrrrrr}
+    \hline
+			& 		& \multicolumn{2}{c}{Genetic Load}  \\ 
+    Sites 		& \# Residues	& \multicolumn{1}{c}{\selac} & \multicolumn{1}{c}{DMS} \\ \hline 
+    Heterogeneous	&	66	& $6.3\times10^{-7}$ & 0.01  \\
+    Homogeneous		& 	197	& 0 & 0.007 \\
+  \end{tabular}
+  \label{tab:selection}
+\end{table}
+
 \subsubsection*{DMS Implies Unrealistic Genetic Loads}
-Quantiative comparison
+Quantitative comparison
 \begin{itemize}
 	\item Estimates of genetic load differ greatly between the \selac and experimentally estimated fitness landscape.
 	\begin{itemize}
@@ -371,7 +395,8 @@ Quantiative comparison
 	\end{itemize}
 \end{itemize}
 
-
+\bibliographystyle{natbib}
+\bibliography{ecoli}
 
 \end{document}
 
