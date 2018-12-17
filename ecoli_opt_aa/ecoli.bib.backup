@@ -29,6 +29,59 @@ year = {2016},
 pages = {726-736}
 }
 
+@article{blossum,
+author = {Henikoff, S and Henikoff, JG},
+title = {Amino acid substitution matrices from protein blocks},
+journal = {Proceedings of the National Academy of Sciences of the United States of America},
+volume = {89},
+number = {22},
+year = {1992},
+pages = {10925-10919}
+}
+
+
+
+
+@article{Ruprecht2017,
+author = {Ruprecht, C and Proost, S and Hernandez‐Coronado, M and Ortiz‐Ramirez, C and Lang, D and Rensing, SA and Becker, JD and Vandepoele, K and Mutwil, M},
+title = {Phylogenomic analysis of gene co‐expression networks reveals the evolution of functional modules},
+journal = {The Plant Journal},
+volume = {90},
+number = {3},
+year = {2017},
+pages = {447-465}
+}
+
+
+@article{YangAndBourne2009,
+author = {Yang, S and Bourne, PE},
+journal = {PLOS ONE},
+number = {12},
+pages = {e8378},
+title = {The Evolutionary History of Protein Domains Viewed by Species Phylogeny},
+volume = {4},
+year = {2009}
+}
+
+@article{SchwartzAndSchaffer2017,
+author = {Schwartz, R and Sch\"{a}ffer, AA},
+journal = {Nature Reviews Genetics},
+number = {18},
+pages = {213-229},
+title = {The evolution of tumour phylogenetics: principles and practice},
+year = {2017}
+}
+
+@article{omeara2006,
+author = {O'Meara, BC and Ane, C and Sanderson, MJ and Wainwrigth, PC},
+journal = {Evolution},
+number = {60},
+volume = {5}
+pages = {922-933},
+title = {Testing for different rates of continuous trait evolution using likelihood},
+year = {2006}
+}
+
 @Article{Yang1994,
   Title                    = {Maximum-likelihood phylogenetic estimation from {{DNA}}-sequences with variable rates over sites - approximate methods},
   Author                   = {Yang, ZH},

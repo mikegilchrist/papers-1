@@ -1,11 +1,23 @@
 \begin{thebibliography}{}
 
+\bibitem[Henikoff and Henikoff(1992)Henikoff and Henikoff]{blossum}
+Henikoff, S. and Henikoff, J. 1992.
+\newblock Amino acid substitution matrices from protein blocks.
+\newblock {\em Proceedings of the National Academy of Sciences of the United
+  States of America\/}, {89}(22): 10925--10919.
+
 \bibitem[H\"{o}hna {\em et~al.}(2016)H\"{o}hna, Landis, Heath, Boussau,
   Lartillot, Moore, Huelsenbeck, and Ronquist]{revbayes}
 H\"{o}hna, S., Landis, M., Heath, T., {\em et~al.} 2016.
-\newblock Raxml version 8: A tool for phylogenetic analysis and post-analysis
-  of large phylogenies.
+\newblock Revbayes: Bayesian phylogenetic inference using graphical models and
+  an interactive model-specification language.
 \newblock {\em Systematic Biology\/}, {65}(4): 726--736.
+
+\bibitem[Jones {\em et~al.}(1992)Jones, Taylor, and Thornton]{jones1992}
+Jones, D., Taylor, W., and Thornton, J. 1992.
+\newblock The rapid generation of mutation data matrices from protein
+  sequences.
+\newblock {\em Bioinformatics\/}, {8}(3): 275--282.
 
 \bibitem[Nguyen {\em et~al.}(2015)Nguyen, Schmidt, von Haeseler, and
   Minh]{nguyen2015}
@@ -13,6 +25,26 @@ Nguyen, L., Schmidt, H., von Haeseler, A., and Minh, B. 2015.
 \newblock Iq-tree: A fast and effective stochastic algorithm for estimating
   maximum-likelihood phylogenies.
 \newblock {\em Molecular Biology and Evolution\/}, {32}(1): 268--274.
+
+\bibitem[O'Meara {\em et~al.}(2006)O'Meara, Ane, Sanderson, and
+  Wainwrigth]{omeara2006}
+O'Meara, B., Ane, C., Sanderson, M., and Wainwrigth, P. 2006.
+\newblock Testing for different rates of continuous trait evolution using
+  likelihood.
+\newblock {\em Evolution\/}, {5}(60): 922--933.
+
+\bibitem[Ruprecht {\em et~al.}(2017)Ruprecht, Proost, Hernandez‐Coronado,
+  Ortiz‐Ramirez, Lang, Rensing, Becker, Vandepoele, and Mutwil]{Ruprecht2017}
+Ruprecht, C., Proost, S., Hernandez‐Coronado, M., {\em et~al.} 2017.
+\newblock Phylogenomic analysis of gene co‐expression networks reveals the
+  evolution of functional modules.
+\newblock {\em The Plant Journal\/}, {90}(3): 447--465.
+
+\bibitem[Schwartz and Sch\"{a}ffer(2017)Schwartz and
+  Sch\"{a}ffer]{SchwartzAndSchaffer2017}
+Schwartz, R. and Sch\"{a}ffer, A. 2017.
+\newblock The evolution of tumour phylogenetics: principles and practice.
+\newblock {\em Nature Reviews Genetics\/}, (18): 213--229.
 
 \bibitem[Stamatakis(2014)Stamatakis]{raxml}
 Stamatakis, A. 2014.
@@ -25,6 +57,18 @@ Tavare, S. 1986.
 \newblock Some probabilistic and statistical problems in the analysis of dna
   sequences.
 \newblock {\em Lectures on Mathematics in the Life Sciences\/}, {17}: 57--86.
+
+\bibitem[Whelan and Goldman(2001)Whelan and Goldman]{whelan2001}
+Whelan, S. and Goldman, N. 2001.
+\newblock A general empirical model of protein evolution derived from multiple
+  protein families using a maximum-likelihood approach.
+\newblock {\em Molecular Biology and Evolution\/}, {18}(5): 691--699.
+
+\bibitem[Yang and Bourne(2009)Yang and Bourne]{YangAndBourne2009}
+Yang, S. and Bourne, P. 2009.
+\newblock The evolutionary history of protein domains viewed by species
+  phylogeny.
+\newblock {\em PLOS ONE\/}, {4}(12): e8378.
 
 \bibitem[Yang(1994)Yang]{Yang1994}
 Yang, Z. 1994.
