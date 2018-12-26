@@ -55,9 +55,9 @@ TEM is an enzyme found in gram-negative bacteria like \textit{Escherichia coli} 
 The selection pressure imposed during the DMS experiment was limited to ampicillin and focused solely on TEM-1 \citep{stiffler2016}.
 However, TEM variants can also confer resistance to a wide range of other antibiotics \citep{sougakoff1988,sougakoff1989,goussard1991,mabilat1992,chanal1992,brun1994}.
 
-In order to do so, we fitted $227$ nucleotide and codon models using IQTree and compared their model fits to site specific models of stabilizing selection with (\phydms, \selacDMS) and without (\selac) experimentally estimated site specific selection coefficients \citep{nguyen2015,hilton2017,beaulieu2018}.
+In order to do so, we fitted $227$ nucleotide and codon models using IQTree and compared their model fits to site specific models of stabilizing selection with (\phydms, \selacDMS) and without (\selac) experimentally estimated site specific selection coefficients \citep{nguyen2015,hilton2017,beaulieu2019}.
 We find that experimentally inferred selection, while improving model fit, does not adequately reflect observed wild type sequences.
-In contrast, \selac \citep{beaulieu2018} a mechanistic phylogenetic model of stabilizing selection rooted in first principles with site specific equilibrium frequencies improves model fit, and better predicts sequences found in the wild.
+In contrast, \selac \citep{beaulieu2019} a mechanistic phylogenetic model of stabilizing selection rooted in first principles with site specific equilibrium frequencies improves model fit, and better predicts sequences found in the wild.
 %Because \selac assumes stabilizing selection declining fitness with distance in \PC space to the optimal amino acid it is able to infer the optimal amino acid at a site and reduce the number of site specific parameters from $19\times N$ to $N$.
 In addition, it was previously proposed to extrapolate to the fitness landscape of related proteins using experimentally inferred site specific selection \citep{bloom2014, bloom2017}.
 We utilize the TEM homologue SHV, another class A $\beta$-lactamase, to demonstrate the problematic with this approach and further highlight the generality of \selac.
@@ -66,7 +66,7 @@ We utilize the TEM homologue SHV, another class A $\beta$-lactamase, to demonstr
 \section{Results}
 
 \subsection{Site Specific Stabilizing Selection on Amino Acids Improves Model Fit}
-We compared \phydms \citep{hilton2017} and \selac \citep{beaulieu2018}, models of site specific stabilizing selection on amino acids, to $227$ other codon and nucleotide models.
+We compared \phydms \citep{hilton2017} and \selac \citep{beaulieu2019}, models of site specific stabilizing selection on amino acids, to $227$ other codon and nucleotide models.
 We fitted all models to 49 observed sequences of the $\beta$-lactamase TEM \citep{bloom2014}.
 The \phydms and \selac models with site specific selection improved model fits by $366$ and $934$ AICc units, respectively, over the best performing codon or nucleotide models which lacks site specific selection (Table \ref{tab:AIC_selac}).
 In addition, \selac outperformed the experimentally informed model \phydms by $562$ to $568$ AICc units, depending whether site specific selection was inferred by \selac or experimentally informed.
@@ -107,7 +107,7 @@ We observe differences in the topology between model fits.
 The \selac model is currently too slow to estimate the topology, therefore the topology was estimated using the codon model of \citet{KosiolEtAl07}.
 At this point, it is therefore unclear if the difference in topology can be attributes to the experimentally inferred selection.
 We find that the best codon model (\gy) \citep{GoldmanAndYang1994} is outperformed by several nucleotide model e.g. \emph{SYM}+R2 \citep{zharkikh1994}.
-This could be an indication that negative frequency dependent selection like it is modeled in \gy is not appropriate for TEM \citep{GoldmanAndYang1994,beaulieu2018}.
+This could be an indication that negative frequency dependent selection like it is modeled in \gy is not appropriate for TEM \citep{GoldmanAndYang1994,beaulieu2019}.
 Figure \ref{fig:phylo} shows that the estimated phylogenetic trees shift from long terminal branches (\selac) to longer internal branches (\phydms).
 While the \selac model fit shows $84 \%$ of all evolution happening at the tips, this reduces to $79 \%$ in the \selacDMS model fit, and $77 \%$ in the \phydms and \gy model fits.
 All models produce polytomies but their location differs between models.
@@ -291,7 +291,7 @@ Here we revisited how well site specific estimates of selection from deep mutati
 Previous work has shown that laboratory estimates of selection can improve model fit over classical approaches like GY94 \citep{bloom2014, bloom2017}.
 While our study confirms this notion, we identify important shortcomings of these laboratory estimates for phylogenetic studies.
 In contrast, \selac is a phylogenetic model of stabilizing selection based on \PC properties and does not require costly laboratory estimates of selection and is, nevertheless, favored by model selection (Table \ref{tab:AIC_selac}).
-More specifically, it estimates site specific selection on amino acids from the sequence data based on distances between amino acids in \PC space \citep{grantham1974,beaulieu2018}.
+More specifically, it estimates site specific selection on amino acids from the sequence data based on distances between amino acids in \PC space \citep{grantham1974,beaulieu2019}.
 This allows \selac to be applied to any set of protein coding sequences, eliminating the need to extrapolate from one homologous gene family to the next (e.g. from TEM to SHV).
 In addition this generality allows for the comparison of model parameters for these proteins.
 
@@ -395,12 +395,12 @@ In contrast to \selac that assumes $G$ to be purely positive, we allowed negativ
 
 \subsection{Estimating site specific fitness values $w_i$}
 
-Following \citet{beaulieu2018} $w_i$ is proportional to
+Following \citet{beaulieu2019} $w_i$ is proportional to
 \begin{equation}
 w_i \propto \exp(-A_0\eta\psi)
 \end{equation}
 where $A_0$ describes the decline in fitness with each high energy phosphate bond wasted per unit time, and $\psi$ is the protein's production rate.
-$\eta$ is the cost/benefit ratio of a protein (see \citep{beaulieu2018} for details). 
+$\eta$ is the cost/benefit ratio of a protein (see \citep{beaulieu2019} for details). 
 However, \selac only estimates a composition parameter $\psi' = A_0\psi N_e$ thus
 \begin{equation}
 \psi = \frac{\psi'}{A_0N_eq}
