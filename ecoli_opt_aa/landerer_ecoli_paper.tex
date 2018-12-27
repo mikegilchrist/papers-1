@@ -70,33 +70,32 @@ Phylogenetic models focused on the nucleotide composition such as GTR, or UNREST
 Amino acid models like JTT \citep{jones1992}, BLOSSUM \citep{blossum}, or WAG \citep{whelan2001} attempt to describe the effects of natural selection, however, these do not properly account for mutations between nucleotides and are purely phenomenological.
 In an attempt to remedy the shortcomings of nucleotide and amino acid models, codon models combine mutation between nucleotides and selection on the amino acids for which they code.
 Most popular, the codon model by \citet{GoldmanAndYang1994} (\gy) and its derivatives. 
-However, \gy is commonly misinterpreted and only provides a restricted selection scenario that is best described as frequency dependent selection \citep{beaulieu2019}.
+However, \gy is commonly misinterpreted and provides only a restricted selection scenario that is best described as frequency dependent selection \citep{beaulieu2019}.
 
 These types of models, weather they describe substitutions between nucleotides, codons, or amino acids, have in common that they describe the same equilibrium frequencies at each site without further modifications.
 Biologists, however, have long recognized that equilibrium frequencies and thus the substitution matrix responsible, can vary substantially between sites \citep{felsenstein1981, gojobori1983}.
 Individual sites along the sequence e.g. show differences in evolutionary rates, and wide range of preferences for specific amino acids \citep{HalpernAndBruno1998, ashenberg2013, echave2016}.
 \citet{HalpernAndBruno1998} provided a general solution were each site can have a distinct substitution matrix.
 As a result, the model introduced by \citet{HalpernAndBruno1998} had up to $19\times n$ parameters, where $n$ is the number of amino acid sites.
-This large number of parameters that have to be estimated from the phylogenetic data makes the application of this model often unfeasible.
+This large number of parameters which have to be estimated from the phylogenetic data makes the application of this model often unfeasible.
 
-To overcome the issue of estimating an unfeasible amount of parameters from phylogenetic data, it was proposed to use additional data from deep mutation scanning experiments (DMS).
+To overcome the issue of estimating an unfeasible amount of parameters from phylogenetic data, it was proposed to use supplement the inference with data from deep mutation scanning experiments (DMS).
 DMS allows for the estimation of site specific selection on amino acids for a large amount of mutations in a single experiment.
-Using such external site specific selection estimates allows for the fitting of complex site specific models to smaller phylogenetic data sets, and it improves model fit \citep{bloom2014, bloom2017, hilton2017}.
+Using such supplementary site specific selection estimates allows for the fitting of complex site specific models to smaller phylogenetic data sets, and it improves model fit \citep{bloom2014, bloom2017, hilton2017}.
 
-However, such DMS estimates of selection are not always available.
+However, such DMS selection estimates are not always available.
 The power of DMS stems from the ability to manipulate a large number of individuals in the laboratory and estimate genotype fitness based frequency changes over many generations.
-This, however, limits the application of DMS selection estimates for phylogenetic inference greatly; to organisms with short generation times and that can be manipulated under laboratory conditions.
-Laboratory conditions can greatly differ from the condition an organism experiences in the wild, therefore, it is questionable how well selection estimates inferred under such conditions reflect selection in the wild and are applicable for phylogenetic inference.
-Selection estimates depend on factors like the initial library of mutations which - if extensive - leads to a heterogeneous population of competing individuals unlikely to be observed in the wild.
-The selection applied in the laboratory is also likely to differ from the wild.
-In addition, \citet{hilton2017} showed variation between DMS experiments can lead to significant differences in model inference.
+This, however, limits the application of DMS selection estimates for phylogenetic inference greatly; to organisms with short generation times and ones that can be manipulated under laboratory conditions.
+Laboratory conditions also greatly differ from the condition an organism experiences in the wild, therefore, it is questionable how well selection estimates inferred under such conditions reflect selection in the wild and are applicable for phylogenetic inference.
+DMS selection estimates depend on factors like the initial library of mutations which - if extensive - leads to a heterogeneous population of competing individuals unlikely to be observed in the wild.
+In addition, \citet{hilton2017} showed variation between DMS experiments can lead to significant differences in model fit.
 
-Alternatively, better models could be be developed instead of using questionable external data for phylogenetic inference.
+Alternatively, better models could be be developed instead of using questionable supplementary data for phylogenetic inference.
 Lartillot and colleagues mitigate the high numbers of parameters by using a site categorization approach \citep{LartillotAndPhilippe2004,le2008}.
 In this work we utilize \selac \citep{beaulieu2019} which uses a site categorization approach similar to the work by Lartillot and colleagues.
-\selac utilizes a simplistic nested model and is rooted in population genetics.
+\selac is limited to $20$ site categories, one for each possible optimal amino acid, but with a clear biological interpretation of each site category.
+\selac incorporates \PC properties in a simplistic nested model and is rooted in population genetics.
 The distance of amino acids in \PC space is used by \selac to describe the decline in fitness of an amino acids relative to an, for a site, optimal amino acid.
-Therefore, \selac is limited to $20$ site categories, one for each possible optimal amino acid, but with a clear biological interpretation of each site category.
 
 We assess the reliability of selection on amino acids inferred by DMS to inform phylogenetic studies.
 We utilize a DMS experiment by \citet{stiffler2016} for the $\beta$-lactamase TEM.
@@ -104,17 +103,16 @@ TEM is an enzyme found in gram-negative bacteria like \textit{Escherichia coli} 
 The selection pressure imposed during the DMS experiment was limited to ampicillin and focused solely on the variant TEM-1 \citep{stiffler2016}.
 However, TEM variants can also confer resistance to a wide range of other antibiotics \citep{sougakoff1988,sougakoff1989,goussard1991,mabilat1992,chanal1992,brun1994}.
 
-Our results that site specific selection inferred by DMS improve model fit are consistent with previous work, but supplementing phylogenetic inference with unnatural data causes poor model adequacy. 
+Our results show that site specific selection inferred by DMS improve model fit and are consistent with previous work \citep{bloom2014,bloom2017}, but supplementing phylogenetic inference with unnatural data causes poor model adequacy. 
 We use \phydms \citep{hilton2017} to fit 49 TEM sequences from \citet{bloom2017} using DMS inferred site specific selection on amino acids.
 We compare the model fit of \phydms to \selac and find that model selection prefers \selac over \phydms.
-Further, we find evidence that the DMS inference of selection on amino acids is inconsistent with selection on the wild at many sites, leading to poor model adequacy.
-We do not observe the amino acid with the highest fitness estimated by DMS for $\sim 50 \%$ of sites.
+Further, we find evidence that the DMS inference of selection on amino acids is inconsistent with selection in the wild at many sites, leading to poor model adequacy.
 We also find that the DMS estimates imply a very large genetic load of the observed TEM sequences.
 In contrast, \selac shows higher model adequacy and a more realistic genetic load.
 
-Together, our results show that  models can be more informative and applicable than unnatural supplementary data for phylogenetic inference.
+Together, our results indicate that models can be more informative and applicable than unnatural supplementary data for phylogenetic inference.
 \selac, in contrast, provides biological meaningful information such as site specific optimal amino acids and fitness landscape.
-In addition, \selac does not rely on supplementary data and can be expanded to test other hypothesis.
+In addition, \selac does not rely on supplementary data and is therefore applicable to all alignments of protein coding sequences, and can be expanded to test other hypothesis.
 
 \section{Results}
 \subsection{\selac Outperforms Experimentally Informed Models}for 
