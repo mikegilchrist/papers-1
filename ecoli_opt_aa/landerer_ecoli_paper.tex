@@ -71,6 +71,21 @@ M\textsc{ICHAEL} A.~{G\textsc{ILCHRIST}}$^{1,2}$}
 \newpage
 
 
+\abstract{
+The ever increasing importance of phylogenetics has not been meet with the appropriate developement in models.
+Many commonly used phylogenetic models lack biologogical realism.
+Models focused on nucleotides are agnostic to selection on higher level selection on codons or amino acids.
+Amino acid models on the other hand lack the ability to properly account for mutations.
+Codon models try to account for both, mutation and selection, but share that only a single substitution matrix is used, resulting in the same equilibrium frequency at each site.
+To remedy this issue, two routes have been taken, the devoplement of more realistic models with site specific selection and the incroporation of supplementary information on site specific selection.
+Here we assess and compare the fit and adequacy of phylogenetic inferences made using supplementary information on selection with \selac, a novel codon model of stabilizing selection on amino acids.
+We utilize site specific selection parameters for the $\beta$-lactamase TEM estimated via deep mutation scanning to supplement phylogenetic inference to 49 observed sequences.
+Using AIC as a measure of model fit, we find that supplementary selection parameters improve model fit compared to classical models without site specific selection ($\DeltaAIC = 289$) but lack model adequacy.
+We also highlight that this lack in model adequacy is likely due to biased laboratory conditions.
+In contrast, \selac not only provides improved model fit over classical models without site specific selection ($\DeltaAIC = 871$) and experimentally supplemented models ($\DeltaAIC = 582$), it also shows improved model adequacy.
+}
+\newpage
+
 \section{Introduction}
 Phylogenetic inference is of ever increasing importance across biology \citep{omeara2006,YangAndBourne2009,Ruprecht2017,SchwartzAndSchaffer2017}. 
 Most common models used for phylogenetic inference are incorporated into powerful software packages such as RAxML \citep{raxml}, RevBayes \citep{revbayes}, or IQTree \citep{nguyen2015}

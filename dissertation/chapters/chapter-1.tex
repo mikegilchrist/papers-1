@@ -2,7 +2,7 @@
 \label{ch:introduction}
 
 Protein synthesis is the most costly metabolic process a cell performs \citep{Reeds1985,WaterlowAndMillward1989,buttgereit1995,warner1999,AkashiAndGojobori2002,lindqvist2018} causing selection to maximize the benefit of protein synthesis and performing it as efficiently as possible.
-Studying the ratio of cost to benefit of protein synthesis is, therefore, important to understand the evolution of protein coding sequences \citep{gilchrist2009,ShahAndGilchrist2011,gilchrist2015,beaulieu2018}.
+Studying the ratio of cost to benefit of protein synthesis is, therefore, important to understand the evolution of protein coding sequences \citep{gilchrist2009,ShahAndGilchrist2011,gilchrist2015,beaulieu2019}.
 However, the strength of selection varies greatly between genes, from low expression genes with codon usage dominated by mutation bias between nucleotides over highly expressed genes reflecting the dominance of selection for efficient translation of the mRNA, to selection on the amino acid composition required for the function of the protein.
 
 We can formalize the cost and benefit of a protein coding sequence and formulate mathematical models.
@@ -78,9 +78,9 @@ Ignoring interactions between sites allows to describe the site specific fitness
 Some approaches rely on the description of the full fitness landscape and therefore require $19 \times L$, where $L$ is the length of the peptide in amino acids, parameters \citep{LartillotAndPhilippe2004,le2008,wang2008,holder2008,wu2013,tamuri2014}.
 As this is still a large number of parameters the incorporation of experimentally determined site specific selection on amino acids is an attractive alternative \citep{bloom2014, thyagarajan2014, bloom2017}. 
 Alternatively, assumptions about the nature of selection can reduce the number of parameters required.
-For example, negative frequency dependent selection \citep{GoldmanAndYang1994, MuseAndGaut1994, thorne1996} or stabilizing selection \citep{beaulieu2018} allow for a reduction in fitness of amino acids with distance in \PC space.
+For example, negative frequency dependent selection \citep{GoldmanAndYang1994, MuseAndGaut1994, thorne1996} or stabilizing selection \citep{beaulieu2019} allow for a reduction in fitness of amino acids with distance in \PC space.
 
-\selac \citep{beaulieu2018}, a model of stabilizing selection, assesses the fitness of each amino acid relative to the fitness peak (Figure \ref{fig:decl_fit}).
+\selac \citep{beaulieu2019}, a model of stabilizing selection, assesses the fitness of each amino acid relative to the fitness peak (Figure \ref{fig:decl_fit}).
 Fitness is assumed to decline exponentially with distance in \PC space to the optimal amino acid.
 In chapter \ref{ch:phylogeny} I apply \selac to the $\beta$-lactamase TEM and estimate site specific selection on amino acids and compare the inferred fitness landscape to empirical estimates from deep mutation scanning experiments \citep{stiffler2016}.
 I find that experimentally informed amino acid preferences improve model fit but do not accurately reflect the evolution of TEM.

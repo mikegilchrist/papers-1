@@ -10,119 +10,129 @@ This chapter is an early version of a paper to be submitted to Genome Biology an
 C. Landerer, B.C. O'Meara, M.A. Gilchrist, Phylogenetic model of stabilizing selection is more informative about site specific selection than extrapolation from laboratory estimates
 
 \section{Abstract}
-%\begin{center}\textbf{Abstract}\end{center}
-Here we examine the ability of experimentally inferred, site specific selection for amino acids to improve phylogenetic inferences of sequence evolution.
-Previous work has shown that laboratory estimates of selection can improve model fit, but did not assess their adequacy.
-We assess the ability of experimentally inferred site specific selection for antibiotic resistance from deep mutation scanning to inform phylogenetic models.
-In this study, we use the $\beta$-lactamase TEM for which empirical estimates of site specific selection on amino acids are readily available.
-TEM is an enzyme that catalyzes antibiotics with a $\beta$-lactam ring and is found in gram-negative bacteria like \textit{Escherichia coli}.
-We compare the experimentally inferred site specific selection to our results obtained using \selac, a new phylogenetic model of stabilizing selection.
-Using simulations we assess model adequacy, and find that experimentally inferred selection does not adequately reflect evolution in the wild.
-In contrast, \selac fits to the data better over models informed by experimentally inferred selection and provides higher model adequacy.
-We demonstrate the capability of \selac by estimating the site specific genetic load of the observed TEM variants.
-
+The ever increasing importance of phylogenetics has not been meet with the appropriate developement in models.
+Many commonly used phylogenetic models lack biologogical realism.
+Models focused on nucleotides are agnostic to selection on higher level selection on codons or amino acids.
+Amino acid models on the other hand lack the ability to properly account for mutations.
+Codon models try to account for both, mutation and selection, but share that only a single substitution matrix is used, resulting in the same equilibrium frequency at each site.
+To remedy this issue, two routes have been taken, the devoplement of more realistic models with site specific selection and the incroporation of supplementary information on site specific selection.
+Here we assess and compare the fit and adequacy of phylogenetic inferences made using supplementary information on selection with \selac, a novel codon model of stabilizing selection on amino acids.
+We utilize site specific selection parameters for the $\beta$-lactamase TEM estimated via deep mutation scanning to supplement phylogenetic inference to 49 observed sequences.
+Using AIC as a measure of model fit, we find that supplementary selection parameters improve model fit compared to classical models without site specific selection ($\DeltaAIC = 289$) but lack model adequacy.
+We also highlight that this lack in model adequacy is likely due to biased laboratory conditions.
+In contrast, \selac not only provides improved model fit over classical models without site specific selection ($\DeltaAIC = 871$) and experimentally supplemented models ($\DeltaAIC = 582$), it also shows improved model adequacy.
 \newpage
 
 \section{Introduction}
 
-Numerous attempts to incorporate selection into phylogenetic models have been made.
-Early models only focused on the influence of selection on the substitution rate and fixation probability between a resident and a mutant introduced into a population \citep{GoldmanAndYang1994, MuseAndGaut1994, thorne1996}.
-These models however, lack site specific equilibrium codon or amino acid frequencies.
-The importance of site specific equilibrium frequencies has long been noted \citep{felsenstein1981, gojobori1983}.
-Individual amino acid sites along the protein show differences in evolutionary rates, and wide range of preferences for specific amino acids \citep{HalpernAndBruno1998, ashenberg2013, echave2016}.
-The usage of site specific selection acknowledges the heterogeneity in selection and amino acid preferences along the protein sequence \citep{hilton2017}.
+Phylogenetic inference is of ever increasing importance across biology \citep{omeara2006,YangAndBourne2009,Ruprecht2017,SchwartzAndSchaffer2017}. 
+Most common models used for phylogenetic inference are incorporated into powerful software packages such as RAxML \citep{raxml}, RevBayes \citep{revbayes}, or IQTree \citep{nguyen2015}
+While commonly used models are fast and easy to use, they lack biological realism.
 
-\citet{HalpernAndBruno1998} first introduced a model to incorporate site specific equilibrium frequencies of amino acids.
-However, they had to concede that their model was too parameter rich and therefore intractable for biological data sets without additional simplifying assumptions.
-More recent models incorporating site specific equilibrium frequencies still require a large number of parameters to be estimated from the sequence data \citep{LartillotAndPhilippe2004,le2008,wang2008,holder2008,wu2013,tamuri2014}.
-Other approaches treat site specific selection as a random effect \citep{rodrigue2010,rodrigue2013,rodrigue2014}.
-A full parameterization of site specific equilibrium frequencies for amino acids requires $19\times N$ parameters where $N$ is the length of the sequence in amino acids.
-It is therefore an attractive option to utilize laboratory experiments to empirically estimate site specific strength of selection on amino acids and infer their equilibrium frequencies \citep{bloom2014, thyagarajan2014, bloom2017}.
+Phylogenetic models focused on the nucleotide composition such as GTR, or UNREST \citep{Tavare1986,Yang1994} are limited to mutation effects and are agnostic to any higher level selection on codons or amino acids.
+Amino acid models like JTT \citep{jones1992}, BLOSSUM \citep{blossum}, or WAG \citep{whelan2001} attempt to describe the effects of natural selection, however, these do not properly account for mutations between nucleotides and are purely phenomenological.
+In an attempt to remedy the shortcomings of nucleotide and amino acid models, codon models combine mutation between nucleotides and selection on the amino acids for which they code.
+Most popular are the codon model by \citet{GoldmanAndYang1994} (\gy) and its derivatives.
+However, \gy is commonly misinterpreted and provides only a restricted selection scenario that is best described as frequency dependent selection \citep{HughesAndNei1988,Nowak2006,Hughes2007,beaulieu2019}.
 
-Empirical estimates of site specific selection can greatly reduce the number of parameters estimated from phylogenetic data, making it applicable for smaller data sets and allowing for the fitting of more complex models.
-Deep mutation scanning (DMS) has recently been used to generate comprehensive site specific estimates of selection \citep{Fowler2014}.
-The ability to estimate site specific selection allows to estimate site specific amino acid preferences and the fitness consequences a mutation introduces at a particular site \citep{bloom2014,firnberg2014,stiffler2016}.
-There are, however, also shortcomings.
-The quality of empirical estimates from DMS, however, depends on many factors including the initial library of mutants and the applied selection \citep{FirnbergAndOstermeier2012}.
-Mutation libraries have to be extensive and, therefore, produce a heterogeneous population of competing organisms not usually found in nature.
-In addition, estimates of selection can only be obtained for fast growing organisms that can be manipulated under laboratory conditions.
-As many organism can not be cultivated under laboratory conditions or have long generation times, this is a severe limitation to experimentally informed models.
+One common property of all of these models is the fact that they use a single substitution model across all sites. As a result, every site, whether a nucleotide,  amino acid, or codon, have the same equilibrium distribution.
+Biologists, however, have long recognized that equilibrium frequencies and thus the substitution matrix responsible, can vary substantially between sites \citep{felsenstein1981, gojobori1983}.
+Individual sites along the sequence often show differences in evolutionary rates, and wide range of preferences for specific amino acids \citep{ashenberg2013, echave2016}.
 
-Even in the cases where empirical estimates of site specific selection can be obtained, their utility for phylogenetic reconstruction is questionable.
-In this study, we assess the ability of experimentally inferred site specific selection to inform phylogenetic models and offer an alternative approach to determine site specific selection.
-We use site specific estimates of selection for the class A $\beta$-lactamase TEM from \citet{stiffler2016}.
-TEM is an enzyme found in gram-negative bacteria like \textit{Escherichia coli} that catalyzes antibiotics with a $\beta$-lactam ring and provides antibiotic resistance \citep{Neu1969}.
-The selection pressure imposed during the DMS experiment was limited to ampicillin and focused solely on TEM-1 \citep{stiffler2016}.
+In response to this variability, \citet{HalpernAndBruno1998} (\hb) provided a general, codon model were each codon site has its own, distinct substitution matrix.
+The cost to this generality is the need for 19 amino acid specific selection parameters per site (N.B., the optimal amino acid, by definition, has a selection parameter of 0).
+This need for estimating a large number of selection parameters from the sequence data makes the application of \citet{HalpernAndBruno1998} model unfeasible for most studies.
+To overcome this parameterization problem,\citet{bloom2014} proposed using data from deep mutation scanning experiments (DMS) as a means of estimating the site specific parameters needed in the \citet{HalpernAndBruno1998}.
+Bloom and others \citep{bloom2014, bloom2017, hilton2017} report that using DMS selection parameters greatly improves model fit over models without site specific selection parameters.
+
+The power of DMS stems from the ability to manipulate a large number of individuals in the laboratory and estimate genotype fitness based on frequency changes over many generations.
+This, however, limits the application of DMS selection parameters for phylogenetic inference to only organisms which can be cultured in the laboratory and with short generation times.
+More troubling is the fact that variation between DMS experiments can lead to significant differences between model fits \citep{hilton2017}.
+However, this variation is presumably small compared to the variation between laboratory conditions and those organisms usually encounter in the wild.
+As a result, the value of DMS selection parameters for making inferences about sequences evolution in the wild is uncertain.
+
+Instead of using laboratory based selection parameters to mitigate the parameterization issues introduced in \hb, an alternative approach is to simplify the model itself.
+For example, Lartillot and colleagues mitigate the high numbers of  parameters required by \hb's codon model using a site categorization approach where a limited, but \emph{a priori} unspecified, number of site categories are estimated from the sequence data \citep{LartillotAndPhilippe2004,le2008,RodrigueEtAl2008,RodrigueAndLartillot2014}.
+More recently, \citep{beaulieu2019} introduced a new codon model, \selac, where $20$ site categories are assumed \emph{a priori} to underlie the \hb model.
+\selac combines \PC properties and site specific heterogeneity in the strength of selection together using a simplistic nested modeling approach.
+Briefly, \selac infers an optimal amino acid for each site and then estimates the selection parameters for the remaining amino acids based on their \PC distance from the optimal amino acid and site specific sensitivity term which is, in turn, treated as a random effect.
+
+We assess and compare the fit and adequacy of phylogenetic inferences made using supplementary DMS selection parameters and \selac. 
+We use \phydms \citep{hilton2017} in order to utilize supplementary DMS selection parameters, fitting 49 TEM sequences observed in natural populations of \emph{E.~coli} from \citet{bloom2017}.
+Following \citep{bloom2017, hilton2017}, we used the DMS based selection parameters from \citet{stiffler2016} for $\beta$-lactamase TEM to supplement our phylogenetic inference.
+TEM is an enzyme found in gram-negative bacteria and catalyzes antibiotics with a $\beta$-lactam ring, providing antibiotic resistance \citep{Neu1969}.
+The selection pressure imposed during the DMS experiment was limited to ampicillin and focused solely on the variant TEM-1 \citep{stiffler2016}.
 However, TEM variants can also confer resistance to a wide range of other antibiotics \citep{sougakoff1988,sougakoff1989,goussard1991,mabilat1992,chanal1992,brun1994}.
 
-In order to do so, we fitted $227$ nucleotide and codon models using IQTree and compared their model fits to site specific models of stabilizing selection with (\phydms, \selacDMS) and without (\selac) experimentally estimated site specific selection coefficients \citep{nguyen2015,hilton2017,beaulieu2019}.
-We find that experimentally inferred selection, while improving model fit, does not adequately reflect observed wild type sequences.
-In contrast, \selac \citep{beaulieu2019} a mechanistic phylogenetic model of stabilizing selection rooted in first principles with site specific equilibrium frequencies improves model fit, and better predicts sequences found in the wild.
-%Because \selac assumes stabilizing selection declining fitness with distance in \PC space to the optimal amino acid it is able to infer the optimal amino acid at a site and reduce the number of site specific parameters from $19\times N$ to $N$.
-In addition, it was previously proposed to extrapolate to the fitness landscape of related proteins using experimentally inferred site specific selection \citep{bloom2014, bloom2017}.
-We utilize the TEM homologue SHV, another class A $\beta$-lactamase, to demonstrate the problematic with this approach and further highlight the generality of \selac.
+Using AIC as a measure of model fit, as before we find that \phydms outperforms the 228 nucleotide and codon models included in the IQTree package \citep{bloom2014, bloom2017}, but that \selac outperforms \phydms by an additional 582 AIC units.
+While very large, our estimate of \DeltaAIC between \selac and \phydms is likely an under estimate given the fact that we, conservatively, counted each inferred amino acid as a separate parameter when calculating \selac's AIC value.
+In addition to a superior fit to the observed data, \selac shows higher model adequacy and implies more realistic values of genetic load than \phydms.
+We attribute \phydms's poor model adequacy to misappropriation of biased selection parameter estimates from DMS. 
+This poor model adequacy, in turn, leads to the unrealistically large estimates of genetic load of the observed TEM sequences.
+
+Together, our results indicate that models can be more informative and applicable than unnatural supplementary data for phylogenetic inference.
+\selac, in contrast, provides biological meaningful information such as site specific optimal amino acids and estimates of selection parameters.
+In addition, \selac does not rely on supplementary data and is therefore applicable to all alignments of protein coding sequences, and can be expanded to test other hypothesis.
 
 
 \section{Results}
+\subsection{\selac Outperforms Experimentally Informed Models}
 
-\subsection{Site Specific Stabilizing Selection on Amino Acids Improves Model Fit}
-We compared \phydms \citep{hilton2017} and \selac \citep{beaulieu2019}, models of site specific stabilizing selection on amino acids, to $227$ other codon and nucleotide models.
-We fitted all models to 49 observed sequences of the $\beta$-lactamase TEM \citep{bloom2014}.
-The \phydms and \selac models with site specific selection improved model fits by $366$ and $934$ AICc units, respectively, over the best performing codon or nucleotide models which lacks site specific selection (Table \ref{tab:AIC_selac}).
-In addition, \selac outperformed the experimentally informed model \phydms by $562$ to $568$ AICc units, depending whether site specific selection was inferred by \selac or experimentally informed.
+We compare \selac and \phydms, two models of site specific stabilizing selection, to 131 nucleotide and 97 codon uniform site models fitted using IQTree \citep[][see Table \ref{tab:AIC_selac} for the best performing models and Table \ref{tab:AIC_full} for all models]{nguyen2015}.
+\selac shows the best model fit and provides an improvement of 582 AIC units over the empirically informed model fit by \phydms.
+This better performance is in spite of the fact that \selac requires the specification of one optimal amino acid for each of the 263 codons in our TEM alignment.
+\phydms, parameterized by site specific selection parameters from \citet{stiffler2016} performs second best and provides an improvement of 289 AIC units for the best uniform site model \emph{SYM}+R2 \citet{zharkikh1994}. 
 
 \selac utilizes a hierarchical model and estimates 263 site specific parameters, $\sim5\%$ of the $19\times N = 4997$ parameters necessary to fully describe site specific selection.
-In contrast, \phydms does not infer any site specific parameters from the phylogenetic data, but utilizes site specific selection estimated from deep mutation scanning experiments.
-In order to assess the quality of the \selac fit with experimentally determined site specific selection, we fixed the optimal amino acid at each site to the experimentally determined one in \selac and refitted the model to the 49 TEM sequences (\selacDMS).
-Incorporating site specific selection estimated from deep mutation scanning experiments into \selac (\selacDMS) yields a similar, but slightly better AICc value to \selac without that information.
+In contrast, \phydms does not infer any site specific parameters from the sequence data, but utilizes site specific selection parameters from DMS experiments.
+This is important since $263$ of the $374$ parameters estimated by \selac are the discrete optimal amino acid state at each site. 
+As it is unclear if such discrete parameters contribute to the Kullback-Leibler divergence in a similar manner as continuous parameters, it is possible that we are over penalizing.
+Therefore, the number of parameters, $n$, for \selac we use is conservative.
 
 \begin{table}
   \centering
-  \caption{Model selection, shown are the three models of stabilizing site specific amino acid selection (\selac, \selacDMS, \phydms) and the best performing codon and nucleotide model \citep{GoldmanAndYang1994, zharkikh1994}. 
-  Reported are the log-likelihood $\log(\Lik)$, the number of parameters estimated $n$, AIC, $\Delta$AIC, AICc, and $\Delta$AICc values.
-  See Table \ref{tab:AIC_full} for results from all models we tested.}  
+  \caption{Model selection, shown are the two models of stabilizing site specific amino acid selection (\selac, \phydms) and the best performing codon and nucleotide model \citep{GoldmanAndYang1994, zharkikh1994}. 
+  Reported are the log-likelihood $\log(\Lik)$, the number of parameters estimated $n$, AIC, and $\Delta$AIC values.
+  See Table \ref{tab:AIC_full} for results from all models we tested.
+}  
   \begin{tabular}{lrrrrrr}
     \hline
-    Model		& $\log(\Lik)$ & n & AIC & $\Delta$AIC & AICc & $\Delta$AICc\\ \hline 
-    \selacDMS 		& -1768 & 111& 3758& 14	& 3760  & 0\\
-    \selac		& -1498 & 374& 3744&  0	& 3766  & 6 \\
-    \phydms 		& -2061 & 102& 4326& 582& 4328 & 568\\
-    \emph{SYM}+R2 		& -2230 & 102& 4663& 919& 4694 & 934 \\
-    \gy+F1X4+R2 		& -2243 & 102& 4690& 946& 4821 & 1061 \\ \hline
+    Model							& $\log(\Lik)$ & $n$ & AIC & \DeltaAIC \\ \hline 
+    \selac							& -1498 & 374 & 3744 &  0 \\
+    \phydms 						& -2061 & 102 & 4326 & 582 \\
+    \emph{SYM}+R2 				& -2206 & 102 & 4615 & 871 \\
+    \emph{GY94}+F1X4+R2 		& -2243 & 102 & 4690 & 946 \\ \hline
   \end{tabular}
   \label{tab:AIC_selac}
 \end{table}
 
-This improvement in AICc of \selacDMS over \selac is solely due to a decrease in the number of parameters estimated
-In contrast to AICc, the log-likelihood $\log(\Lik)$ of \selacDMS is $270$ $\log(\Lik)$ units worse than the \selac one (Table \ref{tab:AIC_selac}).
-However, it is statistically speaking unclear if discrete parameters bias ones estimate the Kullback-Leibler divergence in the same way.
-This is important since $263$ of the $374$ parameters estimated by \selac are the discrete optimal amino acid state at each site. 
-Thus, it is possible that we are over penalizing.
-Therefore, the number of parameter for \selac we use is conservative.
-For example, there are only 27 unique site patterns in the TEM alignment, which would yield a total of $138$ parameters.% (96 edge length, 15 mutation/selection parameters, and 27 optimal amino acids).
-This however would likely be an under estimate of the number of parameters estimated.
-The true number of parameters remains unclear at this point due to the inherent non-independence of the underlying data and the discrete nature of the optimized parameters.
+The best performing uniform codon model is \gy \citep{GoldmanAndYang1994}. 
+However, \gy is outperformed by 110 nucleotide models like \emph{SYM}+R2.
+Like \selac, \gy in its original form, utilizes differences in \PC space between amino acids, but unlike \selac which is a model of stabilizing selection, \gy is best interpreted as frequency dependent selection \citep{HughesAndNei1988,Nowak2006,Hughes2007,beaulieu2019}.
 
 We observe differences in the topology between model fits.
 The \selac model is currently too slow to estimate the topology, therefore the topology was estimated using the codon model of \citet{KosiolEtAl07}.
-At this point, it is therefore unclear if the difference in topology can be attributes to the experimentally inferred selection.
-We find that the best codon model (\gy) \citep{GoldmanAndYang1994} is outperformed by several nucleotide model e.g. \emph{SYM}+R2 \citep{zharkikh1994}.
-This could be an indication that negative frequency dependent selection like it is modeled in \gy is not appropriate for TEM \citep{GoldmanAndYang1994,beaulieu2019}.
+\phydms uses the topology estimated with the codon model of \citet{KosiolEtAl07} as starting point for its topology search.
+\phydms diverges from the initial topology suggesting we are conservative in our estimate of $\Delta AIC$ between \selac and \phydms.
+However, at this point, it is therefore unclear if  we can attribute the difference in topology solely to the experimentally inferred selection parameters or if other factors contribute.
+If we utilize the \phydms inferred topology, with \selac, we find a very similar but slightly worse model fit to our original \selac fit ($\Delta AIC = 2$).
+This indicates that the topology has less impact on the model fit than the assumed optimal amino acid sequence, likely due to the short branches and many polytomies in the phylogeny (Figure \ref{fig:phylo_comp}).
+
 Figure \ref{fig:phylo} shows that the estimated phylogenetic trees shift from long terminal branches (\selac) to longer internal branches (\phydms).
-While the \selac model fit shows $84 \%$ of all evolution happening at the tips, this reduces to $79 \%$ in the \selacDMS model fit, and $77 \%$ in the \phydms and \gy model fits.
-All models produce polytomies but their location differs between models.
-Surprisingly, the largest polytomies appear in the experimentally informed phylogeny of \phydms.
-The position of the sequences with the longest branches also differ between \selac and \phydms.
+While the \selac model fit shows $84 \%$ of all evolution happening at the tips, this reduces $77 \%$ in the \phydms and \gy model fits.
+In addition, polytomies are wide spread in all estimated phylogenies, and generally, the shortest branch length are estimated by the symmetric nucleotide model.
+
 
 \singlespacing
 \begin{figure}[H]
      \centering
 	\includegraphics[width=\textwidth]{ch4/phy_TEM2016.pdf}
-	\caption{Phylogenies resulting from \selac, \selacDMS, \phydms, and \gy. As \selac is currently to slow for the inference of topologies, the topology for the \selac phylogenies was inferred using the codon model of \citet{KosiolEtAl07}.}
+	\caption{Phylogenies resulting from \selac, phydms, \emph{SYM}, and \gy. As \selac is currently to slow for the inference of topologies, the topology for the \selac phylogeny was inferred using the codon model of \citet{KosiolEtAl07}.}
 	\label{fig:phylo}
 \end{figure}
 \doublespacing
 \clearpage
+
 
 \subsection{Laboratory Inferences Inconsistent with Observed Sequences.}
 
@@ -363,37 +373,30 @@ As we show in this study, not only can \selac estimate site specific selection o
 
 \subsection{Phylogenetic Inference and Model selection}
 
-TEM and SHV sequences were obtained from \citet{bloom2017} already aligned.
-We separated the TEM and SHV sequences into individual alignments.
-Experimentally fitness values for TEM were taken from \citet{stiffler2016}.
-We followed \citep{bloom2017} to convert the experimental fitness values into site specific equilibrium frequencies for \phydms. 
+TEM sequences were obtained from \citet{bloom2017} already aligned.
+Experimentally selection parameters for TEM were taken from \citet{stiffler2016}.
+We followed \citep{bloom2017} to convert the experimental selection parameters into site specific equilibrium frequencies for \phydms. 
 \phydms (version 2.5.1) was fitted to the site specific selection from \citet{stiffler2016} using python (version 3.6).
-\selac (version 1.6.1) was fitted to the TEM alignment using R (version 3.4.1) \citep{rcore} with and without experimental site specific selection.
-We assumed the \PC properties estimated by \citet{grantham1974}.
-We choose the constraint free general unrestricted model \citep{yang1994} as mutation model for \selac.
+\selac (version 1.6.1) was fitted to the TEM alignment using R (version 3.4.1) \citep{rcore}.
+We assumed the \PC properties estimated by \citet{grantham1974} and only estimated the weighting terms for each property from the data.
+We choose the constraint free general unrestricted model \citep{Yang1994} as mutation model for \selac.
 All other models were fitted using IQTree \citep{nguyen2015}.
-We report each model's $\log(\Lik)$, AIC, and  AICc. 
-Models were selected based on the AICc values.
+We report each model's $\log(\Lik)$, and AIC.
+Models were selected based on the AIC values.
 
 \subsection{Sequence Simulation}
 
 Sequences were simulated by stochastic simulations using a Gillespie algorithm \citep{gillespie1976} that was model independent.
 To calculate fixation probabilities during the simulation we followed \citet{SellaAndHirsh2005}.
-The fitness values were estimated using \selac or taken from \citet{stiffler2016}.
-We choose the fitness values resulting from the highest concentration (2500 $\mu g/mL$) treatment of ampicillin for our comparison.
-We rescaled the experimental fitness such that the amino acid with the highest fitness at each site has a value of one.
-Mutation rates for the simulations were taken from the \selac or \selacDMS fit, respectively.
-The initial sequences were either a random sequence sampled with uniform codon probabilities or the ancestral sequence reconstructed using FastML \citep{fastml} (last accessed: 30.09.2018).
+The selection parameters were estimated using \selac or taken from \citet{stiffler2016}.
+We choose the selection parameters resulting from the highest concentration (2500 $\mu g/mL$) treatment of ampicillin for our comparison.
+We rescaled the experimental selection parameters such that the amino acid with the highest fitness at each site has a value of one.
+Mutation rates for the simulations were taken from the \selac.
+The initial sequences was the ancestral sequence reconstructed using FastML \citep{fastml} (last accessed: 30.09.2018).
 Each sequence was simulated 10 times and we report average genetic load and sequence similarity and the standard error.
 The sequences were sampled at times 0.01, 0.1, 1, and 10 expected mutations per site.
 
-\subsection{Estimating site specific efficacy of selection $G$}
-
-\selac does not by default estimate site specific values for $G$ but assumes $G$ values follow a $\Gamma$-distribution \citep{Felsenstein2001}.
-Site specific values for $G$ were optimized by fixing all estimated parameters and performing a maximum likelihood search without the integration over $G$.
-In contrast to \selac that assumes $G$ to be purely positive, we allowed negative values for $G$ but constraint the search to values between $-300$ and $300$ to ensure numerical stability.
-
-\subsection{Estimating site specific fitness values $w_i$}
+\subsection{Estimating site specific selection parameters $w_i$}
 
 Following \citet{beaulieu2019} $w_i$ is proportional to
 \begin{equation}
@@ -430,347 +433,261 @@ The authors would like to thank Russel Zaretzki, Jeremy Beaulieu and Alexander C
 
 
 
-
-%\bibliographystyle{unsrtnat}
-%\bibliography{ecoli}
-
 \clearpage
 %\beginsupplement
 \section{Appendix: Supplementary Material}
 
 \singlespacing
 \begin{longtable}{clrrrrrr}
-  \caption{Model selection of 230 models of nucleotide and codon evolution.}\label{tab:AIC_full}\\\toprule
-  No. & Model & LnL & n & AIC & $\Delta$AIC & AICc & $\Delta$AICc \\   \hline \endfirsthead
+  \caption{Model selection of 229 models of nucleotide and codon evolution.}
+  \label{tab:AIC_full}
+  \\ 
+  \toprule
+  No. & Model & $\log(\Lik)$ & n & AIC & \DeltaAIC  \\   \hline \endfirsthead
   \caption*{Table \ref{tab:AIC_full} Continued}\\\toprule
-  No. & Model & LnL & n & AIC & $\Delta$AIC & AICc & $\Delta$AICc \\   \hline \endhead
+  No. & Model & $\log(\Lik)$ & n & AIC & \DeltaAIC  \\   \hline \endhead
   \hline \endfoot
   \bottomrule
   \endlastfoot
 
-	%No. & Model & LnL & n & AIC & $\Delta$AIC & AICc & $\Delta$AICc \\ \hline
-	1 & \selacDMS+G4 & -1768 & 111 & 3758 & 14 & 3760 & 0 \\ 
-	2 & \selac+G4 & -1498 & 374 & 3744 & 0 & 3766 & 6 \\ 
-	3 & \phydms & -2060.85 & 102 & 4326 & 582 & 4328 & 568 \\ 
-	4 & SYM+R2 & -2229.616 & 102 & 4663.232 & 919.232 & 4693.862 & 933.862 \\ 
-	5 & TIMe+R2 & -2232.406 & 100 & 4664.811 & 920.811 & 4694.172 & 934.172 \\ 
-	6 & TVMe+R2 & -2232.838 & 101 & 4667.677 & 923.677 & 4697.668 & 937.668 \\ 
-	7 & TIM3e+R2 & -2234.332 & 100 & 4668.664 & 924.664 & 4698.024 & 938.024 \\ 
-	8 & TIM2e+R2 & -2234.381 & 100 & 4668.763 & 924.763 & 4698.123 & 938.123 \\ 
-	9 & K3P+R2 & -2235.777 & 99 & 4669.553 & 925.553 & 4698.291 & 938.291 \\ 
-	10 & TNe+R2 & -2236.078 & 99 & 4670.155 & 926.155 & 4698.892 & 938.892 \\ 
-	11 & SYM+R3 & -2229.616 & 104 & 4667.232 & 923.232 & 4699.162 & 939.162 \\ 
-	12 & TIM+F+R2 & -2230.958 & 103 & 4667.915 & 923.915 & 4699.191 & 939.191 \\ 
-	13 & TIMe+R3 & -2232.404 & 102 & 4668.808 & 924.808 & 4699.437 & 939.437 \\ 
-	14 & GTR+F+R2 & -2228.537 & 105 & 4667.073 & 923.073 & 4699.665 & 939.665 \\ 
-	15 & K3Pu+F+R2 & -2232.617 & 102 & 4669.234 & 925.234 & 4699.864 & 939.864 \\ 
-	16 & TVM+F+R2 & -2230.105 & 104 & 4668.21 & 924.21 & 4700.14 & 940.14 \\ 
-	17 & TVMe+R3 & -2232.838 & 103 & 4671.676 & 927.676 & 4702.952 & 942.952 \\ 
-	18 & K2P+R2 & -2239.424 & 98 & 4674.847 & 930.847 & 4702.969 & 942.969 \\ 
-	19 & TIM3e+R3 & -2234.332 & 102 & 4672.664 & 928.664 & 4703.293 & 943.293 \\ 
-	20 & TIM2e+R3 & -2234.381 & 102 & 4672.762 & 928.762 & 4703.391 & 943.391 \\ 
-	21 & TIM3+F+R2 & -2233.064 & 103 & 4672.127 & 928.127 & 4703.403 & 943.403 \\ 
-	22 & TIM2+F+R2 & -2233.114 & 103 & 4672.227 & 928.227 & 4703.503 & 943.503 \\ 
-	23 & K3P+R3 & -2235.777 & 101 & 4673.553 & 929.553 & 4703.545 & 943.545 \\ 
-	24 & TN+F+R2 & -2234.624 & 102 & 4673.249 & 929.249 & 4703.878 & 943.878 \\ 
-	25 & TPM3u+F+R2 & -2234.673 & 102 & 4673.347 & 929.347 & 4703.977 & 943.977 \\ 
-	26 & TPM3+F+R2 & -2234.674 & 102 & 4673.348 & 929.348 & 4703.978 & 943.978 \\ 
-	27 & TPM2u+F+R2 & -2234.681 & 102 & 4673.363 & 929.363 & 4703.993 & 943.993 \\ 
-	28 & TPM2+F+R2 & -2234.683 & 102 & 4673.365 & 929.365 & 4703.995 & 943.995 \\ 
-	29 & TNe+R3 & -2236.077 & 101 & 4674.155 & 930.155 & 4704.146 & 944.146 \\ 
-	30 & TIM+F+R3 & -2230.958 & 105 & 4671.915 & 927.915 & 4704.507 & 944.507 \\ 
-	31 & HKY+F+R2 & -2236.266 & 101 & 4674.531 & 930.531 & 4704.522 & 944.522 \\ 
-	32 & GTR+F+R3 & -2228.536 & 107 & 4671.073 & 927.073 & 4705.011 & 945.011 \\ 
-	33 & K3Pu+F+R3 & -2232.617 & 104 & 4673.234 & 929.234 & 4705.163 & 945.163 \\ 
-	34 & TVM+F+R3 & -2230.105 & 106 & 4672.21 & 928.21 & 4705.471 & 945.471 \\ 
-	35 & K2P+R3 & -2239.192 & 100 & 4678.384 & 934.384 & 4707.745 & 947.745 \\ 
-	36 & TIM3+F+R3 & -2233.063 & 105 & 4676.127 & 932.127 & 4708.718 & 948.718 \\ 
-	37 & TIM2+F+R3 & -2233.113 & 105 & 4676.227 & 932.227 & 4708.818 & 948.818 \\ 
-	38 & TN+F+R3 & -2234.624 & 104 & 4677.249 & 933.249 & 4709.178 & 949.178 \\ 
-	39 & TPM3u+F+R3 & -2234.673 & 104 & 4677.347 & 933.347 & 4709.277 & 949.277 \\ 
-	40 & TPM3+F+R3 & -2234.674 & 104 & 4677.348 & 933.348 & 4709.277 & 949.277 \\ 
-	41 & TPM2u+F+R3 & -2234.681 & 104 & 4677.363 & 933.363 & 4709.293 & 949.293 \\ 
-	42 & TPM2+F+R3 & -2234.682 & 104 & 4677.364 & 933.364 & 4709.294 & 949.294 \\ 
-	43 & HKY+F+R3 & -2236.074 & 103 & 4678.148 & 934.148 & 4709.424 & 949.424 \\ 
-	44 & SYM+I+G4 & -2243.212 & 102 & 4690.424 & 946.424 & 4721.054 & 961.054 \\ 
-	45 & TVMe+I+G4 & -2244.533 & 101 & 4691.066 & 947.066 & 4721.057 & 961.057 \\ 
-	46 & TIMe+I+G4 & -2246.457 & 100 & 4692.914 & 948.914 & 4722.275 & 962.275 \\ 
-	47 & K3P+I+G4 & -2248.166 & 99 & 4694.332 & 950.332 & 4723.069 & 963.069 \\ 
-	48 & TVM+F+I+G4 & -2241.853 & 104 & 4691.707 & 947.707 & 4723.636 & 963.636 \\ 
-	49 & TIM3e+I+G4 & -2247.379 & 100 & 4694.758 & 950.758 & 4724.119 & 964.119 \\ 
-	50 & K3Pu+F+I+G4 & -2245.156 & 102 & 4694.311 & 950.311 & 4724.941 & 964.941 \\ 
-	51 & GTR+F+I+G4 & -2241.484 & 105 & 4692.968 & 948.968 & 4725.559 & 965.559 \\ 
-	52 & TIM+F+I+G4 & -2244.418 & 103 & 4694.836 & 950.836 & 4726.112 & 966.112 \\ 
-	53 & TPM3u+F+I+G4 & -2246.03 & 102 & 4696.06 & 952.06 & 4726.69 & 966.69 \\ 
-	54 & TPM3+F+I+G4 & -2246.069 & 102 & 4696.138 & 952.138 & 4726.768 & 966.768 \\ 
-	55 & TIM2e+I+G4 & -2248.934 & 100 & 4697.868 & 953.868 & 4727.228 & 967.228 \\ 
-	56 & TNe+I+G4 & -2250.587 & 99 & 4699.174 & 955.174 & 4727.911 & 967.911 \\ 
-	57 & TIM3+F+I+G4 & -2245.534 & 103 & 4697.068 & 953.068 & 4728.344 & 968.344 \\ 
-	58 & K2P+I+G4 & -2252.181 & 98 & 4700.362 & 956.362 & 4728.484 & 968.484 \\ 
-	59 & TPM2u+F+I+G4 & -2247.579 & 102 & 4699.158 & 955.158 & 4729.788 & 969.788 \\ 
-	60 & TPM2+F+I+G4 & -2247.685 & 102 & 4699.371 & 955.371 & 4730 & 970 \\ 
-	61 & HKY+F+I+G4 & -2249.065 & 101 & 4700.13 & 956.13 & 4730.121 & 970.121 \\ 
-	62 & TIM2+F+I+G4 & -2247.009 & 103 & 4700.018 & 956.018 & 4731.294 & 971.294 \\ 
-	63 & TN+F+I+G4 & -2248.511 & 102 & 4701.023 & 957.023 & 4731.652 & 971.652 \\ 
-	64 & TVMe+I & -2254.804 & 100 & 4709.608 & 965.608 & 4738.968 & 978.968 \\ 
-	65 & K3P+I & -2257.72 & 98 & 4711.439 & 967.439 & 4739.561 & 979.561 \\ 
-	66 & SYM+I & -2254.11 & 101 & 4710.221 & 966.220 & 4740.212 & 980.212 \\ 
-	67 & TIMe+I & -2257.074 & 99 & 4712.149 & 968.149 & 4740.886 & 980.886 \\ 
-	68 & TVM+F+I & -2252.157 & 103 & 4710.315 & 966.315 & 4741.591 & 981.591 \\ 
-	69 & K3Pu+F+I & -2254.856 & 101 & 4711.712 & 967.712 & 4741.704 & 981.704 \\ 
-	70 & TIM3e+I & -2257.796 & 99 & 4713.592 & 969.592 & 4742.33 & 982.33 \\ 
-	71 & TPM3+F+I & -2255.771 & 101 & 4713.543 & 969.543 & 4743.534 & 983.534 \\ 
-	72 & TPM3u+F+I & -2255.771 & 101 & 4713.543 & 969.543 & 4743.534 & 983.534 \\ 
-	73 & K2P+I & -2261.218 & 97 & 4716.436 & 972.436 & 4743.949 & 983.949 \\ 
-	74 & GTR+F+I & -2252.067 & 104 & 4712.133 & 968.133 & 4744.063 & 984.063 \\ 
-	75 & TIM+F+I & -2254.783 & 102 & 4713.566 & 969.566 & 4744.195 & 984.195 \\ 
-	76 & TNe+I & -2260.579 & 98 & 4717.158 & 973.158 & 4745.28 & 985.28 \\ 
-	77 & TIM3+F+I & -2255.684 & 102 & 4715.368 & 971.368 & 4745.998 & 985.998 \\ 
-	78 & HKY+F+I & -2258.352 & 100 & 4716.703 & 972.703 & 4746.064 & 986.064 \\ 
-	79 & TIM2e+I & -2259.878 & 99 & 4717.757 & 973.757 & 4746.494 & 986.494 \\ 
-	80 & TVMe+G4 & -2258.853 & 100 & 4717.705 & 973.705 & 4747.066 & 987.066 \\ 
-	81 & SYM+G4 & -2257.573 & 101 & 4717.146 & 973.146 & 4747.137 & 987.137 \\ 
-	82 & TPM2+F+I & -2257.712 & 101 & 4717.423 & 973.423 & 4747.415 & 987.415 \\ 
-	83 & TPM2u+F+I & -2257.712 & 101 & 4717.423 & 973.423 & 4747.415 & 987.415 \\ 
-	84 & K3P+G4 & -2261.922 & 98 & 4719.844 & 975.844 & 4747.966 & 987.966 \\ 
-	85 & TIMe+G4 & -2260.683 & 99 & 4719.365 & 975.365 & 4748.103 & 988.103 \\ 
-	86 & TN+F+I & -2258.28 & 101 & 4718.561 & 974.561 & 4748.552 & 988.552 \\ 
-	87 & TIM3e+G4 & -2261.255 & 99 & 4720.51 & 976.51 & 4749.247 & 989.247 \\ 
-	88 & TVM+F+G4 & -2256.108 & 103 & 4718.216 & 974.216 & 4749.492 & 989.492 \\ 
-	89 & TIM2+F+I & -2257.643 & 102 & 4719.286 & 975.286 & 4749.915 & 989.915 \\ 
-	90 & K3Pu+F+G4 & -2258.971 & 101 & 4719.941 & 975.941 & 4749.933 & 989.933 \\ 
-	91 & TPM3u+F+G4 & -2259.716 & 101 & 4721.433 & 977.433 & 4751.424 & 991.424 \\ 
-	92 & TPM3+F+G4 & -2259.717 & 101 & 4721.434 & 977.434 & 4751.425 & 991.425 \\ 
-	93 & GTR+F+G4 & -2255.75 & 104 & 4719.5 & 975.5 & 4751.43 & 991.43 \\ 
-	94 & TIM+F+G4 & -2258.638 & 102 & 4721.276 & 977.276 & 4751.906 & 991.906 \\ 
-	95 & K2P+G4 & -2265.454 & 97 & 4724.907 & 980.907 & 4752.421 & 992.421 \\ 
-	96 & TNe+G4 & -2264.219 & 98 & 4724.437 & 980.437 & 4752.559 & 992.559 \\ 
-	97 & TIM3+F+G4 & -2259.366 & 102 & 4722.732 & 978.732 & 4753.361 & 993.361 \\ 
-	98 & TIM2e+G4 & -2263.57 & 99 & 4725.141 & 981.141 & 4753.878 & 993.878 \\ 
-	99 & JC+R2 & -2266.233 & 97 & 4726.466 & 982.466 & 4753.98 & 993.98 \\ 
-	100 & F81+F+R2 & -2262.327 & 100 & 4724.654 & 980.654 & 4754.015 & 994.015 \\ 
-	101 & HKY+F+G4 & -2262.499 & 100 & 4724.999 & 980.999 & 4754.359 & 994.359 \\ 
-	102 & TPM2+F+G4 & -2261.915 & 101 & 4725.829 & 981.829 & 4755.82 & 995.82 \\ 
-	103 & TPM2u+F+G4 & -2261.915 & 101 & 4725.829 & 981.829 & 4755.82 & 995.82 \\ 
-	104 & TN+F+G4 & -2262.169 & 101 & 4726.338 & 982.338 & 4756.329 & 996.329 \\ 
-	105 & TIM2+F+G4 & -2261.585 & 102 & 4727.17 & 983.17 & 4757.8 & 997.8 \\ 
-	106 & F81+F+R3 & -2262.028 & 102 & 4728.056 & 984.056 & 4758.685 & 998.685 \\ 
-	107 & JC+R3 & -2265.997 & 99 & 4729.994 & 985.994 & 4758.731 & 998.731 \\ 
-	108 & F81+F+I+G4 & -2274.845 & 100 & 4749.69 & 1005.69 & 4779.05 & 1019.05 \\ 
-	109 & JC+I+G4 & -2279.318 & 97 & 4752.636 & 1008.636 & 4780.149 & 1020.149 \\ 
-	110 & F81+F+I & -2283.56 & 99 & 4765.119 & 1021.119 & 4793.857 & 1033.857 \\ 
-	111 & JC+I & -2287.984 & 96 & 4767.968 & 1023.968 & 4794.881 & 1034.881 \\ 
-	112 & F81+F+G4 & -2287.834 & 99 & 4773.669 & 1029.669 & 4802.406 & 1042.406 \\ 
-	113 & JC+G4 & -2292.095 & 96 & 4776.19 & 1032.19 & 4803.103 & 1043.103 \\ 
-	114 & \gy+F1X4+R2 & -2242.963 & 102 & 4689.926 & 945.926 & 4821.251 & 1061.251 \\ 
-	115 & MGK+F1X4+R2 & -2243.111 & 102 & 4690.221 & 946.221 & 4821.546 & 1061.546 \\ 
-	116 & \gy+F1X4+R3 & -2238.022 & 104 & 4684.043 & 940.043 & 4822.271 & 1062.271 \\ 
-	117 & MGK+F3X4+R2 & -2229.923 & 108 & 4675.846 & 931.846 & 4828.729 & 1068.729 \\ 
-	118 & \gy+F1X4+I+G4 & -2247.179 & 102 & 4698.359 & 954.359 & 4829.684 & 1069.684 \\ 
-	119 & MGK+F1X4+I+G4 & -2247.292 & 102 & 4698.583 & 954.583 & 4829.908 & 1069.908 \\ 
-	120 & MGK+F1X4+R3 & -2241.989 & 104 & 4691.978 & 947.978 & 4830.206 & 1070.206 \\ 
-	121 & MGK+F3X4+R3 & -2224.78 & 110 & 4669.559 & 925.559 & 4830.217 & 1070.217 \\ 
-	122 & \gy+F1X4+G4 & -2251.144 & 101 & 4704.287 & 960.287 & 4832.263 & 1072.263 \\ 
-	123 & MGK+F1X4+G4 & -2251.472 & 101 & 4704.944 & 960.944 & 4832.919 & 1072.919 \\ 
-	124 & \gy+F3X4+R3 & -2227.048 & 110 & 4674.096 & 930.096 & 4834.754 & 1074.754 \\ 
-	125 & \gy+F3X4+R2 & -2233.068 & 108 & 4682.136 & 938.136 & 4835.019 & 1075.019 \\ 
-	126 & MGK+F3X4+I+G4 & -2233.539 & 108 & 4683.078 & 939.0781 & 4835.962 & 1075.962 \\ 
-	127 & MGK+F3X4+G4 & -2237.512 & 107 & 4689.024 & 945.024 & 4838.134 & 1078.134 \\ 
-	128 & \gy+F3X4+I+G4 & -2238.243 & 108 & 4692.485 & 948.485 & 4845.368 & 1085.368 \\ 
-	129 & \gy+F3X4+R4 & -2227.106 & 112 & 4678.213 & 934.213 & 4846.96 & 1086.96 \\ 
-	130 & \gy+F3X4+G4 & -2242.394 & 107 & 4698.789 & 954.789 & 4847.899 & 1087.899 \\ 
-	131 & \gy+F1X4+I & -2260.085 & 101 & 4722.169 & 978.169 & 4850.144 & 1090.144 \\ 
-	132 & MGK+F1X4+I & -2260.345 & 101 & 4722.69 & 978.69 & 4850.665 & 1090.665 \\ 
-	133 & MGK+F3X4+I & -2246.112 & 107 & 4706.225 & 962.225 & 4855.335 & 1095.335 \\ 
-	134 & MG+F1X4+R2 & -2268.482 & 101 & 4738.963 & 994.963 & 4866.938 & 1106.938 \\ 
-	135 & \gy+F3X4+I & -2252.532 & 107 & 4719.064 & 975.064 & 4868.174 & 1108.174 \\ 
-	136 & MG+F3X4+R2 & -2254.453 & 107 & 4722.906 & 978.906 & 4872.015 & 1112.015 \\ 
-	137 & MG+F1X4+I+G4 & -2272.057 & 101 & 4746.113 & 1002.113 & 4874.089 & 1114.089 \\ 
-	138 & MG+F1X4+R3 & -2267.523 & 103 & 4741.047 & 997.047 & 4875.789 & 1115.789 \\ 
-	139 & MG+F1X4+G4 & -2276.171 & 100 & 4752.342 & 1008.342 & 4877.033 & 1117.033 \\ 
-	140 & MG+F3X4+I+G4 & -2257.945 & 107 & 4729.891 & 985.891 & 4879.001 & 1119.001 \\ 
-	141 & MG+F3X4+G4 & -2261.949 & 106 & 4735.898 & 991.898 & 4881.309 & 1121.309 \\ 
-	142 & MG+F3X4+R3 & -2253.514 & 109 & 4725.027 & 981.027 & 4881.759 & 1121.759 \\ 
-	143 & SYM & -2329.878 & 100 & 4859.756 & 1115.756 & 4889.116 & 1129.116 \\ 
-	144 & TIMe & -2333.105 & 98 & 4862.21 & 1118.21 & 4890.332 & 1130.332 \\ 
-	145 & TIM3e & -2333.481 & 98 & 4862.961 & 1118.961 & 4891.083 & 1131.083 \\ 
-	146 & TVMe & -2333.164 & 99 & 4864.328 & 1120.328 & 4893.065 & 1133.065 \\ 
-	147 & GTR+F & -2328.404 & 103 & 4862.809 & 1118.809 & 4894.085 & 1134.085 \\ 
-	148 & K3P & -2336.391 & 97 & 4866.783 & 1122.783 & 4894.297 & 1134.297 \\ 
-	149 & MG+F1X4+I & -2284.946 & 100 & 4769.892 & 1025.892 & 4894.583 & 1134.583 \\ 
-	150 & TVM+F & -2330.086 & 102 & 4864.172 & 1120.172 & 4894.802 & 1134.802 \\ 
-	151 & TIM+F & -2331.48 & 101 & 4864.96 & 1120.96 & 4894.952 & 1134.952 \\ 
-	152 & TNe & -2336.729 & 97 & 4867.458 & 1123.458 & 4894.972 & 1134.972 \\ 
-	153 & K3Pu+F & -2333.162 & 100 & 4866.323 & 1122.323 & 4895.684 & 1135.684 \\ 
-	154 & TIM3+F & -2331.971 & 101 & 4865.942 & 1121.942 & 4895.934 & 1135.934 \\ 
-	155 & TPM3+F & -2333.648 & 100 & 4867.297 & 1123.297 & 4896.657 & 1136.657 \\ 
-	156 & TPM3u+F & -2333.648 & 100 & 4867.297 & 1123.297 & 4896.657 & 1136.657 \\ 
-	157 & TIM2e & -2336.292 & 98 & 4868.584 & 1124.584 & 4896.706 & 1136.706 \\ 
-	158 & MG+F3X4+I & -2270.442 & 106 & 4752.885 & 1008.885 & 4898.295 & 1138.295 \\ 
-	159 & K2P & -2340.015 & 96 & 4872.03 & 1128.03 & 4898.943 & 1138.943 \\ 
-	160 & TN+F & -2335.102 & 100 & 4870.204 & 1126.204 & 4899.565 & 1139.565 \\ 
-	161 & HKY+F & -2336.783 & 99 & 4871.566 & 1127.566 & 4900.303 & 1140.303 \\ 
-	162 & TIM2+F & -2334.7 & 101 & 4871.401 & 1127.401 & 4901.392 & 1141.392 \\ 
-	163 & TPM2u+F & -2336.381 & 100 & 4872.761 & 1128.761 & 4902.122 & 1142.122 \\ 
-	164 & TPM2+F & -2336.381 & 100 & 4872.762 & 1128.762 & 4902.123 & 1142.123 \\ 
-	165 & JC & -2366.286 & 95 & 4922.571 & 1178.571 & 4948.892 & 1188.892 \\ 
-	166 & F81+F & -2362.554 & 98 & 4921.108 & 1177.108 & 4949.229 & 1189.229 \\ 
-	167 & \gy+F1X4 & -2315.788 & 100 & 4831.575 & 1087.575 & 4956.267 & 1196.267 \\ 
-	168 & KOSI07+FU+R2 & -2325.725 & 97 & 4845.45 & 1101.45 & 4960.675 & 1200.675 \\ 
-	169 & MGK+F1X4 & -2318.048 & 100 & 4836.095 & 1092.095 & 4960.787 & 1200.787 \\ 
-	170 & KOSI07+FU+R3 & -2323.063 & 99 & 4844.126 & 1100.126 & 4965.599 & 1205.599 \\ 
-	171 & MGK+F3X4 & -2304.357 & 106 & 4820.713 & 1076.713 & 4966.124 & 1206.124 \\ 
-	172 & \gy+F3X4 & -2306.17 & 106 & 4824.339 & 1080.339 & 4969.749 & 1209.749 \\ 
-	173 & KOSI07+FU+I+G4 & -2335.554 & 97 & 4865.108 & 1121.108 & 4980.332 & 1220.332 \\ 
-	174 & KOSI07+FU+G4 & -2339.513 & 96 & 4871.026 & 1127.026 & 4983.218 & 1223.218 \\ 
-	175 & KOSI07+F3X4+R2 & -2315.814 & 106 & 4843.627 & 1099.627 & 4989.038 & 1229.038 \\ 
-	176 & KOSI07+F3X4+R3 & -2310.509 & 108 & 4837.018 & 1093.018 & 4989.901 & 1229.901 \\ 
-	177 & KOSI07+F1X4+R2 & -2333.491 & 100 & 4866.983 & 1122.983 & 4991.674 & 1231.674 \\ 
-	178 & KOSI07+F1X4+R3 & -2328.692 & 102 & 4861.383 & 1117.383 & 4992.708 & 1232.708 \\ 
-	179 & SCHN05+FU+R2 & -2344.705 & 97 & 4883.411 & 1139.411 & 4998.635 & 1238.635 \\ 
-	180 & KOSI07+F1X4+I+G4 & -2337.965 & 100 & 4875.93 & 1131.93 & 5000.621 & 1240.621 \\ 
-	181 & KOSI07+F1X4+G4 & -2341.156 & 99 & 4880.312 & 1136.312 & 5001.784 & 1241.784 \\ 
-	182 & SCHN05+FU+R3 & -2341.179 & 99 & 4880.358 & 1136.358 & 5001.831 & 1241.831 \\ 
-	183 & KOSI07+FU+I & -2349.617 & 96 & 4891.233 & 1147.233 & 5003.426 & 1243.426 \\ 
-	184 & KOSI07+F3X4+I+G4 & -2323.767 & 106 & 4859.534 & 1115.534 & 5004.944 & 1244.944 \\ 
-	185 & MG+F1X4 & -2342.797 & 99 & 4883.593 & 1139.593 & 5005.065 & 1245.065 \\ 
-	186 & KOSI07+F3X4+G4 & -2327.376 & 105 & 4864.751 & 1120.751 & 5006.534 & 1246.534 \\ 
-	187 & MG+F3X4 & -2328.539 & 105 & 4867.078 & 1123.078 & 5008.861 & 1248.861 \\ 
-	188 & SCHN05+F1X4+R3 & -2340.927 & 102 & 4885.854 & 1141.854 & 5017.179 & 1257.179 \\ 
-	189 & KOSI07+F1X4+I & -2349.1 & 99 & 4896.2 & 1152.2 & 5017.672 & 1257.672 \\ 
-	190 & SCHN05+F3X4+R3 & -2324.472 & 108 & 4864.944 & 1120.944 & 5017.827 & 1257.827 \\ 
-	191 & SCHN05+FU+I+G4 & -2354.523 & 97 & 4903.046 & 1159.046 & 5018.27 & 1258.27 \\ 
-	192 & SCHN05+F1X4+R2 & -2348.226 & 100 & 4896.452 & 1152.452 & 5021.143 & 1261.143 \\ 
-	193 & SCHN05+F3X4+R2 & -2331.916 & 106 & 4875.833 & 1131.833 & 5021.243 & 1261.243 \\ 
-	194 & SCHN05+FU+G4 & -2358.682 & 96 & 4909.365 & 1165.365 & 5021.558 & 1261.558 \\ 
-	195 & KOSI07+F3X4+I & -2336.826 & 105 & 4883.653 & 1139.653 & 5025.436 & 1265.436 \\ 
-	196 & SCHN05+F1X4+I+G4 & -2351.096 & 100 & 4902.192 & 1158.192 & 5026.883 & 1266.883 \\ 
-	197 & SCHN05+F1X4+G4 & -2353.895 & 99 & 4905.79 & 1161.79 & 5027.263 & 1267.263 \\ 
-	198 & SCHN05+F1X4+R4 & -2340.593 & 104 & 4889.187 & 1145.187 & 5027.414 & 1267.414 \\ 
-	199 & SCHN05+F3X4+R4 & -2324.102 & 110 & 4868.203 & 1124.203 & 5028.861 & 1268.861 \\ 
-	200 & SCHN05+F3X4+I+G4 & -2338.345 & 106 & 4888.69 & 1144.69 & 5034.101 & 1274.101 \\ 
-	201 & SCHN05+F3X4+G4 & -2341.811 & 105 & 4893.621 & 1149.621 & 5035.404 & 1275.404 \\ 
-	202 & SCHN05+FU+I & -2370.471 & 96 & 4932.943 & 1188.943 & 5045.135 & 1285.135 \\ 
-	203 & SCHN05+F1X4+I & -2363.696 & 99 & 4925.391 & 1181.391 & 5046.864 & 1286.864 \\ 
-	204 & SCHN05+F3X4+I & -2352.81 & 105 & 4915.621 & 1171.621 & 5057.404 & 1297.404 \\ 
-	205 & KOSI07+FU & -2394.782 & 95 & 4979.563 & 1235.563 & 5088.785 & 1328.785 \\ 
-	206 & KOSI07+F1X4 & -2398.44 & 98 & 4992.88 & 1248.88 & 5111.197 & 1351.197 \\ 
-	207 & KOSI07+F3X4 & -2383.159 & 104 & 4974.318 & 1230.318 & 5112.546 & 1352.546 \\ 
-	208 & SCHN05+FU & -2419.333 & 95 & 5028.665 & 1284.665 & 5137.887 & 1377.887 \\ 
-	209 & SCHN05+F1X4 & -2416.544 & 98 & 5029.088 & 1285.088 & 5147.405 & 1387.405 \\ 
-	210 & SCHN05+F3X4 & -2402.838 & 104 & 5013.675 & 1269.675 & 5151.903 & 1391.903 \\ 
-	211 & \gy+F+R2 & -2208.59 & 159 & 4735.181 & 991.181 & 5229.161 & 1469.161 \\ 
-	212 & \gy+F+G4 & -2217.694 & 158 & 4751.388 & 1007.388 & 5234.504 & 1474.504 \\ 
-	213 & \gy+F+I+G4 & -2213.659 & 159 & 4745.319 & 1001.319 & 5239.299 & 1479.299 \\ 
-	214 & \gy+F+R3 & -2202.599 & 161 & 4727.198 & 983.198 & 5243.673 & 1483.673 \\ 
-	215 & \gy+F+I & -2228.346 & 158 & 4772.691 & 1028.691 & 5255.807 & 1495.807 \\ 
-	216 & \gy+F+R4 & -2202.61 & 163 & 4731.219 & 987.219 & 5271.26 & 1511.26 \\ 
-	217 & \gy+F & -2282.254 & 157 & 4878.509 & 1134.509 & 5351.004 & 1591.004 \\ 
-	218 & KOSI07+F+R2 & -2291.643 & 157 & 4897.286 & 1153.286 & 5369.781 & 1609.781 \\ 
-	219 & KOSI07+F+G4 & -2301.662 & 156 & 4915.325 & 1171.325 & 5377.438 & 1617.438 \\ 
-	220 & KOSI07+F+I+G4 & -2298.418 & 157 & 4910.835 & 1166.835 & 5383.33 & 1623.33 \\ 
-	221 & KOSI07+F+R3 & -2286.723 & 159 & 4891.446 & 1147.446 & 5385.426 & 1625.426 \\ 
-	222 & KOSI07+F+I & -2311.78 & 156 & 4935.559 & 1191.559 & 5397.672 & 1637.672 \\ 
-	223 & SCHN05+F+R2 & -2310.015 & 157 & 4934.03 & 1190.03 & 5406.525 & 1646.525 \\ 
-	224 & SCHN05+F+G4 & -2316.684 & 156 & 4945.369 & 1201.369 & 5407.482 & 1647.482 \\ 
-	225 & SCHN05+F+I+G4 & -2313.733 & 157 & 4941.467 & 1197.467 & 5413.962 & 1653.962 \\ 
-	226 & SCHN05+F+R3 & -2303.732 & 159 & 4925.463 & 1181.463 & 5419.444 & 1659.444 \\ 
-	227 & SCHN05+F+I & -2327.127 & 156 & 4966.254 & 1222.254 & 5428.367 & 1668.367 \\ 
-	228 & SCHN05+F+R4 & -2303.45 & 161 & 4928.9 & 1184.9 & 5445.375 & 1685.375 \\ 
-	229 & KOSI07+F & -2357.579 & 155 & 5025.157 & 1281.157 & 5477.12 & 1717.12 \\ 
-	230 & SCHN05+F & -2379.264 & 155 & 5068.528 & 1324.528 & 5520.491 & 1760.491 \\
+	1 & \selac+G4 & -1497.971 & 374 & 3743.942 & 0 \\ 
+	2 & \phydms & -2060.85 & 102 & 4325.7 & 582 \\ 
+	3 & SYM+R2 & -2205.877 & 102 & 4615.754 & 871.754 \\ 
+	4 & TIMe+R2 & -2232.406 & 100 & 4664.811 & 920.811 \\ 
+	5 & TVMe+R2 & -2232.838 & 101 & 4667.677 & 923.677 \\ 
+	6 & TIM3e+R2 & -2234.332 & 100 & 4668.664 & 924.664 \\ 
+	7 & TIM2e+R2 & -2234.381 & 100 & 4668.763 & 924.763 \\ 
+	8 & K3P+R2 & -2235.777 & 99 & 4669.553 & 925.553 \\ 
+	9 & TNe+R2 & -2236.078 & 99 & 4670.155 & 926.155 \\ 
+	10 & SYM+R3 & -2229.616 & 104 & 4667.232 & 923.232 \\ 
+	11 & TIM+F+R2 & -2230.958 & 103 & 4667.915 & 923.915 \\ 
+	12 & TIMe+R3 & -2232.404 & 102 & 4668.808 & 924.808 \\ 
+	13 & GTR+F+R2 & -2228.537 & 105 & 4667.073 & 923.073 \\ 
+	14 & K3Pu+F+R2 & -2232.617 & 102 & 4669.234 & 925.234 \\ 
+	15 & TVM+F+R2 & -2230.105 & 104 & 4668.21 & 924.21 \\ 
+	16 & TVMe+R3 & -2232.838 & 103 & 4671.676 & 927.676 \\ 
+	17 & K2P+R2 & -2239.424 & 98 & 4674.847 & 930.847 \\ 
+	18 & TIM3e+R3 & -2234.332 & 102 & 4672.664 & 928.664 \\ 
+	19 & TIM2e+R3 & -2234.381 & 102 & 4672.762 & 928.762 \\ 
+	20 & TIM3+F+R2 & -2233.064 & 103 & 4672.127 & 928.127 \\ 
+	21 & TIM2+F+R2 & -2233.114 & 103 & 4672.227 & 928.227 \\ 
+	22 & K3P+R3 & -2235.777 & 101 & 4673.553 & 929.553 \\ 
+	23 & TN+F+R2 & -2234.624 & 102 & 4673.249 & 929.249 \\ 
+	24 & TPM3u+F+R2 & -2234.673 & 102 & 4673.347 & 929.347 \\ 
+	25 & TPM3+F+R2 & -2234.674 & 102 & 4673.348 & 929.348 \\ 
+	26 & TPM2u+F+R2 & -2234.681 & 102 & 4673.363 & 929.363 \\ 
+	27 & TPM2+F+R2 & -2234.683 & 102 & 4673.365 & 929.365 \\ 
+	28 & TNe+R3 & -2236.077 & 101 & 4674.155 & 930.155 \\ 
+	29 & TIM+F+R3 & -2230.958 & 105 & 4671.915 & 927.915 \\ 
+	30 & HKY+F+R2 & -2236.266 & 101 & 4674.531 & 930.531 \\ 
+	31 & GTR+F+R3 & -2228.536 & 107 & 4671.073 & 927.073 \\ 
+	32 & K3Pu+F+R3 & -2232.617 & 104 & 4673.234 & 929.234 \\ 
+	33 & TVM+F+R3 & -2230.105 & 106 & 4672.21 & 928.21 \\ 
+	34 & K2P+R3 & -2239.192 & 100 & 4678.384 & 934.384 \\ 
+	35 & TIM3+F+R3 & -2233.063 & 105 & 4676.127 & 932.127 \\ 
+	36 & TIM2+F+R3 & -2233.113 & 105 & 4676.227 & 932.227 \\ 
+	37 & TN+F+R3 & -2234.624 & 104 & 4677.249 & 933.249 \\ 
+	38 & TPM3u+F+R3 & -2234.673 & 104 & 4677.347 & 933.347 \\ 
+	39 & TPM3+F+R3 & -2234.674 & 104 & 4677.348 & 933.348 \\ 
+	40 & TPM2u+F+R3 & -2234.681 & 104 & 4677.363 & 933.363 \\ 
+	41 & TPM2+F+R3 & -2234.682 & 104 & 4677.364 & 933.364 \\ 
+	42 & HKY+F+R3 & -2236.074 & 103 & 4678.148 & 934.148 \\ 
+	43 & SYM+I+G4 & -2243.212 & 102 & 4690.424 & 946.424 \\ 
+	44 & TVMe+I+G4 & -2244.533 & 101 & 4691.066 & 947.066 \\ 
+	45 & TIMe+I+G4 & -2246.457 & 100 & 4692.914 & 948.914 \\ 
+	46 & K3P+I+G4 & -2248.166 & 99 & 4694.332 & 950.332 \\ 
+	47 & TVM+F+I+G4 & -2241.853 & 104 & 4691.707 & 947.707 \\ 
+	48 & TIM3e+I+G4 & -2247.379 & 100 & 4694.758 & 950.758 \\ 
+	49 & K3Pu+F+I+G4 & -2245.156 & 102 & 4694.311 & 950.311 \\ 
+	50 & GTR+F+I+G4 & -2241.484 & 105 & 4692.968 & 948.968 \\ 
+	51 & TIM+F+I+G4 & -2244.418 & 103 & 4694.836 & 950.836 \\ 
+	52 & TPM3u+F+I+G4 & -2246.03 & 102 & 4696.06 & 952.06 \\ 
+	53 & TPM3+F+I+G4 & -2246.069 & 102 & 4696.138 & 952.138 \\ 
+	54 & TIM2e+I+G4 & -2248.934 & 100 & 4697.868 & 953.868 \\ 
+	55 & TNe+I+G4 & -2250.587 & 99 & 4699.174 & 955.174 \\ 
+	56 & TIM3+F+I+G4 & -2245.534 & 103 & 4697.068 & 953.068 \\ 
+	57 & K2P+I+G4 & -2252.181 & 98 & 4700.362 & 956.362 \\ 
+	58 & TPM2u+F+I+G4 & -2247.579 & 102 & 4699.158 & 955.158 \\ 
+	59 & TPM2+F+I+G4 & -2247.685 & 102 & 4699.371 & 955.371 \\ 
+	60 & HKY+F+I+G4 & -2249.065 & 101 & 4700.13 & 956.13 \\ 
+	61 & TIM2+F+I+G4 & -2247.009 & 103 & 4700.018 & 956.018 \\ 
+	62 & TN+F+I+G4 & -2248.511 & 102 & 4701.023 & 957.023 \\ 
+	63 & TVMe+I & -2254.804 & 100 & 4709.608 & 965.608 \\ 
+	64 & K3P+I & -2257.72 & 98 & 4711.439 & 967.439 \\ 
+	65 & SYM+I & -2254.11 & 101 & 4710.221 & 966.220 \\ 
+	66 & TIMe+I & -2257.074 & 99 & 4712.149 & 968.149 \\ 
+	67 & TVM+F+I & -2252.157 & 103 & 4710.315 & 966.315 \\ 
+	68 & K3Pu+F+I & -2254.856 & 101 & 4711.712 & 967.712 \\ 
+	69 & TIM3e+I & -2257.796 & 99 & 4713.592 & 969.592 \\ 
+	70 & TPM3+F+I & -2255.771 & 101 & 4713.543 & 969.543 \\ 
+	71 & TPM3u+F+I & -2255.771 & 101 & 4713.543 & 969.543 \\ 
+	72 & K2P+I & -2261.218 & 97 & 4716.436 & 972.436 \\ 
+	73 & GTR+F+I & -2252.067 & 104 & 4712.133 & 968.133 \\ 
+	74 & TIM+F+I & -2254.783 & 102 & 4713.566 & 969.566 \\ 
+	75 & TNe+I & -2260.579 & 98 & 4717.158 & 973.158 \\ 
+	76 & TIM3+F+I & -2255.684 & 102 & 4715.368 & 971.368 \\ 
+	77 & HKY+F+I & -2258.352 & 100 & 4716.703 & 972.703 \\ 
+	78 & TIM2e+I & -2259.878 & 99 & 4717.757 & 973.757 \\ 
+	79 & TVMe+G4 & -2258.853 & 100 & 4717.705 & 973.705 \\ 
+	80 & SYM+G4 & -2257.573 & 101 & 4717.146 & 973.146 \\ 
+	81 & TPM2+F+I & -2257.712 & 101 & 4717.423 & 973.423 \\ 
+	82 & TPM2u+F+I & -2257.712 & 101 & 4717.423 & 973.423 \\ 
+	83 & K3P+G4 & -2261.922 & 98 & 4719.844 & 975.844 \\ 
+	84 & TIMe+G4 & -2260.683 & 99 & 4719.365 & 975.365 \\ 
+	85 & TN+F+I & -2258.28 & 101 & 4718.561 & 974.561 \\ 
+	86 & TIM3e+G4 & -2261.255 & 99 & 4720.51 & 976.51 \\ 
+	87 & TVM+F+G4 & -2256.108 & 103 & 4718.216 & 974.216 \\ 
+	88 & TIM2+F+I & -2257.643 & 102 & 4719.286 & 975.286 \\ 
+	89 & K3Pu+F+G4 & -2258.971 & 101 & 4719.941 & 975.941 \\ 
+	90 & TPM3u+F+G4 & -2259.716 & 101 & 4721.433 & 977.433 \\ 
+	91 & TPM3+F+G4 & -2259.717 & 101 & 4721.434 & 977.434 \\ 
+	92 & GTR+F+G4 & -2255.75 & 104 & 4719.5 & 975.5 \\ 
+	93 & TIM+F+G4 & -2258.638 & 102 & 4721.276 & 977.276 \\ 
+	94 & K2P+G4 & -2265.454 & 97 & 4724.907 & 980.907 \\ 
+	95 & TNe+G4 & -2264.219 & 98 & 4724.437 & 980.437 \\ 
+	96 & TIM3+F+G4 & -2259.366 & 102 & 4722.732 & 978.732 \\ 
+	97 & TIM2e+G4 & -2263.57 & 99 & 4725.141 & 981.141 \\ 
+	98 & JC+R2 & -2266.233 & 97 & 4726.466 & 982.466 \\ 
+	99 & F81+F+R2 & -2262.327 & 100 & 4724.654 & 980.654 \\ 
+	100 & HKY+F+G4 & -2262.499 & 100 & 4724.999 & 980.999 \\ 
+	101 & TPM2+F+G4 & -2261.915 & 101 & 4725.829 & 981.829 \\ 
+	102 & TPM2u+F+G4 & -2261.915 & 101 & 4725.829 & 981.829 \\ 
+	103 & TN+F+G4 & -2262.169 & 101 & 4726.338 & 982.338 \\ 
+	104 & TIM2+F+G4 & -2261.585 & 102 & 4727.17 & 983.17 \\ 
+	105 & F81+F+R3 & -2262.028 & 102 & 4728.056 & 984.056 \\ 
+	106 & JC+R3 & -2265.997 & 99 & 4729.994 & 985.994 \\ 
+	107 & F81+F+I+G4 & -2274.845 & 100 & 4749.69 & 1005.69 \\ 
+	108 & JC+I+G4 & -2279.318 & 97 & 4752.636 & 1008.636 \\ 
+	109 & F81+F+I & -2283.56 & 99 & 4765.119 & 1021.119 \\ 
+	110 & JC+I & -2287.984 & 96 & 4767.968 & 1023.968 \\ 
+	111 & F81+F+G4 & -2287.834 & 99 & 4773.669 & 1029.669 \\ 
+	112 & JC+G4 & -2292.095 & 96 & 4776.19 & 1032.19 \\ 
+	113 & \gy+F1X4+R2 & -2242.963 & 102 & 4689.926 & 945.926 \\ 
+	114 & MGK+F1X4+R2 & -2243.111 & 102 & 4690.221 & 946.221 \\ 
+	115 & \gy+F1X4+R3 & -2238.022 & 104 & 4684.043 & 940.043 \\ 
+	116 & MGK+F3X4+R2 & -2229.923 & 108 & 4675.846 & 931.846 \\ 
+	117 & \gy+F1X4+I+G4 & -2247.179 & 102 & 4698.359 & 954.359 \\ 
+	118 & MGK+F1X4+I+G4 & -2247.292 & 102 & 4698.583 & 954.583 \\ 
+	119 & MGK+F1X4+R3 & -2241.989 & 104 & 4691.978 & 947.978 \\ 
+	120 & MGK+F3X4+R3 & -2224.78 & 110 & 4669.559 & 925.559 \\ 
+	121 & \gy+F1X4+G4 & -2251.144 & 101 & 4704.287 & 960.287 \\ 
+	122 & MGK+F1X4+G4 & -2251.472 & 101 & 4704.944 & 960.944 \\ 
+	123 & \gy+F3X4+R3 & -2227.048 & 110 & 4674.096 & 930.096 \\ 
+	124 & \gy+F3X4+R2 & -2233.068 & 108 & 4682.136 & 938.136 \\ 
+	125 & MGK+F3X4+I+G4 & -2233.539 & 108 & 4683.078 & 939.0781 \\ 
+	126 & MGK+F3X4+G4 & -2237.512 & 107 & 4689.024 & 945.024 \\ 
+	127 & \gy+F3X4+I+G4 & -2238.243 & 108 & 4692.485 & 948.485 \\ 
+	128 & \gy+F3X4+R4 & -2227.106 & 112 & 4678.213 & 934.213 \\ 
+	129 & \gy+F3X4+G4 & -2242.394 & 107 & 4698.789 & 954.789 \\ 
+	130 & \gy+F1X4+I & -2260.085 & 101 & 4722.169 & 978.169 \\ 
+	131 & MGK+F1X4+I & -2260.345 & 101 & 4722.69 & 978.69 \\ 
+	132 & MGK+F3X4+I & -2246.112 & 107 & 4706.225 & 962.225 \\ 
+	133 & MG+F1X4+R2 & -2268.482 & 101 & 4738.963 & 994.963 \\ 
+	134 & \gy+F3X4+I & -2252.532 & 107 & 4719.064 & 975.064 \\ 
+	135 & MG+F3X4+R2 & -2254.453 & 107 & 4722.906 & 978.906 \\ 
+	136 & MG+F1X4+I+G4 & -2272.057 & 101 & 4746.113 & 1002.113 \\ 
+	137 & MG+F1X4+R3 & -2267.523 & 103 & 4741.047 & 997.047 \\ 
+	138 & MG+F1X4+G4 & -2276.171 & 100 & 4752.342 & 1008.342 \\ 
+	139 & MG+F3X4+I+G4 & -2257.945 & 107 & 4729.891 & 985.891 \\ 
+	140 & MG+F3X4+G4 & -2261.949 & 106 & 4735.898 & 991.898 \\ 
+	141 & MG+F3X4+R3 & -2253.514 & 109 & 4725.027 & 981.027 \\ 
+	142 & SYM & -2329.878 & 100 & 4859.756 & 1115.756 \\ 
+	143 & TIMe & -2333.105 & 98 & 4862.21 & 1118.21 \\ 
+	144 & TIM3e & -2333.481 & 98 & 4862.961 & 1118.961 \\ 
+	145 & TVMe & -2333.164 & 99 & 4864.328 & 1120.328 \\ 
+	146 & GTR+F & -2328.404 & 103 & 4862.809 & 1118.809 \\ 
+	147 & K3P & -2336.391 & 97 & 4866.783 & 1122.783 \\ 
+	148 & MG+F1X4+I & -2284.946 & 100 & 4769.892 & 1025.892 \\ 
+	149 & TVM+F & -2330.086 & 102 & 4864.172 & 1120.172 \\ 
+	150 & TIM+F & -2331.48 & 101 & 4864.96 & 1120.96 \\ 
+	151 & TNe & -2336.729 & 97 & 4867.458 & 1123.458 \\ 
+	152 & K3Pu+F & -2333.162 & 100 & 4866.323 & 1122.323 \\ 
+	153 & TIM3+F & -2331.971 & 101 & 4865.942 & 1121.942 \\ 
+	154 & TPM3+F & -2333.648 & 100 & 4867.297 & 1123.297 \\ 
+	155 & TPM3u+F & -2333.648 & 100 & 4867.297 & 1123.297 \\ 
+	156 & TIM2e & -2336.292 & 98 & 4868.584 & 1124.584 \\ 
+	157 & MG+F3X4+I & -2270.442 & 106 & 4752.885 & 1008.885 \\ 
+	158 & K2P & -2340.015 & 96 & 4872.03 & 1128.03 \\ 
+	159 & TN+F & -2335.102 & 100 & 4870.204 & 1126.204 \\ 
+	160 & HKY+F & -2336.783 & 99 & 4871.566 & 1127.566 \\ 
+	161 & TIM2+F & -2334.7 & 101 & 4871.401 & 1127.401 \\ 
+	162 & TPM2u+F & -2336.381 & 100 & 4872.761 & 1128.761 \\ 
+	163 & TPM2+F & -2336.381 & 100 & 4872.762 & 1128.762 \\ 
+	164 & JC & -2366.286 & 95 & 4922.571 & 1178.571 \\ 
+	165 & F81+F & -2362.554 & 98 & 4921.108 & 1177.108 \\ 
+	166 & \gy+F1X4 & -2315.788 & 100 & 4831.575 & 1087.575 \\ 
+	167 & KOSI07+FU+R2 & -2325.725 & 97 & 4845.45 & 1101.45 \\ 
+	168 & MGK+F1X4 & -2318.048 & 100 & 4836.095 & 1092.095 \\ 
+	169 & KOSI07+FU+R3 & -2323.063 & 99 & 4844.126 & 1100.126 \\ 
+	170 & MGK+F3X4 & -2304.357 & 106 & 4820.713 & 1076.713 \\ 
+	171 & \gy+F3X4 & -2306.17 & 106 & 4824.339 & 1080.339 \\ 
+	172 & KOSI07+FU+I+G4 & -2335.554 & 97 & 4865.108 & 1121.108 \\ 
+	173 & KOSI07+FU+G4 & -2339.513 & 96 & 4871.026 & 1127.026 \\ 
+	174 & KOSI07+F3X4+R2 & -2315.814 & 106 & 4843.627 & 1099.627 \\ 
+	175 & KOSI07+F3X4+R3 & -2310.509 & 108 & 4837.018 & 1093.018 \\ 
+	176 & KOSI07+F1X4+R2 & -2333.491 & 100 & 4866.983 & 1122.983 \\ 
+	177 & KOSI07+F1X4+R3 & -2328.692 & 102 & 4861.383 & 1117.383 \\ 
+	178 & SCHN05+FU+R2 & -2344.705 & 97 & 4883.411 & 1139.411 \\ 
+	179 & KOSI07+F1X4+I+G4 & -2337.965 & 100 & 4875.93 & 1131.93 \\ 
+	180 & KOSI07+F1X4+G4 & -2341.156 & 99 & 4880.312 & 1136.312 \\ 
+	181 & SCHN05+FU+R3 & -2341.179 & 99 & 4880.358 & 1136.358 \\ 
+	182 & KOSI07+FU+I & -2349.617 & 96 & 4891.233 & 1147.233 \\ 
+	183 & KOSI07+F3X4+I+G4 & -2323.767 & 106 & 4859.534 & 1115.534 \\ 
+	184 & MG+F1X4 & -2342.797 & 99 & 4883.593 & 1139.593 & \\ 
+	185 & KOSI07+F3X4+G4 & -2327.376 & 105 & 4864.751 & 1120.751 \\ 
+	186 & MG+F3X4 & -2328.539 & 105 & 4867.078 & 1123.078 \\ 
+	187 & SCHN05+F1X4+R3 & -2340.927 & 102 & 4885.854 & 1141.854 \\ 
+	188 & KOSI07+F1X4+I & -2349.1 & 99 & 4896.2 & 1152.2 & \\ 
+	189 & SCHN05+F3X4+R3 & -2324.472 & 108 & 4864.944 & 1120.944 \\ 
+	190 & SCHN05+FU+I+G4 & -2354.523 & 97 & 4903.046 & 1159.046 \\ 
+	191 & SCHN05+F1X4+R2 & -2348.226 & 100 & 4896.452 & 1152.452 \\ 
+	192 & SCHN05+F3X4+R2 & -2331.916 & 106 & 4875.833 & 1131.833 \\ 
+	193 & SCHN05+FU+G4 & -2358.682 & 96 & 4909.365 & 1165.365 \\ 
+	194 & KOSI07+F3X4+I & -2336.826 & 105 & 4883.653 & 1139.653 \\ 
+	195 & SCHN05+F1X4+I+G4 & -2351.096 & 100 & 4902.192 & 1158.192 \\ 
+	196 & SCHN05+F1X4+G4 & -2353.895 & 99 & 4905.79 & 1161.79 \\ 
+	197 & SCHN05+F1X4+R4 & -2340.593 & 104 & 4889.187 & 1145.187 \\ 
+	198 & SCHN05+F3X4+R4 & -2324.102 & 110 & 4868.203 & 1124.203 \\ 
+	299 & SCHN05+F3X4+I+G4 & -2338.345 & 106 & 4888.69 & 1144.69 \\ 
+	200 & SCHN05+F3X4+G4 & -2341.811 & 105 & 4893.621 & 1149.621 \\ 
+	201 & SCHN05+FU+I & -2370.471 & 96 & 4932.943 & 1188.943 \\ 
+	202 & SCHN05+F1X4+I & -2363.696 & 99 & 4925.391 & 1181.391 \\ 
+	203 & SCHN05+F3X4+I & -2352.81 & 105 & 4915.621 & 1171.621 \\ 
+	204 & KOSI07+FU & -2394.782 & 95 & 4979.563 & 1235.563 \\ 
+	205 & KOSI07+F1X4 & -2398.44 & 98 & 4992.88 & 1248.88 \\ 
+	206 & KOSI07+F3X4 & -2383.159 & 104 & 4974.318 & 1230.318 \\ 
+	207 & SCHN05+FU & -2419.333 & 95 & 5028.665 & 1284.665 \\ 
+	208 & SCHN05+F1X4 & -2416.544 & 98 & 5029.088 & 1285.088 \\ 
+	209 & SCHN05+F3X4 & -2402.838 & 104 & 5013.675 & 1269.675 \\ 
+	210 & \gy+F+R2 & -2208.59 & 159 & 4735.181 & 991.181 \\ 
+	211 & \gy+F+G4 & -2217.694 & 158 & 4751.388 & 1007.388 \\ 
+	212 & \gy+F+I+G4 & -2213.659 & 159 & 4745.319 & 1001.319 \\ 
+	213 & \gy+F+R3 & -2202.599 & 161 & 4727.198 & 983.198 \\ 
+	214 & \gy+F+I & -2228.346 & 158 & 4772.691 & 1028.691 \\ 
+	215 & \gy+F+R4 & -2202.61 & 163 & 4731.219 & 987.219 \\ 
+	216 & \gy+F & -2282.254 & 157 & 4878.509 & 1134.509 \\ 
+	217 & KOSI07+F+R2 & -2291.643 & 157 & 4897.286 & 1153.286 \\ 
+	218 & KOSI07+F+G4 & -2301.662 & 156 & 4915.325 & 1171.325 \\ 
+	219 & KOSI07+F+I+G4 & -2298.418 & 157 & 4910.835 & 1166.835 \\ 
+	220 & KOSI07+F+R3 & -2286.723 & 159 & 4891.446 & 1147.446 \\ 
+	221 & KOSI07+F+I & -2311.78 & 156 & 4935.559 & 1191.559 \\ 
+	222 & SCHN05+F+R2 & -2310.015 & 157 & 4934.03 & 1190.03 \\ 
+	223 & SCHN05+F+G4 & -2316.684 & 156 & 4945.369 & 1201.369 \\ 
+	224 & SCHN05+F+I+G4 & -2313.733 & 157 & 4941.467 & 1197.467 \\ 
+	225 & SCHN05+F+R3 & -2303.732 & 159 & 4925.463 & 1181.463 \\ 
+	226 & SCHN05+F+I & -2327.127 & 156 & 4966.254 & 1222.254 \\ 
+	227 & SCHN05+F+R4 & -2303.45 & 161 & 4928.9 & 1184.9 \\ 
+	228 & KOSI07+F & -2357.579 & 155 & 5025.157 & 1281.157 \\ 
+	229 & SCHN05+F & -2379.264 & 155 & 5068.528 & 1324.528  \\
 \end{longtable}
 
 \clearpage
 
-\null
-\vfill
+\singlespacing
 \begin{figure}[H]
      \centering
-	\includegraphics[width=\textwidth]{ch4/1xpb_GL.png}
-	\caption{Distribution of genetic load in TEM mapped on its structure (1xpb). 
-	Average genetic load over all observed TEM variants is indicated by the color, blue low, red medium, yellow high genetic load. Active site is indicated in black.}
-	\label{fig:tem2016_3d}
+	\includegraphics[width=\textwidth]{ch4/selac_top_comp.pdf}
+	\caption{Phylogenies resulting from phydms, and \selac using the \phydms topology.}
+	\label{fig:phylo_comp}
 \end{figure}
-\null
-\vfill
-\clearpage
-\null
-\vfill
-\begin{figure}[H]
-     \centering
-	\includegraphics[width=\textwidth]{ch4/GL_slide_SHV2016}
-	\caption{Distribution of genetic load in SHV. 
-	Average genetic load over all observed SHV variants is indicated by the black line. 
-	Light gray bars indicate where helices are found, and dark gray bars indicate $\beta$-sheets.
-	The three residues forming the binding site and the two residues forming the active are indicated by triangles at the top of the plot.}
-	\label{fig:shv2016_sse}
-\end{figure}
-\null
-\vfill
-\clearpage
-\null
-\vfill
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}
-        \centering
-        \includegraphics[width=.45\textwidth]{ch4/simulated_dist_time_SELAC_random.pdf}
-    \end{subfigure}
-    \begin{subfigure}
-        \centering
-        \includegraphics[width=.45\textwidth]{ch4/simulated_gl_time_SELAC_random.pdf}
-    \end{subfigure}
-    \caption{Sequences simulated from a random codon sequence under the site specific selection on amino acids estimated using \selac. 
-    (left) Sequence similarity to the observed consensus sequence at various times for a range of values of $N_e$.
-    (right) Genetic load of the simulated sequences at various times for a range of values of $N_e$.
-    Time is given in number of expected mutations per site, which equals the substitution rate of a neutral mutation.
-    Points indicate sample means and vertical bars indicate standard deviations. Initial sequence is the inferred ancestral state of the TEM variants and indicated by a black triangle.}
-    \label{fig:selac_sim_rand}
-\end{figure}
-\null
-\vfill
-\clearpage
-\null
-\vfill
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}
-        \centering
-        \includegraphics[width=.45\textwidth]{ch4/simulated_dist_time_DMS_random.pdf}
-    \end{subfigure}
-    \begin{subfigure}
-        \centering
-        \includegraphics[width=.45\textwidth]{ch4/simulated_gl_time_DMS_random.pdf}
-    \end{subfigure}
-    \caption{Sequences simulated from a random codon sequence under the site specific selection on amino acids estimated using deep mutation scanning. 
-    (left) Sequence similarity to the observed consensus sequence at various times for a range of values of $N_e$.
-    (right) Genetic load of the simulated sequences at various times for a range of values of $N_e$.
-    Time is given in number of expected mutations per site, which equals the substitution rate of a neutral mutation.
-    Points indicate sample means and vertical bars indicate standard deviations. Initial sequence is the inferred ancestral state of the TEM variants and indicated by a black triangle.}
-    \label{fig:dms_sim_rand}
-\end{figure}
-\null
-\vfill
-\clearpage
-\null
-\vfill
-\begin{figure}[h]
-    \centering
-    \begin{subfigure}
-        \centering
-        \includegraphics[width=.45\textwidth]{ch4/g_shift_lac.pdf}
-    \end{subfigure}
-    \begin{subfigure}
-        \centering
-        \includegraphics[width=.45\textwidth]{ch4/TEM_SHV_2016_par_comp.pdf}
-    \end{subfigure}
-    \caption{Comparison of selection related parameters between TEM and SHV. 
-    (left) Estimated site specific efficacy of selection $G$. 
-    (right) Selection related parameter estimates. 
-    Protein functionality production rate $\psi$, \PC weight for amino acid composition $\alpha_c$, \PC weight for amino acid polarity $\alpha_p$, and the parameter describing the distribution of $G$, $\alpha_G$ estimated by \selac.}
-    \label{fig:tem_shv_param_comp}
-\end{figure}
-\null
-\vfill
 \doublespacing
