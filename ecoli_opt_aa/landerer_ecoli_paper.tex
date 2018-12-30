@@ -26,7 +26,17 @@
 \newcommand{\selac}{\emph{SelAC}\xspace}
 \newcommand{\ecoli}{\textit{E. coli}\xspace}
 \newcommand{\gy}{\emph{GY94}\xspace}
+\newcommand{\hb}{\emph{HB98}\xspace}
 \newcommand{\PC}{physicochemical\xspace}  
+\newcommand{\DeltaAIC}{\ensuremath{\Delta\text{AIC}}\xspace}  
+
+%reduce font size of margin paragraphs \marginpar
+\makeatletter
+\long\def\@ympar#1{%
+  \@savemarbox\@marbox{\tiny #1}%
+  \global\setbox\@currbox\copy\@marbox
+  \@xympar}
+\makeatother
 
 \noindent RH: LANDERER ET AL.--- Estimating genetic load
 % put in your own RH (running head)
@@ -36,7 +46,7 @@
 \begin{center}
 
 % Insert your title:
-\noindent{\Large \bf Experimentally informed phylogenetic models are biased towards laboratory conditions and can be improved upon by mechanistic models of stabilizing selection.}
+\noindent{\Large \bf Site specific, \PC based phylogenetic models outperform experimentally informed models and overcome their laboratory bias}
 \bigskip
 
 
@@ -69,67 +79,71 @@ While commonly used models are fast and easy to use, they lack biological realis
 Phylogenetic models focused on the nucleotide composition such as GTR, or UNREST \citep{Tavare1986,Yang1994} are limited to mutation effects and are agnostic to any higher level selection on codons or amino acids.
 Amino acid models like JTT \citep{jones1992}, BLOSSUM \citep{blossum}, or WAG \citep{whelan2001} attempt to describe the effects of natural selection, however, these do not properly account for mutations between nucleotides and are purely phenomenological.
 In an attempt to remedy the shortcomings of nucleotide and amino acid models, codon models combine mutation between nucleotides and selection on the amino acids for which they code.
-Most popular, the codon model by \citet{GoldmanAndYang1994} (\gy) and its derivatives. 
-However, \gy is commonly misinterpreted and provides only a restricted selection scenario that is best described as frequency dependent selection \citep{beaulieu2019}.
+Most popular are the codon model by \citet{GoldmanAndYang1994} (\gy) and its derivatives.
+However, \gy is commonly misinterpreted and provides only a restricted selection scenario that is best described as frequency dependent selection \citep{HughesAndNei1988,Nowak2006,Hughes2007,beaulieu2019}.
 
-These types of models, weather they describe substitutions between nucleotides, codons, or amino acids, have in common that they describe the same equilibrium frequencies at each site without further modifications.
+One common property of all of these models is the fact that they use a single substitution model across all sites. As a result, every site, whether a nucleotide,  amino acid, or codon, have the same equilibrium distribution.
 Biologists, however, have long recognized that equilibrium frequencies and thus the substitution matrix responsible, can vary substantially between sites \citep{felsenstein1981, gojobori1983}.
-Individual sites along the sequence e.g. show differences in evolutionary rates, and wide range of preferences for specific amino acids \citep{HalpernAndBruno1998, ashenberg2013, echave2016}.
-\citet{HalpernAndBruno1998} provided a general solution were each site can have a distinct substitution matrix.
-As a result, the model introduced by \citet{HalpernAndBruno1998} had up to $19\times n$ parameters, where $n$ is the number of amino acid sites.
-This large number of parameters which have to be estimated from the phylogenetic data makes the application of this model often unfeasible.
+Individual sites along the sequence often show differences in evolutionary rates, and wide range of preferences for specific amino acids \citep{ashenberg2013, echave2016}.
 
-To overcome the issue of estimating an unfeasible amount of parameters from phylogenetic data, it was proposed to use supplement the inference with data from deep mutation scanning experiments (DMS).
-DMS allows for the estimation of site specific selection on amino acids for a large amount of mutations in a single experiment.
-Using such supplementary site specific selection estimates allows for the fitting of complex site specific models to smaller phylogenetic data sets, and it improves model fit \citep{bloom2014, bloom2017, hilton2017}.
+In response to this variability, \citet{HalpernAndBruno1998} (\hb) provided a general, codon model were each codon site has its own, distinct substitution matrix.
+The cost to this generality is the need for 19 amino acid specific selection parameters per site (N.B., the optimal amino acid, by definition, has a selection parameter of 0).
+This need for estimating a large number of selection parameters from the sequence data makes the application of \citet{HalpernAndBruno1998} model unfeasible for most studies.
+To overcome this parameterization problem,\citet{bloom2014} proposed using data from deep mutation scanning experiments (DMS) as a means of estimating the site specific parameters needed in the \citet{HalpernAndBruno1998}.
+Bloom and others \citep{bloom2014, bloom2017, hilton2017} report that using DMS selection parameters greatly improves model fit over models without site specific selection parameters.
 
-However, such DMS selection estimates are not always available.
-The power of DMS stems from the ability to manipulate a large number of individuals in the laboratory and estimate genotype fitness based frequency changes over many generations.
-This, however, limits the application of DMS selection estimates for phylogenetic inference greatly; to organisms with short generation times and ones that can be manipulated under laboratory conditions.
-Laboratory conditions also greatly differ from the condition an organism experiences in the wild, therefore, it is questionable how well selection estimates inferred under such conditions reflect selection in the wild and are applicable for phylogenetic inference.
-DMS selection estimates depend on factors like the initial library of mutations which - if extensive - leads to a heterogeneous population of competing individuals unlikely to be observed in the wild.
-In addition, \citet{hilton2017} showed variation between DMS experiments can lead to significant differences in model fit.
+The power of DMS stems from the ability to manipulate a large number of individuals in the laboratory and estimate genotype fitness based on frequency changes over many generations.
+This, however, limits the application of DMS selection parameters for phylogenetic inference to only organisms which can be cultured in the laboratory and with short generation times.
+More troubling is the fact that variation between DMS experiments can lead to significant differences between model fits \citep{hilton2017}.
+However, this variation is presumably small compared to the variation between laboratory conditions and those organisms usually encounter in the wild.
+As a result, the value of DMS selection parameters for making inferences about sequences evolution in the wild is uncertain.
 
-Alternatively, better models could be be developed instead of using questionable supplementary data for phylogenetic inference.
-Lartillot and colleagues mitigate the high numbers of parameters by using a site categorization approach \citep{LartillotAndPhilippe2004,le2008}.
-In this work we utilize \selac \citep{beaulieu2019} which uses a site categorization approach similar to the work by Lartillot and colleagues.
-\selac is limited to $20$ site categories, one for each possible optimal amino acid, but with a clear biological interpretation of each site category.
-\selac incorporates \PC properties in a simplistic nested model and is rooted in population genetics.
-The distance of amino acids in \PC space is used by \selac to describe the decline in fitness of an amino acids relative to an, for a site, optimal amino acid.
+Instead of using laboratory based selection parameters to mitigate the parameterization issues introduced in \hb, an alternative approach is to simplify the model itself.
+For example, Lartillot and colleagues mitigate the high numbers of  parameters required by \hb's codon model using a site categorization approach where a limited, but \emph{a priori} unspecified, number of site categories are estimated from the sequence data \citep{LartillotAndPhilippe2004,le2008,RodrigueEtAl2008,RodrigueAndLartillot2014}.
+More recently, \citep{beaulieu2019} introduced a new codon model, \selac, where $20$ site categories are assumed \emph{a priori} to underlie the \hb model.
+\selac combines \PC properties and site specific heterogeneity in the strength of selection together using a simplistic nested modeling approach.
+Briefly, \selac infers an optimal amino acid for each site and then estimates the selection parameters for the remaining amino acids based on their \PC distance from the optimal amino acid and site specific sensitivity term which is, in turn, treated as a random effect.
 
-We assess the reliability of selection on amino acids inferred by DMS to inform phylogenetic studies.
-We utilize a DMS experiment by \citet{stiffler2016} for the $\beta$-lactamase TEM.
-TEM is an enzyme found in gram-negative bacteria like \textit{Escherichia coli} and catalyzes antibiotics with a $\beta$-lactam ring, providing antibiotic resistance \citep{Neu1969}.
+We assess and compare the fit and adequacy of phylogenetic inferences made using supplementary DMS selection parameters and \selac. 
+We use \phydms \citep{hilton2017} in order to utilize supplementary DMS selection parameters, fitting 49 TEM sequences observed in natural populations of \emph{E.~coli} from \citet{bloom2017}.
+Following \citep{bloom2017, hilton2017}, we used the DMS based selection parameters from \citet{stiffler2016} for $\beta$-lactamase TEM to supplement our phylogenetic inference.
+TEM is an enzyme found in gram-negative bacteria and catalyzes antibiotics with a $\beta$-lactam ring, providing antibiotic resistance \citep{Neu1969}.
 The selection pressure imposed during the DMS experiment was limited to ampicillin and focused solely on the variant TEM-1 \citep{stiffler2016}.
 However, TEM variants can also confer resistance to a wide range of other antibiotics \citep{sougakoff1988,sougakoff1989,goussard1991,mabilat1992,chanal1992,brun1994}.
 
-Our results show that site specific selection inferred by DMS improve model fit which is consistent with previous work \citep{bloom2014,bloom2017}, but supplementing phylogenetic inference with unnatural data causes poor model adequacy. 
-We use \phydms \citep{hilton2017} to fit 49 TEM sequences from \citet{bloom2017} using DMS inferred site specific selection on amino acids.
-We compare the model fit of \phydms to \selac and find that model selection prefers \selac over \phydms.
-Further, we find evidence that the DMS inference of selection on amino acids is inconsistent with selection in the wild at many sites, leading to poor model adequacy.
-We also find that the DMS estimates imply a very large genetic load of the observed TEM sequences.
-In contrast, \selac shows higher model adequacy and a more realistic genetic load.
+Using AIC as a measure of model fit, as before we find that \phydms outperforms the 228 nucleotide and codon models included in the IQTree package \citep{bloom2014, bloom2017}, but that \selac outperforms \phydms by an additional 582 AIC units.
+While very large, our estimate of \DeltaAIC between \selac and \phydms is likely an under estimate given the fact that we, conservatively, counted each inferred amino acid as a separate parameter when calculating \selac's AIC value.
+In addition to a superior fit to the observed data, \selac shows higher model adequacy and implies more realistic values of genetic load than \phydms.
+We attribute \phydms's poor model adequacy to misappropriation of biased selection parameter estimates from DMS. 
+This poor model adequacy, in turn, leads to the unrealistically large estimates of genetic load of the observed TEM sequences.
 
 Together, our results indicate that models can be more informative and applicable than unnatural supplementary data for phylogenetic inference.
-\selac, in contrast, provides biological meaningful information such as site specific optimal amino acids and fitness landscape.
+\selac, in contrast, provides biological meaningful information such as site specific optimal amino acids and estimates of selection parameters.
 In addition, \selac does not rely on supplementary data and is therefore applicable to all alignments of protein coding sequences, and can be expanded to test other hypothesis.
 
 \section{Results}
 \subsection{\selac Outperforms Experimentally Informed Models}
 
-Phylogenetic models of site specific selection on amino acids drastically improve model fit over classical nucleotide and codon models.
-We compare \selac and \phydms to 131 nucleotide and 97 codon models and their variations (see Table \ref{tab:AIC_full} for all models).
-\selac shows the best model fit and provides an improvement of 582 AIC units over the empirically informed model fit by \phydms despite the 272 more model parameters estimated from the phylogenetic data (Table \ref{tab:AIC_selac}). 
-\phydms, parameterized by site specific selection estimates from \citet{stiffler2016} performs second best and provides an improvement of 289 AIC units for the best non-site specific model, the symmetric nucleotide model by \citet{zharkikh1994}. 
+We compare \selac and \phydms, two models of site specific stabilizing selection, to 131 nucleotide and 97 codon uniform site models fitted using IQTree \citep[][see Table \ref{tab:AIC_selac} for the best performing models and Table \ref{tab:AIC_full} for all models]{nguyen2015}.
+\selac shows the best model fit and provides an improvement of 582 AIC units over the empirically informed model fit by \phydms.
+This better performance is in spite of the fact that \selac requires the specification of one optimal amino acid for each of the 263 codons in our TEM alignment.
+\phydms, parameterized by site specific selection parameters from \citet{stiffler2016} performs second best and provides an improvement of 289 AIC units for the best uniform site model \emph{SYM}+R2 \citet{zharkikh1994}. 
+
+\selac utilizes a hierarchical model and estimates 263 site specific parameters, $\sim5\%$ of the $19\times N = 4997$ parameters necessary to fully describe site specific selection.
+In contrast, \phydms does not infer any site specific parameters from the sequence data, but utilizes site specific selection parameters from DMS experiments.
+This is important since $263$ of the $374$ parameters estimated by \selac are the discrete optimal amino acid state at each site. 
+As it is unclear if such discrete parameters contribute to the Kullback-Leibler divergence in a similar manner as continuous parameters, it is possible that we are over penalizing.
+Therefore, the number of parameters, $n$, for \selac we use is conservative.
 
 \begin{table}
   \centering
-  \caption{Model selection, shown are the three models of stabilizing site specific amino acid selection (\selac, \phydms) and the best performing codon and nucleotide model \citep{GoldmanAndYang1994, zharkikh1994}. 
+  \caption{Model selection, shown are the two models of stabilizing site specific amino acid selection (\selac, \phydms) and the best performing codon and nucleotide model \citep{GoldmanAndYang1994, zharkikh1994}. 
   Reported are the log-likelihood $\log(\Lik)$, the number of parameters estimated $n$, AIC, and $\Delta$AIC values.
-  See Table \ref{tab:AIC_full} for results from all models we tested.}  
+  See Table \ref{tab:AIC_full} for results from all models we tested.
+}  
   \begin{tabular}{lrrrrrr}
     \hline
-    Model							& $\log(\Lik)$ & n & AIC & $\Delta$AIC \\ \hline 
+    Model							& $\log(\Lik)$ & $n$ & AIC & \DeltaAIC \\ \hline 
     \selac							& -1498 & 374 & 3744 &  0 \\
     \phydms 						& -2061 & 102 & 4326 & 582 \\
     \emph{SYM}+R2 				& -2206 & 102 & 4615 & 871 \\
@@ -139,17 +153,17 @@ We compare \selac and \phydms to 131 nucleotide and 97 codon models and their va
 \end{table}
 
 
-The best performing codon model without site specific selection is \gy \citep{GoldmanAndYang1994}. 
-However, \gy is outperformed by various nucleotide models like \emph{SYM}+R2.
-Like \selac, \gy utilizes differences in \PC space between amino acids, but unlike \selac which is a model of stabilizing selection, \gy is best interpreted as frequency dependent selection \citep{beaulieu2019}.
+The best performing uniform codon model is \gy \citep{GoldmanAndYang1994}. 
+However, \gy is outperformed by 110 nucleotide models like \emph{SYM}+R2.
+Like \selac, \gy in its original form, utilizes differences in \PC space between amino acids, but unlike \selac which is a model of stabilizing selection, \gy is best interpreted as frequency dependent selection \citep{HughesAndNei1988,Nowak2006,Hughes2007,beaulieu2019}.
 
 We observe differences in the topology between model fits.
 The \selac model is currently too slow to estimate the topology, therefore the topology was estimated using the codon model of \citet{KosiolEtAl07}.
 \phydms uses the topology estimated with the codon model of \citet{KosiolEtAl07} as starting point for its topology search.
 \phydms diverges from the initial topology suggesting we are conservative in our estimate of $\Delta AIC$ between \selac and \phydms.
-However, at this point, it is therefore unclear if  we can attribute the difference in topology solely to the experimentally inferred selection or if other factors contribute.
-If we utilize the \phydms inferred topology, with \selac, we find a very similar nut slightly worse model fit to our original \selac fit ($\Delta AIC = 2$).
-This indicates that the topology has less impact on the model fit as the assumed optimal amino acid sequence, likely due to the short branches and many polytomies in the phylogeny.
+However, at this point, it is therefore unclear if  we can attribute the difference in topology solely to the experimentally inferred selection parameters or if other factors contribute.
+If we utilize the \phydms inferred topology, with \selac, we find a very similar but slightly worse model fit to our original \selac fit ($\Delta AIC = 2$).
+This indicates that the topology has less impact on the model fit than the assumed optimal amino acid sequence, likely due to the short branches and many polytomies in the phylogeny (Figure \ref{fig:phylo_comp}).
 
 Figure \ref{fig:phylo} shows that the estimated phylogenetic trees shift from long terminal branches (\selac) to longer internal branches (\phydms).
 While the \selac model fit shows $84 \%$ of all evolution happening at the tips, this reduces $77 \%$ in the \phydms and \gy model fits.
@@ -172,16 +186,14 @@ We define model adequacy as similarity of the sequence of selectively favored, o
 The sequence of selectively favored amino acids experimentally estimated by DMS shows a low sequence similarity of only $52 \%$ with the observed consensus sequence. 
 We find that the selectively favored amino acid estimated by DMS is not found in the wild in 46.4 \% of sites.
 Additionally, the \PC properties appear to differ between the observed and the DMS estimated optimal amino acids.
-For example, at site 157, we observe the non-polar, hydrophobic amino acids methionine, but the DMS experiment predicts that the polar, hydrophilic amino acid threonine provides 
-the highest fitness.
+For example, at site 157, we observe the non-polar, hydrophobic amino acids methionine, but the DMS experiment predicts that the polar, hydrophilic amino acid threonine provides the highest fitness.
 Simulations of codon sequences under the DMS inferred site specific selection further highlights that we would not expect to see the observed TEM sequences under these conditions.
 We find that the simulated sequences show up to $62 \%$ sequence similarity to the observed consensus sequence (Figure \ref{fig:dis_sim}a).
 This is a 10 \% higher sequence similarity than the sequence of selectively favored amino acids estimated by DMS have with the observed consensus sequence. 
 
-
 In contrast, the \selac fit shows high model adequacy.
 The \selac inferred sequence of selectively favored amino acids has $99 \%$ sequence similarity with the observed consensus sequence.
-This may not be to surprising given that \selac only uses the phylogenetic data and no experimental supplementary data.
+This may not be to surprising given that \selac only uses the sequence data and no experimental supplementary data.
 Simulations support the better model adequacy of \selac, however the decline in sequences sequence similarity to $83 \%$, indicating that \selac underestimates the strength of selection (Figure \ref{fig:dis_sim}b).
 Together this suggests that DMS selection estimates are not very informative about selection in the wild and that \selac is a more appropriate tool to obtain such estimates.
 
@@ -220,10 +232,10 @@ We further find that the genetic load is inconsistent with the observed genetic 
 This shows that the distribution of genetic load differs between DMS inferred site specific selection and \selac inferred site specific selection.
 If we assume the site specific selection estimated by DMS, 111 sites show no genetic load.
 In contrast, if we assume the site specific selection estimated by \selac, 207 sites show no genetic load.
-The \selac estimates of selection are more in line with the observed sequences as only 66 sites show genetic variation.
+The \selac selection parameters are more in line with the observed sequences as only 66 sites show genetic variation.
 
 In total, we find 100 sites for which \selac estimates a genetic load of zero but the DMS estimates predict a non-zero genetic load.
-All 100 cases show a significant difference in the likelihood between the \selac and the DMS inferred optimal amino acid given the observed phylogenetic data.
+All 100 cases show a significant difference in the likelihood between the \selac and the DMS inferred optimal amino acid given the observed sequence data.
 In addition, these 100 sites show a significant higher genetic load than the remaining 163 sites of $0.0157$ and $0.003$, respectively ($p = 3\times10^{-13}$).
 
 For 52 sites, both DMS and \selac estimate a non-zero genetic load.
@@ -232,7 +244,7 @@ Again we find a significant difference in genetic load between the 26 for which 
 
 \subsection{DMS Implies Unrealistic Genetic Loads}
 
-As indicated previously, the genetic load of the observed TEM sequences differs greatly under the \selac and experimentally estimated fitness landscape.
+As indicated previously, the genetic load of the observed TEM sequences differs greatly under the \selac and experimentally estimated selection parameters.
 The site specific selection estimated by DMS for the observed TEM sequences represents an average site specific load of 0.065.
 In contrast, the site specific genetic load estimated by \selac for the observed TEM sequences represents an average site specific genetic load of only $2.4\times 10^{-7}$.
 
@@ -270,12 +282,12 @@ Further, we find that \selac outperforms \phydms substantially ($\Delta AIC = 58
 
 The improved performance of \phydms and \selac presumably results from their ability to more realistically describe the effects of natural selection on sequence evolution.
 However, this realism comes at a cost. 
-\phydms requires supplementary fitness estimates for each amino acid at every site, which necessitates experimental work.
-\selac, on the other hand, uses a nested modeling approach, which avoids the necessity of amino acid specific fitness estimates, but greatly increases the computational cost of model fitting.
+\phydms requires supplementary selection parameters for each amino acid at every site, which necessitates experimental work.
+\selac, on the other hand, uses a nested modeling approach, which avoids the necessity of amino acid specific selection parameters, but greatly increases the computational cost of model fitting.
 
 We further assess the model adequacy of \phydms and \selac which we primarily define as the similarity of the sequence of optimal amino acids to the observed consensus sequence.
 While the consensus sequence ignores the phylogenetic relationship between the sequences, it is a still good metric to assess the realism of the estimated optimal amino acids as it provides a summary of the amino acids observed in the wild.
-We also assess the genetic load of the observed sequences according to the DMS and \selac estimates fitness landscape.
+We also assess the genetic load of the observed sequences according to the DMS and \selac selection parameters.
 Model adequacy is a measure that describes how well observed data can be reproduced by a model and is unfortunately often ignored.
 Since the model adequacy of \phydms is a direct function of the supplementary DMS measurements we focus directly on these measurements.
 
@@ -305,12 +317,12 @@ Besides relatively poor performance in terms of model adequacy, DMS has addition
 Like with any other experiment, results can greatly vary between laboratories.
 \citet{hilton2017} showed that a similar experiment to the one used here by \citet{firnberg2014} performed worse in explaining the observed TEM data.
 DMS experiments are also costly and limited to microorganisms that can be cultivated and manipulated under laboratory conditions.
-These laboratory conditions can lead to the bias in selection estimates we observe in this study.
+These laboratory conditions can lead to the bias in selection parameters we observe in this study.
 
 The artificial selection environment in the laboratory leads to a very heterogeneous population and very large selection coefficients $s$ unlikely to be observed in the wild.
 The very large singular selection may be the easiest issue to overcome in DMS experiments as it may be possible to include a multitude of weaker selective forces.
 However, this is often not the goal when performing DMS experiments as they were initially not intended for the use in phylogenetic studies but appropriated.
-\selac on the other hand, better explains the evolution of TEM in the wild and does not require the supplementary selection data but provides such estimates from the phylogenetic data.
+\selac on the other hand, better explains the evolution of TEM in the wild and does not require the supplementary selection data but provides such estimates from the sequence data.
 This makes \selac also applicable to any set of aligned protein coding sequences.
 
 However, \selac is  not without shortcomings itself, but its mechanistic nature provides direct avenues to overcome many of them via model expansion.
@@ -341,8 +353,8 @@ The ability to expand \selac as outlined above make it a valid starting point fo
 \subsection{Phylogenetic Inference and Model selection}
 
 TEM sequences were obtained from \citet{bloom2017} already aligned.
-Experimentally fitness values for TEM were taken from \citet{stiffler2016}.
-We followed \citep{bloom2017} to convert the experimental fitness values into site specific equilibrium frequencies for \phydms. 
+Experimentally selection parameters for TEM were taken from \citet{stiffler2016}.
+We followed \citep{bloom2017} to convert the experimental selection parameters into site specific equilibrium frequencies for \phydms. 
 \phydms (version 2.5.1) was fitted to the site specific selection from \citet{stiffler2016} using python (version 3.6).
 \selac (version 1.6.1) was fitted to the TEM alignment using R (version 3.4.1) \citep{rcore}.
 We assumed the \PC properties estimated by \citet{grantham1974} and only estimated the weighting terms for each property from the data.
@@ -355,15 +367,15 @@ Models were selected based on the AIC values.
 
 Sequences were simulated by stochastic simulations using a Gillespie algorithm \citep{gillespie1976} that was model independent.
 To calculate fixation probabilities during the simulation we followed \citet{SellaAndHirsh2005}.
-The fitness values were estimated using \selac or taken from \citet{stiffler2016}.
-We choose the fitness values resulting from the highest concentration (2500 $\mu g/mL$) treatment of ampicillin for our comparison.
-We rescaled the experimental fitness such that the amino acid with the highest fitness at each site has a value of one.
+The selection parameters were estimated using \selac or taken from \citet{stiffler2016}.
+We choose the selection parameters resulting from the highest concentration (2500 $\mu g/mL$) treatment of ampicillin for our comparison.
+We rescaled the experimental selection parameters such that the amino acid with the highest fitness at each site has a value of one.
 Mutation rates for the simulations were taken from the \selac.
 The initial sequences was the ancestral sequence reconstructed using FastML \citep{fastml} (last accessed: 30.09.2018).
 Each sequence was simulated 10 times and we report average genetic load and sequence similarity and the standard error.
 The sequences were sampled at times 0.01, 0.1, 1, and 10 expected mutations per site.
 
-\subsection{Estimating site specific fitness values $w_i$}
+\subsection{Estimating site specific selection parameters $w_i$}
 
 Following \citet{beaulieu2019} $w_i$ is proportional to
 \begin{equation}
@@ -412,9 +424,9 @@ The authors would like to thank Russel Zaretzki, Jeremy Beaulieu and Alexander C
   \label{tab:AIC_full}
   \\ 
   \toprule
-  No. & Model & $\log(\Lik)$ & n & AIC & $\Delta$AIC  \\   \hline \endfirsthead
+  No. & Model & $\log(\Lik)$ & n & AIC & \DeltaAIC  \\   \hline \endfirsthead
   \caption*{Table \ref{tab:AIC_full} Continued}\\\toprule
-  No. & Model & $\log(\Lik)$ & n & AIC & $\Delta$AIC  \\   \hline \endhead
+  No. & Model & $\log(\Lik)$ & n & AIC & \DeltaAIC  \\   \hline \endhead
   \hline \endfoot
   \bottomrule
   \endlastfoot
@@ -657,7 +669,7 @@ The authors would like to thank Russel Zaretzki, Jeremy Beaulieu and Alexander C
      \centering
 	\includegraphics[width=\textwidth]{img/selac_top_comp.pdf}
 	\caption{Phylogenies resulting from phydms, and \selac using the \phydms topology.}
-	\label{fig:phylo}
+	\label{fig:phylo_comp}
 \end{figure}
 \doublespacing
 
