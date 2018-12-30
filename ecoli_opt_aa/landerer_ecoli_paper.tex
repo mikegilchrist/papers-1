@@ -115,7 +115,7 @@ Together, our results indicate that models can be more informative and applicabl
 In addition, \selac does not rely on supplementary data and is therefore applicable to all alignments of protein coding sequences, and can be expanded to test other hypothesis.
 
 \section{Results}
-\subsection{\selac Outperforms Experimentally Informed Models}for 
+\subsection{\selac Outperforms Experimentally Informed Models}
 
 Phylogenetic models of site specific selection on amino acids drastically improve model fit over classical nucleotide and codon models.
 We compare \selac and \phydms to 131 nucleotide and 97 codon models and their variations (see Table \ref{tab:AIC_full} for all models).
@@ -172,12 +172,35 @@ We define model adequacy as similarity of the sequence of selectively favored, o
 The sequence of selectively favored amino acids experimentally estimated by DMS shows a low sequence similarity of only $52 \%$ with the observed consensus sequence. 
 We find that the selectively favored amino acid estimated by DMS is not found in the wild in 46.4 \% of sites.
 Additionally, the \PC properties appear to differ between the observed and the DMS estimated optimal amino acids.
-For example, at site 157, we observe the non-polar, hydrophobic amino acids methionine, but the DMS experiment predicts that the polar, hydrophilic amino acid threonine provides the highest fitness.
-Together this suggests that DMS selection estimates are not very informative about selection in the wild.
+For example, at site 157, we observe the non-polar, hydrophobic amino acids methionine, but the DMS experiment predicts that the polar, hydrophilic amino acid threonine provides 
+the highest fitness.
+Simulations of codon sequences under the DMS inferred site specific selection further highlights that we would not expect to see the observed TEM sequences under these conditions.
+We find that the simulated sequences show up to $62 \%$ sequence similarity to the observed consensus sequence (Figure \ref{fig:dis_sim}a).
+This is a 10 \% higher sequence similarity than the sequence of selectively favored amino acids estimated by DMS have with the observed consensus sequence. 
+
 
 In contrast, the \selac fit shows high model adequacy.
 The \selac inferred sequence of selectively favored amino acids has $99 \%$ sequence similarity with the observed consensus sequence.
 This may not be to surprising given that \selac only uses the phylogenetic data and no experimental supplementary data.
+Simulations support the better model adequacy of \selac, however the decline in sequences sequence similarity to $83 \%$, indicating that \selac underestimates the strength of selection (Figure \ref{fig:dis_sim}b).
+Together this suggests that DMS selection estimates are not very informative about selection in the wild and that \selac is a more appropriate tool to obtain such estimates.
+
+\begin{figure}
+    \centering
+    \begin{subfigure}
+        \centering
+       (a)\includegraphics[width=.45\textwidth]{img/simulated_dist_time_DMS_ancest.pdf}
+    \end{subfigure}
+    \begin{subfigure}
+        \centering
+        (b)\includegraphics[width=.45\textwidth]{img/simulated_dist_time_SELAC_ancest.pdf}
+    \end{subfigure}
+    \caption{Sequences simulated from the ancestral state under the site specific selection on amino acids estimated using DMS (left) and \selac (right) at various times for a range of $N_e$ values.
+    Time is given in number of expected mutations per site, which equals the substitution rate of a neutral mutation.
+    Points indicate sample means and vertical bars indicate standard deviations. Initial sequence is the inferred ancestral state of the TEM variants and indicated by a black triangle.}
+    \label{fig:dis_sim}
+\end{figure}
+
 
 \begin{table}
   \centering
@@ -217,11 +240,11 @@ In contrast, the site specific genetic load estimated by \selac for the observed
     \centering
     \begin{subfigure}
         \centering
-        \includegraphics[width=.45\textwidth]{img/simulated_gl_time_DMS_ancest.pdf}
+        (a)\includegraphics[width=.45\textwidth]{img/simulated_gl_time_DMS_ancest.pdf}
     \end{subfigure}
     \begin{subfigure}
         \centering
-        \includegraphics[width=.45\textwidth]{img/simulated_gl_time_SELAC_ancest.pdf}
+        (b)\includegraphics[width=.45\textwidth]{img/simulated_gl_time_SELAC_ancest.pdf}
     \end{subfigure}
     \caption{Sequences simulated from the ancestral state under the site specific selection on amino acids estimated using DMS (left) and \selac (right) at various times for a range of $N_e$ values.
     Time is given in number of expected mutations per site, which equals the substitution rate of a neutral mutation.
@@ -230,11 +253,13 @@ In contrast, the site specific genetic load estimated by \selac for the observed
 \end{figure}
 
 
-We simulated sequences forward in time from the ancestral state under the DMS and \selac inferred selection to establish a point of reference and further assess model adequacy (Figure \ref{fig:gl_sim}).
+We simulated sequences forward in time from the ancestral state under the DMS and \selac inferred selection to establish a point of reference and further assess model adequacy.
 Simulations under the DMS inferred selection show that the genetic load of the observed sequences is larger than the genetic load of the simulated sequences.
-The simulations yield an average site specific genetic load of 0.025.
+The simulation yields an average site specific genetic load of 0.025 (Figure \ref{fig:gl_sim}a).
+Thus, even under the DMS selection, we would expect the observed sequences to show higher adaptation.
 Simulations under the \selac inferred selection show that the genetic load of the observed sequences is less than the genetic load of the simulated sequences.
-The simulations yield an average site specific genetic load of $1.3 \times 10^{-5}$
+The simulation yields an average site specific genetic load of $1.3 \times 10^{-5}$ (Figure \ref{fig:gl_sim}b).
+This is consistent with theoretical population genetics (see Discussion).
 
 \section{Discussion}
 
@@ -627,21 +652,14 @@ The authors would like to thank Russel Zaretzki, Jeremy Beaulieu and Alexander C
 
 \clearpage
 
-\begin{figure}
-    \centering
-    \begin{subfigure}
-        \centering
-        \includegraphics[width=.45\textwidth]{img/simulated_dist_time_DMS_ancest.pdf}
-    \end{subfigure}
-    \begin{subfigure}
-        \centering
-        \includegraphics[width=.45\textwidth]{img/simulated_dist_time_SELAC_ancest.pdf}
-    \end{subfigure}
-    \caption{Sequences simulated from the ancestral state under the site specific selection on amino acids estimated using DMS (left) and \selac (right) at various times for a range of $N_e$ values.
-    Time is given in number of expected mutations per site, which equals the substitution rate of a neutral mutation.
-    Points indicate sample means and vertical bars indicate standard deviations. Initial sequence is the inferred ancestral state of the TEM variants and indicated by a black triangle.}
-    \label{fig:dis_sim}
+\singlespacing
+\begin{figure}[H]
+     \centering
+	\includegraphics[width=\textwidth]{img/selac_top_comp.pdf}
+	\caption{Phylogenies resulting from phydms, and \selac using the \phydms topology.}
+	\label{fig:phylo}
 \end{figure}
+\doublespacing
 
 \end{document}
 
