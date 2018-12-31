@@ -19,7 +19,6 @@ Mechanistic models are used throughout biology \citep{GoldmanAndYang1994,loreau1
 By modeling the process underlying the observed data mechanistic models provide insights into the processes and estimates of parameters shaping the data \citep{Liberles2013}.
 A wide variety of information is stored in protein and protein coding sequences, e.g. structure \citep{anfinsen1973}, mutation bias \citep{ShahAndGilchrist2011, gilchrist2015}, protein synthesis rate \citep{gilchrist2007,gilchrist2015}. 
 Mechanistic models can be used to extract these informations and to study the relative strength of mutation, selection, and genetic drift leading to the observed sequences.
-%Specifically, in this dissertation, mechanistic models lead to an understanding of the contributions of mutation, selection and genetic drift on the evolution of observed protein coding sequences.
 
 \section{Cost: Decomposing Codon Usage}
 
@@ -78,12 +77,12 @@ Ignoring interactions between sites allows to describe the site specific fitness
 Some approaches rely on the description of the full fitness landscape and therefore require $19 \times L$, where $L$ is the length of the peptide in amino acids, parameters \citep{LartillotAndPhilippe2004,le2008,wang2008,holder2008,wu2013,tamuri2014}.
 As this is still a large number of parameters the incorporation of experimentally determined site specific selection on amino acids is an attractive alternative \citep{bloom2014, thyagarajan2014, bloom2017}. 
 Alternatively, assumptions about the nature of selection can reduce the number of parameters required.
-For example, negative frequency dependent selection \citep{GoldmanAndYang1994, MuseAndGaut1994, thorne1996} or stabilizing selection \citep{beaulieu2019} allow for a reduction in fitness of amino acids with distance in \PC space.
+For example, frequency dependent selection \citep{GoldmanAndYang1994, MuseAndGaut1994, thorne1996} or stabilizing selection \citep{beaulieu2019} allow for a reduction in fitness of amino acids with distance in \PC space.
 
-\selac \citep{beaulieu2019}, a model of stabilizing selection, assesses the fitness of each amino acid relative to the fitness peak (Figure \ref{fig:decl_fit}).
-Fitness is assumed to decline exponentially with distance in \PC space to the optimal amino acid.
+\selac \citep{beaulieu2019} is a model of stabilizing selection that assesses the fitness of each amino acid relative to the fitness peak (Figure \ref{fig:decl_fit}).
+The ftness of an amino acid is assumed to decline exponentially with distance to the optimal amino acid in \PC space.
 In chapter \ref{ch:phylogeny} I apply \selac to the $\beta$-lactamase TEM and estimate site specific selection on amino acids and compare the inferred fitness landscape to empirical estimates from deep mutation scanning experiments \citep{stiffler2016}.
-I find that experimentally informed amino acid preferences improve model fit but do not accurately reflect the evolution of TEM.
+I find that experimentally informed amino acid preferences improve model fit but do not accurately reflect the evolution of TEM in the wild.
 Furthermore, I show that the information on site specific selection on amino acids can be extracted from protein coding sequences by models rooted in first principles like \selac.
 
 
