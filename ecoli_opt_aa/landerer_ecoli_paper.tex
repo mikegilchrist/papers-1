@@ -149,7 +149,6 @@ In addition, \selac does not rely on supplementary data, thus making it applicab
 
 \section{Results}
 \subsection{\selac Outperforms Experimentally Informed Models}
-
 We compared \selac and \phydms, two models of site specific stabilizing selection, to 131 nucleotide and 97 codon uniform site models fitted using IQTree \citep[][see Table \ref{tab:AIC_selac} for the best performing models and Table \ref{tab:AIC_full} for all models]{nguyen2015}.
 \selac shows the best model fit and provides an improvement of 582 AIC units over the empirically informed model fit by \phydms.
 This better performance is in spite of the fact that \selac requires the specification of one optimal amino acid for each of the 263 codons in our TEM alignment.
@@ -228,11 +227,12 @@ In contrast, \phydms predicts a genetic load at invariant sites that is not sign
 	Metric					& 				& \selac 				& \phydms \\ \hline 
 	Genetic Load		 	& 				& 						&		\\
    							&Observed		&$2.4\times 10^{-7}$	& 0.065 \\
-    							&Simulation	&$1.3 \times 10^{-5}$ & 0.025 \\
-							&Difference	&$1.28 \times 10^{-5}$& 0.04 \\ \hline
+    							&Simulation	&$1.3 \times 10^{-5}$ & 0.025 \\ \cline{2-4}
+							&Difference	&$1.28 \times 10^{-5}$& 0.04 \\
+\ \\ \hline
 	Sequence Similarity 	& 				& 						&		\\
    							&Observed		&  	99\%				& 52 \% \\
-    							&Simulation	&	83\%				& 62 \% \\ 
+    							&Simulation	&	83\%				& 62 \% \\ \cline{2-4}
 							&Difference	& 	16\%				& -10 \% \\ \hline
   \end{tabular}
   \label{tab:gl_ss}
@@ -240,7 +240,7 @@ In contrast, \phydms predicts a genetic load at invariant sites that is not sign
 
 
 The difference in the predictions of genetic load between \selac and \phydms are caused by the difference of the \selac and \phydms predicted sequences of selectively favored amino acids.
-%While the \selac sequence of selectively favored amino acids has $99 \%$ sequence similarity with the observed consensus sequence, the \phydms predicted sequence only shows $52 \%$ similarity.
+While the \selac sequence of selectively favored amino acids has $99 \%$ sequence similarity with the observed consensus sequence, the \phydms predicted sequence only shows $52 \%$ similarity.
 We also observe that 46 \% of the sites do not show the selectively favored amino acid at all.
 For example, at site 157, we observe the non-polar, hydrophobic amino acids methionine, but the DMS experiment predicts that the polar, hydrophilic amino acid threonine provides the highest fitness.
 Together our results suggests that the DMS selection parameters used in \phydms are not informative about selection in the wild and that \selac is a more appropriate tool to obtain such estimates.
@@ -279,9 +279,9 @@ Thus, if we assume that the DMS inference adequately reflects the evolution of T
 This, however is unlikely as \ecoli has a large effective population size $N_e$, and the efficacy of selection, therefore, should be high.
 Estimates of $N_e$ for \ecoli are on the order of $10^8$ to $10^9$ \citep{OchmanAndWilson1987,hartl1994}.
 We would therefore expect that \ecoli can effectively explore the sequence space.
-More specifically, assuming a mutation rate of $2.54\times 10^{-10}$ mutations per generation per nucleotide \citep{lee2012}, we would expect to find $2\times 10^{-7}$ mutations per generation in the 789 nucleotide long TEM sequence.
-This results in between $\mu N_e = 10^1$ to $10^2$ mutations per generations throughout the population.
-However, this also clearly shows that the weak mutation assumptions made by all considered models, including \selac, is clearly violated.
+%More specifically, assuming a mutation rate of $2.54\times 10^{-10}$ mutations per generation per nucleotide \citep{lee2012}, we would expect to find $2\times 10^{-7}$ mutations per generation in the 789 nucleotide long TEM sequence.
+%This results in between $\mu N_e = 10^1$ to $10^2$ mutations per generations throughout the population.
+%However, this also clearly shows that the weak mutation assumptions made by all considered models, including \selac, is clearly violated.
 
 In contrast, estimates of selection obtained by \selac show the observed sequences near a fitness peak.
 It, therefore, appears that DMS reflects the biased laboratory selection on the TEM sequences with respect to only one antibiotic, ampicillin. 
