@@ -18,7 +18,7 @@ This work is therefore focused on the application of mechanistic models rooted i
 Mechanistic models are used throughout biology \citep{GoldmanAndYang1994,loreau1998,DavisAndPelsor2001,adf2007,McGill2007}.
 By modeling the process underlying the observed data mechanistic models provide insights into the processes and estimates of parameters shaping the data \citep{Liberles2013}.
 A wide variety of information is stored in protein and protein coding sequences, e.g. structure \citep{anfinsen1973}, mutation bias \citep{ShahAndGilchrist2011, gilchrist2015}, protein synthesis rate \citep{gilchrist2007,gilchrist2015}. 
-Mechanistic models can be used to extract these informations and to study the relative strength of mutation, selection, and genetic drift leading to the observed sequences.
+Mechanistic models can be used to extract these information and to study the relative strength of mutation, selection, and genetic drift leading to the observed sequences.
 
 \section{Cost: Decomposing Codon Usage}
 
@@ -41,12 +41,12 @@ However, mutation bias and selection can differ within the genome.
 \end{figure}
 \doublespacing
 
-For example, strand specific mutation bias \citep{Lafay1999,Romero2000}, differences in the tRNA pool throughout life stages \citep{sagi2016}, or introgressions and horizontal gene transfer \citep{medigue1991,lawrence1997} can produce multiple genomic environments.
+For example, strand specific mutation bias \citep{Lafay1999,Romero2000}, differences in the tRNA pool throughout life stages \citep{sagi2016}, or introgression and horizontal gene transfer \citep{medigue1991,lawrence1997} can produce multiple genomic environments.
 Chapter \ref{ch:anacoda} extends the mechanistic model \ROC \cite{gilchrist2015} to allow for a mixture distribution of mutation and selection parameters \cite{landerer2018} and provides researchers with a software tool to address intra genomic variation in codon usage.
 However, there is a significant difference to classical mixture approaches.
 In addition to gene population specific parameters, \ROC also estimates a gene specific parameter (protein synthesis rate). 
 Therefore, the protein synthesis rate for each gene has to be estimated assuming that the a gene is in each gene population.
-This can provide additional insight into the adaptiveness of a gene to alternative genomic environments.
+This can provide additional insight into how adapted a gene is to an alternative genomic environment.
 Figure \ref{fig:expl_model} illustrates how the proportions of synonymous codons change with increasing protein synthesis rate.
 When the protein synthesis rate is low, mutation bias between codons dominates the proportions of synonymous codons while increasing protein synthesis increases the strength of selection (see \cite{gilchrist2015} for details). 
 
@@ -80,7 +80,7 @@ Alternatively, assumptions about the nature of selection can reduce the number o
 For example, frequency dependent selection \citep{GoldmanAndYang1994, MuseAndGaut1994, thorne1996} or stabilizing selection \citep{beaulieu2019} allow for a reduction in fitness of amino acids with distance in \PC space.
 
 \selac \citep{beaulieu2019} is a model of stabilizing selection that assesses the fitness of each amino acid relative to the fitness peak (Figure \ref{fig:decl_fit}).
-The ftness of an amino acid is assumed to decline exponentially with distance to the optimal amino acid in \PC space.
+The fitness of an amino acid is assumed to decline exponentially with distance to the optimal amino acid in \PC space.
 In chapter \ref{ch:phylogeny} I apply \selac to the $\beta$-lactamase TEM and estimate site specific selection on amino acids and compare the inferred fitness landscape to empirical estimates from deep mutation scanning experiments \citep{stiffler2016}.
 I find that experimentally informed amino acid preferences improve model fit but do not accurately reflect the evolution of TEM in the wild.
 Furthermore, I show that the information on site specific selection on amino acids can be extracted from protein coding sequences by models rooted in first principles like \selac.

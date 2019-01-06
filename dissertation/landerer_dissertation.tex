@@ -25,8 +25,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{Application of mechanistic models to separate the effects of mutation, selection, and drift on protein sequence evolution}	       	% title of thesis/dissertation
 \author{Cedric Lars Florian Landerer}                			% author's name
-\copyrightYear{2018}            				% copyright year of your thesis/dissertation
-\graduationMonth{December}           				% month of graduation for your thesis/dissertation
+\copyrightYear{2019}            				% copyright year of your thesis/dissertation
+\graduationMonth{May}           				% month of graduation for your thesis/dissertation
 %\keywords{molecular evolution, codon usage, population genetics, phylogenetics, genetic load, amino aicd usage}	% keywords (optional) separated by commas - these are used in the PDF file properties
 %\major{Ecology and Evolutionary Biology}	% major: Mechanical Engineering, Aerospace Engineering, Mathematics...
 \degree{Doctor of Philosophy}	    			% degree: Doctor of Philosophy, Master of Science, Master of Engineering...
@@ -79,7 +79,9 @@
 
 \usepackage{sectsty}
 \usepackage{natbib}
-\chapterfont{\large\centering}
+
+%% chapter heading position and size
+\chapterfont{\Huge\centering}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % This section formats landscape pages properly with the correct page number.
@@ -174,6 +176,7 @@
     %\bibliography{./intro_conc,./bioinfo,./kluyveri_paper,./ecoli}% references.bib included in the references directory
     \newpage
 
+\renewcommand{\chapter}[2]{}
     % To make the bibliography, use \utbiblio{#1}{}{} command. Always use "#1" for the first entry. The second entry is your bibliography style, and the third entry is the name of your bibliography file (.bib file extension) 
     % bibliography style - recommend using apalike-doi as it hyperlinks DOIs
     % Be sure to run BibTeX in order to generate the bibliography correctly.
