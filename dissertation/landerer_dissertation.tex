@@ -176,15 +176,15 @@
     %\bibliography{./intro_conc,./bioinfo,./kluyveri_paper,./ecoli}% references.bib included in the references directory
     \newpage
 
-\renewcommand{\chapter}[2]{}
+%\renewcommand{\chapter}[2]{}
     % To make the bibliography, use \utbiblio{#1}{}{} command. Always use "#1" for the first entry. The second entry is your bibliography style, and the third entry is the name of your bibliography file (.bib file extension) 
     % bibliography style - recommend using apalike-doi as it hyperlinks DOIs
     % Be sure to run BibTeX in order to generate the bibliography correctly.
     %\bibliographystyle{genetics}
-    \bibliographystyle{genetics} % bibliography style - recommend using apalike-doi as it hyperlinks DOIs
+    %\bibliographystyle{genetics} % bibliography style - recommend using apalike-doi as it hyperlinks DOIs
     %\bibliography{./intro_conc,./bioinfo,./kluyveri_paper,./ecoli}
-    \bibliography{./dissertation}
-	%\utbiblio{#1}{genetics}{./intro_conc,./bioinfo,./kluyveri_paper,./ecoli}
+    %\bibliography{./dissertation}
+	\utbiblio{#1}{genetics}{./dissertation}
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % APPENDIX - OPTIONAL - COMMENT OUT IF NOT NEEDED
