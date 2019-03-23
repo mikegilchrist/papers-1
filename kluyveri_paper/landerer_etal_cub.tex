@@ -16,6 +16,8 @@
 \usepackage{multirow}
 \usepackage{subfigure}
 
+\usepackage[flushleft]{threeparttable}
+
 \ifthenelse{1=1}{
 \usepackage{fullpage}
 \usepackage{setspace}
@@ -136,11 +138,12 @@ We use \ROC to independently describe two cellular environments reflected in the
 Our results indicate that the difference in \GC between endogenous and exogenous genes is mostly due to the differences in mutation bias of their ancestral environments.
 Accounting for these different signatures of mutation bias and selection bias of the endogenous and exogenous sets of genes substantially improves our ability to predict present day protein synthesis rates.
 These endogenous and exogenous gene set specific estimates of mutation bias and selection bias, in turn allow us to address more refined questions of biological importance.
-For example, it allows us to identify \gossypii as the most likely source of the introgressed genes out of the 38 yeast lineages with sequenced genomes, estimate the age of the introgression to be on the order of 0.2-1 Mya, estimate the genetic load of these genes, both at the time of introgression and now, as well as make predictions about how the CUB of the introgressed genes will evolve in the future.
+For example, it allows us to identify \gossypii as the most likely source of the introgressed genes out of the 332 yeast lineages with sequenced genomes \citep{shen2018}, estimate the age of the introgression to be on the order of 0.2-1 Mya, estimate the genetic load of these genes, both at the time of introgression and now, as well as make predictions about how the CUB of the introgressed genes will evolve in the future.
 
 \section*{Results}
 \subsection*{The Signatures of two Cellular Environments within \kluyveri's Genome}
 We used our software package AnaCoDa \citep{landerer2018} to compare model fits of \ROC to the entire \kluyveri genome and its genome partitioned into two sets of 4,864 endogenous and 497 exogenous genes.
+\ROC is a statistical model that relates the effects of mutation bias \DM selection bias \DE between codons, and protein synthesis rate $\phi$ to explain the observed codon usage patterns.
 AIC values strongly support the hypothesis that the \kluyveri genome consists of genes with two different and distinct patterns of codon usage bias ($\Delta\text{AIC} = 75,462$; Table \ref{tab:AIC_klu}).
 We find additional support for this hypothesis when we compare our predictions of protein synthesis rate to empirically observed expression values.
 Specifically, the explanatory power between our predictions and observed values improved by $\sim 42\%$, from $R^2 = 0.33$ to $0.46$ (Figure \ref{fig:phi_corr_two_cond}).
@@ -205,11 +208,27 @@ We find that the strength of selection within each codon family differs between 
 Overall, the endogenous genes only show a selection preference for C and G ending codons in $\sim58\%$ of the codon families.
 In contrast, the exogenous genes display a strong preference for A and T ending codons in $\sim89\%$ of the codon families.
 
-The difference in codon usage between endogenous and exogenous genes is striking.
-As a result, our estimates of the optimal codon differ in nine cases between endogenous and exogenous genes (Table \ref{tab:codon_pref_deta}).
-Fits to the complete \kluyveri genome reveal that the relatively small exogenous gene set ($\sim 10\%$ of genes) has a disproportional effect on the model fit.
+The difference in codon usage between endogenous and exogenous genes is striking as some amino acids have opposite codon preferences. 
+As a result, our estimates of the optimal codon differ in nine cases between endogenous and exogenous genes (Figure \ref{fig:cub_all_sets}, Table \ref{tab:codon_pref_deta}).
+For example, Asparagine (Asn, N) shows strong preference for AAC in highly expressed endogenous genes but the same codon is depleted in highly expressed exogenous genes.
+In addition, fits to the complete \kluyveri genome reveal that the relatively small exogenous gene set ($\sim 10\%$ of genes) has a disproportional effect on the model fit (Figure \ref{fig:cub_all_sets}).
+We find that the combined genome shows the same codon preference in highly expressed genes as the exogenous gene set for Aspartic acid (Asp, D), despite the gene set only representing $\sim 10 \%$ of the genes.
+In the nine cases the endogenous and exogenous genes show difference in the selectively favored codon.
+In five of these cases (Asp, D; His, H; Lys, K; Asn, N; and Pro, P) the endogenous genes favor the codon with the most abundant tRNA.
+For the remaining four cases (Ile, I; Ser, S; Thr, T; and Val, V), there are no tRNA genes for the wobble free cognate codon encoded in the \kluyveri genome.
 We find that the complete \kluyveri genome is estimated to share the mutational preference with the exogenous genes in $\sim78\%$ of the $19$ codon families that are discordant between the endogenous and exogenous genes.
 In two cases, Isoleucine (Ile, I) and Arginine (Arg, R), the strong discordance in mutation preference results in an estimated codon preference in the complete \kluyveri genome that differs from both the endogenous, and the exogenous genes.
+
+%D:GAC:T, H:CAC:T, I:ATT:FX, K:AAG:T, N:AAC:T, P:CCA:T, S:TCT:FX, T:ACT:FX, V:GTT:FX
+
+\begin{figure}
+     \centering
+	\includegraphics[width=\textwidth]{img/CUB_cleft_main.pdf}
+	\caption{Codon usage patterns for 19 amino acids. Amino acids are indicated as one letter code. 
+	The amino acids Serine was split into two groups (S and Z) as Serine is coded for by two groups of codons that are separated by more than one mutation.
+	Solid line indicates the endogenous codon usage, dashed line indicates the exogenous codon usage, dotted line indicates the combined codon usage.}
+	\label{fig:cub_all_sets}
+\end{figure}
 
 The effect of the small exogenous gene set on the fit to the complete \kluyveri genome is smaller in our estimates of selection bias \DE than \DM, but still large.
 We find that the complete \kluyveri genome is estimated to share the selection preference with the exogenous genes in $\sim60\%$ of codon families that show discordance between endogenous and exogenous genes.
@@ -218,21 +237,60 @@ These results clearly show that it is important to recognize the difference in e
 \subsection*{Determining Source of Exogenous Genes}
 
 We combined our estimates of mutation bias \DM and selection bias \DE with synteny information and searched for potential source lineages of the introgressed exogenous region.
-We examined 38 yeast lineages (Table \ref{tab:org_overview}) of which two (\emph{Eremothecium gossypii} and \emph{Candida dubliniensis}) showed a strong positive correlation in codon usage (Figure \ref{fig:csp_exo_comp}).
-The endogenous \kluyveri genome exhibits codon usage very similar to most yeast lineages examined, indicating little variation in codon usage among the examined yeasts (Figure \ref{fig:csp_endo_comp}).
-Four lineages show a positive correlation for $\Delta M$ and $\Delta \eta$ with the exogenous genes and have a weak to moderate positive correlation in selection bias with the endogenous genes; but, like the exogenous genes, tend to have a negative correlation in $\Delta M$ with the endogenous genes.
+We examined 332 budding yeasts \citep{shen2018} and, using a cutoff of $\rho > 0.6$, identified 13 potential source lineages (Figure \ref{fig:csp_exo_comp}, Table \ref{tab:source}).
+The endogenous \kluyveri genome exhibits codon usage very similar to most (77 \%) yeast lineages examined, indicating little variation in codon usage among the examined yeasts (Figure \ref{fig:csp_endo_comp}).
+Only $\sim 17 \%$ of all examined yeast show a positive correlation in both, \DM and \DE with the exogenous genes, whereas most lineages ($\sim 83 \%$) show a negative correlation for \DM but only 21 \% a negative correlation for \DE.
+This indicates that information on mutation bias provides more information about a potential origin of the exogenous genes.
 
-Comparing synteny between the exogenous genes, which are restricted to the left arm of chromosome C, and \gossypii and \dubl as well as closely related yeast species we find that \gossypii displays the highest synteny (Figures \ref{fig:synt_rel} \& \ref{fig:synteny_species}).
-\dubl, even though it displays similar codon usage does not show synteny with the exogenous region.
-Furthermore, the synteny relationship between the exogenous region and other yeasts appears to be limited to the Saccharomycetacease clade (Figure \ref{fig:synteny_species}).
-Given these results, we conclude that of the 38 examined yeast lineages the \gossypii lineage is the most likely source of the introgressed exogenous genes.
-However, this result is in contrast to previous studies suggesting that the introgressioned region originated from within the Lachancea clade \citep{payen2009, vakirlis2016}
+\begin{table}
+  \centering
+  \caption{Budding yeast lineages showing similarity in codon usage with the exogenous genes.
+  \DM and \DE represent the correlation coefficient for \DM and \DE, respectively.
+  \GC is the average \GC of the whole genome.
+  Synteny is the percentage of the exogenous genes found in the listed lineage.
+  Only one lineage (\gossypii) shows a similar \GC $> 50 \%$. 
+  Two of the lineages use (\textit{C. albicans} and \dubl) use a non standard codon table (12)}
+  \begin{threeparttable}
+  	\begin{tabular}{lcccccc}
+    		\hline
+    		Species & \DM & \DE & \GC & Synteny \%&  Distance [Mya] \\ \hline 
+    		\emph{Babjeviella inositovora}			& 0.83 & 0.78 & 48.1 & 0   & 470.1044 \\
+    		\emph{Candida albicans*}		   		& 0.84 & 0.75 & 33.7 & 0   & 470.1043 \\
+   		\emph{Candida dubliniensis*}               		& 0.78 & 0.75 & 33.1 & 0   & 470.1043 \\ 
+    		\emph{Candida succiphila}	       			& 0.85 & 0.83 & 40.9 & 0   & 470.1042 \\ 
+    		\emph{Candida tammaniensis}			& 0.66 & 0.80 & 33.5 & 0   & 470.1043 \\
+    		\emph{Candida tenuis}					& 0.74 & 0.86 & 43.0 & 0   & 470.1044 \\
+    		\emph{Danielozyma ontarioensis}			& 0.75 & 0.92 & 46.6 & 3   & 470.1043 \\
+    		\emph{Eremothecium gossypii}			& 0.89 & 0.70 & 51.7 & 75 & 211.0847 \\
+    		\emph{Metschnikowia aberdeeniae}		& 0.74 & 0.88 & 48.5 & 0   & 470.1043 \\
+    		\emph{Metschnikowia hawaiiensis}		& 0.80 & 0.86 & 44.4 & 0   & 470.1042 \\
+    		\emph{Metschnikowia shivogae}			& 0.86 & 0.87 & 49.8 & 0   & 470.1043 \\
+    		\emph{Middelhovenomyces tepae}		& 0.80 & 0.62 & 40.8 & 0   & 651.9618 \\ 
+    		\emph{Ogataea zsoltii}					& 0.75 & 0.85 & 47.7 & 0   & 470.1042 \\ \hline
+  	\end{tabular}
+  	\begin{tablenotes}
+    		\item[*] Lineages uses non-standard codon table 12
+ 	 \end{tablenotes}
+  \end{threeparttable}  
+  \label{tab:source}
+\end{table}
+
+
+
+Comparing synteny between the exogenous genes, which are restricted to the left arm of chromosome C, and the determined candidate yeast species we find that \gossypii is the only species that displays high synteny (Table \ref{tab:source}).
+Furthermore, the synteny relationship between the exogenous region and other yeasts appears to be limited to Saccharomycetaceae clade.
+Given these results, we conclude that of the 332 examined yeast lineages the \gossypii lineage is the most likely source of the introgressed exogenous genes.
+However, this result is in contrast to previous studies suggesting that the introgressioned region originated from within the Lachancea clade \citep{payen2009, vakirlis2016}.
+Therefore, we identified 121 genes in our dataset \citep{shen2018} with homologous gene in \gossypii and \textit{L. thermotolerance} and used IQTree \citep{nguyen2015} to infer the phylogenetic relationship of the exogenous genes. Our results show that $\sim 60 \%$ of exogenous genes (73/121) are more closely related to \gossypii than to other Lachancea.
+
 
 \begin{figure}
      \centering
 	\includegraphics[width=.45\textwidth]{img/csp_mean_correlation_exo.pdf}
-	\caption{Correlation coefficients of \DM and \DE of the exogenous genes with 38 examined yeast lineages. 
-	Dots indicate the correlation of \DM and \DE of the lineages with the endogenous and exogenous parameter estimates. 
+	\caption{Correlation coefficients of \DM and \DE of the exogenous genes with 332 examined budding yeast lineages. 
+	Dots indicate the correlation of \DM and \DE of the lineages with the exogenous parameter estimates.
+	Red dots indicate the Lachancea and blue dots indicate Eremothecium lineages.
+	Dashed lines indicate candidate cutoff ($\rho = 0.6$). 
 	All regressions were performed using a type II regression \citep{SokalAndRohlf1981}.}
 	\label{fig:csp_exo_comp}
 \end{figure}
@@ -296,13 +354,22 @@ Extremely small variances in the $\phi$ values estimated by \ROC could indicate 
 
 The mutation and selection bias parameters \DM and \DE of the introgressed exogenous genes contain information, albeit decaying, about its previous cellular environment.
 We, therefore, utilize \DM and \DE to identify potential source lineages.
-The \gossypii and \dubl lineages stand out from the other 36 yeast lineages in that the correlation coefficients between their \DM and \DE parameters and those of the exogenous genes are $>0.5$  (Figure \ref{fig:csp_comp}).
-In terms of gene order, we found that synteny with the exogenous genes is limited to the Saccharomycetaceae clade, which \dubl is outside of.
-Overall, the synteny coverage extends along the whole exogenous regions with the exception of the 3' and 5' ends of the exogenous region   (Figure \ref{fig:synteny_species}b). 
-Further, of the 38 species examined, \gossypii is the only genome with a \GC $> 50 \%$, making it most similar to the exogenous genes.
+Thirteen lineages stand out among the 332 yeast lineages we considered in that their correlation coefficients between their estimates of \DM and \DE and those of the exogenous genes are $> 0.6$  (Figure \ref{fig:csp_comp}).
+In terms of gene order, we found that synteny with the exogenous genes is limited to the Saccharomycetaceae clade, which excludes all candidate lineages but \gossypii (Table \ref{tab:source}).
+However, previous work indicated that the donor lineage of the exogenous genes has to be a, potentially unknown, Lachancea \citep{payen2009, vakirlis2016}.
+These results, however, are based on species rather than genes trees.
+Considering the similarity in selection bias (Figure \ref{fig:csp_comp}b) an our calculation of the genetic load of the exogenous genes (Figure \ref{ig:sne_fitness_burden}b), both of which are free of any assumption about the origin of the exogenous genes, a species tree estimated from the exogenous genes may a biased towards the Lachancea clade.
+While we were only able to consider a subset of exogenous genes for our phylogenetic analysis, these genes provide further evidence that the exogenoius genes could originate from a lineage that does not belong to the Lachancea clade.
+In addition, the synteny coverage extends along most of the exogenous regions with the exception of the 3' and 5' ends of the exogenous region, and of the 13 candidate lineages, \gossypii is the only lineage with a \GC $> 50 \%$, making it most similar to the exogenous genes.
 Thus, only the \gossypii genome displays strong correlations in \DM and \DE, synteny, and similar \GC  with the exogenous genes.
+In summary, our work does not dispute an unknown Lachancea as possible origin, but provides an alternative hypothesis based on previously not considered information, the codon usage of the exogenous genes.
 
-With \gossypii identified as potential source lineage of the introgressed region, we inferred the time since the introgression occurred using our estimates of mutation bias \DM.
+Our results showed that the endogenous and exogenous genes show similarity in \DE but not in \DM. 
+This can be caused by either similarity in \DE between the source lineage of the exogenous genes and \kluyveri or by a fast decay of the original signature or \DE.
+In our estimation of a source lineage, we explicitly assumed the first case.
+While our estimate is still supported by \GC and synteny, we can not rule out that this biased our inference of the source lineage.
+
+Assuming \gossypii as potential source lineage of the introgressed region, we illustrated how infomation on codon usage can be used to infer the time since the introgression occurred using our estimates of mutation bias \DM.
 Our \DM estimates are well suited for this task as they are free of the influence of selection and unbiased by $N_e$ and other scaling terms, which is in contrast to our estimates of \DE \citep{gilchrist2015}.
 Our estimated age of the introgression of $6.2\pm1.2\times 10^8$ generations is $\sim 10$ times longer time than a previous minimum estimate by \citet{friedrich2015} of $5.6\times 10^7$ generations.
 Our estimate assumes that the current \gossypii and \kluyveri cellular environment reflect their ancestral states at the time of the introgression.
@@ -324,7 +391,7 @@ These similarities in \DM and \DE parameters suggest that the genetic load for \
 The large genetic load of the exogenous genes due to codon mismatch at the time of the introgression would seem to indicate that the fixation of the introgression was either a fluke event or the codon mismatch genetic load was countered by one or more highly advantageous loci within the introgression.
 
 Under the  first scenario, our best estimate of the selection coefficient against the introgression based on expected codon mismatch at that time is $s = -0.0008$ and an effective population size $N_e$ on the order of $10^8$ \citep{wagner2005} yields an approximate fixation probability of $(1-\exp[- s])/(1-\exp[2 - sN_e]) \approx 10^{-6950}$ \citep{SellaAndHirsh2005}.
-Even though \kluyveri diverged from the rest of the Lachancea clade around 85 Mya \citep{kensche2008, MHM2015}, if we assume 1 to 8 generations/day, which implies $10^{10}$ to $10^{11}$ generations since the time of divergence, one round of meiosis for every 1000 rounds of mitosis based on \emph{S.~paradoxus} \citep{tsai2008}, and $N_e \approx 10^8$ there were only $10^{15}$ to $10^{16}$ opportunities for such an introgression to have occurred and fixed.
+Even though \kluyveri diverged from the rest of the Lachancea clade around 85 Mya \citep{kensche2008, MHM2015}, if we assume 1 to 8 generations/day, which implies $10^{10}$ to $10^{11}$ generations since the time of divergence, one round of meiosis for every 1000 rounds of mitosis and only one in 100 meiosis events leads to outcrossing based on \emph{S.~paradoxus} \citep{tsai2008}, and $N_e \approx 10^8$ there were only $10^{13}$ to $10^{14}$ opportunities for such an introgression to have occurred and fixed.
 Clearly, unless there was a severe bottleneck with $N_e < 1/|s| \approx 1,250$ around the time of introgression, which conceivably could have been triggered by a speciation event, this scenario seems very unlikely.
 
 In the second scenario, where we assume the introgression contained advantageous loci, one may wonder why recombination events did not limit the introgression to only the adaptive loci.
@@ -368,6 +435,11 @@ Comparison of codon specific parameters (\DM and $\DE = 2N_eq(\eta_i-\eta_j)$) w
 The parameter \DE can be interpreted as the difference in fitness between codon $i$ and $j$ for the average gene with $\phi = 1$ scaled by the  effective population size $N_e$, and the selective cost of an ATP $q$ \citep{gilchrist2007, gilchrist2015}.
 Type II regression was performed with re-centered parameter estimates, accounting for noise in dependent and independent variable \citep{SokalAndRohlf1981}.
 
+\subsection*{Phylogenetic Analysis}
+Using the dataset by \citet{shen2018} we first identified identified 121 alignments for exogenous genes and further contained homologous genes for \gossypii, and \textit{L. thermotolerance}.
+We excluded all species from the alignments that do not belonge to the Saccharomycetaceae clade. 
+IQTree \citep{naguyen2015} was used to identify the best fitting model for each gene and to estimate the individual gene trees.
+The distance between \kluyveri, \gossypii, and \textit{L. thermotolerance} was calculated for each tree to identify genes for which exogenous genes are more closely related to \gossypii or  \textit{L. thermotolerance}.
 
 \subsection*{Synteny Comparison}
 We obtained complete genome sequences from NCBI (on: 02-05-2017).
@@ -375,7 +447,7 @@ Genomes were aligned and checked for synteny using SyMAP (4.2) with default sett
 We assess synteny as percentage coverage of the exogenous gene region (Figure \ref{fig:synteny_species}b).
 
 \subsection*{Estimating Age of Introgression}
-We modeled the change in codon frequency over time using an exponential model for all two codon amino acids, and describing the change in codon $c_1$ as
+We modelled the change in codon frequency over time using an exponential model for all two codon amino acids, and describing the change in codon $c_1$ as
 \begin{equation}
 \frac{d c_1}{d t} = -\mu_{1,2}c_1 - \mu_{2,1}(1-c_1)
 \label{mut_ode}
@@ -463,7 +535,7 @@ Supporting Materials for \emph{Decomposing Mutation and Selection to Identify Mi
 	 Shown are the most likely codon in low expression genes for each amino acid in: \gossypii, in the endogenous and exogenous genes of \kluyveri, and in the \kluyveri genome without accounting for the two cellular environments.}
 \begin{tabular}{  l  c  c  c  c  }
 \hline
-	Amino Acid & \gossypii & Endogenous & Exogenous & \kluyveri \\ \hline
+	Amino Acid & \gossypii & Endogenous & Exogenous & Combined \\ \hline
 	Ala A & GCG & GCA & GCG & GCG \\ 
 	Cys C & TGC & TGT & TGC & TGC \\ 
 	Asp D & GAC & GAT & GAC & GAC \\ 
@@ -495,7 +567,7 @@ Supporting Materials for \emph{Decomposing Mutation and Selection to Identify Mi
 	 Shown are the most likely codon in high expression genes for each amino acid in: \gossypii, in the endogenous and exogenous genes of \kluyveri, and in the \kluyveri genome without accounting for the two cellular environments.}
 \begin{tabular}{  l  c  c  c  c  }
 \hline
-	Amino Acid & \gossypii & Endogenous & Exogenous & \kluyveri \\ \hline
+	Amino Acid & \gossypii & Endogenous & Exogenous & Combined \\ \hline
 	Ala A & GCT & GCT & GCT & GCT \\ 
 	Cys C & TGT & TGT & TGT & TGT \\ 
 	Asp D & GAT & GAC & GAT & GAT \\ 
@@ -520,56 +592,6 @@ Supporting Materials for \emph{Decomposing Mutation and Selection to Identify Mi
 \end{table}
 \clearpage
 
-\begin{table}
-    \centering
-    \caption{Overview of yeast lineages used in this study.}
-\begin{tabular}{  l  l  l  c  c  l  l  }
-\hline
-	Taxon 				& Abbreviation 	& NCBI taxonomic ID 	& Codon Table	& \% GC  \\ \hline
-	Candida albicans 		& Calb 		& 5476 			&	12	& 34 	 \\
-	Saccharomyces bayanus 		& Sbay 		& 4931 			&	1	& 40 	 \\
-	Trichophyton benhamiae 		& Tben		& 63400 		&	1	& 49 	 \\
-	Tetrapisispora blattae 		& Tbla 		& 1071379 		&	1	& 32 	 \\
-	Saccharomyces castellii 	& Scas 		& 27288 		&	1	& 37 	 \\
-	Saccharomyces cerevisiae 	& Scer 		& 4932 			&	1	& 38 	 \\
-	Eremothecium cymbalariae 	& Ecym 		& 45285 		&	1	& 40 	 \\
-	Torulaspora delbrueckii 	& Tdel 		& 4950 			&	1	& 42 	 \\
-	Candida dubliniensis 		& Cdub 		& 42374 		&	12	& 33 	 \\
-	Lodderomyces elongisporus 	& Lelo 		& 36914 		&	1	& 37 	 \\
-	Saccharomyces eubayanus 	& Seub 		& 1080349 		&	1	& 40 	 \\ 
-	Debaryomyces fabryi 		& Dfab 		& 58627 		&	1	& 36 	 \\ 
-	Candida glabrata 		& Cgla 		& 5478 			&	1	& 39 	 \\
-	Eremothecium gossypii 		& Egos 		& 33169 		&	1	& 52 	 \\
-	Meyerozyma guilliermondii 	& Mgui 		& 4929 			&	12	& 44 	 \\
-	Debaryomyces hansenii 		& Dhan 		& 4959 			&	12	& 36 	 \\
-	Lachancea kluyveri 		& Lku 		& 4934 			&	1	& 40/53  \\
-	Saccharomyces kudriavzevii 	& Skud 		& 114524 		&	1	& 41 	 \\
-	Kluyveromyces lactis 		& Klac 		& 28985 		&	1	& 39 	 \\
-	Lachancea lanzarotensis 	& Llan 		& 1245769 		&	1	& 44 	 \\ 
-	Yarrowia lipolytica 		& Ylip 		& 4952 			&	1	& 49 	 \\
-	Clavispora lusitaniae 		& Clus 		& 36911 		&	12	& 45 	 \\ 
-	Kluyveromyces marxianus 	& Kmar 		& 4911 			&	1	& 40 	 \\ 
-	Saccharomyces mikatae 		& Smik 		& 114525 		&	1	& 38 	 \\
-	Sphaerulina musiva 		& Smus 		& 85929 		&	1	& 51 	 \\ 
-	Kazachstania naganishii 	& Knag 		& 588726 		&	1	& 46 	 \\ 
-	Saccharomyces paradoxus 	& Spar 		& 27291 		&	1	& 38 	 \\ 
-	Candida parapsilosis 		& Cpar 		& 5480 			&	12	& 38 	 \\ 
-	Spathaspora passalidarum 	& Spas 		& 340170 		&	12	& 38 	 \\ 
-	Tetrapisispora phaffii 		& Tpha 		& 113608 		&	1	& 34 	 \\ 
-	Vanderwaltozyma polyspora 	& Vpol 		& 36033 		&	1	& 33 	 \\ 
-	Lachancea quebecensis 		& Lque 		& 1654605 		&	1	& 47 	 \\ 
-	Zygosaccharomyces rouxii 	& Zrou 		& 4956 			&	1	& 40 	 \\ 
-	Scheffersomyces stipitis 	& Ssti 		& 4924 			&	12	& 41 	 \\ 
-	Lachancea thermotolerans 	& Lthe 		& 381046 		&	1	& 47 	 \\ 
-	Candida tropicalis 		& Ctro 		& 5482 			&	12	& 33 	 \\ 
-	Lachancea waltii 		& Lwal 		& 4914 			&	1	& 44 	 \\ 
-	Cladophialophora yegresii 	& Cyeg 		& 470704 		&	1	& 54 	 \\ \hline
-\end{tabular}
-\label{tab:org_overview}
-\end{table}
-\clearpage
-
-
 \null
 \vfill
 \begin{figure}
@@ -585,30 +607,30 @@ Supporting Materials for \emph{Decomposing Mutation and Selection to Identify Mi
 \clearpage
 
 
-\null
-\vfill
-\begin{figure}
-     \centering
-	\includegraphics[width=0.8\textwidth]{img/synteny_blocks_and_gc.pdf}
-	\caption{Synteny relationship of \gossypii (roman numerals) and the exogenous, introgressed region C-Left. Indicated is the \GC content of the introgressed region in \kluyveri.}
-	\label{fig:synt_rel}
-\end{figure}
-\null
-\vfill
-\clearpage
-\null
-\vfill
-\begin{figure}
-     \centering
-	\includegraphics[width=0.8\textwidth]{img/synteny_coverage.pdf}
-	\caption{Amount of synteny for each species in units of standard deviations for selected species.}
-	\label{fig:synteny_species}
-\end{figure}
-\null
-\vfill
-\clearpage
-\null
-\vfill
+%\null
+%\vfill
+%\begin{figure}
+ %    \centering
+%	\includegraphics[width=0.8\textwidth]{img/synteny_blocks_and_gc.pdf}
+%	\caption{Synteny relationship of \gossypii (roman numerals) and the exogenous, introgressed region C-Left. Indicated is the \GC content of the introgressed region in \kluyveri.}
+%	\label{fig:synt_rel}
+%\end{figure}
+%\null
+%\vfill
+%\clearpage
+%\null
+%\vfill
+%\begin{figure}
+%     \centering
+%	\includegraphics[width=0.8\textwidth]{img/synteny_coverage.pdf}
+%	\caption{Amount of synteny for each species in units of standard deviations for selected species.}
+%	\label{fig:synteny_species}
+%\end{figure}
+%\null
+%\vfill
+%\clearpage
+%\null
+%\vfill
 
 
 \begin{figure}
@@ -660,13 +682,6 @@ Supporting Materials for \emph{Decomposing Mutation and Selection to Identify Mi
 \vfill
 \clearpage
 
-\begin{figure}
-     \centering
-	\includegraphics[width=0.9\textwidth]{img/CUB_cleft_main.pdf}
-	\caption{Codon usage patterns for 19 amino acids. Amino acids are indicated as one letter code. 
-	The amino acids Serine was split into two groups (S and Z) as Serine is coded for by two groups of codons that are separated by more than one mutation.
-	Solid line indicates the endogenous codon usage, dashed line indicates the exogenous codon usage, dotted line indicates the combined codon usage.}
-	\label{fig:cub_all_sets}
-\end{figure}
+
 
 \end{document}
