@@ -2,7 +2,7 @@
 
 \bibitem[Baker {\em et~al.}(2015)Baker, Wang, Bellora, Peris, Hulfachor,
   Koshalek, Adams, Libkind, and Hittinger]{baker2015}
-Baker, E., Wang, B., Bellora, N., {\em et~al.} 2015.
+Baker, E.~C., Wang, B., Bellora, N., {\em et~al.} 2015.
 \newblock The genome sequence of saccharomyces eubayanus and the domestication
   of lager-brewing yeasts.
 \newblock {\em Molecular Biology and Evolution\/}, {32}(11): 2818--2831.
@@ -15,13 +15,20 @@ Beimforde, C., Feldberg, K., Nylinder, S., {\em et~al.} 2014.
   combining fossil and molecular data.
 \newblock {\em Mol. Phylogenet. Evol.}, {78}: 386--398.
 
+\bibitem[Brion {\em et~al.}(2017)Brion, Legrand, Peter, Caradec, Pflieger, Hou,
+  Friedrich, Llorente, and Schacherer]{brion2017}
+Brion, C., Legrand, S., Peter, J., {\em et~al.} 2017.
+\newblock Variation of the meiotic recombination landscape and properties over
+  a broad evolutionary distance in yeasts.
+\newblock {\em PLoS Genetics\/}, {13}(8): e1006917.
+
 \bibitem[Bulmer(1990)Bulmer]{bulmer1990}
 Bulmer, M. 1990.
 \newblock The selection-mutation-drift theory of synonymous codon usage.
 \newblock {\em Genetics\/}, {129}: 897--907.
 
 \bibitem[Cope {\em et~al.}(2018)Cope, Hettich, and Gilchrist]{cope2018}
-Cope, A., Hettich, R., and Gilchrist, M. 2018.
+Cope, A.~L., Hettich, R.~L., and Gilchrist, M.~A. 2018.
 \newblock {Quantifying codon usage in signal peptides: Gene expression and
   amino acid usage explain apparent selection for inefficient codons}.
 \newblock {\em Biochimica et Biophysica Acta (BBA) - Biomembranes\/},
@@ -41,14 +48,15 @@ Friedrich, A., Reiser, C., Fischer, G., and Schacherer, J. 2015.
 \newblock {\em Molecular Biology and Evolution\/}, {32}(1): 184 -- 192.
 
 \bibitem[Gilchrist(2007)Gilchrist]{gilchrist2007}
-Gilchrist, M. 2007.
+Gilchrist, M.~A. 2007.
 \newblock Combining models of protein translation and population genetics to
   predict protein production rates from codon usage patterns.
 \newblock {\em Molecular Biology and Evolution\/}, {24}(11): 2362--2372.
 
 \bibitem[Gilchrist {\em et~al.}(2015)Gilchrist, Chen, Shah, Landerer, and
   Zaretzki]{gilchrist2015}
-Gilchrist, M., Chen, W., Shah, P., Landerer, C., and Zaretzki, R. 2015.
+Gilchrist, M.~A., Chen, W.~C., Shah, P., Landerer, C.~L., and Zaretzki, R.
+  2015.
 \newblock Estimating gene expression and codon-specific translational
   efficiencies, mutation biases, and selection coefficients from genomic data
   alone.
@@ -67,7 +75,7 @@ Ikemura, T. 1985.
 
 \bibitem[Kensche {\em et~al.}(2008)Kensche, Oti, Dutilh, and
   Huynen]{kensche2008}
-Kensche, P., Oti, M., Dutilh, B., and Huynen, M. 2008.
+Kensche, P.~R., Oti, M., Dutilh, B.~E., and Huynen, M.~A. 2008.
 \newblock Conservation of divergent transcription in fungi.
 \newblock {\em Trends Genet.}, {5}(24): 207--211.
 
@@ -84,7 +92,7 @@ Lang, G.~I. and Murray, A.~W. 2008.
 \newblock {\em Genetics\/}, {178}(1): 67 -- 82.
 
 \bibitem[Lawrence and Ochman(1997)Lawrence and Ochman]{lawrence1997}
-Lawrence, J. and Ochman, H. 1997.
+Lawrence, J.~G. and Ochman, H. 1997.
 \newblock Amelioration of bacterial genomes: Rates of change and exchange.
 \newblock {\em Journal of Molecular Miology\/}, {44}: 383--397.
 
@@ -105,6 +113,13 @@ Médigue, C., Rouxel, T., Vigier, P., Hénaut, A., and Danchin, A. 1991.
 \newblock Evidence for horizontal gene transfer in escherichia coli speciation.
 \newblock {\em Journal of Molecular Miology\/}, {222}(4): 851--856.
 
+\bibitem[Nguyen {\em et~al.}(2015)Nguyen, Schmidt, von Haeseler, and
+  Minh]{nguyen2015}
+Nguyen, L.~T., Schmidt, H.~A., von Haeseler, A., and Minh, B.~Q. 2015.
+\newblock Iq-tree: A fast and effective stochastic algorithm for estimating
+  maximum-likelihood phylogenies.
+\newblock {\em Molecular Biology and Evolution\/}, {32}(1): 268--274.
+
 \bibitem[Payen {\em et~al.}(2009)Payen, Fischer, Marck, Proux, Sherman,
   Coppée, Johnston, Dujon, and Neuvéglise]{payen2009}
 Payen, C., Fischer, G., Marck, C., {\em et~al.} 2009.
@@ -117,24 +132,38 @@ Payen, C., Fischer, G., Marck, C., {\em et~al.} 2009.
 \newblock {\em R: A Language and Environment for Statistical Computing\/}.
 \newblock R Foundation for Statistical Computing, Vienna, Austria.
 
+\bibitem[Salichos and Rokas(2013)Salichos and Rokas]{salichos2013}
+Salichos, L. and Rokas, A. 2013.
+\newblock Inferring ancient divergences requires genes with strong phylogenetic
+  signals.
+\newblock {\em Nature\/}, {497}: 327--331.
+
 \bibitem[Sella and Hirsh(2005)Sella and Hirsh]{SellaAndHirsh2005}
-Sella, G. and Hirsh, A. 2005.
+Sella, G. and Hirsh, A.~E. 2005.
 \newblock The application of statistical physics to evolutionary biology.
 \newblock {\em Proceedings of the National Academy of Sciences of the United
   States of America\/}, {102}: 9541--9546.
 
 \bibitem[Shah and Gilchrist(2011)Shah and Gilchrist]{ShahAndGilchrist2011}
-Shah, P. and Gilchrist, M. 2011.
+Shah, P. and Gilchrist, M.~A. 2011.
 \newblock Explaining complex codon usage patterns with selection for
   translational efficiency, mutation bias, and genetic drift.
 \newblock {\em Proccedings of the National Academy of Sciences U.S.A\/},
   {108}(25): 10231--10236.
 
 \bibitem[Sharp and Li(1987)Sharp and Li]{sharp1987}
-Sharp, P. and Li, W. 1987.
+Sharp, P.~M. and Li, W.~H. 1987.
 \newblock The codon adaptation index - a meassure of directional synonymous
   codon usage bias, and its potential applications.
 \newblock {\em Nucleic Acids Research\/}, {15}: 1281--1295.
+
+\bibitem[Shen {\em et~al.}(2018)Shen, Opulente, Kominek, Zhou, Steenwyk, Buh,
+  Haase, Wisecaver, Wang, Doering, Boudouris, Schneider, Langdon, Ohkuma,
+  Endoh, Takashima, Manabe, Čadež, Libkind, Rosa, DeVirgilio, Hulfachor,
+  Groenewald, Kurtzman, Hittinger, and Rokas]{shen2018}
+Shen, X.~X., Opulente, D.~A., Kominek, J., {\em et~al.} 2018.
+\newblock Tempo and mode of genome evolution in the budding yeast subphylum.
+\newblock {\em Cell\/}, {175}(6): 1533--1545.e20.
 
 \bibitem[Soderlund {\em et~al.}(2006)Soderlund, Nelson, Shoemaker, and
   Paterson]{soderlund2006}
@@ -151,24 +180,33 @@ Soderlund, C., Bomhoff, M., and Nelson, W. 2011.
 \newblock {\em Nucleic Acids Research\/}, {39}(10): e68.
 
 \bibitem[Sokal and Rohlf(1981)Sokal and Rohlf]{SokalAndRohlf1981}
-Sokal, R. and Rohlf, F. 1981.
+Sokal, R.~R. and Rohlf, F.~J. 1981.
 \newblock {\em Biometry - The principles and practice of statistics in
   biological\/}, pages 547--555.
 \newblock W. H. Freeman.
 
 \bibitem[Tsai {\em et~al.}(2008)Tsai, Bensasson, Burt, and
   Koufopanou]{tsai2008}
-Tsai, I., Bensasson, D., Burt, A., and Koufopanou, V. 2008.
+Tsai, I.~J., Bensasson, D., Burt, A., and Koufopanou, V. 2008.
 \newblock Population genomics of the wild yeast saccharomyces paradoxus:
   quantifying the life cycle.
 \newblock {\em Proc Natl Acad Sci U.S.A.}, {105}: 4957--4962.
 
 \bibitem[Tsankov {\em et~al.}(2010)Tsankov, Thompson, Socha, Regev, and
   Rando]{tsankov2010}
-Tsankov, A., Thompson, D., Socha, A., Regev, A., and Rando, O. 2010.
+Tsankov, A.~M., Thompson, D.~A., Socha, A., Regev, A., and Rando, O.~J. 2010.
 \newblock The role of nucleosome positioning in the evolution of gene
   regulation.
 \newblock {\em PLoS Biol\/}, {8}(7): e1000414.
+
+\bibitem[Vakirlis {\em et~al.}(2016)Vakirlis, Sarilar, Drillon, Fleiss, Agier,
+  Meyniel, Blanpain, Carbone, Devillers, Dubois, Gillet-Markowska, Graziani,
+  Huu-Vang, Poirel, Reisser, Schott, Schacherer, Lafontaine, Llorente,
+  Neuv{\'{e}}glise, and Fischer]{vakirlis2016}
+Vakirlis, N., Sarilar, V., Drillon, G., {\em et~al.} 2016.
+\newblock {Reconstruction of ancestral chromosome architecture and gene
+  repertoire reveals principles of genome evolution in a model yeast genus.}
+\newblock {\em Genome research\/}, {26}(7): 918--32.
 
 \bibitem[Wagner(2005)Wagner]{wagner2005}
 Wagner, A. 2005.
@@ -176,7 +214,7 @@ Wagner, A. 2005.
 \newblock {\em Molecular Biology and Evolution\/}, {22}: 1365--1374.
 
 \bibitem[Wallace {\em et~al.}(2013)Wallace, Airoldi, and Drummond]{wallace2013}
-Wallace, E., Airoldi, E., and Drummond, D. 2013.
+Wallace, E.~W., Airoldi, E.~M., and Drummond, D.~A. 2013.
 \newblock Estimating selection on synonymous codon usage from noisy
   experimental data.
 \newblock {\em Molecular Biology and Evolution\/}, {30}: 1438--1453.
@@ -184,5 +222,10 @@ Wallace, E., Airoldi, E., and Drummond, D. 2013.
 \bibitem[{Wolfram Research Inc.}(2017){Wolfram Research Inc.}]{Mathematica11}
 {Wolfram Research Inc.} 2017.
 \newblock {\em Mathematica 11\/}.
+
+\bibitem[Wright(1990)Wright]{Wright1990}
+Wright, F. 1990.
+\newblock The ‘effective number of codons’ used in a gene.
+\newblock {\em Genel\/}, {87}: 23--29.
 
 \end{thebibliography}
