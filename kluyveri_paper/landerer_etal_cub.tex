@@ -134,7 +134,7 @@ We also estimate the age of the introgression to be on the order of 0.2 - 1.7 My
 \subsection*{The Signatures of two Cellular Environments within \kluyveri's Genome}
 We used our software package AnaCoDa \citep{landerer2018} to compare model fits of \ROC to the entire \kluyveri genome and its genome partitioned into two sets of 4,864 endogenous and 497 exogenous genes.
 \ROC is a statistical model that relates the effects of mutation bias \DM selection bias \DE between codons, and protein synthesis rate $\phi$ to explain the observed codon usage patterns.
-AIC values strongly support the hypothesis that the \kluyveri genome consists of genes with two different and distinct patterns of codon usage bias rather than a single ($\Delta\text{AIC} = 75,462$; Table \ref{tab:AIC_klu}).
+Bayes factor strongly support the hypothesis that the \kluyveri genome consists of genes with two different and distinct patterns of codon usage bias rather than a single ($K = \exp(42,294)$; Table \ref{tab:AIC_klu}).
 We find additional support for this hypothesis when we compare our predictions of protein synthesis rate to empirically observed mRNA expression values as proxy for protein synthesis.
 Specifically, the explanatory power between our predictions and observed values improved by $\sim 42\%$, from $R^2 = 0.33$ to $0.46$ (Figure \ref{fig:phi_corr_two_cond}).
 
@@ -143,12 +143,15 @@ Specifically, the explanatory power between our predictions and observed values 
   \caption{Model selection of the two competing hypothesis. 
   Combined: Mutation bias and selection bias for synonymous codons is shared between endogenous and exogenous genes.
   Separated: Mutation bias and selection bias for synonymous codons is allowed to vary between endogenous and exogenous genes.
-  Reported are the log-likelihood, $\log(\Lik)$, the number of parameters estimated $n$, AIC, and $\Delta$AIC values.}
+  Reported are the log-likelihood, $\log(\Lik)$, the number of parameters estimated $n$, the log-marginal likelihood $\log(\Lik_M)$, and Bayes Factor K.}
   \begin{tabular}{lrrrr}
     \hline
-    Hypothesis             & $\log(\Lik)$ &$n$ &  AIC & $\Delta$AIC\\ \hline 
-    Combined               & -2,650,047 & 5,483 & 5,311,060& 75,462\\ 
-    Separated		   & -2,612,397 & 5,402 & 5,235,598&      0\\ \hline
+%    Hypothesis             & $\log(\Lik)$ &$n$ &  AIC & $\Delta$AIC\\ \hline 
+%   Combined               & -2,650,047 & 5,483 & 5,311,060& 75,462\\ 
+%    Separated		   & -2,612,397 & 5,402 & 5,235,598&      0\\ \hline
+    Hypothesis             & $\log(\Lik)$ &$n$ & $\log(\Lik_M)$ & $\log(K)$\\ \hline 
+    Combined               & -2,650,047 & 5,483 & -2,657,582 & $42,294$\\ 
+    Separated		   & -2,612,397 & 5,402 & -2,615,288 &      \\ \hline
   \end{tabular}
   \label{tab:AIC_klu}
 \end{table}
@@ -334,6 +337,10 @@ These highly expressed genes are inferred to have the greatest degree of adaptat
 \end{figure}
 
 
+%NOTES about equilibrium assumption
+%- I am somewhere more/less likely than I expect to be
+%- If I got a gene showing adaptation, overadapted region is smaller than underadapted region
+
 \section*{Discussion}
 In order to study the evolutionary effects of the large scale introgression of C-left, we used \ROC, a mechanistic model of ribosome movement along an mRNA.
 Our parameter estimates indicate that the \kluyveri genome contains distinct signatures of mutation and selection bias from both an endogenous and exogenous cellular environment.
@@ -431,6 +438,10 @@ All genes could be assigned to one or the other gene set unambiguously.
 \ROC was run from 10 different starting values for at least 250,000 iterations, only every 50th step was collected as a sample to reduce autocorrelation. 
 After manual inspection to verify that the MCMC had converged, parameter posterior means, log posterior probability and log likelihood were estimated from the last 500 samples (last 10\% of samples).
 
+\subsection*{Model selection}
+The marginal likelihood of the combined and separated model fits was calculated using a generalized harmonic mean estimator \citep{Gronau2017}. A variance scaling of 1.1 was used to scale the important density of the estimator. Using the estimated marginal likelihoods, we calculated the Bayes factor to assess model performance. 
+Increases in the variance scaling increase the estimated Bayes factor, therefore we report a conservative Bayes factor bases on a small variance scaling \ref{fig:bf_scaling}.
+
 \subsection*{Comparing Codon Specific Parameter Estimates}
 Choice of reference codon does reorganize codon families coding for an amino acid relative to each other, therefore all parameter estimates are relative to the mean for each codon family.
 \begin{equation}
@@ -501,8 +512,8 @@ Therefore, we set $\kappa = 1$ if we calculate the $s_g$ for the endogenous and 
 
 However, since we are unable to observe codon sequences of the replaced endogenous genes and for the exogenous genes at the time of introgression, instead of summing over the sequence, we calculate the expected codon count $E[n_{g,i}] $ for codon $i$ in gene $g$ simply as the probability of observing codon $i$ multiplied by the number of times the corresponding amino acids is observed in gene $g$, yielding:
 \begin{equation}
-E[n_{g,i}] = P(c_i | \DM, \DE, \phi) \times m_{a,i}
-\end{equation} 
+E[n_{g,i}] = P(c_i | \DM, \DE, \phi) \times m_{a_i}
+\end{equation}
 \begin{equation}
 E[n_{g,i}] = \frac{\exp[-\DM_i -\DE_i\phi_g]}{\sum_j^C \exp[-\DM_j -\DE_j\phi_g]}\times m_{a_i}
 \end{equation} 
@@ -694,7 +705,17 @@ Supporting Materials for \emph{Decomposing Mutation and Selection to Identify Mi
 \null
 \vfill
 \clearpage
-
+\null
+\vfill
+\begin{figure}
+     \centering
+	\includegraphics[width=.5\textwidth]{img/bf_variance_scaling.pdf}
+	\caption{Influence of the variance scaling of the importance distribution on the estimated Bayes factor.}
+	\label{fig:bf_scaling}
+\end{figure}
+\null
+\vfill
+\clearpage
 
 
 \end{document}
