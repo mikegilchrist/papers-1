@@ -84,7 +84,7 @@ Nevertheless, most studies of codon usage implicitly assume that all genes withi
 In order to better understand the effects of introgression on codon usage patterns and vice versa, we examine the patterns of codon usage in \textit{Lachancea kluyveri}, a yeast which has experienced a large introgression.
 We quantify the effects of mutation bias and selection for translation efficiency on the codon usage pattern of the endogenous and introgressed exogenous genes using a Bayesian mixture model, \ROC, which is built on mechanistic assumptions of protein synthesis and grounded in population genetics.
 We find substantial differences in codon usage between the endogenous and exogenous genes, and show that these differences can be largely attributed to a shift in mutation bias favoring A/T ending codons in the endogenous genes to C/G ending codons in the exogenous genes.
-Recognizing the two different signatures of mutation bias and selection improves our ability to predict protein synthesis rate by $42 \%$ and allowed us to accurately assess codon preferences.
+Recognizing the two different signatures of mutation bias and selection improves our ability to predict protein synthesis rate by $42 \%$ and allowed us to accurately assess endogenous codon preferences.
 In addition, using our estimates of mutation bias and selection, we identify \textit{Eremothecium gossypii} as the closest relative to the exogenous genes, providing an alternative hypothesis about the origin of the exogenous genes, estimate the introgression occurred $\sim 6\times 10^8$ generation ago, and estimate its historic and current genetic load.
 Together, our work illustrates the advantage of mechanistic, population genetic models like \ROC and the quantitative estimates they provide when analyzing sequence data.
 }
@@ -98,13 +98,13 @@ Together, our work illustrates the advantage of mechanistic, population genetic 
 Synonymous codon usage patterns varies within a genome and between taxa, reflecting differences in mutation bias, selection, and genetic drift.
 The signature of mutation bias is largely determined by the organism's internal or cellular environment, such as their DNA repair genes or UV exposure.
 While this mutation bias is an omnipresent evolutionary force, its impact can be obscured or amplified by selection. 
-The signature of selection on codon usage is also largely determined by an organism's cellular environment, such as its tRNA species, their copy number, and their post-transcriptional modifications.
+In contrast, the signature of selection on codon usage is largely determined by an organism's cellular environment alone, such as its tRNA species, their copy number, and their post-transcriptional modifications.
 The strength of selection on the codon usage of an individual gene is largely determined by its expression and synthesis rate which, in turn, is largely determined by the organism's external environment.
 In general, the strength of selection on codon usage increases with its expression level \citep{gouy1982, ikemura1985, bulmer1990}, specifically its protein synthesis rate \citep{gilchrist2007}.
 Thus as protein synthesis increases, codon usage shifts from a process dominated by mutation to a process dominated by selection.
 The overall efficacy of selection on codon usage is a function of the organism's effective population size $N_e$ which, in turn, is largely determined by its external environment.
-\ROC allows us disentangle the evolutionary forces responsible for the patterns of codon usage bias (CUB) encoded in an species' genome, by explicitly modeling the combined forces of mutation, selection, and drift \citep{gilchrist2007, ShahAndGilchrist2011, wallace2013, gilchrist2015}.
-In turn, these forces should provide biologically meaningful information about the lineage's historical cellular and external environment.
+\ROC allows us disentangle the evolutionary forces responsible for the patterns of codon usage bias (CUB) encoded in an species' genome, by explicitly modeling the combined evolutionary forces of mutation, selection, and drift \citep{gilchrist2007, ShahAndGilchrist2011, wallace2013, gilchrist2015}.
+In turn, these evolutionary forces should provide biologically meaningful information about the lineage's historical cellular and external environment.
 
 Most studies implicitly assume that the CUB of a genome is shaped by a single cellular environment. 
 As genes are horizontally transferred, introgress, or combined to form novel hybrid species, one would expect to see the influence of multiple cellular environments on a genomes codon usage pattern \citep{medigue1991, lawrence1997}.
@@ -112,11 +112,12 @@ Given that transferred genes are likely to be less adapted than endogenous genes
 More practically, if differences in codon usage of transferred genes are unaccounted for, they may distort the interpretation of codon usage patterns.
 Such distortion could lead to the wrong inference of codon preference for an amino acid \citep{ShahAndGilchrist2011, gilchrist2015}., underestimate the variation in protein synthesis rate, or influence mutation estimates when analyzing a genome.
 
-To illustrate these ideas, we analyze the CUB of the genome of \emph{Lachancea kluyveri}, which is sister to all other Lachancea.
+To illustrate these ideas, we analyze the CUB of the genome of \emph{Lachancea kluyveri}, which is sister to all other Lachancea species.
 The Lachancea clade diverged from the Saccharomyces clade, prior to its whole genome duplication $\sim 100$ Mya ago \citep{MHM2015,Beimforde2014}.
-Since that time, \kluyveri has experienced a large introgression of exogenous genes found in all of its populations \citep{friedrich2015}, but in no other known Lachancea species \citep{vakirlis2016}.
+Since that time, \kluyveri has experienced a large introgression of exogenous genes which is found in all of its populations \citep{friedrich2015}, but in no other known Lachancea species \citep{vakirlis2016}.
 The introgression replaced the left arm of the C chromosome and displays a $13 \%$ higher \GC than the endogenous \kluyveri genome \citep{payen2009, friedrich2015}.
-The origin the introgression is currently unknown, but previous studies suggest that the source is likely a currently unknown or potentially extinct Lachancea lineage \citep{payen2009, friedrich2015, vakirlis2016, brion2017}.
+%The origin the introgression is currently unknown, but 
+Previous studies suggest that the source of the introgression is likely a currently unknown or potentially extinct Lachancea lineage \citep{payen2009, friedrich2015, vakirlis2016, brion2017}.
 These characteristics make \kluyveri an ideal model to study the effects of an introgressed cellular environment and the resulting mismatch in codon usage.
 
 Using \ROC, a Bayesian population genetics model based on a mechanistic description of ribosome movement along an mRNA, allows us to quantify the cellular environment in which genes have evolved by separately estimating the effects of mutation bias and selection bias on codon usage.
@@ -126,14 +127,14 @@ We use \ROC to independently describe two cellular environments reflected in the
 Our results indicate that the difference in \GC between endogenous and exogenous genes is mostly due to the differences in mutation bias of their ancestral environments.
 Accounting for these different signatures of mutation bias and selection bias of the endogenous and exogenous sets of genes substantially improves our ability to predict present day protein synthesis rates.
 These endogenous and exogenous gene set specific estimates of mutation bias and selection bias, in turn, allow us to address more refined questions of biological importance.
-For example, it allows us to provide an alternative hypothesis about the origin of the introgression and identify \gossypii as the nearest sampled relative of the source of the introgressed genes out of the 332 budding yeast lineages with sequenced genomes \citep{shen2018}.
+For example, they allow us to provide an alternative hypothesis about the origin of the introgression and identify \gossypii as the nearest sampled relative of the source of the introgressed genes out of the 332 budding yeast lineages with sequenced genomes \citep{shen2018}.
 While this hypothesis is in contrast previous work \citep{payen2009, friedrich2015, vakirlis2016, brion2017}, we find support for it in gene trees and synteny.
 We also estimate the age of the introgression to be on the order of 0.2 - 1.7 Mya, estimate the genetic load of these genes, both at the time of introgression and now, and predict a detectible signature of CUB to persist in the introgressed genes for another 0.3 - 2.8 Mya, highlighting the sensitivity of our approach.
 
 \section*{Results}
 \subsection*{The Signatures of two Cellular Environments within \kluyveri's Genome}
 We used our software package AnaCoDa \citep{landerer2018} to compare model fits of \ROC to the entire \kluyveri genome and its genome partitioned into two sets of 4,864 endogenous and 497 exogenous genes.
-\ROC is a statistical model that relates the effects of mutation bias \DM selection bias \DE between codons, and protein synthesis rate $\phi$ to explain the observed codon usage patterns.
+\ROC is a statistical model that relates the effects of mutation bias \DM and selection bias \DE between synonymous codons, and protein synthesis rate $\phi$ to explain the observed codon usage patterns.
 Bayes factor strongly support the hypothesis that the \kluyveri genome consists of genes with two different and distinct patterns of codon usage bias rather than a single ($K = \exp(42,294)$; Table \ref{tab:AIC_klu}).
 We find additional support for this hypothesis when we compare our predictions of protein synthesis rate to empirically observed mRNA expression values as proxy for protein synthesis.
 Specifically, the explanatory power between our predictions and observed values improved by $\sim 42\%$, from $R^2 = 0.33$ to $0.46$ (Figure \ref{fig:phi_corr_two_cond}).
@@ -141,16 +142,16 @@ Specifically, the explanatory power between our predictions and observed values 
 \begin{table}
   \centering
   \caption{Model selection of the two competing hypothesis. 
-  Combined: Mutation bias and selection bias for synonymous codons is shared between endogenous and exogenous genes.
-  Separated: Mutation bias and selection bias for synonymous codons is allowed to vary between endogenous and exogenous genes.
+  Combined: mutation bias and selection bias for synonymous codons is shared between endogenous and exogenous genes.
+  Separated: mutation bias and selection bias for synonymous codons is allowed to vary between endogenous and exogenous genes.
   Reported are the log-likelihood, $\log(\Lik)$, the number of parameters estimated $n$, the log-marginal likelihood $\log(\Lik_M)$, and Bayes Factor K.}
-  \begin{tabular}{lrrrr}
+  \begin{tabular}{lrrrc}
     \hline
 %    Hypothesis             & $\log(\Lik)$ &$n$ &  AIC & $\Delta$AIC\\ \hline 
 %   Combined               & -2,650,047 & 5,483 & 5,311,060& 75,462\\ 
 %    Separated		   & -2,612,397 & 5,402 & 5,235,598&      0\\ \hline
     Hypothesis             & $\log(\Lik)$ &$n$ & $\log(\Lik_M)$ & $\log(K)$\\ \hline 
-    Combined               & -2,650,047 & 5,483 & -2,657,582 & \\ 
+    Combined               & -2,650,047 & 5,483 & -2,657,582 & --- \\
     Separated		   & -2,612,397 & 5,402 & -2,615,288 & $42,294$\\ \hline
   \end{tabular}
   \label{tab:AIC_klu}
@@ -176,9 +177,14 @@ Specifically, the explanatory power between our predictions and observed values 
 \subsection*{Comparing Differences in the Endogenous and Exogenous Codon Usage}
 To better understand the differences in the endogenous and exogenous cellular environments, we compared our parameter estimates of mutation bias \DM and selection \DE for the two sets of genes.
 Our estimates of \DM for the endogenous and exogenous genes were negatively correlated ($\rho = -0.49$),  indicating weak similarity with only $\sim5\%$ of the codons share the same sign between the two mutation environments (Figure \ref{fig:csp_comp}a).
-For example, the endogenous genes show a mutational bias for A and T ending codons in $\sim95\%$ of the codon families.
-In contrast, the exogenous genes display an equally consistent mutational bias towards C and G ending codons (Table \ref{tab:codon_pref_dm}).
-As a result, only the two codon amino acid Phenylalanine (Phe, F) shares the same rank order across the endogenous and exogenous \DM estimates.
+Overall, the endogenous genes only show a selection preference for C and G ending codons in $\sim58\%$ of the codon families.
+In contrast, the exogenous genes display a strong preference for A and T ending codons in $\sim89\%$ of the codon families.
+
+For example, the endogenous genes show a mutational bias for A and T ending codons in $\sim95\%$ of the codon families (the exception being Phe, F).
+The exogenous genes display an equally consistent mutational bias towards C and G ending codons (Table \ref{tab:codon_pref_dm}).
+%As a result, only the two codon amino acid Phenylalanine (Phe, F) shares the same rank order across the endogenous and exogenous \DM estimates.
+In contrast to \DM, our estimates of \DE for the endogenous and exogenous genes were positively correlated ($\rho = 0.69$) and showing the same sign in $\sim53\%$ of codons between the two selection environments (Figure \ref{fig:csp_comp}).
+\ROC constraints $E[\phi] = 1$, allowing us to interpret \DE as selection on codon usage of the average gene with $\phi = 1$ and gives us the ability to compare the efficacy of selection $sN_e$  across genomes.
 
 \begin{figure}
     \centering
@@ -198,22 +204,23 @@ As a result, only the two codon amino acid Phenylalanine (Phe, F) shares the sam
     \label{fig:csp_comp}
 \end{figure}
 
-In contrast, our estimates of \DE for the endogenous and exogenous genes were positively correlated ($\rho = 0.69$) and showing similarity of $\sim53\%$ between the two selection environments (Figure \ref{fig:csp_comp}).
-\ROC constraints $E[\phi] = 1$, allowing us to interpret \DE as selection on codon usage of the average gene with $\phi = 1$ and gives us the ability to compare the efficacy of selection $sN_e$  across genomes.
-We find that the strength of selection within each codon family differs between sets of genes.
-Overall, the endogenous genes only show a selection preference for C and G ending codons in $\sim58\%$ of the codon families.
-In contrast, the exogenous genes display a strong preference for A and T ending codons in $\sim89\%$ of the codon families.
 
+We find that the efficacy of selection within each codon family differs between sets of genes.
 The difference in codon usage between endogenous and exogenous genes is striking as some amino acids have opposite codon preferences. 
 As a result, our estimates of the optimal codon differ in nine cases between endogenous and exogenous genes (Figure \ref{fig:cub_endo_exo}, Table \ref{tab:codon_pref_deta}).
-For example, Asparagine (Asn, N) shows strong preference for AAC in highly expressed endogenous genes but the same codon is depleted in highly expressed exogenous genes.
-In addition, fits to the complete \kluyveri genome reveal that the relatively small exogenous gene set ($\sim 10\%$ of genes) has a disproportional effect on the model fit (Figure \ref{fig:cub_full_main}, \ref{fig:cub_full_cleft}).
-We find that the combined genome shows the same codon preference in highly expressed genes as the exogenous gene set for Aspartic acid (Asp, D), despite the gene set only representing $\sim 10 \%$ of the genes.
-In the nine cases the endogenous and exogenous genes show difference in the selectively favored codon.
-In five of these cases (Asp, D; His, H; Lys, K; Asn, N; and Pro, P) the endogenous genes favor the codon with the most abundant tRNA.
+For example, the usage of the Asparagine (Asn, N) codon AAC is increased in highly expressed endogenous genes but the same codon is depleted in highly expressed exogenous genes.
+For Aspartic acid (Asp, D), the combined genome shows the same codon preference in highly expressed genes as the exogenous gene set.
+Gernarally, fits to the complete \kluyveri genome reveal that the relatively small exogenous gene set ($\sim 10\%$ of genes) has a disproportional effect on the model fit (Figure \ref{fig:cub_full_main}, \ref{fig:cub_full_cleft}).
+
+Of the nine cases in which the endogenous and exogenous genes show differences in the selectively most favored codon five cases (Asp, D; His, H; Lys, K; Asn, N; and Pro, P) the endogenous genes favor the codon with the most abundant tRNA.
 For the remaining four cases (Ile, I; Ser, S; Thr, T; and Val, V), there are no tRNA genes for the wobble free cognate codon encoded in the \kluyveri genome.
-We find that the complete \kluyveri genome fit shares mutational preference with the exogenous genes in $\sim78\%$ of the $19$ codon families that are discordant between the endogenous and exogenous genes.
+However, the codon preference of these four amino acids in the exogenous genes matches the most abundant tRNA encoded in the \kluyveri genome.
+
+The effect of the small exogenous gene set on the fit to the complete \kluyveri genome is smaller in our estimates of selection bias \DE than \DM, but still large.
+We find that the complete \kluyveri genome is estimated to share the selection preference with the exogenous genes in $\sim60\%$ of codon families that show dissimilarity between endogenous and exogenous genes.
+We find that the complete \kluyveri genome fit shares mutational preference with the exogenous genes in $\sim78\%$ of the $19$ codon families showing a difference in mutational codon preference between the endogenous and exogenous genes.
 In two cases, Isoleucine (Ile, I) and Arginine (Arg, R), the strong dissimilarity in mutation preference results in an estimated codon preference in the complete \kluyveri genome that differs from both the endogenous, and the exogenous genes.
+These results clearly show that it is important to recognize the difference in endogenous and exogenous genes and treat these genes as separate sets to avoid the inference of incorrect synonymous codon preferences and better predict protein synthesis.
 
 %D:GAC:T, H:CAC:T, I:ATT:FX, K:AAG:T, N:AAC:T, P:CCA:T, S:TCT:FX, T:ACT:FX, V:GTT:FX
 
@@ -226,35 +233,31 @@ In two cases, Isoleucine (Ile, I) and Arginine (Arg, R), the strong dissimilarit
 	\label{fig:cub_endo_exo}
 \end{figure}
 
-The effect of the small exogenous gene set on the fit to the complete \kluyveri genome is smaller in our estimates of selection bias \DE than \DM, but still large.
-We find that the complete \kluyveri genome is estimated to share the selection preference with the exogenous genes in $\sim60\%$ of codon families that show dissimilarity between endogenous and exogenous genes.
-These results clearly show that it is important to recognize the difference in endogenous and exogenous genes and treat these genes as separate sets to avoid the inference of incorrect synonymous codon preferences and better predict protein synthesis.
+
 
 \subsection*{Determining Source of Exogenous Genes}
 
 We combined our estimates of mutation bias \DM and selection bias \DE with synteny information and searched for potential source lineages of the introgressed exogenous region.
 We examined 332 budding yeasts \citep{shen2018} and, identified the ten lineages with the highest correlation for the \DM parameters as potential source lineages (Figure \ref{fig:csp_exo_comp}, Table \ref{tab:source}).
 We used \DM to identify candidate lineages as the endogenous and exogenous genes show greater dissimilarity in mutation bias than in selection bias.
-Two of the ten candidate lineages utilise the alternative yeast nuclear code (codon table 12). 
+Two of the ten candidate lineages utilize the alternative yeast nuclear code (codon table 12). 
 In this case, the codon CTG codes for Serine instead of Leucine. 
-We therefore excluded the Leucine codon family in our comparison of codon families, however, there was no need to exclude Serine as well as CTG is not a one step neighbour of the remaining Serine codons.
+We therefore excluded the Leucine codon family in our comparison of codon families, however, there was no need to exclude Serine as well as CTG is not a one step neighbor of the remaining Serine codons.
 The endogenous \kluyveri genome exhibits codon usage very similar to most (77 \%) yeast lineages examined, indicating that most of the examined yeasts share a similar codon usage (Figure \ref{fig:csp_endo_comp}).
-Only $\sim 17 \%$ of all examined yeast show a positive correlation in both, \DM and \DE with the exogenous genes, whereas most lineages ($\sim 83 \%$) show a negative correlation for \DM but only 21 \% a negative correlation for \DE.
+Only $\sim 17 \%$ of all examined yeast show a positive correlation in both, \DM and \DE with the exogenous genes, whereas the vast majority of lineages ($\sim 83 \%$) show a negative correlation for \DM, only 21 \% show a negative correlation for \DE.
 This indicates that information on mutation bias provides more information about a potential origin of the exogenous genes.
-
-
 
 \begin{table}
   \centering
   \caption{Budding yeast lineages showing similarity in codon usage with the exogenous genes.
-  $\rho(\DM)$ and $\rho(\DE)$ represent the correlation coefficient for \DM and \DE, respectively.
+  $\rho_\DM$ and $\rho_\DE$ represent the Pearson correlation coefficient for \DM and \DE, respectively.
   \GC is the average \GC of the whole genome.
   Synteny is the percentage of the exogenous genes found in the listed lineage.
   Only one lineage (\gossypii) shows a similar \GC $> 50 \%$.}
   \begin{threeparttable}
   	\begin{tabular}{lcccccc}
     		\hline
-    		Species & $\rho(\DM)$ & $\rho(\DE)$ & \GC & Synteny \%&  Distance [Mya] \\ \hline 
+    		Species & $\rho_\DM$ & $\rho_\DE$ & \GC & Synteny \%&  Distance [Mya] \\ \hline 
     		\emph{Eremothecium gossypii}			& 0.89 & 0.70 & 51.7 & 75 & 211.0847 \\
     		\emph{Danielozyma ontarioensis}			& 0.75 & 0.92 & 46.6 & 3   & 470.1043 \\
     		\emph{Metschnikowia shivogae}			& 0.86 & 0.87 & 49.8 & 0   & 470.1043 \\
@@ -279,8 +282,8 @@ This indicates that information on mutation bias provides more information about
 Comparing synteny between the exogenous genes, which are restricted to the left arm of chromosome C, and the determined candidate yeast species we find that \gossypii is the only species that displays high synteny (Table \ref{tab:source}).
 Furthermore, the synteny relationship between the exogenous region and other yeasts appears to be limited to Saccharomycetaceae clade.
 Given these results, we conclude that of the 332 examined yeast lineages the \gossypii lineage is the most likely source of the introgressed exogenous genes.
-However, this result is in contrast to previous studies suggesting that the introgressioned region originated from within the Lachancea clade \citep{payen2009, vakirlis2016}.
-Therefore, we identified 121 genes in our dataset \citep{shen2018} with homologous gene in \gossypii and \textit{L. thermotolerance} and used IQTree \citep{nguyen2015} to infer the phylogenetic relationship of the exogenous genes. Our results show that $\sim 60 \%$ of exogenous genes (73/121) are more closely related to \gossypii than to other Lachancea.
+This result is in contrast to previous studies which studied the exogenous genes and chromosome recombination in the Lachancea clade and concluded that the introgressed region originated from within the Lachancea clade \citep{payen2009, friedrich2015, vakirlis2016}.
+To validate our results, we identified 121 genes in our dataset \citep{shen2018} with homologous gene in \gossypii and \textit{L. thermotolerance} and used IQTree \citep{nguyen2015} to infer the phylogenetic relationship of the exogenous genes. Our results show that $\sim 60 \%$ of exogenous genes (73/121) are more closely related to \gossypii than to other Lachancea.
 
 
 \begin{figure}
@@ -288,7 +291,7 @@ Therefore, we identified 121 genes in our dataset \citep{shen2018} with homologo
 	\includegraphics[width=.45\textwidth]{img/csp_mean_correlation_exo.pdf}
 	\caption{Correlation coefficients of \DM and \DE of the exogenous genes with 332 examined budding yeast lineages. 
 	Dots indicate the correlation of \DM and \DE of the lineages with the exogenous parameter estimates.
-	Blue triangles indicate the Lachancea and red diamonts indicate Eremothecium lineages.
+	Blue triangles indicate the \textit{Lachancea} and red diamonds indicate \textit{Eremothecium} species.
 	All regressions were performed using a type II regression assuming noise in the dependent and independent variable \citep{SokalAndRohlf1981}.}
 	\label{fig:csp_exo_comp}
 \end{figure}
@@ -296,13 +299,13 @@ Therefore, we identified 121 genes in our dataset \citep{shen2018} with homologo
 
 \subsection*{Estimating Introgression Age}
 
-We modelled the change in codon frequency as a model of exponential decay, we estimated the age of the introgression assuming that \gossypii still represents the mutation bias of its ancestral source lineage at the time of the introgression and a constant mutation rate.
+We modeled the change in codon frequency over time as exponential decay, and estimated the age of the introgression assuming that \gossypii still represents the mutation bias of its ancestral source lineage at the time of the introgression and a constant mutation rate.
 We infer the age of the introgression to be on the order of $6.2\pm1.2\times 10^8$ generations. 
 Assuming \kluyveri experiences between one and eight generations per day, we estimate the introgression to have occurred between $212,000$ to $1,700,000$ years ago.
 Our estimate places the time of the introgression earlier than the previous estimate of 19,000 - 150,000 years by \citet{friedrich2015}.
 
-Using the model of exponential decay, we also estimated the persistence of the signal of the exogenous cellular environment.
-We assume that differences in mutation bias will decay more slowly than differences in selection bias to be able to utilize our bias free estimates of \DM.
+Using our model of exponential decay model, we also estimated the persistence of the signal of the exogenous cellular environment.
+%We assume that differences in mutation bias will decay more slowly than differences in selection bias to be able to utilize our bias free estimates of \DM.
 We predict that the \DM signal of the source cellular environment will have decayed to be within one percent of the \kluyveri environment in $\sim 5.4\pm0.2\times 10^9 $ generations, or between $1,800,000$ and $15,000,000$ years.
 Together, these results indicate that the mutation signature of the exogenous genes will persist for a very long time.
 
@@ -311,11 +314,11 @@ Together, these results indicate that the mutation signature of the exogenous ge
 We define genetic load as the difference between the fitness of an expected, replaced endogenous gene and the exogenous gene, $sN_e \propto \phi \DE$ due to the mismatch in codon usage parameters (See Methods for details).
 As the introgression occurred before the diversification of \kluyveri and has fixed throughout all populations \citep{friedrich2015}, we can not observe the original endogenous sequences that have been replaced by the introgression.
 Using our estimates of $\Delta M$ and $\Delta \eta$ from the endogenous genes and assuming the current exogenous amino acid composition of genes is representative of the replaced endogenous genes, we estimate the genetic load of the exogenous genes at the time of introgression (Figure \ref{fig:sne_fitness_burden}a) and currently (Figure \ref{fig:sne_fitness_burden}b).
-Estimates of selection bias for the exogenous genes show that, while well correlated with the endogenous genes, only nine amino acids share the same optimal codon.
-Exogenous genes are, therefore, expected to represent a significant reduction in fitness, or genetic load for \kluyveri due to this mismatch in codon usage.
+Estimates of selection bias for the exogenous genes show that, while well correlated with the endogenous genes, only nine amino acids share the same selectively preferred codon.
+Exogenous genes are, therefore, expected to represent a significant reduction in fitness, or genetic load for \kluyveri due to mismatch in codon usage.
 We find that the expected genetic load $E[s_g]$ due to mismatched codon usage was -0.0008 at the time of the introgression and still represents a genetic load of -0.0003 today.
 
-In order to account for differences in the efficacy of selection on codon usage either due to the cost of pausing or differences in the effective population size or the value of an ATP between the donor lineage and \kluyveri we added a linear scaling factor $\kappa$ to scale our estimates of \DE between the donor lineage and \kluyveri  (See Methods for details).
+In order to account for differences in the efficacy of selection on codon usage either due to the cost of pausing, differences in the effective population size or the decline in fitness with every ATP wasted between the donor lineage and \kluyveri we added a linear scaling factor $\kappa$ to scale our estimates of \DE between the donor lineage and \kluyveri  (See Methods for details).
 We predict that a small number of low expression genes ($\phi < 1$) were weakly exapted at the time of the introgression (Figure \ref{fig:sne_fitness_burden}a).
 High expression genes ($\phi > 1$) are predicted to have carried the largest genetic load in the novel cellular environment.
 These highly expressed genes are inferred to have the greatest degree of adaptation since the time of the introgression to the \kluyveri cellular environment (Figures \ref{fig:sne_fitness_burden}a \& \ref{fig:adapt_tot}).
@@ -367,7 +370,7 @@ This becomes important since, as we highlight here, relatively small sets of gen
 The same holds true for phylogenetic inferences \citep{salichos2013}, and as we showed the signal of the original endogenous cellular environment that shaped CUB is at different stages of decay in high and low expression genes (Figure \ref{fig:adapt_tot}).
 
 Considering the similarity in selection bias (Figure \ref{fig:csp_comp}b) and our calculation of the genetic load of the exogenous genes (Figure \ref{fig:sne_fitness_burden}b), both of which are free of any assumption about the origin of the exogenous genes, a species tree estimated from the exogenous genes may a biased towards the Lachancea clade.
-While we were only able to consider a subset of exogenous genes for our phylogenetic analysis, these genes provide further evidence that the exogenoius genes could originate from a lineage that does not belong to the Lachancea clade.
+While we were only able to consider a subset of exogenous genes for our phylogenetic analysis, these genes provide further evidence that the exogenous genes could originate from a lineage that does not belong to the Lachancea clade.
 In addition, the synteny coverage extends along most of the exogenous regions with the exception of the 3' and 5' ends of the exogenous region, and of the 13 candidate lineages, \gossypii is the only lineage with a \GC $> 50 \%$, making it most similar to the exogenous genes.
 Thus, only the \gossypii genome displays strong correlations in \DM and \DE, synteny, and similar \GC  with the exogenous genes.
 In summary, our work does not dispute an unknown Lachancea as possible origin, but provides an alternative hypothesis based on the codon usage of the exogenous genes and synteny.
@@ -381,11 +384,11 @@ This can be caused by either similarity in \DE between the source lineage of the
 In our estimation of a source lineage, we explicitly assumed the first case.
 While our estimate is still supported by \GC and synteny, we can not rule out that this biased our inference of the source lineage.
 
-Assuming \gossypii as potential source lineage of the introgressed region, we illustrated how infomation on codon usage can be used to infer the time since the introgression occurred using our estimates of mutation bias \DM.
+Assuming \gossypii as potential source lineage of the introgressed region, we illustrated how information on codon usage can be used to infer the time since the introgression occurred using our estimates of mutation bias \DM.
 Our \DM estimates are well suited for this task as they are free of the influence of selection and unbiased by $N_e$ and other scaling terms, which is in contrast to our estimates of \DE \citep{gilchrist2015}.
 Our estimated age of the introgression of $6.2\pm1.2\times 10^8$ generations is $\sim 10$ times longer time than a previous minimum estimate by \citet{friedrich2015} of $5.6\times 10^7$ generations.
 Our estimate assumes that the current \gossypii and \kluyveri cellular environment reflect their ancestral states at the time of the introgression.
-If the ancestral mutation environments were more similar (dissimilar) at the time of the introgression than now our result is an overestimate (underestimate).
+If the ancestral mutation environments were more similar (dissimilar) at the time of the introgression then our result is an overestimate (underestimate).
 
 In order to estimate the introgression's genetic load due to codon mismatch, we had to make three key assumptions: 1) at the time of introgression the amino acid sequences of the endogenous genes and exogenous genes where highly similar, 2) the current \kluyveri cellular environment is reflective of the cellular environment at the time of the introgression, and 3) the \gossypii cellular environment reflects its ancestral environment at the time of the introgression.
 In general due to their very nature, low expression genes contribute little to the genetic load.
@@ -429,13 +432,12 @@ In addition, we show how quantitative estimates of mutation bias and selection r
 A GC-rich region was identified by \citet{payen2009} in the \kluyveri genome extending from position 1 to 989,693 of chromosome C.
 This region was later identified as an introgression by \citet{friedrich2015}.
 We obtained the \kluyveri genome from SGD Project \url{http://www.yeastgenome.org/download-data/} (on 09-27-2014) and the annotation for \kluyveri NRRL Y-12651 (assembly ASM14922v1) from NCBI (on 12-09-2014).
-We assigned 457 genes located on chromosome C (position 1 to 989,693 of chromosome C) with a location within the $\sim 1$ Mb window to the exogenous gene set.
+We assigned 457 genes located on chromosome C with a location within the $\sim 1$ Mb window to the exogenous gene set.
 All other 4864 genes of the \kluyveri genome were assigned to the exogenous genes.
-All genes could be assigned to one or the other gene set unambiguously.
 
 \subsection*{Model Fitting with \ROC}
 \ROC was fitted to each genome using AnaCoDa (0.1.1) \citep{landerer2018} and R (3.4.1) \citep{rcore}.
-\ROC was run from 10 different starting values for at least 250,000 iterations, only every 50th step was collected as a sample to reduce autocorrelation. 
+\ROC was run from 10 different starting values for at least 250,000 iterations and thinned to every 50th iteration.
 After manual inspection to verify that the MCMC had converged, parameter posterior means, log posterior probability and log likelihood were estimated from the last 500 samples (last 10\% of samples).
 
 \subsection*{Model selection}
@@ -443,7 +445,7 @@ The marginal likelihood of the combined and separated model fits was calculated 
 Increases in the variance scaling increase the estimated Bayes factor, therefore we report a conservative Bayes factor bases on a small variance scaling \ref{fig:bf_scaling}.
 
 \subsection*{Comparing Codon Specific Parameter Estimates}
-Choice of reference codon does reorganize codon families coding for an amino acid relative to each other, therefore all parameter estimates are relative to the mean for each codon family.
+As the choice of reference codon can reorganize codon families coding for an amino acid relative to each other, all parameter estimates were interpreted relative to the mean for each codon family.
 \begin{equation}
 \DM_i = \DM_{i,1} - \overline{\DM_i}
 \end{equation}
@@ -455,7 +457,7 @@ The parameter \DE can be interpreted as the difference in fitness between codon 
 Type II regression was performed with re-centered parameter estimates, accounting for noise in dependent and independent variable \citep{SokalAndRohlf1981}.
 
 \subsection*{Phylogenetic Analysis}
-Using the dataset by \citet{shen2018} we first identified 121 alignments for exogenous genes and further contained homologous genes for \gossypii, and \textit{L. thermotolerance}.
+Using the dataset from \citet{shen2018}, we first identified 121 alignments for exogenous genes and further contained homologous genes for \gossypii, and \textit{L. thermotolerance}.
 We excluded all species from the alignments that do not belong to the Saccharomycetaceae clade. 
 IQTree \citep{nguyen2015} was used to identify the best fitting model for each gene and to estimate the individual gene trees.
 The distance between \kluyveri, \gossypii, and \textit{L. thermotolerance} was calculated for each tree to identify genes for which exogenous genes are more closely related to \gossypii or  \textit{L. thermotolerance}.
@@ -466,7 +468,7 @@ Genomes were aligned and checked for synteny using SyMAP (4.2) with default sett
 We assess synteny as percentage coverage of the exogenous gene region.
 
 \subsection*{Estimating Age of Introgression}
-We modelled the change in codon frequency over time using an exponential model for all two codon amino acids, and describing the change in codon $c_1$ as
+We modeled the change in codon frequency over time using an exponential model for all two codon amino acids, and describing the change in codon $c_1$ as
 \begin{equation}
 \frac{d c_1}{d t} = -\mu_{1,2}c_1 - \mu_{2,1}(1-c_1)
 \label{mut_ode}
