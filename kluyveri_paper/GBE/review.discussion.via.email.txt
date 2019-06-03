@@ -1,0 +1,370 @@
+From cedric.landerer@gmail.com Wed Feb  6 11:59:51 2019
+Date: Wed, 6 Feb 2019 17:58:50 +0100
+From: Cedric Landerer <cedric.landerer@gmail.com>
+To: "O'Meara, Brian C" <bomeara@utk.edu>
+Cc: "Gilchrist, Michael Aaron" <mikeg@utk.edu>, "Zaretzki, Russell Lee" <rzaretzk@utk.edu>
+Subject: Re: Fwd: Genome Biology and Evolution - Decision on MS GBE-181223
+Resent-From: <mikeg@utk.edu>
+
+Here is a link with the Reviewer comments and my notes aboutthem.https://docs.google.com/document/d/155QZfBfkR-FI3Hi6rjhX37hqu5n5gubITPm7LU
+yGRYw/edit?usp=sharing
+
+I also attached an updated manuscript and pushed the changes to the repository.
+Let me know once you have agreed on attempting to resubmit or sending it
+somewhere else.
+
+best
+Cedric 
+
+On Wed, Feb 6, 2019 at 4:16 PM O'Meara, Brian C <bomeara@utk.edu> wrote:
+      Thanks. These reviews are really positive overall (maybe I'm just
+      used to SystBio reviews, which are savage). I agree with you both
+      that incorporating R2's comments will make the paper stronger. I'd
+      lean towards submitting somewhere else for the revision -- the EIC
+      didn't say don't send it back, but didn't say maybe we'll look at a
+      revision, either.
+Best,
+Brian
+
+_______________________________________________________________________
+Brian O'Meara, http://www.brianomeara.info, especially Calendar, CV,
+and Feedback
+
+Associate Professor, Dept. of Ecology & Evolutionary Biology, UT Knoxville
+Associate Head, Dept. of Ecology & Evolutionary Biology, UT Knoxville
+
+
+
+On Wed, Feb 6, 2019 at 10:04 AM Cedric Landerer
+<cedric.landerer@gmail.com> wrote:
+      Hi Mike, I am not at all dismissing R2's comments, I have
+      already started addressing some of R2's criticisms.
+If you think we could rebottle some of the criticism I would
+appreciate some help crafting such a letter. I was already thinking
+about other journals, like Evolution maybe.
+
+I will get back to you as soon as I can with an updated version and
+an outline of R2's criticisms.
+Let me know if there are any comments in the mean time.
+
+best
+Cedric
+
+
+On Wed, Feb 6, 2019 at 3:56 PM Gilchrist, Michael Aaron
+<mikeg@utk.edu> wrote:
+      Hi,
+
+      While this is disappointing news, the reviews, overall,
+      are positive and
+      support the idea that this is an interesting topic worth
+      studying.  Nice
+      work!
+
+      Don't be too quick to dismiss Reviewer 2's criticisms. 
+      They indicate ze
+      is very familiar with this topic area and point out
+      holes (some valid,
+      some invalid) in our argument that should be addressed. 
+      It is not clear
+      to me if addressing them would require any substantial
+      new analyses,
+      perhaps just clearer arguments.
+
+      After taking care of the simple fixes, I think the
+      wisest step would be
+      to create an outline of R2's arguments and begin
+      crafting a response. 
+      Although they did not invite a resubmission, if you can
+      succinctly and
+      quickly rebutt R2's main criticisms in a letter and the
+      manuscript, you
+      could ask that it be considered for re-reviewed.
+
+
+      Mike
+
+      --
+      -----------------------------------------------------
+      Dept. of Ecology & Evolutionary Biology
+      Office Location: 439 Hesler Biology Building
+      Mailing Address: 569 Dabney Hall
+                       University of Tennessee
+                       Knoxville, TN 37996-1610
+      Web page:       
+      https://eeb.utk.edu/people/michael-gilchrist
+      -----------------------------------------------------
+
+
+      On Wed, 6 Feb 2019, Cedric Landerer wrote:
+
+      > Hi y'all.Bad news we got a rejection.
+      > It looks like the first reviewer likes the manuscript,
+      the second one does not, at all.
+      > I hope we can discuss these comments as soon as
+      possible. In will start working through some of the
+      easily addressable comments in the mean time.
+      >
+      > best
+      > Cedric
+      >
+      > ---------- Forwarded message ---------
+      > From: Genome Biology and Evolution
+      <onbehalfof@manuscriptcentral.com>
+      > Date: Wed, Feb 6, 2019 at 12:41 AM
+      > Subject: Genome Biology and Evolution - Decision on MS
+      GBE-181223
+      > To: <cedric.landerer@gmail.com>
+      > Cc: <lkatz@smith.edu>
+      >
+      >
+      > 05-Feb-2019
+      >
+      > Dear Dr. Landerer,
+      >
+      > In view of the criticisms of the referees found at the
+      bottom of this letter, I fear that I cannot offer to
+      publish your manuscript # GBE-181223
+      > entitled "Decomposing Mutation and Selection to
+      Identify Mismatched Codon Usage" which you submitted to
+      Genome Biology and Evolution.
+      >
+      > I wish to thank you for considering Genome Biology and
+      Evolution for the publication of your research and I
+      hope the outcome of this specific
+      > submission will not discourage you from the submission
+      of future manuscripts.
+      >
+      > Yours sincerely,
+      > Laura A. Katz
+      > Editor in Chief, Genome Biology and Evolution
+      > lkatz@smith.edu
+      >
+      > Associate Editor: Sharp, Paul
+      >
+      >
+      > Reviewers' Comments:
+      >
+      > Referee: 1
+      >
+      > Comments to the Author
+      > In this manuscript, Landerer and coauthors apply a
+      statistical model of codon usage evolution to a yeast
+      species that underwent an introgression of
+      > several hundred genes, millions of generations in the
+      past. By estimating mutation and selection parameters
+      for classes of codons, separately for
+      > endogenous and introgressed genes, they find that
+      mutational patterns are very different between the two
+      sets of genes, whereas the selection
+      > patterns are similar. They then use the parameters to
+      estimate the timing of introgression and the genetic
+      load due to non-optimal codon usage.
+      >
+      > The ROC SEMPPR model, developed by the same authors,
+      has been extensively validated in S. cerevisiae, and it
+      is nice to see an application of the
+      > model to another species. The analysis leads to
+      interesting conclusions and emphasizes the need to
+      account for multiple sources of codon bias in
+      > evolution. The similarity of selection and
+      dissimilarity of mutation bias parameters between the
+      two subsets of genes is intriguing: it could be
+      > explained either by similar selection patterns between
+      donor and host species, or because it takes a shorter
+      time for the selection-driven pattern of
+      > codon bias to equilibrate in the genome. It would be
+      nice if the authors could discuss and distinguish
+      between these possibilities.
+      >
+      > Specific comments:
+      >
+      > If I understand it correctly, ROC SEMPPR is a
+      statistical model that attempts to reproduce the
+      observed patterns of codon usage in a genome by
+      > fitting parameters related to selection and mutation
+      pressures for each type of codon, and to the expression
+      level for each gene. If this is correct,
+      > it should be explained better. As it stands, I had no
+      idea how the model works before reading the 2015
+      Gilchrist et al paper.
+      >
+      > The original formulation of ROC SEMPPR assumes that
+      the observed codon usage is at equilibrium, but this
+      assumption is not valid for introgressed
+      > genes, the codon usage of which represents a
+      combination of selection and mutation signatures of the
+      donor and host species. Because codon usage is
+      > not at equilibrium, it is possible that some of the
+      introgressed genes are closer to equilibrium than
+      others. For example, highly expressed genes
+      > could be closer to equilibrium because they are under
+      stronger selection. How would that affect the estimated
+      parameters of the model?
+      >
+      > The codon usage vs expression plots shown in Fig S7
+      are interesting; they should be included in the main
+      text and they deserve further discussion. It
+      > appears that some amino acids have opposite codon
+      preferences among endogenous and exogenous genes, for
+      example, Asparagine codon AAC is preferred
+      > among highly expressed endogenous genes, but depleted
+      among highly expressed exogenous genes. Does this
+      pattern represent codon preference in the
+      > donor species, or could there be another explanation?
+      >
+      > Please proofread spelling and grammar throughout the
+      manuscript. Eg, in the abstract: "pheonmena" ->
+      phenomenon; "we to identify" -> we identify.
+      >
+      > How were the genes assigned to endogenous and
+      exogenous sets?
+      >
+      >
+      >
+      >
+      > Referee: 2
+      >
+      > Comments to the Author
+      > Landerer et al. investigate codon usage in the genome
+      of the yeast Lachancea kluyveri. This genome has been of
+      interest for several years because of
+      > the unusual properties of a region called “C-left”.
+      C-left is the left portion of chromosome C, accounting
+      for approximately 1 Mbp (400 genes) of the
+      > 12 Mbp L. kluyveri genome. C-left was first described
+      by Payen et al (2009, cited) and has subsequently been
+      analyzed in detail by the laboratories
+      > of G. Fischer and J. Schacherer. Its G+C content is
+      much higher than in the rest of the genome (53% vs 40%),
+      it lacks transposable elements (Payen et
+      > al. 2009, cited), it does not recombine in laboratory
+      crosses (Brion et al. 2017, PMID 28763437, not cited),
+      it appears to be an introgression from
+      > another species (Payen et al. 2009; Friedrich et al
+      2015, cited), and it is only present in Lachancea
+      kluyveri, not other Lachancea species (Vakirlis
+      > et al. 2016, PMID 27247244, not cited). C-left is
+      therefore a very interesting piece of DNA.
+      > In the current manuscript, Landerer et al. have used
+      the software ROC SEMPRR, which they developed in several
+      previous publications, to investigate
+      > the differences in codon usage between C-left (the
+      ‘exogenous’ genes) and the rest of the L. kluyveri
+      genome (‘endogenous’ genes). They claim that
+      > ROC SEMPRR can disentangle the effects of mutation and
+      natural selection on codon usage bias, and that doing
+      this enables them to estimate the age
+      > and the source of the introgression.
+      >
+      > Payen et al (2009) included quite a detailed analysis
+      and discussion of codon usage in C-left vs the rest of
+      the genome, and I am not convinced that
+      > Landerer et al.’s manuscript contributes much
+      additional knowledge to the story.
+      >
+      > Major comments:
+      > The evidence that “E. gossypii is the most likely
+      source of the introgressed genes” is tenuous, not based
+      on any phylogenetic analysis. In fact, the
+      > manuscript essentially ignores phylogeny, even though
+      Payen et al. (2009) carried out a thorough phylogenetic
+      analysis of genes in C-left and showed
+      > that they appear to have been introgressed from
+      another (unknown) Lachancea species, and not from E.
+      gossypii as proposed here. Vakirlis et al (2016)
+      > reiterated this conclusion. But Landerer et al do not
+      discuss this discrepancy. Landerer’s evidence for E.
+      gossypii as the source is based on the
+      > scatterplot in Fig 3, but this plot seems to place
+      closely related species far apart (E. cymbalariae is
+      evidently not close to E. gossypii in this
+      > plot; similarly, C. albicans is evidently not close to
+      C. dubliniensis). If the donor of the DNA was closely
+      related to E. gossypii, then it must
+      > also have been closely related to E. cymbalariae but
+      Fig 3 does not recover this. The plot seems to separate
+      species based mostly on G+C content, and
+      > E. gossypii is almost the highest-GC species in the
+      dataset (Table S3).  The phylogenetic relationship among
+      the 38 yeast species considered in Fig 3
+      > is known robustly (Shen et al, PMIDs 27672114,
+      30415838) but is almost not mentioned in the
+      manuscript’s discussion of possible sources of the
+      > introgressed DNA.
+      > Because I have little confidence that the authors
+      correctly identified the source of the introgressed DNA,
+      I also have little confidence in their
+      > estimates of the time elapsed since introgression.
+      >
+      > Minor comments:
+      > In several places, the text talks about “improved
+      ability to predict present day protein synthesis rates”
+      (Lines 20, 75, 187 in the authors’
+      > numbering). There is no validation of these
+      predictions using actual protein synthesis data; in
+      Figure 1, the predicted rate of protein synthesis
+      > (phi) is compared to the observed level of gene
+      transcription (microarray data, presumably in one growth
+      condition). On line 87, the authors fudge
+      > the issue by using “gene expression” to mean both mRNA
+      level and protein abundance. The better fit in the
+      “separated genome” plot in Fig 1 is
+      > suggestive of, but not proof of, an improved ability
+      to predict the proteome.
+      > The discussion about optimal codons (P6) makes no
+      consideration of the tRNA gene set of the genome.
+      > Figures S3 and S4 are weird. In S3, do the Roman
+      numerals indicate E. gossypii chromosomes? In general,
+      there is a 1:1 collinear synteny relationship
+      > between Lachancea and Eremothecium so it is surprising
+      to see an apparently triplicated region in this diagram,
+      but impossible to investigate. What
+      > is the X-axis scale (is this C-left or the whole
+      chromosome C?), and G+C content is plotted in which
+      species – it does not look like Payen’s plot. In
+      > S4, the species abbreviations use some obsolete names
+      and no details about the method used is provided.
+      >
+      > L248: Meiotic recombination in L. kluyveri was
+      directly investigated by Brion et al, who found that
+      C-left undergoes absolutely no recombination and
+      > no Spo11 breaks, even though its pattern of linkage
+      disequilibrium among L. kluyveri isolates is suggestive
+      of a high historical recombination rate.
+      > I get the impression that the work in this manuscript
+      was carried out a considerable time ago. No references
+      more recent than 2015 are cited, except
+      > ones from the authors’ own group. The analysis used
+      microarray data from 2010 rather than the RNAseq data of
+      Brion et al (2015, PMID 25897111). It
+      > does not cite the Brion 2015, 2017 or Vakirlis 2016
+      papers about this genome. The list of genomes in Table
+      S3 is, I think, all pre-2015 (there are
+      > now hundreds of genomes that could be included; Shen
+      et al 2018).
+      >
+      > Other comments
+      > L94, what does concordance percentage mean?
+      > Tables S1 and S2 should be merged, and the “L.
+      kluyveri” columns explained.
+      > Figure S1 seems to be identical to Figure 3. The
+      legend is correct, but the S1 plot should be of
+      exogenous genes, not endogenous.
+      > Figure S2 is not cited until after S3 and S4. The text
+      cites a Figure S4b which does not exist.
+      > L241: “one round of meiosis per 1000 mitoses” ignores
+      the further factor that only one meiosis in 100 involves
+      outcrossing (S. paradoxus data, Tsai
+      > et al 2008).
+      > Table S3 includes 3 species that are not budding
+      yeasts (Saccharomycotina): Trichophyton, Sphaerulina,
+      and Cladophialophora.
+      >
+      >
+
+
+
+
+    [ Part 2, Application/PDF (Name: "landerer_etal_cub.pdf") 1.4 MB. ]
+    [ Unable to print this part. ]
