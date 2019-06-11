@@ -3,8 +3,8 @@
 \bibitem[Baker {\em et~al.}(2015)Baker, Wang, Bellora, Peris, Hulfachor,
   Koshalek, Adams, Libkind, and Hittinger]{baker2015}
 Baker, E.~C., Wang, B., Bellora, N., {\em et~al.} 2015.
-\newblock The genome sequence of saccharomyces eubayanus and the domestication
-  of lager-brewing yeasts.
+\newblock The genome sequence of {Saccharomyces} eubayanus and the
+  domestication of lager-brewing yeasts.
 \newblock {\em Molecular Biology and Evolution\/}, {32}(11): 2818--2831.
 
 \bibitem[Beimforde {\em et~al.}(2014)Beimforde, Feldberg, Nylinder, Rikkinen,
@@ -70,12 +70,12 @@ Gouy, M. and Gautier, C. 1982.
 \bibitem[Gronau {\em et~al.}(2017)Gronau, Sarafoglou, Matzke, Ly, Boehm,
   Marsman, Leslie, Forster, Wagenmakers, and Steingroever]{Gronau2017}
 Gronau, Q.~F., Sarafoglou, A., Matzke, D., {\em et~al.} 2017.
-\newblock Ta tutorial on bridge sampling.
+\newblock A tutorial on bridge sampling.
 \newblock {\em Journal of Mathematical Psychology\/}, {81}: 80--97.
 
 \bibitem[Ikemura(1985)Ikemura]{ikemura1985}
 Ikemura, T. 1985.
-\newblock Codon usage and trna content in unicellular and multicellular
+\newblock Codon usage and {tRNA} content in unicellular and multicellular
   organisms.
 \newblock {\em Molecular Biology and Evolution\/}, {2}: 13--34.
 
@@ -88,19 +88,19 @@ Kensche, P.~R., Oti, M., Dutilh, B.~E., and Huynen, M.~A. 2008.
 \bibitem[Landerer {\em et~al.}(2018)Landerer, Cope, Zaretzki, and
   Gilchrist]{landerer2018}
 Landerer, C., Cope, A., Zaretzki, R., and Gilchrist, M.~A. 2018.
-\newblock Anacoda: analyzing codon data with bayesian mixture models.
+\newblock {AnaCoDa}: analyzing codon data with bayesian mixture models.
 \newblock {\em Bioinformatics\/}, {34}(14): 2496--2498.
 
 \bibitem[Lang and Murray(2008)Lang and Murray]{lang2008}
 Lang, G.~I. and Murray, A.~W. 2008.
-\newblock Estimating the per-base-pair mutation rate in the yeast saccharomyces
-  cerevisiae.
+\newblock Estimating the per-base-pair mutation rate in the yeast
+  {Saccharomyces} cerevisiae.
 \newblock {\em Genetics\/}, {178}(1): 67 -- 82.
 
 \bibitem[Lawrence and Ochman(1997)Lawrence and Ochman]{lawrence1997}
 Lawrence, J.~G. and Ochman, H. 1997.
 \newblock Amelioration of bacterial genomes: Rates of change and exchange.
-\newblock {\em Journal of Molecular Miology\/}, {44}: 383--397.
+\newblock {\em Journal of Molecular Biology\/}, {44}: 383--397.
 
 \bibitem[Legendre(2018)Legendre]{lmodel2}
 Legendre, P. 2018.
@@ -116,8 +116,9 @@ Marcet-Houben, M. and Gabaldón, T. 2015.
 \bibitem[Médigue {\em et~al.}(1991)Médigue, Rouxel, Vigier, Hénaut, and
   Danchin]{medigue1991}
 Médigue, C., Rouxel, T., Vigier, P., Hénaut, A., and Danchin, A. 1991.
-\newblock Evidence for horizontal gene transfer in escherichia coli speciation.
-\newblock {\em Journal of Molecular Miology\/}, {222}(4): 851--856.
+\newblock Evidence for horizontal gene transfer in {Escherichia} coli
+  speciation.
+\newblock {\em Journal of Molecular Biology\/}, {222}(4): 851--856.
 
 \bibitem[Nguyen {\em et~al.}(2015)Nguyen, Schmidt, von Haeseler, and
   Minh]{nguyen2015}
@@ -137,6 +138,13 @@ Payen, C., Fischer, G., Marck, C., {\em et~al.} 2009.
 {R Core Team} 2013.
 \newblock {\em R: A Language and Environment for Statistical Computing\/}.
 \newblock R Foundation for Statistical Computing, Vienna, Austria.
+
+\bibitem[Ruderfer {\em et~al.}(2006)Ruderfer, Pratt, Seidl, and
+  Kruglyak]{Ruderfer2006}
+Ruderfer, D.~M., Pratt, S.~C., Seidl, H.~S., and Kruglyak, L. 2006.
+\newblock Population genomic analysis of outcrossing and recombination in
+  yeast.
+\newblock {\em Nature Genetics\/}, {38}(9): 1077--1081.
 
 \bibitem[Salichos and Rokas(2013)Salichos and Rokas]{salichos2013}
 Salichos, L. and Rokas, A. 2013.
@@ -194,7 +202,7 @@ Sokal, R.~R. and Rohlf, F.~J. 1981.
 \bibitem[Tsai {\em et~al.}(2008)Tsai, Bensasson, Burt, and
   Koufopanou]{tsai2008}
 Tsai, I.~J., Bensasson, D., Burt, A., and Koufopanou, V. 2008.
-\newblock Population genomics of the wild yeast saccharomyces paradoxus:
+\newblock Population genomics of the wild yeast {Saccharomyces} paradoxus:
   quantifying the life cycle.
 \newblock {\em Proc Natl Acad Sci U.S.A.}, {105}: 4957--4962.
 

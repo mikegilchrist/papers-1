@@ -352,33 +352,39 @@ These highly expressed genes are inferred to have the greatest degree of adaptat
 \section*{Discussion}
 
 In order to study the evolutionary effects of the large scale introgression of the left arm of chromosome C, we used \ROC, a mechanistic model of ribosome movement along an mRNA.
-The usage of a mechanistic model rooted in population genetics allows generate more nuanced quantitative parameter estimates and separate the effects of mutation and selection on the evolution of codon usage.
-This allowed us to calculate the selection against the introgression and the genetic load it represents, and provide a potential source lineage of the introgression which was previously not considered.
+The usage of a mechanistic model rooted in population genetics allows us generate more nuanced quantitative parameter estimates and separate the effects of mutation and selection on the evolution of codon usage.
+This allowed us to calculate the selection against the introgression and the genetic load it represents, and provides \gossypii as a potential source lineage of the introgression which was previously not considered.
 Our parameter estimates indicate that the \kluyveri genome contains distinct signatures of mutation and selection bias from both an endogenous and exogenous cellular environment.
 By fitting \ROC separately to \kluyveri's endogenous and exogenous sets of genes we generate a quantitative description of their signatures of mutation bias and natural selection for efficient protein translation.
 
-Previous work by \citet{payen2009} showed a preference for GC rich codons in the exogenous genes our results provide more nuanced insights by separating the effects of mutation and selection.
-By separating the effects of mutation and selection on codon usage, we are able to show that the difference in \GC between endogenous and exogenous genes is mostly due to differences in mutation bias as 95\% of exogenous codon families show a strong mutation bias towards GC ending codons (Table \ref{tab:codon_pref_dm}).
-While the strength and rank order of selection within a codon family differ between endogenous and exogenous cellular environments, the exogenous genes show a selective preference for AT ending codons for 90\% of codon families (Table \ref{tab:codon_pref_deta}).
-Acknowledging these differences in codon usage by separating the endogenous and exogenous genes also improves our estimates of protein synthesis rate $\phi$ by $42 \%$ relative to the full genome estimate ($R^2 = 0.46$ vs.~$0.32$, respectively).
+Previous work by \citet{payen2009} showed an increased preference for GC rich codons in the exogenous genes but our results provide more nuanced insights by separating the effects of mutation bias and selection.
+We are able to show that the difference in \GC between endogenous and exogenous genes is mostly due to differences in mutation bias as 95\% of exogenous codon families show a strong mutation bias towards GC ending codons (Table \ref{tab:codon_pref_dm}).
+However, the exogenous genes show a selective preference for AT ending codons for 90\% of codon families (Table \ref{tab:codon_pref_deta}).
+Acknowledging the increased mutation bias towards GC ending codons and the difference in strength of selection between endogenous and exogenous genes by separating them also improves our estimates of protein synthesis rate $\phi$ by $42 \%$ relative to the full genome estimate ($R^2 = 0.46$ vs.~$0.32$, respectively).
 
 The mutation and selection bias parameters \DM and \DE of the introgressed exogenous genes contain information, albeit decaying, about its previous cellular environment.
 We selected the top ten lineages with the highest similarity in \DM to see if our parameters estimates would allow us to identify a potential source lineage.
-The synteny relationship of these lineages with the exogenous genes was calculated as a point of comparison as it provides orthogonal information.
-Synteny with the exogenous genes is limited to the Saccharomycetaceae clade, which excludes all of the potential source lineages identified using codon usage but \gossypii (Table \ref{tab:source}).
+The synteny relationship of these lineages with the exogenous genes was calculated as a point of comparison as it provides orthogonal information to our parameter estimates.
+Synteny with the exogenous genes is limited to the Saccharomycetaceae clade, excluding all of the potential source lineages identified using codon usage but \gossypii (Table \ref{tab:source}).
+Interestingly, this also showed that similarity in codon usage does not correlate with phylogenetic distance.
 
 Previous work indicated that the donor lineage of the exogenous genes has to be a, potentially unknown, Lachancea lineage \citep{payen2009, friedrich2015, vakirlis2016, brion2017}.
-These previous results, however, are based on species rather than genes trees ignoring the differential evolutionary rate between genes or due not consider lineages outside of the Lachancea clade.
+These previous results, however, are based on species rather than genes trees ignoring the differential adaptation rate to their novel cellular environment between genes or due not consider lineages outside of the Lachancea clade.
 Considering the similarity in selection bias (Figure \ref{fig:csp_comp}b) and our calculation of the genetic load of the exogenous genes (Figure \ref{fig:sne_fitness_burden}b), both of which are free of any assumption about the origin of the exogenous genes, a species tree estimated from the exogenous genes may be biased towards the Lachancea clade.
-Estimating individual gene trees rather than relying on a species tree provides further evidence that the exogenous genes could originate from a lineage that does not belong to the Lachancea clade.
-As we highlighted in this study, relatively small sets of genes with a differing signal can significantly bias the outcome of a study. 
+Estimating individual gene trees rather than relying on a species tree provided further evidence that the exogenous genes could originate from a lineage that does not belong to the Lachancea clade.
+As we highlighted in this study, relatively small sets of genes with a signal of a foreign cellular environment can significantly bias the outcome of a study. 
 The same holds true for phylogenetic inferences \citep{salichos2013}, and as we showed the signal of the original endogenous cellular environment that shaped CUB is at different stages of decay in high and low expression genes (Figure \ref{fig:adapt_tot}).
 In summary, our work does not dispute an unknown Lachancea as possible origin, but provides an alternative hypothesis based on the codon usage of the exogenous genes, phylogenetic analysis, and synteny.
 
 The exogenous genes present a significant genetic load to \kluyveri which made fixation very unlikely.
 It is hard to contextualize the probability of this introgression being fixed ($(1-\exp[-\GL])/(1-\exp[-2\GL N_e]) \approx 10^{-6952}$) as we are not aware of any estimates of the frequency at which such large scale introgressions of genes occur.
+However, a related example of a large scale merger of genomic material can be found in \emph{S.~pastorianus}, which is currently believed to be a hybrid of \emph{S.~cerevisiae} and \emph{S.~eubayanus} lineages, \citep{baker2015}.
+Unlike with \kluyveri and \gossypii, the  progenitor lineages of \emph{S.~pastorianus} have similar codon usage parameters as observed today.
+The correlation between \DM and \DE for these two lineages are  $\rho = 0.83$ and  $0.98$ (data not shown).
+These similarities in \DM and \DE parameters suggest that the genetic load for \emph{S.~pastorianus} due to codon usage mismatch is small relative to the exongenous genes considered here. 
+
 Even though \kluyveri diverged from the rest of the Lachancea clade around 85 Mya \citep{kensche2008, MHM2015}, if we assume 1 to 8 generations/day, which implies $10^{10}$ to $10^{11}$ generations since the time of divergence, one round of meiosis for every 1000 rounds of mitosis of which only one in 100 meiosis events lead to outcrossing based on \emph{S.~paradoxus} \citep{tsai2008}, and $N_e \approx 10^8$ there were only $10^{13}$ to $10^{14}$ opportunities for such an introgression to have occurred and fixed.
-Thus, the astronomically small fixation probability indicates that there was virtually no chance of fixation and was likely not a fluke, and unless there was a severe bottleneck with $N_e < 1/|s| \approx 1,250$ around the time of introgression, which conceivably could have been triggered by a speciation event, this scenario seems very unlikely.
+Thus, the astronomically small fixation probability indicates that there was virtually no chance of fixation and was likely not a fluke, and unless there was a severe bottleneck with $N_e < 1/|s| \approx 1,250$ around the time of introgression, which conceivably could have been triggered by a speciation event, this scenario seems, thus, very unlikely.
 
 If the introgressed region contained advantageous loci, the effective genetic load would be reduced and the introgression could have even been advantageous.
 Indeed, $\sim 30 \%$ of low expression exogenous genes ($\phi < 1$) appeared to be exapted at the time of the introgression.
@@ -388,15 +394,9 @@ A potential answer is the low recombination rate between the endogenous and exog
 This is presumably due to the dissimilarity in \GC and/or a lower than average sequence homology between the exogenous region and the one it replaced.
 Compatible with this explanation is the possibility of several highly advantageous loci distributed across the region which then drove a rapid selective sweep and/or the population through a bottleneck speciation process.
 
-A related example of a large scale merger of genomic material can be found in \emph{S.~pastorianus}, which is currently believed to be a hybrid of \emph{S.~cerevisiae} and \emph{S.~eubayanus} lineages, \citep{baker2015}.
-Unlike with \kluyveri and \gossypii, the  progenitor lineages of \emph{S.~pastorianus} have similar codon usage parameters.
-The correlation between \DM and \DE for these two lineages are  $\rho = 0.83$ and  $0.98$ (data not shown).
-These similarities in \DM and \DE parameters suggest that the genetic load for \emph{S.~pastorianus} due to codon usage mismatch is small relative to the exongenous genes considered here. 
-The large genetic load of the exogenous genes due to codon mismatch at the time of the introgression would seem to indicate that the fixation of the introgression was either a fluke event or the codon mismatch genetic load was countered by one or more highly advantageous loci within the introgression.
-
 Assuming \gossypii as potential source lineage of the introgressed region, we illustrated how information on codon usage can be used to infer the time since the introgression occurred using our estimates of mutation bias \DM.
 The \DM estimates are well suited for this task as they are free of the influence of selection and unbiased by $N_e$ and other scaling terms, which is in contrast to our estimates of \DE \citep{gilchrist2015}.
-Our estimated age of the introgression of $6.2\pm1.2\times 10^8$ generations is $\sim 10$ times longer time than a previous minimum estimate by \citet{friedrich2015} of $5.6\times 10^7$ generations, which was based on the effective population recombination rate and the population mutation parameter \citep{Ruderfer2006}.
+Our estimated age of the introgression of $6.2\pm1.2\times 10^8$ generations is $\sim 10$ times longer than a previous minimum estimate by \citet{friedrich2015} of $5.6\times 10^7$ generations, which was based on the effective population recombination rate and the population mutation parameter \citep{Ruderfer2006}.
 Furthermore, these estimates assume that the current \gossypii and \kluyveri cellular environment reflect their ancestral states at the time of the introgression.
 Thus, If the ancestral mutation environments were more similar (dissimilar) at the time of the introgression then our result is an overestimate (underestimate).
 
