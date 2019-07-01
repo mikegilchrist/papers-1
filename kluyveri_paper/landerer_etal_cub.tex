@@ -45,6 +45,13 @@
 % sign similarity and statistical test
 % Highlight top 10 in figure, possibly evaluate other lineages in that quadrant
 
+%reduce font size of margin paragraphs \marginpar
+\makeatletter
+\long\def\@ympar#1{%
+  \@savemarbox\@marbox{\tiny #1}%
+  \global\setbox\@currbox\copy\@marbox
+  \@xympar}
+\makeatother
 
 \begin{document}
 
@@ -58,11 +65,12 @@
   \newcommand{\GC}{GC content\xspace}
   \newcommand{\DM}{\ensuremath{{\Delta M}}\xspace}
   \newcommand{\DE}{\ensuremath{{\Delta \eta}}\xspace}
+  \newcommand{\Ne}{\ensuremath{N_e}\xspace}
   \newcommand{\Lik}{\ensuremath{\mathcal{L}}\xspace}
   \newcommand{\GL}{\ensuremath{{\Delta s}}\xspace}
 
   
-\title{Unlocking a signal of introgression from codons in \textit{Lachancea kluveri} using a mutation-selection model}
+\title{Extracting the signal of introgression from the silent codons in \textit{Lachancea kluveri} using a mutation-selection model}
 
 \author{
   Cedric Landerer \thanks{Corresponding author: cedric.landerer@gmail.com}\\
@@ -111,7 +119,7 @@ In contrast, the signature of selection on codon usage is largely determined by 
 The strength of selection on the codon usage of an individual gene is largely determined by its expression and synthesis rate which, in turn, is largely determined by the organism's external environment.
 In general, the strength of selection on codon usage increases with its expression level \citep{gouy1982, ikemura1985, bulmer1990}, specifically its protein synthesis rate \citep{gilchrist2007}.
 Thus as protein synthesis increases, codon usage shifts from a process dominated by mutation to a process dominated by selection.
-The overall efficacy of selection on codon usage is a function of the organism's effective population size $N_e$ which, in turn, is largely determined by its external environment.
+The overall efficacy of selection on codon usage is a function of the organism's effective population size $\Ne$ which, in turn, is largely determined by its external environment.
 \ROC allows us disentangle the evolutionary forces responsible for the patterns of codon usage bias (CUB) encoded in an species' genome, by explicitly modeling the combined evolutionary forces of mutation, selection, and drift \citep{gilchrist2007, ShahAndGilchrist2011, wallace2013, gilchrist2015}.
 In turn, these evolutionary forces should provide biologically meaningful information about the lineage's historical cellular and external environment.
 
@@ -193,7 +201,7 @@ For example, the endogenous genes show a mutational bias for A and T ending codo
 The exogenous genes display an equally consistent mutational bias towards C and G ending codons (Table \ref{tab:codon_pref_dm}).
 %As a result, only the two codon amino acid Phenylalanine (Phe, F) shares the same rank order across the endogenous and exogenous \DM estimates.
 In contrast to \DM, our estimates of \DE for the endogenous and exogenous genes were positively correlated ($\rho = 0.69$) and showing the same sign in $\sim53\%$ of codons between the two selection environments (Figure \ref{fig:csp_comp}).
-\ROC constraints $E[\phi] = 1$, allowing us to interpret \DE as selection on codon usage of the average gene with $\phi = 1$ and gives us the ability to compare the efficacy of selection $sN_e$  across genomes.
+\ROC constraints $E[\phi] = 1$, allowing us to interpret \DE as selection on codon usage of the average gene with $\phi = 1$ and gives us the ability to compare the efficacy of selection $s\Ne$  across genomes.
 
 \begin{figure}
     \centering
@@ -320,18 +328,23 @@ Together, these results indicate that the mutation signature of the exogenous ge
 
 \subsection*{Estimating Selection against Codon Mismatch of the Exogenous Genes}
 
-We define the selection against inefficient codon usage as the difference between the fitness on the log scale of an expected, replaced endogenous gene and the exogenous gene, $s \propto \phi \DE$ due to the mismatch in codon usage parameters (See Methods for details).
+We define the selection against inefficient codon usage as the difference between the fitness on the log scale of an expected, replaced endogenous gene and the exogenous gene, $\GL \propto \phi \DE$ due to the mismatch in codon usage parameters (See Methods for details).
 As the introgression occurred before the diversification of \kluyveri and has fixed throughout all populations \citep{friedrich2015}, we can not observe the original endogenous sequences that have been replaced by the introgression.
+Overall, we predict that a small number of low expression genes ($\phi < 1$) were weakly exapted at the time of the introgression (Figure \ref{fig:sne_fitness_burden}a).
+High expression genes ($\phi > 1$) are predicted to have faced the largest selection against their mismatched codon usage in the novel cellular environment.
+In order to account for differences in the efficacy of selection on codon usage either due to the cost of pausing, differences in the effective population size, or the decline in fitness with every ATP wasted between the donor lineage and \kluyveri we added a linear scaling factor $\kappa$ to scale our estimates of \DE between the donor lineage and \kluyveri and searched for the value that minimized the cost of the introgression, thus giving us the best case scenario (See Methods for details).
+
+
+
 Using our estimates of $\Delta M$ and $\Delta \eta$ from the endogenous genes and assuming the current exogenous amino acid composition of genes is representative of the replaced endogenous genes, we estimate the selection against the exogenous genes at the time of introgression (Figure \ref{fig:sne_fitness_burden}a) and currently (Figure \ref{fig:sne_fitness_burden}b).
 Estimates of selection bias for the exogenous genes show that, while well correlated with the endogenous genes, only nine amino acids share the same selectively preferred codon.
 Exogenous genes are, therefore, expected to represent a significant reduction in fitness for \kluyveri due to mismatch in codon usage.
-We find that the selection against the exogenous genes \GL due to mismatched codon usage was -0.0008 at the time of the introgression and still is -0.0003 today.
-Based on the selection against the codon mismatch at the time of the introgression $\GL = -0.0008$ and an effective population size $N_e$ on the order of $10^7$ \citep{wagner2005} we approximate a fixation probability of $(1-\exp[-\GL])/(1-\exp[-2\GL N_e]) \approx 10^{-6952}$ \citep{SellaAndHirsh2005} for the exogenous genes.
+We estimate that the selection against the exogenous genesdue to mismatched codon usage to have been $\GL \approx -0.0008$ at the time of the introgression and approximately -0.0003 today.
+This reduction in $\GL$ is primarily due to adaptive changes to the codon usage of the most highly expressed, introgressed genes (Figures \ref{fig:sne_fitness_burden}a \& \ref{fig:adapt_tot}).
+Based on the selection against the codon mismatch at the time of the introgression and assuming an effective population size $\Ne$ on the order of $10^7$ \citep{wagner2005}, we approximate a fixation probability of $(1-\exp[-\GL])/(1-\exp[-2\GL \Ne]) \approx 10^{-6952}$ \citep{SellaAndHirsh2005} for the exogenous genes.
+Clearly, the possibility of fixation under this simple scenario is effectively zero (See Discussion).
 
-In order to account for differences in the efficacy of selection on codon usage either due to the cost of pausing, differences in the effective population size or the decline in fitness with every ATP wasted between the donor lineage and \kluyveri we added a linear scaling factor $\kappa$ to scale our estimates of \DE between the donor lineage and \kluyveri  (See Methods for details).
-We predict that a small number of low expression genes ($\phi < 1$) were weakly exapted at the time of the introgression (Figure \ref{fig:sne_fitness_burden}a).
-High expression genes ($\phi > 1$) are predicted to have faced the largest selection against their mismatched codon usage in the novel cellular environment.
-These highly expressed genes are inferred to have the greatest degree of adaptation since the time of the introgression to the \kluyveri cellular environment (Figures \ref{fig:sne_fitness_burden}a \& \ref{fig:adapt_tot}).
+
 
 \begin{figure}
     \centering
@@ -351,7 +364,6 @@ These highly expressed genes are inferred to have the greatest degree of adaptat
 
 
 \section*{Discussion}
-
 In order to study the evolutionary effects of the large scale introgression of the left arm of chromosome C, we used \ROC, a mechanistic model of ribosome movement along an mRNA.
 The usage of a mechanistic model rooted in population genetics allows us generate more nuanced quantitative parameter estimates and separate the effects of mutation and selection on the evolution of codon usage.
 This allowed us to calculate the selection against the introgression, and provides \gossypii as a potential source lineage of the introgression which was previously not considered.
@@ -377,39 +389,33 @@ As we highlighted in this study, relatively small sets of genes with a signal of
 The same holds true for phylogenetic inferences \citep{salichos2013}, and as we showed the signal of the original endogenous cellular environment that shaped CUB is at different stages of decay in high and low expression genes (Figure \ref{fig:adapt_tot}).
 In summary, our work does not dispute an unknown Lachancea as possible origin, but provides an alternative hypothesis based on the codon usage of the exogenous genes, phylogenetic analysis, and synteny.
 
-We find large selection against the exogenous genes due to mismatched codon usage, resulting in an astronomically small fixation probability, and making fixation extremly unlikely.
-With such a small fixation probability, ($(1-\exp[-\GL])/(1-\exp[-2\GL N_e]) \approx 10^{-6952}$) one or more advantageous loci had to drive the introgressed genes to fixation.
-Even though \kluyveri diverged from the rest of the Lachancea clade around 85 Mya \citep{kensche2008, MHM2015}, if we assume 1 to 8 generations/day, which implies $10^{10}$ to $10^{11}$ generations since the time of divergence, one round of meiosis for every 1000 rounds of mitosis of which only one in 100 meiosis events lead to outcrossing based on \emph{S.~paradoxus} \citep{tsai2008}, and $N_e \approx 10^8$ there were only $10^{13}$ to $10^{14}$ opportunities for such an introgression to have occurred and fixed.
-In this context, the astronomically small fixation probability indicates that there was virtually no chance of fixation and was likely not a fluke, and unless there was a severe bottleneck with $N_e < 1/|s| \approx 1,250$ around the time of introgression, which conceivably could have been triggered by a speciation event, this scenario seems, thus, very unlikely.
-
-If, on the other hand, the introgressed region contained advantageous loci, the effective selection against the exogenous genes would be reduced and the introgression could have even been advantageous.
-Indeed, $\sim 30 \%$ of low expression exogenous genes ($\phi < 1$) appeared to be exapted at the time of the introgression.
+In terms of understanding the spread of the introgression, we calculated the expected selective cost of codon mismatch between the \kluyveri and \gossypii lineages.
+Under our working hypothesis, the majority of the introgressed would have imposed a selective cost due to codon mismatch.
+Nevertheless, $\sim 30 \%$ of low expression exogenous genes ($\phi < 1$) appeared to be exapted at the time of the introgression.
 This exaptation is due to the mutation bias in the endogenous genes matching the selection bias in the exogenous genes for GC ending codons.
-These exapted loci, however, are already accounted for in our calculation of \GL.
-Thus, loci that, at the time of the introgression, provided a benefit to \kluyveri must have been contained in the introgressed region
-Alternatively, an environmental shift may have caused the replaced endogenous region to suddenly contain deleterious loci making the reduction in translation efficiency the lesser of two evil.
+Our estimate of the selective cost of codon mismatch on the order of $-0.0008$.
+While this selective cost may not seem very large, assuming \kluyveri had a large \Ne, the fixation probability of the introgression is the astronomically small value of $\approx 10^{-6952} \approx 0$.
+Thus, the basic scenario of an introgression between two yeast species with large \Ne and where the introgression soley imposes a selective cost due to codon mismatch is clearly too simplistic.
 
-However, one may wonder why recombination events did not limit the introgression to only the adaptive loci.
-A potential answer is the low recombination rate between the endogenous and exogenous regions \citet{payen2009, brion2017} .
+For example, one or more loci with a combined selective advantage on the order of $0.0008$ or greater would have made the introgression change from disadvantageous to effectively neutral or advantageous.
+While this scenario seems plausible, it raises the question as to why recombination events did not limit the introgression to only the adaptive loci.
+A potential answer is the low recombination rate between the endogenous and exogenous regions \citet{payen2009, brion2017}.
 This is presumably due to the dissimilarity in \GC and/or a lower than average sequence homology between the exogenous region and the one it replaced.
-Compatible with this explanation is the possibility of several highly advantageous loci distributed across the region which then drove a rapid selective sweep and/or the population through a bottleneck speciation process.
+A population bottleneck reducing the \Ne of the \kluyveri lineage around the time of the introgression could also help explain the spread of the introgression.
+Compatible with these explanation is the possibility of several advantageous loci distributed across the introgressed region drove a rapid selective sweep and/or the population through a bottleneck speciation process.
+
 
 Assuming \gossypii as potential source lineage of the introgressed region, we illustrated how information on codon usage can be used to infer the time since the introgression occurred using our estimates of mutation bias \DM.
-The \DM estimates are well suited for this task as they are free of the influence of selection and unbiased by $N_e$ and other scaling terms, which is in contrast to our estimates of \DE \citep{gilchrist2015}.
+The \DM estimates are well suited for this task as they are free of the influence of selection and unbiased by $\Ne$ and other scaling terms, which is in contrast to our estimates of \DE \citep{gilchrist2015}.
 Our estimated age of the introgression of $6.2\pm1.2\times 10^8$ generations is $\sim 10$ times longer than a previous minimum estimate by \citet{friedrich2015} of $5.6\times 10^7$ generations, which was based on the effective population recombination rate and the population mutation parameter \citep{Ruderfer2006}.
 Furthermore, these estimates assume that the current \gossypii and \kluyveri cellular environment reflect their ancestral states at the time of the introgression.
-Thus, If the ancestral mutation environments were more similar (dissimilar) at the time of the introgression then our result is an overestimate (underestimate).
+Thus, if the ancestral mutation environments were more similar (dissimilar) at the time of the introgression then our result is an overestimate (underestimate).
 
 Overall, our results show the usefulness of the separation of mutation bias and selection bias and the importance of recognizing the presence of multiple cellular environments in the study of codon usage.
 We also illustrate how a mechanistic model like \ROC and the quantitative estimates it provides can be used for more sophisticated hypothesis testing in the future.
 In contrast to other approaches used to study codon usage like CAI \citep{sharp1987} or tAI \citep{dosreis2004}, \ROC incorporates the effects of mutation bias and amino acid composition explicitly \citep{cope2018}.
 We highlight potential issues when estimating codon preferences, as estimates can be biased by the signature of a second, historical cellular environment.
 In addition, we show how quantitative estimates of mutation bias and selection relative to drift can be obtained from codon data and used to infer the fitness cost of an introgression as well as its history and potential future.
-
-%A related example of a large scale merger of genomic material can be found in \emph{S.~pastorianus}, which is currently believed to be a hybrid of \emph{S.~cerevisiae} and \emph{S.~eubayanus} lineages, \citep{baker2015}.
-%Unlike with \kluyveri and \gossypii, the  progenitor lineages of \emph{S.~pastorianus} have similar codon usage parameters as observed today.
-%The correlation between \DM and \DE for these two lineages are  $\rho = 0.83$ and  $0.98$ (data not shown).
-%These similarities in \DM and \DE parameters suggest that the genetic load for \emph{S.~pastorianus} due to mismatching codon usage is small relative to the exongenous genes considered here. 
 
 \section*{Materials and Methods}
 
@@ -437,8 +443,8 @@ As the choice of reference codon can reorganize codon families coding for an ami
 \begin{equation}
 \DE_i = \DE_{i,1} - \overline{\DE_i}
 \end{equation}
-Comparison of codon specific parameters (\DM and $\DE = 2N_eq(\eta_i-\eta_j)$) was performed using the function lmodel2 in the R package lmodel2 (1.7.3) \citep{lmodel2} and R version 3.4.1 \citep{rcore}.
-The parameter \DE can be interpreted as the difference in fitness between codon $i$ and $j$ for the average gene with $\phi = 1$ scaled by the  effective population size $N_e$, and the selective cost of an ATP $q$ \citep{gilchrist2007, gilchrist2015}.
+Comparison of codon specific parameters (\DM and $\DE = 2\Ne q(\eta_i-\eta_j)$) was performed using the function lmodel2 in the R package lmodel2 (1.7.3) \citep{lmodel2} and R version 3.4.1 \citep{rcore}.
+The parameter \DE can be interpreted as the difference in fitness between codon $i$ and $j$ for the average gene with $\phi = 1$ scaled by the  effective population size $\Ne$, and the selective cost of an ATP $q$ \citep{gilchrist2007, gilchrist2015}.
 Type II regression was performed with re-centered parameter estimates, accounting for noise in dependent and independent variable \citep{SokalAndRohlf1981}.
 
 Due to the greater dissimilarity of the \DM estimates between the endogenous and exogenous genes, and the slower decay rate of mutation bias, we decided to focus on our estimates of mutation bias to identify potential source lineages.
@@ -484,11 +490,12 @@ The same equation was used to determine the time $t_\text{decay}$ at which the s
 In order to estimate the selection against codon mismatch, we had to make three key assumptions.
 First, we assumed that the current exogenous amino acid sequence of a gene is representative of its ancestral state and the replaced endogenous gene it replaced.
 Second, we assume that the currently observed cellular environment of \gossypii reflects the cellular environment that the exogenous genes experienced before transfer to \kluyveri.
-Lastly, we assume that the difference in the efficacy of selection between the cellular environments due to differences in either effective population size $N_e$ or the selective cost of an ATP $q$ of the source lineage and \kluyveri can be expressed as a scaling constant and that protein synthesis rate $\phi$ has not changed between the replaced endogenous and the introgressed exogenous genes.
-Using estimates for $N_e = 1.36\times10^7$ \citep{wagner2005} for \textit{Saccharomyces paradoxus} we scale our estimates of \DE which explicitly contains the effective population size $N_e$ \citep{gilchrist2015} and define $\DE' = \frac{\DE}{N_e}$.
+Lastly, we assume that the difference in the efficacy of selection between the cellular environments due to differences in either effective population size $\Ne$ or the selective cost of an ATP $q$ of the source lineage and \kluyveri can be expressed as a scaling constant and that protein synthesis rate $\phi$ has not changed between the replaced endogenous and the introgressed exogenous genes.
+Using estimates for $\Ne = 1.36\times10^7$ \citep{wagner2005} for \textit{Saccharomyces paradoxus} we scale our estimates of \DE which explicitly contains the effective population size $\Ne$ \citep{gilchrist2015} and define $\DE' = \frac{\DE}{\Ne}$.
 
-We scale the difference in the efficacy of selection on codon usage between the donor lineage and \kluyveri using a linear scaling factor $\kappa$.
-As \DE is defined as $\DE = 2N_eq(\eta_i-\eta_j)$, we cannot distinguish if $\kappa$ is a scaling on protein synthesis rate $\phi$, effective population size $N_e$, or the selective cost of an ATP $q$ \citep{gilchrist2007, gilchrist2015}.
+All of our genome parameter estimations are scaled by lineage specific effects such as \Ne, the average, absolute gene expression level, and/or the proportionate fitness value of an ATP.
+In order to account for these genome specific differences in scaling, we scale the difference in the efficacy of selection on codon usage between the donor lineage and \kluyveri using a linear scaling factor $\kappa$.
+As \DE is defined as $\DE = 2\Ne q(\eta_i-\eta_j)$, we cannot distinguish if $\kappa$ is a scaling on protein synthesis rate $\phi$, effective population size $\Ne$, or the selective cost of an ATP $q$ \citep{gilchrist2007, gilchrist2015}.
 We calculated the selection against each genes codon mismatch assuming additive fitness effects as 
 \begin{equation}
 s_g = \sum_{i=1}^{L_g} -\kappa \phi_g \DE'_i
@@ -497,16 +504,14 @@ s_g = \sum_{i=1}^{L_g} -\kappa \phi_g \DE'_i
 where $s_g$ is the overall strength of selection for translational efficiency on gene, $g$  in the exogenous gene set, $\kappa$ is a constant, scaling the efficacy of selection between the endogenous and exogenous cellular environments, $L_{g}$ is length of the protein in codons, $\phi_g$ is the estimated protein synthesis rate of the gene in the endogenous environment, and $\DE'_i$, is the $\DE'$ for the codon at position $i$.
 As stated previously, our \DE are relative to the mean of the codon family.
 We find that the selection against the introgressed genes is minimized at $\kappa \sim 5$ (Figure \ref{fig:sne_scaling}b).
-Thus, we expect a five fold difference in the efficacy of selection between \kluyveri and \gossypii, due to differences in either protein synthesis rate $\phi$, effective population size $N_e$, and/or the selective cost of an ATP $q$.
+Thus, we expect a five fold difference in the efficacy of selection between \kluyveri and \gossypii, due to differences in either protein synthesis rate $\phi$, effective population size $\Ne$, and/or the selective cost of an ATP $q$.
 Therefore, we set $\kappa = 1$ if we calculate the $s_g$ for the endogenous and the current exogenous genes, and $\kappa = 5$ for $s_g$ for selection calculations at the time of introgression.
 
 However, since we are unable to observe codon sequences of the replaced endogenous genes and for the exogenous genes at the time of introgression, instead of summing over the sequence, we calculate the expected codon count $E[n_{g,i}] $ for codon $i$ in gene $g$ simply as the probability of observing codon $i$ multiplied by the number of times the corresponding amino acids is observed in gene $g$, yielding:
-\begin{equation}
-E[n_{g,i}] = P(c_i | \DM, \DE, \phi) \times m_{a_i}
-\end{equation}
-\begin{equation}
-E[n_{g,i}] = \frac{\exp[-\DM_i -\DE_i\phi_g]}{\sum_j^C \exp[-\DM_j -\DE_j\phi_g]}\times m_{a_i}
-\end{equation} 
+\begin{align*}
+E[n_{g,i}] &= P(c_i | \DM, \DE, \phi) \times m_{a_i}\\
+ &= \frac{\exp[-\DM_i -\DE_i\phi_g]}{\sum_j^C \exp[-\DM_j -\DE_j\phi_g]}\times m_{a_i}
+\end{align*} 
 where $m_{a_i}$ is the number of occurrences of amino acid $a$ that codon $i$ codes for.
 Thus replacing the summation over the sequence length $L_g$ in equ. (\ref{equ:sg}) by a summation over the codon set $C$ and calculating $s_g$ as
 \begin{equation}
