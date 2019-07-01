@@ -3,44 +3,44 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: landerer_etal_cub.aux
 The style file: natbib.bst
 Database file #1: kluyveri_paper.bib
-You've used 37 entries,
+You've used 38 entries,
             2401 wiz_defined-function locations,
-            760 strings with 11298 characters,
-and the built_in function-call counts, 19826 in all, are:
-= -- 1856
-> -- 1229
+            768 strings with 11488 characters,
+and the built_in function-call counts, 20405 in all, are:
+= -- 1910
+> -- 1266
 < -- 18
-+ -- 423
-- -- 343
-* -- 1880
-:= -- 3370
-add.period$ -- 174
-call.type$ -- 37
-change.case$ -- 227
-chr.to.int$ -- 37
-cite$ -- 37
-duplicate$ -- 723
-empty$ -- 1243
-format.name$ -- 398
-if$ -- 3962
++ -- 438
+- -- 353
+* -- 1938
+:= -- 3465
+add.period$ -- 179
+call.type$ -- 38
+change.case$ -- 233
+chr.to.int$ -- 38
+cite$ -- 38
+duplicate$ -- 743
+empty$ -- 1279
+format.name$ -- 409
+if$ -- 4078
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 35
-newline$ -- 187
-num.names$ -- 148
-pop$ -- 259
+missing$ -- 36
+newline$ -- 192
+num.names$ -- 152
+pop$ -- 268
 preamble$ -- 1
-purify$ -- 231
+purify$ -- 237
 quote$ -- 0
-skip$ -- 552
+skip$ -- 567
 stack$ -- 0
-substring$ -- 1351
-swap$ -- 146
+substring$ -- 1394
+swap$ -- 150
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 330
+type$ -- 339
 warning$ -- 0
-while$ -- 148
+while$ -- 152
 width$ -- 0
-write$ -- 479
+write$ -- 492
