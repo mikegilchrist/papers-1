@@ -1,0 +1,1268 @@
+%% BioMed_Central_Bib_Style_v1.01
+
+\begin{thebibliography}{37}
+% BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
+\ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
+\ifx \binits  \undefined \def \binits#1{#1}\fi
+\ifx \bauthor  \undefined \def \bauthor#1{#1}\fi
+\ifx \batitle  \undefined \def \batitle#1{#1}\fi
+\ifx \bjtitle  \undefined \def \bjtitle#1{#1}\fi
+\ifx \bvolume  \undefined \def \bvolume#1{\textbf{#1}}\fi
+\ifx \byear  \undefined \def \byear#1{#1}\fi
+\ifx \bissue  \undefined \def \bissue#1{#1}\fi
+\ifx \bfpage  \undefined \def \bfpage#1{#1}\fi
+\ifx \blpage  \undefined \def \blpage #1{#1}\fi
+\ifx \burl  \undefined \def \burl#1{\textsf{#1}}\fi
+\ifx \doiurl  \undefined \def \doiurl#1{\textsf{#1}}\fi
+\ifx \betal  \undefined \def \betal{\textit{et al.}}\fi
+\ifx \binstitute  \undefined \def \binstitute#1{#1}\fi
+\ifx \binstitutionaled  \undefined \def \binstitutionaled#1{#1}\fi
+\ifx \bctitle  \undefined \def \bctitle#1{#1}\fi
+\ifx \beditor  \undefined \def \beditor#1{#1}\fi
+\ifx \bpublisher  \undefined \def \bpublisher#1{#1}\fi
+\ifx \bbtitle  \undefined \def \bbtitle#1{#1}\fi
+\ifx \bedition  \undefined \def \bedition#1{#1}\fi
+\ifx \bseriesno  \undefined \def \bseriesno#1{#1}\fi
+\ifx \blocation  \undefined \def \blocation#1{#1}\fi
+\ifx \bsertitle  \undefined \def \bsertitle#1{#1}\fi
+\ifx \bsnm \undefined \def \bsnm#1{#1}\fi
+\ifx \bsuffix \undefined \def \bsuffix#1{#1}\fi
+\ifx \bparticle \undefined \def \bparticle#1{#1}\fi
+\ifx \barticle \undefined \def \barticle#1{#1}\fi
+\ifx \bconfdate \undefined \def \bconfdate #1{#1}\fi
+\ifx \botherref \undefined \def \botherref #1{#1}\fi
+\ifx \url \undefined \def \url#1{\textsf{#1}}\fi
+\ifx \bchapter \undefined \def \bchapter#1{#1}\fi
+\ifx \bbook \undefined \def \bbook#1{#1}\fi
+\ifx \bcomment \undefined \def \bcomment#1{#1}\fi
+\ifx \oauthor \undefined \def \oauthor#1{#1}\fi
+\ifx \citeauthoryear \undefined \def \citeauthoryear#1{#1}\fi
+\ifx \endbibitem  \undefined \def \endbibitem {}\fi
+\ifx \bconflocation  \undefined \def \bconflocation#1{#1}\fi
+\ifx \arxivurl  \undefined \def \arxivurl#1{\textsf{#1}}\fi
+\csname PreBibitemsHook\endcsname
+
+%%% 1
+\bibitem{gouy1982}
+\begin{barticle}
+\bauthor{\bsnm{Gouy}, \binits{M.}},
+\bauthor{\bsnm{Gautier}, \binits{C.}}:
+\batitle{Codon usage in bacteria: correlation with gene expressivity}.
+\bjtitle{Nucleic Acids Research}
+\bvolume{10},
+\bfpage{7055}--\blpage{7074}
+(\byear{1982})
+\end{barticle}
+\endbibitem
+
+%%% 2
+\bibitem{ikemura1985}
+\begin{barticle}
+\bauthor{\bsnm{Ikemura}, \binits{T.}}:
+\batitle{Codon usage and {tRNA} content in unicellular and multicellular
+  organisms}.
+\bjtitle{Molecular Biology and Evolution}
+\bvolume{2},
+\bfpage{13}--\blpage{34}
+(\byear{1985})
+\end{barticle}
+\endbibitem
+
+%%% 3
+\bibitem{bulmer1990}
+\begin{barticle}
+\bauthor{\bsnm{Bulmer}, \binits{M.}}:
+\batitle{The selection-mutation-drift theory of synonymous codon usage}.
+\bjtitle{Genetics}
+\bvolume{129},
+\bfpage{897}--\blpage{907}
+(\byear{1990})
+\end{barticle}
+\endbibitem
+
+%%% 4
+\bibitem{gilchrist2007}
+\begin{barticle}
+\bauthor{\bsnm{Gilchrist}, \binits{M.A.}}:
+\batitle{Combining models of protein translation and population genetics to
+  predict protein production rates from codon usage patterns}.
+\bjtitle{Molecular Biology and Evolution}
+\bvolume{24}(\bissue{11}),
+\bfpage{2362}--\blpage{2372}
+(\byear{2007})
+\end{barticle}
+\endbibitem
+
+%%% 5
+\bibitem{ShahAndGilchrist2011}
+\begin{barticle}
+\bauthor{\bsnm{Shah}, \binits{P.}},
+\bauthor{\bsnm{Gilchrist}, \binits{M.A.}}:
+\batitle{Explaining complex codon usage patterns with selection for
+  translational efficiency, mutation bias, and genetic drift}.
+\bjtitle{Proccedings of the National Academy of Sciences U.S.A}
+\bvolume{108}(\bissue{25}),
+\bfpage{10231}--\blpage{10236}
+(\byear{2011})
+\end{barticle}
+\endbibitem
+
+%%% 6
+\bibitem{wallace2013}
+\begin{barticle}
+\bauthor{\bsnm{Wallace}, \binits{E.W.}},
+\bauthor{\bsnm{Airoldi}, \binits{E.M.}},
+\bauthor{\bsnm{Drummond}, \binits{D.A.}}:
+\batitle{Estimating selection on synonymous codon usage from noisy experimental
+  data}.
+\bjtitle{Molecular Biology and Evolution}
+\bvolume{30},
+\bfpage{1438}--\blpage{1453}
+(\byear{2013})
+\end{barticle}
+\endbibitem
+
+%%% 7
+\bibitem{gilchrist2015}
+\begin{barticle}
+\bauthor{\bsnm{Gilchrist}, \binits{M.A.}},
+\bauthor{\bsnm{Chen}, \binits{W.C.}},
+\bauthor{\bsnm{Shah}, \binits{P.}},
+\bauthor{\bsnm{Landerer}, \binits{C.L.}},
+\bauthor{\bsnm{Zaretzki}, \binits{R.}}:
+\batitle{Estimating gene expression and codon-specific translational
+  efficiencies, mutation biases, and selection coefficients from genomic data
+  alone}.
+\bjtitle{Genome Biology and Evolution}
+\bvolume{7},
+\bfpage{1559}--\blpage{1579}
+(\byear{2015})
+\end{barticle}
+\endbibitem
+
+%%% 8
+\bibitem{medigue1991}
+\begin{barticle}
+\bauthor{\bsnm{Médigue}, \binits{C.}},
+\bauthor{\bsnm{Rouxel}, \binits{T.}},
+\bauthor{\bsnm{Vigier}, \binits{P.}},
+\bauthor{\bsnm{Hénaut}, \binits{A.}},
+\bauthor{\bsnm{Danchin}, \binits{A.}}:
+\batitle{Evidence for horizontal gene transfer in {Escherichia} coli
+  speciation}.
+\bjtitle{Journal of Molecular Biology}
+\bvolume{222}(\bissue{4}),
+\bfpage{851}--\blpage{856}
+(\byear{1991})
+\end{barticle}
+\endbibitem
+
+%%% 9
+\bibitem{lawrence1997}
+\begin{barticle}
+\bauthor{\bsnm{Lawrence}, \binits{J.G.}},
+\bauthor{\bsnm{Ochman}, \binits{H.}}:
+\batitle{Amelioration of bacterial genomes: Rates of change and exchange}.
+\bjtitle{Journal of Molecular Biology}
+\bvolume{44},
+\bfpage{383}--\blpage{397}
+(\byear{1997})
+\end{barticle}
+\endbibitem
+
+%%% 10
+\bibitem{MHM2015}
+\begin{barticle}
+\bauthor{\bsnm{Marcet-Houben}, \binits{M.}},
+\bauthor{\bsnm{Gabaldón}, \binits{T.}}:
+\batitle{Beyond the whole-genome duplication: Phylogenetic evidence for an
+  ancient interspecies hybridization in the baker's yeast lineage}.
+\bjtitle{PLoS Biology}
+\bvolume{13}(\bissue{8}),
+\bfpage{1002220}
+(\byear{2015})
+\end{barticle}
+\endbibitem
+
+%%% 11
+\bibitem{Beimforde2014}
+\begin{barticle}
+\bauthor{\bsnm{Beimforde}, \binits{C.}},
+\bauthor{\bsnm{Feldberg}, \binits{K.}},
+\bauthor{\bsnm{Nylinder}, \binits{S.}},
+\bauthor{\bsnm{Rikkinen}, \binits{J.}},
+\bauthor{\bsnm{Tuovila}, \binits{H.}},
+\bauthor{\bsnm{Dörfelt}, \binits{H.}},
+\bauthor{\bsnm{Gube}, \binits{M.}},
+\bauthor{\bsnm{Jackson}, \binits{D.J.}},
+\bauthor{\bsnm{Reitner}, \binits{J.}},
+\bauthor{\bsnm{Seyfullah}, \binits{L.J.}},
+\bauthor{\bsnm{Schmidt}, \binits{A.R.}}:
+\batitle{Estimating the phanerozoic history of the ascomycota lineages:
+  combining fossil and molecular data.}
+\bjtitle{Mol. Phylogenet. Evol.}
+\bvolume{78},
+\bfpage{386}--\blpage{398}
+(\byear{2014})
+\end{barticle}
+\endbibitem
+
+%%% 12
+\bibitem{friedrich2015}
+\begin{barticle}
+\bauthor{\bsnm{Friedrich}, \binits{A.}},
+\bauthor{\bsnm{Reiser}, \binits{C.}},
+\bauthor{\bsnm{Fischer}, \binits{G.}},
+\bauthor{\bsnm{Schacherer}, \binits{J.}}:
+\batitle{Population genomics reveals chromosome-scale heterogeneous evolution
+  in a protoploid yeast.}
+\bjtitle{Molecular Biology and Evolution}
+\bvolume{32}(\bissue{1}),
+\bfpage{184}--\blpage{192}
+(\byear{2015})
+\end{barticle}
+\endbibitem
+
+%%% 13
+\bibitem{vakirlis2016}
+\begin{barticle}
+\bauthor{\bsnm{Vakirlis}, \binits{N.}},
+\bauthor{\bsnm{Sarilar}, \binits{V.}},
+\bauthor{\bsnm{Drillon}, \binits{G.}},
+\bauthor{\bsnm{Fleiss}, \binits{A.}},
+\bauthor{\bsnm{Agier}, \binits{N.}},
+\bauthor{\bsnm{Meyniel}, \binits{J.-P.}},
+\bauthor{\bsnm{Blanpain}, \binits{L.}},
+\bauthor{\bsnm{Carbone}, \binits{A.}},
+\bauthor{\bsnm{Devillers}, \binits{H.}},
+\bauthor{\bsnm{Dubois}, \binits{K.}},
+\bauthor{\bsnm{Gillet-Markowska}, \binits{A.}},
+\bauthor{\bsnm{Graziani}, \binits{S.}},
+\bauthor{\bsnm{Huu-Vang}, \binits{N.}},
+\bauthor{\bsnm{Poirel}, \binits{M.}},
+\bauthor{\bsnm{Reisser}, \binits{C.}},
+\bauthor{\bsnm{Schott}, \binits{J.}},
+\bauthor{\bsnm{Schacherer}, \binits{J.}},
+\bauthor{\bsnm{Lafontaine}, \binits{I.}},
+\bauthor{\bsnm{Llorente}, \binits{B.}},
+\bauthor{\bsnm{Neuv{\'{e}}glise}, \binits{C.}},
+\bauthor{\bsnm{Fischer}, \binits{G.}}:
+\batitle{{Reconstruction of ancestral chromosome architecture and gene
+  repertoire reveals principles of genome evolution in a model yeast genus.}}
+\bjtitle{Genome research}
+\bvolume{26}(\bissue{7}),
+\bfpage{918}--\blpage{32}
+(\byear{2016})
+\end{barticle}
+\endbibitem
+
+%%% 14
+\bibitem{payen2009}
+\begin{barticle}
+\bauthor{\bsnm{Payen}, \binits{C.}},
+\bauthor{\bsnm{Fischer}, \binits{G.}},
+\bauthor{\bsnm{Marck}, \binits{C.}},
+\bauthor{\bsnm{Proux}, \binits{C.}},
+\bauthor{\bsnm{Sherman}, \binits{D.J.}},
+\bauthor{\bsnm{Coppée}, \binits{J.-Y.}},
+\bauthor{\bsnm{Johnston}, \binits{M.}},
+\bauthor{\bsnm{Dujon}, \binits{B.}},
+\bauthor{\bsnm{Neuvéglise}, \binits{C.}}:
+\batitle{Unusual composition of a yeast chromosome arm is associated with its
+  delayed replication.}
+\bjtitle{Genome Research}
+\bvolume{19}(\bissue{10}),
+\bfpage{1710}--\blpage{1721}
+(\byear{2009})
+\end{barticle}
+\endbibitem
+
+%%% 15
+\bibitem{brion2017}
+\begin{barticle}
+\bauthor{\bsnm{Brion}, \binits{C.}},
+\bauthor{\bsnm{Legrand}, \binits{S.}},
+\bauthor{\bsnm{Peter}, \binits{J.}},
+\bauthor{\bsnm{Caradec}, \binits{C.}},
+\bauthor{\bsnm{Pflieger}, \binits{D.}},
+\bauthor{\bsnm{Hou}, \binits{J.}},
+\bauthor{\bsnm{Friedrich}, \binits{A.}},
+\bauthor{\bsnm{Llorente}, \binits{B.}},
+\bauthor{\bsnm{Schacherer}, \binits{J.}}:
+\batitle{Variation of the meiotic recombination landscape and properties over a
+  broad evolutionary distance in yeasts}.
+\bjtitle{PLoS Genetics}
+\bvolume{13}(\bissue{8}),
+\bfpage{1006917}
+(\byear{2017})
+\end{barticle}
+\endbibitem
+
+%%% 16
+\bibitem{sharp1987}
+\begin{barticle}
+\bauthor{\bsnm{Sharp}, \binits{P.M.}},
+\bauthor{\bsnm{Li}, \binits{W.H.}}:
+\batitle{The codon adaptation index - a meassure of directional synonymous
+  codon usage bias, and its potential applications}.
+\bjtitle{Nucleic Acids Research}
+\bvolume{15},
+\bfpage{1281}--\blpage{1295}
+(\byear{1987})
+\end{barticle}
+\endbibitem
+
+%%% 17
+\bibitem{Wright1990}
+\begin{barticle}
+\bauthor{\bsnm{Wright}, \binits{F.}}:
+\batitle{The ‘effective number of codons’ used in a gene}.
+\bjtitle{Genel}
+\bvolume{87},
+\bfpage{23}--\blpage{29}
+(\byear{1990})
+\end{barticle}
+\endbibitem
+
+%%% 18
+\bibitem{dosreis2004}
+\begin{barticle}
+\bauthor{\bparticle{dos} \bsnm{Reis}, \binits{M.}},
+\bauthor{\bsnm{Savva}, \binits{R.}},
+\bauthor{\bsnm{Wernisch}, \binits{L.}}:
+\batitle{Solving the riddle of codon usage preferences: a test for
+  translational selection}.
+\bjtitle{Nucleic Acids Research}
+\bvolume{32}(\bissue{17}),
+\bfpage{5036}--\blpage{5044}
+(\byear{2004})
+\end{barticle}
+\endbibitem
+
+%%% 19
+\bibitem{cope2018}
+\begin{barticle}
+\bauthor{\bsnm{Cope}, \binits{A.L.}},
+\bauthor{\bsnm{Hettich}, \binits{R.L.}},
+\bauthor{\bsnm{Gilchrist}, \binits{M.A.}}:
+\batitle{{Quantifying codon usage in signal peptides: Gene expression and amino
+  acid usage explain apparent selection for inefficient codons}}.
+\bjtitle{Biochimica et Biophysica Acta (BBA) - Biomembranes}
+\bvolume{1860}(\bissue{12}),
+\bfpage{2479}--\blpage{2485}
+(\byear{2018})
+\end{barticle}
+\endbibitem
+
+%%% 20
+\bibitem{shen2018}
+\begin{barticle}
+\bauthor{\bsnm{Shen}, \binits{X.X.}},
+\bauthor{\bsnm{Opulente}, \binits{D.A.}},
+\bauthor{\bsnm{Kominek}, \binits{J.}},
+\bauthor{\bsnm{Zhou}, \binits{X.}},
+\bauthor{\bsnm{Steenwyk}, \binits{J.L.}},
+\bauthor{\bsnm{Buh}, \binits{K.V.}},
+\bauthor{\bsnm{Haase}, \binits{M.A.B.}},
+\bauthor{\bsnm{Wisecaver}, \binits{J.H.}},
+\bauthor{\bsnm{Wang}, \binits{M.}},
+\bauthor{\bsnm{Doering}, \binits{D.T.}},
+\bauthor{\bsnm{Boudouris}, \binits{J.T.}},
+\bauthor{\bsnm{Schneider}, \binits{R.M.}},
+\bauthor{\bsnm{Langdon}, \binits{Q.K.}},
+\bauthor{\bsnm{Ohkuma}, \binits{M.}},
+\bauthor{\bsnm{Endoh}, \binits{R.}},
+\bauthor{\bsnm{Takashima}, \binits{M.}},
+\bauthor{\bsnm{Manabe}, \binits{R.}},
+\bauthor{\bsnm{Čadež}, \binits{N.}},
+\bauthor{\bsnm{Libkind}, \binits{D.}},
+\bauthor{\bsnm{Rosa}, \binits{C.}},
+\bauthor{\bsnm{DeVirgilio}, \binits{J.}},
+\bauthor{\bsnm{Hulfachor}, \binits{A.B.}},
+\bauthor{\bsnm{Groenewald}, \binits{M.}},
+\bauthor{\bsnm{Kurtzman}, \binits{C.}},
+\bauthor{\bsnm{Hittinger}, \binits{C.T.}},
+\bauthor{\bsnm{Rokas}, \binits{A.}}:
+\batitle{Tempo and mode of genome evolution in the budding yeast subphylum}.
+\bjtitle{Cell}
+\bvolume{175}(\bissue{6}),
+\bfpage{1533}--\blpage{154520}
+(\byear{2018})
+\end{barticle}
+\endbibitem
+
+%%% 21
+\bibitem{landerer2018}
+\begin{barticle}
+\bauthor{\bsnm{Landerer}, \binits{C.}},
+\bauthor{\bsnm{Cope}, \binits{A.}},
+\bauthor{\bsnm{Zaretzki}, \binits{R.}},
+\bauthor{\bsnm{Gilchrist}, \binits{M.A.}}:
+\batitle{{AnaCoDa}: analyzing codon data with bayesian mixture models}.
+\bjtitle{Bioinformatics}
+\bvolume{34}(\bissue{14}),
+\bfpage{2496}--\blpage{2498}
+(\byear{2018})
+\end{barticle}
+\endbibitem
+
+%%% 22
+\bibitem{tsankov2010}
+\begin{barticle}
+\bauthor{\bsnm{Tsankov}, \binits{A.M.}},
+\bauthor{\bsnm{Thompson}, \binits{D.A.}},
+\bauthor{\bsnm{Socha}, \binits{A.}},
+\bauthor{\bsnm{Regev}, \binits{A.}},
+\bauthor{\bsnm{Rando}, \binits{O.J.}}:
+\batitle{The role of nucleosome positioning in the evolution of gene
+  regulation}.
+\bjtitle{PLoS Biol}
+\bvolume{8}(\bissue{7}),
+\bfpage{1000414}
+(\byear{2010})
+\end{barticle}
+\endbibitem
+
+%%% 23
+\bibitem{SokalAndRohlf1981}
+\begin{bbook}
+\bauthor{\bsnm{Sokal}, \binits{R.R.}},
+\bauthor{\bsnm{Rohlf}, \binits{F.J.}}:
+\bbtitle{Biometry - The principles and practice of statistics in biological},
+pp. \bfpage{547}--\blpage{555}.
+\bpublisher{W. H. Freeman}, \blocation{???}
+(\byear{1981})
+\end{bbook}
+\endbibitem
+
+%%% 24
+\bibitem{nguyen2015}
+\begin{barticle}
+\bauthor{\bsnm{Nguyen}, \binits{L.T.}},
+\bauthor{\bsnm{Schmidt}, \binits{H.A.}},
+\bauthor{\bparticle{von} \bsnm{Haeseler}, \binits{A.}},
+\bauthor{\bsnm{Minh}, \binits{B.Q.}}:
+\batitle{Iq-tree: A fast and effective stochastic algorithm for estimating
+  maximum-likelihood phylogenies}.
+\bjtitle{Molecular Biology and Evolution}
+\bvolume{32}(\bissue{1}),
+\bfpage{268}--\blpage{274}
+(\byear{2015})
+\end{barticle}
+\endbibitem
+
+%%% 25
+\bibitem{wagner2005}
+\begin{barticle}
+\bauthor{\bsnm{Wagner}, \binits{A.}}:
+\batitle{Energy constraints on the evolution of gene expression}.
+\bjtitle{Molecular Biology and Evolution}
+\bvolume{22},
+\bfpage{1365}--\blpage{1374}
+(\byear{2005})
+\end{barticle}
+\endbibitem
+
+%%% 26
+\bibitem{SellaAndHirsh2005}
+\begin{barticle}
+\bauthor{\bsnm{Sella}, \binits{G.}},
+\bauthor{\bsnm{Hirsh}, \binits{A.E.}}:
+\batitle{The application of statistical physics to evolutionary biology}.
+\bjtitle{Proceedings of the National Academy of Sciences of the United States
+  of America}
+\bvolume{102},
+\bfpage{9541}--\blpage{9546}
+(\byear{2005})
+\end{barticle}
+\endbibitem
+
+%%% 27
+\bibitem{salichos2013}
+\begin{barticle}
+\bauthor{\bsnm{Salichos}, \binits{L.}},
+\bauthor{\bsnm{Rokas}, \binits{A.}}:
+\batitle{Inferring ancient divergences requires genes with strong phylogenetic
+  signals}.
+\bjtitle{Nature}
+\bvolume{497},
+\bfpage{327}--\blpage{331}
+(\byear{2013})
+\end{barticle}
+\endbibitem
+
+%%% 28
+\bibitem{kensche2008}
+\begin{barticle}
+\bauthor{\bsnm{Kensche}, \binits{P.R.}},
+\bauthor{\bsnm{Oti}, \binits{M.}},
+\bauthor{\bsnm{Dutilh}, \binits{B.E.}},
+\bauthor{\bsnm{Huynen}, \binits{M.A.}}:
+\batitle{Conservation of divergent transcription in fungi}.
+\bjtitle{Trends Genet.}
+\bvolume{5}(\bissue{24}),
+\bfpage{207}--\blpage{211}
+(\byear{2008})
+\end{barticle}
+\endbibitem
+
+%%% 29
+\bibitem{tsai2008}
+\begin{barticle}
+\bauthor{\bsnm{Tsai}, \binits{I.J.}},
+\bauthor{\bsnm{Bensasson}, \binits{D.}},
+\bauthor{\bsnm{Burt}, \binits{A.}},
+\bauthor{\bsnm{Koufopanou}, \binits{V.}}:
+\batitle{Population genomics of the wild yeast {Saccharomyces} paradoxus:
+  quantifying the life cycle}.
+\bjtitle{Proc Natl Acad Sci U.S.A.}
+\bvolume{105},
+\bfpage{4957}--\blpage{4962}
+(\byear{2008})
+\end{barticle}
+\endbibitem
+
+%%% 30
+\bibitem{Ruderfer2006}
+\begin{barticle}
+\bauthor{\bsnm{Ruderfer}, \binits{D.M.}},
+\bauthor{\bsnm{Pratt}, \binits{S.C.}},
+\bauthor{\bsnm{Seidl}, \binits{H.S.}},
+\bauthor{\bsnm{Kruglyak}, \binits{L.}}:
+\batitle{Population genomic analysis of outcrossing and recombination in
+  yeast}.
+\bjtitle{Nature Genetics}
+\bvolume{38}(\bissue{9}),
+\bfpage{1077}--\blpage{1081}
+(\byear{2006})
+\end{barticle}
+\endbibitem
+
+%%% 31
+\bibitem{rcore}
+\begin{bbook}
+\bauthor{\bsnm{{R Core Team}}}:
+\bbtitle{R: A Language and Environment for Statistical Computing}.
+\bpublisher{R Foundation for Statistical Computing},
+\blocation{Vienna, Austria}
+(\byear{2013}).
+\bcomment{R Foundation for Statistical Computing}.
+\burl{http://www.R-project.org/}
+\end{bbook}
+\endbibitem
+
+%%% 32
+\bibitem{Gronau2017}
+\begin{barticle}
+\bauthor{\bsnm{Gronau}, \binits{Q.F.}},
+\bauthor{\bsnm{Sarafoglou}, \binits{A.}},
+\bauthor{\bsnm{Matzke}, \binits{D.}},
+\bauthor{\bsnm{Ly}, \binits{A.}},
+\bauthor{\bsnm{Boehm}, \binits{U.}},
+\bauthor{\bsnm{Marsman}, \binits{M.}},
+\bauthor{\bsnm{Leslie}, \binits{D.S.}},
+\bauthor{\bsnm{Forster}, \binits{J.J.}},
+\bauthor{\bsnm{Wagenmakers}, \binits{E.J.}},
+\bauthor{\bsnm{Steingroever}, \binits{H.}}:
+\batitle{A tutorial on bridge sampling}.
+\bjtitle{Journal of Mathematical Psychology}
+\bvolume{81},
+\bfpage{80}--\blpage{97}
+(\byear{2017})
+\end{barticle}
+\endbibitem
+
+%%% 33
+\bibitem{lmodel2}
+\begin{botherref}
+\oauthor{\bsnm{Legendre}, \binits{P.}}:
+Lmodel2: Model II Regression.
+(2018).
+R package version 1.7-3.
+\url{https://CRAN.R-project.org/package=lmodel2}
+\end{botherref}
+\endbibitem
+
+%%% 34
+\bibitem{soderlund2006}
+\begin{barticle}
+\bauthor{\bsnm{Soderlund}, \binits{C.}},
+\bauthor{\bsnm{Nelson}, \binits{W.}},
+\bauthor{\bsnm{Shoemaker}, \binits{A.}},
+\bauthor{\bsnm{Paterson}, \binits{A.}}:
+\batitle{Symap\: A system for discovering and viewing syntenic regions of fpc
+  maps.}
+\bjtitle{Genome Research}
+\bvolume{16},
+\bfpage{1159}--\blpage{1168}
+(\byear{2006})
+\end{barticle}
+\endbibitem
+
+%%% 35
+\bibitem{soderlund2011}
+\begin{barticle}
+\bauthor{\bsnm{Soderlund}, \binits{C.}},
+\bauthor{\bsnm{Bomhoff}, \binits{M.}},
+\bauthor{\bsnm{Nelson}, \binits{W.}}:
+\batitle{Symap v3.4: a turnkey synteny system with application to plant
+  genomes.}
+\bjtitle{Nucleic Acids Research}
+\bvolume{39}(\bissue{10}),
+\bfpage{68}
+(\byear{2011})
+\end{barticle}
+\endbibitem
+
+%%% 36
+\bibitem{lang2008}
+\begin{barticle}
+\bauthor{\bsnm{Lang}, \binits{G.I.}},
+\bauthor{\bsnm{Murray}, \binits{A.W.}}:
+\batitle{Estimating the per-base-pair mutation rate in the yeast
+  {Saccharomyces} cerevisiae}.
+\bjtitle{Genetics}
+\bvolume{178}(\bissue{1}),
+\bfpage{67}--\blpage{82}
+(\byear{2008})
+\end{barticle}
+\endbibitem
+
+%%% 37
+\bibitem{Mathematica11}
+\begin{botherref}
+\oauthor{\bsnm{{Wolfram Research Inc.}}}:
+Mathematica 11.
+(2017).
+\url{http://www.wolfram.com}
+\end{botherref}
+\endbibitem
+
+\end{thebibliography}
+
+\newcommand{\BMCxmlcomment}[1]{}
+
+\BMCxmlcomment{
+
+<refgrp>
+
+<bibl id="B1">
+  <title><p>Codon usage in bacteria: correlation with gene
+  expressivity</p></title>
+  <aug>
+    <au><snm>Gouy</snm><fnm>M</fnm></au>
+    <au><snm>Gautier</snm><fnm>C</fnm></au>
+  </aug>
+  <source>Nucleic Acids Research</source>
+  <pubdate>1982</pubdate>
+  <volume>10</volume>
+  <fpage>7055</fpage>
+  <lpage>7074</lpage>
+</bibl>
+
+<bibl id="B2">
+  <title><p>Codon usage and {tRNA} content in unicellular and multicellular
+  organisms</p></title>
+  <aug>
+    <au><snm>Ikemura</snm><fnm>T</fnm></au>
+  </aug>
+  <source>Molecular Biology and Evolution</source>
+  <pubdate>1985</pubdate>
+  <volume>2</volume>
+  <fpage>13</fpage>
+  <lpage>34</lpage>
+</bibl>
+
+<bibl id="B3">
+  <title><p>The selection-mutation-drift theory of synonymous codon
+  usage</p></title>
+  <aug>
+    <au><snm>Bulmer</snm><fnm>M</fnm></au>
+  </aug>
+  <source>Genetics</source>
+  <pubdate>1990</pubdate>
+  <volume>129</volume>
+  <fpage>897</fpage>
+  <lpage>907</lpage>
+</bibl>
+
+<bibl id="B4">
+  <title><p>Combining Models of Protein Translation and Population Genetics to
+  Predict Protein Production Rates from Codon Usage Patterns</p></title>
+  <aug>
+    <au><snm>Gilchrist</snm><fnm>M A</fnm></au>
+  </aug>
+  <source>Molecular Biology and Evolution</source>
+  <pubdate>2007</pubdate>
+  <volume>24</volume>
+  <issue>11</issue>
+  <fpage>2362</fpage>
+  <lpage>2372</lpage>
+</bibl>
+
+<bibl id="B5">
+  <title><p>Explaining complex codon usage patterns with selection for
+  translational efficiency, mutation bias, and genetic drift</p></title>
+  <aug>
+    <au><snm>Shah</snm><fnm>P</fnm></au>
+    <au><snm>Gilchrist</snm><fnm>M A</fnm></au>
+  </aug>
+  <source>Proccedings of the National Academy of Sciences U.S.A</source>
+  <pubdate>2011</pubdate>
+  <volume>108</volume>
+  <issue>25</issue>
+  <fpage>10231</fpage>
+  <lpage>10236</lpage>
+</bibl>
+
+<bibl id="B6">
+  <title><p>Estimating Selection on Synonymous Codon Usage from Noisy
+  Experimental Data</p></title>
+  <aug>
+    <au><snm>Wallace</snm><fnm>E W</fnm></au>
+    <au><snm>Airoldi</snm><fnm>E M</fnm></au>
+    <au><snm>Drummond</snm><fnm>D A</fnm></au>
+  </aug>
+  <source>Molecular Biology and Evolution</source>
+  <pubdate>2013</pubdate>
+  <volume>30</volume>
+  <fpage>1438</fpage>
+  <lpage>1453</lpage>
+</bibl>
+
+<bibl id="B7">
+  <title><p>Estimating Gene Expression and Codon-Specific Translational
+  Efficiencies, Mutation Biases, and Selection Coefficients from Genomic Data
+  Alone</p></title>
+  <aug>
+    <au><snm>Gilchrist</snm><fnm>M A</fnm></au>
+    <au><snm>Chen</snm><fnm>W C</fnm></au>
+    <au><snm>Shah</snm><fnm>P</fnm></au>
+    <au><snm>Landerer</snm><fnm>C L</fnm></au>
+    <au><snm>Zaretzki</snm><fnm>R</fnm></au>
+  </aug>
+  <source>Genome Biology and Evolution</source>
+  <pubdate>2015</pubdate>
+  <volume>7</volume>
+  <fpage>1559</fpage>
+  <lpage>1579</lpage>
+</bibl>
+
+<bibl id="B8">
+  <title><p>Evidence for horizontal gene transfer in {Escherichia} coli
+  speciation</p></title>
+  <aug>
+    <au><snm>Médigue</snm><fnm>C</fnm></au>
+    <au><snm>Rouxel</snm><fnm>T</fnm></au>
+    <au><snm>Vigier</snm><fnm>P</fnm></au>
+    <au><snm>Hénaut</snm><fnm>A</fnm></au>
+    <au><snm>Danchin</snm><fnm>A</fnm></au>
+  </aug>
+  <source>Journal of Molecular Biology</source>
+  <pubdate>1991</pubdate>
+  <volume>222</volume>
+  <issue>4</issue>
+  <fpage>851</fpage>
+  <lpage>856</lpage>
+</bibl>
+
+<bibl id="B9">
+  <title><p>Amelioration of Bacterial Genomes: Rates of Change and
+  Exchange</p></title>
+  <aug>
+    <au><snm>Lawrence</snm><fnm>J G</fnm></au>
+    <au><snm>Ochman</snm><fnm>H</fnm></au>
+  </aug>
+  <source>Journal of Molecular Biology</source>
+  <pubdate>1997</pubdate>
+  <volume>44</volume>
+  <fpage>383</fpage>
+  <lpage>397</lpage>
+</bibl>
+
+<bibl id="B10">
+  <title><p>Beyond the Whole-Genome Duplication: Phylogenetic Evidence for an
+  Ancient Interspecies Hybridization in the Baker's Yeast Lineage</p></title>
+  <aug>
+    <au><snm>Marcet Houben</snm><fnm>M</fnm></au>
+    <au><snm>Gabaldón</snm><fnm>T</fnm></au>
+  </aug>
+  <source>PLoS Biology</source>
+  <pubdate>2015</pubdate>
+  <volume>13</volume>
+  <issue>8</issue>
+  <fpage>e1002220</fpage>
+</bibl>
+
+<bibl id="B11">
+  <title><p>Estimating the Phanerozoic history of the Ascomycota lineages:
+  combining fossil and molecular data.</p></title>
+  <aug>
+    <au><snm>Beimforde</snm><fnm>C</fnm></au>
+    <au><snm>Feldberg</snm><fnm>K</fnm></au>
+    <au><snm>Nylinder</snm><fnm>S</fnm></au>
+    <au><snm>Rikkinen</snm><fnm>J</fnm></au>
+    <au><snm>Tuovila</snm><fnm>H</fnm></au>
+    <au><snm>Dörfelt</snm><fnm>H</fnm></au>
+    <au><snm>Gube</snm><fnm>M</fnm></au>
+    <au><snm>Jackson</snm><fnm>D J</fnm></au>
+    <au><snm>Reitner</snm><fnm>J</fnm></au>
+    <au><snm>Seyfullah</snm><fnm>L J</fnm></au>
+    <au><snm>Schmidt</snm><fnm>A R</fnm></au>
+  </aug>
+  <source>Mol. Phylogenet. Evol.</source>
+  <pubdate>2014</pubdate>
+  <volume>78</volume>
+  <fpage>386</fpage>
+  <lpage>398</lpage>
+</bibl>
+
+<bibl id="B12">
+  <title><p>Population Genomics Reveals Chromosome-Scale Heterogeneous
+  Evolution in a Protoploid Yeast.</p></title>
+  <aug>
+    <au><snm>Friedrich</snm><fnm>A</fnm></au>
+    <au><snm>Reiser</snm><fnm>C</fnm></au>
+    <au><snm>Fischer</snm><fnm>G</fnm></au>
+    <au><snm>Schacherer</snm><fnm>J</fnm></au>
+  </aug>
+  <source>Molecular Biology and Evolution</source>
+  <pubdate>2015</pubdate>
+  <volume>32</volume>
+  <issue>1</issue>
+  <fpage>184</fpage>
+  <lpage>192</lpage>
+</bibl>
+
+<bibl id="B13">
+  <title><p>{Reconstruction of ancestral chromosome architecture and gene
+  repertoire reveals principles of genome evolution in a model yeast
+  genus.}</p></title>
+  <aug>
+    <au><snm>Vakirlis</snm><fnm>N</fnm></au>
+    <au><snm>Sarilar</snm><fnm>V</fnm></au>
+    <au><snm>Drillon</snm><fnm>G</fnm></au>
+    <au><snm>Fleiss</snm><fnm>A</fnm></au>
+    <au><snm>Agier</snm><fnm>N</fnm></au>
+    <au><snm>Meyniel</snm><fnm>JP</fnm></au>
+    <au><snm>Blanpain</snm><fnm>L</fnm></au>
+    <au><snm>Carbone</snm><fnm>A</fnm></au>
+    <au><snm>Devillers</snm><fnm>H</fnm></au>
+    <au><snm>Dubois</snm><fnm>K</fnm></au>
+    <au><snm>Gillet Markowska</snm><fnm>A</fnm></au>
+    <au><snm>Graziani</snm><fnm>S</fnm></au>
+    <au><snm>Huu Vang</snm><fnm>N</fnm></au>
+    <au><snm>Poirel</snm><fnm>M</fnm></au>
+    <au><snm>Reisser</snm><fnm>C</fnm></au>
+    <au><snm>Schott</snm><fnm>J</fnm></au>
+    <au><snm>Schacherer</snm><fnm>J</fnm></au>
+    <au><snm>Lafontaine</snm><fnm>I</fnm></au>
+    <au><snm>Llorente</snm><fnm>B</fnm></au>
+    <au><snm>Neuv{\'{e}}glise</snm><fnm>C</fnm></au>
+    <au><snm>Fischer</snm><fnm>G</fnm></au>
+  </aug>
+  <source>Genome research</source>
+  <publisher>Cold Spring Harbor Laboratory Press</publisher>
+  <pubdate>2016</pubdate>
+  <volume>26</volume>
+  <issue>7</issue>
+  <fpage>918</fpage>
+  <lpage>-32</lpage>
+</bibl>
+
+<bibl id="B14">
+  <title><p>Unusual composition of a yeast chromosome arm is associated with
+  its delayed replication.</p></title>
+  <aug>
+    <au><snm>Payen</snm><fnm>C</fnm></au>
+    <au><snm>Fischer</snm><fnm>G</fnm></au>
+    <au><snm>Marck</snm><fnm>C</fnm></au>
+    <au><snm>Proux</snm><fnm>C</fnm></au>
+    <au><snm>Sherman</snm><fnm>DJ</fnm></au>
+    <au><snm>Coppée</snm><fnm>JY</fnm></au>
+    <au><snm>Johnston</snm><fnm>M</fnm></au>
+    <au><snm>Dujon</snm><fnm>B</fnm></au>
+    <au><snm>Neuvéglise</snm><fnm>C</fnm></au>
+  </aug>
+  <source>Genome Research</source>
+  <pubdate>2009</pubdate>
+  <volume>19</volume>
+  <issue>10</issue>
+  <fpage>1710</fpage>
+  <lpage>1721</lpage>
+</bibl>
+
+<bibl id="B15">
+  <title><p>Variation of the meiotic recombination landscape and properties
+  over a broad evolutionary distance in yeasts</p></title>
+  <aug>
+    <au><snm>Brion</snm><fnm>C</fnm></au>
+    <au><snm>Legrand</snm><fnm>S</fnm></au>
+    <au><snm>Peter</snm><fnm>J</fnm></au>
+    <au><snm>Caradec</snm><fnm>C</fnm></au>
+    <au><snm>Pflieger</snm><fnm>D</fnm></au>
+    <au><snm>Hou</snm><fnm>J</fnm></au>
+    <au><snm>Friedrich</snm><fnm>A</fnm></au>
+    <au><snm>Llorente</snm><fnm>B</fnm></au>
+    <au><snm>Schacherer</snm><fnm>J</fnm></au>
+  </aug>
+  <source>PLoS Genetics</source>
+  <pubdate>2017</pubdate>
+  <volume>13</volume>
+  <issue>8</issue>
+  <fpage>e1006917</fpage>
+</bibl>
+
+<bibl id="B16">
+  <title><p>The codon adaptation index - a meassure of directional synonymous
+  codon usage bias, and its potential applications</p></title>
+  <aug>
+    <au><snm>Sharp</snm><fnm>P M</fnm></au>
+    <au><snm>Li</snm><fnm>W H</fnm></au>
+  </aug>
+  <source>Nucleic Acids Research</source>
+  <pubdate>1987</pubdate>
+  <volume>15</volume>
+  <fpage>1281</fpage>
+  <lpage>1295</lpage>
+</bibl>
+
+<bibl id="B17">
+  <title><p>The ‘effective number of codons’ used in a gene</p></title>
+  <aug>
+    <au><snm>Wright</snm><fnm>F</fnm></au>
+  </aug>
+  <source>Genel</source>
+  <pubdate>1990</pubdate>
+  <volume>87</volume>
+  <fpage>23</fpage>
+  <lpage>29</lpage>
+</bibl>
+
+<bibl id="B18">
+  <title><p>Solving the riddle of codon usage preferences: a test for
+  translational selection</p></title>
+  <aug>
+    <au><snm>Reis</snm><fnm>M</fnm></au>
+    <au><snm>Savva</snm><fnm>R</fnm></au>
+    <au><snm>Wernisch</snm><fnm>L</fnm></au>
+  </aug>
+  <source>Nucleic Acids Research</source>
+  <pubdate>2004</pubdate>
+  <volume>32</volume>
+  <issue>17</issue>
+  <fpage>5036</fpage>
+  <lpage>5044</lpage>
+</bibl>
+
+<bibl id="B19">
+  <title><p>{Quantifying codon usage in signal peptides: Gene expression and
+  amino acid usage explain apparent selection for inefficient
+  codons}</p></title>
+  <aug>
+    <au><snm>Cope</snm><fnm>A L</fnm></au>
+    <au><snm>Hettich</snm><fnm>R L</fnm></au>
+    <au><snm>Gilchrist</snm><fnm>M A</fnm></au>
+  </aug>
+  <source>Biochimica et Biophysica Acta (BBA) - Biomembranes</source>
+  <pubdate>2018</pubdate>
+  <volume>1860</volume>
+  <issue>12</issue>
+  <fpage>2479</fpage>
+  <lpage>-2485</lpage>
+</bibl>
+
+<bibl id="B20">
+  <title><p>Tempo and Mode of Genome Evolution in the Budding Yeast
+  Subphylum</p></title>
+  <aug>
+    <au><snm>Shen</snm><fnm>X X</fnm></au>
+    <au><snm>Opulente</snm><fnm>D A</fnm></au>
+    <au><snm>Kominek</snm><fnm>J</fnm></au>
+    <au><snm>Zhou</snm><fnm>X</fnm></au>
+    <au><snm>Steenwyk</snm><fnm>J L</fnm></au>
+    <au><snm>Buh</snm><fnm>K V</fnm></au>
+    <au><snm>Haase</snm><fnm>M A B</fnm></au>
+    <au><snm>Wisecaver</snm><fnm>J H</fnm></au>
+    <au><snm>Wang</snm><fnm>M</fnm></au>
+    <au><snm>Doering</snm><fnm>D T</fnm></au>
+    <au><snm>Boudouris</snm><fnm>J T</fnm></au>
+    <au><snm>Schneider</snm><fnm>R M</fnm></au>
+    <au><snm>Langdon</snm><fnm>Q K</fnm></au>
+    <au><snm>Ohkuma</snm><fnm>M</fnm></au>
+    <au><snm>Endoh</snm><fnm>R</fnm></au>
+    <au><snm>Takashima</snm><fnm>M</fnm></au>
+    <au><snm>Manabe</snm><fnm>R</fnm></au>
+    <au><snm>Čadež</snm><fnm>N</fnm></au>
+    <au><snm>Libkind</snm><fnm>D</fnm></au>
+    <au><snm>Rosa</snm><fnm>CA</fnm></au>
+    <au><snm>DeVirgilio</snm><fnm>J</fnm></au>
+    <au><snm>Hulfachor</snm><fnm>A B</fnm></au>
+    <au><snm>Groenewald</snm><fnm>M</fnm></au>
+    <au><snm>Kurtzman</snm><fnm>CP</fnm></au>
+    <au><snm>Hittinger</snm><fnm>C T</fnm></au>
+    <au><snm>Rokas</snm><fnm>A</fnm></au>
+  </aug>
+  <source>Cell</source>
+  <pubdate>2018</pubdate>
+  <volume>175</volume>
+  <issue>6</issue>
+  <fpage>1533</fpage>
+  <lpage>1545.e20</lpage>
+</bibl>
+
+<bibl id="B21">
+  <title><p>{AnaCoDa}: analyzing codon data with Bayesian mixture
+  models</p></title>
+  <aug>
+    <au><snm>Landerer</snm><fnm>C</fnm></au>
+    <au><snm>Cope</snm><fnm>A</fnm></au>
+    <au><snm>Zaretzki</snm><fnm>R</fnm></au>
+    <au><snm>Gilchrist</snm><fnm>MA</fnm></au>
+  </aug>
+  <source>Bioinformatics</source>
+  <pubdate>2018</pubdate>
+  <volume>34</volume>
+  <issue>14</issue>
+  <fpage>2496</fpage>
+  <lpage>2498</lpage>
+</bibl>
+
+<bibl id="B22">
+  <title><p>The role of nucleosome positioning in the evolution of gene
+  regulation</p></title>
+  <aug>
+    <au><snm>Tsankov</snm><fnm>A M</fnm></au>
+    <au><snm>Thompson</snm><fnm>D A</fnm></au>
+    <au><snm>Socha</snm><fnm>A</fnm></au>
+    <au><snm>Regev</snm><fnm>A</fnm></au>
+    <au><snm>Rando</snm><fnm>O J</fnm></au>
+  </aug>
+  <source>PLoS Biol</source>
+  <pubdate>2010</pubdate>
+  <volume>8</volume>
+  <issue>7</issue>
+  <fpage>e1000414</fpage>
+</bibl>
+
+<bibl id="B23">
+  <title><p>Biometry - The principles and practice of statistics in
+  biological</p></title>
+  <aug>
+    <au><snm>Sokal</snm><fnm>R R</fnm></au>
+    <au><snm>Rohlf</snm><fnm>F J</fnm></au>
+  </aug>
+  <source>Biometry - The principles and practice of statistics in
+  biological</source>
+  <publisher>W. H. Freeman</publisher>
+  <pubdate>1981</pubdate>
+  <fpage>547</fpage>
+  <lpage>555</lpage>
+</bibl>
+
+<bibl id="B24">
+  <title><p>IQ-TREE: A Fast and Effective Stochastic Algorithm for Estimating
+  Maximum-Likelihood Phylogenies</p></title>
+  <aug>
+    <au><snm>Nguyen</snm><fnm>L T</fnm></au>
+    <au><snm>Schmidt</snm><fnm>H A</fnm></au>
+    <au><snm>Haeseler</snm><fnm>A</fnm></au>
+    <au><snm>Minh</snm><fnm>B Q</fnm></au>
+  </aug>
+  <source>Molecular Biology and Evolution</source>
+  <pubdate>2015</pubdate>
+  <volume>32</volume>
+  <issue>1</issue>
+  <fpage>268</fpage>
+  <lpage>274</lpage>
+</bibl>
+
+<bibl id="B25">
+  <title><p>Energy constraints on the evolution of gene expression</p></title>
+  <aug>
+    <au><snm>Wagner</snm><fnm>A</fnm></au>
+  </aug>
+  <source>Molecular Biology and Evolution</source>
+  <pubdate>2005</pubdate>
+  <volume>22</volume>
+  <fpage>1365</fpage>
+  <lpage>1374</lpage>
+</bibl>
+
+<bibl id="B26">
+  <title><p>The application of statistical physics to evolutionary
+  biology</p></title>
+  <aug>
+    <au><snm>Sella</snm><fnm>G</fnm></au>
+    <au><snm>Hirsh</snm><fnm>A E</fnm></au>
+  </aug>
+  <source>Proceedings of the National Academy of Sciences of the United States
+  of America</source>
+  <pubdate>2005</pubdate>
+  <volume>102</volume>
+  <fpage>9541</fpage>
+  <lpage>9546</lpage>
+</bibl>
+
+<bibl id="B27">
+  <title><p>Inferring ancient divergences requires genes with strong
+  phylogenetic signals</p></title>
+  <aug>
+    <au><snm>Salichos</snm><fnm>L</fnm></au>
+    <au><snm>Rokas</snm><fnm>A</fnm></au>
+  </aug>
+  <source>Nature</source>
+  <pubdate>2013</pubdate>
+  <volume>497</volume>
+  <fpage>327</fpage>
+  <lpage>331</lpage>
+</bibl>
+
+<bibl id="B28">
+  <title><p>Conservation of divergent transcription in fungi</p></title>
+  <aug>
+    <au><snm>Kensche</snm><fnm>P R</fnm></au>
+    <au><snm>Oti</snm><fnm>M</fnm></au>
+    <au><snm>Dutilh</snm><fnm>B E</fnm></au>
+    <au><snm>Huynen</snm><fnm>M A</fnm></au>
+  </aug>
+  <source>Trends Genet.</source>
+  <pubdate>2008</pubdate>
+  <volume>5</volume>
+  <issue>24</issue>
+  <fpage>207</fpage>
+  <lpage>211</lpage>
+</bibl>
+
+<bibl id="B29">
+  <title><p>Population genomics of the wild yeast {Saccharomyces} paradoxus:
+  quantifying the life cycle</p></title>
+  <aug>
+    <au><snm>Tsai</snm><fnm>I J</fnm></au>
+    <au><snm>Bensasson</snm><fnm>D</fnm></au>
+    <au><snm>Burt</snm><fnm>A</fnm></au>
+    <au><snm>Koufopanou</snm><fnm>V</fnm></au>
+  </aug>
+  <source>Proc Natl Acad Sci U.S.A.</source>
+  <pubdate>2008</pubdate>
+  <volume>105</volume>
+  <fpage>4957</fpage>
+  <lpage>4962</lpage>
+</bibl>
+
+<bibl id="B30">
+  <title><p>Population genomic analysis of outcrossing and recombination in
+  yeast</p></title>
+  <aug>
+    <au><snm>Ruderfer</snm><fnm>D M</fnm></au>
+    <au><snm>Pratt</snm><fnm>S C</fnm></au>
+    <au><snm>Seidl</snm><fnm>H S</fnm></au>
+    <au><snm>Kruglyak</snm><fnm>L</fnm></au>
+  </aug>
+  <source>Nature Genetics</source>
+  <pubdate>2006</pubdate>
+  <volume>38</volume>
+  <issue>9</issue>
+  <fpage>1077</fpage>
+  <lpage>1081</lpage>
+</bibl>
+
+<bibl id="B31">
+  <title><p>R: A Language and Environment for Statistical Computing</p></title>
+  <aug>
+    <au><cnm>{R Core Team}</cnm></au>
+  </aug>
+  <publisher>Vienna, Austria</publisher>
+  <pubdate>2013</pubdate>
+  <url>http://www.R-project.org/</url>
+</bibl>
+
+<bibl id="B32">
+  <title><p>A tutorial on bridge sampling</p></title>
+  <aug>
+    <au><snm>Gronau</snm><fnm>Q F</fnm></au>
+    <au><snm>Sarafoglou</snm><fnm>A</fnm></au>
+    <au><snm>Matzke</snm><fnm>D</fnm></au>
+    <au><snm>Ly</snm><fnm>A</fnm></au>
+    <au><snm>Boehm</snm><fnm>U</fnm></au>
+    <au><snm>Marsman</snm><fnm>M</fnm></au>
+    <au><snm>Leslie</snm><fnm>D S</fnm></au>
+    <au><snm>Forster</snm><fnm>J J</fnm></au>
+    <au><snm>Wagenmakers</snm><fnm>E J</fnm></au>
+    <au><snm>Steingroever</snm><fnm>H</fnm></au>
+  </aug>
+  <source>Journal of Mathematical Psychology</source>
+  <pubdate>2017</pubdate>
+  <volume>81</volume>
+  <fpage>80</fpage>
+  <lpage>97</lpage>
+</bibl>
+
+<bibl id="B33">
+  <title><p>lmodel2: Model II Regression</p></title>
+  <aug>
+    <au><snm>Legendre</snm><fnm>P</fnm></au>
+  </aug>
+  <pubdate>2018</pubdate>
+  <url>https://CRAN.R-project.org/package=lmodel2</url>
+  <note>R package version 1.7-3</note>
+</bibl>
+
+<bibl id="B34">
+  <title><p>SyMAP\: A system for discovering and viewing syntenic regions of
+  FPC maps.</p></title>
+  <aug>
+    <au><snm>Soderlund</snm><fnm>C</fnm></au>
+    <au><snm>Nelson</snm><fnm>W</fnm></au>
+    <au><snm>Shoemaker</snm><fnm>A</fnm></au>
+    <au><snm>Paterson</snm><fnm>A</fnm></au>
+  </aug>
+  <source>Genome Research</source>
+  <pubdate>2006</pubdate>
+  <volume>16</volume>
+  <fpage>1159</fpage>
+  <lpage>1168</lpage>
+</bibl>
+
+<bibl id="B35">
+  <title><p>SyMAP v3.4: a turnkey synteny system with application to plant
+  genomes.</p></title>
+  <aug>
+    <au><snm>Soderlund</snm><fnm>C</fnm></au>
+    <au><snm>Bomhoff</snm><fnm>M</fnm></au>
+    <au><snm>Nelson</snm><fnm>W</fnm></au>
+  </aug>
+  <source>Nucleic Acids Research</source>
+  <pubdate>2011</pubdate>
+  <volume>39</volume>
+  <issue>10</issue>
+  <fpage>e68</fpage>
+</bibl>
+
+<bibl id="B36">
+  <title><p>Estimating the Per-Base-Pair Mutation Rate in the Yeast
+  {Saccharomyces} cerevisiae</p></title>
+  <aug>
+    <au><snm>Lang</snm><fnm>GI</fnm></au>
+    <au><snm>Murray</snm><fnm>AW</fnm></au>
+  </aug>
+  <source>Genetics</source>
+  <publisher>Genetics</publisher>
+  <pubdate>2008</pubdate>
+  <volume>178</volume>
+  <issue>1</issue>
+  <fpage>67</fpage>
+  <lpage>82</lpage>
+</bibl>
+
+<bibl id="B37">
+  <title><p>Mathematica 11</p></title>
+  <aug>
+    <au><cnm>{Wolfram Research Inc.}</cnm></au>
+  </aug>
+  <pubdate>2017</pubdate>
+  <url>http://www.wolfram.com</url>
+</bibl>
+
+</refgrp>
+} % end of \BMCxmlcomment
