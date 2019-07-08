@@ -38,6 +38,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[doublespacing,linenumbers]{bmcart}
+%\documentclass[doublespacing,linenumbers]{bmcart-modified}
+%% bmcart-modified increases the spacing between the line numbers and the text.
+
 
 %%% Load packages
 \usepackage[utf8]{inputenc} 
@@ -77,6 +80,14 @@
 
 %%% Put your definitions there:
 \startlocaldefs
+
+%% Remove line numbers from left side
+%% see: https://tex.stackexchange.com/a/227374
+%\usepackage{etoolbox}
+%\makeatletter
+%\patchcmd\set@numberlines@box{\rlap}{\@gobble}{}{}
+%\makeatother
+
 
 \newcommand\suppl{\par
   \setcounter{section}{0}%
