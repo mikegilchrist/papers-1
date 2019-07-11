@@ -1785,7 +1785,7 @@
          \advance\@tempcnta by1
          \advance\@tempdima by\baselineskip
          \hbox to 1.05\textwidth{% mikeg: added 1.05 to make numberlines less annoying
-            \llap{\numberlines@size\the\@tempcnta\kern\numberlines@skip}
+           \llap{\numberlines@size\the\@tempcnta\kern\numberlines@skip}
             \hfill
             \rlap{\; \; \numberlines@size\kern\numberlines@skip\the\@tempcnta}}
        \ifdim\@tempdima<\textheight\repeat
