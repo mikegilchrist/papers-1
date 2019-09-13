@@ -40,6 +40,7 @@
 \newcommand{\selacDMS}{\emph{SelAC}+DMS\xspace}
 \newcommand{\phydms}{\emph{phydms}\xspace}
 \newcommand{\selac}{\emph{SelAC}\xspace}
+\newcommand{\phydmsselac}{\emph{phydms+SelAC}\xspace}
 \newcommand{\ecoli}{\textit{E. coli}\xspace}
 \newcommand{\gy}{\emph{GY94}\xspace}
 \newcommand{\hb}{\emph{HB98}\xspace}
@@ -120,11 +121,10 @@ Bloom and others \citep{bloom2014, bloom2017, hilton2017} report that using DMS 
 
 The power of DMS stems from the ability to manipulate a large number of individuals in the laboratory and estimate genotype fitness based on frequency changes over many generations.
 This, however, limits the application of DMS selection parameters for phylogenetic inference to only organisms which can be cultured in the laboratory and with short generation times.
-Like other experimental methods, DMS experiments are subject to technical and biological noise which.
+Like other experimental methods, DMS experiments are subject to technical and biological noise.
 This noise between trials and laboratories can lead to significant differences between model fits \citep{hilton2017}.
-%More troubling is the fact that variation between DMS experiments can lead to significant differences between model fits \citep{hilton2017}.
 In addition, this inter-laboratory variation is likely small compared to the variation between laboratory conditions and those organisms usually encounter in the wild.
-As a result, DMS selection parameter estimates may not adequately reflect sequence evolution in the wild and, thus, lead to biased parameter estimates.
+As a result, DMS selection parameter estimates may not adequately reflect sequence evolution in the wild, leading to biased parameter estimates.
 %As a result, \emph{a priori} the value of DMS selection parameters for making inferences about sequences evolution in the wild is questionable.
 
 An alternative to using laboratory based selection parameters to mitigate the parameterization issues introduced in \hb, is to simplify the \hb model itself.
@@ -151,6 +151,49 @@ Together, our results indicate that models can be more informative and applicabl
 In addition, \selac does not rely on supplementary data, thus making it applicable to any protein coding sequence alignments, and can be expanded to test other hypothesis.
 
 \section{Results}
+\subsection{Experimental Selection does not Recapitulate Observed Sequences}
+The inferences made by all experimentally informed models depend on the selection data used to parameterize the model.
+We first assessed if the experimental data is descriptive of the observed sequences \citet{bloom2017}.
+The sequence of preferred amino acids inferred by the deep mutation scanning experiment has little resemblance with the observed sequences as it only shows 52 \% sequence similarity.
+However, this sequence similarity is enough for the sequence of preferred amino acids to be recognized a a TEM sequence in database searches.
+
+We extended our assessment beyond the 49 observed sequences using EVcouplings \citet{HopfEtAl2017, HopfEtAl2019}.
+While EVcouplings is not a phylogenetic model and does not account for sequence relationship, it, nevertheless, allows us to estimate the selection parameters for each amino acid using an epistatic and a site independent model without bias towards any of the phylogenetic models assessed.
+We can utilize EVcouplings to summarize the fitness landscape of TEM in a similar manner to the DMS experiment but solely based on sequence data.
+The epistatic model predicts the query sequence to be optimal (Figure \ref{fig:evcoupl}a) while the independent model shows a sequence similarity of $\sim48\%$ (Figure \ref{fig:evcoupl}b).
+The independent model does provide a sequence similarity of the preferred amino acid sequence similar to the experimentally inferred sequence but without similarity in the preferred amino acids to the DMS inference.
+
+In order to qualitatively assess how descriptive the experimental fitness values are of natural sequences, we compared the fitness rank order for the amino acids at each site (Figure \ref{fig:ev_fitness_comp}a).
+Even though the epistatic model predicts the observed sequences to be at a functional optimum, we find a higher agreement of this model with the experimental data than the site independent model.
+While \selac provides a similar sequence of preferred amino acids to EVcouplings and the observed majority rule sequence of the 49 TEM sequences, the overall distribution of amino acid preferences differs greatly between \selac and EVcouplings.
+Nevertheless, both, \selac and EVcouplings, show a great difference in amino acid preference when compared to the experimentally inferred amino acid preferences.
+It also does not appear that these differences in the amino acid rankings are explained by the agreement between the observed amino acid preference and the amino acid preference inferred by DMS (Figure \ref{fig:ev_fitness_comp}b).
+
+%While Figure \ref{fig:ev_fitness_comp}a could be interpreted such that the DMS inference is generally in agreement with sequence information, 
+
+We further want to highlight that the usage of \selac inferred selection parameter on amino acids does greatly improve a \phydms model fit over the DMS inference of the same parameters (\phydms $\log(\Lik)$: -2061, \phydmsselac $\log(\Lik)$: -1807).
+Since in the case of \phydmsselac the observed sequence data is used twice, first for the estimation of the selection parameters by \selac, and, again for the final inference \phydms one would conceivably, have to account for the parameters used in the \selac model.
+However, as most parameters are re-estimated by \phydms it is unclear what the correct number of parameters for the AIC penalty term would be. 
+We, therefore, excluded this model from any further model selection.
+
+\singlespacing
+\begin{figure}
+    \centering
+    \begin{subfigure}
+        \centering
+        (a)\includegraphics[width=0.45\textwidth]{img/evc_comp.pdf}
+    \end{subfigure}
+    \begin{subfigure}
+        \centering
+        (b)\includegraphics[width=0.45\textwidth]{img/evc_comp_split.pdf}
+    \end{subfigure}
+    \caption{Spearman correlation between the fitness values obtained from the DMS experiment and estimated by EVcouplings. (a) Comparison between the epistatic, site independent, and \selac model. (b) Splitting the correlation values of the DMS experiment with the epistatic model by agreement between the observed sequences and the DMS inferred sequence of preferred amino acids. Solid lines indicate the distribution at sites where the same amino acid is preferred by the observed sequences and the DMS inference. The Dashed lines indicates the distribution where the preferred amino acid differs.}
+    \label{fig:ev_fitness_comp}
+\end{figure}
+
+\doublespacing
+
+
 \subsection{\selac Outperforms Experimentally Informed Models}
 We compared \selac and \phydms, two models of site specific stabilizing selection, to 131 nucleotide and 97 codon uniform site models fitted using IQTree \citep[][see Table \ref{tab:AIC_selac} for the best performing models and Table \ref{tab:AIC_full} for all models]{nguyen2015}.
 \selac shows the best model fit and provides an improvement of 582 AIC units over the empirically informed model fit by \phydms.
@@ -217,7 +260,7 @@ More specifically, we simulated sequences forward in time from the ancestral sta
 Simulations under the \phydms show that the genetic load of the observed sequences is larger than the genetic load of the expected simulated sequences (Table \ref{tab:gl_ss}).
 Thus, even under the \phydms selection parameters, we would expect the observed sequences to show greater adaptation.
 Furthermore, the genetic load implied by the DMS estimated selection parameters used in \phydms imply an unrealistically high genetic load for a prokaryote with a large effective population size like \ecoli.
-In contrast, \phydms predicts a genetic load at invariant sites that is not significantly different from the genetic load at the variant sites (Table \ref{tab:selection}).
+In addition, \phydms predicts a genetic load at invariant sites that is not significantly different from the genetic load at the variant sites (Table \ref{tab:selection}).
 Simulations under the \selac inferred selection show that the average genetic load of the observed sequences is substantially less than the genetic load of the simulated sequences. 
 In addition, the \selac fit predicts zero genetic load at invariant sites.
 
@@ -275,15 +318,15 @@ However, this realism comes at a cost.
 \phydms requires supplementary selection parameters for each amino acid at every site, which necessitates experimental work.
 \selac, on the other hand, uses a nested modelling approach, which avoids the necessity of amino acid specific selection parameters, but greatly increases the computational cost of model fitting.
 
-
 Model adequacy is a measure that describes how well observed data can be reproduced by a model and is unfortunately often ignored.
 We first assess \phydms's and \selac's model adequacy by comparing the model specific genetic loads for the aligned TEM sequences and and simulated sequences.
 As with model selection, we also find \selac outperforms \phydms in terms of model adequacy.
 Since the model adequacy of \phydms is a direct function of the supplementary DMS measurements we focus directly on these measurements.
-We find the genetic load of the DMS sequences is substantially higher when assuming the DMS estimated selection on amino acids compared to the \selac estimates with 0.065 and  $2.4\times 10^{-7}$, respectively.
+First, we showed that the underlying DMS data is not an accurate description of the 49 observed TEM sequences.
+Second, we find that the genetic load of the DMS sequences is substantially higher when assuming the DMS estimated selection on amino acids compared to the \selac estimates with 0.065 and  $2.4\times 10^{-7}$, respectively.
 In general, the genetic load implied by the DMS selection parameters appear extraordinarily high.
 Thus, if we assume that the DMS inference adequately reflects the evolution of TEM in the wild the observed sequences are either maladapted or were unable to reach a fitness peak.
-This, however, is unlikely as \ecoli has a large effective population size $N_e$, and the efficacy of selection, therefore, should be high.
+This, however, is unlikely as \ecoli has a large effective population size $N_e$, and the efficacy of selection, therefore, should be high; particularly on a gene required for survival in the presence of antibiotics.
 Estimates of $N_e$ for \ecoli are on the order of $10^8$ to $10^9$ \citep{OchmanAndWilson1987,hartl1994}.
 We would therefore expect that \ecoli can effectively explore the sequence space.
 %More specifically, assuming a mutation rate of $2.54\times 10^{-10}$ mutations per generation per nucleotide \citep{lee2012}, we would expect to find $2\times 10^{-7}$ mutations per generation in the 789 nucleotide long TEM sequence.
@@ -457,6 +500,21 @@ In contrast, the site specific genetic load estimated by \selac for the observed
     \centering
     \begin{subfigure}
         \centering
+        (a)\includegraphics[width=\textwidth]{img/BLAT_ECOLX_b04_epistatic_model.pdf}
+    \end{subfigure}
+    \begin{subfigure}
+        \centering
+        (b)\includegraphics[width=\textwidth]{img/BLAT_ECOLX_b04_independent_model.pdf}
+    \end{subfigure}
+    \caption{Estimated mutation effects using EVcouplings (a) incorporating epistatic effects, and (b) ignoring such effects.}
+    \label{fig:evcoupl}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \begin{subfigure}
+        \centering
        (a)\includegraphics[width=.45\textwidth]{img/simulated_dist_time_DMS_ancest.pdf}
     \end{subfigure}
     \begin{subfigure}
@@ -503,7 +561,8 @@ In contrast, the site specific genetic load estimated by \selac for the observed
   \endlastfoot
 
 	1 & \selac & -1497.971 & 374 & 3743.942 & 0 \\ 
-	2 & \phydms & -2060.85 & 102 & 4325.7 & 582 \\ 
+	%2 & \phydms+\selac & -1807.57 & 3819.14 & 75.798\\
+	2 & \phydms & -2060.85 & 102 & 4325.7 & 581.758 \\ 
 	3 & SYM+R2 & -2205.877 & 102 & 4615.754 & 871.754 \\ 
 	4 & TIMe+R2 & -2232.406 & 100 & 4664.811 & 920.811 \\ 
 	5 & TVMe+R2 & -2232.838 & 101 & 4667.677 & 923.677 \\ 

@@ -129,6 +129,20 @@ H\"{o}hna, S., Landis, M., Heath, T., {\em et~al.} 2016.
   an interactive model-specification language.
 \newblock {\em Systematic Biology\/}, {65}(4): 726--736.
 
+\bibitem[Hopf {\em et~al.}(2017)Hopf, Ingraham, Poelwijk, Schärfe, Springer,
+  Sander, and Marks]{HopfEtAl2017}
+Hopf, T., Ingraham, J., Poelwijk, F., {\em et~al.} 2017.
+\newblock Mutation effects predicted from sequence co-variation.
+\newblock {\em Nature Biotechnology\/}, {35}: 128--135.
+
+\bibitem[Hopf {\em et~al.}(2019)Hopf, Green, Schubert, Mersmann, Schärfe,
+  Ingraham, Toth-Petroczy, Brock, Riesselman, Palmedo, Kang, Sheridan, Draizen,
+  Dallago, Sander, and Marks]{HopfEtAl2019}
+Hopf, T., Green, A., Schubert, B., {\em et~al.} 2019.
+\newblock The evcouplings python framework for coevolutionary sequence
+  analysis.
+\newblock {\em Bioinformatics\/}, {35}: 1582--1584.
+
 \bibitem[Hughes(2007)Hughes]{Hughes2007}
 Hughes, A. 2007.
 \newblock Looking for darwin in all the wrong places: the misguided quest for
@@ -194,13 +208,6 @@ Nowak, M. 2006.
 Ochman, H. and Wilson, A. 1987.
 \newblock {\em Evolutionary history of enteric bacterian\/}, pages 1649--1654.
 \newblock ASM Press.
-
-\bibitem[O'Meara {\em et~al.}(2006)O'Meara, Ane, Sanderson, and
-  Wainwrigth]{omeara2006}
-O'Meara, B., Ane, C., Sanderson, M., and Wainwrigth, P. 2006.
-\newblock Testing for different rates of continuous trait evolution using
-  likelihood.
-\newblock {\em Evolution\/}, {5}(60): 922--933.
 
 \bibitem[{R Core Team}(2013){R Core Team}]{rcore}
 {R Core Team} 2013.

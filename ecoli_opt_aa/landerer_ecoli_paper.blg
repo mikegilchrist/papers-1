@@ -3,44 +3,44 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: landerer_ecoli_paper.aux
 The style file: natbib.bst
 Database file #1: ecoli.bib
-You've used 48 entries,
+You've used 49 entries,
             2401 wiz_defined-function locations,
-            833 strings with 12236 characters,
-and the built_in function-call counts, 23899 in all, are:
-= -- 2345
-> -- 1232
+            839 strings with 12630 characters,
+and the built_in function-call counts, 24689 in all, are:
+= -- 2401
+> -- 1314
 < -- 27
-+ -- 428
-- -- 334
-* -- 2169
-:= -- 4026
-add.period$ -- 221
-call.type$ -- 48
-change.case$ -- 296
-chr.to.int$ -- 48
-cite$ -- 48
-duplicate$ -- 930
-empty$ -- 1598
-format.name$ -- 404
-if$ -- 4828
++ -- 458
+- -- 359
+* -- 2257
+:= -- 4170
+add.period$ -- 228
+call.type$ -- 49
+change.case$ -- 302
+chr.to.int$ -- 49
+cite$ -- 49
+duplicate$ -- 954
+empty$ -- 1634
+format.name$ -- 430
+if$ -- 4976
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 49
-newline$ -- 243
-num.names$ -- 192
-pop$ -- 309
+missing$ -- 50
+newline$ -- 248
+num.names$ -- 196
+pop$ -- 312
 preamble$ -- 1
-purify$ -- 299
+purify$ -- 305
 quote$ -- 0
-skip$ -- 690
+skip$ -- 709
 stack$ -- 0
-substring$ -- 1708
-swap$ -- 182
+substring$ -- 1753
+swap$ -- 188
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 426
+type$ -- 435
 warning$ -- 0
-while$ -- 191
+while$ -- 195
 width$ -- 0
-write$ -- 625
+write$ -- 638
