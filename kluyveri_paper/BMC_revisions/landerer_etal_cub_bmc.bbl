@@ -1,6 +1,6 @@
 %% BioMed_Central_Bib_Style_v1.01
 
-\begin{thebibliography}{37}
+\begin{thebibliography}{39}
 % BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
 \ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
 \ifx \binits  \undefined \def \binits#1{#1}\fi
@@ -208,6 +208,27 @@
 \endbibitem
 
 %%% 12
+\bibitem{payen2009}
+\begin{barticle}
+\bauthor{\bsnm{Payen}, \binits{C.}},
+\bauthor{\bsnm{Fischer}, \binits{G.}},
+\bauthor{\bsnm{Marck}, \binits{C.}},
+\bauthor{\bsnm{Proux}, \binits{C.}},
+\bauthor{\bsnm{Sherman}, \binits{D.J.}},
+\bauthor{\bsnm{Coppée}, \binits{J.-Y.}},
+\bauthor{\bsnm{Johnston}, \binits{M.}},
+\bauthor{\bsnm{Dujon}, \binits{B.}},
+\bauthor{\bsnm{Neuvéglise}, \binits{C.}}:
+\batitle{Unusual composition of a yeast chromosome arm is associated with its
+  delayed replication.}
+\bjtitle{Genome Research}
+\bvolume{19}(\bissue{10}),
+\bfpage{1710}--\blpage{1721}
+(\byear{2009})
+\end{barticle}
+\endbibitem
+
+%%% 13
 \bibitem{friedrich2015}
 \begin{barticle}
 \bauthor{\bsnm{Friedrich}, \binits{A.}},
@@ -223,7 +244,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 13
+%%% 14
 \bibitem{vakirlis2016}
 \begin{barticle}
 \bauthor{\bsnm{Vakirlis}, \binits{N.}},
@@ -253,27 +274,6 @@
 \bvolume{26}(\bissue{7}),
 \bfpage{918}--\blpage{32}
 (\byear{2016})
-\end{barticle}
-\endbibitem
-
-%%% 14
-\bibitem{payen2009}
-\begin{barticle}
-\bauthor{\bsnm{Payen}, \binits{C.}},
-\bauthor{\bsnm{Fischer}, \binits{G.}},
-\bauthor{\bsnm{Marck}, \binits{C.}},
-\bauthor{\bsnm{Proux}, \binits{C.}},
-\bauthor{\bsnm{Sherman}, \binits{D.J.}},
-\bauthor{\bsnm{Coppée}, \binits{J.-Y.}},
-\bauthor{\bsnm{Johnston}, \binits{M.}},
-\bauthor{\bsnm{Dujon}, \binits{B.}},
-\bauthor{\bsnm{Neuvéglise}, \binits{C.}}:
-\batitle{Unusual composition of a yeast chromosome arm is associated with its
-  delayed replication.}
-\bjtitle{Genome Research}
-\bvolume{19}(\bissue{10}),
-\bfpage{1710}--\blpage{1721}
-(\byear{2009})
 \end{barticle}
 \endbibitem
 
@@ -430,7 +430,8 @@
 \bauthor{\bsnm{Rohlf}, \binits{F.J.}}:
 \bbtitle{Biometry - The principles and practice of statistics in biological},
 pp. \bfpage{547}--\blpage{555}.
-\bpublisher{W. H. Freeman}, \blocation{???}
+\bpublisher{W. H. Freeman},
+\blocation{New York, NY}
 (\byear{1981})
 \end{bbook}
 \endbibitem
@@ -452,18 +453,6 @@ pp. \bfpage{547}--\blpage{555}.
 \endbibitem
 
 %%% 25
-\bibitem{wagner2005}
-\begin{barticle}
-\bauthor{\bsnm{Wagner}, \binits{A.}}:
-\batitle{Energy constraints on the evolution of gene expression}.
-\bjtitle{Molecular Biology and Evolution}
-\bvolume{22},
-\bfpage{1365}--\blpage{1374}
-(\byear{2005})
-\end{barticle}
-\endbibitem
-
-%%% 26
 \bibitem{SellaAndHirsh2005}
 \begin{barticle}
 \bauthor{\bsnm{Sella}, \binits{G.}},
@@ -477,7 +466,57 @@ pp. \bfpage{547}--\blpage{555}.
 \end{barticle}
 \endbibitem
 
+%%% 26
+\bibitem{wagner2005}
+\begin{barticle}
+\bauthor{\bsnm{Wagner}, \binits{A.}}:
+\batitle{Energy constraints on the evolution of gene expression}.
+\bjtitle{Molecular Biology and Evolution}
+\bvolume{22},
+\bfpage{1365}--\blpage{1374}
+(\byear{2005})
+\end{barticle}
+\endbibitem
+
 %%% 27
+\bibitem{nagylaki1983a}
+\begin{barticle}
+\bauthor{\bsnm{Nagylaki}, \binits{T.}}:
+\batitle{Evolution of a finite population under gene conversion}.
+\bjtitle{Proc. Natl. Acad. Sci. U. S. A.}
+\bvolume{80},
+\bfpage{6278}--\blpage{6281}
+(\byear{1983})
+\end{barticle}
+\endbibitem
+
+%%% 28
+\bibitem{nagylaki1983b}
+\begin{barticle}
+\bauthor{\bsnm{Nagylaki}, \binits{T.}}:
+\batitle{Evolution of a large population under gene conversion}.
+\bjtitle{Proc. Natl. Acad. Sci. U. S. A.}
+\bvolume{80},
+\bfpage{5941}--\blpage{5945}
+(\byear{1983})
+\end{barticle}
+\endbibitem
+
+%%% 29
+\bibitem{harrison2011}
+\begin{barticle}
+\bauthor{\bsnm{Harrison}, \binits{R.J.}},
+\bauthor{\bsnm{Charlesworth}, \binits{B.}}:
+\batitle{Biased gene conversion affects patterns of codon usage and amino acid
+  usage in the saccharomyces sensu stricto group of yeasts}.
+\bjtitle{Molecular Biology and Evolution}
+\bvolume{28}(\bissue{1}),
+\bfpage{117}--\blpage{129}
+(\byear{2011})
+\end{barticle}
+\endbibitem
+
+%%% 30
 \bibitem{salichos2013}
 \begin{barticle}
 \bauthor{\bsnm{Salichos}, \binits{L.}},
@@ -491,38 +530,7 @@ pp. \bfpage{547}--\blpage{555}.
 \end{barticle}
 \endbibitem
 
-%%% 28
-\bibitem{kensche2008}
-\begin{barticle}
-\bauthor{\bsnm{Kensche}, \binits{P.R.}},
-\bauthor{\bsnm{Oti}, \binits{M.}},
-\bauthor{\bsnm{Dutilh}, \binits{B.E.}},
-\bauthor{\bsnm{Huynen}, \binits{M.A.}}:
-\batitle{Conservation of divergent transcription in fungi}.
-\bjtitle{Trends Genet.}
-\bvolume{5}(\bissue{24}),
-\bfpage{207}--\blpage{211}
-(\byear{2008})
-\end{barticle}
-\endbibitem
-
-%%% 29
-\bibitem{tsai2008}
-\begin{barticle}
-\bauthor{\bsnm{Tsai}, \binits{I.J.}},
-\bauthor{\bsnm{Bensasson}, \binits{D.}},
-\bauthor{\bsnm{Burt}, \binits{A.}},
-\bauthor{\bsnm{Koufopanou}, \binits{V.}}:
-\batitle{Population genomics of the wild yeast {Saccharomyces} paradoxus:
-  quantifying the life cycle}.
-\bjtitle{Proc Natl Acad Sci U.S.A.}
-\bvolume{105},
-\bfpage{4957}--\blpage{4962}
-(\byear{2008})
-\end{barticle}
-\endbibitem
-
-%%% 30
+%%% 31
 \bibitem{Ruderfer2006}
 \begin{barticle}
 \bauthor{\bsnm{Ruderfer}, \binits{D.M.}},
@@ -538,7 +546,7 @@ pp. \bfpage{547}--\blpage{555}.
 \end{barticle}
 \endbibitem
 
-%%% 31
+%%% 32
 \bibitem{rcore}
 \begin{bbook}
 \bauthor{\bsnm{{R Core Team}}}:
@@ -551,7 +559,7 @@ pp. \bfpage{547}--\blpage{555}.
 \end{bbook}
 \endbibitem
 
-%%% 32
+%%% 33
 \bibitem{Gronau2017}
 \begin{barticle}
 \bauthor{\bsnm{Gronau}, \binits{Q.F.}},
@@ -572,7 +580,7 @@ pp. \bfpage{547}--\blpage{555}.
 \end{barticle}
 \endbibitem
 
-%%% 33
+%%% 34
 \bibitem{lmodel2}
 \begin{botherref}
 \oauthor{\bsnm{Legendre}, \binits{P.}}:
@@ -583,7 +591,7 @@ R package version 1.7-3.
 \end{botherref}
 \endbibitem
 
-%%% 34
+%%% 35
 \bibitem{soderlund2006}
 \begin{barticle}
 \bauthor{\bsnm{Soderlund}, \binits{C.}},
@@ -599,7 +607,7 @@ R package version 1.7-3.
 \end{barticle}
 \endbibitem
 
-%%% 35
+%%% 36
 \bibitem{soderlund2011}
 \begin{barticle}
 \bauthor{\bsnm{Soderlund}, \binits{C.}},
@@ -614,7 +622,22 @@ R package version 1.7-3.
 \end{barticle}
 \endbibitem
 
-%%% 36
+%%% 37
+\bibitem{MaraisEtal2004}
+\begin{barticle}
+\bauthor{\bsnm{Marais}, \binits{G.}},
+\bauthor{\bsnm{Charlesworth}, \binits{B.}},
+\bauthor{\bsnm{Wright}, \binits{S.I.}}:
+\batitle{Recombination and base composition: the case of the highly
+  self-fertilizing plant arabidopsis thaliana}.
+\bjtitle{Genome Biology}
+\bvolume{5},
+\bfpage{45}
+(\byear{2004})
+\end{barticle}
+\endbibitem
+
+%%% 38
 \bibitem{lang2008}
 \begin{barticle}
 \bauthor{\bsnm{Lang}, \binits{G.I.}},
@@ -628,7 +651,7 @@ R package version 1.7-3.
 \end{barticle}
 \endbibitem
 
-%%% 37
+%%% 39
 \bibitem{Mathematica11}
 \begin{botherref}
 \oauthor{\bsnm{{Wolfram Research Inc.}}}:
@@ -818,6 +841,28 @@ Mathematica 11.
 </bibl>
 
 <bibl id="B12">
+  <title><p>Unusual composition of a yeast chromosome arm is associated with
+  its delayed replication.</p></title>
+  <aug>
+    <au><snm>Payen</snm><fnm>C</fnm></au>
+    <au><snm>Fischer</snm><fnm>G</fnm></au>
+    <au><snm>Marck</snm><fnm>C</fnm></au>
+    <au><snm>Proux</snm><fnm>C</fnm></au>
+    <au><snm>Sherman</snm><fnm>DJ</fnm></au>
+    <au><snm>Coppée</snm><fnm>JY</fnm></au>
+    <au><snm>Johnston</snm><fnm>M</fnm></au>
+    <au><snm>Dujon</snm><fnm>B</fnm></au>
+    <au><snm>Neuvéglise</snm><fnm>C</fnm></au>
+  </aug>
+  <source>Genome Research</source>
+  <pubdate>2009</pubdate>
+  <volume>19</volume>
+  <issue>10</issue>
+  <fpage>1710</fpage>
+  <lpage>1721</lpage>
+</bibl>
+
+<bibl id="B13">
   <title><p>Population Genomics Reveals Chromosome-Scale Heterogeneous
   Evolution in a Protoploid Yeast.</p></title>
   <aug>
@@ -834,7 +879,7 @@ Mathematica 11.
   <lpage>192</lpage>
 </bibl>
 
-<bibl id="B13">
+<bibl id="B14">
   <title><p>{Reconstruction of ancestral chromosome architecture and gene
   repertoire reveals principles of genome evolution in a model yeast
   genus.}</p></title>
@@ -868,28 +913,6 @@ Mathematica 11.
   <issue>7</issue>
   <fpage>918</fpage>
   <lpage>-32</lpage>
-</bibl>
-
-<bibl id="B14">
-  <title><p>Unusual composition of a yeast chromosome arm is associated with
-  its delayed replication.</p></title>
-  <aug>
-    <au><snm>Payen</snm><fnm>C</fnm></au>
-    <au><snm>Fischer</snm><fnm>G</fnm></au>
-    <au><snm>Marck</snm><fnm>C</fnm></au>
-    <au><snm>Proux</snm><fnm>C</fnm></au>
-    <au><snm>Sherman</snm><fnm>DJ</fnm></au>
-    <au><snm>Coppée</snm><fnm>JY</fnm></au>
-    <au><snm>Johnston</snm><fnm>M</fnm></au>
-    <au><snm>Dujon</snm><fnm>B</fnm></au>
-    <au><snm>Neuvéglise</snm><fnm>C</fnm></au>
-  </aug>
-  <source>Genome Research</source>
-  <pubdate>2009</pubdate>
-  <volume>19</volume>
-  <issue>10</issue>
-  <fpage>1710</fpage>
-  <lpage>1721</lpage>
 </bibl>
 
 <bibl id="B15">
@@ -1052,9 +1075,7 @@ Mathematica 11.
     <au><snm>Sokal</snm><fnm>R R</fnm></au>
     <au><snm>Rohlf</snm><fnm>F J</fnm></au>
   </aug>
-  <source>Biometry - The principles and practice of statistics in
-  biological</source>
-  <publisher>W. H. Freeman</publisher>
+  <publisher>New York, NY: W. H. Freeman</publisher>
   <pubdate>1981</pubdate>
   <fpage>547</fpage>
   <lpage>555</lpage>
@@ -1078,18 +1099,6 @@ Mathematica 11.
 </bibl>
 
 <bibl id="B25">
-  <title><p>Energy constraints on the evolution of gene expression</p></title>
-  <aug>
-    <au><snm>Wagner</snm><fnm>A</fnm></au>
-  </aug>
-  <source>Molecular Biology and Evolution</source>
-  <pubdate>2005</pubdate>
-  <volume>22</volume>
-  <fpage>1365</fpage>
-  <lpage>1374</lpage>
-</bibl>
-
-<bibl id="B26">
   <title><p>The application of statistical physics to evolutionary
   biology</p></title>
   <aug>
@@ -1104,7 +1113,56 @@ Mathematica 11.
   <lpage>9546</lpage>
 </bibl>
 
+<bibl id="B26">
+  <title><p>Energy constraints on the evolution of gene expression</p></title>
+  <aug>
+    <au><snm>Wagner</snm><fnm>A</fnm></au>
+  </aug>
+  <source>Molecular Biology and Evolution</source>
+  <pubdate>2005</pubdate>
+  <volume>22</volume>
+  <fpage>1365</fpage>
+  <lpage>1374</lpage>
+</bibl>
+
 <bibl id="B27">
+  <title><p>Evolution of a finite population under gene conversion</p></title>
+  <aug>
+    <au><snm>Nagylaki</snm><fnm>T</fnm></au>
+  </aug>
+  <source>Proc. Natl. Acad. Sci. U. S. A.</source>
+  <pubdate>1983</pubdate>
+  <volume>80</volume>
+  <fpage>6278–6281</fpage>
+</bibl>
+
+<bibl id="B28">
+  <title><p>Evolution of a large population under gene conversion</p></title>
+  <aug>
+    <au><snm>Nagylaki</snm><fnm>T</fnm></au>
+  </aug>
+  <source>Proc. Natl. Acad. Sci. U. S. A.</source>
+  <pubdate>1983</pubdate>
+  <volume>80</volume>
+  <fpage>5941–5945</fpage>
+</bibl>
+
+<bibl id="B29">
+  <title><p>Biased Gene Conversion Affects Patterns of Codon Usage and Amino
+  Acid Usage in the Saccharomyces sensu stricto Group of Yeasts</p></title>
+  <aug>
+    <au><snm>Harrison</snm><fnm>R J</fnm></au>
+    <au><snm>Charlesworth</snm><fnm>B</fnm></au>
+  </aug>
+  <source>Molecular Biology and Evolution</source>
+  <pubdate>2011</pubdate>
+  <volume>28</volume>
+  <issue>1</issue>
+  <fpage>117</fpage>
+  <lpage>129</lpage>
+</bibl>
+
+<bibl id="B30">
   <title><p>Inferring ancient divergences requires genes with strong
   phylogenetic signals</p></title>
   <aug>
@@ -1118,39 +1176,7 @@ Mathematica 11.
   <lpage>331</lpage>
 </bibl>
 
-<bibl id="B28">
-  <title><p>Conservation of divergent transcription in fungi</p></title>
-  <aug>
-    <au><snm>Kensche</snm><fnm>P R</fnm></au>
-    <au><snm>Oti</snm><fnm>M</fnm></au>
-    <au><snm>Dutilh</snm><fnm>B E</fnm></au>
-    <au><snm>Huynen</snm><fnm>M A</fnm></au>
-  </aug>
-  <source>Trends Genet.</source>
-  <pubdate>2008</pubdate>
-  <volume>5</volume>
-  <issue>24</issue>
-  <fpage>207</fpage>
-  <lpage>211</lpage>
-</bibl>
-
-<bibl id="B29">
-  <title><p>Population genomics of the wild yeast {Saccharomyces} paradoxus:
-  quantifying the life cycle</p></title>
-  <aug>
-    <au><snm>Tsai</snm><fnm>I J</fnm></au>
-    <au><snm>Bensasson</snm><fnm>D</fnm></au>
-    <au><snm>Burt</snm><fnm>A</fnm></au>
-    <au><snm>Koufopanou</snm><fnm>V</fnm></au>
-  </aug>
-  <source>Proc Natl Acad Sci U.S.A.</source>
-  <pubdate>2008</pubdate>
-  <volume>105</volume>
-  <fpage>4957</fpage>
-  <lpage>4962</lpage>
-</bibl>
-
-<bibl id="B30">
+<bibl id="B31">
   <title><p>Population genomic analysis of outcrossing and recombination in
   yeast</p></title>
   <aug>
@@ -1167,7 +1193,7 @@ Mathematica 11.
   <lpage>1081</lpage>
 </bibl>
 
-<bibl id="B31">
+<bibl id="B32">
   <title><p>R: A Language and Environment for Statistical Computing</p></title>
   <aug>
     <au><cnm>{R Core Team}</cnm></au>
@@ -1177,7 +1203,7 @@ Mathematica 11.
   <url>http://www.R-project.org/</url>
 </bibl>
 
-<bibl id="B32">
+<bibl id="B33">
   <title><p>A tutorial on bridge sampling</p></title>
   <aug>
     <au><snm>Gronau</snm><fnm>Q F</fnm></au>
@@ -1198,7 +1224,7 @@ Mathematica 11.
   <lpage>97</lpage>
 </bibl>
 
-<bibl id="B33">
+<bibl id="B34">
   <title><p>lmodel2: Model II Regression</p></title>
   <aug>
     <au><snm>Legendre</snm><fnm>P</fnm></au>
@@ -1208,7 +1234,7 @@ Mathematica 11.
   <note>R package version 1.7-3</note>
 </bibl>
 
-<bibl id="B34">
+<bibl id="B35">
   <title><p>SyMAP\: A system for discovering and viewing syntenic regions of
   FPC maps.</p></title>
   <aug>
@@ -1224,7 +1250,7 @@ Mathematica 11.
   <lpage>1168</lpage>
 </bibl>
 
-<bibl id="B35">
+<bibl id="B36">
   <title><p>SyMAP v3.4: a turnkey synteny system with application to plant
   genomes.</p></title>
   <aug>
@@ -1239,7 +1265,21 @@ Mathematica 11.
   <fpage>e68</fpage>
 </bibl>
 
-<bibl id="B36">
+<bibl id="B37">
+  <title><p>Recombination and base composition: the case of the highly
+  self-fertilizing plant Arabidopsis thaliana</p></title>
+  <aug>
+    <au><snm>Marais</snm><fnm>G</fnm></au>
+    <au><snm>Charlesworth</snm><fnm>B</fnm></au>
+    <au><snm>Wright</snm><fnm>S I</fnm></au>
+  </aug>
+  <source>Genome Biology</source>
+  <pubdate>2004</pubdate>
+  <volume>5</volume>
+  <fpage>R45</fpage>
+</bibl>
+
+<bibl id="B38">
   <title><p>Estimating the Per-Base-Pair Mutation Rate in the Yeast
   {Saccharomyces} cerevisiae</p></title>
   <aug>
@@ -1255,7 +1295,7 @@ Mathematica 11.
   <lpage>82</lpage>
 </bibl>
 
-<bibl id="B37">
+<bibl id="B39">
   <title><p>Mathematica 11</p></title>
   <aug>
     <au><cnm>{Wolfram Research Inc.}</cnm></au>

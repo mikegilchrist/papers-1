@@ -1,6 +1,6 @@
 %% BioMed_Central_Bib_Style_v1.01
 
-\begin{thebibliography}{35}
+\begin{thebibliography}{37}
 % BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
 \ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
 \ifx \binits  \undefined \def \binits#1{#1}\fi
@@ -492,6 +492,37 @@ pp. \bfpage{547}--\blpage{555}.
 \endbibitem
 
 %%% 28
+\bibitem{kensche2008}
+\begin{barticle}
+\bauthor{\bsnm{Kensche}, \binits{P.R.}},
+\bauthor{\bsnm{Oti}, \binits{M.}},
+\bauthor{\bsnm{Dutilh}, \binits{B.E.}},
+\bauthor{\bsnm{Huynen}, \binits{M.A.}}:
+\batitle{Conservation of divergent transcription in fungi}.
+\bjtitle{Trends Genet.}
+\bvolume{5}(\bissue{24}),
+\bfpage{207}--\blpage{211}
+(\byear{2008})
+\end{barticle}
+\endbibitem
+
+%%% 29
+\bibitem{tsai2008}
+\begin{barticle}
+\bauthor{\bsnm{Tsai}, \binits{I.J.}},
+\bauthor{\bsnm{Bensasson}, \binits{D.}},
+\bauthor{\bsnm{Burt}, \binits{A.}},
+\bauthor{\bsnm{Koufopanou}, \binits{V.}}:
+\batitle{Population genomics of the wild yeast {Saccharomyces} paradoxus:
+  quantifying the life cycle}.
+\bjtitle{Proc Natl Acad Sci U.S.A.}
+\bvolume{105},
+\bfpage{4957}--\blpage{4962}
+(\byear{2008})
+\end{barticle}
+\endbibitem
+
+%%% 30
 \bibitem{Ruderfer2006}
 \begin{barticle}
 \bauthor{\bsnm{Ruderfer}, \binits{D.M.}},
@@ -507,7 +538,7 @@ pp. \bfpage{547}--\blpage{555}.
 \end{barticle}
 \endbibitem
 
-%%% 29
+%%% 31
 \bibitem{rcore}
 \begin{bbook}
 \bauthor{\bsnm{{R Core Team}}}:
@@ -520,7 +551,7 @@ pp. \bfpage{547}--\blpage{555}.
 \end{bbook}
 \endbibitem
 
-%%% 30
+%%% 32
 \bibitem{Gronau2017}
 \begin{barticle}
 \bauthor{\bsnm{Gronau}, \binits{Q.F.}},
@@ -541,7 +572,7 @@ pp. \bfpage{547}--\blpage{555}.
 \end{barticle}
 \endbibitem
 
-%%% 31
+%%% 33
 \bibitem{lmodel2}
 \begin{botherref}
 \oauthor{\bsnm{Legendre}, \binits{P.}}:
@@ -552,7 +583,7 @@ R package version 1.7-3.
 \end{botherref}
 \endbibitem
 
-%%% 32
+%%% 34
 \bibitem{soderlund2006}
 \begin{barticle}
 \bauthor{\bsnm{Soderlund}, \binits{C.}},
@@ -568,7 +599,7 @@ R package version 1.7-3.
 \end{barticle}
 \endbibitem
 
-%%% 33
+%%% 35
 \bibitem{soderlund2011}
 \begin{barticle}
 \bauthor{\bsnm{Soderlund}, \binits{C.}},
@@ -583,7 +614,7 @@ R package version 1.7-3.
 \end{barticle}
 \endbibitem
 
-%%% 34
+%%% 36
 \bibitem{lang2008}
 \begin{barticle}
 \bauthor{\bsnm{Lang}, \binits{G.I.}},
@@ -597,7 +628,7 @@ R package version 1.7-3.
 \end{barticle}
 \endbibitem
 
-%%% 35
+%%% 37
 \bibitem{Mathematica11}
 \begin{botherref}
 \oauthor{\bsnm{{Wolfram Research Inc.}}}:
@@ -1088,6 +1119,38 @@ Mathematica 11.
 </bibl>
 
 <bibl id="B28">
+  <title><p>Conservation of divergent transcription in fungi</p></title>
+  <aug>
+    <au><snm>Kensche</snm><fnm>P R</fnm></au>
+    <au><snm>Oti</snm><fnm>M</fnm></au>
+    <au><snm>Dutilh</snm><fnm>B E</fnm></au>
+    <au><snm>Huynen</snm><fnm>M A</fnm></au>
+  </aug>
+  <source>Trends Genet.</source>
+  <pubdate>2008</pubdate>
+  <volume>5</volume>
+  <issue>24</issue>
+  <fpage>207</fpage>
+  <lpage>211</lpage>
+</bibl>
+
+<bibl id="B29">
+  <title><p>Population genomics of the wild yeast {Saccharomyces} paradoxus:
+  quantifying the life cycle</p></title>
+  <aug>
+    <au><snm>Tsai</snm><fnm>I J</fnm></au>
+    <au><snm>Bensasson</snm><fnm>D</fnm></au>
+    <au><snm>Burt</snm><fnm>A</fnm></au>
+    <au><snm>Koufopanou</snm><fnm>V</fnm></au>
+  </aug>
+  <source>Proc Natl Acad Sci U.S.A.</source>
+  <pubdate>2008</pubdate>
+  <volume>105</volume>
+  <fpage>4957</fpage>
+  <lpage>4962</lpage>
+</bibl>
+
+<bibl id="B30">
   <title><p>Population genomic analysis of outcrossing and recombination in
   yeast</p></title>
   <aug>
@@ -1104,7 +1167,7 @@ Mathematica 11.
   <lpage>1081</lpage>
 </bibl>
 
-<bibl id="B29">
+<bibl id="B31">
   <title><p>R: A Language and Environment for Statistical Computing</p></title>
   <aug>
     <au><cnm>{R Core Team}</cnm></au>
@@ -1114,7 +1177,7 @@ Mathematica 11.
   <url>http://www.R-project.org/</url>
 </bibl>
 
-<bibl id="B30">
+<bibl id="B32">
   <title><p>A tutorial on bridge sampling</p></title>
   <aug>
     <au><snm>Gronau</snm><fnm>Q F</fnm></au>
@@ -1135,7 +1198,7 @@ Mathematica 11.
   <lpage>97</lpage>
 </bibl>
 
-<bibl id="B31">
+<bibl id="B33">
   <title><p>lmodel2: Model II Regression</p></title>
   <aug>
     <au><snm>Legendre</snm><fnm>P</fnm></au>
@@ -1145,7 +1208,7 @@ Mathematica 11.
   <note>R package version 1.7-3</note>
 </bibl>
 
-<bibl id="B32">
+<bibl id="B34">
   <title><p>SyMAP\: A system for discovering and viewing syntenic regions of
   FPC maps.</p></title>
   <aug>
@@ -1161,7 +1224,7 @@ Mathematica 11.
   <lpage>1168</lpage>
 </bibl>
 
-<bibl id="B33">
+<bibl id="B35">
   <title><p>SyMAP v3.4: a turnkey synteny system with application to plant
   genomes.</p></title>
   <aug>
@@ -1176,7 +1239,7 @@ Mathematica 11.
   <fpage>e68</fpage>
 </bibl>
 
-<bibl id="B34">
+<bibl id="B36">
   <title><p>Estimating the Per-Base-Pair Mutation Rate in the Yeast
   {Saccharomyces} cerevisiae</p></title>
   <aug>
@@ -1192,7 +1255,7 @@ Mathematica 11.
   <lpage>82</lpage>
 </bibl>
 
-<bibl id="B35">
+<bibl id="B37">
   <title><p>Mathematica 11</p></title>
   <aug>
     <au><cnm>{Wolfram Research Inc.}</cnm></au>
