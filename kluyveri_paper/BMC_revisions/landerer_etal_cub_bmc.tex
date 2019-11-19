@@ -74,9 +74,9 @@
 %%                                             %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\def\includegraphic{}
-\def\includegraphics{}
-
+%\def\includegraphic{}  
+%\def\includegraphics{}
+%mikeg: Cedric, don't comment out each \includegraphics command in the paper, just include or comment out the two above lines out. 
 
 %%% Put your definitions there:
 \startlocaldefs
@@ -338,11 +338,11 @@ While the implicit consideration of \GC in this analysis certainly plays a roll,
     \centering
     \begin{subfigure}
         \centering
-        (a) %\includegraphics[width=.45\textwidth]{img/phi_corr_plot_whole_Genome_estim.pdf}
+        (a) \includegraphics[width=.45\textwidth]{img/phi_corr_plot_whole_Genome_estim.pdf}
     \end{subfigure}
     \begin{subfigure}
         \centering
-        (b) %\includegraphics[width=.45\textwidth]{img/phi_corr_plot_split_Genome_estim.pdf}
+        (b) \includegraphics[width=.45\textwidth]{img/phi_corr_plot_split_Genome_estim.pdf}
     \end{subfigure}
     \caption{Comparison of predicted protein synthesis rate $\phi$ to microarray data (as proxy for protein abundance) from \cite{tsankov2010} for (a) the combined genome where we assume that mutation bias and selection bias for synonymous codons is shared between endogenous and exogenous genes, and (b) the     separated endogenous and exogenous genes where  mutation bias and selection bias for synonymous codons is allowed to vary between endogenous and     exogenous genes. 
     Endogenous genes are displayed in black and exogenous genes in red. 
@@ -367,11 +367,11 @@ In contrast to \DM, our estimates of \DE for the endogenous and exogenous genes 
     \centering
     \begin{subfigure}
         \centering
-        (a) %\includegraphics[width=.45\textwidth]{img/csp_corr_dm.pdf}
+        (a) \includegraphics[width=.45\textwidth]{img/csp_corr_dm.pdf}
     \end{subfigure}
     \begin{subfigure}
         \centering
-        (b) %\includegraphics[width=.45\textwidth]{img/csp_corr_deta.pdf}
+        (b) \includegraphics[width=.45\textwidth]{img/csp_corr_deta.pdf}
     \end{subfigure}
     \caption{Comparison of (a) mutation bias \DM and (b) selection bias \DE parameters for endogenous and exogenous genes.
       Estimates are relative to the mean for each codon family.
@@ -408,7 +408,7 @@ These results clearly show that it is important to recognize the difference in e
 
 \begin{figure}
      \centering
-	%\includegraphics[width=\textwidth]{img/CUB_cleft_main.pdf}
+	\includegraphics[width=\textwidth]{img/CUB_cleft_main.pdf}
 	\caption{Codon usage patterns for 19 amino acids. Amino acids are indicated as one letter code. 
 	The amino acids Serine was split into two groups (S and Z) as Serine is coded for by two groups of codons that are separated by more than one mutation.
 	Solid line indicates the endogenous codon usage, dashed line indicates the exogenous codon usage.}
@@ -475,7 +475,7 @@ Interestingly, our results also indicate that codon usage does not necessarily c
 
 \begin{figure}
      \centering
-	%\includegraphics[width=.45\textwidth]{img/csp_mean_correlation_exo.pdf}
+	\includegraphics[width=.45\textwidth]{img/csp_mean_correlation_exo.pdf}
 	\caption{Correlation coefficients of \DM and \DE of the exogenous genes with 332 examined budding yeast lineages. 
 	Dots indicate the correlation of \DM and \DE of the lineages with the exogenous parameter estimates.
 	Blue triangles indicate the \textit{Lachancea} and red diamonds indicate \textit{Eremothecium} species.
@@ -522,11 +522,11 @@ In order for the exogenous genes to have reached fixation one or more exogenous 
     \centering
     \begin{subfigure}
         \centering
-        (a) %\includegraphics[width=.45\textwidth]{img/fitness_difference_gos_kappa5.pdf}
+        (a) \includegraphics[width=.45\textwidth]{img/fitness_difference_gos_kappa5.pdf}
     \end{subfigure}
     \begin{subfigure}
         \centering
-        (b) %\includegraphics[width=.45\textwidth]{img/fitness_difference_exo.pdf}
+        (b) \includegraphics[width=.45\textwidth]{img/fitness_difference_exo.pdf}
     \end{subfigure}
     \caption{Selection against mismatched codon usage $s = \DE \phi$ (a) at the time of introgression ($\kappa = 5$), and (b) currently ($\kappa = 1$). 
         Vertical dashed line indicates split between high and low expression genes at $\phi = 1$.
@@ -847,7 +847,7 @@ Supporting Materials for \emph{Unlocking a signal of introgression from codons i
     \end{subfigure}
     \begin{subfigure}
         \centering
-        %\includegraphics[width=.45\textwidth]{img/figS1b}
+        \includegraphics[width=.45\textwidth]{img/figS1b}
     \end{subfigure}
     \caption{Endogenous and exogenouns genes have distinct \GC. 
     (a) Distribution of \GC content in the endogenous and exogenous genes.
@@ -862,7 +862,7 @@ Supporting Materials for \emph{Unlocking a signal of introgression from codons i
 
 \begin{figure}
      \centering
-	%\includegraphics[width=\textwidth]{img/CUB_full_main.pdf}
+	\includegraphics[width=\textwidth]{img/CUB_full_main.pdf}
 	\caption{Codon usage patterns for 19 amino acids. Amino acids are indicated as one letter code. 
 	The amino acids Serine was split into two groups (S and Z) as Serine is coded for by two groups of codons that are separated by more than one mutation.
 	Solid line indicates the endogenous codon usage, dotted line indicates the combined codon usage.}
@@ -872,7 +872,7 @@ Supporting Materials for \emph{Unlocking a signal of introgression from codons i
 \vfill
 \begin{figure}
      \centering
-	%\includegraphics[width=\textwidth]{img/CUB_full_cleft.pdf}
+	\includegraphics[width=\textwidth]{img/CUB_full_cleft.pdf}
 	\caption{Codon usage patterns for 19 amino acids. Amino acids are indicated as one letter code. 
 	The amino acids Serine was split into two groups (S and Z) as Serine is coded for by two groups of codons that are separated by more than one mutation.
 	dashed line indicates the exogenous codon usage, dotted line indicates the combined codon usage.}
@@ -883,7 +883,7 @@ Supporting Materials for \emph{Unlocking a signal of introgression from codons i
 \vfill
 \begin{figure}
      \centering
-	%\includegraphics[width=0.5\textwidth]{img/csp_mean_correlation_endo.pdf}
+	\includegraphics[width=0.5\textwidth]{img/csp_mean_correlation_endo.pdf}
 	\caption{Correlation coefficients of \DM and \DE of the endogenous genes with 332 examined budding yeast lineages. 
 	Dots indicate the correlation of \DM and \DE of the lineages with the exogenous parameter estimates.
 	Blue triangles indicate the Lachancea and red diamonds indicate Eremothecium lineages.
@@ -898,7 +898,7 @@ Supporting Materials for \emph{Unlocking a signal of introgression from codons i
 \vfill
 \begin{figure}
      \centering
-	%\includegraphics[width=0.5\textwidth]{img/figS4.pdf}
+	\includegraphics[width=0.5\textwidth]{img/figS4.pdf}
 	\caption{Gene trees illustrating the placement of \kluyveri (blue) and \gossypii (red) for three endogenous and three exogenous genes. 
 	The remaining Lachancea are highlighted in black. 
 	(Top row)  Gene trees for three exogenous genes (from left to right: SAKL0C05742g, SAKL0C03520g, SAKL0C02376g).
@@ -917,7 +917,7 @@ Supporting Materials for \emph{Unlocking a signal of introgression from codons i
     \end{subfigure}
     \begin{subfigure}
         \centering
-        %\includegraphics[width=.45\textwidth]{img/csp_corr_deta_full.pdf}
+        \includegraphics[width=.45\textwidth]{img/csp_corr_deta_full.pdf}
     \end{subfigure}
     \caption{Comparison of (a) mutation bias \DM and (b) selection bias \DE parameters for endogenous genes and combined gene sets.
       Estimates are relative to the mean for each codon family.
@@ -938,7 +938,7 @@ Supporting Materials for \emph{Unlocking a signal of introgression from codons i
     \end{subfigure}
     \begin{subfigure}
         \centering
-        %\includegraphics[width=.45\textwidth]{img/fitness_phi_scaling_gos.pdf}
+        \includegraphics[width=.45\textwidth]{img/fitness_phi_scaling_gos.pdf}
     \end{subfigure}
     \caption{Selection against mismatched codon usage (left) without scaling of $\phi$ per gene. 
     Vertical dashed line indicates split between high and low expression genes at $\phi = 1$.
@@ -953,7 +953,7 @@ Supporting Materials for \emph{Unlocking a signal of introgression from codons i
 \vfill
 \begin{figure}
      \centering
-	%\includegraphics[width=.5\textwidth]{img/adaptation_total.pdf}
+	\includegraphics[width=.5\textwidth]{img/adaptation_total.pdf}
 	\caption{Total amount of adaptation estimated to have occurred between time of introgression and currently observed per gene.
 	    Vertical dashed line indicates split between high and low expression genes at $\phi = 1$.
 	    Horizontal dashed line indicates no change in selection against mismatched codon usage.}
@@ -966,7 +966,7 @@ Supporting Materials for \emph{Unlocking a signal of introgression from codons i
 \vfill
 \begin{figure}
      \centering
-	%\includegraphics[width=.5\textwidth]{img/bf_variance_scaling.pdf}
+	\includegraphics[width=.5\textwidth]{img/bf_variance_scaling.pdf}
 	\caption{Influence of the variance scaling of the importance distribution on the estimated Bayes factor.}
 	\label{fig:bf_scaling}
 \end{figure}
