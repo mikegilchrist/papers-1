@@ -58,6 +58,7 @@
 \usepackage{subfigure}
 \usepackage{marginnote} %replacement for marginpar, doesn't mind being nested.
 \usepackage[flushleft]{threeparttable}
+\usepackage{lmodern} % solve font missing issues?
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                             %%
@@ -290,7 +291,7 @@ Broadly speaking, \ROC allows us to quantify the cellular environment in which g
 Briefly, the set of \DM for an amino acid quantifies the relative differences in mutational stability or bias between the synonymous codons of the amino acid \setS.
 In the absence of selection bias (or equivalently when gene expression $\phi = 0$), the equilibrium frequency of synoymous codon $i$ is simply $\exp[-\DM_i]/\left(\sum_{j \in \setS}\exp[-\DM_j]\right)$.
 %Because \ROC only considers the stationary probabilities, only variation in mutation bias, not absolute mutation rates can be detected.
-Because the time units of protein production rate have no intrinsic time scale, we define the average protein production rate for a set of genes to be one, i.e.~$\phibar = 1$ by definition \citep{gilchrist2015}. 
+Because the time units of protein production rate have no intrinsic time scale, we define the average protein production rate for a set of genes to be one, i.e.~$\barphi = 1$ by definition \citep{gilchrist2015}. 
 In order to facilitate comparisions between gene sets, we express both, \DM and \DE, as deviation from the mean of each synonymous codon family (see Materials and Methods for details).
 Nevertheless, the difference \DE describes the difference in fitness between two synonymous codons relative to drift for a gene whose protein production rate $\phi$ is equal to the the average rate of protein production $\barphi$ across the set of genes.
 In other words, for a gene whose protein is expressed at the average rate, for any two given synonymous codons $i$ and $j$,  $\DE_i-\DE_j = \Ne s$.
