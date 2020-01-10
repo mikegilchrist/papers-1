@@ -1,6 +1,6 @@
 %% BioMed_Central_Bib_Style_v1.01
 
-\begin{thebibliography}{39}
+\begin{thebibliography}{42}
 % BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
 \ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
 \ifx \binits  \undefined \def \binits#1{#1}\fi
@@ -94,6 +94,47 @@
 \endbibitem
 
 %%% 5
+\bibitem{sharp1987}
+\begin{barticle}
+\bauthor{\bsnm{Sharp}, \binits{P.M.}},
+\bauthor{\bsnm{Li}, \binits{W.H.}}:
+\batitle{The codon adaptation index - a meassure of directional synonymous
+  codon usage bias, and its potential applications}.
+\bjtitle{Nucleic Acids Research}
+\bvolume{15},
+\bfpage{1281}--\blpage{1295}
+(\byear{1987})
+\end{barticle}
+\endbibitem
+
+%%% 6
+\bibitem{Wright1990}
+\begin{barticle}
+\bauthor{\bsnm{Wright}, \binits{F.}}:
+\batitle{The ‘effective number of codons’ used in a gene}.
+\bjtitle{Genel}
+\bvolume{87},
+\bfpage{23}--\blpage{29}
+(\byear{1990})
+\end{barticle}
+\endbibitem
+
+%%% 7
+\bibitem{sharp1993}
+\begin{barticle}
+\bauthor{\bsnm{M}, \binits{S.P.}},
+\bauthor{\bsnm{Stenico}, \binits{M.}},
+\bauthor{\bsnm{Peden}, \binits{J.F.}},
+\bauthor{\bsnm{Lloyd}, \binits{A.T.}}:
+\batitle{Codon usage: mutational bias, translational selection, or both?}
+\bjtitle{Biochem Soc Trans.}
+\bvolume{21}(\bissue{4}),
+\bfpage{835}--\blpage{841}
+(\byear{1993})
+\end{barticle}
+\endbibitem
+
+%%% 8
 \bibitem{ShahAndGilchrist2011}
 \begin{barticle}
 \bauthor{\bsnm{Shah}, \binits{P.}},
@@ -107,7 +148,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 6
+%%% 9
 \bibitem{wallace2013}
 \begin{barticle}
 \bauthor{\bsnm{Wallace}, \binits{E.W.}},
@@ -122,7 +163,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 7
+%%% 10
 \bibitem{gilchrist2015}
 \begin{barticle}
 \bauthor{\bsnm{Gilchrist}, \binits{M.A.}},
@@ -140,7 +181,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 8
+%%% 11
 \bibitem{medigue1991}
 \begin{barticle}
 \bauthor{\bsnm{Médigue}, \binits{C.}},
@@ -157,7 +198,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 9
+%%% 12
 \bibitem{lawrence1997}
 \begin{barticle}
 \bauthor{\bsnm{Lawrence}, \binits{J.G.}},
@@ -170,7 +211,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 10
+%%% 13
 \bibitem{MHM2015}
 \begin{barticle}
 \bauthor{\bsnm{Marcet-Houben}, \binits{M.}},
@@ -184,7 +225,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 11
+%%% 14
 \bibitem{Beimforde2014}
 \begin{barticle}
 \bauthor{\bsnm{Beimforde}, \binits{C.}},
@@ -207,7 +248,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 12
+%%% 15
 \bibitem{payen2009}
 \begin{barticle}
 \bauthor{\bsnm{Payen}, \binits{C.}},
@@ -228,7 +269,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 13
+%%% 16
 \bibitem{friedrich2015}
 \begin{barticle}
 \bauthor{\bsnm{Friedrich}, \binits{A.}},
@@ -244,7 +285,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 14
+%%% 17
 \bibitem{vakirlis2016}
 \begin{barticle}
 \bauthor{\bsnm{Vakirlis}, \binits{N.}},
@@ -277,7 +318,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 15
+%%% 18
 \bibitem{brion2017}
 \begin{barticle}
 \bauthor{\bsnm{Brion}, \binits{C.}},
@@ -298,33 +339,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 16
-\bibitem{sharp1987}
-\begin{barticle}
-\bauthor{\bsnm{Sharp}, \binits{P.M.}},
-\bauthor{\bsnm{Li}, \binits{W.H.}}:
-\batitle{The codon adaptation index - a meassure of directional synonymous
-  codon usage bias, and its potential applications}.
-\bjtitle{Nucleic Acids Research}
-\bvolume{15},
-\bfpage{1281}--\blpage{1295}
-(\byear{1987})
-\end{barticle}
-\endbibitem
-
-%%% 17
-\bibitem{Wright1990}
-\begin{barticle}
-\bauthor{\bsnm{Wright}, \binits{F.}}:
-\batitle{The ‘effective number of codons’ used in a gene}.
-\bjtitle{Genel}
-\bvolume{87},
-\bfpage{23}--\blpage{29}
-(\byear{1990})
-\end{barticle}
-\endbibitem
-
-%%% 18
+%%% 19
 \bibitem{dosreis2004}
 \begin{barticle}
 \bauthor{\bparticle{dos} \bsnm{Reis}, \binits{M.}},
@@ -339,7 +354,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 19
+%%% 20
 \bibitem{cope2018}
 \begin{barticle}
 \bauthor{\bsnm{Cope}, \binits{A.L.}},
@@ -354,7 +369,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 20
+%%% 21
 \bibitem{shen2018}
 \begin{barticle}
 \bauthor{\bsnm{Shen}, \binits{X.X.}},
@@ -391,7 +406,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 21
+%%% 22
 \bibitem{landerer2018}
 \begin{barticle}
 \bauthor{\bsnm{Landerer}, \binits{C.}},
@@ -406,7 +421,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 22
+%%% 23
 \bibitem{tsankov2010}
 \begin{barticle}
 \bauthor{\bsnm{Tsankov}, \binits{A.M.}},
@@ -423,7 +438,7 @@
 \end{barticle}
 \endbibitem
 
-%%% 23
+%%% 24
 \bibitem{SokalAndRohlf1981}
 \begin{bbook}
 \bauthor{\bsnm{Sokal}, \binits{R.R.}},
@@ -436,7 +451,7 @@ pp. \bfpage{547}--\blpage{555}.
 \end{bbook}
 \endbibitem
 
-%%% 24
+%%% 25
 \bibitem{nguyen2015}
 \begin{barticle}
 \bauthor{\bsnm{Nguyen}, \binits{L.T.}},
@@ -452,7 +467,7 @@ pp. \bfpage{547}--\blpage{555}.
 \end{barticle}
 \endbibitem
 
-%%% 25
+%%% 26
 \bibitem{SellaAndHirsh2005}
 \begin{barticle}
 \bauthor{\bsnm{Sella}, \binits{G.}},
@@ -466,7 +481,7 @@ pp. \bfpage{547}--\blpage{555}.
 \end{barticle}
 \endbibitem
 
-%%% 26
+%%% 27
 \bibitem{wagner2005}
 \begin{barticle}
 \bauthor{\bsnm{Wagner}, \binits{A.}}:
@@ -478,7 +493,7 @@ pp. \bfpage{547}--\blpage{555}.
 \end{barticle}
 \endbibitem
 
-%%% 27
+%%% 28
 \bibitem{nagylaki1983a}
 \begin{barticle}
 \bauthor{\bsnm{Nagylaki}, \binits{T.}}:
@@ -490,7 +505,7 @@ pp. \bfpage{547}--\blpage{555}.
 \end{barticle}
 \endbibitem
 
-%%% 28
+%%% 29
 \bibitem{nagylaki1983b}
 \begin{barticle}
 \bauthor{\bsnm{Nagylaki}, \binits{T.}}:
@@ -502,7 +517,7 @@ pp. \bfpage{547}--\blpage{555}.
 \end{barticle}
 \endbibitem
 
-%%% 29
+%%% 30
 \bibitem{harrison2011}
 \begin{barticle}
 \bauthor{\bsnm{Harrison}, \binits{R.J.}},
@@ -516,7 +531,7 @@ pp. \bfpage{547}--\blpage{555}.
 \end{barticle}
 \endbibitem
 
-%%% 30
+%%% 31
 \bibitem{salichos2013}
 \begin{barticle}
 \bauthor{\bsnm{Salichos}, \binits{L.}},
@@ -530,7 +545,45 @@ pp. \bfpage{547}--\blpage{555}.
 \end{barticle}
 \endbibitem
 
-%%% 31
+%%% 32
+\bibitem{Medrano2004}
+\begin{barticle}
+\bauthor{\bsnm{Medrano-Soto}, \binits{A.}},
+\bauthor{\bsnm{Moreno-Hagelsieb}, \binits{G.}},
+\bauthor{\bsnm{Vinuesa}, \binits{P.}},
+\bauthor{\bsnm{Christen}, \binits{J.A.}},
+\bauthor{\bsnm{Collado-Vides}, \binits{J.}}:
+\batitle{Successful lateral transfer requires codon usage compatibility between
+  foreign genes and recipient genomes}.
+\bjtitle{Molecular Biology and Evolution}
+\bvolume{21}(\bissue{10}),
+\bfpage{1884}--\blpage{1894}
+(\byear{2004})
+\end{barticle}
+\endbibitem
+
+%%% 33
+\bibitem{tuller2011}
+\begin{barticle}
+\bauthor{\bsnm{Tuller}, \binits{T.}},
+\bauthor{\bsnm{Girshovich}, \binits{Y.}},
+\bauthor{\bsnm{Sella}, \binits{Y.}},
+\bauthor{\bsnm{Kreimer}, \binits{A.}},
+\bauthor{\bsnm{Freilich}, \binits{S.}},
+\bauthor{\bsnm{Kupiec}, \binits{M.}},
+\bauthor{\bsnm{Gophna}, \binits{U.}},
+\bauthor{\bsnm{Ruppin}, \binits{E.}}:
+\batitle{Association between translation efficiency and horizontal gene
+  transfer within microbial communities.}
+\bjtitle{Nucleic Acids Research}
+\bvolume{39}(\bissue{11}),
+\bfpage{4743}--\blpage{4755}
+(\byear{2011}).
+doi:\doiurl{10.1093/nar/gkr054}
+\end{barticle}
+\endbibitem
+
+%%% 34
 \bibitem{Ruderfer2006}
 \begin{barticle}
 \bauthor{\bsnm{Ruderfer}, \binits{D.M.}},
@@ -546,7 +599,7 @@ pp. \bfpage{547}--\blpage{555}.
 \end{barticle}
 \endbibitem
 
-%%% 32
+%%% 35
 \bibitem{rcore}
 \begin{bbook}
 \bauthor{\bsnm{{R Core Team}}}:
@@ -559,7 +612,7 @@ pp. \bfpage{547}--\blpage{555}.
 \end{bbook}
 \endbibitem
 
-%%% 33
+%%% 36
 \bibitem{Gronau2017}
 \begin{barticle}
 \bauthor{\bsnm{Gronau}, \binits{Q.F.}},
@@ -580,7 +633,7 @@ pp. \bfpage{547}--\blpage{555}.
 \end{barticle}
 \endbibitem
 
-%%% 34
+%%% 37
 \bibitem{lmodel2}
 \begin{botherref}
 \oauthor{\bsnm{Legendre}, \binits{P.}}:
@@ -591,7 +644,7 @@ R package version 1.7-3.
 \end{botherref}
 \endbibitem
 
-%%% 35
+%%% 38
 \bibitem{soderlund2006}
 \begin{barticle}
 \bauthor{\bsnm{Soderlund}, \binits{C.}},
@@ -607,7 +660,7 @@ R package version 1.7-3.
 \end{barticle}
 \endbibitem
 
-%%% 36
+%%% 39
 \bibitem{soderlund2011}
 \begin{barticle}
 \bauthor{\bsnm{Soderlund}, \binits{C.}},
@@ -622,7 +675,7 @@ R package version 1.7-3.
 \end{barticle}
 \endbibitem
 
-%%% 37
+%%% 40
 \bibitem{MaraisEtal2004}
 \begin{barticle}
 \bauthor{\bsnm{Marais}, \binits{G.}},
@@ -637,7 +690,7 @@ R package version 1.7-3.
 \end{barticle}
 \endbibitem
 
-%%% 38
+%%% 41
 \bibitem{lang2008}
 \begin{barticle}
 \bauthor{\bsnm{Lang}, \binits{G.I.}},
@@ -651,7 +704,7 @@ R package version 1.7-3.
 \end{barticle}
 \endbibitem
 
-%%% 39
+%%% 42
 \bibitem{Mathematica11}
 \begin{botherref}
 \oauthor{\bsnm{{Wolfram Research Inc.}}}:
@@ -724,6 +777,49 @@ Mathematica 11.
 </bibl>
 
 <bibl id="B5">
+  <title><p>The codon adaptation index - a meassure of directional synonymous
+  codon usage bias, and its potential applications</p></title>
+  <aug>
+    <au><snm>Sharp</snm><fnm>P M</fnm></au>
+    <au><snm>Li</snm><fnm>W H</fnm></au>
+  </aug>
+  <source>Nucleic Acids Research</source>
+  <pubdate>1987</pubdate>
+  <volume>15</volume>
+  <fpage>1281</fpage>
+  <lpage>1295</lpage>
+</bibl>
+
+<bibl id="B6">
+  <title><p>The ‘effective number of codons’ used in a gene</p></title>
+  <aug>
+    <au><snm>Wright</snm><fnm>F</fnm></au>
+  </aug>
+  <source>Genel</source>
+  <pubdate>1990</pubdate>
+  <volume>87</volume>
+  <fpage>23</fpage>
+  <lpage>29</lpage>
+</bibl>
+
+<bibl id="B7">
+  <title><p>Codon usage: mutational bias, translational selection, or
+  both?</p></title>
+  <aug>
+    <au><snm>M</snm><fnm>SP</fnm></au>
+    <au><snm>Stenico</snm><fnm>M</fnm></au>
+    <au><snm>Peden</snm><fnm>J F</fnm></au>
+    <au><snm>Lloyd</snm><fnm>A T</fnm></au>
+  </aug>
+  <source>Biochem Soc Trans.</source>
+  <pubdate>1993</pubdate>
+  <volume>21</volume>
+  <issue>4</issue>
+  <fpage>835</fpage>
+  <lpage>841</lpage>
+</bibl>
+
+<bibl id="B8">
   <title><p>Explaining complex codon usage patterns with selection for
   translational efficiency, mutation bias, and genetic drift</p></title>
   <aug>
@@ -738,7 +834,7 @@ Mathematica 11.
   <lpage>10236</lpage>
 </bibl>
 
-<bibl id="B6">
+<bibl id="B9">
   <title><p>Estimating Selection on Synonymous Codon Usage from Noisy
   Experimental Data</p></title>
   <aug>
@@ -753,7 +849,7 @@ Mathematica 11.
   <lpage>1453</lpage>
 </bibl>
 
-<bibl id="B7">
+<bibl id="B10">
   <title><p>Estimating Gene Expression and Codon-Specific Translational
   Efficiencies, Mutation Biases, and Selection Coefficients from Genomic Data
   Alone</p></title>
@@ -771,7 +867,7 @@ Mathematica 11.
   <lpage>1579</lpage>
 </bibl>
 
-<bibl id="B8">
+<bibl id="B11">
   <title><p>Evidence for horizontal gene transfer in {Escherichia} coli
   speciation</p></title>
   <aug>
@@ -789,7 +885,7 @@ Mathematica 11.
   <lpage>856</lpage>
 </bibl>
 
-<bibl id="B9">
+<bibl id="B12">
   <title><p>Amelioration of Bacterial Genomes: Rates of Change and
   Exchange</p></title>
   <aug>
@@ -803,7 +899,7 @@ Mathematica 11.
   <lpage>397</lpage>
 </bibl>
 
-<bibl id="B10">
+<bibl id="B13">
   <title><p>Beyond the Whole-Genome Duplication: Phylogenetic Evidence for an
   Ancient Interspecies Hybridization in the Baker's Yeast Lineage</p></title>
   <aug>
@@ -817,7 +913,7 @@ Mathematica 11.
   <fpage>e1002220</fpage>
 </bibl>
 
-<bibl id="B11">
+<bibl id="B14">
   <title><p>Estimating the Phanerozoic history of the Ascomycota lineages:
   combining fossil and molecular data.</p></title>
   <aug>
@@ -840,7 +936,7 @@ Mathematica 11.
   <lpage>398</lpage>
 </bibl>
 
-<bibl id="B12">
+<bibl id="B15">
   <title><p>Unusual composition of a yeast chromosome arm is associated with
   its delayed replication.</p></title>
   <aug>
@@ -862,7 +958,7 @@ Mathematica 11.
   <lpage>1721</lpage>
 </bibl>
 
-<bibl id="B13">
+<bibl id="B16">
   <title><p>Population Genomics Reveals Chromosome-Scale Heterogeneous
   Evolution in a Protoploid Yeast.</p></title>
   <aug>
@@ -879,7 +975,7 @@ Mathematica 11.
   <lpage>192</lpage>
 </bibl>
 
-<bibl id="B14">
+<bibl id="B17">
   <title><p>{Reconstruction of ancestral chromosome architecture and gene
   repertoire reveals principles of genome evolution in a model yeast
   genus.}</p></title>
@@ -915,7 +1011,7 @@ Mathematica 11.
   <lpage>-32</lpage>
 </bibl>
 
-<bibl id="B15">
+<bibl id="B18">
   <title><p>Variation of the meiotic recombination landscape and properties
   over a broad evolutionary distance in yeasts</p></title>
   <aug>
@@ -936,33 +1032,7 @@ Mathematica 11.
   <fpage>e1006917</fpage>
 </bibl>
 
-<bibl id="B16">
-  <title><p>The codon adaptation index - a meassure of directional synonymous
-  codon usage bias, and its potential applications</p></title>
-  <aug>
-    <au><snm>Sharp</snm><fnm>P M</fnm></au>
-    <au><snm>Li</snm><fnm>W H</fnm></au>
-  </aug>
-  <source>Nucleic Acids Research</source>
-  <pubdate>1987</pubdate>
-  <volume>15</volume>
-  <fpage>1281</fpage>
-  <lpage>1295</lpage>
-</bibl>
-
-<bibl id="B17">
-  <title><p>The ‘effective number of codons’ used in a gene</p></title>
-  <aug>
-    <au><snm>Wright</snm><fnm>F</fnm></au>
-  </aug>
-  <source>Genel</source>
-  <pubdate>1990</pubdate>
-  <volume>87</volume>
-  <fpage>23</fpage>
-  <lpage>29</lpage>
-</bibl>
-
-<bibl id="B18">
+<bibl id="B19">
   <title><p>Solving the riddle of codon usage preferences: a test for
   translational selection</p></title>
   <aug>
@@ -978,7 +1048,7 @@ Mathematica 11.
   <lpage>5044</lpage>
 </bibl>
 
-<bibl id="B19">
+<bibl id="B20">
   <title><p>{Quantifying codon usage in signal peptides: Gene expression and
   amino acid usage explain apparent selection for inefficient
   codons}</p></title>
@@ -995,7 +1065,7 @@ Mathematica 11.
   <lpage>-2485</lpage>
 </bibl>
 
-<bibl id="B20">
+<bibl id="B21">
   <title><p>Tempo and Mode of Genome Evolution in the Budding Yeast
   Subphylum</p></title>
   <aug>
@@ -1034,7 +1104,7 @@ Mathematica 11.
   <lpage>1545.e20</lpage>
 </bibl>
 
-<bibl id="B21">
+<bibl id="B22">
   <title><p>{AnaCoDa}: analyzing codon data with Bayesian mixture
   models</p></title>
   <aug>
@@ -1051,7 +1121,7 @@ Mathematica 11.
   <lpage>2498</lpage>
 </bibl>
 
-<bibl id="B22">
+<bibl id="B23">
   <title><p>The role of nucleosome positioning in the evolution of gene
   regulation</p></title>
   <aug>
@@ -1068,7 +1138,7 @@ Mathematica 11.
   <fpage>e1000414</fpage>
 </bibl>
 
-<bibl id="B23">
+<bibl id="B24">
   <title><p>Biometry - The principles and practice of statistics in
   biological</p></title>
   <aug>
@@ -1081,7 +1151,7 @@ Mathematica 11.
   <lpage>555</lpage>
 </bibl>
 
-<bibl id="B24">
+<bibl id="B25">
   <title><p>IQ-TREE: A Fast and Effective Stochastic Algorithm for Estimating
   Maximum-Likelihood Phylogenies</p></title>
   <aug>
@@ -1098,7 +1168,7 @@ Mathematica 11.
   <lpage>274</lpage>
 </bibl>
 
-<bibl id="B25">
+<bibl id="B26">
   <title><p>The application of statistical physics to evolutionary
   biology</p></title>
   <aug>
@@ -1113,7 +1183,7 @@ Mathematica 11.
   <lpage>9546</lpage>
 </bibl>
 
-<bibl id="B26">
+<bibl id="B27">
   <title><p>Energy constraints on the evolution of gene expression</p></title>
   <aug>
     <au><snm>Wagner</snm><fnm>A</fnm></au>
@@ -1125,7 +1195,7 @@ Mathematica 11.
   <lpage>1374</lpage>
 </bibl>
 
-<bibl id="B27">
+<bibl id="B28">
   <title><p>Evolution of a finite population under gene conversion</p></title>
   <aug>
     <au><snm>Nagylaki</snm><fnm>T</fnm></au>
@@ -1136,7 +1206,7 @@ Mathematica 11.
   <fpage>6278–6281</fpage>
 </bibl>
 
-<bibl id="B28">
+<bibl id="B29">
   <title><p>Evolution of a large population under gene conversion</p></title>
   <aug>
     <au><snm>Nagylaki</snm><fnm>T</fnm></au>
@@ -1147,7 +1217,7 @@ Mathematica 11.
   <fpage>5941–5945</fpage>
 </bibl>
 
-<bibl id="B29">
+<bibl id="B30">
   <title><p>Biased Gene Conversion Affects Patterns of Codon Usage and Amino
   Acid Usage in the Saccharomyces sensu stricto Group of Yeasts</p></title>
   <aug>
@@ -1162,7 +1232,7 @@ Mathematica 11.
   <lpage>129</lpage>
 </bibl>
 
-<bibl id="B30">
+<bibl id="B31">
   <title><p>Inferring ancient divergences requires genes with strong
   phylogenetic signals</p></title>
   <aug>
@@ -1176,7 +1246,47 @@ Mathematica 11.
   <lpage>331</lpage>
 </bibl>
 
-<bibl id="B31">
+<bibl id="B32">
+  <title><p>Successful lateral transfer requires codon usage compatibility
+  between foreign genes and recipient genomes</p></title>
+  <aug>
+    <au><snm>Medrano Soto</snm><fnm>A</fnm></au>
+    <au><snm>Moreno Hagelsieb</snm><fnm>G</fnm></au>
+    <au><snm>Vinuesa</snm><fnm>P</fnm></au>
+    <au><snm>Christen</snm><fnm>J A</fnm></au>
+    <au><snm>Collado Vides</snm><fnm>J</fnm></au>
+  </aug>
+  <source>Molecular Biology and Evolution</source>
+  <pubdate>2004</pubdate>
+  <volume>21</volume>
+  <issue>10</issue>
+  <fpage>1884</fpage>
+  <lpage>1894</lpage>
+</bibl>
+
+<bibl id="B33">
+  <title><p>Association between translation efficiency and horizontal gene
+  transfer within microbial communities.</p></title>
+  <aug>
+    <au><snm>Tuller</snm><fnm>T</fnm></au>
+    <au><snm>Girshovich</snm><fnm>Y</fnm></au>
+    <au><snm>Sella</snm><fnm>Y</fnm></au>
+    <au><snm>Kreimer</snm><fnm>A</fnm></au>
+    <au><snm>Freilich</snm><fnm>S</fnm></au>
+    <au><snm>Kupiec</snm><fnm>M</fnm></au>
+    <au><snm>Gophna</snm><fnm>U</fnm></au>
+    <au><snm>Ruppin</snm><fnm>E</fnm></au>
+  </aug>
+  <source>Nucleic Acids Research</source>
+  <pubdate>2011</pubdate>
+  <volume>39</volume>
+  <issue>11</issue>
+  <fpage>4743</fpage>
+  <lpage>4755</lpage>
+  <url>http://dx.doi.org/10.1093/nar/gkr054</url>
+</bibl>
+
+<bibl id="B34">
   <title><p>Population genomic analysis of outcrossing and recombination in
   yeast</p></title>
   <aug>
@@ -1193,7 +1303,7 @@ Mathematica 11.
   <lpage>1081</lpage>
 </bibl>
 
-<bibl id="B32">
+<bibl id="B35">
   <title><p>R: A Language and Environment for Statistical Computing</p></title>
   <aug>
     <au><cnm>{R Core Team}</cnm></au>
@@ -1203,7 +1313,7 @@ Mathematica 11.
   <url>http://www.R-project.org/</url>
 </bibl>
 
-<bibl id="B33">
+<bibl id="B36">
   <title><p>A tutorial on bridge sampling</p></title>
   <aug>
     <au><snm>Gronau</snm><fnm>Q F</fnm></au>
@@ -1224,7 +1334,7 @@ Mathematica 11.
   <lpage>97</lpage>
 </bibl>
 
-<bibl id="B34">
+<bibl id="B37">
   <title><p>lmodel2: Model II Regression</p></title>
   <aug>
     <au><snm>Legendre</snm><fnm>P</fnm></au>
@@ -1234,7 +1344,7 @@ Mathematica 11.
   <note>R package version 1.7-3</note>
 </bibl>
 
-<bibl id="B35">
+<bibl id="B38">
   <title><p>SyMAP\: A system for discovering and viewing syntenic regions of
   FPC maps.</p></title>
   <aug>
@@ -1250,7 +1360,7 @@ Mathematica 11.
   <lpage>1168</lpage>
 </bibl>
 
-<bibl id="B36">
+<bibl id="B39">
   <title><p>SyMAP v3.4: a turnkey synteny system with application to plant
   genomes.</p></title>
   <aug>
@@ -1265,7 +1375,7 @@ Mathematica 11.
   <fpage>e68</fpage>
 </bibl>
 
-<bibl id="B37">
+<bibl id="B40">
   <title><p>Recombination and base composition: the case of the highly
   self-fertilizing plant Arabidopsis thaliana</p></title>
   <aug>
@@ -1279,7 +1389,7 @@ Mathematica 11.
   <fpage>R45</fpage>
 </bibl>
 
-<bibl id="B38">
+<bibl id="B41">
   <title><p>Estimating the Per-Base-Pair Mutation Rate in the Yeast
   {Saccharomyces} cerevisiae</p></title>
   <aug>
@@ -1295,7 +1405,7 @@ Mathematica 11.
   <lpage>82</lpage>
 </bibl>
 
-<bibl id="B39">
+<bibl id="B42">
   <title><p>Mathematica 11</p></title>
   <aug>
     <au><cnm>{Wolfram Research Inc.}</cnm></au>

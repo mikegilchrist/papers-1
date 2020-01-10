@@ -271,7 +271,7 @@ The signature of selection on codon usage is largely determined by an organism's
 In general, the strength of selection on codon usage is assumed to increase with its expression level \citep{gouy1982, ikemura1985, bulmer1990}, specifically its protein synthesis rate \citep{gilchrist2007}.
 Thus as protein synthesis increases, codon usage shifts from a process dominated by mutation to a process dominated by selection.
 The overall efficacy of mutation and selection on codon usage is a function of the organism's effective population size $\Ne$.
-\ROC allows us disentangle the evolutionary forces responsible for the patterns of codon usage bias (CUB) encoded in an species' genome, by explicitly modeling the combined evolutionary forces of mutation, selection, and drift \citep{gilchrist2007, ShahAndGilchrist2011, wallace2013, gilchrist2015}.
+\ROC allows us to disentangle the evolutionary forces responsible for the patterns of codon usage bias \citep{sharp1987, Wright1990, sharp1993} (CUB) encoded in an species' genome, by explicitly modeling the combined evolutionary forces of mutation, selection, and drift \citep{gilchrist2007, ShahAndGilchrist2011, wallace2013, gilchrist2015}.
 In turn, these evolutionary parameters should provide biologically meaningful information about the lineage's historical cellular and external environment.
 
 Most studies implicitly assume that the CUB of a genome is shaped by a single cellular environment. 
@@ -305,10 +305,12 @@ We also estimate the age of the introgression to be on the order of 0.2 - 1.7 My
 We used our software package AnaCoDa \citep{landerer2018} to compare model fits of \ROC to the entire \kluyveri genome and its genome partitioned into two sets of 4,864 endogenous and 497 exogenous genes.
 These two set where initially identified based on their striking difference in \GC \cite{payen2009}, with very little overlap in \GC between the two sets (Figure \ref{fig:gc_comp_phi}a).
 \ROC is a statistical model that relates the effects of mutation bias \DM, selection bias \DE between synonymous codons and protein synthesis rate $\phi$, to explain the observed codon usage patterns.
-Briefly, \DM describes the mutation bias between two synonymous codons at stationarity under a detailed balance assumption. 
+Thus, the probability of observing a synonymous codon is proportional to $p \propto \exp(-\DM-\DE\phi)$ \citep{gilchrist2015}.
+Briefly, \DM describes the mutation bias between two synonymous codons at stationarity under a time reversible mutation model.
 Because \ROC only considers the stationary probabilities, only variation in mutation bias, not absolute mutation rates can be detected.
 \DE describes the fitness difference between two synonymous codons relative to drift \citep{gilchrist2015}. 
-We express both, \DM and \DE, as deviation from the mean of each synonymous codon family (see Materials and Methods for details).
+Since \DE is scaled by protein synthesis rate $\phi$, this term is dominant in highly expressed genes and tends towards 0 in low expression genes, allowing us to separate the effect of mutation bias and selection bias on codon usage. 
+We express both, \DM and \DE, as deviation from the mean of each synonymous codon family which prevents that the choice of the reference codon affects our results (see Materials and Methods for details).
 
 Bayes factor strongly support the hypothesis that the \kluyveri genome consists of genes with two different and distinct patterns of codon usage bias rather than a single ($K = \exp(42,294)$; Table \ref{tab:AIC_klu}).
 We find additional support for this hypothesis when we compare our predictions of protein synthesis rate to empirically observed mRNA expression values as a proxy for protein synthesis.
@@ -501,10 +503,9 @@ Together, these results indicate that the mutation signature of the exogenous ge
 We define the selection against inefficient codon usage as the difference between the fitness on the log scale of an expected, replaced endogenous gene and the exogenous gene, $s \propto \phi \DE$ due to the mismatch in codon usage parameters (See Methods for details).
 As the introgression occurred before the diversification of \kluyveri and has fixed throughout all populations \citep{friedrich2015}, we can not observe the original endogenous sequences that have been replaced by the introgression.
 Overall, we predict that a small number of low expression genes ($\phi < 1$) were weakly exapted at the time of the introgression (Figure \ref{fig:sne_fitness_burden}a).
+Thus, they appear to provide a small fitness advantage due to the accordance of exogenous mutation bias with endogenous selection bias (compare Figure \ref{fig:cub_full_main} and \ref{fig:cub_full_cleft}).
 High expression genes ($\phi > 1$) are predicted to have faced the largest selection against their mismatched codon usage in the novel cellular environment.
 In order to account for differences in the efficacy of selection on codon usage either due to the cost of pausing, differences in the effective population size, or the decline in fitness with every ATP wasted between the donor lineage and \kluyveri we added a linear scaling factor $\kappa$ to scale our estimates of \DE between the donor lineage and \kluyveri and searched for the value that minimized the cost of the introgression, thus giving us the best case scenario (See Methods for details).
-
-
 
 Using our estimates of $\Delta M$ and $\Delta \eta$ from the endogenous genes and assuming the current exogenous amino acid composition of genes is representative of the replaced endogenous genes, we estimate the strength of selection against the exogenous genes at the time of introgression (Figure \ref{fig:sne_fitness_burden}a) and currently (Figure \ref{fig:sne_fitness_burden}b).
 Estimates of selection bias for the exogenous genes show that, while well correlated with the endogenous genes, only nine amino acids share the same selectively preferred codon.
@@ -515,8 +516,6 @@ This reduction in $\GL$ is primarily due to adaptive changes to the codon usage 
 Based on the selection against the codon mismatch at the time of the introgression and assuming an effective population size $\Ne$ on the order of $10^7$ \citep{wagner2005}, we estimate a fixation probability of $(1-\exp[-\GL])/(1-\exp[-2\GL \Ne]) \approx 10^{-6952}$ \citep{SellaAndHirsh2005} for the exogenous genes.
 Clearly, the possibility of fixation under this simple scenario is effectively zero.
 In order for the exogenous genes to have reached fixation one or more exogenous loci must have provided a selective advantage not considered in this study (See Discussion).
-
-
 
 \begin{figure}
     \centering
@@ -575,7 +574,7 @@ Interestingly, this also showed that similarity in codon usage does not correlat
 
 Previous work indicated that the donor lineage of the exogenous genes has to be a, potentially unknown, Lachancea lineage \citep{payen2009, friedrich2015, vakirlis2016, brion2017}.
 These previous results, however, are based on species rather than gene trees, ignoring the differential adaptation rate to their novel cellular environment between genes or do not consider lineages outside of the Lachancea clade.
-Considering the similarity in selection bias (Figure \ref{fig:csp_comp}b) and our calculation of selection on the exogenous genes (Figure \ref{fig:sne_fitness_burden}b), both of which are free of any assumption about the origin of the exogenous genes, a species tree estimated from the exogenous genes may be biased towards the Lachancea clade.
+Considering the similarity in selection bias (Figure \ref{fig:csp_comp}b) and our calculation of selection on the exogenous genes (Figure \ref{fig:sne_fitness_burden}b), both of which are free of any assumption about the origin of the exogenous genes, a species tree estimated from the exogenous genes will be biased towards the Lachancea clade.
 Estimating individual gene trees rather than relying on a species tree provided further evidence that the exogenous genes could originate from a lineage that does not belong to the Lachancea clade.
 As we highlighted in this study, relatively small sets of genes with a signal of a foreign cellular environment can significantly bias the outcome of a study. 
 The same holds true for phylogenetic inferences \citep{salichos2013}, and as we showed the signal of the original endogenous cellular environment that shaped CUB is at different stages of decay in high and low expression genes (Figure \ref{fig:adapt_tot}).
@@ -587,9 +586,10 @@ Nevertheless, $\sim 30 \%$ of low expression exogenous genes ($\phi < 1$) appear
 This exaptation is due to the mutation bias in the endogenous genes matching the selection bias in the exogenous genes for GC ending codons.
 Our estimate of the selective cost of codon mismatch on the order of $-0.0008$.
 While this selective cost may not seem very large, assuming \kluyveri had a large \Ne, the fixation probability of the introgression is the astronomically small value of $\approx 10^{-6952} \approx 0$.
-While this estimate heavily depends on the working hypothesis that the exogenous genes originated from the \gossypii lineage, we can also calculate the hypothetical fixation probability if the current exogenous genes would introgress into \kluyveri. 
+While this estimate heavily depends on the working hypothesis that the exogenous genes originated from the \gossypii lineage, we can also calculate the hypothetical fixation probability if the current exogenous genes would introgres into \kluyveri. 
 Our estimate of the current selective cost of the mismatch of codon usage is on the order of $-0.0003$.
 The fixation probability of the current exogenous genes would still be astronomically small $\approx 10^{-2609} \approx 0$
+These results are in accordance with previous work, highlighting the necessity of codon usage compatibility between endogenous and transferred exogenous genes \cite{Medrano2004, tuller2011}.
 Thus, the basic scenario of an introgression between two yeast species with large \Ne and where the introgression solely imposes a selective cost due to codon mismatch is clearly too simplistic.
 
 One or more loci with a combined selective advantage on the order of $0.0008$ or greater would have made the introgression change from disadvantageous to effectively neutral or advantageous.

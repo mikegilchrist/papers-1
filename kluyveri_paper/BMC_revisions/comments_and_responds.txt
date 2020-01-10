@@ -1,0 +1,187 @@
+We want to thank both reviewer for their great feedback.
+We hope we were able to address all their comments, criticisms, and concerns adequately.
+Please see our responds to individual comments below.
+
+Reviewer 1: General comments
+
+This paper presents an interesting analysis of the effects of selection and mutational bias on codon usage (CUB) in the yeast Lachancea kluvyveri (the name is misspelt in the title), in relation to the fact that a piece of genome has been introgressed from another species, with a distinctive pattern of codon usage. It uses the Bayesian modeling method, ROC SEMPPR, developed by the Gilchrist lab, which combines mechanistic and population genetic approaches. There are, however, a number of problems with the paper.
+
+RESPONDS:
+We thank the reviewer for the interest in our work and for the create feedback provided.
+We attempted to addressed all comments and provide a responds to each below. 
+
+COMMENT 1:
+One general point is that the model does not include any effects of biased gene conversion, which has been widely discussed in the literature on base composition. There has been a claim that GC-biased gene conversion affects CUB in S. cerevisiae (Harrison & Charlesworth 2011, MBE 28:117). This acts as a form of selection that operates even on genes with low expression levels. It would be good to have a brief discussion of possible biases that could result from ignoring it. This is important in relation to the rather startling claim that the ancestor of the exogenous sequence had a mutational bias towards GC rather than AT. The suspicion is that this is much more likely to be due to GC-biased gene conversion than mutational bias.
+
+RESPONDS:
+As correctly pointed out by the reviewer, ROC-SEMPPR does not include any effects of biased gene conversion (BGC). However, any effects of BGC that are independent of gene expression will be absorbed into our Delta_M terms as a form of mutation bias.
+If there is a correlation between BGC and gene expression like it could be possible in the case of recombination hotspots, BGC would affect our estimates of Delta_eta.
+A paragraph discussing this issue was added to the discussion section.
+
+COMMENT 2:
+A second general point is that the paper uses quantities like Delta-M and Delta-nu, without really explaining them until the Material and Methods. The fact that these are expressed as deviations from the mean for each codon family should be explained in the text. It would be helpful to the reader to have a brief explanation of what these mean, without having to go to the back of the paper to find out. Furthermore, the mutational model on which the estimates of Delta-M are based tacitly assumes that the mutational transition matrix generates a reversible process, such that 'detailed balance' can be assumed. While this is common to many models of molecular evolution (e.g. in PAML), it is not necessarily guaranteed. It might be good to draw this to the reader's attention.
+
+RESPONDS:
+In order to clarify our parameters to any interested reader we added a brief description of each parameter to the beginning of the results section. We further highlight the expression of all results as deviation from the mean of each synonymous codon set.
+
+COMMENT 3:
+Third, the analysis of Delta-M and Delta-nu for the exogenous sequences assumes that these are at statistical equilibrium. However, this is unlikely to be correct, given the claim that mutational bias is very different in the ancestor of the exogenous sequence. This problem needs to be discussed and resolved; it is a major concern about whether this elaborate analysis is more useful than a simple comparison of synonymous codon usage between the two classes of sequence
+
+RESPONDS:
+The reviewer is absolutely correct that it is highly unlikely that the exogenous genes are at equilibrium. In order to address this issue we added a paragraph to the discussion where we highlight and resolve this issue.
+As the adaptation of the exogenous genes to the new host environment is very slow we can interpret the adaptation process as a quasi-static process. We find empirical evidence for this in our ability to correctly identify high and low expression genes.
+
+Further, In contrast to more classical approaches to explore codon usage, ROC-SEMPPR does not require any measurements or proxies of gene expression like CAI (in order to create a reference set of highly expressed genes)  but provides such estimates. Other metrics like tAI are not applicable in this case as we are lacking information on tRNA abundances for the exogenous genes. In addition do neither of these approaches explicitly account and separate the effects of mutation and selection
+We added a small paragraph to the discussion to highlight these advantages.
+
+COMMENT 4:
+Fourth, the authors are making a strong claim about the origin of the exogenous sequence, which disagrees with previous phylogenetic studies (p.9). They make only a very brief statement about their own phylogenetic results. I think we need to see much more evidence (e.g. a tree that places the exogenous sequence genes among homologous genes from other species), if their claim that E. gossypii is the source of the exogenous sequence is to be accepted. A detailed comparison should made with the results of the other phylogenetic studies. The worry is that their conclusion largely comes from the fact that E. gossypii has a high GC content.
+
+RESPONDS:
+We thank the reviewer for this very important comment.
+First, we want to emphasis that it is not our intention to dispute previous claim. In order to reflect that we softened the used language. The intention of this work is to highlight the advantages of mechanistic models like ROC-SEMPPR in order to study the evolution of codon usage bias. However, in order to study the effects of mismatched codon usage, we rely on a potential source for the exogenous genes.
+Our estimates of codon usage lead us to an alternative hypothesis for the source of the introgression and provide additional evidence (independent of our estimates of codon usage) of this hypothesis in the form synteny and a brief phylogenetic analysis.
+Like it was asked for, we adjusted our phylogenetic analysis and provide additional information in the form of gene tree examples (Figure S5).
+Second, we tried to alleviate concerns about the impact of the GC content and added a comparison of GC and gene expression (Figure S1).
+Further, we want to highlight that L. thermotolerans, a member of the Lachancea clade, also has an elevated GC content (~47%) and does not show up in our comparison of codon usage as a potential source lineage.
+
+
+SPECIFIC COMMENTS:
+GENERAL RESPONDS:
+We want to thank the reviewer to take the time for such detailed feedback. We corrected missing words and other typos as suggested. We, further, incorporated the suggestions in order to clarify our work to the reader. We respond to individual comments below where we wish to add additional clarifications.
+
+COMMENT:
+p.2 l.4 There is evidence that translational accuracy may also be a target of selection.
+
+RESPONDS:
+The reviewer is absolutely correct that accuracy is a target for selection. ROC-SEMPPR, however, only incorporates effects of efficiency. In order to clarify, we inserted language to clarify that the given list is not exhaustive.
+
+COMMENT:
+l.16-18  This gives the impression that the Gilchrist lab is the only one to have modeled selection, mutation and drift in relation to CUB; there is in fact a long history of such modeling, going back to Li (1987).
+AND
+l.17-19 Again, this overlooks the fact that many other studies have used information on expression level and CUB to disentangle selection and mutation; the Gilchrist lab approach is certainly the most sophisticated, but the basic idea has been around a long time.
+
+RESPONDS:
+
+While the reviewer is correct in their statement, in contrast to other approaches like CAI, tAI, Nc, ... ROC-SEMPPR does not rely on estimates of protein synthesis or it's proxies but can provide estimates of them. 
+Further, other approaches (unlike the cited ones), while acknowledging the effects of mutation, do not explicitly model the effects of mutation. We inserted language to highlight this.
+
+COMMENT:
+l.10  and 24 You chose to use Delta-nu as a measure of selection, rather than its product with phi, which gives the scaled selection coefficient. It would be helpful to have the reason for this choice explained up front, rather than leaving it to l.24.
+
+RESPONDS:
+We moved the paragraph explaining our reasoning to the beginning of the section. This greatly improved the readability and we therefore thank the reviewer for this comment.
+
+COMMENT:
+p.9  l.14 The model of decay of codon usage of the exogenous sequences assumes neutrality; this seems to be inconsistent with the estimate of selection against them that is presented later.
+
+RESPONDS:
+As the reviewer correctly points out, there is selection against the exogenous genes. 
+Therefore, we chose Delta M (for which the neutrality assumption holds) to estimate the age and persistence of the introgression. We are able to do this as we are explicitly separating the effects of mutation and selection. Further, Delta M is free of any effects caused by differences in population size.
+
+COMMENT:
+l.33 This conclusion seems paradoxical; if the exogenous genes have such a low probability of fixation, how did they get fixed (this is considered later, in the Discussion, but might as well be dealt with here? In addition, the calculation seems to be for a single gene, whereas selection would act on the whole introgressed segment, which does not (I believe) recombine. The question of recombination is raised in the Discussion; they need to make it clear how much recombination is likely to have happened.
+AND
+l.30-31 The point made concerning l.33 of p.10 is relevant here; if there is such a low fixation probability, how could the exogenous sequence get fixed? The arguments on p.13 about a population bottleneck and a potential large selective advantate are rather ad hoc.
+
+RESPONDS:
+We briefly address this issue and further make explicit mentioning of the low recombination rate in the exogenous genes later while addressing previous concerns of the reviewer with regards to biased gene conversion.
+
+COMMENT:
+p.16 l.5-9 An equivalent equation for the decay of base composition under neutrality was given a long time ago (Marais et al 2004 Genome Biology 5: R45); they can simply cite their result.
+
+RESPONDS:
+We are now citing the work by Marais et al. However, in order to directly relate the formulation to our parameters we kept the section.
+
+COMMENT:
+§2  The finding that the difference between exogenous and endogenous genes is largely due to a difference in mutational bias is a very interesting one. However, it raises a big question. The suggestion is that the exogenous gene had a mutational bias toward GC. This seems very unusual, as a mutational bias towards AT is almost universal.  As mentioned in my general comments, GC-biased gene conversion seems more plausible.
+
+RESPONDS:
+We are now explicitly addressing the issue of biased gene conversion.
+As mentioned in a previous responds, we now highlight the low recombination rate, making gene conversion unlikely after the introgression event. Thus, we can either assume that the source lineage had an elevated GC content or that biased gene conversion occurred in the source lineage. We are now discussing these options and explain how they would impact our parameter estimates.
+
+
+Reviewer 2:
+The paper includes a study which aims at understanding the effect of introgression on codon usage pattern.  Among others, they used ROC SEMPPR  they try to estimate the differences in codon usage bias between endogenous and exogenous genes. They suggest that the differences can be attributed to  mutation bias favoring A/T ending codons in the endogenous genes to C/G ending codons in the exogenous genes.  With this model they claim that they are able to better (42% improvement) predict protein synthesis rate and to estimate the endogenous codon preferences.  In addition, they identify Eremothecium gossypii as the closest relative to the exogenous genes, providing an alternative hypothesis about the origin of the exogenous genes.
+While the general research question may be interesting I must say that most of the reported results are not clear to me (or they seem trivial);
+
+RESPONDS:
+We thank the reviewer for their comments and will respond to them individually below. In order to help the reader to better understand our finding, we tried to clarify the language.
+
+COMMENT 1:
+1) There are previous studies on similar topics that are not discussed (For example, PMID: 15240837 , PMID: 21343180).
+
+RESPONDS:
+We are now mentioning the suggested work when discussing the low fixation probability of the exogenous genes due to the mismatched codon usage.
+
+COMMENT 2:
+2) The Exogenous Genes:  I understand that the list of Exogenous Genes is from  [12] and that this region is known as GC rich. Thus, the conclusion that the differences in codon bias can be attributed to  mutation bias favoring A/T ending codons in the endogenous genes to C/G ending codons in the exogenous genes sounds trivial to me. As a control I suggest that you perform a similar analysis but now take endogenous genes with the same GC content as the exogenous and see if you get similar conclusions.
+
+RESPONDS:
+We would like to disagree with the reviewer here. It is not a trivial task to separate effects of mutation and selection on codon usage and most approaches (such as CAI, tAI, ...) attribute differences in codon usage to selection. 
+The work by Payen et al (2009), who identified the boundaries of the introgressed region, found differences in codon usage was unable to attribute them to differences in mutation bias. Previous work (Agier et al. 2013), even attributed the difference in GC differences in replication time.
+Nevertheless, we want to alleviate the reviewers concerns. However, we are unable to perform the desired experiment due to the very small amount of genes with similar GC content in the tow regions.
+ROC-SEMPPR relies on a considered amount of data as not only the mutation and selection parameters have to be estimated but also the gene ordering (protein synthesis rate).
+We could fix the gene ordering, either using the already predicted rates or empirical rates used for comparison. However, as the gene ordering would be fixed, in their current order we would be unable to obtain different results.
+However, we added Figure S1a,b to show the distinct distributions of GC content and highlight that the GC content in the endogenous and exogenous genes show opposite trends.
+
+COMMENT 3:
+3) Similarly to point 2 above: All the reported results should be compared to the following analysis as a control: perform a similar analysis but now take endogenous genes with the same GC content as the exogenous and see if you get similar conclusions. If you get similar conclusion for this control it means that the results reported in the paper are not interesting and mainly related to the differences in GC content between the two groups (which was partially used for inferring the HGT) and not to features/aspects unique to HGT.
+
+RESPONDS:
+As mentioned above, the limitations of ROC-SEMPPR do not allow for such a control, but we added figure S1b to show that GC content and gene ordering do have opposite relationships in the endogenous and exogenous genes.
+
+COMMENT 4:
+4) ROC SEMPPR: the reported results are strongly based on this model. Thus, you should describe with more details (in this paper) the intuition related to the model. Specifically, you should clearly define all the parameters estimated by this model and the interpretation of their values (e..g mutation, selection bias, etc). It is not clear to me if this model can work well when the input include many genes that undergo HGT. Please clearly discuss this.
+
+RESPONDS:
+We added and explanation of all parameters and the model to the beginning of the result section in order to improve readability. 
+Figure 1, Table S1 and S2, as well as Figure S2,S3 illustrate how the exogenous genes affect the model and the parameters estimated by it.
+We address these issues by separating the endogenous and exogenous genes.
+However, the introgressed region likely violates the equilibrium assumption of ROC-SEMPPR. We now explicitly mention and discuss this in the discussion section.
+
+COMMENT 5:
+5)  " Specifically, the explanatory power between our predictions and observed values improved by
+_ 42%, from R2 = 0:33 to 0:46 (Figure 1)." It is not clear to me what is the initial value (R^2 = 0.33 ) which is not very high (there are many studies that yield much higher correlation between sequence features and gene expression; for example PMID: 29040683, PMID: 24564391) ? in the figure you write 'protein synthesis levels' but this is a prediction of   'protein synthesis levels'. Why do you correlate with mRNA levels and not with measurements of protein levels?  Please add more details re. the model of 'protein synthesis levels' prediction.
+
+RESPONDS:
+Since the endogenous and exogenous genes differ in their codon usage, estimating codon usage of the whole genome is a mixture of the two separate regions. This has an impact on the protein synthesis rate and is reflected in the reduced R^2 = 0.33. When we separate the endogenous and exogenous genes, we increase our ability to estimate these parameters.
+We provide now a brief overview of the model at the beginning of the result section. 
+However, there is no separate model to predict synthesis rate but they are parameters estimated when inferring the codon usage. 
+We correlate our prediction of protein synthesis rates with mRNA abundance as this is a widely used proxy and we are not aware of any direct protein abundance measurement for L. kluyveri.
+
+COMMENT 6:
+6) "Bayes factor strongly support the hypothesis that the L. kluyveri genome consists of genes with two different and distinct patterns of codon usage bias rather than a single (K = exp(42; 294); Table 1).." Could you provide a p-value related to this ( log likelihood values in the table look very similar) ?  In any case, I think it is trivial to expect that he two group have different patterns of codon usage (also given the large differences in GC content as mentioned above)?
+
+RESPONDS:
+While this finding may be expected, we would not consider it trivial. For example, this difference is not picked up by CAI. We do now provide a p-value, however, we which to emphasize that this is not appropriate in this case since ROC-SEMPPR is a Bayesian model. Hence the use of the Bayes Factor (K) to illustrate the stark and significant difference of the models.
+
+COMMENT 7:
+7) "Our estimates of _M for the endogenous and exogenous genes were negatively correlated (_ = 0:49), indicating weak similarity with only _ 5% of the codons share the same sign between the two mutation environments (Figure 2a)." *General* comment: please add p-values after each claim that appear in the paper.
+
+RESPONDS:
+As we are using correlations as a measure of similarity (or distance) and not a statistical tools, we did not consider it as necessary to add any p-values before. We, nevertheless, gladly added them were appropriate.
+
+COMMENT 8:
+8) Sub-section "Determining Source of Exogenous Genes":  it is not clear to me why your approach is better than previous approach in detecting the origin of the Exogenous Genes and why the previous approaches are wrong (and it is not you who are wrong). please add more explanations.
+
+RESPONDS:
+As mentioned in responds to reviewer 1, it was not our intention to claim a solution to this problem, we softened the language in responds. However, previous studies failed to identify the source of the introgression. 
+Using our approach, we are able to identify the most likely source from a candidate set of 332 yeast lineages. We further provide evidence for this hypothesis, independent of our method, and highlight the differences between our approach and previous ones (e.g. using individual gene trees vs. concatenating genes).
+We discuss this in more detail now in the discussion and provide more detailed results from our phylogenetic analysis.
+
+COMMENT 9:
+9) " We infer the age of the introgression to be on the order of ... generations. " please better explain the expected error in this estimation.
+
+RESPONDS:
+The error in the age of the introgression solely stems from the variation of our estimates of mutation bias Delta M. This variation is very small and thus the additional error is orders of magnitudes lower as the one introduces by the uncertainty in the generation time.
+
+COMMENT 10:
+10) Introduction: " In contrast, the signature of selection on codon usage is largely determined by an organism's cellular environment alone, such as its tRNA species, their
+copy number, and their post-transcriptional modifications.......  " The selection on codon usage is affected by many additional aspects ( not only translation). For example, there are studies that suggest that it is affected by selection on transcription (PMID: 8913770 , PMID: 29165040).
+
+RESPONDS:
+The reviewer is correct that many other factors then the ones we listed contribute to codon usage. However, we think it is widely accepted that translation is the dominant factor. In addition, ROC-SEMPPR only incorporates effects of translation efficiency.
+We added language to make clear that the provided list is not exhaustive.
+
+
