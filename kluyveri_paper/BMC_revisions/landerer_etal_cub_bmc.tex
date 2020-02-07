@@ -242,7 +242,7 @@ Recognizing the two different signatures of mutation bias and selection improves
 In addition, using our estimates of mutation bias and selection, we identify \textit{Eremothecium gossypii} as the closest relative to the exogenous genes, providing an alternative hypothesis about the origin of the exogenous genes, estimate that the introgression occurred $\sim 6\times 10^8$ generation ago, and estimate its historic and current selection against mismatched codon usage.
 \parttitle{Conclusions} 
 Together, our work illustrates the advantage of mechanistic, population genetic models like \ROC and the quantitative estimates they provide when analyzing sequence data.
-\marginnote{The conclusion is too focused on our method.  Emphasize the biological insight more.}
+%\marginnote{The conclusion is too focused on our method.  Emphasize the biological insight more.}
 \end{abstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -295,13 +295,13 @@ In order to facilitate comparisions between gene sets, we express both, \DM and 
 Nevertheless, the difference \DE describes the difference in fitness between two synonymous codons relative to drift for a gene whose protein production rate $\phi$ is equal to the the average rate of protein production $\barphi$ across the set of genes.
 In other words, for a gene whose protein is expressed at the average rate, for any two given synonymous codons $i$ and $j$,  $\DE_i-\DE_j = \Ne s$.
 
-The Lachancea clade diverged from the Saccharomyces clade, prior to its whole genome duplication $\sim 100$ Mya ago \citep{MHM2015,Beimforde2014}. \marginnote{mikeg: Is the Lachancea clade synonymous with the \emph{Lachancea} genus? If so use \emph{Lachancea}}
+The Lachancea clade diverged from the Saccharomyces clade, prior to its whole genome duplication $\sim 100$ Mya ago \citep{MHM2015,Beimforde2014}. %\marginnote{mikeg: Is the Lachancea clade synonymous with the \emph{Lachancea} genus? If so use \emph{Lachancea}}
 Since that time, \kluyveri, which is sister species to all other \emph{Lachancea spp.},  has experienced a large introgression of exogenous genes (1 Mb, 457 genes) which is found in all of its populations \citep{payen2009,friedrich2015}, but in no other known Lachancea species \citep{vakirlis2016}.
 The introgression replaced the left arm of the C chromosome and displays a $13 \%$ higher \GC than the endogenous \kluyveri genome \citep{payen2009, friedrich2015}.
 Previous studies suggest that the source of the introgression is probably a currently unknown or potentially extinct Lachancea lineage based on gene concatenation or synteny relationships \citep{payen2009, friedrich2015, vakirlis2016, brion2017}.
 These characteristics make \kluyveri an ideal model to study the effects of an introgressed cellular environment and the resulting mismatch in codon usage.
 
-While previous studies \marginnote{mikeg: cite these 'previous studies'.} have used information on gene expression to separate the effects of mutation and selection on codon usage, \ROC does not need such information but can provide it.
+While previous studies %\marginnote{mikeg: cite these 'previous studies'.} have used information on gene expression to separate the effects of mutation and selection on codon usage, \ROC does not need such information but can provide it.
 \ROC's resulting predictions of protein synthesis rates have been shown to be on par with laboratory measurements \citep{ShahAndGilchrist2011, gilchrist2015}.
 In contrast to often used heuristic approaches to study codon usage \citep{sharp1987, Wright1990, dosreis2004}, \ROC explicitly incorporates and distinguishes between mutation and selection effects on codon usage and properly weights its estimates by amino acid usage \citep{cope2018}. %CAI and similar indices use relative frequency and, as a result, weight each amino acid's contribution to the index the same even if the aa usage is uneven. 
 We use \ROC to separately describe the two cellular environments reflected in the \kluyveri genome; the signature of the endogenous environment reflected in the larger set of non-introgressed genes and the decaying signature of the ancestral, exogenous environment in the smaller set of introgressed genes.
@@ -327,7 +327,7 @@ We express both, \DM and \DE, as deviation from the mean of each synonymous codo
 Bayes factor strongly support the hypothesis that the \kluyveri genome consists of genes with two different and distinct patterns of codon usage bias rather than a single ($K = \exp(42,294)$; Table \ref{tab:AIC_klu}).
 We find additional support for this hypothesis when we compare our predictions of protein synthesis rate to empirically observed mRNA expression values as a proxy for protein synthesis.
 Specifically, we improve the variance explained by our predicted protein synthesis rates by $\sim 42\%$, from $R^2 = 0.33$ ($p \approx 0$) to $0.46$ ($p \approx 0$) (Figure \ref{fig:phi_corr_two_cond}).
-\marginnote{Replace $p \approx 0$ with $p < 10^{-15}$ or whatever.}
+%\marginnote{Replace $p \approx 0$ with $p < 10^{-15}$ or whatever.}
 While the implicit consideration of \GC in this analysis certainly plays a roll, it does not explain the improvement in $R^2$ (Figure \ref{fig:gc_comp_phi}b).
 
 \begin{table}
@@ -335,7 +335,7 @@ While the implicit consideration of \GC in this analysis certainly plays a roll,
   \caption{Model selection of the two competing hypothesis. 
   Combined: mutation bias and selection bias for synonymous codons is shared between endogenous and exogenous genes.
   Separated: mutation bias and selection bias for synonymous codons is allowed to vary between endogenous and exogenous genes.
-  Reported are the log-likelihood, $\log(\Lik)$, the number of parameters estimated $n$, the log-marginal likelihood $\log(\Lik_M)$, Bayes Factor K, and the p-value of the likelihood ratio test.}\marginnote{mikeg: Note that Alex has implemented DIC routines into AnaCoDa which is better than BF because it is insensitive to the width of flat priors, which I erroneously thought didn't matter previously.}
+  Reported are the log-likelihood, $\log(\Lik)$, the number of parameters estimated $n$, the log-marginal likelihood $\log(\Lik_M)$, Bayes Factor K, and the p-value of the likelihood ratio test.}%\marginnote{mikeg: Note that Alex has implemented DIC routines into AnaCoDa which is better than BF because it is insensitive to the width of flat priors, which I erroneously thought didn't matter previously.}
   \begin{tabular}{lrrrcc}
     \hline
 %    Hypothesis             & $\log(\Lik)$ &$n$ &  AIC & $\Delta$AIC\\ \hline 
@@ -360,7 +360,7 @@ While the implicit consideration of \GC in this analysis certainly plays a roll,
     \end{subfigure}
     \caption{Comparison of predicted protein synthesis rate $\phi$ to mRNA abundance from \cite{tsankov2010} for (a) the combined genome where mutation bias and selection bias parameters \DM and \DE are estimated for the combined endogenous and exogenous gene sets, and (b) where \DM and \DE are estimated separately for the endogenous and exogenous gene sets.
     Endogenous genes are displayed in black and exogenous genes in red. 
-    Black line indicates type II regression line \citep{SokalAndRohlf1981}.}\marginnote{mikeg: Type II is also referred to as `Deming regression' or `errors in variables model'}
+    Black line indicates type II regression line \citep{SokalAndRohlf1981}.}%\marginnote{mikeg: Type II is also referred to as `Deming regression' or `errors in variables model'}
     \label{fig:phi_corr_two_cond}
 \end{figure}
 
@@ -372,9 +372,9 @@ To better understand the differences in the endogenous and exogenous cellular en
 Our estimates of \DM for the endogenous and exogenous genes were negatively correlated ($\rho = -0.49$, $p = 3.56\times10^{-5}$),  indicating weak similarity with only $\sim 5\%$ of the codons share the same sign between the two mutation environments (Figure \ref{fig:csp_comp}a).
 Overall, mutation bias favors codons ending in the purines A and T over codons ending in the pyrimidines G or C, respectively, as indicated by where the endogenous model fit curves intercept the left axis in Figure \ref{fig:cub_endo_exo}.
 One exception is Lys, L, where mutation appears to favor the codon TTG over TTA; however, this difference is very small and not statistically meaningful.
-\marginnote{mikeg: Cedric, can you verify that the 95\% PI of \DM for TTG and TTA overlap?}
+%\marginnote{mikeg: Cedric, can you verify that the 95\% PI of \DM for TTG and TTA overlap?}
 The exogenous genes display behavior, favoring G over A and C over G and doing so more strongly, as indicated by shift in order and the greater distance between the exogenous model fit curves where they intercept the left axis in Figure \ref{fig:cub_endo_exo}).
-\marginnote{mikeg: I revised the \DM results because they weren't actually consistent with the curves illustrated in Figure \ref{fig:cub_endo_exo}.
+%\marginnote{mikeg: I revised the \DM results because they weren't actually consistent with the curves illustrated in Figure \ref{fig:cub_endo_exo}.
   Please check and, if changes are correct, please revise \DE results to mirror structure of \DM section.}
 \begin{figure}
     \centering
@@ -397,7 +397,7 @@ The exogenous genes display behavior, favoring G over A and C over G and doing s
 
 We find that the signature of selection bias \DE also differs substantially between the endogenous and exogenous gene sets.
 In terms of their magnitude relative to mutation bias \DM, \DE for the endogenous gene set is substantially greater than for the exogenous gene set as indicated by the fact that the protein production rate $\phi$ where the effect of selection fails to override the effect of  
-The difference in codon usage between endogenous and exogenous genes is striking as some amino acids have opposite codon preferences. \marginnote{mikeg: can you revise this text to make it more consistent with previous discussions of these terms?
+The difference in codon usage between endogenous and exogenous genes is striking as some amino acids have opposite codon preferences. %\marginnote{mikeg: can you revise this text to make it more consistent with previous discussions of these terms?
   For example, 'opposite codon preferences' is confusing, is it that \DE values have opposite signs between gene sets?} 
 As a result, our estimates of the optimal codon differ in nine cases between endogenous and exogenous genes (Figure \ref{fig:cub_endo_exo}, Table \ref{tab:codon_pref_deta}).
 For example, the usage of the Asparagine (Asn, N) codon AAC is increased in highly expressed endogenous genes but the same codon is depleted in highly expressed exogenous genes.
