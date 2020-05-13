@@ -50,12 +50,12 @@
 \usepackage{paralist}
 %\usepackage{ifthen}
 \usepackage{url}
-%\usepackage{caption}
+\usepackage{caption}
 %\usepackage{titling} %provides \theauthor and \thetitle commands
 \usepackage{natbib}
 \usepackage{color}
 %\usepackage{multirow}
-\usepackage{subfigure}
+\usepackage{subcaption} %use subcaption, not subfigure which hasn't been updated in 20 years
 \usepackage{marginnote} %replacement for marginpar, doesn't mind being nested.
 \usepackage[flushleft]{threeparttable}
 
@@ -290,7 +290,7 @@ Broadly speaking, \ROC allows us to quantify the cellular environment in which g
 Briefly, the set of \DM for an amino acid quantifies the relative differences in mutational stability or bias between the synonymous codons of the amino acid \setS.
 In the absence of selection bias (or equivalently when gene expression $\phi = 0$), the equilibrium frequency of synoymous codon $i$ is simply $\exp[-\DM_i]/\left(\sum_{j \in \setS}\exp[-\DM_j]\right)$.
 %Because \ROC only considers the stationary probabilities, only variation in mutation bias, not absolute mutation rates can be detected.
-Because the time units of protein production rate have no intrinsic time scale, we define the average protein production rate for a set of genes to be one, i.e.~$\phibar = 1$ by definition \citep{gilchrist2015}. 
+Because the time units of protein production rate have no intrinsic time scale, we define the average protein production rate for a set of genes to be one, i.e.~$\barphi = 1$ by definition \citep{gilchrist2015}. 
 In order to facilitate comparisions between gene sets, we express both, \DM and \DE, as deviation from the mean of each synonymous codon family (see Materials and Methods for details).
 Nevertheless, the difference \DE describes the difference in fitness between two synonymous codons relative to drift for a gene whose protein production rate $\phi$ is equal to the the average rate of protein production $\barphi$ across the set of genes.
 In other words, for a gene whose protein is expressed at the average rate, for any two given synonymous codons $i$ and $j$,  $\DE_i-\DE_j = \Ne s$.
@@ -350,13 +350,11 @@ While the implicit consideration of \GC in this analysis certainly plays a roll,
 
 \begin{figure}
     \centering
-    \begin{subfigure}
-        \centering
-        (a) \includegraphics[width=.45\textwidth]{img/fig1a.pdf}%img/phi_corr_plot_whole_Genome_estim.pdf}
+    \begin{subfigure}[(a)]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{img/fig1a.pdf}%img/phi_corr_plot_whole_Genome_estim.pdf}
     \end{subfigure}
-    \begin{subfigure}
-        \centering
-        (b) \includegraphics[width=.45\textwidth]{img/fig1b.pdf}%phi_corr_plot_split_Genome_estim.pdf}
+    \begin{subfigure}[(b)]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{img/fig1b.pdf}%phi_corr_plot_split_Genome_estim.pdf}
     \end{subfigure}
     \caption{Comparison of predicted protein synthesis rate $\phi$ to mRNA abundance from \cite{tsankov2010} for (a) the combined genome where mutation bias and selection bias parameters \DM and \DE are estimated for the combined endogenous and exogenous gene sets, and (b) where \DM and \DE are estimated separately for the endogenous and exogenous gene sets.
     Endogenous genes are displayed in black and exogenous genes in red. 
@@ -378,13 +376,11 @@ The exogenous genes display behavior, favoring G over A and C over G and doing s
   Please check and, if changes are correct, please revise \DE results to mirror structure of \DM section.}
 \begin{figure}
     \centering
-    \begin{subfigure}
-        \centering
-        (a) \includegraphics[width=.45\textwidth]{img/fig2a.pdf}%img/csp_corr_dm.pdf}
+    \begin{subfigure}[(a)]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{img/fig2a.pdf}%img/csp_corr_dm.pdf}
     \end{subfigure}
-    \begin{subfigure}
-        \centering
-        (b) \includegraphics[width=.45\textwidth]{img/fig2b.pdf}%img/csp_corr_deta.pdf}
+    \begin{subfigure}[(b)]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{img/fig2b.pdf}%img/csp_corr_deta.pdf}
     \end{subfigure}
     \caption{Comparison of (a) mutation bias \DM and (b) selection bias \DE parameters for endogenous and exogenous genes.
       Estimates are relative to the mean for each codon family.
@@ -491,7 +487,7 @@ Interestingly, our results also indicate that codon usage does not necessarily c
 
 \begin{figure}
      \centering
-	\includegraphics[width=.45\textwidth]{img/fig4.pdf}%img/csp_mean_correlation_exo.pdf}
+	\includegraphics[width=\textwidth]{img/fig4.pdf}%img/csp_mean_correlation_exo.pdf}
 	\caption{Correlation coefficients of \DM and \DE of the exogenous genes with 332 examined budding yeast lineages. 
 	Dots indicate the correlation of \DM and \DE of the lineages with the exogenous parameter estimates.
 	Blue triangles indicate the \textit{Lachancea} and red diamonds indicate \textit{Eremothecium} species.
@@ -533,13 +529,11 @@ In order for the exogenous genes to have reached fixation one or more exogenous 
 
 \begin{figure}
     \centering
-    \begin{subfigure}
-        \centering
-        (a) \includegraphics[width=.45\textwidth]{img/fig5a.pdf}%img/fitness_difference_gos_kappa5.pdf}
+    \begin{subfigure}[(a)]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{img/fig5a.pdf}%img/fitness_difference_gos_kappa5.pdf}
     \end{subfigure}
-    \begin{subfigure}
-        \centering
-        (b) \includegraphics[width=.45\textwidth]{img/fig5b.pdf}%img/fitness_difference_exo.pdf}
+    \begin{subfigure}[(b)]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{img/fig5b.pdf}%img/fitness_difference_exo.pdf}
     \end{subfigure}
     \caption{Selection against mismatched codon usage $s = \DE \phi$ (a) at the time of introgression ($\kappa = 5$), and (b) currently ($\kappa = 1$). 
         Vertical dashed line indicates split between high and low expression genes at $\phi = 1$.
@@ -855,13 +849,11 @@ Supporting Materials for \emph{Unlocking a signal of introgression from codons i
 
 \begin{figure}
     \centering
-    \begin{subfigure}
-        \centering
-       \includegraphics[width=.45\textwidth]{img/figS1a}
+    \begin{subfigure}[(a)]{0.45\textwidth}
+       \includegraphics[width=\textwidth]{img/figS1a}
     \end{subfigure}
-    \begin{subfigure}
-        \centering
-        \includegraphics[width=.45\textwidth]{img/figS1b}
+    \begin{subfigure}[(b)]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{img/figS1b}
     \end{subfigure}
     \caption{Endogenous and exogenouns genes have distinct \GC. 
     (a) Distribution of \GC content in the endogenous and exogenous genes.
@@ -925,13 +917,11 @@ Supporting Materials for \emph{Unlocking a signal of introgression from codons i
 
 \begin{figure}
     \centering
-    \begin{subfigure}
-        \centering
-        \includegraphics[width=.45\textwidth]{img/figS6a.pdf}%img/csp_corr_dm_full.pdf}
+    \begin{subfigure}[(a)]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{img/figS6a.pdf}%img/csp_corr_dm_full.pdf}
     \end{subfigure}
-    \begin{subfigure}
-        \centering
-        \includegraphics[width=.45\textwidth]{img/figS6b.pdf}%img/csp_corr_deta_full.pdf}
+    \begin{subfigure}[(b)]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{img/figS6b.pdf}%img/csp_corr_deta_full.pdf}
     \end{subfigure}
     \caption{Comparison of (a) mutation bias \DM and (b) selection bias \DE parameters for endogenous genes and combined gene sets.
       Estimates are relative to the mean for each codon family.
@@ -946,13 +936,11 @@ Supporting Materials for \emph{Unlocking a signal of introgression from codons i
 
 \begin{figure}
     \centering
-    \begin{subfigure}
-        \centering
-        \includegraphics[width=.45\textwidth]{img/figS7a.pdf}%img/fitness_difference_gos_kappa1.pdf}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{img/figS7a.pdf}%img/fitness_difference_gos_kappa1.pdf}
     \end{subfigure}
-    \begin{subfigure}
-        \centering
-        \includegraphics[width=.45\textwidth]{img/figS7b.pdf}%img/fitness_phi_scaling_gos.pdf}
+    \begin{subfigure}{0.45\textwidth}
+        \includegraphics[width=\textwidth]{img/figS7b.pdf}%img/fitness_phi_scaling_gos.pdf}
     \end{subfigure}
     \caption{Selection against mismatched codon usage (left) without scaling of $\phi$ per gene. 
     Vertical dashed line indicates split between high and low expression genes at $\phi = 1$.
