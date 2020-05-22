@@ -429,6 +429,10 @@ These results clearly show that it is important to recognize the difference in e
 	\label{fig:cub_endo_exo}
 \end{figure}
 
+In order to test the robustness of our results we randomized the di-nucleotides of the endogenous and exogenous genes while maintaining their frequency and the GC-content.
+We find that we can still separate the effect of mutation and selection on codon usage.
+The randomized gene sets show a similar pattern of mutation bias and selection bias as the canonical endogenous (Figure \ref{fig:rnd_endo} a,b) and the exogenous (Figure \ref{fig:rnd_exo} a,b) gene sets.
+Similar, the predicted protein synthesiis rate $\phi$ of the endogenous ($\rho=0.73$, $p<10^{-10}$)  and exogenous ($\rho=0.88$, $p=p<10^{-10}$)  randomized gene set is highly correlated with our canonical predictions of $\phi$ (Figure \ref{fig:rnd_phi} a,b).
 
 
 \subsection*{Can Codon Usage Help Determine the Source of the Exogenous Genes}
@@ -1040,7 +1044,7 @@ Supporting Materials for \emph{Unlocking a signal of introgression from codons i
         \includegraphics[width=.45\textwidth]{img/figS12b.pdf}
     \end{subfigure}
     \caption{Comparison of mutation bias \DM (left) and selection bias \DE (right) estimated from the randomized endogenous and the di-nucleotide randomized exogenous genes.  }
-    \label{fig:rnd_phi}
+    \label{fig:rnd_endo_exoi}
 \end{figure}
 \null
 \vfill
